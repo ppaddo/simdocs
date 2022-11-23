@@ -1,0 +1,346 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Telex Inmarsat</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p align=center><img src="../Imagenes/TelexInmarsat.jpg"></p>
+
+<p><b>Encendido del Terminal</b></p>
+
+<p>El terminal Inmarsat A o B se enciende pulsando el botón PWR del terminal télex. Tras el encendido se presentan las correspondientes Pantallas de Espera tanto en el microteléfono como en el terminal télex.</p>
+
+<p>La Pantalla de Espera del terminal télex incluye la siguiente información:</p>
+
+<ul>
+	<li>Nivel de señal: representado por un número de asteriscos entre cero (sin señal) y 8 (nivel máximo).</li>
+	<li>Fecha y hora UTC actual.</li>
+	<li>Satélite con el que se está conectado y estado de la comunicación. Cuando MES Status presenta Ready es posible la comunicación.</li>
+	<li>Datos de orientación de la antena.</li>
+	<li>Datos de navegación de la unidad.</li>
+</ul>
+
+<p align=center><img src="../Imagenes/TelexInmarsat PantallaEspera.jpg"></p>
+
+<p>La Pantalla de Espera también incluye el Menú Principal. Sus opciones pueden abrirse seleccionándolas mediante el ratón o pulsando las teclas de función F1 a F10. La tecla F8 no tiene asignada ninguna función.</p>
+
+<p><b>Gestión de Archivos de Mensajes Télex</b></p>
+
+<p>El menú File contiene las opciones necesarias para crear, nombrar, archivar e imprimir mensajes télex.</p>
+
+<p align=center><img src="../Imagenes/TelexInmarsat MenuFile.jpg"></p>
+
+<p>Desde este menú es posible realizar las siguientes opciones:</p>
+
+<ul>
+	<li>Crear un nuevo mensaje. Al seleccionar la opción New Text se presenta la Pantalla de Edición donde se puede escribir el texto del mensaje.</li>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat NuevoTexto.jpg"></p>
+	
+	<p>Terminar el mensaje con NNNN (código de fin de mensaje). Si a continuación se añaden cinco puntos (.....) la comunicación se corta tras la transmisión del mensaje. Si en lugar de cinco puntos se añaden cinco comas (,,,,,) se corta la comunicación con el destinatario del mensaje pero se mantiene con la LES.</p>
+
+	<li>Archivar el mensaje creado / editado. Mediante las opciones Close Text o Save Text es posible archivar el mensaje creado o editado. Con Close Text el texto del mensaje es eliminado de la Pantalla de Edición mientras que con Save Text el texto permanece.</li><br>
+
+	<p>Al utilizar Close Text se presenta la siguiente ventana donde el operador puede seleccionar si desea salvar el mensaje o no.</p>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat CloseText.jpg"></p>
+
+	<p>Si se selecciona YES en la anterior ventana o se usa la opción Save Text, la aplicación solicita la introducción del nombre del fichero presentando la siguiente ventana:</p>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat SaveText.jpg"></p>
+
+	<p>Tras introducir el nombre del fichero pulsar la tecla Enter.</p>
+
+	<li>Editar o consultar un mensaje archivado. Al seleccionar la opción Open Text se presenta la lista de mensajes archivados.</li>
+	
+	<p align=center><img src="../Imagenes/TelexInmarsat OpenText.jpg"></p>
+
+	<p>Si se desea presentar el mensaje en la Pantalla de Edición para su edición o consulta seleccionar la opción Load. Si se desea insertar el texto del mensaje en el texto presentado en la Pantalla de Edición seleccionar la opción Merge. El texto se insertará en la posición del cursor. Puede conmutarse entre ambas opciones pulsando la tecla Tabulación.</p>
+
+	<p>Con las teclas de flecha (abajo y arriba) seleccionar el mensaje y pulsar la tecla Enter. El texto del mensaje estará disponible en la Pantalla de Edición.</p>
+
+	<li>Borrar un mensaje archivado. Al seleccionar la opción Delete File la aplicación solicita el nombre del mensaje a borrar.</li>
+	
+	<p align=center><img src="../Imagenes/TelexInmarsat DeleteFile.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar el mensaje a borrar. Una vez seleccionado pulsar Enter y la aplicación pedirá confirmar el borrado.</p>
+
+	<li>Renombrar un mensaje archivado. Al seleccionar la opción Rename File la aplicación solicita el nombre del mensaje a renombrar.</li>
+
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar el mensaje. Una vez seleccionado escribir el nuevo nombre y pulsar Enter.</p>
+
+	<li>Imprimir un mensaje. Al seleccionar la opción Print File la aplicación solicita el nombre del mensaje a imprimir.</li>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat PrintFile.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar el mensaje. Una vez seleccionado pulsar la tecla Enter. El mensaje se imprimirá en la impresora asociada al télex Inmarsat.</p>
+
+</ul>
+
+<p><b>Edición de Texto de Mensajes</b></p>
+
+<p>No se han implementado las opciones del menú Edit pero se puede cortar y pegar texto mediante las combinaciones de teclas Ctrl + X, Ctrl + C y Ctrl + V.</p>
+
+<p><b>Configuración del Terminal</b></p>
+
+<p>El menú Setup incluye opciones para registrar los datos de estaciones costeras y unidades participantes en el ejercicio. También permite orientar la antena y configurar la alerta de socorro.</p>
+
+<p align=center><img src="../Imagenes/TelexInmarsat MenuSetup.jpg"></p>
+
+<p>Desde este menú es posible realizar las siguientes opciones:</p>
+
+<ul>
+	<li>Registrar estaciones. Al seleccionar la opción Station List se presenta la lista de estaciones.</li>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat ListaEstaciones.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar la estación que se desea editar o consultar. Para introducir una nueva estación seleccionar una posición de la lista no ocupada. Al pulsar la tecla Enter se presenta la siguiente ventana donde se pueden introducir los datos de la estación: Nombre, Número de télex, Answerback y Comentario.</p>
+
+	<p>El número de télex tendrá el siguiente formato según el tipo de estación:</p>
+
+	<ul>
+		<li>Abonado terrestre: <i>00 PPP nnnnnnnnn</i> </li>
+		<li>MES: <i>00 RRR nnnnnnnnn</i></li>
+	</ul>
+
+	<p>Donde:</p>
+
+	<p>
+		<i>00</i> Código de llamada automática.<br>
+		<i>PPP</i> Código de País.<br>
+		<i>nnnnnnnnn</i> Número de télex (7 dígitos para Inmarsat A y 9 para Inmarsat B).<br>
+		<i>RRR</i> Código de región oceánica en la que se encuentra la MES llamada.
+	</p>
+
+
+	<table align=center border=1 cellspacing=0 cellpadding=5>
+		<tr>
+			<td colspan=4 align=center><font size=2 face=arial><b>Códigos de Región Oceánica</b></td>
+		</tr>
+
+		<tr>
+			<td align=center width=100><font size=2 face=arial>Atlántico-Este</td>
+			<td align=center width=100><font size=2 face=arial>Pacifico</td>
+			<td align=center width=100><font size=2 face=arial>Índico</td>
+			<td align=center width=100><font size=2 face=arial>Atlántico-Oeste</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>581</td>
+			<td align=center><font size=2 face=arial>582</td>
+			<td align=center><font size=2 face=arial>583</td>
+			<td align=center><font size=2 face=arial>584</td>
+		</tr>
+
+	</table>
+
+	<p>Una vez introducidos o editados los datos de la estación pulsar Enter. Para eliminar una estación de la lista editarla y borrar su nombre.</p>
+
+	<li>Consultar la lista de estaciones costeras. Al seleccionar la opción LES List se presenta la lista de estaciones costeras con las que la unidad puede conectar.</li>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat ListaLES.jpg"></p>
+
+	<p>A diferencia de los equipos reales, en el equipo simulado el sistema actualiza automáticamente esta lista mostrando todas las costeras con equipo Inmarsat compatible (A o B) que presten servicio en la región oceánica correspondiente.</p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar una estación costera. Al pulsar la tecla Enter se abre la ventana de edición de la costera seleccionada.</p>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat DatosLES.jpg"></p>
+
+	<p>En el equipo real esta ventana se usa para actualizar manualmente la lista de LES, como en el equipo simulado esta lista se actualiza automáticamente, esta ventana no tiene ninguna utilidad y no se pueden introducir datos en ella.</p>
+
+	<li>Orientar la antena. Al seleccionar la opción Comm Unit Setup se presenta el siguiente menú:</li>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat MenuCommUnitSetup.jpg"></p>
+
+	<p>Al seleccionar la opción Antena se abre una ventana que muestra los datos de orientación de la antena.</p>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat Antena.jpg"></p>
+
+	<p>La antena se puede orientar de forma automática o manual según se seleccione Autotrack ON o Autotrack OFF, respectivamente, en el campo Autotrack. Para seleccionar el valor de este campo pulse la tecla Tabulación hasta situar el cursor en él y seleccione la opción ON/OFF pulsando las teclas de flecha (arriba y abajo).</p>
+
+	<p>Cuando está seleccionado Autotrack ON la antena se orienta automáticamente y los campos Azimuth, Elevation y Heading presentan el valor actual y no se pueden modificar.</p>
+
+	<p>Cuando está seleccionado Autotrack OFF la antena se puede orientar de forma manual con los valores introducidos en los campos Azimuth y Elevation. Para introducir estos valores pulse la tecla Tabulación y sitúe el cursor en el campo que quiera modificar y a continuación seleccione un valor pulsando las teclas de flecha (arriba y abajo). Si estos valores cambian muy deprisa, por ejemplo dejando pulsada la tecla de flecha, la antena se daña.</p>
+
+	<p>El campo Heading no se puede modificar ya que depende directamente de la orientación del buque.</p>
+
+	<li>Configurar el mensaje de socorro. El mensaje de socorro que se envía al pulsar la tecla Distress es posible configurarlo seleccionando la opción Comm Unit Setup – Distress LES. Al seleccionarla se presenta la siguiente ventana en la que se puede elegir la LES a la que enviar el mensaje y la naturaleza del peligro.</li>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat DistressAlert.jpg"></p>
+
+	<p>La LES a la que enviar la alerta puede seleccionarse con las teclas de flechas (arriba y abajo) a partir de la lista de LES previamente registradas. La naturaleza del peligro puede seleccionarse también mediante las teclas de flecha.</p>
+
+	<p>Una vez seleccionados los datos pulsar la tecla Enter para aceptar los valores o Escape para descartarlos.</p>
+
+	<p>Se presentará un aviso de error si la LES seleccionada no está situada en el área de cobertura del satélite al que está conectado la unidad.</p>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat MensajeAreaLesDistressInv.jpg"></p>
+
+</ul>
+
+<p><b>Transmisión de Mensajes Télex</b></p>
+
+<p>El menú Telex incluye las opciones para realizar una comunicación télex y para presentar el registro de mensajes enviados o recibidos.</p>
+
+<p>Antes de transmitir un mensaje télex es necesario registrar los códigos de estaciones costeras y los números de télex de las unidades participantes en el ejercicio. También es conveniente preparar y archivar el texto de los mensajes a transmitir.</p>
+
+<p align=center><img src="../Imagenes/TelexInmarsat MenuTelex.jpg"></p>
+
+<p>Desde este menú es posible realizar las siguientes opciones:</p>
+
+<ul>
+	<li>Conectar con una estación costera. Al seleccionar la opción Call LES se presenta la siguiente ventana donde se puede seleccionar la LES con la que se quiere comunicar, la prioridad de la comunicación y el código del servicio requerido.</li>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat CallLes.jpg"></p>
+
+	<p>La LES a la que se quiere llamar se puede seleccionar de la lista de estaciones costeras registradas mediante las teclas de flecha (arriba y abajo). Igualmente se puede seleccionar la prioridad de la comunicación (Routine, Safety o Urgent).</p>
+
+	<p>Si se solicita un servicio a una costera que no está siendo controlada en ninguna consola, se presentará un aviso al instructor ofreciéndole la posibilidad de controlar dicha costera.</p>
+
+	<p>Si se requiere un servicio distinto de llamada automática, se introducirá su código de servicio. Los códigos de servicio posibles se presentan en la siguiente tabla. Se presentará un aviso de error si el código solicitado no es ofrecido por la LES seleccionada.</p>
+
+	<table align=center border=1 cellspacing=0 cellpadding=5>
+		<tr>
+			<td align=center width=40><font size=2 face=arial><b>Código</b></td>
+			<td align=center width=200><font size=2 face=arial><b>Servicio</b></td>
+			<td align=center width=40><font size=2 face=arial><b>Código</b></td>
+			<td align=center width=200><font size=2 face=arial><b>Servicio</b></td>
+		</tr>
+		
+		<tr>
+			<td align=center><font size=2 face=arial>00</td>
+			<td><font size=2 face=arial>Automatic Call</td>
+			<td align=center><font size=2 face=arial>12</td>
+			<td><font size=2 face=arial>International Info</td>
+		</tr>
+			
+		<tr>
+			<td align=center><font size=2 face=arial>14</td>
+			<td><font size=2 face=arial>National Info Service</td>
+			<td align=center><font size=2 face=arial>21</td>
+			<td><font size=2 face=arial>Store & Forward</td>
+		</tr>
+			
+		<tr>
+			<td align=center><font size=2 face=arial>31</td>
+			<td><font size=2 face=arial>Maritime Enquiries</td>
+			<td align=center><font size=2 face=arial>33</td>
+			<td><font size=2 face=arial>Technical Assistance</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>39</td>
+			<td><font size=2 face=arial>Maritime Assistance</td>
+			<td align=center><font size=2 face=arial>42</td>
+			<td><font size=2 face=arial>NAV Hazard Warning</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>11</td>
+			<td><font size=2 face=arial>International Operator</td>
+			<td align=center><font size=2 face=arial>13</td>
+			<td><font size=2 face=arial>National Operator</td>
+		</tr>
+			
+		<tr>
+			<td align=center><font size=2 face=arial>15</td>
+			<td><font size=2 face=arial>Radio-telegram Service</td>
+			<td align=center><font size=2 face=arial>23</td>
+			<td><font size=2 face=arial>Short Code Selection</td>
+		</tr>
+			
+		<tr>
+			<td align=center><font size=2 face=arial>32</td>
+			<td><font size=2 face=arial>Medical Advices</td>
+			<td align=center><font size=2 face=arial>38</td>
+			<td><font size=2 face=arial>Medical Assistance</td>
+		</tr>
+			
+		<tr>
+			<td align=center><font size=2 face=arial>41</td>
+			<td><font size=2 face=arial>Meteorological Report</td>
+			<td align=center><font size=2 face=arial>43</td>
+			<td><font size=2 face=arial>Ship Position Report</td>
+		</tr>
+			
+		<tr>
+			<td align=center><font size=2 face=arial>91</td>
+			<td><font size=2 face=arial>Automatic Telex Test</td>
+			<td align=center><font size=2 face=arial></td>
+			<td><font size=2 face=arial></td>
+		</tr>
+			
+	</table>
+
+	<P>Una vez introducidos los datos pulsar Enter. Si existe nivel de señal suficiente y el estado de la comunicación es Ready se iniciará la comunicación con la LES presentándose la Pantalla de Télex Online con los datos de la estación costera llamada y el estado de la conexión.</P>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat TelexOnline.jpg"></p>
+
+	<p>Cuando en la ventana se presente GA+ el operador puede iniciar la comunicación con la estación costera (si ha solicitado algún servicio distinto de llamada automática) o seleccionar la unidad con la que quiere comunicarse. En este último caso tiene 20 segundos para seleccionarla. Si tarda más tiempo se producirá una desconexión automática.</p>
+
+	<P>La unidad con la que se desea establecer comunicación puede seleccionarse introduciendo manualmente su número de télex (incluyendo código de llamada automática y código de región oceánica o de país y terminando con +) o utilizando la opción Call Station como se describe a continuación.</P>
+
+	<p>La comunicación con la LES se puede terminar seleccionando la opción Break del Menú Principal.</p>
+
+	<li>Conectar con una unidad participante en el ejercicio. Estando conectado con una LES al seleccionar la opción Call Station se presenta la lista de estaciones registradas. Mediante las teclas de flecha el operador debe seleccionar la unidad con la que se quiere comunicar y a continuación pulsar Enter.</li>
+
+	<p>Si el número es correcto y la unidad está disponible (su terminal Inmarsat está operativo con nivel de señal suficiente) se presenta su answerback en la ventana. Tras presentar el answerback propio puede iniciarse la comunicación escribiendo directamente desde el teclado o transmitiendo un mensaje archivado como se describe en el siguiente punto. El texto introducido desde el teclado debe terminar con el signo + para que sea transmitido.</p>
+
+	<p>Es posible activar el timbre en la estación llamada seleccionando la opción BELL del Menú Principal. La comunicación se puede terminar seleccionando la opción Break del Menú Principal.</p>
+
+	<p>Se presentará un aviso de error si el número de télex introducido no es correcto.</p>
+
+	<li>Transmitir un mensaje archivado. Estando conectado con una LES o con una unidad al seleccionar la opción Transmit File se presenta la lista de mensajes archivados. Mediante las teclas de flecha el operador debe seleccionar el mensaje que desea transmitir y a continuación pulsar Enter.</li>
+
+	<p>La conexión se corta tras la transmisión del mensaje si este termina con cinco puntos (.....) o con cinco comas (,,,,,). En este último caso se corta la conexión con el destinatario del mensaje manteniéndose la conexión con la LES.</p>
+
+	<li>Listar los mensajes recibidos o transmitidos. El sistema almacena los 25 últimos mensajes recibidos o transmitidos. Al seleccionar la opción Communication Log se presenta el registro con estos mensajes. Mediante las teclas de flecha es posible ver completo el registro.</li>
+
+	<p align=center><img src="../Imagenes/TelexInmarsat Log.jpg"></p>
+
+	<li>Conmutar la pantalla presentada. Al seleccionar la opción Change Window se cambia la pantalla presentada conmutando entre la Pantalla de Edición y la Pantalla de Télex Online o la Pantalla de Espera.</li>
+
+</ul>
+
+<p><b>Recepción de Mensajes Télex</b></p>
+
+<p>Cuando se recibe un mensaje suena una alarma. El mensaje es presentado en la Pantalla Télex Online y es impreso en la impresora correspondiente al terminal Inmarsat. La alarma puede silenciarse seleccionando la opción Alm Rst del menú principal.</p>
+
+<p>El sistema almacena los 25 últimos mensajes recibidos o transmitidos por lo que el mensaje recibido puede consultarse posteriormente siguiendo el procedimiento descrito en el punto anterior.</p>
+
+<p><b>Presentación de Answerback Durante la Comunicación</b></p>
+
+<p>Al seleccionar la opción HRIS del Menú Principal se transmite el answerback propio. Al seleccionar la opción WRU del Menú Principal se solicita a la estación con la que se comunica la transmisión de su answerback.</p>
+
+<p><b>Comunicaciones de Socorro</b></p>
+
+<p>Para transmitir una alerta de socorro mantener pulsado durante al menos 6 segundos el botón Distress en el terminal télex. El mensaje de socorro será enviado automáticamente a la LES seleccionada en los datos de configuración del mensaje de socorro (ver el apartado Configurar el mensaje de socorro). Si se dispone de tiempo se puede seleccionar en dichos datos la naturaleza del peligro antes de enviar la alerta.</p>
+
+<p>El mensaje de socorro se reenvía periódicamente hasta que sea reconocido por la estación costera.</p>
+
+<p><b>Códigos de la Comunicación Télex</b></p>
+
+<p>Después de una llamada pueden aparecer algunos de los siguientes códigos:</p>
+
+<p>
+	<i>OCC+</i> cuando la estación llamada está ocupada.<br>
+	<i>ABS+</i> cuando no se encuentra la estación llamada (inmarsat apagado o fuera de la cobertura del satélite).<br>
+	<i>OOO+</i> cuando la estación llamada no responde en ninguna región oceánica.<br>
+	<i>INV+</i> cuando se introduce un número incorrecto.<br>
+	<i>EOS+</i> cuando el servicio pedido no está disponible en la LES.<br>
+	<i>OOS+</i> cuando el equipo no está operativo para llamar (desconectado, dañado).<br>
+</p>
+
+</div>
+
+</body>
+
+</html>

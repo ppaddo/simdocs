@@ -1,0 +1,241 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Funcionamiento del Terminal NBDP</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p><b>Encendido y Apagado del Terminal</b></p>
+
+<p>El Terminal NBDP se enciende y se apaga pulsando el botón PWR.</p>
+
+<p><b>Gestión de Archivos de Mensajes</b></p>
+
+<p>El menú File contiene las opciones necesarias para crear, nombrar, guardar e imprimir mensajes.</p>
+
+<p align=center><img src="../Imagenes/TelexNBDP MenuFile.jpg"></p>
+
+<p>Desde este menú es posible realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Crear un nuevo mensaje. Al seleccionar la opción New se presenta la Pantalla de Edición donde se puede escribir el texto del mensaje.</li><br>
+	
+	<p align=center><img src="../Imagenes/TelexNBDP PantallaEdicion.jpg"></p>
+
+	<li>Guardar el mensaje creado / editado. Mediante la opción Close es posible guardar el mensaje creado o editado. Al seleccionar esta opción presenta una ventana donde el operador puede seleccionar si desea guardar el mensaje o no.</li>
+	
+	<p align=center><img src="../Imagenes/TelexNBDP CloseText.jpg"></p>
+
+	<p>Si se selecciona YES es necesario introducir el nombre del fichero y pulsar la tecla Enter para aceptar.</p>
+
+	<li>Editar o consultar un mensaje archivado. Al seleccionar la opción Open se presenta la lista de mensajes guardados.</li>
+	
+	<p align=center><img src="../Imagenes/TelexNBDP OpenText.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) seleccionar el mensaje y pulsar la tecla Enter. El texto del mensaje estará disponible en la Pantalla de Edición.</p>
+
+	<li>Borrar un mensaje. Al seleccionar la opción Delete la aplicación solicita el nombre del mensaje a borrar.</li>
+
+	<p align=center><img src="../Imagenes/TelexNBDP DeleteFile.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar el mensaje a borrar. Una vez seleccionado pulsar la tecla Enter para eliminar el mensaje.</p>
+
+	<li>Renombrar un mensaje. Al seleccionar la opción Rename la aplicación solicita el nombre del mensaje a renombrar.</li>
+
+	<p align=center><img src="../Imagenes/TelexNBDP RenameFile.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar el mensaje. Una vez seleccionado escribir el nuevo nombre y pulsar la tecla Enter.</p>
+
+	<li>Imprimir un mensaje. Al seleccionar la opción File to Print la aplicación solicita el nombre del mensaje a imprimir.</li>
+
+	<p align=center><img src="../Imagenes/TelexNBDP PrintFile.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar el mensaje. Una vez seleccionado pulsar la tecla Enter para imprimir el mensaje en la impresora asociada al Terminal NBDP.</p>
+	
+</ul>
+
+<p><b>Edición de Texto de Mensajes</b></p>
+
+<p>No se han implementado las opciones del menú Edit pero se puede cortar y pegar texto mediante las combinaciones de teclas Ctrl + X (cortar), Ctrl + C(copiar) y Ctrl + V (pegar).</p>
+
+<p><b>Registro de Datos de Estaciones</b></p>
+
+<p>El menú Station permite registrar los datos de las estaciones con las que queremos comunicar.</p>
+
+<p align=center><img src="../Imagenes/TelexNBDP MenuStation.jpg"></p>
+
+<p>Desde este menú es posible realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Registrar estaciones. Al seleccionar la opción Station Entry se presenta la lista de estaciones.</li>
+
+	<p align=center><img src="../Imagenes/TelexNBDP ListaEstaciones.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar la estación que se desea editar o consultar. Para introducir una nueva estación seleccionar una posición de la lista no ocupada. Al pulsar la tecla Enter se presenta la siguiente ventana donde se pueden introducir los datos de la estación: Nombre, Número de Télex y opcionalmente un Comentario.</p>
+
+	<p>El Número de Télex es el Selcall del equipo NBDP de la unidad (estación) que se está registrando.</p>
+
+	<p><i>Nota</i>: El Número de Télex debe ser diferente para el equipo de cada unidad y se asigna durante la preparación de los equipos instalados en las unidades mediante la ventana de Configuración del Télex NBDP (Ver Manual de Instructor/ Preparación de la Base de Datos/ Preparación de Ejercicios).</p>
+
+	<p align=center><img src="../Imagenes/TelexNBDP DatosEstacion.jpg"></p>
+
+	<p>Para introducir un dato seleccionar el campo correspondiente con el ratón o pulsar la tecla Tabulación hasta situar el cursor en el campo deseado.</p>
+
+	<p>Una vez introducidos o editados los datos de la estación pulsar la tecla Enter para salvar los cambios o Escape para abandonar la ventana sin salvar los datos.</p>
+
+	<p>Para eliminar una estación de la lista, editarla y borrar su nombre con la tecla Backspace.</p>
+
+</ul>
+
+<p><b>Comunicaciones Télex</b></p>
+
+<p>Las opciones del menú Operate permiten el establecimiento de comunicaciones télex incluyendo la transmisión de mensajes previamente preparados. Antes de transmitir un mensaje es necesario registrar los números de télex de las unidades participantes en el ejercicio así como preparar y guardar el texto de los mensajes a transmitir.</p>
+
+<p align=center><img src="../Imagenes/TelexNBDP MenuOperate.jpg"></p>
+
+<p>Desde este menú es posible realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Seleccionar el modo de la comunicación. Al seleccionar la opción Manual Reception se presenta una ventana que pide confirmación del cambio de modo de comunicación.</li>
+
+	<p align=center><img src="../Imagenes/TelexNBDP CambioModoCom.jpg"></p>
+
+	<p>Tras seleccionar YES y pulsar la tecla Enter se presenta una ventana en la que podemos elegir el modo de comunicación.</p>
+
+	<p align=center><img src="../Imagenes/TelexNBDP ModoCom.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se muestran los distintos modos de comunicación (AUTO, ARQ, FEC o SELFEC). Pulsando la tecla Enter se asigna el modo mostrado, se cierra la ventana y el modo elegido se presenta en el campo Comm Mode del área de estado de la comunicación (parte superior de la pantalla).</p>
+
+	<p>Cada modo funciona como sigue:</p>
+
+	<ul>
+		<p>Modo AUTO - Cuando se selecciona el modo AUTO el equipo no puede establecer comunicación pero recibe las peticiones de conexión de otros equipos y los avisos de recepción de mensajes.</p>
+		
+		<p>Modo ARQ – En modo ARQ un equipo puede enviar información escrita (télex) y mensajes a otro equipo que esté en modo ARQ. Este modo requiere que ambos equipos estén conectados entre sí, uno actuando como estación emisora (ISS) y otro como estación receptora (IRS). En el campo Station Name del área de estado de la comunicación de cada equipo aparecerá el Selcall del otro equipo, es decir el Selcall del equipo al que se ha conectado. Una vez establecida la comunicación, en el campo Comm Status del área de estado de la comunicación aparece Connect en vídeo inverso.</p>
+		
+		<p>Cuando un equipo en modo ARQ selecciona el Selcall de otro equipo para su conexión como emisor (ISS) o como receptor (IRS), el otro equipo, tanto si está en modo ARQ como si está en modo AUTO, recibe un aviso como el que se muestra en la siguiente figura.</p>
+		
+		<p align=center><img src="../Imagenes/TelexNBDP PeticionARQ.jpg"></p>
+
+		<p>El aviso de la figura anterior indica que la unidad TRNA con Selcall 08003 quiere comunicar como ISS (emisor) por tanto solicita a la estación receptora que seleccione modo ARQ y se conecte a la estación 08003 como IRS (receptor).</p>
+		
+		<p>El envío de mensajes se describe más adelante.</p>
+		
+		<p>Modo FEC – En modo FEC un equipo puede enviar mensajes que se recibirán en todos los equipos que estén dentro del alcance de la comunicación.</p>
+		
+		<p>En los equipos que están en modo AUTO o ARQ, cuando se recibe el mensaje se muestra una ventana de aviso, como la que aparece en la siguiente figura.</p>
+		
+		<p align=center><img src="../Imagenes/TelexNBDP RecepcionFEC.jpg"></p>
+
+		<p>El aviso de la figura anterior indica que la unidad TRNA con Selcall 08003 ha enviado un mensaje que se ha guardado en el equipo con el nombre RX_2006-06-07_15.39_8.</p>
+
+		<p>En los equipos que están en modo FEC o SELFEC el mensaje recibido se abre automáticamente y su contenido se muestra sobre el área de edición de la pantalla del equipo. Si el área de edición del equipo receptor está en uso (editando otro mensaje), se muestra la ventana de aviso de la recepción del mensaje.</p>
+
+		<p>Modo SELFEC – En modo SELFEC un equipo puede enviar mensajes a otro equipo, este último recibirá el mensaje si está dentro del alcance de la comunicación. Este modo requiere que el equipo que envía se conecte al equipo receptor. La conexión se puede hacer indistintamente como ISS o como IRS.</p>
+
+		<p>Si el equipo receptor está en modo AUTO o ARQ, se muestra una ventana de aviso, como la que aparece en la siguiente figura.</p>
+
+		<p align=center><img src="../Imagenes/TelexNBDP RecepcionFEC.jpg"></p>
+
+		<p>El aviso de la figura anterior indica que la unidad TRNA con Selcall 08003 ha enviado un mensaje que se ha guardado en el equipo con el nombre RX_2006-06-07_16.37_19.</p>
+
+		<p>Si el equipo receptor está en modo SELFEC o FEC el mensaje recibido se abre automáticamente y su contenido se muestra sobre el área de edición de la pantalla del equipo. Si el área de edición del equipo receptor está en uso, se muestra la ventana de aviso de la recepción del mensaje.</p>
+
+		<p>En todos los modos, el nombre del fichero donde se guarda el mensaje recibido tiene el siguiente formato RX_[fecha del ejercicio]_[hora del ejercicio]. Si el mensaje no se muestra automáticamente, para leerlo hay que seleccionar el fichero y abrirlo manualmente (ver Gestión de Archivos de Mensajes).</p>
+	</ul>
+
+	<li>Seleccionar una estación. En modo ARQ y SELFEC hay que seleccionar la estación receptora para poder enviar información. En modo ARQ, además, hay que seleccionar la estación emisora para poder recibir la información.</li>
+
+	<p>Las opciones Call Station ISS y Call Station IRS abren una ventana con la lista de las estaciones registradas.</p>
+
+	<p align=center><img src="../Imagenes/TelexNBDP CallStation.jpg"></p>
+
+	<p>En esta ventana se puede seleccionar la estación con la que queremos comunicar mediante las teclas de flecha y pulsar la tecla Enter para aceptar la estación seleccionada.</p>
+
+	<p>El Selcall de la estación seleccionada aparecerá en el campo Station Name del área de estado de la comunicación de la pantalla del equipo.</p>
+
+	<p>En modo SELFEC las opciones Call Station ISS y Call Station IRS se pueden utilizar indistintamente.</p>
+
+	<p>En modo ARQ la opción Call Station ISS se utiliza para conectarse como equipo emisor y Call Station IRS para conectarse como equipo receptor.</p>
+
+	<p>Si la estación con la que queremos conectar no está registrada, podemos hacer una conexión manual usando la opción Manual Calling.</p>
+
+	<p>Al seleccionar la opción Manual Calling se presenta la siguiente ventana.</p>
+
+	<p align=center><img src="../Imagenes/TelexNBDP ManualCalling.jpg"></p>
+
+	<p>En el campo Mode se configura el equipo como estación emisora (ISS) o como estación receptora (IRS). El modo se elige con las teclas de flecha. Cuando la comunicación es SELFEC se puede seleccionar ISS o IRS indistintamente.</p>
+
+	<p>En el campo ID se introduce manualmente el número de télex (Selcall) del equipo de la unidad con la que deseamos comunicar.</p>
+
+	<p>Pulsando la tecla Enter la ventana se cierra y el equipo queda configurado en el modo establecido. El Selcall introducido aparece en el campo Station Name del área de estado de la comunicación de la pantalla del equipo.</p>
+
+	<li>Comunicación entre dos estaciones. Si los radioteléfonos de ambas unidades están encendidos, en modo TLX, correctamente sintonizados, y dentro del alcance de las comunicaciones, se establece la conexión. En el área de estado de la comunicación, Connect aparece en video inverso.</li>
+
+	<p>Se presentará un aviso de error en los siguientes casos:</p>
+
+	<ul>
+		<li>si el número de télex introducido para la estación llamada no es correcto.</li>
+		<li>si el radioteléfono no está encendido, o no está en modo TLX.</li>
+		<li>si la frecuencia de recepción de un equipo es distinta de la frecuencia de transmisión del otro.</li>
+	</ul>
+
+	<p><b>En Modo ARQ</b></p>
+
+	<p>Una vez conectados los dos equipos, en el área de edición de la pantalla aparece la cabecera del mensaje.</p>
+
+	<table align=center>
+		<tr>
+			<td width=300 align=center><font size=2 face=arial><b>Cabecera en el equipo ISS</b></td>
+			<td width=300 align=center><font size=2 face=arial><b>Cabecera en el equipo IRS</b></td>
+		</tr>
+
+		<tr>
+			<td align=center><img src="../Imagenes/TelexNBDP CabeceraTelexISS.jpg"></td>
+			<td align=center><img src="../Imagenes/TelexNBDP CabeceraTelexIRS.jpg"></td>
+		</tr>
+
+	</table>
+
+	<p>Si la estación actúa como ISS, en el área de estado de la comunicación Send aparece en video inverso y se puede iniciar la comunicación escribiendo directamente desde el teclado en el área de edición de la pantalla. La información escrita se recibirá en el equipo de la estación receptora (IRS).</p>
+
+	<p>En la estación Emisora el texto escrito aparece en letras mayúsculas, y en la estación Receptora se muestra en letras minúsculas.</p>
+
+	<p>Además de la comunicación escrita, en modo ARQ también se pueden transmitir los mensajes guardados.</p>
+
+	<p>Seleccionando la opción Over del menú principal se puede cambiar la configuración de estación emisora a receptora. También puede realizarse esta operación escribiendo desde el teclado la combinación +?.</p>
+
+	<p>Seleccionando la opción Break del menú principal se termina la comunicación entre las dos estaciones.</p>
+
+	<p><b>En modo SELFEC</b></p>
+
+	<p>Una vez seleccionada la estación receptora se pueden transmitir mensajes, que serán recibidos si la unidad receptora se encuentra dentro del alcance de la comunicación, y tiene la misma frecuencia de recepción en la que se transmite el mensaje.</p>
+
+	<li>Transmitir un mensaje. Al seleccionar la opción File to Send se presenta una ventana con la lista de mensajes archivados.</li>
+
+	<p align=center><img src="../Imagenes/TelexNBDP TransmitirFichero.jpg"></p>
+
+	<p>Mediante las teclas de flecha el operador debe seleccionar el mensaje que desea transmitir y al pulsar la tecla Enter, el texto del mensaje aparece directamente sobre el área de edición de la pantalla como si se hubiera escrito directamente desde el teclado y se inicia la transmisión. El porcentaje de mensaje enviado se actualiza en el campo Sending Volume de la cabecera de la pantalla.</p>
+
+	<li>Cancelar la transmisión de un mensaje. Al seleccionar la opción Cancel Sending se cancela el mensaje que se está transmitiendo. Es posible cancelar el envío siempre que el porcentaje enviado que se muestra en el campo Sending Volume no haya alcanzado el 100%.</li>
+</ul>
+
+<p><b>Recepción de Mensajes</b></p>
+
+<p>Cuando se recibe un mensaje suena una alarma.</p>
+
+<p><b>Presentación de Answerback Durante la Comunicación.</b></p>
+
+<p>Al seleccionar la opción HRIS del menú principal se transmite el answerback propio. Al seleccionar la opción WRU del Menú Principal se solicita a la estación con la que se comunica, la transmisión de su answerback.</p>
+
+</div>
+
+</body>
+
+</html>

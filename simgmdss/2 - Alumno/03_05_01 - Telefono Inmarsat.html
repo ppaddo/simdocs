@@ -1,0 +1,175 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Teléfono Inmarsat</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p><i>Nota</i>: Para que el microteléfono funcione es necesario que tenga un número de teléfono asignado, sino lo tiene, al pulsar el botón “descolgar “ se muestra un error.</p>
+
+<p>En la opción Setup/ LES List, no se pueden introducir las LES, ya que el sistema registra automáticamente todas las LES que disponen de un equipo compatible.</p>
+
+<p>Para simular el teléfono Inmarsat la consola del simulador dispone de un teléfono real con conexión USB que se usa conjuntamente con el panel correspondiente al microteléfono simulado mimético del equipo Furuno FELCOM-82A. En el microteléfono simulado se presenta el estado de la comunicación y se marcan los números con los que se desea establecer conexión. La comunicación se realiza usando el teléfono real.</p>
+
+<p align=center><img width=300 src="../Imagenes/TelefonoInmarsat TelefonoUSB.jpg"></p>
+
+<p>Al encender el télex Inmarsat se enciende también el teléfono Inmarsat. Tras el encendido el microteléfono simulado presenta la Pantalla de Espera.</p>
+
+<p align=center><img width=200 src="../Imagenes/TelefonoInmarsat PantallaEspera.jpg"></p>
+
+<p>La Pantalla de Espera incluye la siguiente información:</p>
+
+<ul>
+	<li>Fecha y hora actual.</li>
+	<li>Nivel de señal representado por 3 barritas. Según el número de barritas presentadas el nivel puede ser: sin señal, débil, medio y fuerte.</li>
+	<li>Región oceánica en uso.</li>
+	<li>Estado de la comunicación. Cuando se presenta Ready es posible establecer llamadas.</li>
+</ul>
+
+<p><b>Establecimiento de llamadas</b></p>
+
+<p>Antes de iniciar una llamada verificar que existe nivel de señal suficiente y que el estado de la comunicación es Ready.</p>
+
+<p>Para iniciar la llamada descolgar el teléfono real con conexión USB. Al descolgarlo se presenta en el microteléfono simulado la Pantalla de Marcación.</p>
+
+<p align=center><img width=200 src="../Imagenes/TelefonoInmarsat PantallaMarcacion.jpg"></p>
+
+<p>Marcar en el microteléfono simulado el número con el que se desea comunicar. El formato del número a marcar depende del tipo de llamada a realizar:</p>
+
+<ul>
+	<li>Llamada a abonado terrestre: <i>LLL SS PP nnnnnnnnn</i> #</li>
+	<li>Llamada a una MES: <i>LLL SS RRR nnnnnnnnn</i> #</li>
+	<li>Llamada a operador: <i>LLL SS #</i></li>
+</ul>
+
+<p>Donde:</p>
+
+<p>
+	<i>LLL</i> Código de la LES a través de la que se realiza la llamada.<br>
+	<i>SS</i> Código de Servicio.<br>
+	<i>PP</i> Código de País.<br>
+	<i>nnnnnnnnn</i> Número de teléfono al que se desea llamar.<br>
+	<i>RRR</i> Código de región oceánica en la que se encuentra la MES llamada.<br>
+	<i>#</i> Código de fin de marcación.
+</p>
+
+<table align=center border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td colspan=4 align=center><font size=2 face=arial><b>Códigos de Región Oceánica</b></td>
+	</tr>
+
+	<tr>
+		<td align=center width=100><font size=2 face=arial>Atlántico-Este</td>
+		<td align=center width=100><font size=2 face=arial>Pacifico</td>
+		<td align=center width=100><font size=2 face=arial>Índico</td>
+		<td align=center width=100><font size=2 face=arial>Atlántico-Oeste</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>871</td>
+		<td align=center><font size=2 face=arial>872</td>
+		<td align=center><font size=2 face=arial>873</td>
+		<td align=center><font size=2 face=arial>874</td>
+	</tr>
+
+</table>
+<br>
+
+<table align=center border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td align=center width=40><font size=2 face=arial><b>Código</b></td>
+		<td align=center width=200><font size=2 face=arial><b>Servicio</b></td>
+		<td align=center width=40><font size=2 face=arial><b>Código</b></td>
+		<td align=center width=200><font size=2 face=arial><b>Servicio</b></td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>00</td>
+		<td><font size=2 face=arial>Automatic Call</td>
+		<td align=center><font size=2 face=arial>39</td>
+		<td><font size=2 face=arial>Maritime Assistance</td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>13</td>
+		<td><font size=2 face=arial>National Operator</td>
+		<td align=center><font size=2 face=arial>43</td>
+		<td><font size=2 face=arial>Ship Position Report</td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>31</td>
+		<td><font size=2 face=arial>Maritime Enquiries</td>
+		<td align=center><font size=2 face=arial></td>
+		<td><font size=2 face=arial>Warning International Info</td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>38</td>
+		<td><font size=2 face=arial>Medical Assistance</td>
+		<td align=center><font size=2 face=arial>23</td>
+		<td><font size=2 face=arial>Short Code Selection</td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial></td>
+		<td><font size=2 face=arial>NAV Hazard International Operator</td>
+		<td align=center><font size=2 face=arial>33</td>
+		<td><font size=2 face=arial>Technical Assistance</td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>12</td>
+		<td><font size=2 face=arial>International Info Service</td>
+		<td align=center><font size=2 face=arial>41</td>
+		<td><font size=2 face=arial>Meteorological Report</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>32</td>
+		<td><font size=2 face=arial>Medical Advices</td>
+		<td align=center><font size=2 face=arial>6(x)</td>
+		<td><font size=2 face=arial>Specialised Lines</td>
+	</tr>	
+	
+</table>
+
+<p>Al pulsar la tecla # se presenta en el microteléfono simulado la indicación de llamando (WAIT) junto con el número llamado si éste es correcto. Para que el número sea correcto además de tener el formato especificado anteriormente debe corresponder a unidades existentes en el ejercicio en ejecución (tanto la LES como la unidad llamada). En caso contrario se oirá en el teléfono real el tono correspondiente a error de marcación.</p>
+
+<p align=center><img width=200 src="../Imagenes/TelefonoInmarsat PantallaLlamando.jpg"></p>
+
+<p>Si se solicita un servicio a una costera que no está siendo controlada en ninguna consola, se presentará un aviso al instructor ofreciéndole la posibilidad de controlar dicha costera.</p>
+
+<p>Se presentará un aviso de error si se intenta utilizar un servicio que la LES seleccionada no ofrece. La lista de servicios ofrecidos por una LES se define durante la preparación de la LES y se muestra en la Pantalla de Control de Equipos de la consola que controla la LES.</p>
+
+<p>Una vez que el destinatario de la llamada contesta se presenta en el microteléfono simulado la indicación de llamada establecida (COMMUNICATION).</p>
+
+<p align=center><img width=200 src="../Imagenes/TelefonoInmarsat PantallaComunicacion.jpg"></p>
+
+<p>Si el destinatario de la llamada está ocupado en otra llamada, se presentará la indicación ocupado (BUSY).</p>
+
+<p align=center><img width=200 src="../Imagenes/TelefonoInmarsat PantallaOcupado.jpg"></p>
+
+<p>Para terminar la llamada colgar el teléfono con conexión USB. En el microteléfono simulado se presentará la Pantalla de Espera.</p>
+
+<p><b>Recepción de Llamadas</b></p>
+
+<p>El procedimiento de recepción de llamadas es el mismo que en un teléfono convencional. Al recibirse una llamada suena el timbre del teléfono real con conexión USB y tras descolgarlo se puede contestar la llamada. En el microteléfono simulado se presenta indicación de llamada entrante (RECEIVING).</p>
+
+<p align=center><img width=200 src="../Imagenes/TelefonoInmarsat PantallaRecibiendo.jpg"></p>
+
+<p>Para terminar la llamada colgar el teléfono con conexión USB. Si el destinatario de la llamada no cuelga se presentará en el microteléfono simulado la siguiente pantalla:</p>
+
+<p align=center><img width=200 src="../Imagenes/TelefonoInmarsat PantallaColgado.jpg"></p>
+
+</div>
+
+</body>
+
+</html>

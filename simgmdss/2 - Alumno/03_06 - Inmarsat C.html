@@ -1,0 +1,370 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Inmarsat C</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>Este panel es un mimético simulado del equipo Furuno FELCOM-15. Contiene los controles y la mayor parte de la funcionalidad del equipo real. En unidades equipadas también con terminal Inmarsat A o B, se presenta este panel pulsando el botón C que se encuentra junto al panel Inmarsat.</p>
+
+<p>La funcionalidad del equipo puede consultarse en su Manual de Operador que se adjunta como anexo. No está implementada la funcionalidad correspondiente a la opción Edit, ni parte de las funciones incluidas en las opciones Options y Setup del menú principal al ser características particulares del equipo que no son imprescindibles para su funcionamiento.</p>
+
+<p align=center><img src="../Imagenes/InmarsatC.jpg"></p>
+
+<p><b>Encendido del Terminal</b></p>
+
+<p>El terminal Inmarsat C se enciende pulsando el botón PWR. Tras el encendido se presenta la Pantalla de Espera que incluye la siguiente información:</p>
+
+<ul>
+	<li>Nivel de señal. Representado por un número de asteriscos entre cero (sin señal) y 8 (nivel máximo).</li><br>
+	
+	<li>Fecha y hora UTC actual.</li><br>
+	
+	<li>Satélite con el que se está conectado y estado de la comunicación. La comunicación no es posible hasta estar registrado en el sistema Inmarsat (ver proceso de Login).</li><br>
+	
+	<li>Datos de navegación de la unidad.</li>
+	
+</ul>
+
+<p align=center><img src="../Imagenes/InmarsatC PantallaEspera.jpg"></p>
+
+<p>La Pantalla de Espera también incluye el Menú Principal. Sus opciones pueden abrirse seleccionándolas mediante el ratón o pulsando las teclas de función F1 a F10.</p>
+
+<p><b>Gestión de Archivos de Mensajes</b></p>
+
+<p>El menú File contiene las opciones necesarias para crear, nombrar, archivar e imprimir mensajes.</p>
+
+<p align=center><img src="../Imagenes/InmarsatC MenuFile.jpg"></p>
+
+<p>Desde este menú es posible realizar las siguientes acciones:</p>
+
+<ul>
+	<li>· Crear un nuevo mensaje. Al seleccionar la opción New se presenta la Pantalla de Edición donde se puede escribir el texto del mensaje.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC PantallaEdicion.jpg"></p>
+
+	<li>Archivar el mensaje creado / editado. Mediante las opciones Close o Save es posible archivar el mensaje creado o editado. Con Close el texto del mensaje es eliminado de la Pantalla de Edición mientras que con Save el texto permanece.</li>
+
+	<p>Al utilizar Close se presenta la siguiente ventana donde el operador puede seleccionar si desea salvar el mensaje o no.</p>
+
+	<p align=center><img src="../Imagenes/InmarsatC CloseMensaje.jpg"></p>
+
+	<p>Si se selecciona YES en la anterior ventana o se usa la opción Save, la aplicación solicita la introducción del nombre del fichero presentando la siguiente ventana:</p>
+
+	<p align=center><img src="../Imagenes/InmarsatC SaveMensaje.jpg"></p>
+
+	<p>Tras introducir el nombre del fichero pulsar la tecla Enter.</p>
+
+	<li>Editar o consultar un mensaje archivado. Al seleccionar la opción Open se presenta la lista de mensajes archivados.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC ListaMensajes.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) seleccionar el mensaje y pulsar la tecla Enter. El texto del mensaje estará disponible en la Pantalla de Edición.</p>
+
+	<li>Borrar un mensaje archivado. Al seleccionar la opción Delete la aplicación solicita el nombre del mensaje a borrar.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC DeleteMensaje.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar el mensaje a borrar. Una vez seleccionado pulsar Enter y el mensaje será eliminado.</p>
+
+	<li>Renombrar un mensaje archivado. Al seleccionar la opción Rename la aplicación solicita el nombre del mensaje a renombrar.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC RenameMensaje.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar el mensaje. Una vez seleccionado escribir el nuevo nombre y pulsar Enter.</p>
+
+	<li>Imprimir un mensaje. Al seleccionar la opción Print la aplicación solicita el nombre del mensaje a imprimir.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC PrintMensaje.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar el mensaje. Una vez seleccionado pulsar Enter. El mensaje se imprimirá en la impresora asociada al terminal Inmarsat.</p>
+
+</ul>
+
+<p><b>Edición de texto de mensajes</b></p>
+
+<p>No se han implementado las opciones del menú Edit pero se puede cortar y pegar texto mediante las combinaciones de teclas Ctrl + X, Ctrl + C y Ctrl + V.</p>
+
+<p><b>Configuración del Terminal</b></p>
+
+<p>El menú Setup permite configurar la alerta de socorro. También incluye opciones para registrar los datos de estaciones costeras y unidades participantes en el ejercicio a través de la opción Configuration.</p>
+
+<table align=center>
+	<tr>
+		<td width=300><img src="../Imagenes/InmarsatC MenuSetup.jpg"></td>
+		<td width=300><img src="../Imagenes/InmarsatC Configuracion.jpg"></td>
+	</tr>
+</table>
+
+<p>Desde este menú es posible realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Registrar estaciones. Al seleccionar la opción Configuration - Station List se presenta la lista de estaciones.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC ListaEstaciones.jpg"></p>
+
+	<p>Con las teclas de flecha (abajo y arriba) se puede seleccionar la estación que se desea editar o consultar. Para introducir una nueva estación seleccionar una posición de la lista no ocupada. Al pulsar la tecla Enter se presenta la siguiente ventana donde se pueden introducir los datos de la estación:</p>
+
+	<p align=center><img src="../Imagenes/InmarsatC DatosEstacion.jpg"></p>
+
+	<p>Para cada estación se pueden introducir los siguientes datos:</p>
+
+	<ul>
+		<li>Station Group: Grupo al que pertenece la estación. Hasta 5 caracteres.</li><br>
+		
+		<li>Station Name: Nombre de la estación (hasta 15 caracteres).</li><br>
+		
+		<li>Destination Type: Tipo de comunicación. Se puede seleccionar uno de los siguientes tipos: Telex, Fax, E-Mail, CSDN (circuito de red conmutada de datos), PSDN (red de datos conmutada por paquetes), X400, DNID (ID de red de datos) y SPEC (servicios de seguridad con código especial de dos dígitos).</li><br>
+		
+		<li>Prefix Code. Código de 3 dígitos.</li><br>
+		
+		<li>Country Code: Código de País o Código de Región Oceánica en el caso de comunicación Telex o Fax.</li><br>
+		
+		<li>Station ID: Número de télex o número de fax de la unidad.</li><br>
+		
+		<li>Modem Type: Tipo de modem. Se puede seleccionar uno de los siguientes: T30, V21, V22,V22B, V23, V26B, V26T, V27T, V32 y Other.</li><br>
+		
+		<li>E-Mail Address: Dirección de correo electrónico.</li><br>
+		
+		<li>Remarks: Comentario de hasta 20 caracteres.</li><br>
+		
+	</ul>
+
+	<p>Para introducir un dato seleccionar el campo correspondiente con el ratón o pulsar la tecla Tabulación hasta situar el cursor en el campo deseado.</p>
+
+	<table align=center border=1 cellspacing=0 cellpadding=5>
+		<tr>
+			<td colspan=4 align=center><font size=2 face=arial><b>Códigos de Región Oceánica</b></td>
+		</tr>
+
+		<tr>
+			<td align=center width=100><font size=2 face=arial>Atlántico-Este</td>
+			<td align=center width=100><font size=2 face=arial>Pacifico</td>
+			<td align=center width=100><font size=2 face=arial>Índico</td>
+			<td align=center width=100><font size=2 face=arial>Atlántico-Oeste</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>581</td>
+			<td align=center><font size=2 face=arial>582</td>
+			<td align=center><font size=2 face=arial>583</td>
+			<td align=center><font size=2 face=arial>584</td>
+		</tr>
+
+	</table>
+
+	<p>Una vez introducidos o editados los datos de la estación pulsar Enter para salvar los cambios o Escape para abandonar la ventana sin salvar los datos. Para eliminar una estación de la lista editarla y borrar su nombre.</p>
+
+	<li>Registrar estaciones costeras. Al seleccionar la opción Configuration - LES List se presenta la lista de estaciones costeras.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC ListaLES.jpg"></p>
+
+	<p>Con las teclas de flecha se puede seleccionar la estación costera que se desea editar o consultar. Para introducir una nueva estación costera seleccionar una posición de la lista no ocupada. Al pulsar la tecla Enter se presenta la siguiente ventana donde se pueden introducir los datos de la estación costera: Nombre, Código (3 dígitos), Comentario y coste de sus servicios.</p>
+
+	<p align=center><img src="../Imagenes/InmarsatC DatosLES.jpg"></p>
+
+	<p>Una vez introducidos o editados los datos de la estación pulsar Enter para salvar los cambios o Escape para abandonar la ventana sin salvar los datos. Para eliminar una estación de la lista editarla y borrar su nombre.</p>
+
+	<li>Configurar el mensaje de socorro. El mensaje de socorro es posible configurarlo seleccionando la opción Distress Alert Setup. Al seleccionarla se presenta la siguiente ventana en la que se puede elegir la LES a la que enviar el mensaje y la naturaleza del peligro.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC ConfiguracionAlertaSocorro.jpg"></p>
+
+	<p>La LES a la que enviar la alerta puede seleccionarse con las teclas de flechas (arriba y abajo) a partir de la lista de LES previamente registradas. Se presentará un aviso de error si la LES seleccionada no está situada en la región Inmarsat en la que se encuentra la unidad.</p>
+
+	<p>La naturaleza del peligro puede seleccionarse también mediante las teclas de flecha.</p>
+
+</ul>
+
+<p><b>Transmisión de mensajes</b></p>
+
+<p>Las opciones del menú Transmit permiten el inicio y cancelación de la transmisión de un mensaje. Antes de transmitir un mensaje es necesario registrar los códigos de estaciones costeras y los números de télex de las unidades participantes en el ejercicio así como preparar y archivar el texto de los mensajes a transmitir.</p>
+
+<p align=center><img src="../Imagenes/InmarsatC MenuTransmit.jpg"></p>
+
+<p>Desde este menú es posible realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Transmitir un mensaje. Al seleccionar la opción Transmit Message se presenta la siguiente ventana donde se puede seleccionar el mensaje a transmitir y la unidad destinataria. Se accede a los diferentes campos de la ventana seleccionándolos con el ratón o pulsando la tecla Tabulación hasta situar el cursor sobre el campo deseado. En algunos campos se puede seleccionar su valor de una lista mediante las teclas de flecha (arriba y abajo).</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC TransmisionMensaje.jpg"></p>
+
+	<p>Para transmitir un mensaje es necesario realizar los siguientes pasos.</p>
+
+	<ul>
+		<li>Seleccionar la prioridad del mensaje (Routine, Safety, Urgent o Distress).</li><br>
+		
+		<li>Seleccionar el mensaje a transmitir de la lista de mensajes archivados.</li><br>
+		
+		<li>Seleccionar la estación destinataria de la lista de estaciones registradas. Al seleccionar una estación se presentará el tipo de comunicación y su número incluyendo código de país o región oceánica. Si la estación destinataria no está registrada puede introducirse su número y tipo de comunicación a través del teclado.</li><br>
+		
+		<li>Seleccionar la LES a utilizar para la transmisión del mensaje de la lista de estaciones costeras registradas.</li><br>
+		
+		<li>Seleccionar las opciones del envío: con o sin confirmación y envío inmediato o diferido. En este último caso se introducirá el tiempo de retraso en minutos.</li>
+		
+	</ul>
+
+	<p>Una vez introducidos los datos, seleccionar [TRANSMIT] y pulsar Enter. El mensaje se transmitirá a la estación costera seleccionada que lo retransmitirá a la estación destinataria.</p>
+
+	<li>Cancelar la Transmisión de un mensaje. Al seleccionar la opción Cancel se presenta la lista de los mensajes aún no completamente transmitidos. La lista presenta el nombre del archivo en transmisión, el número de la unidad destinataria, la LES a través de la que se realiza la transmisión, la prioridad y el estado de la transmisión. El estado puede ser uno de los siguientes: Waiting (en espera de transmisión) y Sending (en transmisión).</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC CancelarTransmision.jpg"></p>
+
+	<p>Mediante las teclas de flecha seleccionar el mensaje cuya transmisión se desea cancelar. Pulsar Enter y la aplicación pedirá confirmación para la cancelación de la transmisión.</p>
+
+	<p align=center><img src="../Imagenes/InmarsatC ConfirmacionCancelacion.jpg"></p>
+
+</ul>
+
+<p><b>Listado de mensajes transmitidos o recibidos</b></p>
+
+<p>El menú Logs contiene las opciones necesarias para presentar el listado de los mensajes enviados, recibidos o mensajes EGC.</p>
+
+<p align=center><img src="../Imagenes/InmarsatC MenuLogs.jpg"></p>
+
+<p>Desde este menú es posible realizar las siguientes acciones:</p>
+
+<ul>
+	<li>· Listar los mensajes transmitidos. Al seleccionar la opción Send Message Log se presenta el listado de los mensajes transmitidos. La lista presenta el nombre del archivo en transmisión, el número de la unidad destinataria, la LES a través de la que se realiza la transmisión, la prioridad y el estado de la transmisión.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC ListadoMensajesTransmitidos.jpg"></p>
+
+	<p>El estado de transmisión se presenta mediante dos campos Status y Delivery:</p>
+
+	<p>Status presenta el estado de la transmisión. Puede ser uno de los siguientes:</p>
+
+	<ul>
+		<li>Waiting: Mensaje en espera.</li>
+		<li>Sending: Mensaje en transmisión.</li>
+		<li>Cancel: Transmisión del mensaje cancelada.</li>
+		<li>Fecha y hora del envío si éste se ha realizado.</li>
+	</ul>
+
+	<p>Delivery presenta el estado de entrega al destinatario. Puede ser uno de los siguientes:</p>
+
+	<ul>
+		<li>Complete: mensaje transmitido satisfactoriamente.</li>
+		<li>En blanco: no se ha recibido todavía información de la entrega.</li>
+		<li>OCC(002): entrega intentada (dos veces); destinatario ocupado.</li>
+		<li>ABS: destinatario ausente.</li>
+		<li>BK: mensaje abortado.</li>
+		<li>BMC: no se ha recibido fin de mensaje o de transmisión.</li>
+		<li>DER: fuera de servicio.</li>
+		<li>DTE: corte de la DTE remota.</li>
+		<li>EOS: servicio no contratado (E-mail).</li>
+		<li>FMT: error de formato.</li>
+		<li>IAB: answerback no válido.</li>
+		<li>INC: solicitud no definida (E-mail).</li>
+		<li>INF: llamar al servicio de información de la red.</li>
+		<li>INV: llamada no válida.</li>
+		<li>ITD: esperando la entrega.</li>
+		<li>LDE: excedida la máxima longitud de mensaje.</li>
+		<li>LPE: error de procedimiento local.</li>
+		<li>NA: acceso bloqueado.</li>
+		<li>NC: congestión de la red.</li>
+		<li>NCH: el número del destinatario ha cambiado.</li>
+		<li>NP: no obtenible.</li>
+		<li>NRC: cobro revertido no aceptado por el destinatario.</li>
+		<li>RIS: destinatario mal especificado (E-mail).</li>
+		<li>RDI: llamada desviada.</li>
+		<li>RPE: error de procedimiento remoto.</li>
+		<li>RSB: todavía se intenta la retransmisión.</li>
+		<li>TMD: excedido el número máximo de direcciones.</li>
+		<li>UNK: estado desconocido.</li>
+	</ul>
+
+	<p>Mediante las teclas de flecha es posible seleccionar un mensaje de la lista. Al pulsar Enter se presenta una ventana con el contenido del mensaje.</p>
+
+	<p align=center><img src="../Imagenes/InmarsatC DetalleMensaje.jpg"></p>	
+
+	<li>Listar los mensajes recibidos. Al seleccionar la opción Receive Message Log se presenta el listado de los mensajes recibidos. Para cada uno de los mensajes la lista presenta el número asignado al mensaje recibido (combinando la fecha y hora de recepción), la LES a través de la que se realiza la transmisión, la prioridad, el tamaño del mensaje, la fecha y hora de recepción y el estado (impreso, salvado o en blanco).</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC ListadoMensajesRecibidos.jpg"></p>
+
+	<p>Mediante las teclas de flecha es posible seleccionar un mensaje de la lista. Al pulsar Enter se presenta una ventana con el contenido del mensaje.</p>
+
+	<p align=center><img src="../Imagenes/InmarsatC MensajeRecibido.jpg"></p>
+
+	<li>Listar los mensajes EGC recibidos. Al seleccionar la opción EGC Log se presenta el listado de los mensajes EGC recibidos. Para cada uno de los mensajes la lista presenta el número asignado al mensaje recibido (combinando la fecha y hora de recepción), la LES a través de la que se realiza la transmisión, la prioridad, el tamaño del mensaje, la fecha y hora de recepción y el tipo de mensaje.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC ListadoMensajesEGC.jpg"></p>
+
+	<p>Mediante las teclas de flecha es posible seleccionar un mensaje de la lista. Al pulsar Enter se presenta una ventana con el contenido del mensaje.</p>
+
+	<p align=center><img src="../Imagenes/InmarsatC MensajeEGC.jpg"></p>
+
+	<p>Mediante las teclas de flecha (derecha e izquierda) es posible presentar el siguiente o el anterior mensaje en la lista.</p>
+
+</ul>
+
+<p><b>Recepción de mensajes</b></p>
+
+<p>Cuando se recibe un mensaje de télex o de correo electrónico suena una alarma. Se presenta la lista de mensajes recibidos y el mensaje se imprime en la impresora correspondiente al terminal Inmarsat. La alarma puede silenciarse seleccionando la opción Alarm del menú principal.</p>
+
+<p>El sistema almacena los mensajes recibidos o transmitidos por lo que el mensaje recibido puede consultarse posteriormente siguiendo el procedimiento descrito en el punto anterior.</p>
+
+<p><b>Recepción de mensajes EGC</b></p>
+
+<p>El menú EGC permite acceder a los mensajes EGC recibidos:</p>
+
+<p align=center><img src="../Imagenes/InmarsatC MenuEGC.jpg"></p>
+
+<p>Seleccionando la opción Display EGC Message se presenta la ventana con el contenido del último mensaje EGC recibido. La ventana es la descrita en el punto correspondiente al Listado de Mensajes EGC Recibidos.</p>
+
+<p>En la recepción de mensajes EGC la alarma solo suena si el mensaje es urgente o de socorro.</p>
+
+<p><b>Opciones</b></p>
+
+<p>El menú Options contiene las opciones que permiten controlar el registro de la estación en el sistema Inmarsat.</p>
+
+<p align=center><img src="../Imagenes/InmarsatC MenuOptions.jpg"></p>
+
+<p>Desde este menú es posible realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Login. Al seleccionar la opción Login se inicia el proceso para registrar la estación en el sistema Inmarsat. Es necesario estar registrado en el sistema Inmarsat para poder realizar comunicaciones Inmarsat. Mientras dura este proceso se presenta la siguiente ventana.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC InicioLogin.jpg"></p>
+
+	<p>Tras pocos segundos termina el proceso de Login presentándose en la zona inferior de la Pantalla de Espera el texto Successful Login y el texto Login junto a los datos de la NCS. El estado de Login se mantiene hasta realizar Logout aunque se apague el terminal o se cambie de región oceánica.</p>
+
+	<p>Se presentará un aviso de error si al comenzar el proceso, no hay NCS seleccionada o la estación no está sincronizada con la NCS (se presenta el texto UNSYNC en la zona inferior de la Pantalla de Espera). En este caso, seleccionar la región oceánica adecuada a la posición de la unidad (o seleccionar la opción Auto) y volver a intentarlo.</p>
+
+	<p>Al comenzar el juego las unidades que actúen como estaciones costeras se iniciarán en estado de login y no podrán realizar logout.</p>
+
+	<li>Logout. Al seleccionar la opción Logout se inicia el proceso para poner la estación como inactiva en el sistema Inmarsat. Es conveniente utilizar esta opción cuando no se va a utilizar el terminal durante un periodo prolongado de tiempo. Mientras dura este proceso se presenta la siguiente ventana.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC InicioLogout.jpg"></p>
+
+	<p>Tras pocos segundos termina el proceso de Logout presentándose en la zona inferior de la Pantalla de Espera el texto Successful Logout y el texto Logout junto a los datos de la NCS.</p>
+
+	<li>· Seleccionar la NCS. Al seleccionar la opción Ocean Region se presenta la siguiente ventana en la que se puede seleccionar la NCS con la que queremos conectarnos. Si se selecciona Auto el sistema seleccionará la NCS en función de la posición de la unidad.</li>
+
+	<p align=center><img src="../Imagenes/InmarsatC RegionOceanica.jpg"></p>
+
+	<p>Una vez seleccionada la NCS verificar el estado de sincronismo de la estación. Si en la zona inferior de la Pantalla de Espera se presenta el texto UNSYNC es necesario seleccionar otra NCS.</p>
+
+</ul>
+
+<p><b>Comunicaciones de Socorro</b></p>
+
+<p>Para transmitir una alerta de socorro mantener pulsado durante al menos 4 segundos el botón Distress del terminal. El mensaje de socorro será enviado automáticamente a la LES seleccionada en los datos de configuración del mensaje de socorro (ver el apartado Configurar el mensaje de socorro). Si se dispone de tiempo se puede seleccionar en dichos datos la naturaleza del peligro antes de enviar la alerta.</p>
+
+<p>El mensaje de socorro se reenvía periódicamente hasta que se pulsa el botón DSTRS Off del menú principal.</p>
+
+<p>Cuando se recibe el acuse de recibo desde la estación costera se presenta Distress Acknowledgement Received en la zona superior de la pantalla del terminal.</p>
+
+<p>También es posible preparar y enviar un mensaje de socorro con más información que la proporcionada en la alerta siguiendo el procedimiento descrito en el apartado Transmitir un Mensaje. Solo es necesario seleccionar como prioridad Distress, seleccionar el archivo con el mensaje de socorro y seleccionar la LES a la que se le quiere enviar el mensaje.</p>
+
+<p>En la unidad que recibe el mensaje suena una alarma y el botón C del panel inmarsat parpadea. Pulsando el botón DSTRS Off o Alarm del menú principal se detiene la alarma y el parpadeo.</p>
+
+</div>
+
+</body>
+
+</html>

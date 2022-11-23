@@ -1,0 +1,119 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Alcance de las Comunicaciones</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p><b>Alcance de Comunicaciones VHF y UHF.</b></p>
+
+<p>El alcance de las comunicaciones en VHF y UHF será el horizonte radar indicado por la formula:</p>
+
+<p><font size=2 face=courier>Alcance = cte_rhr * (H1<sup>1/2</sup> + H2<sup>1/2</sup>) * Factor de Propagación</font></p>
+ 
+<p>Donde el alcance viene dado en millas náuticas, H1 y  H2 son las alturas (en pies) de instalación de las antenas correspondientes a los equipos radio que se comunican, la constante <i>cte_rhr</i> es 1.23 y el <i>Factor de Propagación</i> se define en el fichero de configuración con valor por defecto 1.5.</p>
+
+<p>Si se introducen las alturas H1 y H2 en metros, el alcance también se obtiene en metros, utilizando los siguientes factores de conversión:</p>
+
+<p><font size=2 face=courier>
+	cte_rhr = 1,23 *  millas_metros * metros_pies1/2<br>
+	millas_metros = 1852.0 metros / millas<br>
+	metros_pies = (1 / 0.3048) pies / metros<br>
+</font>
+</p>
+
+<p><b>Alcance de Comunicaciones MF/HF.</b></p>
+
+<p>El alcance de las comunicaciones en MF/HF depende de la banda de frecuencia, de la potencia y de la hora de emisión. Se utiliza la siguiente tabla de distancias (en millas) como alcance nominal de una transmisión realizada a máxima potencia.</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td align=center width=160 rowspan=2><font size=2 face=arial><b>Banda</b></td>
+		<td align=center colspan=2><font size=2 face=arial><b>Día (de 7 AM a 7 PM)</b></td>
+		<td align=center colspan=2><font size=2 face=arial><b>Noche (de 7 PM a 7 AM)</b></td>
+	</tr>
+
+	<tr>
+		<td align=center width=100><font size=2 face=arial><b>Directa</b></td>
+		<td align=center width=100><font size=2 face=arial><b>Reflejada</b></td>
+		<td align=center width=100><font size=2 face=arial><b>Directa</b></td>
+		<td align=center width=100><font size=2 face=arial><b>Reflejada</b></td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>500 Hz – 3 MHz</td>
+		<td align=center><font size=2 face=arial>0 a 200</td>
+		<td align=center><font size=2 face=arial>NO</td>
+		<td align=center><font size=2 face=arial>0 a 200</td>
+		<td align=center><font size=2 face=arial>200 a 400</td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>3 MHz – 5 MHz</td>
+		<td align=center><font size=2 face=arial>0 a 400</td>
+		<td align=center><font size=2 face=arial>NO</td>
+		<td align=center><font size=2 face=arial>0 a 100</td>
+		<td align=center><font size=2 face=arial>100 a 2000</td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>5 MHz – 7 MHz</td>
+		<td align=center><font size=2 face=arial>0 a 600</td>
+		<td align=center><font size=2 face=arial>NO</td>
+		<td align=center><font size=2 face=arial>0 a 75</td>
+		<td align=center><font size=2 face=arial>200 a 4000</td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>7 MHz – 10 MHz</td>
+		<td align=center><font size=2 face=arial>0 a 50</td>
+		<td align=center><font size=2 face=arial>200 a 1500</td>
+		<td align=center><font size=2 face=arial>0 a 50</td>
+		<td align=center><font size=2 face=arial>> 200</td>
+	</tr>
+		
+	<tr>
+		<td align=center><font size=2 face=arial>10 MHz – 14 MHz</td>
+		<td align=center><font size=2 face=arial>0 a 25</td>
+		<td align=center><font size=2 face=arial>500 a 3500</td>
+		<td align=center><font size=2 face=arial>0 a 25</td>
+		<td align=center><font size=2 face=arial>NO</td>
+	</tr>
+		
+	<tr>
+		<td align=center><font size=2 face=arial>14 MHz – 19 MHz</td>
+		<td align=center><font size=2 face=arial>0 a 20</td>
+		<td align=center><font size=2 face=arial>750 a 7000</td>
+		<td align=center><font size=2 face=arial>0 a 20</td>
+		<td align=center><font size=2 face=arial>NO</td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>19 MHz – 27.5 MHz</td>
+		<td align=center><font size=2 face=arial>0 a 15</td>
+		<td align=center><font size=2 face=arial>> 1000</td>
+		<td align=center><font size=2 face=arial>0 a 15</td>
+		<td align=center><font size=2 face=arial>NO</td>
+	</tr>
+	
+</table>
+
+<p>Se considera que el alcance efectivo de una transmisión es un 10% superior al alcance nominal en propagación directa.</p>
+
+<p>Para transmisiones realizadas a potencia media, el alcance se reduce a la mitad y si la potencia es baja el alcance se reduce a la cuarta parte.</p>
+
+<p><b>Alcance de las comunicaciones por satélite.</b></p>
+
+<p>Se considera alcance ilimitado por distancia.</p>
+
+</div>
+
+</body>
+
+</html>

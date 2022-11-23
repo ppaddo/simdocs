@@ -1,0 +1,101 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Guía rápida para Terminal NBDP</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p align=center><img width=600 src="../Imagenes/TelexNBDP.jpg"></p>
+
+<p><b>Llamada Manual</b></p>
+
+<p>Procedimiento para estable align=centercer una llamada manual entre dos unidades con el terminal NBDP:</p>
+
+<ul>
+	<li>En primer lugar hay que encender la radio MF de las dos unidades en modo Telex como se especifica a continuación:</li><br>
+
+	<ul>
+		<li>Encender la radio MF de las dos unidades (Triana y Gernika), pulsando el botón POWER.</li>
+
+		<p align=center><img width=600 src="../Imagenes/FS-1570.jpg"></p>
+
+		<li>Girar el selector situado sobre el botón POWER para desplazar la marca de selección por la pantalla y seleccionar el primer campo de la línea MODE: (el que aparece marcado en la figura).</li><br>
+		
+		<li>Sin cambiar la posición, presionar el selector para mostrar los modos posibles.</li>
+
+		<p align=center><img width=60 src="../Imagenes/Guia MF Selector.jpg"></p>
+		
+		<p align=center><img width=250 src="../Imagenes/Guia NBDP Modos.jpg"></p>
+		
+		<li>Girar de nuevo el selector para seleccionar TLX y presionar (sin cambiar la posición) para aceptar el modo TLX.</li>
+		
+		<p><i>Nota</i>: El procedimiento para mover el selector del equipo software se describe en la Nota1 del apartado Radioteléfono MF / Fonía.</p>
+
+	</ul>
+
+	<li>Encender el terminal NBDP de las dos unidades (Triana y Gernika) pulsando el botón PWR y aparecerá la pantalla de espera con el menú principal.</li><br>
+
+	<p align=center><img width=600 src="../Imagenes/Guia NBDP Espera.jpg"></p>
+
+	<li>Cambiar en ambas unidades el modo de recepción de mensajes a ARQ:</li><br>
+
+	<ul>
+		<li>Seleccionar con el cursor la opción Manual Reception del menú Operate.</li>
+
+		<p align=center><img width=200 src="../Imagenes/Guia NBDP Reception.jpg"></p>
+
+		<li>En la ventana que se muestra seleccionar YES y pulsar la tecla Enter.</li>
+
+		<p align=center><img width=250 src="../Imagenes/Guia NBDP Change.jpg"></p>
+
+		<li>En la ventana Comm Mode seleccionar ARQ con las teclas de flecha y pulsar la tecla Enter.</li>
+
+		<p align=center><img width=200 src="../Imagenes/Guia NBDP ARQ.jpg"></p>
+
+	</ul>
+
+	<li>Definir una unidad como receptora y otra como transmisora:</li><br>
+
+	<ul>
+		<li>Unidad Receptora - seleccionar con el cursor la opción Manual Calling del menú Operate y en la ventana que se muestra seleccionar el modo IRS e introducir el número SellCall de la unidad trasmisora.</li><br>
+
+		<p align=center><img width=200 src="../Imagenes/Guia NBDP SellCall.jpg"></p>
+
+		<li>Unidad Trasmisora - seleccionar con el cursor la opción Manual Calling del menú Operate y en la ventana que se muestra seleccionar el modo ISS e introducir el número SellCall de la unidad receptora.</li><br>
+		
+	</ul>
+
+	<p>Ejemplo:</p>
+
+	<table>
+		<tr>
+			<td width=200 valign=top><font size=2 face=arial>Unidad Receptora - Gernika</td>
+			<td width=200 valign=top><font size=2 face=arial>Mode: IRS<br>ID: 08003</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>Unidad Emisora - Triana</td>
+			<td><font size=2 face=arial>Mode: ISS<br>ID: 08002</td>
+		</tr>
+	</table>
+	<br>
+
+	<li>Una vez definidas las unidades receptora y transmisora, se estable align=centerce comunicación entre ellas, de manera que en el área de edición de la pantalla de la unidad receptora se muestra el texto que se escribe desde el área de edición de la unidad transmisora.</li><br>
+
+	<li>Cuando el emisor teclea +?, la unidad receptora pasa a ser transmisora y viceversa.</li><br>
+
+	<li>Para terminar la comunicación se pulsa la opción de menú Break o la tecla F10.</li>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>

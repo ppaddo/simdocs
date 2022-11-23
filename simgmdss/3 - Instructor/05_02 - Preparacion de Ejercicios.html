@@ -1,0 +1,308 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Preparación de Ejercicios</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>La preparación de un ejercicio se realiza en dos pasos. Inicialmente se crea el nuevo ejercicio definiendo su nombre, fecha y hora de inicio y una vez creado se le asignan las consolas, escenarios y unidades que componen el ejercicio.</p>
+
+<p>El ejercicio se crea como cualquier otro modelo básico, seleccionando la opción Simulación &rarr; Ejercicios en el menú de la ventana de Preparación de Modelos y pulsando el botón Nuevo para abrir la ventana de creación de ejercicios.</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosEjercicio.jpg"></p>
+
+<p>En esta ventana se definen los siguientes datos:</p>
+
+<p><b>Nombre</b>: Nombre del ejercicio.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos</p>
+</ul>
+
+<p><b>Fecha</b>: Fecha de Inicio del Ejercicio.</p>
+
+<ul>
+	<p><u>Unidades</u>: DD-MM-AAAA</p>
+	<p><u>Rango</u>: 00-31 (DD) 00-12 (MM) 1971-2037 (AAAA)</p>
+</ul>
+
+<p><b>Hora Local</b>: Hora de Inicio del Ejercicio. Debe indicarse la hora local.</p>
+
+<ul>
+	<p><u>Unidades</u>: HH:MM:SS</p>
+	<p><u>Rango</u>: 00-23 (HH) 00-59 (MM) 00-59 (SS)</p>
+</ul>
+
+<p><b>Diferencia Horaria</b>: Indica el desfase horario de la hora local respecto a la GMT. El operador puede modificar este desfase para adaptar la hora local a la zona horaria en la que el ejercicio tenga lugar.</p>
+
+<p>Al pulsar Aceptar se crea un nuevo ejercicio que se añade, como los demás modelos básicos, a la lista de ejercicios de la ventana de Preparación de Modelos, pero además también se añade a la ventana de Preparación de Ejercicios, donde el operador puede añadir consolas, escenario y unidades para completar la configuración del nuevo ejercicio.</p>
+
+<p>Como se puede ver en la siguiente figura, los elementos que se van añadiendo al ejercicio aparecen en la ventana de Preparación de Ejercicios formando una estructura en árbol que permite mostrar y ocultar los elementos que se agrupan en cada una de las ramas, pulsando el botón "+" (para mostrar) o "–" (para ocultar) que aparece a la izquierda de cada una de ellas.</p>
+
+<p align=center><img width=300 src="../Imagenes/PreparacionEjercicios.jpg"></p>
+
+<p>En esta ventana, además de la lista de ejercicios, se puede presentar la lista de Escenarios y Unidades que se han creado, pulsando respectivamente los botones Ejercicios, Escenarios y Unidades en la barra de botones situada encima de la lista.</p>
+
+<p>El operador puede introducir caracteres en el campo Filtro, para que en la lista sólo se muestren los elementos que contengan estos caracteres. Pulsando el botón Limpiar se vuelven a mostrar todos los elementos de la lista.</p>
+
+<p>Para configurar el ejercicio con todos los elementos necesarios, hay que pulsar el botón Ejercicios y seguir el procedimiento que se describe a continuación:</p>
+
+<ul>
+	<li><b>Asignación de consolas al ejercicio</b>. En la ventana de Preparación de Ejercicios, se selecciona el ejercicio que se va a preparar y en la ventana de Preparación de Modelos se presenta la lista de consolas. Se selecciona una consola en la lista y se pulsa el botón Añadir. Una vez añadida la primera consola, en la estructura del ejercicio en preparación aparece el apartado Consolas y bajo él se muestra la consola incorporada. Este proceso debe repetirse para añadir todas las consolas que intervengan en el ejercicio.</li><br>
+
+	<li><b>Configuración de las consolas (instructor o alumno)</b>. En la ventana de Preparación de Ejercicios, se selecciona la consola, se pulsa el botón Edición y en la ventana que aparece se puede configurar la consola como instructor, marcando la casilla Instructor habilitado o como alumno, no quitando la marca de dicho campo.</li><br>
+
+	<li><b>Asignación de escenario al ejercicio</b>. En la ventana de Preparación de Ejercicios, se selecciona el ejercicio que se va a preparar y en la ventana de Preparación de Modelos se presenta la lista de escenarios. Se selecciona un escenario y se pulsa el botón Añadir. Una vez añadido el escenario, en la estructura del ejercicio en preparación aparece el apartado Escenario y bajo él se muestra el escenario incorporado.</li>
+
+	<p>Sólo se puede incluir un escenario en cada ejercicio, de manera que si se añade otro escenario al ejercicio, éste último sustituye al anterior.</p>
+
+ 	<li><b>Asignación de elementos del escenario</b> (zonas meteorológicas, mapas de viento…). En la ventana de Preparación de Ejercicios, se selecciona el escenario del ejercicio que se va a preparar y en la ventana de Preparación de Modelos se presenta la lista correspondiente al elemento que se desea añadir. Se selecciona dicho elemento y se pulsa el botón Añadir. El elemento seleccionado aparece en la estructura del ejercicio en el apartado Escenario.</li>
+
+	<p>Este proceso debe repetirse para añadir todos los tipos de elementos del escenario que requiera el ejercicio.</p>
+
+ 	<li><b>Asignación de unidades al ejercicio</b>. En la ventana de Preparación de Ejercicios, se selecciona el ejercicio que se va a preparar y en la ventana de Preparación de Modelos se presenta la lista de unidades. Se selecciona una unidad y se pulsa el botón Añadir. Una vez añadida la primera unidad, en la estructura del ejercicio en preparación aparece el apartado Unidades y bajo él se muestra la unidad incorporada.</li>
+
+	<p>También es posible añadir unidades a un ejercicio haciendo clic con el ratón sobre una unidad de otro ejercicio y arrastrándola hasta el ejercicio al que se quiera añadir.</p>
+
+	<p><i>Nota</i>: Para añadir unidades móviles al ejercicio, es necesario que dicha unidades tengan una plataforma asociada. La asignación de plataforma a las unidades se describe más adelante (ver "Preparación de unidades" al final de este apartado).</p>
+
+	<li><b>Asignación de unidades a consolas</b>. En la ventana de Preparación de Ejercicios, se selecciona la consola que se va a preparar y en la ventana de Preparación de Modelos se presenta la lista de unidades. Se selecciona una unidad y se pulsa el botón Añadir. La unidad añadida aparece en la estructura del ejercicio debajo de la consola correspondiente. También es posible añadir las unidades arrastrándolas desde la lista de unidades del ejercicio.</li>
+
+	<p>La asignación de unidades a Consola no es necesaria, pero si se hace, cuando se inicie el ejercicio, la consola que tenga asignada unidades sólo podrá controlar las unidades asignadas.</p>
+ 
+ 	<li><b>Definición de las condiciones iniciales de las unidades</b>. En la ventana de Preparación de Ejercicios, se selecciona la unidad, se pulsa el botón Edición y en la ventana que aparece se puede introducir la posición, altura, heading, velocidad y ruta(*) para la unidad seleccionada. La posición puede ser introducida manualmente o situando el Hook en la posición deseada y pulsando el botón Hook. También se puede situar la unidad arrastrando su símbolo en la Presentación Cartográfica hasta la posición deseada.</li>
+
+	<p>Si se marca la casilla Ambientación la unidad se pueda filtrar durante la ejecución del ejercicio con la finalidad de que la presentación de las unidades en el área de datos de la ventana de ejecución sea más clara. Generalmente llevarán esta marca aquellas unidades que no sean de mucho interés para el ejercicio.</p>
+
+	<p align=center><img width=300 src="../Imagenes/Condiciones Iniciales.jpg"></p>
+ 
+	<p>(*)Sólo se puede asignar ruta a las unidades que tengan plataformas de tipo Buque Simple para el resto de las unidades el campo ruta estará desactivado.</p>
+
+	<p>Al desplegar el campo Ruta aparecen todas las rutas disponibles en el ejercicio y se puede seleccionar cualquiera de ellas para asignarla a la unidad. A continuación se indicará un punto de la ruta y la fecha y hora a la que la unidad iniciará la ruta dirigiéndose al punto indicado.</p>
+
+	<p>Para salvar los datos introducidos se pulsa Aceptar y para descartarlos Cerrar.</p>
+
+	<li><b>Asignación de equipos a las unidades</b>. n la ventana de Preparación de Ejercicios, se selecciona una unidad y en la ventana de Preparación de Modelos se presenta la lista de equipos de comunicación (o de sensores u otras). Se selecciona uno de los equipos que debe llevar la unidad y se pulsa el botón Añadir. Una vez añadido el equipo, en la estructura del ejercicio en preparación, en el apartado correspondiente a la unidad aparece el apartado Comunicaciones (o Sensores o Misceláneos) y bajo él se muestra el equipo que se ha incorporado a la unidad. Este proceso debe repetirse para añadir todos los equipos a la unidad. También es posible asignar un equipo a una unidad, arrastrándolo desde otra unidad que lo tenga asignado.</li>
+
+	<p>Solo puede asignarse a la unidad un equipo de cada tipo. Las unidades fijas no deben llevar baterías.</p>
+
+	<li><b>Configuración de los equipos instalados</b>. Una vez asignado los equipos a las unidades es necesario definir ciertos datos específicos de la instalación de un equipo en la unidad, como por ejemplo altura de antena del equipo. Para ello, en la ventana de Preparación de Ejercicios, se selecciona el equipo, se pulsa el botón Edición y en la ventana que aparece se pueden introducir sus datos de instalación.</li>
+
+	<p>Para salvar los datos introducidos se pulsa Aceptar y para descartarlos Cerrar.</p>
+
+	<p>A continuación se describen las ventanas de configuración de equipos.</p>
+
+	<ul>
+
+		<p><b>Configuración del Radar</b></p>
+
+		<p>La ventana de configuración del radar tiene tres solapas distintas y en cada una de ella se configuran diferentes parámetros del equipo:</p>
+
+		<p>Solapa <b>General</b>:</p>
+
+		<p align=center><img width=300 src="../Imagenes/ConfigurarRadarAntena.jpg"></p>
+
+		<p><b>Altura de Antena</b>: Altura a la que se instala la antena del equipo. Se utiliza para determinar el alcance del equipo.</p>
+
+		<ul>
+			<p><u>Unidades</u>: metros</p>
+			<p><u>Rango</u>: 0 - 100.00</p>
+		</ul>
+
+		<p>Solapa <b>Sector Principal</b></p>
+
+		<p align=center><img width=300 src="../Imagenes/ConfigurarRadarSecPr.jpg"></p>
+
+		<p>En esta ventana se define el sector de detección del radar con los siguientes datos:</p>
+
+		<p><b>Orientación</b>: Orientación del centro del sector principal del radar.</p>
+
+		<ul>
+			<p><u>Unidades</u>: grados</p>
+			<p><u>Rango</u>: 0 - 359</p>
+		</ul>
+
+		<p><b>Abertura</b>: Amplitud del sector.</p>
+
+		<ul>
+			<p><u>Unidades</u>: grados</p>
+			<p><u>Rango</u>: 0 - 360</p>
+		</ul>
+
+		<p>Solapa <b>Sectores Ocultos</b></p>
+
+		<p align=center><img width=300 src="../Imagenes/ConfigurarRadarSecOc.jpg"></p>
+
+		<p>En los sectores que se definen en esta ventana el radar no detecta.</p>
+
+		<p>Los sectores definidos son los que aparecen en la lista en color amarillo.</p>
+
+		<p>Para incluir un sector en la lista se pulsar el botón Añadir, se introducen los datos del sector en los campos Orientación y Abertura y a continuación se pulsa el botón Actualizar.</p>
+
+		<p>Para modificar un sector, se selecciona el sector en la lista se introducen los datos del sector en los campos Orientación y Abertura y a continuación se pulsa el botón Actualizar.</p>
+
+		<p>Para eliminar un sector, se selecciona el sector en la lista y a continuación se pulsa el botón Eliminar.</p>
+ 
+ 		<p><b>Configuración de la Sonda, el Sonar y la Corredera</b></p>
+
+		<p align=center><img width=300 src="../Imagenes/ConfigurarSonda.jpg"></p>
+
+		<p>En esta ventana se establece la posición del equipo tomando como origen de referencia el centro del buque tal como se muestra en la siguiente figura:</p>
+
+		<p align=center><img width=300 src="../Imagenes/ConfigurarSondaEsquema.jpg"></p>
+
+		<p><b>Configuración del GPS</b></p>
+
+		<p align=center><img width=300 src="../Imagenes/ConfigurarGPS.jpg"></p>
+
+		<p><b>Max. error pos.</b>: Error máximo del equipo en para la posición.</p>
+
+		<ul>
+			<p><u>Unidades</u>: metros</p>
+			<p><u>Rango</u>: 0 - 100.0</p>
+		</ul>
+
+		<p><b>Max. error vel.</b>: Error máximo del equipo en para la velocidad.</p>
+
+		<ul>
+			<p><u>Unidades</u>: nudos</p>
+			<p><u>Rango</u>: 0 - 100.0</p>
+		</ul>
+
+		<p><b>Tiempo búsqueda</b>: Tiempo de búsqueda del satélite.</p>
+
+		<ul>
+			<p><u>Unidades</u>: segundos</p>
+			<p><u>Rango</u>: 1- 60</p>
+		</ul>
+
+		<p><b>Configuración del Radiogoniómetro y el AIS</b></p>
+
+		<p align=center><img width=300 src="../Imagenes/ConfigurarRDF-AIS.jpg"></p>
+
+		<p><b>Altura de Antena</b>: Altura a la que se instala la antena del equipo. Se utiliza para determinar el alcance del equipo.</p>
+
+		<ul>
+			<p><u>Unidades</u>: metros</p>
+			<p><u>Rango</u>: 0 - 100.00</p>
+		</ul>
+
+		<p><b>Configuración de la Radio VHF</b></p>
+
+		<p align=center><img width=300 src="../Imagenes/ConfigurarVHF.jpg"></p>
+
+		<p><b>Altura de Antena</b>: Altura a la que se instala la antena del equipo. Se utiliza para determinar el alcance de la comunicación VHF.</p>
+
+		<ul>
+			<p><u>Unidades</u>: metros</p>
+			<p><u>Rango</u>: 0 – 200.0</p>
+		</ul>
+
+		<p><b>Invertir frecuencias</b>: Cuando se marca esta casilla el equipo se configura con las frecuencias invertidas, lo que le permite comunicar con las radios de todos los buques. Sólo debe marcarse para las unidades que controla el instructor.</p>
+
+		<p><b>Configuración del Télex NBDP</b></p>
+
+		<p align=center><img width=300 src="../Imagenes/ConfigurarNBDP.jpg"></p>
+
+		<p><b>Selcall</b>: Selcall correspondiente al terminal NBDP. El Selcall consta de 4 cifras para unidades costeras, 5 cifras para buques y 6 cifras para abonados terrestres.</p>
+
+		<p><b>Configuración del Inmarsat A/B</b></p>
+
+		<table>
+			<tr>
+				<td align=center><font size=2 face=arial>En unidades móviles</td>
+				<td align=center><img width=300 src="../Imagenes/ConfigurarInmarsatAB.jpg"></td>
+			</tr>
+
+			<tr>
+				<td align=center><font size=2 face=arial>En unidades Costeras</td>
+				<td align=center><img width=300 src="../Imagenes/ConfigurarInmarsatAB-Costeras.jpg"></td>
+			</tr>
+
+		</table>
+
+		<p><b>IMN</b>: Inmarsat Mobile Number.</p>
+
+		<ul>
+			<li>Unidades Costeras - Consta de 3 dígitos.</li><br>
+			<li>Unidades Móbiles – Consta de 7 cifras para Inmarsat A y de 9 cifras para Inmarsat B. Los primeros 4 dígitos tienen la siguiente estructura TMID:</li><br>
+
+			<ul>
+				<li>T: cifra que indica el tipo de estación de Inmarsat. Para Inmarsat A es un 1 y para Inmarsat B es un 3.</li>
+				<li>MID: son 3 cifras que representan la nacionalidad del abonado.</li>
+			</ul>
+
+		</ul>
+
+		<p><b>Número de teléfono</b>: Número del teléfono Inmarsat.</p>
+
+		<p><b>AORW</b>: Si se marca esta casilla el inmarsat de la costera prestará servicio en la región oceánica AOR-W (Océano Atlántico Oeste).</p>
+
+		<p><b>AORE</b>: Si se marca esta casilla el inmarsat de la costera prestará servicio en la región oceánica AOR-E (Océano Atlántico Este).</p>
+
+		<p><b>IOR</b>: Si se marca esta casilla el inmarsat de la costera prestará servicio en la región oceánica IOR (Océano Índico).</p>
+
+		<p><b>POR</b>: Si se marca esta casilla el inmarsat de la costera prestará servicio en la región oceánica POR (Océano Pacífico).</p>
+ 
+		<p>El inmarsat puede prestar servicio en varias regiones simultáneamente.</p>
+
+ 		<p><b>Configuración del Inmarsat C</b></p>
+
+		<p align=center><img width=300 src="../Imagenes/ConfigurarInmarsatC.jpg"></p>
+
+		<p><b>ENID</b>: Identificador de llamada a grupo. Es asignado por un proveedor de mensajes FleetNET.</p>
+
+		<p><b>IMN</b>: Inmarsat Mobile Number. Consta de 9 cifras con la siguiente estructura TMIDX1X2X3Z1Z2.</p>
+
+		<ul>
+			<li>T: Cifra que indica el tipo de estación Inmarsat. Para Inmarsat C es un 4.</li>
+			<li>MID: 3 cifras que representan la nacionalidad del abonado.</li>
+			<li>X1X2X3: cifra de tres dígitos entre 001 y 999.</li>
+			<li>Z1Z2: cifra de dos dígitos comprendida entre 10 y 99.</li>
+		</ul><br>
+
+	<li><b>Eliminar elementos de un ejercicio</b>. En la ventana de Preparación de Ejercicios, seleccionar el elemento que se desea eliminar del ejercicio en preparación y pulsar el botón Eliminar. El elemento seleccionado desaparece del ejercicio pero sigue estando disponible para su asignación a otros ejercicios.</li>
+
+	<p>El sistema comprueba si el elemento que se va a borrar afecta a otros elementos o ejercicios y si es así muestra un mensaje indicando los elementos afectados y pidiendo confirmación para eliminar el elemento seleccionado. Si el operador acepta se eliminan todos los elementos afectados.</p>
+
+	<li><b>Copiar y pegar elementos</b>. Otra forma de añadir plataformas y equipos a las unidades es copiándolos de una unidad que ya los tenga. Para realizar esta copia, se selecciona el elemento a copiar y se pulsa el botón Copiar. A continuación se selecciona la unidad a la que se quiere asignar dicho elemento y se pulsa el botón Pegar. Seleccionando para copia el apartado Comunicaciones (o Sensores o Misceláneos) es posible copiar en un solo paso todos los equipos de comunicación (o sensores o misceláneos) de una unidad.</li>
+
+	<p>Estos botones también permiten copiar unidades de un ejercicio a otro.</p>
+
+	<li><b>Copiar un ejercicio con otro nombre</b>. El botón Clonar realiza una copia del ejercicio seleccionado en la lista. Al pulsar el botón se presenta una ventana el la que el operador debe introducir el nombre de la copia y pulsar Aceptar.</li>
+
+	<p align=center><img width=300 src="../Imagenes/Ventana Clonar.jpg"></p>
+
+</ul> 
+
+<p>De la misma manera que se preparan ejercicios, se pueden preparar de forma independiente, escenarios, unidades y artes de pesca como se describe a continuación.</p>
+
+<p><b>Preparación de Escenarios</b></p>
+
+<p>Seleccionando el botón Escenarios de la barra de botones situada encima de la lista, se muestra la lista de escenarios disponibles. En esta lista se pueden añadir elementos a los escenarios de la misma manera que se añaden en la lista de ejercicios.</p>
+
+<p><b>Preparación de Unidades</b></p>
+
+<p>Seleccionando el botón Unidades de la barra de botones situada encima de la lista, se muestra la lista de unidades disponibles. En esta lista se pueden añadir elementos a las unidades de la misma manera que se añaden en la lista de ejercicios.</p>
+
+<p>La asignación de plataforma a las unidades móviles sólo se puede realizar desde esta lista, ya que no se pueden añadir unidades móviles a los ejercicios si no tienen plataforma asignada.</p>
+
+<p>Para asignar la plataforma a la unidad, se selecciona la unidad en la ventana de Preparación de Ejercicios y en la ventana de Preparación de Modelos se presenta la lista correspondiente al tipo de plataforma que se quiera añadir. Se selecciona una plataforma de la lista y se pulsa el botón Añadir.</p>
+
+<p>También es posible añadir la plataforma arrastrándola desde otra unidad que la tenga asignada.</p>
+
+<p>Sólo se puede asignar una plataforma a cada unidad, de manera que si se añade otra plataforma, ésta última sustituye a la anterior.</p>
+
+<p><b>Importante</b> - Los ejercicios preparados se guardan en una copia temporal de la base de datos y se pierden al cerrar la aplicación; para guardarlos de forma permanente, hay que salvar el archivo de base de datos mediante la opción <b>Archivo &rarr; Ejercicio &rarr; Preparación &rarr; Salvar</b> del menú principal (ver apartado <i>Menú Principal</i>).</p>
+ 
+</div>
+
+</body>
+
+</html>
