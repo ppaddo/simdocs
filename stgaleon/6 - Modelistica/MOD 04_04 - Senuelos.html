@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Señuelos</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>Los Señuelos son contramedidas que producen una fuerza de blanco y / o un nivel de ruido en banda ancha mientras permanece en el agua, que puede afectar a los sónares pasivos o activos.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Se realizan siempre las siguientes comprobaciones de condiciones necesarias para generar una burbuja:</p>
+
+<ul>
+	<li>Comprobar que la unidad no está en base.</li>
+	<li>Los señuelos sólo pueden ser lanzados por submarinos sumergidos.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+ 
+<p>Si el señuelo es tipo <b>BURBUJA</b>:</p>
+
+<ul>
+	<li>La Burbuja asciende desde donde es lanzada hasta la superficie, teniendo en cuenta la intensidad y el rumbo de la corriente en la zona meteorológica en la que se encuentre y según la velocidad de ascenso de la burbuja en el agua (configurable en Galeon.ini).</li>
+
+	<p>Cuando en el movimiento de la burbuja debido a la corriente, la burbuja alcanza un veril cuya profundidad es menor que la profundidad de la burbuja, se simula que ésta choca con el veril, y por tanto, no es arrastrada por la corriente, pero su ascenso continúa, de manera que si llega el momento en que la profundidad de la burbuja es superior que la profundidad del veril, la corriente vuelve a afectar a la burbuja.</p>
+
+	<li>Al alcanzar la superficie o si se agota el tiempo de vida de la burbuja asignado en Preparación, antes de alcanzar la superficie, se destruye.</li>
+	<br>
+
+	<li>Cuando la unidad sale a superficie, se recargan las burbujas automáticamente.</li>
+
+</ul>
+
+<p>Si el señuelo es tipo <b>FOSFURO</b>:</p>
+ 
+<ul>
+	<li>El Fosfuro permanece en la profundidad en la que ha sido lanzado, viéndose afectado por la la intensidad y el rumbo de la corriente en la zona meteorológica en la que se encuentre.</li>
+
+	<p>Cuando en el movimiento del fosfuro debido a la corriente, alcanza un veril cuya profundidad es menor que la profundidad de la burbuja, se simula que éste choca con el veril, y por tanto, no es arrastrada por la corriente.</p>
+
+	<li>Si se agota el tiempo de vida de la burbuja asignado en Preparación, se destruye.</li>
+
+</ul>
+
+<p>Mientras el señuelos (burbuja o fosfuro) permanece en el agua, se considera que emite un Nivel de Ruido en banda ancha y que tiene una Fuerza del Blanco asignadas en Preparación (ver <i>Preparación – Contramedidas – Señuelos</i>).</p>
+
+</div>
+
+</body>
+
+</html>

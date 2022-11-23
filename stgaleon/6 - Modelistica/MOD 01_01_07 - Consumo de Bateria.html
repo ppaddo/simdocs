@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Consumo de Batería</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El consumo de batería de las unidades submarinas se calcula periódicamente teniendo en cuenta la velocidad de la unidad en cada momento.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo, se realizan las siguientes comprobaciones de condiciones necesarias para evaluar el consumo de batería:</p>
+
+<ul>
+	<li>Comprobar que está fuera de Base.</li>
+	<li>Comprobar que la unidad no tenga dañada su cinemática.</li>
+	<li>Comprobar que la cantidad de Batería es mayor que cero.</li>
+	<li>Comprobar que el valor de velocidad actual es mayor que cero.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>Cálculo de la cantidad batería que le queda a la unidad según la siguiente fórmula:</p>
+
+<ul><font size=2 face=courier>
+	<p>BATERÍA = BATant ‑ TBcons() * INCtmp</p>
+</font></ul>
+
+<p>Donde:</p>
+
+<ul>
+<table>
+	<tr>
+		<td valign=top><font size=2 face=courier>BATant:</td>
+		<td><font size=2 face=arial>Valor de la batería anterior</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>TBcons():</td>
+		<td><font size=2 face=arial>Tabla de batería consumida en función de la velocidad del mismo proporcional a la velocidad máxima con 8 intervalos (1/8, 2/8, 3/8, 4/8, 5/8, 6/8, 7/8, 8/8) y al tipo de móvil.</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>INCtmp:</td>
+		<td><font size=2 face=arial>Incremento de tiempo entre cálculo actual y el anterior</td>
+	</tr>
+
+</table>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Se realizan las comprobaciones y si son válidas, se calcula la cantidad de batería consumida según el cálculo anterior.</p>
+
+<p>Comprobar si el nuevo nivel de batería calculado está por debajo del valor remanente definido y si es así se activa una alarma.</p>
+
+</div>
+
+</body>
+
+</html>

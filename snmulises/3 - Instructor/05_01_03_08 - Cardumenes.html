@@ -1,0 +1,155 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Cardúmenes</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>Los cardúmenes se definen como un polígono situado sobre la carta, este polígono delimita el espacio horizontal en el que se sitúa el cardumen. El volumen que ocupa, se determina construyendo un prisma a partir de este polígono, con la altura que se establezca. La posición del cardumen es siempre horizontal, no se consideran ángulos de inclinación del prisma.</p>
+
+<p align=center><img width=500 src="../Imagenes/DefinicionCardumen.jpg"></p>
+
+<p>La creación y edición de cardúmenes se realiza mediante la ventana Cardúmenes. Esta ventana tiene dos solapas, General y Datos. Al seleccionar cada una de ellas el contenido de la ventana varía, presentando los datos que se describen a continuación.</p>
+
+<p>A continuación se describen los datos y botones que incluye esta ventana.</p>
+
+<p><b>Nombre</b>: Nombre del cardumen.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p>Datos y botones de la solapa <b>General</b>:</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosCardumenGral.jpg"></p>
+
+<p>Esta solapa contiene la lista de puntos que definen el polígono, y los datos relacionados con las aves asociadas al cardumen.</p>
+
+<p>Botones de manejo de la lista de puntos que definen el polígono:</p>
+
+<ul>
+	<p><b>Editar</b>: Este botón sirve para mostrar el gráfico del cardumen en la presentación cartográfica y para modificar los datos de los puntos del polígono.</p>
+	
+	<p>Cuando se abre la ventana para crear un nuevo cardumen, la lista de puntos está vacía y el botón Editar está pulsado, en estas condiciones, al picar con el botón izquierdo del ratón sobre la presentación cartográfica, se añaden puntos a la lista a la vez que se van dibujando sobre la carta.</p>
+	
+	<p>Cuando se abre la ventana para consultar los datos de un cardumen ya creado, al pulsar el botón Editar, el gráfico del cardumen aparece en la presentación cartográfica. Mientras el botón Editar esté pulsado, se pueden seleccionar los puntos picando sobre ellos con el botón izquierdo del ratón, y cambiarlos de posición arrastrando el ratón hasta la nueva posición.</p>
+	
+	<p><i>Nota</i>: Durante la edición de objetos gráficos (zonas meteorológicas, balizas, mapas de viento y corriente, rutas…) se anulan las funciones asignadas a los botones del ratón para control de la presentación cartográfica (posicionar hook, zoom+, zoom- demora/distancia…), por tanto para ver el gráfico del cardumen hay que hacer zoom sobre la zona de la carta en la que se encuentra dicha cardumen antes de pulsar el botón Editar.</p>
+	
+	<p><b>Añadir</b>: Al pulsar este botón se inserta un nuevo punto entre el punto seleccionado y el siguiente. También se pueden insertar puntos seleccionando con el ratón un segmento del gráfico y pulsando la tecla "Insertar".</p>
+
+	<p><b>Eliminar</b>: Al pulsar este botón se elimina de la lista el punto seleccionado. También se pueden eliminar puntos seleccionando con el ratón un punto del gráfico del cardumen y pulsando la tecla "Suprimir".</p>
+	
+</ul>
+
+<p>Botones de recursos gráficos</p>
+
+<p align=center><img width=200 src="../Imagenes/BarraRecursosGraficos.jpg"></p>
+
+<ul>
+	<p>Estos botones sirven para definir el color, el estilo y el tipo de letra que se aplica al gráfico de la zona meteorológica.</p>
+
+	<p>El funcionamiento de los botones de la barra de recursos gráficos se describe en el apartado <i>Definición de Recursos Gráficos</i>.</p>
+
+</ul>
+
+<p>Datos de las aves:</p>
+
+<p><b>Densidad de aves</b>: Indica el porcentaje de aves asociadas al cardumen respecto al valor máximo (configurable). Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>Sin aves (0%)</li>
+	<li>Baja (25%)</li>
+	<li>Moderada (50%)</li>
+	<li>Alta (75%)</li>
+	<li>Muy alta (100%)</li>
+</ul>
+
+<p></p>
+
+<p><b>Altura de las aves</b>: Altura a la que se sitúan las aves.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0- 100000.00</p>
+</ul>
+
+<p>Datos y botones de la solapa <b>Datos</b>:</p>
+
+<p><b>Alto</b>: Altura del prisma que define el cardumen.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0 - 500.0</p>
+</ul>
+
+<p><b>Densidad</b>: Número de peces por volumen de cardumen.</p>
+
+<ul>
+	<p><u>Unidades</u>: peces/m3</p>
+	<p><u>Rango</u>: 0.0 - 1000.0</p>
+</ul>
+
+<p><b>Profundidad - Respecto al fondo</b>: Si se marca esta casilla el dato Profundidad inicial se considera desde el fondo, si no se marca, se considera desde superficie.</p>
+
+<p><b>Profundidad inicial</b>: Profundidad inicial de la línea media del cardumen. Si se modifica esta profundidad durante la ejecución de un ejercicio, el cardumen se sitúa automáticamente en esta profundidad, salvo que el cardumen no quepa en cuyo caso se situará en la profundidad más próxima en la que quepa. Si el cardumen tiene velocidad vertical, continuará su desplazamiento vertical hacia la profundidad solicitada.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0 - 500.0</p>
+</ul>
+
+<p><b>Profundidad solicitada</b>: Profundidad hacia la que se desplaza el cardumen y que sólo será alcanzada si se dan las condiciones necesarias (velocidad vertical y espacio para albergar el cardumen a esa profundidad). Esta profundidad se expresa siempre con respecto a la superficie.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0 - 500.0</p>
+</ul>
+
+<p><b>Rumbo</b>: Rumbo inicial del movimiento del cardumen. Este rumbo se mantiene hasta que el cardumen encuentre un buque o tierra que le impida mantener el rumbo.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0.0 - 360.0</p>
+</ul>
+
+<p><b>Velocidad Horizontal</b>: Velocidad inicial de desplazamiento del cardumen. Esta velocidad se modifica cuando aparece un buque cercano.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0.0 -100.0</p>
+</ul>
+
+<p><b>Máxima Velocidad Vertical</b>: Máxima velocidad para el movimiento vertical del cardumen.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0.0 -100.0</p>
+</ul>
+
+<p><b>Margen de Movimiento Vertical</b>: Este valor delimita la profundidad mínima y la máxima en la que se mueve el cardumen verticalmente.</p>
+
+<p align=center><img width=600 src="../Imagenes/Mov Vertical Cardumen.jpg"></p>
+
+<p>Si el margen es 0 no hay movimiento vertical.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0 -500.0</p>
+</ul>
+
+<p>Los cardúmenes, una vez creados, se pueden añadir a los Escenarios, los cuales a su vez pueden ser incorporados en distintos Ejercicios.</p>
+
+<p>Los cardúmenes se muestran gráficamente en la Presentación Cartográfica del instructor, tanto durante la preparación como durante la ejecución de ejercicios que incluyan cardúmenes.</p>
+
+</div>
+
+</body>
+
+</html>

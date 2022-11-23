@@ -1,0 +1,125 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Cartucho Chaff</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvContrameasures/ChaffWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Tipo de Chaff</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>D</li>
+	<li>S</li>
+	<li>C</li>
+	<li>B</li>
+	<li>IR</li>
+	<li>RF</li>
+	<li>RF+IR</li>
+	<li>AÉREO</li>
+	<li>HELO</li>
+
+	<p>Este parámetro determina a qué sensores y en qué medida afecta este Chaff. Los tipos AÉREOS y HELO sólo podrán ser instalados en unidades Aviones y Helicópteros respectivamente.</p>
+
+	<p>En unidades de superficie o submarinas se pueden instalar distintos tipos de chaff D, S ,C ,B, IR, RF y RF+IR, pero no todos se pueden combinar en la misma unidad, sino sólo aquellos que sean compatibles.</p>
+
+	<p>Hay dos grupos de chaff compatibles:</p>
+
+	<table border=1 cellspacing=0 cellpadding=2>
+		<tr>
+			<td width=80><font size=2 face=arial>Grupo 1</td>
+			<td width=100><font size=2 face=arial>D, S, C, B, IR</td>
+		</tr>
+
+		<tr>
+			<td width=80><font size=2 face=arial>Grupo 2</td>
+			<td width=100><font size=2 face=arial>IR, RF, RF+IR</td>
+		</tr>
+	</table>
+
+</ul>
+
+<p><b>Nº de Submuniciones</b>: Este parámetro determina el número de submuniciones de cada cartucho de este tipo de chaff. Es tenido en cuenta durante la secuencia de lanzamiento y en la recarga del lanzador de chaff. También afecta al RCS de la nube de tal forma que mientras mayor sea este parámetro, mayor es el RCS que se puede conseguir en un lanzamiento de este tipo de chaff.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 1 – 999</p>
+</ul>
+
+<p><b>Altura Mínima de Lanzamiento</b>: Este parámetro determina la mínima altura de la unidad aérea lanzadora (Avión o Helicóptero) a la que puede llevar a cabo un lanzamiento de este tipo de chaff. Sólo podrá ser introducido si se ha seleccionado Tipo de Chaff AÉREO o HELO.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Altura Máxima de Lanzamiento</b>: Este parámetro determina la máxima altura de la unidad aérea lanzadora (Avión o Helicóptero) a la que puede llevar a cabo un lanzamiento de este tipo de chaff. Sólo podrá ser introducido si se ha seleccionado Tipo de Chaff AÉREO o HELO.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Distancia de Proyección</b>: Este parámetro determina la distancia desde el punto de lanzamiento a la que se despliegan las submuniciones de chaff lanzadas y comienzan a formar la nube.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Altura de Despliegue</b>: Este parámetro determina la altura a la que se despliegan las submuniciones de chaff lanzadas y comienzan a formar la nube.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Tiempo de Despliegue</b>: Este parámetro determina el tiempo que tarda en formarse la nube desde que se despliegan.</p>
+
+<ul>
+	<p><u>Unidades</u>: segundos</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Tiempo de Vida</b>: Este parámetro determina el tiempo que permanece formada la nube desde que se completa su formación.</p>
+
+<ul>
+	<p><u>Unidades</u>: segundos</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Velocidad de Caída</b>: Este parámetro determina la velocidad con la que desciende la nube desde que se despliega.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros / segundo</p>
+	<p><u>Rango</u>: 0 – 100</p>
+</ul>
+
+<p><b>RCS</b>: Este parámetro determina el RCS asociado a cada submunición de este tipo de chaff. Es tenido para calcular el RCS total de la nube lanzada y por tanto afecta a la distancia a la que la nube es detectada por radar. Sólo podrá ser introducido si NO se ha seleccionado Tipo de Chaff IR.</p>
+
+<ul>
+	<p><u>Unidades</u>: m2</p>
+	<p><u>Rango</u>: 0 – 999999</p>
+</ul>
+
+<p><b>Radio Nube</b>: Este parámetro determina el radio de la nube formada por lanzamiento de este tipo de submunición chaff.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

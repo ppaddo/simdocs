@@ -1,0 +1,401 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Panel de Control 1</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>Este panel de control es una pantalla táctil dividida en varias áreas desde las que se pueden realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Controlar las luces, señales y sonidos del buque.</li>
+	<li>Controlar las amarras, anclas y remolques del buque.</li>
+	<li>Controlar la orientación del visual.</li>
+	<li>Panel de Control de Maquinillas (opcional).</li>
+</ul>
+
+<p align=center><img width=600 src="../Imagenes/ConsolaPyGPanelControl1.jpg"></p>
+
+<p><b>Control de luces, señales y sonidos</b></p>
+
+<p>El área de control de luces, señales y sonidos se compone de cuatro paneles intercambiables (Maniobras, Luces, Señales y Sonidos). El intercambio entre un panel y otro se realiza pulsando cualquiera de las flechas situadas en los ángulos superiores.</p>
+
+<p align=center><img width=600 src="../Imagenes/ConsolaPyGIntercambio.jpg"></p>
+
+<p>Mediante el <b>Panel de Maniobras</b>, el operador puede seleccionar cualquiera de las maniobras del buque y pulsando un sólo botón establecer las luces, señales y sonidos correspondientes a la maniobra seleccionada.</p>
+
+<p align=center><img width=600 src="../Imagenes/ConsolaPyGManiobras.jpg"></p>
+
+<p>Cada botón establece la señalización de maniobra que se especifica en la siguiente tabla:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td><font size=2 face=arial><b>Botón</b></td>
+		<td><font size=2 face=arial><b>Luces (maniobra)</b></td>
+		<td><font size=2 face=arial><b>Señales</b></td>
+		<td><font size=2 face=arial><b>Sonidos</b></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Navegación C/Arr</b></td>
+		<td><font size=2 face=arial>NAVEGACION</td>
+		<td><font size=2 face=arial>Ninguna</td>
+		<td><font size=2 face=arial>Con Arrancada</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Navegación S/Arr</b></td>
+		<td><font size=2 face=arial>NAVEGACION</td>
+		<td><font size=2 face=arial>Ninguna</td>
+		<td><font size=2 face=arial>Sin Arrancada</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Sin Gobierno C/Arr</b></td>
+		<td><font size=2 face=arial>SIN-GOBIERNO-CON-ARRANCADA</td>
+		<td><font size=2 face=arial>bola, bola</td>
+		<td><font size=2 face=arial>Maniobra Restringida</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Sin Gobierno S/Arr</b></td>
+		<td><font size=2 face=arial>SIN-GOBIERNO-SIN-ARRANCADA</td>
+		<td><font size=2 face=arial>bola, bola</td>
+		<td><font size=2 face=arial>Maniobra Restringida</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Restringida C/Arr</b></td>
+		<td><font size=2 face=arial>RESTRINGIDA-CON-ARRANCADA</td>
+		<td><font size=2 face=arial>bola, bicónica, bola</td>
+		<td><font size=2 face=arial>Maniobra Restringida</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Restringida S/Arr</b></td>
+		<td><font size=2 face=arial>RESTRINGIDA-SIN-ARRANCADA</td>
+		<td><font size=2 face=arial>bola, bicónica, bola</td>
+		<td><font size=2 face=arial>Maniobra Restringida</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Restringida Por Calado</b></td>
+		<td><font size=2 face=arial>RESTRINGIDA-POR-CALADO</td>
+		<td><font size=2 face=arial>cilindro</td>
+		<td><font size=2 face=arial>Maniobra Restringida</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Fond</b></td>
+		<td><font size=2 face=arial>FONDEADO</td>
+		<td><font size=2 face=arial>bola a proa<br>bola en popa<br>(si hay mástil en popa)</td>
+		<td><font size=2 face=arial>Fondeado</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Rem</b></td>
+		<td><font size=2 face=arial>REMOLCADO</td>
+		<td><font size=2 face=arial>bicónica a proa</td>
+		<td><font size=2 face=arial>Remolcado</td>
+	</tr>
+
+</table>
+
+<p>En el área Lanzar referencia para cerco, este panel incluye un botón con la leyenda Lanzar/Recoger para lanzar y recoger un objeto de referencia. Este objeto se usa en la pesca de cerco para localizar la zona de lanzamiento de la red.</p>
+
+<p>Cuando se presiona el botón <b>Lanzar/Recoger</b>, se ilumina y es sistema crea un objeto que se puede ver en la cartografía del instructor y en el visual. El objeto aparece por la popa del buque y se mueve con la corriente del mar. Cuando el botón se presiona de nuevo, se apaga y el objeto desaparece.</p>
+
+<p>El <b>Panel de Luces</b> muestra la lista de las luces del buque. Cada luz se representa con un led que se enciende o se apaga indicando el estado real de la luz en el buque.</p>
+
+<p align=center><img width=600 src="../Imagenes/ConsolaPyGLuces.jpg"></p>
+
+<p>Para encender una luz, hay que tocar directamente el led correspondiente (que debe estar apagado), de esta manera el led se ilumina (con el color que corresponda según el tipo de luz).</p>
+
+<p>Para apagar una luz se procede de igual manera que para encenderla, pero actuando sobre un led iluminado.</p>
+
+<p>También es posible encender varias luces a la vez utilizando el campo Maniobras. Al desplegar esta campo aparece un listado con todas las maniobras posibles, seleccionando cualquiera de ellas, se enciende el conjunto de luces que indican la ejecución de la maniobra elegida y se apaga el resto de las luces que estuvieran encendidas. Las maniobras que se pueden seleccionar son:</p>
+
+<ul>
+	<li>NAVEGACION-CON-ARRANCADA</li>
+	<li>NAVEGACION-SIN-ARRANCADA</li>
+	<li>SIN-GOBIERNO-CON-ARRANCADA</li>
+	<li>SIN-GOBIERNO-SIN-ARRANCADA</li>
+	<li>RESTRINGIDA-CON-ARRANCADA</li>
+	<li>RESTRINGIDA-SIN-ARRANCADA</li>
+	<li>RESTRINGIDA-POR-CALADO</li>
+	<li>FONDEADO</li>
+	<li>REMOLCADO</li>
+</ul>
+
+<p>Una vez que se han encendido o apagado las luces en la ventana, si se pulsa el botón Aplicar los cambios realizados se hacen efectivos en el buque y si se pulsa el botón Cancelar se descartan los cambios.</p>
+
+<p>Cuando en el panel de Maniobras se pulsa el botón de una maniobra, el panel de Luces se actualiza mostrando las luces correspondientes a la maniobra seleccionada.</p>
+
+<p>El <b>Panel de Señales</b> contiene la lista de todas las señales que se pueden añadir a un mástil, y la lista de las señales izadas en cada mástil del buque (hasta 4 mástiles).</p>
+
+<p align=center><img width=600 src="../Imagenes/ConsolaPyGSeñales.jpg"></p>
+
+<p>Para añadir una señal a un mástil, hay que seleccionar cualquiera de las señales que aparecen en el área de Señales Disponibles (tocando directamente sobre ella) y pulsar el botón ADD del mástil.</p>
+
+<p>Para eliminar una señal de un mástil, hay que seleccionar cualquiera de las señales que aparecen en el área del mástil y pulsar el botón REM correspondiente a dicho mástil.</p>
+
+<p>Una vez que se han establecido las señales en la ventana, si se pulsa el botón Aplicar los cambios realizados se hacen efectivos en el buque y si se pulsa el botón Cancelar se descartan los cambios.</p>
+
+<p>Cuando en el panel de Maniobras se pulsa el botón de una maniobra que requiere señales en los mástiles, el panel de Señales se actualiza mostrando las señales correspondientes a la maniobra seleccionada.</p>
+
+<p>El Panel de Sonidos contiene dos grupos de botones, desde los que se controlan las señales acústicas que puede emitir el buque. El primer grupo son señales no repetitivas y el segundo señales repetitivas</p>
+
+<p align=center><img width=600 src="../Imagenes/ConsolaPyGSonidos.jpg"></p>
+
+<p>Al tocar los botones del grupo de señales no repetitivas, es decir los botones Largo, Corto, Gong o Campana, se emite un único sonido del tipo correspondiente.</p>
+
+<p>Al tocar cualquiera de los botones del grupo de señales repetitivas, el botón se ilumina y se emite la combinación de señales acústicas prevista para la condición establecida (ver tabla adjunta), según el reglamento COLREG 72, y se repetirá con la frecuencia prevista en dicho reglamento hasta que se toque de nuevo el botón y se apague, eliminando así la condición establecida.</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td><font size=2 face=arial><b>Botón</b></td>
+		<td><font size=2 face=arial><b>Condición</b></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>C/Arr</b></td>
+		<td><font size=2 face=arial>Con Arrancada</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>S/Arr</b></td>
+		<td><font size=2 face=arial>Sin Arrancada</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>ManRed</b></td>
+		<td><font size=2 face=arial>Maniobra Restringida</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Fond</b></td>
+		<td><font size=2 face=arial>Fondeado</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Rem</b></td>
+		<td><font size=2 face=arial>Remolcado</td>
+	</tr>
+
+</table>
+
+<p>Si estando establecida una condición, se toca el botón correspondiente a otra condición distinta, automáticamente se elimina la condición anterior y se establece la nueva.</p>
+
+<p>Al aplicar la Regla 35 de la COLREG 72 para determinar las señales acústicas emitidas, se tiene en cuenta de forma automática si la eslora del buque controlado es mayor o menor de100 metros.</p>
+
+<p>Cuando en el panel de Maniobras se pulsa el botón de una maniobra que requiere señales acústicas, el panel de Sonidos se actualiza iluminándose el botón correspondiente a la maniobra seleccionada.</p>
+
+<p><b>Control de amarras, anclas y remolques</b></p>
+
+<p align=center><img width=600 src="../Imagenes/PanelAmarrasAnclasRem.jpg"></p>
+
+<p>En este panel se representa, sobre la silueta del buque, los puntos de amarre a bordo y las posiciones de las anclas. Aunque ambos se representan con el mismo símbolo, al pasar el cursor sobre cada punto se muestra una etiqueta que indica si se trata de un punto de amarre o un ancla.</p>
+
+<table align=center>
+	<tr>
+		<td width=200><p align=center><img width=100 src="../Imagenes/AnclaEtiqueta.jpg"></p></td>
+		<td width=200><p align=center><img width=100 src="../Imagenes/AmarraEtiqueta.jpg"></p></td>
+	</tr>
+</table>
+
+<p>Para seleccionar un punto de amarre o un ancla basta tocar el punto correspondiente. El punto seleccionado se ilumina y se activan los botones de manipulación de amarras, anclas y remolcadores. Estos botones permiten llevar a cabo las distintas acciones asociadas al punto de amarre: largar o cobrar amarra, conectar o desconectar remolcadores y largar o izar anclas, y lascar o cobrar los cabos de los remolcadores.</p>
+
+<p>No se pueden seleccionar varios puntos de amarre o anclas simultáneamente, cada vez que se selecciona un punto de amarre o ancla, los botones de manipulación actúan sobre el punto seleccionado.</p>
+
+<p><b>Control de Amarras</b></p>
+
+<p>Para largar amarras es necesario que el buque esté situado cerca de una zona de amarre (dique o costa), una vez situado, hay que seguir el siguiente procedimiento.</p>
+
+<ol>
+	<li>En el Panel de Vista de Pájaro, se sitúa el Hook en el punto de amarre en tierra.</li><br>
+	
+	<li>En el Panel de Control de Anclas, Amarras y Remolcadores se selecciona uno de los puntos de amarre disponibles en el buque. Al pulsarlo, el botón se ilumina y se activan los botones de control de amarras y remolcadores, y los botones Lascar y Cobrar.</li><br>
+	
+	<li>Se pulsa el botón de lanzamiento de Amarras (representado por un noray). Al pulsarlo se larga una amarra desde el punto seleccionado en el buque hasta el punto marcado en tierra y junto al punto de amarre se presenta un icono de Noray y los datos de Longitud (L:), Tensión (T:) y Orientación (O:) de la amarra largada.</li><br>
+	
+	<p align=center><img width=200 src="../Imagenes/Amarra.jpg"></p>
+
+	<p>Esta amarra aparece representada por una línea en el panel de Vista de Pájaro.</p>
+
+	<p align=center><img width=200 src="../Imagenes/Amarra-Vista de Pajaro.jpg"></p>
+	
+	<p>La longitud de la amarra se mantiene constante mientras no se pulsen los botones de Cobrar y Lascar. La tensión y orientación pueden variar en función del movimiento del buque.</p>
+
+	<li>Pulsado el botón Lascar, la longitud de la amarra aumenta y junto al botón del punto de amarre y el icono de Noray se presenta el icono de lascar que indica que se está aflojando el cabo de amarre.</li><br>
+	
+	<p align=center><img width=200 src="../Imagenes/AmarraLascando.jpg"></p>
+
+	<li>Pulsado de nuevo el botón Lascar, se detiene el largado del cabo de amarre.</li><br>
+	
+	<li>Pulsando el botón Cobrar, la longitud de la amarra disminuye y junto al botón de punto de amarre y el icono de Noray se presenta el icono de cobrar que indica que se está recogiendo el cabo de amarre.</li><br>
+	
+	<p align=center><img width=200 src="../Imagenes/AmarraCobrando.jpg"></p>
+
+	<li>Pulsado de nuevo el botón Cobrar, se detiene la recogida del cabo de amarre.</li><br>
+	
+	<li>Para quitar la amarra, se selecciona el punto y a continuación se pulsa el botón de lanzamiento de Amarras (noray). Al pulsarlo, desaparecen los datos de Longitud, Tensión y Orientación de la amarra y el icono del Noray. También desaparece la línea que representa la amarra en el panel de Vista de Pájaro.</li>
+	
+	<p>Nota: El simulador permite que se puedan amarrar los buques en cualquier punto aunque no esté situado en tierra.</p>
+
+</ol>
+
+<p><b>Control de Anclas</b></p>
+
+<p>Para controlar un ancla se pulsa uno de los botones de Ancla. Al pulsarlo, el botón se ilumina y se activan los botones Lascar y Cobrar.</p>
+
+<p align=center><img width=400 src="../Imagenes/Ancla.jpg"></p>
+
+<p>Para tirar el ancla, pulsa el botón Lascar y trascurrido un tiempo, junto al punto de ancla se presenta el icono de Ancla, el icono de lascar (que indica que el ancla está cayendo) y los datos de Longitud (L:), Tensión (T:) y Orientación (O:) del ancla lanzada.</p>
+
+<p align=center><img width=200 src="../Imagenes/AnclaLascando.jpg"></p>
+
+<p>Mientras se mantenga pulsado el botón se Lascar, se continúa largando el ancla. Al pulsar de nuevo el botón de Lascar deja de largarse, manteniéndose constante la longitud de cadena largada.</p>
+
+<p>Para levar el ancla, se pulsa el botón de ancla correspondiente y a continuación se pulsa el botón Cobrar. La longitud de la cadena va disminuyendo, y junto al botón y el icono de ancla se presenta el icono de cobrar que indica que se está recogiendo la cadena.</p>
+
+<p align=center><img width=200 src="../Imagenes/AnclaCobrando.jpg"></p>
+
+<p>Cuando se ha recogido toda la cadena, desaparecen los iconos y los datos de longitud, tensión y orientación.</p>
+
+<p><b>Control de Remolcadores</b></p>
+
+<p>Nota: Los puntos de conexión a los remolcadores son los mismos que los puntos de amarre del buque.</p>
+
+<p>El buque se puede conectar a remolcadores de tiro y remolcadores de empuje. Los remolcadores de tiro se conectan mediante un cabo que une el buque al remolcador, el remolcador tira de este cabo arrastrando consigo al buque. Los remolcadores de empuje no necesitan cabo se unen directamente al buque y lo empujan.</p>
+
+<p>Los remolcadores de empuje sólo están disponibles para los buques con plataforma de 6GDL.</p>
+
+<p>Para la conexión del buque a un remolcador se requiere la presencia de otro buque que actúe como remolcador y que esté situado a una distancia y demora que permitan iniciar la maniobra de remolcado.</p>
+
+<p>La distancia máxima para iniciar la maniobra es un dato que puede variar de un buque a otro dependiendo de la plataforma que se le haya asignado.</p>
+
+<p>Los ángulos de demora permitidos se establecen en el fichero de configuración y se aplican por igual a todos los buques.</p>
+
+<p>Una vez situados los buques en la posición correcta, para conectar el buque a un Remolcador de tiro hay que seguir el siguiente procedimiento.</p>
+
+<ol>
+	<li>En el panel de Vista de Pájaro, se sitúa el Hook sobre el buque remolcador.</li><br>
+
+	<li>En el Panel de Control de Anclas, Amarras y Remolcadores se selecciona uno de los puntos de amarre disponibles en el buque. Al pulsarlo, el botón se ilumina y se activan los botones de control de amarras y remolcadores, así como los botones Lascar y Cobrar.</li><br>
+
+	<li>Se pulsa el botón de conexión con el Remolcador de tiro. Al pulsarlo se conecta el punto seleccionado en el buque con el remolcador y junto al punto de amarre se presenta el icono de Remolcador de tiro y los datos de Longitud (L:), Tensión (T:) y Orientación (O:) del cabo.</li><br>
+
+	<p align=center><img width=200 src="../Imagenes/RemolcadorTirando.jpg"></p>
+
+	<p>El cabo de remolque aparece representado por una línea en el panel de Vista de Pájaro.</p>
+
+	<p align=center><img width=200 src="../Imagenes/Remolcador-VistadePajaro.jpg"></p>
+
+	<li>Igual que con las amarras largadas, el operador podrá Lascar o Cobrar, para modificar la longitud del cabo.</li><br>
+
+	<li>El operador puede aumentar o disminuir tanto la tensión ejercida por el remolcador, como la orientación en la que ejerce dicho tensión. Para ello debe seleccionar el punto de amarre al remolque y actuar sobre los pulsadores de Tensión+, Tensión–, Orientación + y Orientación–.</li>
+
+	<p>Nota: Si el remolcador seleccionado es un buque de 6 GDL estos botones no funcionan ya que, en ese caso, el remolcador se controla con su propia maquinaria.</p>
+
+	<li>Para desconectar el remolque, se selecciona el punto y a continuación se pulsa el botón de conexión con el Remolcador de tiro. Al pulsarlo, desaparecen los datos de Longitud, Tensión y Orientación del cabo y el icono del Remolcador. También desaparece la línea que representa el cabo en el panel de Vista de Pájaro.</li>
+
+</ol>
+
+<p>Para conectar el buque (de 6GDL) a un Remolcador de empuje hay que seguir el siguiente procedimiento.</p>
+
+<ol>
+	<li>En el panel de Vista de Pájaro, se sitúa el Hook sobre el buque remolcador.</li><br>
+	
+	<li>En el Panel de Control de Anclas, Amarras y Remolcadores se selecciona uno de los puntos de amarre disponibles en el buque. Al pulsarlo, el botón se ilumina y se activan los botones de control de amarras y remolcadores, así como los botones Lascar y Cobrar.</li><br>
+	
+	<li>Se pulsa el botón de conexión con el Remolcador de empuje. Al pulsarlo se conecta el punto seleccionado en el buque con el remolcador y junto al punto de amarre se presenta el icono de Remolcador de empuje y los datos de Tensión (T:) y Orientación (O:).</li><br>
+	
+	<li>El operador puede incrementar o decrementar tanto la tensión ejercida por el remolcador, como la orientación en la que ejerce dicho tensión. Para ello debe seleccionar el punto de amarre al remolque y actuar sobre los pulsadores de Tensión+, Tensión–, Orientación + y Orientación–.</li><br>
+	
+	<li>Para desconectar el remolque, se selecciona el punto y a continuación se pulsa el botón de conexión con el Remolcador de empuje. Al pulsarlo, desaparecen los datos de Tensión y Orientación y el icono del Remolcador.</li>
+	
+</ol>
+
+<p><b>Control de la orientación visual</b></p>
+
+<p>Desde el área de control de la orientación visual se puede cambiar la posición y orientación de la de la cámara.</p>
+
+<p>Al tocar cualquiera de los cuatro leds de la zona BRIDGE, el led se ilumina y la cámara se orienta a proa, popa, babor o estribor, de manera que si seleccionamos el led situado arriba, en el visual aparece la imagen del escenario visto desde el puente con una cámara orientada al frente y si seleccionamos el led situado a la derecha, abajo o a la izquierda, en el visual aparece la imagen del escenario visto desde el puente con una cámara orientada a estribor, popa o babor respectivamente.</p>
+
+<p>Al tocar el led de Zoom situado encima del icono de prismáticos, el led se ilumina y la imagen visual del canal central se presenta ampliada en forma de vista a través de prismáticos. Al tocar de nuevo el led, se apaga y la imagen vuelve a aparecer en la forma de vista normal</p>
+
+<p>Por último las cuatro flechas de la zona ROTATE controlan la orientación horizontal (yaw) y vertical (pitch) de la cámara:</p>
+
+<ul>
+	<li>Flecha arriba - La cámara gira hacia arriba (aumenta el pitch).</li>
+	<li>Flecha abajo - La cámara gira hacia abajo (disminuye el pitch).</li>
+	<li>Flecha derecha - La cámara gira hacia la derecha (aumenta el yaw).</li>
+	<li>Flecha izquierda - La cámara gira hacia la izquierda (disminuye el yaw).</li>
+</ul>
+
+<p>Cada vez que se toca una flecha la cámara gira 5 grados (o el ángulo de giro que se haya configurado) en el sentido de la flecha.</p>
+
+<p>El botón Slow de puede encender para disminuir la velocidad del giro, de manera que mientras está encendido, cada vez que se toca una flecha los giros de la cámara se realizan de grado en grado.</p>
+
+<p><b>Panel de control de maquinillas</b></p>
+
+<p>Cuando la consola de propulsión y gobierno incluye una maquinilla de pesca ,el Panel de Control 1 incluye un panel de control de maquinillas en el que el operador puede ver los datos de la maquinilla.</p>
+
+<p align=center><img width=400 src="../Imagenes/PanelMaquinillas.jpg"></p>
+
+<p>Este panel se comparte espacio con el panel de Control de Anclas, Amarras y Remolcadores. El intercambio entre un panel y otro se realiza pulsando la flecha situada en el ángulo superior derecho.</p>
+
+<p>En este panel están las palancas de control de las maquinillas del buque de pesca y los indicadores y controles de tensión del cable, cuyo funcionamiento se describe a continuación.</p>
+
+<p><b>Control de las Maquinillas</b></p>
+
+<p>La maquinilla de pesca generalmente se controla con las palancas hardware situadas en la consola, pero este panel incluye unas palancas software que también se pueden usar.</p>
+
+<p>Para desplazar las palancas hay que colocar el cursor sobre el extremo, pulsar el botón izquierdo del ratón, arrastrar hacia arriba o hacia abajo y soltar en la posición elegida. Pulsando los botones situados en la base de la palanca, esta se desplaza automáticamente a la posición marcada por el botón (tope superior, centro y tope inferior). Pulsando el botón de sincronización situado bajo la base de las palancas, ambas palancas se mueven solidariamente.</p>
+
+<p>Los campos situados bajo cada una de las palancas, actualizan en cada momento la posición de la palanca en una escala de -100 a 100 pasando por 0 en la posición central.</p>
+
+<p>Para largar la red al agua desde la cubierta del buque, es necesario accionar ambas palancas hasta el tope en la dirección de largar y para subirla de nuevo a cubierta se accionan igualmente ambas palancas en la dirección de virar.</p>
+
+<p>En el arte de Arrastre con Pareja, para largar la red es necesario, además, que el buque pareja se encuentre a estribor del buque principal y a una distancia inferior a la que se establece como distancia máxima en el fichero de configuración.</p>
+
+<p>Una vez que la red está en el agua, en las artes de Arrastre se puede controlar, de forma independiente, la velocidad de largado y/o recogida de los cables de babor y estribor, desplazando la palanca de babor o estribor respectivamente a posiciones intermedias. Cuando la palanca se sitúa en el tope en la dirección de largar, el cable se larga a la velocidad del buque, conforme se desplaza la palanca a posiciones cercanas al centro la velocidad de largado disminuye hasta que deja de largarse cable en la posición central. De la misma forma cuando la palanca se sitúa en el tope en la dirección de virar, el cable se recoge a una velocidad fija que se establece en Preparación y conforme se desplaza la palanca hacia el centro esta velocidad disminuye hasta que se hace cero en el centro.</p>
+
+<p>En las artes de Palangre y Cerco, las dos palancas se mueven solidariamente, con independencia de que está activa o no la función de sincronización de palancas. En estas artes, para recoger la red, además de situar la palanca en la posición de virar, es necesario que el buque se encuentre en la posición correcta, próximo a la primera boya y que la maniobra de largado de boyas (palangre) o el cierre de la jareta (cerco) haya concluido. Las posiciones intermedias de las maquinillas no tienen ningún efecto ya que el largado se efectúa siempre a la velocidad del buque.</p>
+
+<p>El área de máxima tensión de las maquinillas, situada en la parte inferior del panel, muestra la máxima tensión de cables que soporta la maquinilla. Si la tensión de los cables supera esta tensión, la maquinilla deja de funcionar y se enciende el indicador luminoso de avería situado en esta misma área. </p>
+
+<p><b>Control de las Tensiones de los Cables</b></p>
+
+<p>El panel dispone de dos módulos de control de tensiones uno para el cable de babor y otro para el de estribor. Para las artes que sólo tienen un cable sólo está activo el módulo de estribor.</p>
+
+<p>Cada módulo contiene los siguientes elementos:</p>
+
+<ul>
+	<li>Selector de Ajuste de Máxima Tensión del Cable: permite establecer el nivel de tensión que hará saltar la alarma de máxima tensión del cable. Se puede seleccionar un valor entre 0 y la tensión máxima soportada por el cable (ver el apartado Preparación de la Base de Datos/ Preparación de Modelos Básicos/ Aparejos de Pesca/ Cables en el Manual de Instructor).</li><br>
+	
+	<li>Indicador digital de Máxima Tensión del Cable: es un indicador digital de cinco cifras en el que se muestra máxima tensión del cable seleccionada con el selector.</li><br>
+	
+	<li>Indicador de Alarma de Máxima Tensión: es un indicador luminoso que se enciende cuando la tensión del cable supera la tensión establecida cómo máxima.</li><br>
+	
+	<li>Indicador digital de Tensión del Cable: es un indicador digital de cinco cifras en el que se muestra la tensión del cable en toneladas.</li><br>
+	
+	<li>Indicador digital de Longitud del Cable: es un indicador digital de cuatro cifras en el que se muestra la longitud del cable largado en metros.</li>
+	
+</ul>
+
+<p>Para seleccionar la máxima tensión, el operador debe situar el cursor sobre el selector analógico en la posición elegida (de 0 a 100% del máximo) y a continuación pulsar y soltar el botón izquierdo del ratón.</p>
+
+<p>El valor marcado en el selector analógico aparece en el campo situado debajo. Para un ajuste fino del dato, se usan las flechas situadas a la derecha de este campo. Al pulsar la flecha arriba el dato se incrementa en una décima y al pulsar la flecha abajo el dato disminuye en una décima.</p>
+
+</div>
+
+</body>
+
+</html>

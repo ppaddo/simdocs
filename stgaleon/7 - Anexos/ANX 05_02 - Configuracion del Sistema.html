@@ -1,0 +1,7166 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Configuración</font></b></p>
+
+<font size=2 face=arial>
+
+<p>Todos los parámetros configurables en el Simulador Táctico Galeón se definen en el fichero <b>Galeon.ini</b>. Este fichero debe encontrarse siempre en el directorio “raíz” del Sistema Operativo.</p>
+
+<p>El fichero <b>Galeon.ini</b> es suministrado por la empresa instaladora del simulador y está contenido en los ficheros de instalación del sistema. Este fichero no debe ser modificado en las instalaciones. El procedimiento de instalación reinstala siempre este fichero en el directorio raíz, sobrescribiendo versiones anteriores.</p>
+
+<p>En este fichero, todos los parámetros configurables están asignados a sus valores por defecto. Muchos de estos parámetros no son válidos y deben ser particularizados para la instalación concreta, pues dependen de ella. Por ejemplo todos aquellos que incluyen path del sistema, los que se refieren a usuarios y passwords de conexión con la base de datos, las direcciones IP de las máquinas, etc..</p>
+
+<p>Todos aquellos parámetros que deben ser redefinidos, bien por las características particulares de cada instalación o bien porque se desea asignar un valor distinto al valor por defecto definido en Galeon.ini, deben ser introducidos en el fichero <b>Galeon.rc</b>.</p>
+
+<p>El fichero <b>Galeon.rc</b> debe ubicarse siempre en el directorio principal del usuario:</p>
+
+<p>Mientras que el fichero Galeon.ini es único para el sistema, puede existir un Galeon.rc distinto para cada usuario. Los valores configurados en Galeon.rc prevalecen siempre sobre los asignados en el Galeon.ini, de forma que sólo si un parámetro no está definido en el fichero Galeon.rc se toma el valor asignado en Galeon.ini. Mediante este mecanismo, con distintos ficheros Galeon.rc se pueden configurar de forma distinta, los distintos puestos del sistema e incluso distintos usuarios de un mismo puesto.</p>
+
+<p>Existen parámetros de configuración que afectan a modelos (servidor del sistema) y otros a la presentación (consolas). El Galeon.rc que debe modificarse en cada caso, depende de que se trate de un Juego Local o en Red:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=100></td>
+		<td width=200><font face=arial>Parámetro que afecta a modelos</td>
+		<td width=200><font face=arial>Parámetro que afecta a presentación</td>
+	</tr>
+	<tr>
+		<td width=100><font face=arial>Juego en Local</td>
+		<td width=220><font face=arial>Modificar Galeon.rc en consola</td>
+		<td width=220><font face=arial>Modificar Galeon.rc en consola</td>
+	</tr>
+	<tr>
+		<td width=100><font face=arial>Juego en Red</td>
+		<td width=220><font face=arial>Modificar Galeon.rc en servidor</td>
+		<td width=220><font face=arial>Modificar Galeon.rc en consolas participantes en el Ejercicio</td>
+	</tr>
+</table>
+ 
+<p>La estructura del contenido de los archivos de configuración es la siguiente:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=100><font face=courier>[Console]</td>
+		<td width=200><font face=arial>Sección: […]</td>
+	<tr>
+		<td width=100><font face=courier># Indica si la consola debe solicitar …</td>
+		<td width=220><font face=arial>Comentario: #…</td>
+	</tr>
+	<tr>
+		<td width=100><font face=courier>InteractiveConsoleNumber=0</td>
+		<td width=220><font face=arial>Parámetros: Nombre = Valor</td>
+	</tr>
+</table>
+
+<p>A continuación se muestra el contenido del fichero Galeon.ini incluido en la instalación del sistema, donde se pueden ver todos los parámetros configurables del sistema, con una breve descripción del uso de cada uno de ellos en las líneas previas.</p>
+
+<font face=courier>
+
+# -----------------------------------------------------------------------------
+<br>
+# Este fichero debe encontrarse en el directorio inicial del usuario,
+<br>
+# y otra copia en el directorio raiz de la unidad donde se haya instalado
+<br>
+# el sistema operativo. El sistema primero tendrá en cuenta las opciones
+<br>
+# configuradas en el fichero que se encuentra en el directorio del usuario
+<br>
+# Se puede cambiar el directorio de busqueda por defecto con las siguientes
+<br>
+# variables de entorno:
+<br>
+# GALEON_INI_PATH
+<br>
+# GALEON_RC_PATH
+<br>
+# Por ejemplo
+<br>
+# GALEON_INI_PATH = "C:\Windows\Galeon.ini"
+<br>
+# GALEON_RC_PATH = "C:\Documents and settings\All users\Galeon.rc"
+<br>
+#
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONEXION CON BASE DE DATOS
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+# COLORES:
+<br>
+# Se admiten como valores validos en las entradas de configuración aquellos
+<br>
+# definidos en X11 (XWindows) o un valor RGB especificado en la forma
+<br>
+# "#RRRRGGGGBBBB", donde cada uno de los valores de rojo (RRRR) verde (GGGG) y
+<br>
+# azul (BBBB) se expresan como valores hexadecimales de cuatro digitos
+<br>
+# en el rango(0x0000 - 0xFFFF) (0-65535)
+<br>
+# Ejemplos: red, brown, lightgray, #FFFF00000000, #FFFFF5F5ABAB
+<br>
+ 
+<br>
+# FONTS:
+<br>
+# Se admiten como valores validos de fonts en las entradas del fichero los
+<br>
+# especificados en la forma "%family-size-style-foundry", donde :
+<br>
+# family : es la familia de la font.
+<br>
+# size : es el tamaño de la font.
+<br>
+# style : combinación de las letras B (Bold) ,I (Italic) y U (Underline).
+<br>
+# Si el campo style esta vacio, se toma estilo normal.
+<br>
+# foundry : es opcional e identifica a la compañia que diseñó la fuente.
+<br>
+# Cuando no se especifica, se puede obviar el '-' que le precede.
+<br>
+# Ejemplos de nombres de tipos de letras validos, siempre y cuando existan
+<br>
+# en el sistema operativo donde ejecuta la aplicación.
+<br>
+# %helvetica-12- , %time-12-BU, %courier-14-i-adobe, %terminal-11--bitstream
+<br>
+ 
+<br>
+# PATTERNS:
+<br>
+# Se admiten como valores validos de patterns en las entradas de configuración
+<br>
+# los siguientes valores:
+<br>
+# default, diaglr, diagrl, clear, gray, vert, cross, horiz
+<br>
+ 
+<br>
+# LINE-STYLE:
+<br>
+# Se admiten como valores validos de estilos de líneas en las entradas de
+<br>
+# configuración los siguientes valores:
+<br>
+# solid, dot, dash, dashdot, dashdoubledot, alternate, doubledot, longdash
+<br>
+# Nota IMPORTANTE: el desempeño de Ilog Views se ve perjudicado usando tipos de
+<br>
+# líneas que no sean contínuos, ya que el coste de dibujar trazos discontínuos
+<br>
+# es mucho mayor que el de dibujar trazos contínuos.
+<br>
+ 
+<br>
+[Database]
+<br>
+# Indica si se debe establecer la conexión con alguna base datos:
+<br>
+# 0 = No muestra la ventana de login
+<br>
+# 1 = Muestra la ventana de login para establecer dicha conexión
+<br>
+DBConnection=1
+<br>
+ShowConnectionInfo=0
+<br>
+ 
+<br>
+# Utilidades de importación y exportación de bases de datos
+<br>
+ImportDatabaseUtility=c:\oracle\ora81\bin\imp.exe
+<br>
+ExportDatabaseUtility=c:\oracle\ora81\bin\exp.exe
+<br>
+ 
+<br>
+#Utilidad de ejecución de scripts
+<br>
+OracleSQLPlus=c:\oracle\ora81\bin\sqlplus.exe
+<br>
+ 
+<br>
+[Database.Login.Oracle]
+<br>
+# Datos de conexión con SGBD Oracle
+<br>
+Driver=oracle81
+<br>
+Username=redefine.in.galeon.rc
+<br>
+Password=redefine.in.galeon.rc
+<br>
+ 
+<br>
+# Driver que usará el servidor en caso de querer lanzar el juego de forma remota desde una
+<br>
+# consola con Ilog4 en un servidor con Ilog5 (Dejar en blanco si no aplica)
+<br>
+ServerDriver=
+<br>
+ 
+<br>
+[Database.Connect]
+<br>
+# Modos de conexión con la base de datos
+<br>
+Modes=ADMINISTRADOR,NORMAL
+<br>
+ 
+<br>
+[Database.Drivers]
+<br>
+# Driver disponibles para login con distintos SGBD
+<br>
+Drivers=ORACLE,ODBC
+<br>
+ 
+<br>
+[Database.Oracle]
+<br>
+# Nombre del servicio de conexión con Oracle
+<br>
+ServiceName=galeondb
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# COMPROBACIÓN DE EJERCICIO
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+[CheckGame]
+<br>
+StartSAMonitor=0
+<br>
+ 
+<br>
+# Activa o desactiva la información de depuración en la copia de ficheros. Con esto
+<br>
+# activo se puede comprobar si se está grabando correctamente los ficheros de Logger
+<br>
+# 0 = Inactivo, 1 = Activo
+<br>
+ShowCommToolsDebugInformation=1
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION GENERAL
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[Version]
+<br>
+# Clave de versión
+<br>
+VersionKey=
+<br>
+VersionID=3.18.0
+<br>
+ 
+<br>
+[EnvironmentVariables]
+<br>
+# Variables de entorno para ILOG
+<br>
+ILVHOME5=C:\ilog\Views52
+<br>
+ILVHOME4=C:\ilog\Views402
+<br>
+DBLINK_HOME4=C:\ilog\dblink412
+<br>
+DBLINK_HOME5=C:\ilog\dblink52
+<br>
+ 
+<br>
+[Options]
+<br>
+# Selección del lenguaje empleado en el MMI
+<br>
+# es_ES = español (España)
+<br>
+# es_CL = español (Chile)
+<br>
+# en_US = english (USA)
+<br>
+Languaje=es_ES
+<br>
+# Indica al SlQualityFeedback el directorio donde almacenar el registro de
+<br>
+# las caidas de la aplicación
+<br>
+SlQFAutoSaveDir = C:\SlQF
+<br>
+ 
+<br>
+# Indica al SlQualityFeedback que cuando haya un error salve automáticamente
+<br>
+# un fichero con la pila de llamadas a funciones donde se produjo
+<br>
+# 0 = No salva automáticamente, 1 = Salva automáticamente
+<br>
+SlQFAutoSave = 1
+<br>
+ 
+<br>
+[Logger]
+<br>
+# Activa el uso del Logger
+<br>
+UseLogger=0
+<br>
+ 
+<br>
+# Path y nombre del directorio donde el logger guarda los ficheros que genera
+<br>
+LoggerPath=c:\Logger
+<br>
+ActiveLoggerDir=default
+<br>
+ 
+<br>
+# Tiempo en segundos que transcurre entre dos fotos consecutivas. (Mínimo = 150 y Máximo = 7200)
+<br>
+TimePeriodicPhoto=300
+<br>
+ 
+<br>
+[Broker]
+<br>
+# 0 Indica que no se usa la federación de control, sino que existe una única
+<br>
+# federación y todas las consolas que se ejecutan se conectan al juego
+<br>
+# asociado a esa federación.
+<br>
+# 1 Indica que si se usa la federación de control, la cual se encarga de
+<br>
+# decidir que juego (federacion) es al que debe conectarse las consolas
+<br>
+UseControlBroker=1
+<br>
+ 
+<br>
+# Será el puerto inicial en el que se establece la federacion principal del
+<br>
+# sistema. La federación de control (si se configura), tendra este puerto
+<br>
+# como puerto de comunicaciones, a partir de aqui, cada juego va tomando
+<br>
+# puertos consecutivos, el juego n, usara el puerto BasePort+n.
+<br>
+# Hay que tener cuidado ya que cuando no existe la federacion de control
+<br>
+# el juego que actua como servidor, establecerá en este mismo puerto su
+<br>
+# puerto de comunicaciones.
+<br>
+# Este valor se recomienda que sea bastante alto:
+<br>
+# mayor que 60000 y menor que 64000.
+<br>
+BasePort=60033
+<br>
+ 
+<br>
+# 0 Indica que NO se quiere cambiar el valor de la dirección IP en donde
+<br>
+# se buscarán los federados, con lo que se mantendrá el valor definido
+<br>
+# en el fichero UDPBroker.cfg
+<br>
+# 1 Indica que se quiere cambiar el valor de la dirección IP en donde se
+<br>
+# buscarán los federados, con lo que se establecerá como nueva dirección IP,
+<br>
+# la declarada en la variable Nets
+<br>
+ChangeBrokerNets=0
+<br>
+ 
+<br>
+# Dirección IP en donde se deben buscar los federados de la federación del juego
+<br>
+# Si ChangeBrokerNets está a 1, sustituye al valor establecido en el fichero
+<br>
+# UDPBroker.cfg
+<br>
+Nets=150.150.0.0
+<br>
+ 
+<br>
+# Nombre de la federación de control
+<br>
+ControlFederationName=GaleonControl
+<br>
+ 
+<br>
+# Prefijo del nombre de la federación del juego. Las federaciones del juego
+<br>
+# se llamaran con el prefijo seguido del identificador del juego.
+<br>
+# Por ejemplo: Galeon1
+<br>
+GameFederationPrefixName=Galeon
+<br>
+ 
+<br>
+# Indica si las consolas descartaran los objetos que no usan, de tal forma
+<br>
+# que se reduce el consumo de memoria y la cantidad de objetos de los cuales
+<br>
+# se reciben actualizaciones
+<br>
+DiscardUnusedObjects=0
+<br>
+ 
+<br>
+# Indica si se ha de usar el mecanismo de regiones para que las detecciones
+<br>
+# solo lleguen a las consolas que las necesitan. Con esto se reduce el consumo
+<br>
+# de memoria y la cantidad de objetos de los cuales se reciben actualizaciones
+<br>
+UseRegions=0
+<br>
+ 
+<br>
+[Monitor]
+<br>
+# 0 Indica que no se debe activar el monitor de SA, 1 indica lo contrario
+<br>
+UseMonitor=0
+<br>
+ 
+<br>
+# 0 Indica que el GamesServer no debe mostrar el monitor de SA
+<br>
+UseGamesServerMonitor=0
+<br>
+ 
+<br>
+# Indica el directorio donde deben buscarse los ficheros .ilv de Ilog que
+<br>
+# definen las ventanas del Monitor de SA
+<br>
+IlogPath=S:\sainsel.lib\Arquitectura.2.15\src\Monitor
+<br>
+ 
+<br>
+[Game]
+<br>
+# Indica en que fichero se almacenara el registro de log
+<br>
+SALogFile=C:\Archivos de programa\Galeon\GaleonServerSA.log
+<br>
+LogFile=C:\Archivos de programa\Galeon\GaleonServer.log
+<br>
+ 
+<br>
+# Indica el nivel de detalle del registro de log. Los valores posibles son LOG_ERROR y LOG_INFO.
+<br>
+# LOG_INFO muestra mayor cantidad de informaión que LOG_ERROR
+<br>
+SALogMask=LOG_INFO
+<br>
+LogMask=LOG_INFO
+<br>
+ 
+<br>
+# 1 Indica que el programa actuara como servidor del juego, evaluando modelos
+<br>
+# y permitiendo que las consolas se conecten para transmitirle la información
+<br>
+# y recibir interacciones.
+<br>
+# 0 Indica que el programa funcionara en modo local y no se permitira la
+<br>
+# conexión de consolas.
+<br>
+ActAsServer=0
+<br>
+ 
+<br>
+# 1 Indica petición de modo en la ventana de carga.
+<br>
+# 0 Indica que no es necesario solicitar el modo en la ventana de carga
+<br>
+LoadWndRequestMode=1
+<br>
+ 
+<br>
+# 1 Indica que el simulador funcione en modo multitarea. 0 Indica que funcione
+<br>
+# en modo monotarea, pero esto no evita que cuando hay comunicaciones se creen
+<br>
+# multiples tareas de comunicaciones.
+<br>
+UseThreads=0
+<br>
+ 
+<br>
+# 1 Indica que cada tipo de unidad (aerea, superficie, helicoptero, avion,
+<br>
+# terrestre, base, expendables y ambientales), ejecuta en una tarea diferente
+<br>
+# 0 indica que todas ejecutan en la misma tarea que el GameProc.
+<br>
+SeparateThreadsForGroupOfUnits=1
+<br>
+ 
+<br>
+# Solo tiene sentido si SeparateThreadsForGroupOfUnits=0, en ese caso, las
+<br>
+# unidades ambientales ejecutan en una tarea separada del resto.
+<br>
+SeparateThreadForAmbientUnits=1
+<br>
+ 
+<br>
+# Solo tiene sentido si SeparateThreadsForGroupOfUnits=0, en ese caso, las
+<br>
+# unidades perecederas ejecutan en una tarea separada del resto.
+<br>
+SeparateThreadForExpendableUnits=1
+<br>
+ 
+<br>
+# MaxNumUnits indica el número de unidades máximo que manejara el sistema.
+<br>
+# Este valor es para que se dimensionen vectores internos a sus capacidades
+<br>
+# máximas, pero no implica que el sistema tenga limitación alguna, solo
+<br>
+# cambiando este parámetro a un valor mayor se amplia su capacidad.
+<br>
+MaxNumUnits=1000
+<br>
+ 
+<br>
+# Indica si en la carga de la base de datos, se deben usar las clases del
+<br>
+# módulo DBLink de Ilog o las clases del módulo de DataAccess
+<br>
+# Debido a un problema con informix en Windows cuando se usa DBLink, algunas
+<br>
+# veces la consola falla, por lo tanto en Windows es conveniente que este
+<br>
+# valor este a 0 forzando el uso de DataAccess, sin embargo en UNIX, es
+<br>
+# más interesante que este valor este a 1, ya que no hay caida conocida y
+<br>
+# la velocidad de carga cuando se activa DBLink es mucho mayor.
+<br>
+UseDBLink=1
+<br>
+ 
+<br>
+# Con este valor se puede controlar que sólo se produzca un numero limitado
+<br>
+# de evaluaciones. Si el valor es 0, no se limita el número de evaluaciones.
+<br>
+LimitNumTicks=0
+<br>
+ 
+<br>
+# Cuando LimitNumTicks=1, este valor indica cuantas evaluaciones se
+<br>
+# realizarán como máximo. Cuando se alcanza este valor, la aplicación sale
+<br>
+# automáticamente. Este valor es interesante para realizar mediciones de
+<br>
+# velocidad de proceso.
+<br>
+TotalTicks=30
+<br>
+ 
+<br>
+# Indica si se debe mostrar o no información detallada en el fichero de log
+<br>
+# de los tiempos de llamada al método timerProc del GameProc (0 = NO; 1 = SI)
+<br>
+ShowTimeDetail=0
+<br>
+ 
+<br>
+# Con este valor se puede hacer que cuando se cargue una base de datos
+<br>
+# el número de unidades creadas se multiplique. Por ejemplo, si el valor
+<br>
+# NumBDUnitsFactor=5 y hay 3 unidades configuradas en el ejercicio cargado
+<br>
+# de base de datos, se crearan 3*5 unidades, donde cada una de la BD se
+<br>
+# clonara 5 veces pero en una posición distinta y con rumbo y velocidad
+<br>
+# distintas a la original. (Util para pruebas de carga).
+<br>
+NumBDUnitsFactor=1
+<br>
+ 
+<br>
+# Indica si cuando se termina de cargar el juego debe comenzar automáticamente
+<br>
+StartGame=0
+<br>
+ 
+<br>
+# Con este valor se puede forzar a que al arrancar el juego, se enciendan automáticamente
+<br>
+# todos los sensores QUE CUMPLAN LA MÁSCARA de todas las unidades ( valor 1 ) o que se
+<br>
+# apagen los sensores QUE CUMPLAN LA MÁSCARA ( valor 2 ) o que el sensor tome su valor
+<br>
+# por defecto al arrancar ( Valor 0 ). --- Util para pruebas de carga.
+<br>
+StatusOfSensorsOnStart=0
+<br>
+StatusOfSensorsMask=8388607
+<br>
+ 
+<br>
+# Indica si debe aparecer la ventana de depuración de modelos/errores.
+<br>
+# Aunque la ventana no aparezca, en Windows se crea un fichero Galeon.log
+<br>
+# donde aparecen todos los mensajes que aparecerian en la ventana, y en
+<br>
+# UNIX estos mensajes salen por el terminal desde donde se lanzo la
+<br>
+# aplicacion.
+<br>
+ShowDebugWindow=0
+<br>
+LocalDebugWindowInteraction = 0
+<br>
+# Este parametro establece si se usan interacciones de debug o no, ya que
+<br>
+# aunque no se esten mostrando ventanas de debug, las interacciones son
+<br>
+# enviadas a no ser que este parámetro esté a 1.
+<br>
+DisableDebugInteractions = 1
+<br>
+ 
+<br>
+# Indica si se debe usar incremento real de tiempo entre evaluaciones o no
+<br>
+# ( 0 = NO ; 1 = SI )
+<br>
+RealIncrTime = 1
+<br>
+ 
+<br>
+# Tiempo de evaluación definido por defecto (si no se ha especificado incremento real de
+<br>
+# tiempo, será el incremento de tiempo usado) (milisegundos)
+<br>
+GameStepTime = 1000
+<br>
+ 
+<br>
+# Indica si se debe usar modelo de daños automático o manual
+<br>
+# ( 0 = MANUAL ; 1 = AUTOMATICO )
+<br>
+AutoDamage = 1
+<br>
+ 
+<br>
+# Indica el directorio donde deben buscarse los ficheros .ilv de Ilog que
+<br>
+# se usan en los diálogos de utilidad común
+<br>
+CommonUtilsIlogPath=C:\Desarrollo\Galeon\sw\src\CommonUtilities
+<br>
+ 
+<br>
+# Indican si se deben evaluar los modelos correspondientes.
+<br>
+# Todos estos parámetros son para depurar u optimizar código.
+<br>
+# Activan o desactivan por grupos la evaluación de distintos modelos:
+<br>
+# EvaluateCombatSys: evaluación del sistema de combate completo
+<br>
+# EvaluateWeapons: evaluación de todas las Armas
+<br>
+# EvaluateDamages: evaluación de daños
+<br>
+# EvaluateWakes: generación de estelas de barcos (para torpedos)
+<br>
+# CreateSADet: creación de detecciones en manager de SA
+<br>
+# CompileDetections: compilación de detecciones
+<br>
+# EvaluateSensorsMask=8388607, evaluación de sensores según máscara
+<br>
+EvaluateUnit=1
+<br>
+ShowUnitTime=0
+<br>
+EvaluateDynamic=1
+<br>
+ShowDynamicTime=0
+<br>
+EvaluateComms=1
+<br>
+ShowCommsTime=0
+<br>
+EvaluateCombatSys=1
+<br>
+ShowCombatSysTime=0
+<br>
+EvaluateWeapons=1
+<br>
+ShowWeaponsTime=0
+<br>
+EvaluateDistances=1
+<br>
+ShowDistancesTime=0
+<br>
+EvaluateSatellites=1
+<br>
+ShowSatellitesTime=0
+<br>
+EvaluateLinks=1
+<br>
+ShowLinksTime=0
+<br>
+EvaluateDamages=1
+<br>
+ShowDamagesTime=0
+<br>
+EvaluateRoe=1
+<br>
+ShowRoeTime=0
+<br>
+EvaluateWakes=1
+<br>
+ShowWakesTime=0
+<br>
+EvaluateScenario=1
+<br>
+ShowScenarioTime=0
+<br>
+EvaluateInstructor=1
+<br>
+ShowInstructorTime=0
+<br>
+EvaluatePlans=1
+<br>
+ShowPlansTime=0
+<br>
+EvaluateSensors=1
+<br>
+ShowSensorsTime=0
+<br>
+EvaluateSensorsMask=8388607
+<br>
+CreateSADet=1
+<br>
+CompileDetections=1
+<br>
+ShowNumUnits=0
+<br>
+ 
+<br>
+# Indica si se debe mostrar información de la asignación de las detecciones a regiones o no (0 = NO ; 1 = SI)
+<br>
+ShowDetRegionInfo = 0
+<br>
+ 
+<br>
+# ----------------------------------------------------------------------
+<br>
+# Modelo de colisiones
+<br>
+# ----------------------------------------------------------------------
+<br>
+ 
+<br>
+# Activa la evaluación del modelo de colisiones
+<br>
+EvaluateCollisions = 1
+<br>
+ShowCollisionsTime = 0
+<br>
+ 
+<br>
+# Activa el uso de método de cálculo de profundidades optimizado
+<br>
+UseOptimizeHeightCalculate = 1
+<br>
+ 
+<br>
+# Frecuencia de evaluación del modelo de colisiones (en milisegundos)
+<br>
+CollisionEvaluationFrequency = 1000
+<br>
+ 
+<br>
+# Valor en metros por defecto devuelto por el modelo de colisiones cuando
+<br>
+# no es capaz de obtener la altura/profundidad de una posición
+<br>
+CollisionDefaultHeight = -5000000
+<br>
+ 
+<br>
+# Diámetro del cuadrado de alcance para la obtención de un sondeo en las proximidades
+<br>
+# de un punto dado, para unidades PRINCIPALES (en metros)
+<br>
+SoundingRadius = 3000
+<br>
+ 
+<br>
+# Diámetro del cuadrado de alcance para la obtención de un sondeo en las proximidades
+<br>
+# de un punto dado, para unidades DE AMBIENTACION (en metros)
+<br>
+NoMainUnitSoundingRadius = 20000
+<br>
+ 
+<br>
+# Mínima distancia que debe moverse una unidad para que se recalcule su altura/profundidad (metros)
+<br>
+MinDistanceForCalculateDepth = 30
+<br>
+ 
+<br>
+# Indica si se efectúan los cálculos de distancia a costa
+<br>
+ComputeLandDistance = 1
+<br>
+ 
+<br>
+# Radio de alcance para calcular la distancia a costa (en metros)
+<br>
+# (555600 m = 300 Nm)
+<br>
+# La costa que quede fuera de esta alcance no se tiene en cuenta
+<br>
+# (si es negativo, no existirá restricción por alcance)
+<br>
+DistanceToLandTooFar = 555600
+<br>
+ 
+<br>
+# Valor de altura considerado para la tierra cuando la carta no contiene
+<br>
+# información sobre la altura en tierra (metros)
+<br>
+DefaultHeightInLand = 0
+<br>
+ 
+<br>
+# Mínima distancia que se debe mover el hook para que se recalcule la altura/profundidad que se presenta
+<br>
+# en cartografía del punto en el que se encuentra situado (en metros)
+<br>
+MinHookMovedDistance = 25
+<br>
+ 
+<br>
+# Máxima diferencia permitida entre el calado de la unidad y la profundidad del mar para considerar un buque varado (metros)
+<br>
+MaxGroundedHeight = 1
+<br>
+ 
+<br>
+# Máxima velocidad permitida para que el buque pueda varar en vez de colisionar (nudos)
+<br>
+MaxGroundedSpeed = 5
+<br>
+ 
+<br>
+# ----------------------------------------------------------------------
+<br>
+# Modelo de ocultación
+<br>
+# ----------------------------------------------------------------------
+<br>
+ 
+<br>
+# Activa la evaluación del modelo de ocultación
+<br>
+EvaluateOccultation = 1
+<br>
+ShowOccultationTime = 0
+<br>
+ 
+<br>
+# Frecuencia de evaluación del modelo de ocultación (en milisegundos)
+<br>
+OccultationEvaluationFrequency = 1000
+<br>
+ 
+<br>
+# Porcentaje de la distancia que guardan entre sí dos unidades para considerar
+<br>
+# que se han movido y, por tanto, volver a evaluar su ocultación (0.01 = 1%)
+<br>
+PercentageOfDistanceForOccultationEvaluation = 0.01
+<br>
+ 
+<br>
+# ----------------------------------------------------------------------
+<br>
+# Presentación de la región de juego del ejercicio en la consola gráfica
+<br>
+# ----------------------------------------------------------------------
+<br>
+ 
+<br>
+# Color para la región de juego
+<br>
+GameRegionRectangleColor = red
+<br>
+ 
+<br>
+# Tipo de línea para la región de juego
+<br>
+GameRegionRectangleLineStyle = dash
+<br>
+ 
+<br>
+# Grosor de la línea para la región de juego
+<br>
+GameRegionRectangleWidth = 3
+<br>
+ 
+<br>
+# ----------------------------------------------------------------------
+<br>
+# MCU
+<br>
+# ----------------------------------------------------------------------
+<br>
+# Dirección IP del servidor MCU
+<br>
+# Opcionalmente se puede especificar el puerto tcpip, por ejemplo:
+<br>
+# MCU=192.168.10.100:3456, y en este caso hay que arrancar
+<br>
+# openmcu.exe -n --listenport 3456,
+<br>
+# Especificar puerto es útil para poder tener el MCU ejecutando
+<br>
+# en una misma consola
+<br>
+MCU=192.168.10.100
+<br>
+ 
+<br>
+[GamesServer]
+<br>
+# Indica en que fichero se almacenara el registro de log
+<br>
+SALogFile=C:\Archivos de programa\Galeon\GamesServerSA.log
+<br>
+LogFile=C:\Archivos de programa\Galeon\GamesServer.log
+<br>
+ 
+<br>
+# Indica el nivel de detalle del registro de log. Los valores posibles son LOG_ERROR y LOG_INFO.
+<br>
+# LOG_INFO muestra mayor cantidad de informaión que LOG_ERROR
+<br>
+SALogMask=LOG_INFO
+<br>
+LogMask=LOG_INFO
+<br>
+ 
+<br>
+# Número de cabina(número de consolas en la cabina).
+<br>
+# En primer lugar debe aparecer la sala de instructores.
+<br>
+# Chile:
+<br>
+# CabinList=11(6),21(6),22(6),23(2),24(6),25(2),26(6),27(6),31(6),32(6),33(2),34(6),35(2),36(6),37(6)
+<br>
+# Rota:
+<br>
+CabinList=0(8),1(3),2(3),3(3),4(3),5(3),6(3),7(3),8(3),9(3),10(3),11(3),12(3),13(3),14(3),15(3),16(3),17(3),18(3),19(3),20(3)
+<br>
+ 
+<br>
+# Aplicacion que se lanza cada vez que el servidor de juego lanza un juego.
+<br>
+# Una entrada para windows y otra para unix
+<br>
+GaleonUnixProgramName=Galeon.RUN
+<br>
+GaleonWinProgramName=Galeon.BAT
+<br>
+ 
+<br>
+# Aplicacion que permite el control remoto de las consolas
+<br>
+# Una entrada para windows y otra para unix
+<br>
+RemoteControlUnitUnixProgramName=RemoteControlUnit.RUN
+<br>
+RemoteControlUnitWinProgramName=RemoteControlUnit.BAT
+<br>
+ 
+<br>
+# Ruta a los ficheros .ilv que se usan para la ventana
+<br>
+IlogPath=C:/Desarrollo/Galeon/sw/src/GaleonControl/GamesServer
+<br>
+ 
+<br>
+[RemoteControl]
+<br>
+# Dirección de broadcast y puerto de la red de las consolas, para que el control remoto
+<br>
+# pueda saber a que red preguntar especificamente.
+<br>
+BroadcastIP=150.150.255.255
+<br>
+BroadcastPort=19501
+<br>
+ 
+<br>
+# Prefijo que se usara para identificar los nombres de las consolas, ya que
+<br>
+# en una instalación se le pudo poner a las consolas nombres como Con004 y
+<br>
+# en otra instalación se pudo poner Console_004
+<br>
+ConsoleNamePrefix=Con
+<br>
+ 
+<br>
+# Lista de procesos que apareceran inicialmente configurados en el combo de
+<br>
+# la aplicacion de control remoto (separados por comas)
+<br>
+ProcessList=Console,ConsoleLog
+<br>
+ 
+<br>
+# Configuración de las cabinas y consolas por cabina
+<br>
+NumCabins=6
+<br>
+NumConsolesInCabins=3
+<br>
+NumInstructorConsoles=2
+<br>
+ 
+<br>
+[Cartography]
+<br>
+# Acviva modo optimizado de los IlvManager (ver funcion IlvSetOptimizeMode)
+<br>
+SetOptimizeMode=1
+<br>
+ 
+<br>
+# Activa el modo geográfico de los sectores de armas y sensores
+<br>
+UseGeographicRangeSector=1
+<br>
+CartographyPath=S:\sainsel.lib\Cartografia\src
+<br>
+CartographyDataPath=S:\sainsel.lib\Cartografia.data
+<br>
+ 
+<br>
+# Directorio por defecto para las cartas del sistema
+<br>
+# El editor de cartas también usa este directorio por defecto
+<br>
+PresentationChartPath=C:\Desarrollo\Galeon\sw\Install\distributable.files\Charts
+<br>
+OcultationChartPath=C:\Desarrollo\Galeon\sw\Install\distributable.files\Charts
+<br>
+ 
+<br>
+# Indica el directorio donde deben buscarse los ficheros gráficos,
+<br>
+# según extensiones, que se usan en los diálogos del conversor S57.
+<br>
+S57Converter=S:\sainsel.lib\Cartografia\src
+<br>
+IlogExtensions=*.(xpm|xbm|png|jpg|ilv|locale)
+<br>
+ 
+<br>
+# Nombre de la carta usada por la Preparación Gráfica para obtener la
+<br>
+# altura/profundidad del escenario en la posición del hook cuando no hay
+<br>
+# ninguna carta asignada como carta base/auxiliar en el escenario
+<br>
+DefaultChart = wvs040m_Europa_Norte_Africa.ilv
+<br>
+ 
+<br>
+# Ancho y alto del símbolo usado para los contactos AIS (pixels)
+<br>
+AISSymbolWidth = 15
+<br>
+AISSymbolHeight = 25
+<br>
+ 
+<br>
+# Indica si hay que mostrar las cortinas en modo geográfico o no
+<br>
+CrtCurtainInGeoMode = 1
+<br>
+ 
+<br>
+# Nombre del bitmap que se usará para los puntos de referencia definidos como zonas de interferencia
+<br>
+ReferencePointBitmapName = 1_1_6.png
+<br>
+ 
+<br>
+# Nivel de zoom que se debe aplicar al pulsar las teclas '+' y '-' del teclado
+<br>
+ZoomLevelForKeys = 2
+<br>
+ 
+<br>
+# Indica si se debe crear fija o independiente la ventana de cálculo de demora y distancia (1 = fija; 0 = Independiente)
+<br>
+FixRangeBearingDataView = 1
+<br>
+ 
+<br>
+# Indica si se debe crear encajada en el minimapa o no la ventana de cálculo de demora y distancia (1 = SI; 0 = NO)
+<br>
+RangeBearingDataViewInMM = 1
+<br>
+ 
+<br>
+# Indica si se debe mostrar en metros o en millas la información de la ventana de cálculo de demora y distancia (1 = metros; 0 = millas)
+<br>
+ShowDataInMeters = 0
+<br>
+ 
+<br>
+# Indica si se debe mostrar o no la información de depuración del cálculo de profundidades en dos cartas (1 = SI; 0 = NO)
+<br>
+ShowWeightedHeightOtherChartDebugInfo = 0
+<br>
+ 
+<br>
+# Indica si utiliza cartografía ILV o cartografía CMAP
+<br>
+UseCMAP = 0
+<br>
+InitialViewingHeight = 35000000
+<br>
+ 
+<br>
+# Modelo de colisiones usado
+<br>
+# Cartografía Ilv = 0
+<br>
+# Cartografía CMAP / 3D = 1
+<br>
+CollisionsMethod = 0
+<br>
+ 
+<br>
+# Si se usa el modelo de colisiones ocultaciones de rejillas
+<br>
+Grid3DMethod = 0
+<br>
+ 
+<br>
+# Máximo número de rejillas que se cargan en memoria, superado el límite, se saca la menos usada y se carga la nueva
+<br>
+# rejilla (10 => 2048*2048 * 2 * 10 = 80 Mb)
+<br>
+Grid3DInstancesInMemory = 10
+<br>
+ 
+<br>
+# Ruta a la Base de Datos 3D para las rejillas
+<br>
+Grid3DDatabasePath = E:\Base de Datos 3D\Base de Datos 3D (CMAP-506)
+<br>
+ 
+<br>
+# Las rejillas se componen de una matriz de datos discreta. Para evitar dar la misma altura/profundidad en todo el área
+<br>
+# de una celda, se puede usar interpolación bilineal. Se recomienda tener activo siempre este valor.
+<br>
+Grid3DBilinealInterpolation=1
+<br>
+ 
+<br>
+Nota: Profundidades muy altas definidas en este parámetro pueden ralentizar el cálculo de colisiones.
+<br>
+ 
+# Profundidad a partir de la cual se da prioridad a la profundidad calculada por el algoritmo de CMAP sobre las rejillas en
+<br>
+# caso de ambigüedad A A
+<br>
+Grid3DLowestDepthToRateAsAmbiguous=-400
+<br>
+ 
+<br>
+# Establece el valor de tierra por defecto en caso de ambigüedad entre la línea de costa (+Prioridad) y rejilla
+<br>
+Grid3DAmbiguousLandDefaultValue = 5
+<br>
+ 
+<br>
+# Establece el valor de agua por defecto en caso de ambigüedad entre la línea de costa (+Prioridad) y rejilla
+<br>
+Grid3DAmbiguousDepthDefaultValue = -15
+<br>
+ 
+<br>
+# Permite establecer si los cálculos se realizarán con alto nivel de detalle en los algoritmos de cálculo de profundidad
+<br>
+CoastInHighDetail = 1
+<br>
+ 
+<br>
+# Establece la resolución por defecto para los cálculos de profundidad (Se recomienda 2500, por encima de este valor se pierde
+<br>
+# precisión). Requiere que CoastInHighDetail = 1
+<br>
+ScaleForCoastInHighDetail = 2500
+<br>
+ 
+<br>
+# Da prioridad al método de cálculo de distancia a costa 3D sobre el de CMAP. Ambos son precisos, pero el 3D es mas pobre en
+<br>
+# rendimiento mientras inicia las cargas de la caché de la zona en la que se trabaja
+<br>
+# CMAP = 0, 3D = 1
+<br>
+Grid3DUseDistanceToCoastMethod=0
+<br>
+ 
+<br>
+# Permite almacenar la información de posiciones y altura/profundidad por las que pasa el rayo para depuración en base al relieve
+<br>
+# en un gráfico excel CLV (La información se saca al fichero de log)
+<br>
+Grid3DSaveDataForCLV = 0
+<br>
+ 
+<br>
+# Muestra información de depuración en el cálculo de visibilidad/ocultación
+<br>
+Grid3DShowCollisionLogInfo = 0
+<br>
+ 
+<br>
+# Información de depuración relativa al proceso de generación
+<br>
+Grid3DLogFileName = E:\Base de Datos 3D\Base de Datos 3D (CMAP-506)\Grid3DLog.txt
+<br>
+Grid3DGenerateLogInfo = 0
+<br>
+ 
+<br>
+[CMAP]
+<br>
+# Define la altura mínima de presentación que se permite
+<br>
+MinScale=1000
+<br>
+ 
+<br>
+# Define la altura máxima de presentación que se permite (superada esta, no se hace mas zoom)
+<br>
+MaxScale=25000000
+<br>
+ 
+<br>
+# Reducción de zoom
+<br>
+MinScaleFactor=1
+<br>
+ 
+<br>
+# Escala para la vista en miniatura
+<br>
+ReferenceWorldViewScale=500000000
+<br>
+ 
+<br>
+# Relación entre la vista de carta de la referencia y lo mostrado en consola
+<br>
+ReferenceChartViewScaleRelation = 3
+<br>
+ 
+<br>
+# Indica si muestra los meridianos paralelos en CMAP
+<br>
+UseCMAPGrid = 0
+<br>
+ 
+<br>
+# Indica si se permiten actualizaciones manuales de las cartas o no (0=NO; 1=SI)
+<br>
+WithManualUpdates = 0
+<br>
+ 
+<br>
+# Fichero de descripción de las clases de objetos que pueden ser añadidos a la BD geográfica de CMAP
+<br>
+ManualUpdateHtmlFile = ManUpdate.htm
+<br>
+ 
+<br>
+# Fichero de about para CMAP
+<br>
+AboutHtmlFile = The CMAP Cartographic Service.htm
+<br>
+ 
+<br>
+# Camino para los ejecutables de CMAP
+<br>
+SystemPath = C:\Archivos de programa\C-Map Professional SDK Runtime\System
+<br>
+ 
+<br>
+# Nombre del programa gestor de la BD cartográfica de CMAP
+<br>
+ChartManager = ChartManager.exe
+<br>
+ 
+<br>
+# Indica si se debe mostrar la cartografía encuadrada o no (0=NO; 1=SI)
+<br>
+ShowMapMargins = 1
+<br>
+ 
+<br>
+# Indica si se debe ejecutar en modo modal o no (0=NO; 1=SI)
+<br>
+DoModalExecute = 0
+<br>
+ 
+<br>
+# Indica si se debe usar la base de datos por defecto o no (0=NO; 1=SI)
+<br>
+UseDefaultDatabase = 1
+<br>
+ 
+<br>
+# Bases de datos a cargar en caso de no usar la base de datos por defecto (separadas por comas)
+<br>
+Databases = Professional+
+<br>
+ 
+<br>
+# Periodo de tiempo entre chequeos de licencia (segundos)
+<br>
+LicenseCheckPeriod = 86400
+<br>
+ 
+<br>
+# Lista de elementos de presentación a activar por defecto (183: Tidal heights and streams, 185: GMDSS areas,
+<br>
+# 186: SAR regions, 189: Improved background and overview charts, 193: Terrain data (gridded))
+<br>
+IdActiveSections = 189,193
+<br>
+ 
+<br>
+# Indica si se debe mostrar o no información de tiempos de repintado de la cartografía CMAP
+<br>
+ShowTimeInformation = 0
+<br>
+ManualUpdateHtmlFile=S:\sainsel.lib\Cartografia\src\CM93\ManUpdate.htm
+<br>
+ 
+<br>
+[Cartography.ReferenceView]
+<br>
+# Nombre de la carta empleada para la vista de referencia
+<br>
+WorldOverview=C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/overview.ilv
+<br>
+ 
+<br>
+[Cartography.DialogFiles]
+<br>
+# Ficheros ilv para los diálogos de cartografía
+<br>
+ReferenceView=C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnReferenceView.ilv
+<br>
+CrtLocalDrawingsWindow = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnLocalDrawingsSelection.ilv
+<br>
+RangeRingsPropertiesWindow = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnDistanceNumberRings.ilv
+<br>
+CrtTrackHistoryParamsDialog = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnTrackHistoryParams.ilv
+<br>
+CrtTrackPositionForecastParamsDialog = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnTrackPositionForecastDialog.ilv
+<br>
+CrtConfigCPAParamsDialog = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnConfigCPADialog.ilv
+<br>
+CrtBearingLinesDialog = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnBearingLinesWindow.ilv
+<br>
+TacticalTrackSelectionWindow = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnPixmapSelectionWindow.ilv
+<br>
+CrtTacticalTrackFilterWindow= C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnTacticalTrackFilterWindow.ilv
+<br>
+CrtCurtainParamsDialog = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnCurtainParams.ilv
+<br>
+RangeBearingDataView = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnRangeBearingDataView.ilv
+<br>
+RangeBearingDataViewInMMIlv = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnRangeBearingDataViewInMM.ilv
+<br>
+CrtTrackManagement = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnTrackManagement.ilv
+<br>
+CrtSelectTrack= ilv/GlnSelectTrack.ilv
+<br>
+ 
+<br>
+# Ventana de edición genérica de polígonos y polilíneas
+<br>
+# (usada en Preparación y en Consola)
+<br>
+CrtMakeGeoShapePolypointsDialog = C:/Desarrollo/Galeon/sw/src/CommonGraphic/Data/GlnGeoShapePolypoints.ilv
+<br>
+ 
+<br>
+# Panel para diálogo de entrada de datos de ILOG
+<br>
+IPromptString = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnAsksel.ilv
+<br>
+ 
+<br>
+[Cartography.ASWCord]
+<br>
+# Distancia de los brazos de los radios del plan cordón en metros
+<br>
+Distance = 8334
+<br>
+ 
+<br>
+[Sound]
+<br>
+# Ficheros wav para los sonidos del sistema
+<br>
+EsmFile=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Lock On Alarm.wav
+<br>
+ChaffFile=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Lock On Alarm.wav
+<br>
+SonarTorpedoFile=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Torpedo Alarm.wav
+<br>
+Explosion=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Explode.wav
+<br>
+WateryBlast=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Watery Blast.wav
+<br>
+MissileLaunch=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Misil Launch.wav
+<br>
+ChaffLaunch=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Chaff Launch.wav
+<br>
+ChargeLaunch=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Charge Launch.wav
+<br>
+TorpedoFire=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Torpedo Fire.wav
+<br>
+GunFire=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Gun Fire 105.wav
+<br>
+GunFireLong=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Gun Fire 105.wav
+<br>
+BombDrop=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Bomb Drop.wav
+<br>
+BubblesFire=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Bubble Launch.wav
+<br>
+FuelAlarm=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Fuel Alarm.wav
+<br>
+WeightAlarm=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/Fuel Alarm.wav
+<br>
+ActiveSonarPing=C:/Desarrollo/Galeon/sw/src/Console/Alphanumeric/Data/Sounds/PingActiveSonar.wav
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION DE PAISES
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[Nations]
+<br>
+# Directorio donde se encuentran las nacionalidades que se pueden asignar a
+<br>
+# la distintas unidades que intervienen en los ejercicios
+<br>
+NationsDir=C:\Desarrollo\Galeon\sw\src\CommonUtilities\NationsFlags\22x15
+<br>
+ 
+<br>
+[Console]
+<br>
+# Indica en que fichero se almacenara el registro de log
+<br>
+SALogFile=C:\Archivos de programa\Galeon\GaleonConsoleSA.log
+<br>
+LogFile=C:\Archivos de programa\Galeon\GaleonConsole.log
+<br>
+ 
+<br>
+# Indica el nivel de detalle del registro de log. Los valores posibles son LOG_ERROR y LOG_INFO.
+<br>
+# LOG_INFO muestra mayor cantidad de informaión que LOG_ERROR
+<br>
+SALogMask=LOG_INFO
+<br>
+LogMask=LOG_INFO
+<br>
+ 
+<br>
+# Indica si la consola debe solicitar su número de consola al operador
+<br>
+# en vez de tomarla de la variable de entorno CONSOLE_NUMBER
+<br>
+InteractiveConsoleNumber=0
+<br>
+ 
+<br>
+# Si está a valor 0, no se muestre la Pantalla Táctica (sólo la alfanumérica).
+<br>
+# Es también para depurar u optimizar código (pruebas internas de carga).
+<br>
+ShowChart=1
+<br>
+ 
+<br>
+# Si está a valor 1, la ventana alfanumérica incorporará un scroll para poder
+<br>
+# ver todo su contenido cuando el tamaño de la pantalla sea inferior al de la ventana
+<br>
+# Si está a valor 0, no hay scroll
+<br>
+UseAlphaScrollView=0
+<br>
+ 
+<br>
+# Si está a valor 1, la ventana gráfica incorporará un scroll para poder ver todo
+<br>
+# su contenido cuando el tamaño de la pantalla sea inferior al de la ventana
+<br>
+# Si está a valor 0, no hay scroll
+<br>
+UseGraphicScrollView=0
+<br>
+ 
+<br>
+# Activa optimización de refresco de ILOG.
+<br>
+UseLazyRedraw=1
+<br>
+ 
+<br>
+# Indica el path en el que se grabarán las capturas de pantalla en caso de no tener activo el Logger
+<br>
+ScreenShotWithoutLoggerDir=C:\Logger\ScreenShots
+<br>
+ 
+<br>
+# Fichero de códigos de error del sistema
+<br>
+ErrorCodesFile=c:\Desarrollo\Galeon\sw\src\Console\ErrorCodes.ini
+<br>
+ 
+<br>
+# Indica el directorio donde deben buscarse los ficheros .ilv de Ilog que
+<br>
+# se usan en los diálogos de la consola alfanumérica (Pantalla Control)
+<br>
+IlogPath=c:\Desarrollo\Galeon\sw\src\Console
+<br>
+ 
+<br>
+# Indica el directorio donde deben buscarse los ficheros gráficos que
+<br>
+# se usan en los diálogos de la consola gráfica (Pantalla Táctica).
+<br>
+CartographyConsolePath=C:\Desarrollo\Galeon\sw\src\Console\GlnGraphic
+<br>
+ 
+<br>
+# Tipos de ficheros gráficos empleados por la consola.
+<br>
+# Se usa para añadir path recursivamente.
+<br>
+IlogExtensions=*.(xpm|xbm|png|jpg|ilv|locale|txt)
+<br>
+ 
+<br>
+# Indica si se debe desabilitar tanto la ventana "TTY" de Ilog como la
+<br>
+# aparición de ventanas de popup que se muestran con cada IlvPrint.
+<br>
+# Si se desabilita el TTY los mensajes aparecen en el mismo sitio que
+<br>
+# el LOG de Arquitectura.
+<br>
+DisableTTY=1
+<br>
+ 
+<br>
+# Indica si los diálogos de la Pantalla Táctica y de Control
+<br>
+# se muestran con borde y título (0 = NO, 1 = SI)
+<br>
+BorderAndTitle=1
+<br>
+ 
+<br>
+# Posición (GCWx,GCWy) y tamaño (GCWw,GCWh) de la Pantalla Táctica
+<br>
+GCWx=0
+<br>
+GCWy=0
+<br>
+GCWw=1024
+<br>
+GCWh=768
+<br>
+ 
+<br>
+# Posición (ACWx,ACWy) y tamaño (ACWw,ACWh) de la Pantalla de Control
+<br>
+ACWx=0
+<br>
+ACWy=0
+<br>
+ACWw=1024
+<br>
+ACWh=768
+<br>
+ 
+<br>
+# Parámetro para pruebas internas. Hace que se conecte automáticamente a la BD
+<br>
+# y cargue un ejercicio. sirve para medir y comparar cuanto tarda en arrancar,
+<br>
+# sin intervención humana.
+<br>
+ALoadAtStart=0
+<br>
+ 
+<br>
+# Escala en Nm con la que entra el modo Alumno de la consola
+<br>
+InitialScaleForAlumnMode=64
+<br>
+ 
+<br>
+# Panel para mostrar en la ventana "Acerca de..."
+<br>
+AboutWindow = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnAbout.ilv
+<br>
+ 
+<br>
+#Configuración de la botonera de alarmas (hasta 5 alarmas)
+<br>
+#Alarm1=0 (1 para que se presente el botón de alarma)
+<br>
+#AlarmLabel1=Alarma1 (texto que se presentará en el botón de alarma)
+<br>
+#AlarmSound1=Alarm1.wav (sonido asociado al botón de alarma)
+<br>
+ 
+<br>
+# Mínima escala permitida con el iterador asociado al botón Zoom (Nm)
+<br>
+MinZoom = 0.5
+<br>
+ 
+<br>
+# ------------------------------
+<br>
+# Ventana de selección de escala
+<br>
+# ------------------------------
+<br>
+ 
+<br>
+# Medida como la altura de la vista (false) o bien como la altura desde el
+<br>
+# centro al extremo vertical (true)
+<br>
+ScaleFromCenterOfView = false
+<br>
+ 
+<br>
+# Mínimo valor permitido en campo escala real dentro de la ventana de escala
+<br>
+# (1:escala)
+<br>
+RealScaleMin = 1000
+<br>
+ 
+<br>
+# Máximo valor permitido en campo escala real dentro de la ventana de escala
+<br>
+# (1:escala)
+<br>
+RealScaleMax = 1000000000
+<br>
+ 
+<br>
+#----------------------------------------
+<br>
+# Posición de las etiquetas en las trazas
+<br>
+#----------------------------------------
+<br>
+ 
+<br>
+# Posición de la etiqueta respecto al símbolo de la traza (en pixels)
+<br>
+TrackLabelPositionX = 20
+<br>
+TrackLabelPositionY = 20
+<br>
+ 
+<br>
+#----------------------------------------
+<br>
+# Historia de las trazas
+<br>
+#----------------------------------------
+<br>
+ 
+<br>
+# Valores máximos admitidos en la ventana de historia de la traza
+<br>
+# Tiempo en segundos
+<br>
+TrackHistoryMaxPoints = 100
+<br>
+TrackHistoryMaxTime = 300
+<br>
+ 
+<br>
+#----------------------------------------
+<br>
+# Ventana de creación de trazas
+<br>
+#----------------------------------------
+<br>
+ 
+<br>
+# Máximo valor de velocidad que se puede dar a una traza (en m/s)
+<br>
+# (equivale a 1000 nudos)
+<br>
+TrackMaxSpeed = 1943.84449
+<br>
+ 
+<br>
+#----------------------------------------
+<br>
+# Presentación de la posición futura
+<br>
+#----------------------------------------
+<br>
+ 
+<br>
+# Ventana para introducción de datos
+<br>
+FuturePositionDialog = C:/Desarrollo/Galeon/sw/src/Console/GlnGraphic/Data/GlnFuturePosition.ilv
+<br>
+ 
+<br>
+# Tiempo de vida del objeto gráfico (en segundos)
+<br>
+FuturePositionLifeTime = 30
+<br>
+ 
+<br>
+# Tamaño del símbolo que marca la posición futura
+<br>
+FuturePositionMarkSize =8
+<br>
+ 
+<br>
+# Indica si se pinta una línea que une posición de partida y posición futura
+<br>
+FuturePositionShowLineUnion = 1
+<br>
+ 
+<br>
+# Indica si se muestran una etiqueta con los valores calculados
+<br>
+FuturePositionShowValues = 1
+<br>
+ 
+<br>
+# Si vale 1 el cálculo se hace una sola vez;
+<br>
+# si vale 0, el cálculo se actualiza cuando se mueve la traza
+<br>
+FuturePositionFixed = 1
+<br>
+ 
+<br>
+# Color de presentación de la posición futura
+<br>
+FuturePositionForegroundColor = orange
+<br>
+FuturePositionBackgroundColor = black
+<br>
+ 
+<br>
+# Tipo de letra usado para presentar la posición futura
+<br>
+FuturePositionFont = %lucida console-14-r
+<br>
+ 
+<br>
+# Tipo de línea usado para presentar la posición futura
+<br>
+FuturePositionLineStyle = dash
+<br>
+ 
+<br>
+# Grosor de la línea
+<br>
+FuturePositionLineWidth = 2
+<br>
+ 
+<br>
+#----------------------------------------
+<br>
+# Presentación de las líneas de medición
+<br>
+#----------------------------------------
+<br>
+ 
+<br>
+# Indica si la línea cambia de estado sola, es decir, si llega a borrarse sola
+<br>
+MeasurementLineAutoStateChange = 1
+<br>
+ 
+<br>
+# Color del estado normal
+<br>
+MeasurementLineNormalColor = blue
+<br>
+ 
+<br>
+# Color del estado en pérdida
+<br>
+MeasurementLineLossColor = light blue
+<br>
+ 
+<br>
+# Tipo de letra
+<br>
+MeasurementLineFont = %lucida console-14-r
+<br>
+ 
+<br>
+# Tipo de línea
+<br>
+MeasurementLineStyle = solid
+<br>
+ 
+<br>
+# Grosor de la línea
+<br>
+MeasurementLineWidth = 1
+<br>
+ 
+<br>
+# Tiempo (en segundos) que pasa la línea en el estado normal
+<br>
+MeasurementLineNormalTime = 15
+<br>
+ 
+<br>
+# Tiempo (en segundos) que pasa la línea en pérdida (antes de perderse
+<br>
+# definitivamente)
+<br>
+MeasurementLineLossTime = 5
+<br>
+ 
+<br>
+#----------------------------------------
+<br>
+# Presentación de los marcos de las cartas
+<br>
+#----------------------------------------
+<br>
+ 
+<br>
+# Indica si la consola arranca mostrando los marcos de las cartas
+<br>
+ShowChartFrames = 1
+<br>
+ 
+<br>
+# Indica si la consola arranca con el modo de cambio de carta automático
+<br>
+# activado (1) o desactivado (0)
+<br>
+AutoChangeOfChart = 1
+<br>
+ 
+<br>
+#----------------------------------------
+<br>
+# Presentación de las marcas esclavas
+<br>
+#----------------------------------------
+<br>
+ 
+<br>
+# Rango admitido para la distancia (en Nm)
+<br>
+SlaveMarkMinDistance = 0
+<br>
+SlaveMarkMaxDistance = 20
+<br>
+ 
+<br>
+# Rango admitido para la demora (en grados)
+<br>
+SlaveMarkMinBearing = 0
+<br>
+SlaveMarkMaxBearing = 360
+<br>
+ 
+<br>
+# Panel de presentación de marcas esclavas
+<br>
+SlaveMarkDialog = GlnSlaveMarkDialog.ilv
+<br>
+ 
+<br>
+#----------------------------------------
+<br>
+# Presentación de la interceptación
+<br>
+#----------------------------------------
+<br>
+ 
+<br>
+# Tiempo de vida del objeto gráfico en la consola (en segundos)
+<br>
+InterceptationLifeTime = 30
+<br>
+ 
+<br>
+# Indica si se muestra una línea uniendo los origenes y el punto de
+<br>
+# interceptación (1 = SI, 0 = NO)
+<br>
+InterceptationShowLine = 1
+<br>
+ 
+<br>
+# Tamaño en pixels de la marca que indica la posición de interceptación
+<br>
+InterceptationMarkSize = 8
+<br>
+ 
+<br>
+# Color del objeto gráfico
+<br>
+InterceptationColor = orange
+<br>
+ 
+<br>
+# Tipo de letra usado para presentar los valores
+<br>
+InterceptationFont = %lucida console-14-r
+<br>
+ 
+<br>
+# Grosor de la línea usada por el objeto gráfico
+<br>
+InterceptationLineWidth = 1
+<br>
+ 
+<br>
+#----------------------------------------
+<br>
+# Presentación de los objetos tipo datum
+<br>
+#----------------------------------------
+<br>
+ 
+<br>
+# Frecuencia de actualización de un datum
+<br>
+DatumUpdateTime = 10
+<br>
+ 
+<br>
+#----------------------------------------------------------
+<br>
+# Presentación de los sectores interferidos de los radares
+<br>
+#----------------------------------------------------------
+<br>
+ 
+<br>
+# Color de dibujo
+<br>
+JammedSectorsColor = orange
+<br>
+ 
+<br>
+# Patrón de relleno
+<br>
+JammedSectorsPattern = cross
+<br>
+ 
+<br>
+#----------------------------------------------------------
+<br>
+# Presentación de los sectores de alcance de armas
+<br>
+#----------------------------------------------------------
+<br>
+MissileSectorColor = red
+<br>
+TorpedoeSectorColor = blue
+<br>
+ChargeSectorColor = yellow
+<br>
+GunSectorColor = green
+<br>
+AsrocSectorColor = orange
+<br>
+EcmSectorColor = magenta
+<br>
+ 
+<br>
+#----------------------------------------------------------
+<br>
+# Presentación de los sectores de alcance sensores
+<br>
+#----------------------------------------------------------
+<br>
+ 
+<br>
+# Color con el que se pintan los sectores de alcance de los sensores
+<br>
+SensorColor = blue
+<br>
+ 
+<br>
+# Color con el que se pintan los alcances calculados para la
+<br>
+# detección de una unidad (en modo instructor)
+<br>
+DetectionRangeOfSectorColor = cyan
+<br>
+ 
+<br>
+# Patrón de relleno para pintar los alcances calculados para la
+<br>
+# detección de una unidad (en modo instructor)
+<br>
+DetectionRangeOfSectorPattern = vert
+<br>
+ 
+<br>
+#----------------------------------------------------------
+<br>
+# Capacidad de presentación de cartografía electrónica
+<br>
+#----------------------------------------------------------
+<br>
+ 
+<br>
+# Color de fondo de la vista cartográfica uando la consola SI tiene capacidad
+<br>
+# de presentación de cartografía electrónica
+<br>
+BackgroundColorWithENC = grey
+<br>
+ 
+<br>
+# Color de fondo de la vista cartográfica cuando la consola NO tiene capacidad
+<br>
+# de presentación de cartografía electrónica
+<br>
+BackgroundColorWithoutENC = black
+<br>
+ 
+<br>
+# Grosor con el que se pinta la línea de costa
+<br>
+DetectedCoastLineWidth = 2
+<br>
+ 
+<br>
+# Color con el que se pinta la línea de costa
+<br>
+DetectedCoastColor = yellow
+<br>
+ 
+<br>
+#----------------------------------------------------------------
+<br>
+# Presentación de la ayuda gráfica:
+<br>
+# Rumbo recomendado de aproximación/alejamiento
+<br>
+#----------------------------------------------------------------
+<br>
+ 
+<br>
+# Color con el que se pinta la ayuda gráfica
+<br>
+RecomApproachCourseForegroundColor = orange
+<br>
+ 
+<br>
+# Color con el que se pinta el fondo del texto presentado por la ayuda gráfica
+<br>
+RecomApproachCourseBackgroundColor = black
+<br>
+ 
+<br>
+# Tipo de letra usado para pintar el texto de la ayuda gráfica
+<br>
+RecomApproachCourseFont = %Fixedsys-12-[Charset:0]
+<br>
+ 
+<br>
+# Grosor de línea usado para pintar la ayuda gráfica
+<br>
+RecomApproachCourseLineWidth = 2
+<br>
+ 
+<br>
+# Tiempo que permanece la ayuda gráfica en pantalla (unidades: segundos)
+<br>
+RecomApproachCourseLifeTime = 30
+<br>
+ 
+<br>
+#----------------------------------------------------------------
+<br>
+# Presentación de la ayuda gráfica:
+<br>
+# Rumbo recomendado para ocultación por nube propia de chaff
+<br>
+#----------------------------------------------------------------
+<br>
+ 
+<br>
+# Color con el que se pinta la ayuda gráfica
+<br>
+RecomChaffHideCourseForegroundColor = orange
+<br>
+ 
+<br>
+# Color con el que se pinta el fondo del texto presentado por la ayuda gráfica
+<br>
+RecomChaffHideCourseBackgroundColor = black
+<br>
+ 
+<br>
+# Tipo de letra usado para pintar el texto de la ayuda gráfica
+<br>
+RecomChaffHideCourseFont = %Fixedsys-12-[Charset:0]
+<br>
+ 
+<br>
+# Grosor de línea usado para pintar la ayuda gráfica
+<br>
+RecomChaffHideCourseLineWidth = 2
+<br>
+ 
+<br>
+# Tiempo que permanece la ayuda gráfica en pantalla (unidades: segundos)
+<br>
+RecomChaffHideCourseLifeTime = 30
+<br>
+ 
+<br>
+#----------------------------------------------------------------
+<br>
+# Presentación de la ayuda gráfica:
+<br>
+# Punto de máxima aproximación (CPA)
+<br>
+#----------------------------------------------------------------
+<br>
+ 
+<br>
+# Tiempo que permanece la ayuda gráfica en pantalla (en segundos)
+<br>
+CpaLifeTime = 30
+<br>
+ 
+<br>
+# Tamaño de las marcas de posiciones (en pixels)
+<br>
+CpaMarkSize = 5
+<br>
+ 
+<br>
+# Indica si se pinta una lína de unión entre las unidades y el CPA
+<br>
+CpaShowJoins = 1
+<br>
+ 
+<br>
+# Color de primer plano
+<br>
+CpaForegroundColor = orange
+<br>
+ 
+<br>
+# Color de fondo
+<br>
+CpaBackgroundColor = black
+<br>
+ 
+<br>
+# Grosor de la línea
+<br>
+CpaLineWidth = 2
+<br>
+ 
+<br>
+# Tipo de letra
+<br>
+CpaFont = %lucida console-14-r
+<br>
+ 
+<br>
+# Indica si se deben mostrar el tiempo restante en las ventanas de aviso "autoHide" o no (0 = NO, 1 = SI)
+<br>
+ShowAutoHideRemainingTime=0
+<br>
+ 
+<br>
+# Tiempo mínimo y máximo de espera de la ventana de splash para pulsar enter (se calcula un valor aleatorio dentro del rango)
+<br>
+MinWaitTime = 10
+<br>
+MaxWaitTime = 10
+<br>
+ 
+<br>
+#-----------------------------------------------------------------------
+<br>
+# Presentación de los contactos con simbología inicial de detecciones:
+<br>
+#-----------------------------------------------------------------------
+<br>
+# Indica si se oculta la información del contacto (número de traza, vector de rumbo y velocidad) cuando
+<br>
+# se está mostrando con simbología inicial de detección
+<br>
+HideTrackInfoWhenShowDetectionSymbol = 0
+<br>
+ 
+<br>
+ 
+<br>
+[Console.Serial]
+<br>
+# Indica si se deben enviar datos por puerto serie (0 = NO, 1 = SI)
+<br>
+SendSerialData=0
+<br>
+ 
+<br>
+# Puerto por el que se enviarán los datos (COM1, COM2,...)
+<br>
+SerialDataPort=COM1
+<br>
+ 
+<br>
+# ----- Datos de configuración para el puerto
+<br>
+# Número de bits por segundo
+<br>
+SerialDataBaudrate=2400
+<br>
+# Número de bits de datos
+<br>
+SerialDataDatabits=8
+<br>
+# Activar/desactivar la paridad (1 = activar, 0 = desactivar)
+<br>
+SerialDataParityenb=0
+<br>
+# Tipo de paridad (NOPARITY = ninguna, EVEN = par, ODD = impar, MARK = marca, SPACE = espacio)
+<br>
+SerialDataParitymode=NOPARITY
+<br>
+# Número de bits de parada
+<br>
+SerialDataStopbits=1
+<br>
+ 
+<br>
+[Optimize]
+<br>
+# Indica el tipo de optimización para el cálculo de la tabla de distancias
+<br>
+# ( 0 = Ninguna ; 1 = Por máximo alcance ; 2 = Por error en distancia )
+<br>
+OptimizeDistanceTable = 2
+<br>
+ 
+<br>
+# Altura de sensores mínima usada en el la optimización del cálculo de la tabla
+<br>
+# de distancias por alcance máximo ( metros )
+<br>
+MinSensorHeight = 60
+<br>
+ 
+<br>
+# Error en distancia permitido usado en la optimización del cálculo de la tabla
+<br>
+# de distancias por error en distancia ( % )
+<br>
+AllowDistanceError = 1
+<br>
+ 
+<br>
+# Estado inicial del filtro para pintar las zonas en la consola de instructor
+<br>
+# 0 = NO se le pintan al instructor las zonas minadas y ambientales, 1 = SI
+<br>
+ShowGameZones = 0
+<br>
+ 
+<br>
+# Presentación automática en vista cartográfica de una zona del juego cuando
+<br>
+# el instructor despliega el panel de detalle de la zona en la consola
+<br>
+# Actúa aunque el anterior ShowGameZones esté a 0
+<br>
+AutomaticModeForGameZones = 1
+<br>
+ 
+<br>
+# No se envía el atributo position de las detecciones "track" a las consolas a no ser que se muevan
+<br>
+# un mínimo de X metros
+<br>
+# El cálculo de la distancia es aproximado para no realizar cálculos complejos.
+<br>
+DetectionPositionMinMovement = 3.0
+<br>
+ 
+<br>
+# No se envía el atributo origin de las detecciones "demoras" a las consolas a no ser que se muevan
+<br>
+# un mínimo de X metros
+<br>
+# El cálculo de la distancia es aproximado para no realizar cálculos complejos.
+<br>
+DetectionOriginMinMovement = 3.0
+<br>
+ 
+<br>
+# No se envía el atributo validTime de las detecciones a las consolas a no ser que se modifiquen un
+<br>
+# mínimo de X ms.
+<br>
+DetectionValidTimeMinIncr = 4000
+<br>
+ 
+<br>
+ 
+<br>
+ 
+<br>
+#-------------------------------------------
+<br>
+# Anillos de distancia en la consola gráfica
+<br>
+#-------------------------------------------
+<br>
+ 
+<br>
+[RangeRings]
+<br>
+# Indica si se pintan de forma geográfica (0) o geométricamente (1) en el plano
+<br>
+DrawGeo = 0
+<br>
+ 
+<br>
+# Incremento (en grados) del sector usado para calcular los puntos geográficos
+<br>
+DeltaSector = 1
+<br>
+ 
+<br>
+# Grosor de la línea con el que se pintan los anillos
+<br>
+LineWidth = 1
+<br>
+ 
+<br>
+# Color de los anillos
+<br>
+Color = magenta
+<br>
+ 
+<br>
+# Número de anillos
+<br>
+Count = 4
+<br>
+ 
+<br>
+# Distancia entre anillos (radio del primer anillo en metros)
+<br>
+Distance = 5000
+<br>
+ 
+<br>
+# Rango permitido en la ventana de anillos
+<br>
+MinCount = 1
+<br>
+MaxCount = 10
+<br>
+ 
+<br>
+# Distancia en las unidades en que se muestran los valores en la ventana (Nm)
+<br>
+MinDistance = 0.01
+<br>
+MaxDistance = 10000
+<br>
+ 
+<br>
+# --------------------------------------------------------------------------
+<br>
+# Configuracion de los colores de las detecciones tipo bearing en la consola
+<br>
+# --------------------------------------------------------------------------
+<br>
+ 
+<br>
+[DetectionColors]
+<br>
+# Detecciones electromagnéticas
+<br>
+Electromagnetic = blue
+<br>
+ 
+<br>
+# Detecciones acústicas
+<br>
+Acoustic = red
+<br>
+ 
+<br>
+# Detecciones de comuniciones
+<br>
+Communications = green
+<br>
+ 
+<br>
+# Detecciones en pérdida
+<br>
+Lost = light gray
+<br>
+ 
+<br>
+# Color de fondo para la letra identificativa del extermo final de la detección
+<br>
+TextOfSquare = white
+<br>
+ 
+<br>
+# Color con el que se mostrarán las detecciones PNDN y UNKN en la ventana de tote de tracks
+<br>
+ColorForToteTracksUnkn = yellow
+<br>
+ 
+<br>
+# Color con el que se mostrarán las detecciones ASFD y FRND en la ventana de tote de tracks
+<br>
+ColorForToteTracksFrnd = cyan
+<br>
+ 
+<br>
+# Color con el que se mostrarán las detecciones NTRL en la ventana de tote de tracks
+<br>
+ColorForToteTracksNtrl = green
+<br>
+ 
+<br>
+# Color con el que se mostrarán las detecciones SUSP, HSTL, JOKR y FAKR en la ventana de tote de tracks
+<br>
+ColorForToteTracksHstl = red
+<br>
+ 
+<br>
+# Color con el que se mostrarán las detecciones Bearing en la ventana de tote de tracks
+<br>
+ColorForToteTracksBearing = white
+<br>
+ 
+<br>
+# ----------------------------------------------------------------------------
+<br>
+# Configuracion de niveles de RCS que condicionan el tamaño de las detecciones
+<br>
+# ----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[DetectionSymbology]
+<br>
+# El tamaño pequeño se presenta cuando el RCS es menor que RCSLevel1
+<br>
+RCSLevel1 = 10
+<br>
+ 
+<br>
+# El tamaño mediano se presenta cuando el RCS está entre RCSLevel1 y RCSLevel2.
+<br>
+# El tamaño grande se presenta cuando el RCS es mayor que RCSLevel2.
+<br>
+RCSLevel2 = 1000
+<br>
+ 
+<br>
+# Tamaño en pixels del símbolo de la detección para el nivel 1 de RCS
+<br>
+SizeRCS1 = 4
+<br>
+ 
+<br>
+# Tamaño en pixels del símbolo de la detección para el nivel 2 de RCS
+<br>
+SizeRCS2 = 8
+<br>
+ 
+<br>
+# Tamaño en pixels del símbolo de la detección para el nivel 2 de RCS
+<br>
+SizeRCS3 = 12
+<br>
+ 
+<br>
+# Color definido para las detecciones radar cuando se usa simbología inicial de detecciones
+<br>
+RColor = 182
+<br>
+GColor = 157
+<br>
+BColor = 64
+<br>
+ 
+<br>
+# Color definido para el borde de las detecciones radar cuando se usa simbología inicial de detecciones
+<br>
+RBColor = 182
+<br>
+GBColor = 157
+<br>
+BBColor = 64
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION UNIDAD Y ENTORNO
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[Unit]
+<br>
+# Indica si se quiere activar la información de tiempos en el LOG o no (0 = NO; 1 = SI)
+<br>
+ShowTimeInformation = 0
+<br>
+ 
+<br>
+# Diferencia de alturas por debajo de la cual un misil debe alcanzar a
+<br>
+# su blanco para que se considere que ha habido impacto (colisión con blanco).
+<br>
+MinCollisionDistance=15.0
+<br>
+ 
+<br>
+# Densidad definida para el cálculo del peso de las bases
+<br>
+# Se emplea para calcular el peso (desplazamiento) de estas unidades.
+<br>
+# El desplazamiento afecta a daños, MAD, ancho de las patrullas, ...
+<br>
+BaseDensity = 1.0
+<br>
+ 
+<br>
+# Densidad definida para el cálculo del peso de las unidades terrestres
+<br>
+# Se emplea para calcular el peso (desplazamiento) de estas unidades.
+<br>
+# El desplazamiento afecta a daños, MAD, ancho de las patrullas, ...
+<br>
+TerrestrialDensity = 1.0
+<br>
+ 
+<br>
+[Unit.SmokeBomb]
+<br>
+# Número máximo de bombas de humo que pueden ser lanzadas por una unidad
+<br>
+MaxSmokeBombs = 20
+<br>
+ 
+<br>
+# Tiempo que tarda la bomba de humo en alcanzar su máximo tamaño visual
+<br>
+# ( segundos )
+<br>
+ActivateTime = 30
+<br>
+ 
+<br>
+# Tiempo de vida de la bomba de humo ( minutos )
+<br>
+LifeTime = 10
+<br>
+ 
+<br>
+# Máximo tamaño visual alcanzado por las bombas de humo
+<br>
+MaxVisualSize = 70
+<br>
+ 
+<br>
+# Máxima altura alcanzada por la nube de humo creada por la bomba ( metros )
+<br>
+MaxSmokeHeight = 25
+<br>
+ 
+<br>
+[Environment]
+<br>
+# Factor corrector del alcance calculado para la banda UHF
+<br>
+UHFRangeFactor = 1.0
+<br>
+ 
+<br>
+# Factor corrector del alcance calculado para la banda VHF
+<br>
+VHFRangeFactor = 1.0
+<br>
+ 
+<br>
+# Altura de las olas para un mar en estado 0 ( CALMA ) , ( metros )
+<br>
+WaveHeightSeaStatus0 = 0
+<br>
+ 
+<br>
+# Altura de las olas para un mar en estado 1 ( RIZADA ) , ( metros )
+<br>
+WaveHeightSeaStatus1 = 0.05
+<br>
+ 
+<br>
+# Altura de las olas para un mar en estado 2 ( MAREJADILLA ) , ( metros )
+<br>
+WaveHeightSeaStatus2 = 0.3
+<br>
+ 
+<br>
+# Altura de las olas para un mar en estado 3 ( MAREJADA ) ,( metros )
+<br>
+WaveHeightSeaStatus3 = 0.875
+<br>
+ 
+<br>
+# Altura de las olas para un mar en estado 4 ( FUERTE MAREJADA ) , ( metros )
+<br>
+WaveHeightSeaStatus4 = 1.875
+<br>
+ 
+<br>
+# Altura de las olas para un mar en estado 5 ( GRUESA ) , ( metros )
+<br>
+WaveHeightSeaStatus5 = 3.25
+<br>
+ 
+<br>
+# Altura de las olas para un mar en estado 6 ( MUY GRUESA ) , ( metros )
+<br>
+WaveHeightSeaStatus6 = 5
+<br>
+ 
+<br>
+# Altura de las olas para un mar en estado 7 ( ARBOLADA ) , ( metros )
+<br>
+WaveHeightSeaStatus7 = 7.5
+<br>
+ 
+<br>
+# Altura de las olas para un mar en estado 8 ( MONTAÑOSA ) , ( metros )
+<br>
+WaveHeightSeaStatus8 = 11.5
+<br>
+ 
+<br>
+# Altura de las olas para un mar en estado 9 ( ENORME ) , ( metros )
+<br>
+WaveHeightSeaStatus9 = 15
+<br>
+ 
+<br>
+# Máximo ruido ambiental ( dB )
+<br>
+MaxAmbientNoise = 90
+<br>
+ 
+<br>
+# Mínima altura definida para la capa de evaporación ( pies )
+<br>
+MinEvapHeight = 0
+<br>
+ 
+<br>
+# Máxima altura definida para la capa de evaporación ( pies )
+<br>
+MaxEvapHeight = 100
+<br>
+ 
+<br>
+# Mínima altura definida para la capa de superficie ( pies )
+<br>
+MinSfHeight = 100
+<br>
+ 
+<br>
+# Máxima altura definida para la capa de superficie ( pies )
+<br>
+MaxSfHeight = 3000
+<br>
+ 
+<br>
+# Mínima altura definida para la capa elevada ( pies )
+<br>
+MinHighHeight = 14000
+<br>
+ 
+<br>
+# Máxima altura definida para la capa elevada ( pies )
+<br>
+MaxHighHeight = 18000
+<br>
+ 
+<br>
+# Unidades del EjeX de la batitérmia ( se especifica 1 milla )
+<br>
+# ( un valor entero en metros )
+<br>
+BathiEjeXUnits = 1852
+<br>
+ 
+<br>
+# Indica si hay que generar o no el fichero con la tabla de intensidad
+<br>
+# batitérmica ( 1 = SI ; 0 = NO ). Útil para depurar código.
+<br>
+CreateBathithermFile = 0
+<br>
+ 
+<br>
+# En caso de generar fichero indica si quiere que aparezca marco con escala en
+<br>
+# el o no ( 1 = SI ; 0 = NO )
+<br>
+ShowScale= 1
+<br>
+ 
+<br>
+# Mínima distancia definida para actualización de zonas con movimiento (millas)
+<br>
+MinUpdateDistance = 1.0
+<br>
+ 
+<br>
+[Mines]
+<br>
+# Factores para el cálculo del campo magnético que recibe la mina
+<br>
+MinesMagneticFactor=1.6
+<br>
+MinesMagneticDepthFactor=0.75
+<br>
+ 
+<br>
+# Parámetros considerads para el sonar de las minas acústicas
+<br>
+# Frecuencia de trabajo, RD (diferencial de reconocimiento),
+<br>
+# SN (ruido propio), DI (Índice de directividad)
+<br>
+MineSonarFrequency=200
+<br>
+MinesRD=30
+<br>
+MinesSN=0
+<br>
+MinesDI=10
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION SENSORES
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[DetectionsManager]
+<br>
+# Límite inferior del rango de trazas locales ( detectadas y dibujadas )
+<br>
+FirstLocalTrackNumber = 80000
+<br>
+ 
+<br>
+# Límite superior del rango de trazas locales ( detectadas y dibujadas )
+<br>
+LastLocalTrackNumber = 87777
+<br>
+ 
+<br>
+# Límite inferior del rango de trazas de satélite
+<br>
+FirstSatelliteTrackNumber = 90000
+<br>
+ 
+<br>
+# Límite superior del rango de trazas de satélite
+<br>
+LastSatelliteTrackNumber = 97777
+<br>
+ 
+<br>
+# Límite inferior del rango de trazas de Link11
+<br>
+FirstLink11TrackNumber = 2000
+<br>
+ 
+<br>
+# Límite superior del rango de trazas de Link11
+<br>
+LastLink11TrackNumber = 7777
+<br>
+ 
+<br>
+# Límite inferior del rango de trazas del bloque LOW del Link16
+<br>
+FirstLowLink16TrackNumber = 02000
+<br>
+ 
+<br>
+# Límite superior del rango de trazas del bloque LOW del Link16
+<br>
+LastLowLink16TrackNumber = 07777
+<br>
+ 
+<br>
+# Límite inferior del rango de trazas del bloque HIGH del Link16
+<br>
+FirstHighLink16TrackNumber = 10000
+<br>
+ 
+<br>
+# Límite superior del rango de trazas del bloque HIGH del Link16
+<br>
+LastHighLink16TrackNumber = ZZ777
+<br>
+ 
+<br>
+# Límite inferior del rango de trazas del bloque DATA_FORWARDING del Link16
+<br>
+FirstDFLink16TrackNumber = 02000
+<br>
+ 
+<br>
+# Límite superior del rango de trazas del bloque DATA_FORWARDING del Link16
+<br>
+LastDFLink16TrackNumber = 07777
+<br>
+ 
+<br>
+[Sensor]
+<br>
+# Máximo número de identificadores para las detecciones de tipo Bearing
+<br>
+MaxDetectionsIds = 1000
+<br>
+ 
+<br>
+[Sensor.SensorGroup]
+<br>
+# Indica si se debe mantener o no el número de traza al recuperar una detección
+<br>
+# perdida ( 0 = NO ; 1 = SI )
+<br>
+RecoverTrackNumber = 1
+<br>
+ 
+<br>
+# Indica si se deben instanciar sensores de tipo Visual o no ( 0= NO ; 1= SI )
+<br>
+# Útil para depurar código. Dado que el visual no se asigna en preparación,
+<br>
+# con esta entrada es posible dejar las unidades sin sensores.
+<br>
+CreateVisual = 1
+<br>
+ 
+<br>
+# Tiempo que debe transcurrir para recalcular la variación de las detecciones
+<br>
+# sonar (si se acerca o aleja) ( minutos )
+<br>
+VariationTime = 1
+<br>
+ 
+<br>
+[Sensor.Detections]
+<br>
+# Tiempo que deben permanecer las detecciones parpadeando como perdidas ( seg )
+<br>
+LostTrackDetectionsLiveTime = 30
+<br>
+ 
+<br>
+# Tiempo que deben permanecer inactivas las detecciones para recuperar el
+<br>
+# trackNumber ( minutos )
+<br>
+TrackDetectionsInactiveTime = 0
+<br>
+ 
+<br>
+# Tiempo que deben permanecer las detecciones parpadeando como perdidas ( seg )
+<br>
+LostBearingDetectionsLiveTime = 15
+<br>
+ 
+<br>
+# Tiempo que deben permanecer inactivas las detecciones para recuperar el
+<br>
+# trackNumber ( minutos )
+<br>
+BearingDetectionsInactiveTime = 8
+<br>
+ 
+<br>
+# Categoría que se pone a un datum tras hacer sobre él la operación POSCOR
+<br>
+CategoryPOSCOR = 1.1.2
+<br>
+ 
+<br>
+# Categoría del punto especial que marca la posición inicial
+<br>
+# del contacto tras un POSCOR
+<br>
+SpecialPointPOSCOR = 1.1.6.2
+<br>
+ 
+<br>
+# Indica si se muestra o no el punto especial que marca la posición inicial
+<br>
+# del contacto tras un POSCOR
+<br>
+ShowSpecialPointPOSCOR = 0
+<br>
+ 
+<br>
+[Sensor.Visual]
+<br>
+# NOTA : Estos factores deben introducirse en orden incremental
+<br>
+# ( numeral, clase, tipo, combatiente )
+<br>
+# De forma que el numeral sea el menor y el combatiente el mayor.
+<br>
+# Factor que multiplica el alcance para la detección de numeral
+<br>
+NumeralDetFactor = 0.2
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de clase
+<br>
+ClassDetFactor = 0.3
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de tipo
+<br>
+TypeDetFactor = 0.4
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de combatiente
+<br>
+CombatantDetFactor = 0.5
+<br>
+ 
+<br>
+# Error base definido para la detección de la posición y altura (%)
+<br>
+# Este error es el definido para alcances de detección de tipo y clase.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# Para alcances de numeral se considera error 0
+<br>
+BaseHeightPositionError = 5
+<br>
+ 
+<br>
+# Error base definido para la detección del rumbo (grados)
+<br>
+# Este error es el definido para alcances de detección de tipo, clase y numeral.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# El rumbo se obtendrá en valores discretos de los grados especificados aqui
+<br>
+BaseCourseError = 45
+<br>
+ 
+<br>
+# Error base definido para la detección de la velocidad (nudos)
+<br>
+# Este error es el definido para alcances de detección de tipo, clase y numeral.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# La velocidad se obtendrá en valores discretos de los nudos especificados aqui
+<br>
+BaseSpeedError = 5
+<br>
+ 
+<br>
+[Sensor.NVG]
+<br>
+# NOTA : Estos factores deben introducirse en orden incremental
+<br>
+# ( numeral, clase, tipo, combatiente )
+<br>
+# De forma que el numeral sea el menor y el combatiente el mayor.
+<br>
+# Factor que multiplica el alcance para la detección de numeral
+<br>
+NumeralDetFactor = 0.2
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de clase
+<br>
+ClassDetFactor = 0.3
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de tipo
+<br>
+TypeDetFactor = 0.4
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de combatiente
+<br>
+CombatantDetFactor = 0.5
+<br>
+ 
+<br>
+# Error base definido para la detección de la posición y altura (%)
+<br>
+# Este error es el definido para alcances de detección de tipo y clase.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# Para alcances de numeral se considera error 0
+<br>
+BaseHeightPositionError = 5
+<br>
+ 
+<br>
+# Error base definido para la detección del rumbo (grados)
+<br>
+# Este error es el definido para alcances de detección de tipo, clase y numeral.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# El rumbo se obtendrá en valores discretos de los grados especificados aqui
+<br>
+BaseCourseError = 45
+<br>
+ 
+<br>
+# Error base definido para la detección de la velocidad (nudos)
+<br>
+# Este error es el definido para alcances de detección de tipo, clase y numeral.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# La velocidad se obtendrá en valores discretos de los nudos especificados aqui
+<br>
+BaseSpeedError = 5
+<br>
+ 
+<br>
+[Sensor.IR]
+<br>
+# NOTA : Estos factores deben introducirse en orden incremental
+<br>
+# ( numeral, clase, tipo, combatiente )
+<br>
+# De forma que el numeral sea el menor y el combatiente el mayor.
+<br>
+# Factor que multiplica el alcance para la detección de numeral
+<br>
+NumeralDetFactor = 0.2
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de clase
+<br>
+ClassDetFactor = 0.3
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de tipo
+<br>
+TypeDetFactor = 0.4
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de combatiente
+<br>
+CombatantDetFactor = 0.5
+<br>
+ 
+<br>
+# Error base definido para la detección de la posición y altura (%)
+<br>
+# Este error es el definido para alcances de detección de tipo y clase.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# Para alcances de numeral se considera error 0
+<br>
+BaseHeightPositionError = 10
+<br>
+ 
+<br>
+# Error base definido para la detección del rumbo (grados)
+<br>
+# Este error es el definido para alcances de detección de tipo, clase y numeral.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# El rumbo se obtendrá en valores discretos de los grados especificados aqui
+<br>
+BaseCourseError = 45
+<br>
+ 
+<br>
+# Error base definido para la detección de la velocidad (nudos)
+<br>
+# Este error es el definido para alcances de detección de tipo, clase y numeral.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# La velocidad se obtendrá en valores discretos de los nudos especificados aqui
+<br>
+BaseSpeedError = 5
+<br>
+ 
+<br>
+# Valor que multiplica el alcance de la ventana lejana del infrarrojo (millas)
+<br>
+RangeAtFarWindow = 20
+<br>
+ 
+<br>
+# Valor que multiplica el alcance de la ventana media del infrarrojo (millas)
+<br>
+RangeAtMediumWindow = 20
+<br>
+ 
+<br>
+[Sensor.IFF]
+<br>
+# Tiempo del pulso de interrogación del IFF (segundos)
+<br>
+PulseQuestionTime = 3
+<br>
+ 
+<br>
+# Tiempo del ciclo total de interrogación continua del IFF. Estará el tiempo de pulso preguntando
+<br>
+# y el resto del tiempo sin preguntar hasta completar el ciclo y empezará otra vez (segundos)
+<br>
+CycleQuestionTime = 4
+<br>
+ 
+<br>
+# Permite (1) discriminar unidades de diferente bando en las respuestas IFF en modo 4.
+<br>
+# Si (0) no se discriminan
+<br>
+DiscriminateBySideInMode4=1
+<br>
+ 
+<br>
+[Sensor.AIS]
+<br>
+# Alcance máximo especificado para el equipo de AIS (millas)
+<br>
+MaxAISRange = 100
+<br>
+ 
+<br>
+# Máxima velocidad (de máquinas) que debe llevar una unidad para considerar estado de navegación fondeado (nudos)
+<br>
+MaxAnchorSpeed = 0.5
+<br>
+ 
+<br>
+# Indica si hay que encender o no los equipos de las unidades correspondientes al cargar un juego (1 para si, 0 para no)
+<br>
+CombatantUnitsOn = 1
+<br>
+NoCombatantUnitsOn = 1
+<br>
+NoMainUnitsOn = 1
+<br>
+ 
+<br>
+# Indica el modo de funcionamiento inicial de los AIS de las unidades correspondientes al cargar un juego (0 para activo, 1 para genérico y 2 para pasivo)
+<br>
+CombatantUnitsMode = 2
+<br>
+NoCombatantUnitsMode = 0
+<br>
+NoMainUnitsMode = 0
+<br>
+ 
+<br>
+# Indica si está activo el modo engaño o no en los equipos de las unidades correspondientes al cargar un juego (1 para si, 0 para no)
+<br>
+CombatantUnitsDeceptOn = 0
+<br>
+NoCombatantUnitsDeceptOn = 0
+<br>
+NoMainUnitsDeceptOn = 0
+<br>
+ 
+<br>
+[Sensor.Periscope]
+<br>
+# NOTA : Estos factores deben introducirse en orden incremental
+<br>
+# ( numeral, clase, tipo, combatiente )
+<br>
+# De forma que el numeral sea el menor y el combatiente el mayor.
+<br>
+# Factor que multiplica el alcance para la detección de numeral
+<br>
+NumeralDetFactor = 0.2
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de clase
+<br>
+ClassDetFactor = 0.3
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de tipo
+<br>
+TypeDetFactor = 0.4
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de combatiente
+<br>
+CombatantDetFactor = 0.5
+<br>
+ 
+<br>
+# Error base definido para la detección de la posición y altura (%)
+<br>
+# Este error es el definido para alcances de detección de tipo y clase.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# Para alcances de numeral se considera error 0
+<br>
+BaseHeightPositionError = 5
+<br>
+ 
+<br>
+# Error base definido para la detección del rumbo (grados)
+<br>
+# Este error es el definido para alcances de detección de tipo, clase y numeral.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# El rumbo se obtendrá en valores discretos de los grados especificados aqui
+<br>
+BaseCourseError = 45
+<br>
+ 
+<br>
+# Error base definido para la detección de la velocidad (nudos)
+<br>
+# Este error es el definido para alcances de detección de tipo, clase y numeral.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# La velocidad se obtendrá en valores discretos de los nudos especificados aqui
+<br>
+BaseSpeedError = 5
+<br>
+ 
+<br>
+# Angulo de visión vertical del periscopio (grados)
+<br>
+# (Se considera periscopio a altura 0)
+<br>
+PeriscopeAngle = 30
+<br>
+ 
+<br>
+[Sensor.AttackPeriscope]
+<br>
+# Factores de identificación propios del periscopio de ataque
+<br>
+# NOTA : Estos factores deben introducirse en orden incremental
+<br>
+# ( numeral, clase, tipo, combatiente )
+<br>
+# De forma que el numeral sea el menor y el combatiente el mayor.
+<br>
+# Factor que multiplica el alcance para la detección de numeral
+<br>
+NumeralDetFactor = 0.3
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de clase
+<br>
+ClassDetFactor = 0.4
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de tipo
+<br>
+TypeDetFactor = 0.5
+<br>
+ 
+<br>
+# Factor que multiplica el alcance para la detección de combatiente
+<br>
+CombatantDetFactor = 0.6
+<br>
+ 
+<br>
+# Error base definido para la detección de la posición y altura (%)
+<br>
+# Este error es el definido para alcances de detección de tipo y clase.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# Para alcances de numeral se considera error 0
+<br>
+BaseHeightPositionError = 5
+<br>
+ 
+<br>
+# Error base definido para la detección del rumbo (grados)
+<br>
+# Este error es el definido para alcances de detección de tipo, clase y numeral.
+<br>
+# El error para alcances de combatiente será siempre doble de este error base
+<br>
+# El rumbo se obtendrá en valores discretos de los grados especificados aqui
+<br>
+BaseCourseError = 45
+<br>
+ 
+<br>
+# Error base definido para la detección de la velocidad (nudos)
+<br>
+# Este error es el definido para alcances de detección de tipo, clase y numeral.
+<br>
+# El error para alcances de combatiente será siempre edoble de este error base
+<br>
+# La velocidad se obtendrá en valores discretos de los nudos especificados aqui
+<br>
+BaseSpeedError = 5
+<br>
+ 
+<br>
+# Sector horizontal definido para el periscopio de ataque (grados)
+<br>
+AttPeriscopeSector = 30
+<br>
+ 
+<br>
+[Sensor.Radar]
+<br>
+# Mínimo RCS definido para la evaluación de los contactos, los contactos con
+<br>
+# RCS menor o igual no se evaluan
+<br>
+MinRCS = 0.1
+<br>
+ 
+<br>
+# Constante de reducción para calcular el factor lluvia
+<br>
+RainReduction = 0.8
+<br>
+ 
+<br>
+# Altura por debajo de la cual se realiza la discriminación por costa ( pies )
+<br>
+CoastDiscriminationHeight = 30000
+<br>
+ 
+<br>
+# Altura por debajo de la cual afecta el SeaClutter ( metros )
+<br>
+SeaClutterAffectedHeight = 10
+<br>
+ 
+<br>
+# Número de barridos necesarios para que el radar determine Rumbo y Velocidad
+<br>
+ConsecutiveScansForVector = 4
+<br>
+ 
+<br>
+# Altura máxima a la que se considera una unidad como superficie ( metros )
+<br>
+SurfaceHeight = 10
+<br>
+ 
+<br>
+# Máximo error en distancia permitido para el lock-on ( yardas )
+<br>
+MaxLockOnDistanceError = 1000
+<br>
+ 
+<br>
+# Máximo error en demora permitido para el lock-on ( grados )
+<br>
+MaxLockOnBearingError = 2
+<br>
+ 
+<br>
+# Constante usada en el cálculo del máximo alcance radar
+<br>
+ConstantMaxRangeRadar = 82000
+<br>
+ 
+<br>
+# Constante que multiplica al máximo alcance radar en el cálculo del alcance
+<br>
+# sensor activo para el ESM
+<br>
+ConstantESMRangeRadar = 1.0
+<br>
+ 
+<br>
+# Error permitido para la frecuencia de las perturbaciones (%)
+<br>
+JammingFrqError = 10
+<br>
+ 
+<br>
+# Baja probabilidad de detección para calcular el factor probabilidad
+<br>
+LowProbability = 0.7
+<br>
+ 
+<br>
+# Media probabilidad de detección para calcular el factor probabilidad
+<br>
+HalfProbability = 0.8
+<br>
+ 
+<br>
+# Alta probabilidad de detección para calcular el factor probabilidad
+<br>
+HighProbability = 0.9
+<br>
+ 
+<br>
+# Mínimo tiempo de scan del radar en segundos: el radar evaluará como mínimo cada X segundos
+<br>
+# este parámetro se ha introducido una vez detectado que los radares son una fuente de consumo
+<br>
+# de CPU muy alta. Cuanto mayor sea este valor, menos afectarán los radares al consumo de CPU
+<br>
+MinScanTime = 3
+<br>
+ 
+<br>
+# Indica si se debe mostrar información de los errores en las peticiones de lockon (1) o no (0)
+<br>
+ShowLockOnErrorInfo = 1
+<br>
+ 
+<br>
+[Sensor.Radar.Navigation]
+<br>
+# Activa (1) /Desactiva (0) la creación de falsos ecos automáticos en los radares, segun el tipo de radar
+<br>
+CreateAutoFalseEchoes = 1
+<br>
+ 
+<br>
+# Máximo número de falsos ecos automáticos a crear
+<br>
+NumMaxAutoFalseEchoes = 15
+<br>
+ 
+<br>
+# Tiempo máximo que debe transcurrir antes de recalcular un nuevo número máximo de falsos ecos automáticos (segundos)
+<br>
+NumMaxAutoFalseEchoesTime = 30
+<br>
+ 
+<br>
+# Mínimo y máximo porcentaje en torno al alcance máximo del sensor permitido para la creación de
+<br>
+# falsos ecos automáticos.
+<br>
+MinDistancePercentForAutoFE = 0
+<br>
+MaxDistancePercentForAutoFE = 25
+<br>
+ 
+<br>
+# Tiempo máximo de persistencia de los falsos ecos automáticos (segundos)
+<br>
+MaxAutoFalseEchoesTime = 10
+<br>
+ 
+<br>
+# Indica si se deben mantener el número de falsos ecos automáticos durante todo el tiempo (1) o no (0)
+<br>
+AutoFalseEchoesPersistents = 0
+<br>
+ 
+<br>
+[Sensor.Radar.SurfaceScan]
+<br>
+# Activa (1) /Desactiva (0) la creación de falsos ecos automáticos en los radares, segun el tipo de radar
+<br>
+CreateAutoFalseEchoes = 1
+<br>
+ 
+<br>
+# Máximo número de falsos ecos automáticos a crear
+<br>
+NumMaxAutoFalseEchoes = 15
+<br>
+ 
+<br>
+# Tiempo máximo que debe transcurrir antes de recalcular un nuevo número máximo de falsos ecos automáticos (segundos)
+<br>
+NumMaxAutoFalseEchoesTime = 30
+<br>
+ 
+<br>
+# Mínimo y máximo porcentaje en torno al alcance máximo del sensor permitido para la creación de
+<br>
+# falsos ecos automáticos.
+<br>
+MinDistancePercentForAutoFE = 0
+<br>
+MaxDistancePercentForAutoFE = 25
+<br>
+ 
+<br>
+# Tiempo máximo de persistencia de los falsos ecos automáticos (segundos)
+<br>
+MaxAutoFalseEchoesTime = 10
+<br>
+ 
+<br>
+# Indica si se deben mantener el número de falsos ecos automáticos durante todo el tiempo (1) o no (0)
+<br>
+AutoFalseEchoesPersistents = 0
+<br>
+ 
+<br>
+[Sensor.Radar.AirScan]
+<br>
+# Activa (1) /Desactiva (0) la creación de falsos ecos automáticos en los radares, segun el tipo de radar
+<br>
+CreateAutoFalseEchoes = 1
+<br>
+ 
+<br>
+# Máximo número de falsos ecos automáticos a crear
+<br>
+NumMaxAutoFalseEchoes = 5
+<br>
+ 
+<br>
+# Tiempo máximo que debe transcurrir antes de recalcular un nuevo número máximo de falsos ecos automáticos (segundos)
+<br>
+NumMaxAutoFalseEchoesTime = 60
+<br>
+ 
+<br>
+# Mínimo y máximo porcentaje en torno al alcance máximo del sensor permitido para la creación de
+<br>
+# falsos ecos automáticos.
+<br>
+MinDistancePercentForAutoFE = 75
+<br>
+MaxDistancePercentForAutoFE = 100
+<br>
+ 
+<br>
+# Tiempo máximo de persistencia de los falsos ecos automáticos (segundos)
+<br>
+MaxAutoFalseEchoesTime = 30
+<br>
+ 
+<br>
+# Indica si se deben mantener el número de falsos ecos automáticos durante todo el tiempo (1) o no (0)
+<br>
+AutoFalseEchoesPersistents = 0
+<br>
+ 
+<br>
+[Sensor.Radar.FireControl]
+<br>
+# Activa (1) /Desactiva (0) la creación de falsos ecos automáticos en los radares, segun el tipo de radar
+<br>
+CreateAutoFalseEchoes = 0
+<br>
+ 
+<br>
+# Máximo número de falsos ecos automáticos a crear
+<br>
+NumMaxAutoFalseEchoes = 5
+<br>
+ 
+<br>
+# Tiempo máximo que debe transcurrir antes de recalcular un nuevo número máximo de falsos ecos automáticos (segundos)
+<br>
+NumMaxAutoFalseEchoesTime = 60
+<br>
+ 
+<br>
+# Mínimo y máximo porcentaje en torno al alcance máximo del sensor permitido para la creación de
+<br>
+# falsos ecos automáticos.
+<br>
+MinDistancePercentForAutoFE = 75
+<br>
+MaxDistancePercentForAutoFE = 100
+<br>
+ 
+<br>
+# Tiempo máximo de persistencia de los falsos ecos automáticos (segundos)
+<br>
+MaxAutoFalseEchoesTime = 10
+<br>
+ 
+<br>
+# Indica si se deben mantener el número de falsos ecos automáticos durante todo el tiempo (1) o no (0)
+<br>
+AutoFalseEchoesPersistents = 0
+<br>
+ 
+<br>
+[Sensor.Radar.Intercept]
+<br>
+# Activa (1) /Desactiva (0) la creación de falsos ecos automáticos en los radares, segun el tipo de radar
+<br>
+CreateAutoFalseEchoes = 0
+<br>
+ 
+<br>
+# Máximo número de falsos ecos automáticos a crear
+<br>
+NumMaxAutoFalseEchoes = 5
+<br>
+ 
+<br>
+# Tiempo máximo que debe transcurrir antes de recalcular un nuevo número máximo de falsos ecos automáticos (segundos)
+<br>
+NumMaxAutoFalseEchoesTime = 60
+<br>
+ 
+<br>
+# Mínimo y máximo porcentaje en torno al alcance máximo del sensor permitido para la creación de
+<br>
+# falsos ecos automáticos.
+<br>
+MinDistancePercentForAutoFE = 75
+<br>
+MaxDistancePercentForAutoFE = 100
+<br>
+ 
+<br>
+# Tiempo máximo de persistencia de los falsos ecos automáticos (segundos)
+<br>
+MaxAutoFalseEchoesTime = 10
+<br>
+ 
+<br>
+# Indica si se deben mantener el número de falsos ecos automáticos durante todo el tiempo (1) o no (0)
+<br>
+AutoFalseEchoesPersistents = 0
+<br>
+ 
+<br>
+[Sensor.Radar.Aircraft]
+<br>
+# Activa (1) /Desactiva (0) la creación de falsos ecos automáticos en los radares, segun el tipo de radar
+<br>
+CreateAutoFalseEchoes = 0
+<br>
+ 
+<br>
+# Máximo número de falsos ecos automáticos a crear
+<br>
+NumMaxAutoFalseEchoes = 5
+<br>
+ 
+<br>
+# Tiempo máximo que debe transcurrir antes de recalcular un nuevo número máximo de falsos ecos automáticos (segundos)
+<br>
+NumMaxAutoFalseEchoesTime = 60
+<br>
+ 
+<br>
+# Mínimo y máximo porcentaje en torno al alcance máximo del sensor permitido para la creación de
+<br>
+# falsos ecos automáticos.
+<br>
+MinDistancePercentForAutoFE = 75
+<br>
+MaxDistancePercentForAutoFE = 100
+<br>
+ 
+<br>
+# Tiempo máximo de persistencia de los falsos ecos automáticos (segundos)
+<br>
+MaxAutoFalseEchoesTime = 10
+<br>
+ 
+<br>
+# Indica si se deben mantener el número de falsos ecos automáticos durante todo el tiempo (1) o no (0)
+<br>
+AutoFalseEchoesPersistents = 0
+<br>
+ 
+<br>
+[Sensor.Radar.MissileSeeker]
+<br>
+# Activa (1) /Desactiva (0) la creación de falsos ecos automáticos en los radares, segun el tipo de radar
+<br>
+CreateAutoFalseEchoes = 0
+<br>
+ 
+<br>
+# Máximo número de falsos ecos automáticos a crear
+<br>
+NumMaxAutoFalseEchoes = 5
+<br>
+ 
+<br>
+# Tiempo máximo que debe transcurrir antes de recalcular un nuevo número máximo de falsos ecos automáticos (segundos)
+<br>
+NumMaxAutoFalseEchoesTime = 60
+<br>
+ 
+<br>
+# Mínimo y máximo porcentaje en torno al alcance máximo del sensor permitido para la creación de
+<br>
+# falsos ecos automáticos.
+<br>
+MinDistancePercentForAutoFE = 75
+<br>
+MaxDistancePercentForAutoFE = 100
+<br>
+ 
+<br>
+# Tiempo máximo de persistencia de los falsos ecos automáticos (segundos)
+<br>
+MaxAutoFalseEchoesTime = 10
+<br>
+ 
+<br>
+# Indica si se deben mantener el número de falsos ecos automáticos durante todo el tiempo (1) o no (0)
+<br>
+AutoFalseEchoesPersistents = 0
+<br>
+ 
+<br>
+[Sensor.Radar.Multifunction]
+<br>
+# Activa (1) /Desactiva (0) la creación de falsos ecos automáticos en los radares, segun el tipo de radar
+<br>
+CreateAutoFalseEchoes = 0
+<br>
+ 
+<br>
+# Máximo número de falsos ecos automáticos a crear
+<br>
+NumMaxAutoFalseEchoes = 5
+<br>
+ 
+<br>
+# Tiempo máximo que debe transcurrir antes de recalcular un nuevo número máximo de falsos ecos automáticos (segundos)
+<br>
+NumMaxAutoFalseEchoesTime = 60
+<br>
+ 
+<br>
+# Mínimo y máximo porcentaje en torno al alcance máximo del sensor permitido para la creación de
+<br>
+# falsos ecos automáticos.
+<br>
+MinDistancePercentForAutoFE = 75
+<br>
+MaxDistancePercentForAutoFE = 100
+<br>
+ 
+<br>
+# Tiempo máximo de persistencia de los falsos ecos automáticos (segundos)
+<br>
+MaxAutoFalseEchoesTime = 10
+<br>
+ 
+<br>
+# Indica si se deben mantener el número de falsos ecos automáticos durante todo el tiempo (1) o no (0)
+<br>
+AutoFalseEchoesPersistents = 0
+<br>
+ 
+<br>
+[Sensor.ESM]
+<br>
+# Número máximo de detecciones que puede mostrar el ESM
+<br>
+MaxNumberOfDetectionsESM = 60
+<br>
+ 
+<br>
+# Tiempo que hay que esperar para decrementar errores de las detecciones (ms)
+<br>
+MiliSecondsForDecreaseError = 360000
+<br>
+ 
+<br>
+# Factor que hay que reducir el error en distancia a la detección cada vez que
+<br>
+# se cumpla un periodo ( tantos por uno ). Este dato solo afecta a equipos ESM
+<br>
+# con capacidad para la estimación de distancias,
+<br>
+DistanceDecreaseError = 0.05
+<br>
+ 
+<br>
+# Error en rumbo a aplicar ( grados )
+<br>
+CourseError = 15
+<br>
+ 
+<br>
+# Valor en que hay que reducir el error en rumbo cada vez que se cumpla un
+<br>
+# periodo ( grados )
+<br>
+CourseDecreaseError = 5
+<br>
+ 
+<br>
+# Error en velocidad a aplicar ( tantos por uno )
+<br>
+SpeedError = 0.25
+<br>
+ 
+<br>
+# Factor que hay que reducir el error en velocidad cada vez que se cumpla
+<br>
+# un periodo ( tantos por uno )
+<br>
+SpeedDecreaseError = 0.05
+<br>
+ 
+<br>
+# Nivel para la influencia electromagnética, por debajo del cual el ESM no se
+<br>
+# vería afectado por esta
+<br>
+LevelEMInfluence = 0.5
+<br>
+ 
+<br>
+# Constante que afecta al horizonte radar para el ESM
+<br>
+RadarHorizontRangeConstant = 1.5
+<br>
+ 
+<br>
+# Valor definido para el nivel de potencia bajo ( metros )
+<br>
+LowPowerLevel = 30
+<br>
+ 
+<br>
+# Valor definido para el nivel de potencia alto ( metros )
+<br>
+HighPowerLevel = 100
+<br>
+ 
+<br>
+[Sensor.ComSM]
+<br>
+# Indica si hay que encender por defecto o no el equipo de COMSM al comenzar un
+<br>
+# ejercicio (1 = SI, 0 = NO)
+<br>
+TurnonOnStart = 1
+<br>
+# Número máximo de detecciones que puede mostrar el ComSM
+<br>
+MaxComSMDetections = 20
+<br>
+ 
+<br>
+# Porcentaje definido para el máximo error en distancia de la banda HF ( % )
+<br>
+MaxHFDistanceError = 10
+<br>
+ 
+<br>
+# Porcentaje definido para el máximo error en distancia de bandas UHF y VHF (%)
+<br>
+MaxUVHFDistanceError = 40
+<br>
+ 
+<br>
+# Indica si se debe mostrar en la ventana el valor de distancia calculado
+<br>
+ShowDistanceLabel = 0
+<br>
+ 
+<br>
+[Sensor.TACAN]
+<br>
+# Alcance máximo especificado para el equipo de TACAN ( millas )
+<br>
+MaxRange = 100
+<br>
+ 
+<br>
+[Sensor.MAD]
+<br>
+# Mínimo desplazamiento que es capaz de detectar el MAD, solo detecta contactos
+<br>
+# con desplazamiento superior ( Toneladas )
+<br>
+MADMinimunDisplacement = 1
+<br>
+ 
+<br>
+# Constante de detección del MAD, valor usado en la fórmula del alcance
+<br>
+CteDetecMAD = 0.2
+<br>
+ 
+<br>
+[Sensor.Sonar]
+<br>
+# Distancia de discriminación de detecciones ( Yardas )
+<br>
+DistanceOfDiscrimination = 500
+<br>
+ 
+<br>
+# Constante de reducción de la Zona de Convergencia de rayos ( Zc )
+<br>
+ZcReduction = 0.49
+<br>
+ 
+<br>
+# Constante de intensidad de la Zona de Convergencia de rayos ( Zc )
+<br>
+ZcIntensity = 39
+<br>
+ 
+<br>
+# Factor intensidad que se aplica para correguir la intensidad batitérmica
+<br>
+IntensityBathythermFactor = 1.5
+<br>
+ 
+<br>
+# Mínima altura permitida para desplegar el sonar en el estacionario ( Pies )
+<br>
+MinStableHeight = 49
+<br>
+ 
+<br>
+# Máxima altura permitida para desplegar el sonar en el estacionario ( Pies )
+<br>
+MaxStableHeight = 101
+<br>
+ 
+<br>
+# Diferencial en torno a la velocidad de cavitación para que se considere que
+<br>
+# la unidad con esa velocidad
+<br>
+DifferentialCavitationSpd = 0.5
+<br>
+ 
+<br>
+# Máxima velocidad definida para suponer la unidad en hover ( nudos )
+<br>
+MaxHoverSpeed = 4
+<br>
+ 
+<br>
+[Sensor.ActiveSonar]
+<br>
+# Maximo número de detecciones del sonar activo
+<br>
+MaxNumberOfDetectionsActive = 50
+<br>
+ 
+<br>
+# Distancia establecida para alarma por torpedo ( Yardas )
+<br>
+TorpedoDistanceAlarm = 10000
+<br>
+ 
+<br>
+# % de probabilidad por encima del cual se mantendrán las detecciones ( % )
+<br>
+ProbabilityPercentage = 50
+<br>
+ 
+<br>
+# Umbral de probabilidad por encima del cual se detectará al contacto ( % )
+<br>
+# ( -1 indica umbral desactivado )
+<br>
+MinProbabilityForDetect = -1
+<br>
+ 
+<br>
+# Tiempo que debe transcurrir para que se pueda detectar el rumbo y la
+<br>
+# velocidad del contacto ( segundos )
+<br>
+CourseAndSpeedDetectTime = 90
+<br>
+ 
+<br>
+# Tiempo que debe transcurrir para que se pueda saber si el contacto es un
+<br>
+# submarino o no ( segundos )
+<br>
+ClassificationDetectTime = 60
+<br>
+ 
+<br>
+# Tiempo que debe transcurrir para que se pueda detectar el doppler ( seg )
+<br>
+DopplerDetectTime = 60
+<br>
+ 
+<br>
+# Máximo error en rumbo a aplicar ( grados )
+<br>
+MaxCourseError = 10
+<br>
+ 
+<br>
+# Máximo error en velocidad a aplicar ( % )
+<br>
+MaxSpeedError = 10
+<br>
+ 
+<br>
+# Margen de propabilidad especificado para volver a "tirar los dados" para
+<br>
+# obtener contacto
+<br>
+MarginProbabilityDetection = 2
+<br>
+ 
+<br>
+# Activa (1) /Desactiva (0) la creación de falsos ecos automáticos en los sonares activos
+<br>
+CreateAutoFalseEchoes = 1
+<br>
+ 
+<br>
+# Máximo número de falsos ecos automáticos a crear
+<br>
+NumMaxAutoFalseEchoes = 5
+<br>
+ 
+<br>
+# Tiempo máximo que debe transcurrir antes de recalcular un nuevo número máximo de falsos ecos automáticos (segundos)
+<br>
+NumMaxAutoFalseEchoesTime = 60
+<br>
+ 
+<br>
+# Tiempo máximo de persistencia de los falsos ecos automáticos (segundos)
+<br>
+MaxAutoFalseEchoesTime = 5
+<br>
+ 
+<br>
+# Indica si se deben mantener el número de falsos ecos automáticos durante todo el tiempo (1) o no (0)
+<br>
+AutoFalseEchoesPersistents = 0
+<br>
+ 
+<br>
+[Sensor.PassiveSonar]
+<br>
+# Maximo número de detecciones del sonar pasivo
+<br>
+MaxNumberOfDetectionsPassive = 99
+<br>
+ 
+<br>
+# Distancia establecida para alarma por torpedo ( Yardas )
+<br>
+TorpedoDistanceAlarm = 10000
+<br>
+ 
+<br>
+# Distancia establecida para detección de la propulsión del contacto ( Yardas )
+<br>
+PropellerDetectionDistance = 10000
+<br>
+ 
+<br>
+# Número de decibelios a aumentar el ruido propio, en caso de que la velocidad
+<br>
+# de la unidad sea la de cavitación
+<br>
+IncreaseDbCavitation = 3
+<br>
+ 
+<br>
+# Intervalo de tiempo cada cual se realizará la lectura del rumbo propio para
+<br>
+# la resolución del problema demora real/ambigua ( segundos )
+<br>
+ReadCourseTime = 1
+<br>
+ 
+<br>
+# Tiempo de chequeo para la comprobación de la estabilidad del rumbo propio,
+<br>
+# con motivo de la resolución del problema demora real/ambigua ( segundos )
+<br>
+CheckCourseTime = 3
+<br>
+ 
+<br>
+# Caida de rumbo necesaria para que de comienzo la resolución del problema
+<br>
+# demora real/ambigua ( grados )
+<br>
+CourseForStartSolveBearingProblem = 1
+<br>
+ 
+<br>
+# Tiempo que hay que esperar para chequear si se ha resuelto o no el problema
+<br>
+# de la demora real/ambigua ( minutos )
+<br>
+CheckSolveTime = 3
+<br>
+ 
+<br>
+# Caida de rumbo necesaria para que se pueda resolver el problema de la demora
+<br>
+# real/ambigua ( grados )
+<br>
+CourseForSolveBearingProblem = 15
+<br>
+ 
+<br>
+# Tiempo máximo permitido para que se pueda realizar la resolución del problema
+<br>
+# de la demora real/ambigua ( minutos )
+<br>
+SolveBearingProblemTime = 8
+<br>
+ 
+<br>
+# % de probabilidad por encima del cual se mantendrán las detecciones ( % )
+<br>
+ProbabilityPercentage = 50
+<br>
+ 
+<br>
+# Umbral de probabilidad por encima del cual se detectará al contacto ( % )
+<br>
+# ( -1 indica umbral desactivado )
+<br>
+MinProbabilityForDetect = -1
+<br>
+ 
+<br>
+# Tiempo que debe transcurrir para conocer la información sobre la propulsión
+<br>
+# del contacto ( segundos )
+<br>
+PropellerDetectTime = 60
+<br>
+ 
+<br>
+# Tiempo que debe transcurrir para conocer la distancia del contacto cuando el
+<br>
+# sonar NO es Telémetro ( segundos )
+<br>
+NoTelemetroDistanceDetectTime = 360
+<br>
+ 
+<br>
+# Tiempo que debe transcurrir para conocer la distancia del contacto cuando el
+<br>
+# sonar es Telémetro ( segundos )
+<br>
+TelemetroDistanceDetectTime = 30
+<br>
+ 
+<br>
+# Tiempo que debe transcurrir para conocer el rumbo y velocidad del contacto
+<br>
+# cuando el sonar NO es Telémetro ( segundos )
+<br>
+NoTelemetroCourseAndSpeedDetectTime = 360
+<br>
+ 
+<br>
+# Tiempo que debe transcurrir para conocer el rumbo y velocidad del contacto
+<br>
+# cuando el sonar es Telémetro ( segundos )
+<br>
+TelemetroCourseAndSpeedDetectTime = 120
+<br>
+ 
+<br>
+# Máximo error en distancia cuando el sonar NO es Telémetro ( % )
+<br>
+NoTelemetroDistanceError = 10
+<br>
+ 
+<br>
+# Máximo error en rumbo ( grados )
+<br>
+MaxCourseError = 30
+<br>
+ 
+<br>
+# Máximo error en velocidad ( % )
+<br>
+MaxSpeedError = 30
+<br>
+ 
+<br>
+# Porcentaje en el que decrecerán los errores de la detección ( % )
+<br>
+DecreaseError = 20
+<br>
+ 
+<br>
+# Tiempo establecido para decrecer el error ( segundos )
+<br>
+PeriodTime = 360
+<br>
+ 
+<br>
+# Tiempo establecido para realizar una nueva detección de los parámetros
+<br>
+# (D,V,R) ( segundos )
+<br>
+DetectionParametersPeriod = 60
+<br>
+ 
+<br>
+# Tiempo establecido para detectar el movimiento relativo del contacto ( seg )
+<br>
+RelMoveDetectionTime = 60
+<br>
+ 
+<br>
+# Margen de propabilidad especificado para volver a "tirar los dados" para
+<br>
+# obtener contacto
+<br>
+MarginProbabilityDetection = 2
+<br>
+ 
+<br>
+# Caida de rumbo que obliga a inicializar los parámetros ( grados )
+<br>
+MaxCourseVariation = 15
+<br>
+ 
+<br>
+# Reducción especificada para el contacto sonar activo interceptador ( dB )
+<br>
+SignalLevelIntercepReduction = 100
+<br>
+ 
+<br>
+# Activa (1) /Desactiva (0) la creación de falsos ecos automáticos en los sonares passivos
+<br>
+CreateAutoFalseEchoes = 1
+<br>
+ 
+<br>
+# Máximo número de falsos ecos automáticos a crear
+<br>
+NumMaxAutoFalseEchoes = 5
+<br>
+ 
+<br>
+# Tiempo máximo que debe transcurrir antes de recalcular un nuevo número máximo de falsos ecos automáticos (segundos)
+<br>
+NumMaxAutoFalseEchoesTime = 60
+<br>
+ 
+<br>
+# Tiempo máximo de persistencia de los falsos ecos automáticos (segundos)
+<br>
+MaxAutoFalseEchoesTime = 5
+<br>
+ 
+<br>
+# Indica si se deben mantener el número de falsos ecos automáticos durante todo el tiempo (1) o no (0)
+<br>
+AutoFalseEchoesPersistents = 0
+<br>
+ 
+<br>
+[Sensor.Phone]
+<br>
+# Indica si se muestran los nombres de las redes de fonía (1) o los leds correspondientes a los canales de audio seleccionados (0)
+<br>
+# en el panel de resumen
+<br>
+ShowPhoneNameInSummaryPanel = 0
+<br>
+ 
+<br>
+[UWT]
+<br>
+# Nivel de ruido de la fuente (SL) en dB
+<br>
+SL=125
+<br>
+ 
+<br>
+# Umbral de detección del equipo receptor (RD) en dB
+<br>
+RD=-5
+<br>
+ 
+<br>
+# Directividad del equipo receptor (DI) en dB
+<br>
+DI=19
+<br>
+ 
+<br>
+# Velocidad óptima y velocidad máxima de operación del equipo receptor en nudos
+<br>
+OptimumSpeed=11
+<br>
+MaximumSpeed=16
+<br>
+ 
+<br>
+[Sensor.SonobuoyProcessor]
+<br>
+# Número máximo de detecciones activas
+<br>
+MaxNumberOfActiveDetections = 50
+<br>
+ 
+<br>
+# Número máximo de detecciones pasivas
+<br>
+MaxNumberOfPassiveDetections = 99
+<br>
+ 
+<br>
+# Número de canales usados por las sonoboyas de tipo PASSIVE_OMNI
+<br>
+ChannelsPasOmni = 1
+<br>
+ 
+<br>
+# Número de canales usados por las sonoboyas de tipo ACTIVE_OMNI
+<br>
+ChannelsActOmni = 2
+<br>
+ 
+<br>
+# Número de canales usados por las sonoboyas de tipo PASSIVE_DIR
+<br>
+ChannelsPasDir = 3
+<br>
+ 
+<br>
+# Número de canales usados por las sonoboyas de tipo ACTIVE_DIR
+<br>
+ChannelsActDir = 3
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION COMUNICACIONES
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[Communications.DATALink]
+<br>
+# Alcance máximo especificado para el equipo de DataLink de tipo VDL ( millas )
+<br>
+VDLRange = 30
+<br>
+ 
+<br>
+[Communications.Link11]
+<br>
+# Tiempo de evaluación para las redes de Link11 ( segundos )
+<br>
+# Si está a cero, se recalcula en todos los ciclos.
+<br>
+EvaluationTime = 0
+<br>
+ 
+<br>
+# Tiempo que deben permanecer parpadeando las órdenes de fuerza ( segundos )
+<br>
+BlinkingFoTime = 30
+<br>
+ 
+<br>
+# Indica si hay que solicitar permiso al responsable para cambiar una traza o
+<br>
+# no ( 1 = NO ; 0 = SI )
+<br>
+AutoTrackChange = 1
+<br>
+ 
+<br>
+[Communications.Messages]
+<br>
+# Tiempo de evaluación para los equipos de mensajería que NO son SACOMAR (seg)
+<br>
+EvaluationTime = 15
+<br>
+ 
+<br>
+# Tamaño máximo de los ficheros que se pueden importar como mensajes ( KBytes )
+<br>
+# Se recomienda un valor menor de 64Kbytes y NUNCA debe ser superior a 100 Kb
+<br>
+MaxFileSize = 64
+<br>
+ 
+<br>
+# Tamaño máximo de los ficheros que se pueden importar como mensajes ( KBytes )
+<br>
+# Se recomienda un valor menor de 64Kbytes y NUNCA debe ser superior a 100 Kb
+<br>
+ImportMessagesPath = .
+<br>
+ 
+<br>
+[Communications.CommBuoy]
+<br>
+# Tiempo de vida de la boya de comunicaciones una vez rota su conexión con
+<br>
+# el submarino ( minutos )
+<br>
+LifeTime = 10
+<br>
+ 
+<br>
+# Velocidad de ascenso de la boya (m/s)
+<br>
+BuoyAscentSpeed = 0.3
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION ARMAS
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[Weapon.Explosion]
+<br>
+# Tiempo de vida de las explosiones producidad por armas que no sean
+<br>
+# Torpedo o cargas de profundidad (que tienen su propia variable de duración
+<br>
+# de falso eco).
+<br>
+ExplosionLifeTime=5.0
+<br>
+ 
+<br>
+[Weapon.Probability]
+<br>
+# Probability=0 siempre impacta, si se pone a 1 entran en juego las
+<br>
+# probabilidades de impacto
+<br>
+Probability=0
+<br>
+ 
+<br>
+[Weapon.Laser]
+<br>
+# La marcación entre el designador y el blanco debe estar comprendida en
+<br>
+# [360 - DesignerAngle,0 + DesignerAngle]
+<br>
+DesignerAngle=30.0
+<br>
+ 
+<br>
+# La demora entre el blanco y el lanzador debe estar comprendida en
+<br>
+# [DBD - LauncherAngle,DBD + LauncherAngle] donde DBD es la demora del blanco
+<br>
+# al designador.
+<br>
+LauncherAngle=30.0
+<br>
+ 
+<br>
+[Weapon.Bomb]
+<br>
+# Radio de acción de la bomba (metros)
+<br>
+BombErrorRadius=100
+<br>
+ 
+<br>
+[Weapon.Chaff]
+<br>
+# Numero maximo de morteros.
+<br>
+MaxChaffMortars=6
+<br>
+ 
+<br>
+# Maximo radio de la nube de chaffs (metros)
+<br>
+MaxCloudRadius=1000
+<br>
+ 
+<br>
+# Altura límite por encima de la cual el chaff se representa como unidad de
+<br>
+# altura y por debajo se representa como una unidad de superficie (metros).
+<br>
+# 300 pies por defecto:
+<br>
+ChaffSurfaceHeight=91.44
+<br>
+ 
+<br>
+# Desplazamiento standard de una fragata (toneladas)
+<br>
+# Por defecto es 4000 (Utilizado para calcular el tamaño visual de un chaff).
+<br>
+StandardDisplacement=4000.0
+<br>
+ 
+<br>
+[Weapon.Bubble]
+<br>
+# Velocidad de ascenso/descenso de la burbuja (m/s)
+<br>
+BubbleAscentSpeed=0.3
+<br>
+ 
+<br>
+[Weapon.Torpedo]
+<br>
+# Angulo horizontal de salida de los torpedos ASROC
+<br>
+LaunchAngle=50
+<br>
+ 
+<br>
+# Tiempo que requiere el sonar para reactivarse despues de perder un blanco
+<br>
+# (segundos)
+<br>
+SonarReactiveTime=15.0
+<br>
+ 
+<br>
+# Profundidad a la que el torpedo sigue la estela (metros).
+<br>
+# El signo negativo no es imprescindible.
+<br>
+# Por defecto (6 pies):
+<br>
+PursuitWakeDepth=-1.8288
+<br>
+ 
+<br>
+# Profundidad máxima a la que se detecta la estela (metros).
+<br>
+# El signo negativo no es imprescindible.
+<br>
+# Por defecto (40 pies):
+<br>
+MaxWakeDepth=-12.192
+<br>
+ 
+<br>
+# Espoleta de proximidad (metros)
+<br>
+# 10 yardas por defecto:
+<br>
+ProximityFuse=9.144
+<br>
+ 
+<br>
+# Tiempo de vida del falso eco producido por la explosión del torpedo (en s)
+<br>
+# 5 segundos por defecto:
+<br>
+FalseEchoLifeTime=5.0
+<br>
+ 
+<br>
+[Weapon.Foxer]
+<br>
+# Mínima frecuencia a la que emite el productor de ruido (en Hz):
+<br>
+MinFrequency=10000.0
+<br>
+ 
+<br>
+# Máxima frecuencia a la que emite el productor de ruido (en Hz):
+<br>
+MaxFrequency=70000.0
+<br>
+ 
+<br>
+[Weapon.Charge]
+<br>
+# Tiempo de vida del falso eco producido por la explosión del carga (en s)
+<br>
+# 5 segundos por defecto:
+<br>
+FalseEchoLifeTime=5.0
+<br>
+ 
+<br>
+# Angulo horizontal de salida de las cargas (grados)
+<br>
+LaunchAngle=50
+<br>
+ 
+<br>
+# Espoleta de proximidad (metros)
+<br>
+# 10 yardas por defecto:
+<br>
+ProximityFuse=9.144
+<br>
+ 
+<br>
+[Weapon.Gun]
+<br>
+# Radio de la esfera usada para buscar unidades dentro de ella en caso de inpacto tras disparo a coordenadas (yardas)
+<br>
+MinImpactDistance = 200
+<br>
+ 
+<br>
+[Weapon.Missile]
+<br>
+# Distancia minima antes de pasar a interceptar el blanco en altura
+<br>
+DistanceToInterception = 1000
+<br>
+ 
+<br>
+# Densidad del aire al nivel del mar, usada en la constante de rozamiento con el aire del misil (kg/m3)
+<br>
+InertialAirDensity = 1.29
+<br>
+ 
+<br>
+# Coeficiente de arrastre correspondiente al misil, usada en la constante de rozamiento con el aire del misil
+<br>
+InertialTrawlingCoef = 0.06
+<br>
+ 
+<br>
+# Factor de corrección sobre el incremente de tiempo para decrementar el tiempo de propulsión del misil
+<br>
+# más rápidamente en fase de seguimiento
+<br>
+InertialPursuitDecrTimeFactor = 2.0
+<br>
+ 
+<br>
+# Constante para la exponencial usada en la pérdida de velocidad en vuelo inercial del misil
+<br>
+InertialTurnConstant = 0.005
+<br>
+ 
+<br>
+# Mínima velocidad a la que puede volar un misil, por debajo de la cual se destruye (nudos)
+<br>
+InertialMissileMinSpeed = 50.0
+<br>
+ 
+<br>
+[Weapon]
+<br>
+# Nombre base del icono usado en la animación de la explosión
+<br>
+HitSymbolBaseName = Explosion
+<br>
+# Número de iconos que componen la animación
+<br>
+HitSymbolNumIcons = 7
+<br>
+# Número de segundos definidos para el timer de la animación
+<br>
+HitSymbolTimerSeconds = 0
+<br>
+# Número de milisegundos definidos para el timer de la animación
+<br>
+HitSymbolTimerMiliseconds = 500
+<br>
+# Indica si la animación es iterativa (1) o solo se realiza una vez (0)
+<br>
+HitSymbolInteractive = 0
+<br>
+# Tiempo de presentación del símbolo de impacto en la vista cartográfica
+<br>
+HitSymbolTime = 10
+<br>
+ 
+<br>
+[Weapon.Mines]
+<br>
+# Distancia minima a cualquier punto de la zona minada para que la unidad pueda
+<br>
+# plantar minas (yardas).
+<br>
+MinScatterDistance=1000
+<br>
+# Tiempo necesario para plantar una mina (s)
+<br>
+ScatterTime=120
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION ACCIONES PROGRAMADAS
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+[ProgrammedActions.AsmdDefaultParameters]
+<br>
+# Distancia máxima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff D. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Millas Náuticas.
+<br>
+DistanceD=25.0
+<br>
+ 
+<br>
+# Distancia máxima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff S. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Millas Náuticas.
+<br>
+DistanceS=5.0
+<br>
+ 
+<br>
+# Distancia máxima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff IR. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Millas Náuticas.
+<br>
+DistanceIR=5.0
+<br>
+ 
+<br>
+# Distancia máxima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff RF. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Millas Náuticas.
+<br>
+distanceRF=5.0
+<br>
+ 
+<br>
+# CPA máxima de una amenaza para que salte la alarma
+<br>
+# ASMD de chaff D. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Millas Náuticas.
+<br>
+CPAD=5.0
+<br>
+ 
+<br>
+# CPA máxima de una amenaza para que salte la alarma
+<br>
+# ASMD de chaff S. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Millas Náuticas.
+<br>
+CPAS=5.0
+<br>
+ 
+<br>
+# CPA máxima de una amenaza para que salte la alarma
+<br>
+# ASMD de chaff IR. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Millas Náuticas.
+<br>
+CPAIR=5.0
+<br>
+ 
+<br>
+# CPA máxima de una amenaza para que salte la alarma
+<br>
+# ASMD de chaff RF. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Millas Náuticas.
+<br>
+CPARF=5.0
+<br>
+ 
+<br>
+# Altura máxima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff D. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Piés.
+<br>
+HeightD=1000.0
+<br>
+ 
+<br>
+# Altura máxima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff S. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Piés.
+<br>
+HeightS=1000.0
+<br>
+ 
+<br>
+# Altura máxima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff IR. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Piés.
+<br>
+HeightIR=1000.0
+<br>
+ 
+<br>
+# Altura máxima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff IR. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Piés.
+<br>
+HeightRF=1000.0
+<br>
+ 
+<br>
+# Velocidad mínima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff D. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Nudos.
+<br>
+SpeedD=500.0
+<br>
+ 
+<br>
+# Velocidad mínima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff S. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Nudos.
+<br>
+SpeedS=500.0
+<br>
+ 
+<br>
+# Velocidad mínima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff IR. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Nudos.
+<br>
+SpeedIR=500.0
+<br>
+ 
+<br>
+# Velocidad mínima a la que debe estar una amenaza para que salte la alarma
+<br>
+# ASMD de chaff IR. Este valor se utiliza por defecto en acciones programadas.
+<br>
+# Valor en Nudos.
+<br>
+SpeedRF=500.0
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION ZONAS
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+[Zones.MinesField]
+<br>
+# Frecuencia que se toma para el sonar de las minas acústicas (Hz):
+<br>
+Frequency=200.0
+<br>
+ 
+<br>
+# Multiplicador del índice de magnetismo (m en la fórmula: g = mM - pP donde
+<br>
+# M = índice de magnetísmo y P es la sonda.)
+<br>
+MagneticFactor=1.6
+<br>
+ 
+<br>
+# Multiplicador de la sonda (p en la fórmula: g = mM - pP donde
+<br>
+# M = índice de magnetísmo y P es la sonda.)
+<br>
+SoundingFactor=0.75
+<br>
+ 
+<br>
+# Ruido propio para una mina(db):
+<br>
+SelfNoise=0
+<br>
+ 
+<br>
+# Umbral de detección para una mina (db):
+<br>
+DetectionRange=30.0
+<br>
+ 
+<br>
+# Índice de Directividad (db):
+<br>
+DirectivityIndex=10.0
+<br>
+ 
+<br>
+# Tiempo de vida del falso eco producido por la explosión de la mina (en s)
+<br>
+# 5 segundos por defecto:
+<br>
+FalseEchoLifeTime=5.0
+<br>
+ 
+<br>
+[Zones.AirWay]
+<br>
+# Separación del recorrido de los aviones en sentido impar con respecto a los de sentido par (pies)
+<br>
+ReverseHeight = 500
+<br>
+ 
+<br>
+# Indica si se debe calcular o no una nueva velocidad para la unidad en cada punto (1=SI, 0=NO)
+<br>
+ChangeSpeed=1
+<br>
+ 
+<br>
+# Path y nombre del fichero en el que se genera la información de las aerovías
+<br>
+AirWayReportDataFilePath = C:\Archivos de programa\Galeon\AirWayData.csv
+<br>
+ 
+<br>
+# Número de datos futuros que se calculan para cada dirección de recorrido de la ruta
+<br>
+# para mostrarlos al generar el informe de la ruta
+<br>
+NumNextUnitData = 10
+<br>
+ 
+<br>
+# Nombre y ruta del fichero de datos de las unidades que formarán parte de las aerovías
+<br>
+UnitsDataFilePath = AirWaysData.txt
+<br>
+ 
+<br>
+# Incremento que se añade al tiempo de llegada de una unidad para determinar el tiempo de salida de
+<br>
+# la siguiente unidad
+<br>
+IncrementTimeToExit = 1.0
+<br>
+ 
+<br>
+[Zones.MerchantTraffic]
+<br>
+# Promedio de veces que una unidad mercante cambia el estado
+<br>
+# (Apagar/Encender) de un sensor en 1 hora:
+<br>
+ChangeSensor=10
+<br>
+ 
+<br>
+# Indica si se debe calcular o no una nueva velocidad para la unidad en cada punto (1=SI, 0=NO)
+<br>
+ChangeSpeed=1
+<br>
+ 
+<br>
+# Nombre y ruta del fichero de datos AIS
+<br>
+AISDataFilePath = MerchantTrafficAISData.txt
+<br>
+ 
+<br>
+# Nombre y ruta del fichero de puertos destino para el AIS
+<br>
+AISHarboursFilePath = MerchantTrafficAISHarbours.txt
+<br>
+ 
+<br>
+# Margen permitido para buscar un puerto destino de manera aleatoria entre los más cercanos.
+<br>
+# Si vale 3 por ejemplo, se calculará un puerto destino aleatorio de entre los 3 más cercanos
+<br>
+RandomHarbourMargin = 3
+<br>
+ 
+<br>
+# Indica si hay que mostrar información de los destinos o no
+<br>
+ShowHarbourInfo = 0
+<br>
+ 
+<br>
+# Tiempo que deben estar los buques inactivos antes de cambiar de sentido
+<br>
+InactiveTime = 60
+<br>
+ 
+<br>
+# Path y nombre del fichero en el que se genera la información de las rutas mercantes
+<br>
+MerchantTrafficReportDataFilePath = C:\Archivos de programa\Galeon\MerchantTrafficData.csv
+<br>
+ 
+<br>
+# Número de datos AIS futuros que se calculan para cada dirección de recorrido de la ruta
+<br>
+# para mostrarlos al generar el informe de la ruta
+<br>
+NumNextAISData = 10
+<br>
+ 
+<br>
+ 
+<br>
+[Zones.FishingEffort]
+<br>
+# Promedio de veces que una unidad pesquera cambia de velocidad
+<br>
+# en 1 hora:
+<br>
+ChangeSpeed=10
+<br>
+ 
+<br>
+# Promedio de veces que una unidad pesquera cambia el estado
+<br>
+# (Apagar/Encender) de un sensor en 1 hora:
+<br>
+ChangeSensor=10
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION DINÁMICA
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[Dynamic.ShipDynamic]
+<br>
+# Tiempos que determinan el numero de puntos que forman las estelas de buques (en segundos)
+<br>
+# (Afecta a torpedos seguidores de estela). El número de puntos se calcula como el tiempo
+<br>
+# de vida de la estela dividido entre el tiempo del intervalo de muestreo
+<br>
+# TimeBeteenHistoricTraces = tiempo en segundos entre muestreos para obtener los puntos de la
+<br>
+# estela que deja un buque
+<br>
+TimeBetweenHistoricTraces=5
+<br>
+# TimeRangeListHistoricTraces = tiempo de vida de la estela en segundos
+<br>
+TimeRangeListHistoricTraces=900
+<br>
+ 
+<br>
+#Distancia para el repostaje en alta mar (metros)
+<br>
+DistanceRefuel=100
+<br>
+ 
+<br>
+# Máxima distancia que se pueden separar las unidades durante el repostaje en
+<br>
+# alta mar (metros)
+<br>
+MaxDistanceRefuel=1000
+<br>
+ 
+<br>
+# Máxima distancia para entrar en puerto (millas)
+<br>
+MaxDistanceEntryPort=0.25
+<br>
+ 
+<br>
+# Máxima profundidad para entrar en puerto (metros)
+<br>
+MaxDepthEntryPort=0.0
+<br>
+ 
+<br>
+[Dynamic.SurfaceDynamic]
+<br>
+# Maxima profundidad para poder fondear ( en metros )
+<br>
+MaxDepthAnchor=100
+<br>
+ 
+<br>
+# Angulo de desvio maximo con respecto a la dirección contraria al viento
+<br>
+# con el que se permite aterrizar y despegar
+<br>
+WindMarginForTakeOff=30
+<br>
+ 
+<br>
+# Velocidad del viento a partir de la cual el barco tendra que estar encarando
+<br>
+# el viento para aterrizar y despegar
+<br>
+WindSpeedMinForTakeOff=5
+<br>
+ 
+<br>
+# Factor de influencia del estado del mar sobre el consumo
+<br>
+# según la ley: consumo = consumo * (1+CsmSeaStateFactor*Estado del mar)
+<br>
+CsmSeaStateFactor = 0
+<br>
+ 
+<br>
+# Indica si hay que usar control cinemático de unidades por teclado o no (0 = NO; 1 = SI)
+<br>
+UseDynKeyControl = 1
+<br>
+ 
+<br>
+# Porcentaje de velocidad con respecto a la máxima de la unidad que hay que incrementar o decrementar al pulsar
+<br>
+# la tecla arriba o abajo en el control básico de la dinámica
+<br>
+UpDownKeyIncrSpeed = 5.0
+<br>
+ 
+<br>
+# Número de grados que hay que incrementar o decrementar al pulsar la tecla izquierda o derecha en el control básico de la dinámica
+<br>
+LeftRightKeyIncrCourse = 5.0
+<br>
+ 
+<br>
+[Dynamic.SubsurfaceDynamic]
+<br>
+# Altura que sobresalen los mástiles por encima de la superficie del mar
+<br>
+# Se considera que cualquier tipo de mástil (periscopios y snorkel incluidos)
+<br>
+# sobresale de la superficie del mar, el valor en metros aquí especificado
+<br>
+MastHeightOverSeaSurface = 1.5
+<br>
+ 
+<br>
+# Maximo estado del mar para izar el snorkel
+<br>
+SeaStatusForSnorkel=5
+<br>
+ 
+<br>
+# Máxima velocidad para operaciones especiales (nudos)
+<br>
+MaxSpecialSpeed=5
+<br>
+ 
+<br>
+# Tiempo de llenado de los tanques de aire ( segundos )
+<br>
+FillBubbleTime = 30
+<br>
+ 
+<br>
+# Angulo máximo de ascenso/descenso alcanzado con un tanque de aire lleno
+<br>
+# (grados)
+<br>
+MaxBubbleAngle = 45
+<br>
+ 
+<br>
+# Tiempo de vida definido para la burbuja creada al vaciar el tanque de aire
+<br>
+# ( segundos )
+<br>
+BubbleLifeTime = 120
+<br>
+ 
+<br>
+# Fuerza del contacto definida para la burbuja creada al vaciar tanque de aire
+<br>
+# ( db )
+<br>
+BubbleTs = 25
+<br>
+ 
+<br>
+# Valor de altura/profundidad que hay que incrementar o decrementar al pulsar la tecla 'A' o 'Z' en el control básico de la dinámica (pies)
+<br>
+AZKeyIncrHeightDepth = 1.0
+<br>
+ 
+<br>
+# Indica si hay que usar control cinemático de unidades por teclado o no (0 = NO; 1 = SI)
+<br>
+UseDynKeyControl = 1
+<br>
+ 
+<br>
+# Porcentaje de velocidad con respecto a la máxima de la unidad que hay que incrementar o decrementar al pulsar
+<br>
+# la tecla arriba o abajo en el control básico de la dinámica
+<br>
+UpDownKeyIncrSpeed = 5.0
+<br>
+ 
+<br>
+# Número de grados que hay que incrementar o decrementar al pulsar la tecla izquierda o derecha en el control básico de la dinámica
+<br>
+LeftRightKeyIncrCourse = 5.0
+<br>
+ 
+<br>
+[Dynamic.TerrestrialDynamic]
+<br>
+# Maxima altura del helicoptero para que una unidad terrestre
+<br>
+# pueda embarcar en él (metros)
+<br>
+MaxHeightForEmbark=2
+<br>
+ 
+<br>
+# Máxima distancia para embarcar/desembarcar (metros)
+<br>
+MaxDistanceEmbarkDesembark=50
+<br>
+ 
+<br>
+# Máxima distancia para entrar en base (metros)
+<br>
+MaxDistanceEntryBase=50
+<br>
+ 
+<br>
+# Indica si hay que usar control cinemático de unidades por teclado o no (0 = NO; 1 = SI)
+<br>
+UseDynKeyControl = 1
+<br>
+ 
+<br>
+# Porcentaje de velocidad con respecto a la máxima de la unidad que hay que incrementar o decrementar al pulsar
+<br>
+# la tecla arriba o abajo en el control básico de la dinámica
+<br>
+UpDownKeyIncrSpeed = 5.0
+<br>
+ 
+<br>
+# Número de grados que hay que incrementar o decrementar al pulsar la tecla izquierda o derecha en el control básico de la dinámica
+<br>
+LeftRightKeyIncrCourse = 5.0
+<br>
+ 
+<br>
+[Dynamic.AerialDynamic]
+<br>
+# Altura para considerar una unidad aérea en el aire (pies)
+<br>
+LiftingHeight=25
+<br>
+ 
+<br>
+# Distancia para el repostaje en vuelo (millas)
+<br>
+AerialDistanceRefuel=0.25
+<br>
+ 
+<br>
+# Diferencia de altura máxima para el repostaje en vuelo (millas)
+<br>
+MaxDifHeightRefuel=0.25
+<br>
+ 
+<br>
+# Máxima distancia para el aterrizaje (millas)
+<br>
+# Máxima altura para el aterrizaje (millas)
+<br>
+# Por debajo de esta distancia y altura se considera que la unidad ya ha
+<br>
+# llegado a la base, y se finaliza el aterrizaje.
+<br>
+MaxDistanceGoInBase=1
+<br>
+MaxHeightGoInBase=1
+<br>
+ 
+<br>
+# Valor de altura/profundidad que hay que incrementar o decrementar al pulsar la tecla 'A' o 'Z' en el control básico de la dinámica (pies)
+<br>
+AZKeyIncrHeightDepth = 5.0
+<br>
+ 
+<br>
+# Indica si hay que usar control cinemático de unidades por teclado o no (0 = NO; 1 = SI)
+<br>
+UseDynKeyControl = 1
+<br>
+ 
+<br>
+# Porcentaje de velocidad con respecto a la máxima de la unidad que hay que incrementar o decrementar al pulsar
+<br>
+# la tecla arriba o abajo en el control básico de la dinámica
+<br>
+UpDownKeyIncrSpeed = 10.0
+<br>
+ 
+<br>
+# Número de grados que hay que incrementar o decrementar al pulsar la tecla izquierda o derecha en el control básico de la dinámica
+<br>
+LeftRightKeyIncrCourse = 5.0
+<br>
+ 
+<br>
+[Dynamic.HelDynamic]
+<br>
+MaxErrorAngleHover=30
+<br>
+# Distancia de comienzo de alcance de punto para hacer hover ya encarado al
+<br>
+#viento (yardas)
+<br>
+DistanceHover=1000
+<br>
+ 
+<br>
+# Indica si hay que usar control cinemático de unidades por teclado o no (0 = NO; 1 = SI)
+<br>
+UseDynKeyControl = 1
+<br>
+ 
+<br>
+# Porcentaje de velocidad con respecto a la máxima de la unidad que hay que incrementar o decrementar al pulsar
+<br>
+# la tecla arriba o abajo en el control básico de la dinámica
+<br>
+UpDownKeyIncrSpeed = 10.0
+<br>
+ 
+<br>
+# Número de grados que hay que incrementar o decrementar al pulsar la tecla izquierda o derecha en el control básico de la dinámica
+<br>
+LeftRightKeyIncrCourse = 5.0
+<br>
+ 
+<br>
+# Valor de altura/profundidad que hay que incrementar o decrementar al pulsar la tecla 'A' o 'Z' en el control básico de la dinámica (pies)
+<br>
+AZKeyIncrHeightDepth = 5.0
+<br>
+ 
+<br>
+[Dynamic]
+<br>
+# Indica si se quiere activar la información de tiempos en el LOG o no (0 = NO; 1 = SI)
+<br>
+ShowTimeInformation = 0
+<br>
+ 
+<br>
+# Maxima distancia al lider permitida ( millas )
+<br>
+MaxDistanceToLeader = 20
+<br>
+ 
+<br>
+# Maxima distancia de interceptación ( millas )
+<br>
+# Por debajo de esta distancia al punto, se considera que se ha alcanzado
+<br>
+# dicho punto, y se finaliza la interceptación
+<br>
+MaxDistanceToInterceptation = 0.25
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION PLANES
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[Plans.HelPlans]
+<br>
+# Multiplicidad del TSR ( yardas )
+<br>
+TsrMultiplicity=500
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION FORMACIÓN
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[Formation]
+<br>
+# Máxima distancia a la que puede estar una unidad para que pueda ser guía (millas)
+<br>
+MaxGuideFormationDistance = 20
+<br>
+ 
+<br>
+# Permiso de formación con otros bandos:
+<br>
+# 0 -> Formación únicamente con unidades del mismo bando
+<br>
+# 1 -> Formación con unidades del cualquier bando
+<br>
+FormationWithOtherForce = 0
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION PREPARACIÓN
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+[Preparation]
+<br>
+# Indica si debe habilitarse la identificación por fotos
+<br>
+EnablePlatformPhotos = 0
+<br>
+ 
+<br>
+# Ruta por defecto para cuando no existe foto para la identificación
+<br>
+NoPhotoFile=..\data\sw\src\Preparation\Alphanumeric\Data\Images\noFoto.jpg
+<br>
+[Preparation.Alphanumeric]
+<br>
+# Indica el directorio donde deben buscarse los ficheros gráficos,
+<br>
+# según extensiones, que se usan en los diálogos de Preparación Alfanumérica.
+<br>
+IlogPath=c:\Desarrollo\Galeon\sw\src\Preparation\Alphanumeric
+<br>
+IlogExtensions=*.(xpm|xbm|png|jpg|ilv|locale)
+<br>
+ 
+<br>
+# Posición (APWx,APWy) y tamaño (APWw,APWh) de la Preparación Alfanumérica
+<br>
+APWx=0
+<br>
+APWy=0
+<br>
+APWw=1152
+<br>
+APWh=864
+<br>
+ 
+<br>
+[Preparation.Graphic]
+<br>
+# Indica el directorio donde deben buscarse los ficheros gráficos,
+<br>
+# según extensiones, que se usan en los diálogos de Preparación Gráfica.
+<br>
+IlogPath=c:\Desarrollo\Galeon\sw\src\Preparation\Geographic
+<br>
+IlogExtensions=*.(xpm|xbm|png|jpg|ilv|locale)
+<br>
+Catalogo=CatalogoGral
+<br>
+ 
+<br>
+# Posición (GPWx,GPWy) y tamaño (GPWw,GPWh) de la Preparación Gráfica
+<br>
+GPWx=0
+<br>
+GPWy=0
+<br>
+GPWw=1280
+<br>
+GPWh=1024
+<br>
+ 
+<br>
+# Posición (GPWx,GPWy) y tamaño (GPWw,GPWh) del Editor de Cartas
+<br>
+CEDx=0
+<br>
+CEDy=0
+<br>
+CEDw=1280
+<br>
+CEDh=1024
+<br>
+ 
+<br>
+[Preparation.Dynamic]
+<br>
+# Densidad de combustible usada para calcular el peso que se añade a la unidad
+<br>
+FuelDensity=1
+<br>
+ 
+<br>
+# Limites de carga para la tabla de consumo de combustible según carga para
+<br>
+# unidades aéreas
+<br>
+ChargingLimit1=0
+<br>
+ChargingLimit2=0.5
+<br>
+ChargingLimit3=1
+<br>
+ 
+<br>
+# Limites de altura para la tabla de consumo de combustible según altura para
+<br>
+# unidades aéreas
+<br>
+HeightLevel1=500
+<br>
+HeightLevel2=2000
+<br>
+HeightLevel3=10000
+<br>
+HeightLevel4=25000
+<br>
+HeightLevel5=100000
+<br>
+ 
+<br>
+[Preparation.FrqPlan]
+<br>
+# Números máximos de redes permitidas (de momento solo pueden ser como mucho 28 MaxPhonicNets y MaxMessageNets siempre 4)
+<br>
+MaxPhonicNets = 12
+<br>
+MaxMessageNets = 4
+<br>
+MaxLink11Nets = 4
+<br>
+MaxLink16Nets = 4
+<br>
+ShowNetNameLabels = 0
+<br>
+ 
+<br>
+# Indica si solo se muestran las unidades asignadas a consolas (1) o por el contrario se muestran todas
+<br>
+# aunque no estén asignadas a alguna consola (0)
+<br>
+ShowOnlyUnitsAssignedToAnyConsole = 0
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION DE LA RADIO
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[Audio]
+<br>
+# Indica el directorio donde se encuentran los ficheros de Ilog necesarios
+<br>
+# para las ventanas de audio.
+<br>
+AudioDir=C:\Desarrollo\Galeon\sw\src\Audio
+<br>
+ 
+<br>
+# Indica el directorio donde se generarán los ficheros de audio temporales
+<br>
+TmpWavFilesDir=C:\Desarrollo\Galeon\sw\src\TmpWavFiles
+<br>
+ 
+<br>
+# Indica los ficheros que se mezclaran con la salida de audio para provocar
+<br>
+# los distintos niveles de ruido de las redes de audio
+<br>
+NoiseLevel1File=C:\Desarrollo\Galeon\sw\src\Audio\NoiseLevel1.wav
+<br>
+NoiseLevel2File=C:\Desarrollo\Galeon\sw\src\Audio\NoiseLevel2.wav
+<br>
+NoiseLevel3File=C:\Desarrollo\Galeon\sw\src\Audio\NoiseLevel3.wav
+<br>
+NoiseLevel4File=C:\Desarrollo\Galeon\sw\src\Audio\NoiseLevel4.wav
+<br>
+NoiseLevel5File=C:\Desarrollo\Galeon\sw\src\Audio\NoiseLevel5.wav
+<br>
+NoiseLevel6File=C:\Desarrollo\Galeon\sw\src\Audio\NoiseLevel6.wav
+<br>
+NoiseLevel7File=C:\Desarrollo\Galeon\sw\src\Audio\NoiseLevel7.wav
+<br>
+NoiseLevel8File=C:\Desarrollo\Galeon\sw\src\Audio\NoiseLevel8.wav
+<br>
+NoiseLevel9File=C:\Desarrollo\Galeon\sw\src\Audio\NoiseLevel9.wav
+<br>
+NoiseLevel10File=C:\Desarrollo\Galeon\sw\src\Audio\NoiseLevel10.wav
+<br>
+ 
+<br>
+# Indica el fichero que se mezclara con la salida de audio para provocar
+<br>
+# las perturbaciones en las redes de audio
+<br>
+PerturbationFile=C:\Desarrollo\Galeon\sw\src\Audio\Perturbation.wav
+<br>
+ 
+<br>
+# Indica el fichero que se mezclara con la salida de audio para provocar
+<br>
+# los engaños en las redes de audio
+<br>
+DeceptionFile=C:\Desarrollo\Galeon\sw\src\Audio\Deception.wav
+<br>
+ 
+<br>
+# Segundos y milisegundos definidos para el timer de recalculo de alcances
+<br>
+AudioPartTimerSecs = 10
+<br>
+AudioPartTimerUSecs = 0
+<br>
+ 
+<br>
+[PTTMonitor]
+<br>
+# Frecuencia de muestreo del PTT en milisegundos
+<br>
+PollingFrequency=25
+<br>
+ 
+<br>
+# Indica si sale una ventana de emulacion del PTT, que permite simular la
+<br>
+# pulsacion del PTT cuando el dispositivo físico no esta instalado
+<br>
+Emulated=0
+<br>
+ 
+<br>
+# Cada cuanto tiempo se realiza una solicitud al moderador para mantener
+<br>
+# viva la linea en segundos
+<br>
+RequestDelay=1
+<br>
+ 
+<br>
+# Indica si se puede usar o no una tecla como PTT
+<br>
+UsePTTKey = 0
+<br>
+PTTKey = 32
+<br>
+ 
+<br>
+[Participant]
+<br>
+# Invierte los canales derecho e izquierdo del audio por si hay un error
+<br>
+# en el cableado
+<br>
+InvertAudioChannels=0
+<br>
+ 
+<br>
+# Indica el puerto de comunicaciones al que se encuentra conectado el
+<br>
+# pedal del PTT
+<br>
+CommPort=COM1
+<br>
+ 
+<br>
+# Indica el codec a usar en la transmision de audio por la red.
+<br>
+# Validos son: (G711, GSM, MSGSM). Se recomienda el MSGSM o GSM
+<br>
+Codec=MSGSM
+<br>
+ 
+<br>
+# Cuando se configuran los dispositivos de audio , no hay que poner el nombre
+<br>
+# completo, sino solo una parte que lo identifique sin error.
+<br>
+# Por ej. si hay dos tarjetas, una SoundBlaster Live y otra SoundBlaster PCI
+<br>
+# Basta con poner en una "Live" y en otra "PCI", pero no es valido poner en
+<br>
+# ambas configuraciones (auriculares y altavoces) SoundBlaster
+<br>
+# Indica el dispositivo al que se conectaran los altavoces
+<br>
+SpeakersSoundDevice=Live
+<br>
+ 
+<br>
+# Indica el dispositivo al que se conectara el microfono
+<br>
+MicrophoneSoundDevice=Live
+<br>
+ 
+<br>
+# Indica el dispositivo al que se conectaran los auriculares
+<br>
+PhonesSoundDevice=Crystal
+<br>
+ 
+<br>
+# Al arrancar la consola, el master del volumen del sistema se configura para
+<br>
+# que esté al 80% del total, de esta forma se evita que se produzca el olvido
+<br>
+# de ajustar el volumen. Sin embargo, cuando el sistema se usa con otros
+<br>
+# propósitos, puede resultar inconveniente el ajuste automático de dicho
+<br>
+# volumen. Esta opción, cuando se pone a 1, evita tal ajuste automático,
+<br>
+# dejando la configuración manual que ha establecido el usuario.
+<br>
+DisableMasterVolumeChange=0
+<br>
+ 
+<br>
+# Indica si cuando se pulsa el PTT se ha de reproducir un ruido. Este ruido
+<br>
+# se lee de un fichero de audio y se reproduce por la tarjeta de sonido
+<br>
+# configurada por defecto en el sistema.
+<br>
+PlayPTTSound=0
+<br>
+ 
+<br>
+# Indica el fichero de audio que se reproduce cuando se pulsa el PTT.
+<br>
+PTTSoundFile=PTT.wav
+<br>
+ 
+<br>
+# El ancho de banda se calcula dividiendo por 100 : 102400000/100 = 100Mb/100
+<br>
+InitialBandwidth=1024000
+<br>
+ 
+<br>
+# Numero de buffers de audio (mínimo 3)
+<br>
+# Cuanto mayor número de buffers mas retraso, pero por otro lado más inmune
+<br>
+# cuando la carga de CPU del sistema aumenta.
+<br>
+NumAudioBuffers=6
+<br>
+ 
+<br>
+# Valor para el jitter en milisegundos. En realidad este valor define un tiempo
+<br>
+# mínimo y uno máximo, ya que el jitter es dinámico. El tiempo aqui definido
+<br>
+# es el mínimo, y el máximo se calcula como el doble de este valor.
+<br>
+Jitter=150
+<br>
+ 
+<br>
+# Indica si se debe permitir la grabación del audio en las consolas de
+<br>
+# instructor
+<br>
+AudioRecordingEnabled=1
+<br>
+ 
+<br>
+# Si esta habilitada la grabación de audio, este valor indica cuantos minutos
+<br>
+# se grabaran de audio previo a cuando se solicite la grabación.
+<br>
+MinutesOnAudioRecord=1
+<br>
+ 
+<br>
+# Con estos parámetros se controla si las librerías de H323 encargadas de la
+<br>
+# comunicación de las redes de audio deben dejar un fichero de registro
+<br>
+# de lo que va sucediendo internamente.
+<br>
+# TraceLevel = 0 indica sin log. Máximo valor recomendado = 3
+<br>
+TraceLevel=0
+<br>
+ 
+<br>
+# Indica el fichero donde se dejara registro.
+<br>
+TraceFile=Console.H323.log
+<br>
+ 
+<br>
+# Indica si las comunicaciones internas se hacen a través de una habitación por unidad en el mcu (1)
+<br>
+# o se hacen a través de llamadas punto a punto como "antiguamente"
+<br>
+InternalUnitMCUComms = 1
+<br>
+ 
+<br>
+[ConsoleIP]
+<br>
+# Se configuran las direcciones IP de las consolas del sistema.
+<br>
+# Estas direcciones son necesarias ya que las comunicaciones audio punto a
+<br>
+# punto con las que se simulan las comunicaciones internas y el interfono
+<br>
+# obtiene de aqui la dirección IP con la que conectar.
+<br>
+Con001=192.168.10.31
+<br>
+Con002=192.168.10.32
+<br>
+Con003=192.168.10.33
+<br>
+Con004=192.168.10.34
+<br>
+Con005=192.168.10.35
+<br>
+Con006=192.168.10.78
+<br>
+Con011=192.168.10.36
+<br>
+Con012=192.168.10.37
+<br>
+Con013=192.168.10.38
+<br>
+Con021=192.168.10.39
+<br>
+Con022=192.168.10.40
+<br>
+Con023=192.168.10.41
+<br>
+Con031=192.168.10.42
+<br>
+Con032=192.168.10.43
+<br>
+Con033=192.168.10.44
+<br>
+Con041=192.168.10.45
+<br>
+Con042=192.168.10.46
+<br>
+Con043=192.168.10.47
+<br>
+Con051=192.168.10.48
+<br>
+Con052=192.168.10.49
+<br>
+Con053=192.168.10.50
+<br>
+Con061=192.168.10.51
+<br>
+Con062=192.168.10.52
+<br>
+Con063=192.168.10.53
+<br>
+Con071=192.168.10.54
+<br>
+Con072=192.168.10.55
+<br>
+Con073=192.168.10.56
+<br>
+Con081=192.168.10.57
+<br>
+Con082=192.168.10.58
+<br>
+Con083=192.168.10.59
+<br>
+Con091=192.168.10.60
+<br>
+Con092=192.168.10.61
+<br>
+Con093=192.168.10.62
+<br>
+Con101=192.168.10.63
+<br>
+Con102=192.168.10.64
+<br>
+Con103=192.168.10.65
+<br>
+Con111=192.168.10.66
+<br>
+Con112=192.168.10.67
+<br>
+Con113=192.168.10.68
+<br>
+Con121=192.168.10.69
+<br>
+Con122=192.168.10.70
+<br>
+Con123=192.168.10.71
+<br>
+Con131=192.168.10.72
+<br>
+Con132=192.168.10.73
+<br>
+Con133=192.168.10.74
+<br>
+Con141=192.168.10.75
+<br>
+Con142=192.168.10.76
+<br>
+Con143=192.168.10.77
+<br>
+#Con006=192.168.10.78 Esta al principio
+<br>
+Con151=192.168.10.79
+<br>
+Con152=192.168.10.80
+<br>
+Con153=192.168.10.81
+<br>
+Con161=192.168.10.82
+<br>
+Con162=192.168.10.83
+<br>
+Con163=192.168.10.84
+<br>
+Con171=192.168.10.85
+<br>
+Con172=192.168.10.86
+<br>
+Con173=192.168.10.87
+<br>
+Con181=192.168.10.88
+<br>
+Con182=192.168.10.89
+<br>
+Con183=192.168.10.90
+<br>
+Con191=192.168.10.91
+<br>
+Con192=192.168.10.92
+<br>
+Con193=192.168.10.93
+<br>
+Con201=192.168.10.94
+<br>
+Con202=192.168.10.95
+<br>
+Con203=192.168.10.96
+<br>
+ 
+<br>
+Con997=150.150.1.148
+<br>
+Con998=150.150.2.173
+<br>
+ 
+<br>
+[RemoteObjects]
+<br>
+EmbeddedRemoteObjectsService = 0
+<br>
+RemoteObjectsDic = S:\sainsel.lib\Arquitectura.2.15\src\SATools\RemoteObjects\RemoteObjects.dic
+<br>
+ 
+<br>
+[Interconnection]
+<br>
+SiteID = 33
+<br>
+ApplicationID = 37
+<br>
+EnableInteconnectionMode = 0
+<br>
+BasePort = 2006
+<br>
+UseMonitor = 0
+<br>
+GlnOMTDictionaryPath = C:\Desarrollo\Galeon\sw\src\OMT\OMT.dic
+<br>
+GlnVsUlisesOMTDictionaryPath = C:\Desarrollo\Galeon\sw\src\OMT\GlnVsUlisesOMT.dic
+<br>
+FedFileName = C:\Desarrollo\Galeon\sw\src\GlnInterconnection.fed
+<br>
+GlnConfigurationFilesPath = C:\Desarrollo\Galeon\sw\src
+<br>
+EnableCommunicationsInterconnections = 0
+<br>
+ 
+<br>
+[GeoCalcServiceApp]
+<br>
+# Indica si hay que crear el servicio de cálculos geográficos remoto o local (1 = REMOTO; 0 = LOCAL)
+<br>
+EnableGeoCalcService = 0
+<br>
+ 
+<br>
+# Nombre del fichero a ejecuctar para lanzar la aplicación externa
+<br>
+ProgramName = GeoCalcServiceApp.bat
+<br>
+ 
+<br>
+# Indica en que fichero se almacenara el registro de log
+<br>
+SALogFile=C:\Archivos de programa\Galeon\GeoCalcServiceAppSA.log
+<br>
+LogFile=C:\Archivos de programa\Galeon\GeoCalcServiceApp.log
+<br>
+ 
+<br>
+# Indica el nivel de detalle del registro de log. Los valores posibles son LOG_ERROR y LOG_INFO.
+<br>
+# LOG_INFO muestra mayor cantidad de informaión que LOG_ERROR
+<br>
+SALogMask=LOG_INFO
+<br>
+LogMask=LOG_INFO
+<br>
+ 
+<br>
+# Parámetros para la configuración de la conexión con el simulador
+<br>
+UseMonitor = 0
+<br>
+BasePort = 60033
+<br>
+FederationName = Galeon
+<br>
+FedFileName = C:\Desarrollo\Galeon\sw\src\Galeon.fed
+<br>
+ 
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# CONFIGURACION DE LA AYUDA
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# -----------------------------------------------------------------------------
+<br>
+ 
+<br>
+[Help]
+<br>
+# Path principal de los ficheros de ayuda
+<br>
+HelpPath=\\sol\Galeon\doc\descripción\
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - analysisModel
+<br>
+#
+<br>
+ActionsReactionsReportWnd= 5 - Análisis\ANA 04_01 - Generación de Informes.htm
+<br>
+AntiSubmarineReportWnd = 5 - Análisis\ANA 04_01 - Generación de Informes.htm
+<br>
+DebriefingReportsWnd = 5 - Análisis\ANA 04_01 - Generación de Informes.htm
+<br>
+MssTorpLaunchingReportWnd= 5 - Análisis\ANA 04_01 - Generación de Informes.htm
+<br>
+ExerciseReplay = 5 - Análisis\ANA 03 - Reproducción del Ejercicio.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - cmmunications
+<br>
+#
+<br>
+FoniaCommunicationWnd = 3 - Alumno\ALU 03_05_05 - Fonía.htm
+<br>
+ComsmWnd = 3 - Alumno\ALU 03_04_05 - COMSM.htm
+<br>
+DataLinkWnd = 3 - Alumno\ALU 03_05_03 - Data Link.htm
+<br>
+Link11Wnd = 3 - Alumno\ALU 03_05_01 - Link 11.htm
+<br>
+MailWindowWnd = 3 - Alumno\ALU 03_05_04 - Mensajería.htm
+<br>
+MailWindowWndNtbReceived = 3 - Alumno\ALU 03_05_04 - Mensajería.htm
+<br>
+MailWindowWndNtbTransmited = 3 - Alumno\ALU 03_05_04 - Mensajería.htm
+<br>
+SatelliteWnd = 3 - Alumno\ALU 03_05_06 - Satélite.htm
+<br>
+SfDataLinkWnd = 3 - Alumno\ALU 03_05_03 - Data Link.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - cmmnicationsAux
+<br>
+#
+<br>
+InstMailsEditionWnd = 4 - Instructor\INS 06_04 - Control de las Comunicaciones.htm
+<br>
+Link11SettingConfigurationWndNtb = 3 - Alumno\ALU 03_05_01 - Link 11.htm
+<br>
+Link11SettingParametersWndNtb = 3 - Alumno\ALU 03_05_01 - Link 11.htm
+<br>
+Link11SettingWnd = 3 - Alumno\ALU 03_05_01 - Link 11.htm
+<br>
+Link16SettingConfigurationWndNtb = 3 - Alumno\ALU 03_05_02 - Link 16.htm
+<br>
+Link16SettingParametersWndNtb = 3 - Alumno\ALU 03_05_02 - Link 16.htm
+<br>
+Link16SettingWnd = 3 - Alumno\ALU 03_05_02 - Link 16.htm
+<br>
+LinkSettingForceOrderWndNtb = 3 - Alumno\ALU 03_05_01 - Link 11.htm
+<br>
+LinkSettingNetWndNtb = 3 - Alumno\ALU 03_05_01 - Link 11.htm
+<br>
+MailsEditionWnd = 3 - Alumno\ALU 03_05_04 - Mensajería.htm
+<br>
+#RRChangeIdentificationWnd
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - controlModels
+<br>
+#
+<br>
+AceptRejectDamagesWnd = 4 - Instructor\INS 06_01 - Información del Ejercicio.htm
+<br>
+AntisubmarinesDetectionsReportWnd = 5 - Análisis\ANA 04_01 - Generación de Informes.htm
+<br>
+CommunicationsWnd = 4 - Instructor\INS 06_04 - Control de las Comunicaciones.htm
+<br>
+CommunicationWndNtbLink11Nets = 4 - Instructor\INS 06_04 - Control de las Comunicaciones.htm
+<br>
+CommunicationWndNtbMail = 4 - Instructor\INS 06_04 - Control de las Comunicaciones.htm
+<br>
+CommunicationWndNtbPhonia = 4 - Instructor\INS 06_04 - Control de las Comunicaciones.htm
+<br>
+ConsolesWnd = 4 - Instructor\INS 02 - Servidor de Ejercicios.htm
+<br>
+ControlWnd = 4 - Instructor\INS 01 - Descripción General.htm
+<br>
+EnvironmentDatasWnd = 4 - Instructor\INS 06_05 - Control del Escenario.htm
+<br>
+EnvironmentDatasWndNtbElectromagnetism = 4 - Instructor\INS 06_05 - Control del Escenario.htm
+<br>
+EnvironmentDatasWndNtbBathitherm = 4 - Instructor\INS 06_05 - Control del Escenario.htm
+<br>
+EnvironmentDatasWndNtbArea = 4 - Instructor\INS 06_05 - Control del Escenario.htm
+<br>
+EnvironmentDatasWndNtbMeteorology = 4 - Instructor\INS 06_05 - Control del Escenario.htm
+<br>
+EnvironmentZoneWnd = 4 - Instructor\INS 06_05 - Control del Escenario.htm
+<br>
+ExerciseControlWnd = 4 - Instructor\INS 06 - Control del Ejercicio.htm
+<br>
+InstructorPhoneWnd = 4 - Instructor\INS 06_04 - Control de las Comunicaciones.htm
+<br>
+LaunchingReportWnd = 5 - Análisis\ANA 04_01 - Generación de Informes.htm
+<br>
+MinedDatasWndntbInformation = 4 - Instructor\INS 06_05 - Control del Escenario.htm
+<br>
+MinedDatasWndNtbArea = 4 - Instructor\INS 06_05 - Control del Escenario.htm
+<br>
+MinedZoneWnd = 4 - Instructor\INS 06_05 - Control del Escenario.htm
+<br>
+NetFoniaControlWnd = 4 - Instructor\INS 06_04 - Control de las Comunicaciones.htm
+<br>
+PerishableCompanyControlWnd = 4 - Instructor\INS 06_01 - Información del Ejercicio.htm
+<br>
+ReportsWnd = 4 - Instructor\INS 06_01 - Información del Ejercicio.htm
+<br>
+RoeWnd = 4 - Instructor\INS 06_07 - Control de Conductas (ROE).htm
+<br>
+RoeWndNtbBlueRedProfile = 4 - Instructor\INS 06_07 - Control de Conductas (ROE).htm
+<br>
+RoeWndNtbSummary = 4 - Instructor\INS 06_07 - Control de Conductas (ROE).htm
+<br>
+UnitsInformationWnd = 4 - Instructor\INS 06_01 - Información del Ejercicio.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - controlModelsAux
+<br>
+#
+<br>
+AirUnitCommCountermdWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+AirUnitDynamicWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+AirUnitMunitionsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+AirUnitWeaponsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+BaseUnitCommCountermdWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+BaseUnitSensorsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+BaseUnitWeaponsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+CopyUnitWnd = 4 - Instructor\INS 06_01 - Información del Ejercicio.htm
+<br>
+ExpendableGeneralDataWnd = 4 - Instructor\INS 06_03 - Datos Generales de Entidades Perecederas.htm
+<br>
+GenerateFalsesEchosWnd = 4 - Instructor\INS 06_01 - Información del Ejercicio.htm
+<br>
+HelUnitSensorsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+PhotosWnd = 4 - Instructor\INS 06_08 - Fotos de Ejercicio.htm
+<br>
+PlaneUnitSensorsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+SbUnitDynamicWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+SbUnitMunitionsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+SbUnitSensorsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+SbUnitWeaponsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+SbUnitCommCountermdWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+SfUnitMunitionsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+SfUnitSensorsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+SfUnitWeaponsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+SfUnitDynamicWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+SfUnitCommCountermdWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+TrrUnitDynamicWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+TrrUnitMunitionsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+TrrUnitSensorsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+TrrUnitWeaponsWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+TrrUnitCommCountermdWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+UnitGeneralDataWnd = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+UnitGeneralWndNtb = 4 - Instructor\INS 06_02 - Datos Generales de Unidades.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - dynamics
+<br>
+#
+<br>
+AirChargeFuelWnd = 3 - Alumno\ALU 03_01_03 - Aviones.htm
+<br>
+AirDynamicWnd = 3 - Alumno\ALU 03_01_03 - Aviones.htm
+<br>
+BaseDynamicWnd = 3 - Alumno\ALU 03_01_05 - Bases.htm
+<br>
+BaseLogisticsWnd = 3 - Alumno\ALU 03_01_05 - Bases.htm
+<br>
+HelChargeFuelWnd = 3 - Alumno\ALU 03_01_04 - Helicópteros.htm
+<br>
+HelDynamicWnd = 3 - Alumno\ALU 03_01_04 - Helicópteros.htm
+<br>
+SbDynamicWnd = 3 - Alumno\ALU 03_01_02 - Submarinos.htm
+<br>
+SbChargeFuelWnd = 3 - Alumno\ALU 03_01_02 - Submarinos.htm
+<br>
+SfChargeFuelWnd = 3 - Alumno\ALU 03_01_01 - Superficies.htm
+<br>
+SfDynamicWnd = 3 - Alumno\ALU 03_01_01 - Superficies.htm
+<br>
+TrrFuelWnd = 3 - Alumno\ALU 03_01_06 - Terrestres.htm
+<br>
+TrrDynamicWnd = 3 - Alumno\ALU 03_01_06 - Terrestres.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - dynamicAux
+<br>
+#
+<br>
+AirKinematicsWnd = 3 - Alumno\ALU 03_01_03 - Aviones.htm
+<br>
+AirManoeuvresWndNtbReloadConfiguration = 3 - Alumno\ALU 03_01_03 - Aviones.htm
+<br>
+AirManoeuvresWndNtbTakeOffReturn = 3 - Alumno\ALU 03_01_03 - Aviones.htm
+<br>
+HelManoeuvresWnd = 3 - Alumno\ALU 03_01_04 - Helicópteros.htm
+<br>
+HelManoeuvresWndNtbSpecials = 3 - Alumno\ALU 03_01_04 - Helicópteros.htm
+<br>
+ManoeuvresWndNtbRefueling = 3 - Alumno\ALU 03_01_01 - Superficies.htm
+<br>
+ManoeuvresWndNtbFormation = 3 - Alumno\ALU 03_01_01 - Superficies.htm
+<br>
+ManoeuvresWndNtbInterceptation = 3 - Alumno\ALU 03_01_01 - Superficies.htm
+<br>
+PlaneManoeuvresWnd = 3 - Alumno\ALU 03_01_03 - Aviones.htm
+<br>
+SbKinematicsWnd = 3 - Alumno\ALU 03_01_02 - Submarinos.htm
+<br>
+SbManoeuvresWnd = 3 - Alumno\ALU 03_01_02 - Submarinos.htm
+<br>
+SbManoeuvresWndNtbSpecials = 3 - Alumno\ALU 03_01_02 - Submarinos.htm
+<br>
+SfKinematicsWnd = 3 - Alumno\ALU 03_01_01 - Superficies.htm
+<br>
+SfManoeuvresWnd = 3 - Alumno\ALU 03_01_01 - Superficies.htm
+<br>
+SfManoeuvresWndNtbSpecials = 3 - Alumno\ALU 03_01_01 - Superficies.htm
+<br>
+SfOperatorModeWnd = 3 - Alumno\ALU 03_01_01 - Superficies.htm
+<br>
+ShipManoeuvresWndNtbArriveLeavePort = 3 - Alumno\ALU 03_01_01 - Superficies.htm
+<br>
+TerrKinematicsWnd = 3 - Alumno\ALU 03_01_06 - Terrestres.htm
+<br>
+TrrManoeuvresWnd = 3 - Alumno\ALU 03_01_06 - Terrestres.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - main
+<br>
+#
+<br>
+AudioDescriptionWnd
+<br>
+ConsoleMainWnd = 3 - Alumno\ALU 01 - Descripción General.htm
+<br>
+ErrorWnd = 7 - Anexos\ANX 05_06 - Avisos de error.htm
+<br>
+LoadWnd = index.htm
+<br>
+MessageWnd = 3 - Alumno\ALU 02_01 - Pantalla de Control.htm
+<br>
+PhotoDescriptionWnd = 4 - Instructor\INS 06_08 - Fotos de Ejercicio.htm
+<br>
+SaveGameWnd = 4 - Instructor\INS 06 - Control del Ejercicio.htm
+<br>
+Themes = index.htm
+<br>
+TacticalConsole = 3 - Alumno\ALU 02_02 - Pantalla Táctica.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - programmedPlans
+<br>
+#
+<br>
+PlansPIMWndNtb = 3 - Alumno\ALU 03_06_01 - PIM.htm
+<br>
+PlansWnd = 3 - Alumno\ALU 03_06 - General Planes.htm
+<br>
+PlansWndNtbAir = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+PlansWndNtbAswSearches = 3 - Alumno\ALU 03_06_06 - Planes ASW.htm
+<br>
+PlansWndNtbHel = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+PlansWndNtbPatrols = 3 - Alumno\ALU 03_06_02 - Patrullas.htm
+<br>
+PlansWndNtbSearches = 3 - Alumno\ALU 03_06_03 - Búsquedas.htm
+<br>
+PlansWndNtbSf = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+PlansZigZagWndNtb = 3 - Alumno\ALU 03_06_05 - Zig Zag.htm
+<br>
+ 
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - programmedPlansAux
+<br>
+#
+<br>
+AirPlan1Wnd = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+AirPlan2Wnd = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+AirPlan3Wnd = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+AirPlan4Wnd = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+AirPlan5Wnd = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+AswBearWnd = 3 - Alumno\ALU 03_06_06 - Planes ASW.htm
+<br>
+AswCordonAttackWnd = 3 - Alumno\ALU 03_06_06 - Planes ASW.htm
+<br>
+AswCordonSearchWnd = 3 - Alumno\ALU 03_06_06 - Planes ASW.htm
+<br>
+AswGeographicSectorsWnd = 3 - Alumno\ALU 03_06_06 - Planes ASW.htm
+<br>
+AswAcornSearchWnd = 3 - Alumno\ALU 03_06_06 - Planes ASW.htm
+<br>
+ExpansiveSearchWnd = 3 - Alumno\ALU 03_06_03 - Búsquedas.htm
+<br>
+FixedPlacePatrolWnd = 3 - Alumno\ALU 03_06_02 - Patrullas.htm
+<br>
+HelPlan414243Wnd = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+HelPlan44Wnd = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+HelPlan45Wnd = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+HelPlan46Wnd = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+HelPlan47Wnd = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+HelPlan48Wnd = 3 - Alumno\ALU 03_06_04 - Planes Aéreos y Helicópteros.htm
+<br>
+LinealPatrolWnd = 3 - Alumno\ALU 03_06_02 - Patrullas.htm
+<br>
+ParallelCrossedPatrolWnd = 3 - Alumno\ALU 03_06_02 - Patrullas.htm
+<br>
+PlansPIMSectionCreationWnd = 3 - Alumno\ALU 03_06_01 - PIM.htm
+<br>
+RectangularSearchWnd = 3 - Alumno\ALU 03_06_03 - Búsquedas.htm
+<br>
+SectorialSearchWnd = 3 - Alumno\ALU 03_06_03 - Búsquedas.htm
+<br>
+SerialCrossedPatrolWnd = 3 - Alumno\ALU 03_06_02 - Patrullas.htm
+<br>
+ 
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - sensors
+<br>
+#
+<br>
+AirOtherSensorsWnd = 3 - Alumno\ALU 03_02_06 - TACAN.htm
+<br>
+AirTrrRadarWnd = 3 - Alumno\ALU 03_02_03 - Radar.htm
+<br>
+ESMDatasWnd = 3 - Alumno\ALU 03_02_04 - ESM.htm
+<br>
+ESMLibraryWnd = 3 - Alumno\ALU 03_02_04 - ESM.htm
+<br>
+HelSonarWndNtbActive = 3 - Alumno\ALU 03_02_08 - Sonar Activo.htm
+<br>
+HelSonarWndNtbPassive = 3 - Alumno\ALU 03_02_07 - Sonar Pasivo.htm
+<br>
+HelSonarWnd = 3 - Alumno\ALU 03_02_08 - Sonar Activo.htm
+<br>
+IffWnd = 3 - Alumno\ALU 03_02_05 - IFF.htm
+<br>
+OtherSensorsWnd = 3 - Alumno\ALU 03_02_01 - Infrarrojo.htm
+<br>
+RadarWnd = 3 - Alumno\ALU 03_02_03 - Radar.htm
+<br>
+SbOtherSensorsWnd = 3 - Alumno\ALU 03_02_02 - Periscopio.htm
+<br>
+SlAirSensorPanelWnd = 3 - Alumno\ALU 03_02 - Sensores.htm
+<br>
+SlSubmarineSensorPanelWnd = 3 - Alumno\ALU 03_02 - Sensores.htm
+<br>
+SlBaseSensorPanelWnd = 3 - Alumno\ALU 03_02 - Sensores.htm
+<br>
+SlHelSensorPanelWnd = 3 - Alumno\ALU 03_02 - Sensores.htm
+<br>
+SlTerrestrialSensorPanelWnd = 3 - Alumno\ALU 03_02 - Sensores.htm
+<br>
+SlSurfaceSensorPanelWnd = 3 - Alumno\ALU 03_02 - Sensores.htm
+<br>
+SonarWndNtbActive = 3 - Alumno\ALU 03_02_08 - Sonar Activo.htm
+<br>
+SonobuoyWndNtbDetection = 3 - Alumno\ALU 03_02_09 - Sonoboyas.htm
+<br>
+SonobuoyWndNtbLaunching = 3 - Alumno\ALU 03_02_09 - Sonoboyas.htm
+<br>
+SonarWnd = 3 - Alumno\ALU 03_02_08 - Sonar Activo.htm
+<br>
+SonarWndNtbPassive = 3 - Alumno\ALU 03_02_07 - Sonar Pasivo.htm
+<br>
+SonobuoyWnd = 3 - Alumno\ALU 03_02_09 - Sonoboyas.htm
+<br>
+SonobuoyWndNtbProcessor = 3 - Alumno\ALU 03_02_09 - Sonoboyas.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - sensorAux
+<br>
+#
+<br>
+BathithermActiveWnd = 3 - Alumno\ALU 03_02_08 - Sonar Activo.htm
+<br>
+BathithermPasiveWnd = 3 - Alumno\ALU 03_02_07 - Sonar Pasivo.htm
+<br>
+BathithermWndNtbDatas = 3 - Alumno\ALU 03_02_08 - Sonar Activo.htm
+<br>
+BathithermWndNtbIntensity = 3 - Alumno\ALU 03_02_08 - Sonar Activo.htm
+<br>
+BathithermWndNtbTlDistanceActive = 3 - Alumno\ALU 03_02_08 - Sonar Activo.htm
+<br>
+BathithermWndNtbTlDistancePassive = 3 - Alumno\ALU 03_02_07 - Sonar Pasivo.htm
+<br>
+BathithermWndNtbParametersActive = 3 - Alumno\ALU 03_02_08 - Sonar Activo.htm
+<br>
+BathithermWndNtbParametersPassive = 3 - Alumno\ALU 03_02_07 - Sonar Pasivo.htm
+<br>
+EnvironmentNoiseWnd = 3 - Alumno\ALU 03_02_09 - Sonoboyas.htm
+<br>
+FlyPointsWnd = 3 - Alumno\ALU 03_02_09 - Sonoboyas.htm
+<br>
+RadarParametersWnd = 3 - Alumno\ALU 03_02_03 - Radar.htm
+<br>
+SonobuoyLaunchingWnd = 3 - Alumno\ALU 03_02_09 - Sonoboyas.htm
+<br>
+SonarContactDataWnd = 3 - Alumno\ALU 03_02_08 - Sonar Activo.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - unitsModels
+<br>
+#
+<br>
+SelectUnitWnd = 4 - Instructor\INS 05 - Control de Unidades y Alumnos.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - weapons
+<br>
+#
+<br>
+AirChaffWnd = 3 - Alumno\ALU 03_04_01 - Chaff.htm
+<br>
+AirMissileWnd = 3 - Alumno\ALU 03_03_01 - Misiles.htm
+<br>
+AirWeaponsWnd = 3 - Alumno\ALU 03_03_05 - Bombas.htm
+<br>
+AirsTorpedoesWnd = 3 - Alumno\ALU 03_03_02 - Torpedos.htm
+<br>
+ChargesWnd = 3 - Alumno\ALU 03_03_03 - Cargas.htm
+<br>
+EcmWnd = 3 - Alumno\ALU 03_04_04 - ECM.htm
+<br>
+GunsWnd = 3 - Alumno\ALU 03_03_04 - Cañones.htm
+<br>
+MissileWnd = 3 - Alumno\ALU 03_03_01 - Misiles.htm
+<br>
+SlAirWeaponPanelWnd = 3 - Alumno\ALU 03_03 - Armas.htm
+<br>
+SlBaseWeaponPanelWnd = 3 - Alumno\ALU 03_03 - Armas.htm
+<br>
+SlSubmarineWeaponPanelWnd = 3 - Alumno\ALU 03_03 - Armas.htm
+<br>
+SlSurfaceWeaponPanelWnd = 3 - Alumno\ALU 03_03 - Armas.htm
+<br>
+SlTerrestrialWeaponPanelWnd = 3 - Alumno\ALU 03_03 - Armas.htm
+<br>
+SubmarineChaffWnd = 3 - Alumno\ALU 03_04_01 - Chaff.htm
+<br>
+SubmarineTorpedoesWnd = 3 - Alumno\ALU 03_03_02 - Torpedos.htm
+<br>
+SurfaceChaffWnd = 3 - Alumno\ALU 03_04_01 - Chaff.htm
+<br>
+TorpedoWnd = 3 - Alumno\ALU 03_03_02 - Torpedos.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de la Consola - weaponsAux
+<br>
+#
+<br>
+AsmdFilterWnd = 3 - Alumno\ALU 03_04_01 - Chaff.htm
+<br>
+AsrocFireWnd = 3 - Alumno\ALU 03_03_02 - Torpedos.htm
+<br>
+ChaffLaunchingWnd = 3 - Alumno\ALU 03_04_01 - Chaff.htm
+<br>
+GunAsmdFilterWnd = 3 - Alumno\ALU 03_03_04 - Cañones.htm
+<br>
+GunFireWnd = 3 - Alumno\ALU 03_03_04 - Cañones.htm
+<br>
+JammingDeceitWnd = 3 - Alumno\ALU 03_04_04 - ECM.htm
+<br>
+LaunchBombsWnd = 3 - Alumno\ALU 03_03_05 - Bombas.htm
+<br>
+LaunchChargesWnd = 3 - Alumno\ALU 03_03_03 - Cargas.htm
+<br>
+MissileAssociatedSensorWnd = 3 - Alumno\ALU 03_03_01 - Misiles.htm
+<br>
+MissileDesignerWnd = 3 - Alumno\ALU 03_03_01 - Misiles.htm
+<br>
+MissileFireProgrammedNavigationWnd= 3 - Alumno\ALU 03_03_01 - Misiles.htm
+<br>
+MissileLinkUpdateWnd = 3 - Alumno\ALU 03_03_01 - Misiles.htm
+<br>
+TorpedoAsuwFireWnd = 3 - Alumno\ALU 03_03_02 - Torpedos.htm
+<br>
+WayPointsMissileWnd = 3 - Alumno\ALU 03_03_01 - Misiles.htm
+<br>
+WayPointsSubWnd = 3 - Alumno\ALU 03_03_01 - Misiles.htm
+<br>
+ 
+<br>
+ 
+<br>
+[Help.Preparation]
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación
+<br>
+#
+<br>
+MainHelpFile=index.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Dinámica
+<br>
+#
+<br>
+SfSbAccelTurnHelpFile = 2 - Preparación\PRP 02_01_01 - Aceleración y Giro de SF y SB.htm
+<br>
+SfSbFuelCsmSpdHelpFile = 2 - Preparación\PRP 02_01_02 - Consumo Combustible de SF y SB.htm
+<br>
+SbBattCsmHelpFile = 2 - Preparación\PRP 02_01_03 - Consumo Batería de SB.htm
+<br>
+SbBattChargingHelpFile = 2 - Preparación\PRP 02_01_04 - Recarga Batería de SB.htm
+<br>
+TrrAccelTurnHelpFile = 2 - Preparación\PRP 02_01_05 - Aceleración y Giro de Terrestres.htm
+<br>
+AirAccelTurnHelpFile = 2 - Preparación\PRP 02_01_06 - Aceleración y Giro de Aéreas.htm
+<br>
+FuelCsmHeightHelpFile = 2 - Preparación\PRP 02_01_07 - Consumo Combustible de Aéreas según Altura.htm
+<br>
+AirFuelCsmLoadHelpFile = 2 - Preparación\PRP 02_01_08 - Consumo Combustible de Aéreas según Carga.htm
+<br>
+AirAccelRdcHelpFile = 2 - Preparación\PRP 02_01_09 - Reducción Aceleración de Aéreas por Carga.htm
+<br>
+SfAcousticSigHelpFile = 2 - Preparación\PRP 02_01_10 - Firma Acústica de SF.htm
+<br>
+SbAcousticSigHelpFile = 2 - Preparación\PRP 02_01_11 - Firma Acústica de SB.htm
+<br>
+SfSbScrewHelpFile = 2 - Preparación\PRP 02_01_12 - Hélices.htm
+<br>
+SbMastHelpFile = 2 - Preparación\PRP 02_01_13 - Mástiles de Submarinos.htm
+<br>
+DepthLengthHelpFile = 2 - Preparación\PRP 02_01_14 - Cota según Largada.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Plataformas
+<br>
+#
+<br>
+SfPlatformHelpFile = 2 - Preparación\PRP 02_02_01 - Plataformas Superficies.htm
+<br>
+SbPlatformHelpFile = 2 - Preparación\PRP 02_02_02 - Plataformas Submarinos.htm
+<br>
+AirPlatformHelpFile = 2 - Preparación\PRP 02_02_03 - Plataformas Aviones.htm
+<br>
+HelPlatformHelpFile = 2 - Preparación\PRP 02_02_04 - Plataformas Helicópteros.htm
+<br>
+BasePlatformHelpFile = 2 - Preparación\PRP 02_02_05 - Plataformas Bases.htm
+<br>
+TrrPlatformHelpFile = 2 - Preparación\PRP 02_02_06 - Plataformas Terrestres.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Sensores
+<br>
+#
+<br>
+InfraredHelpFile = 2 - Preparación\PRP 02_03_01 - Infrarrojo.htm
+<br>
+EcmSusceptHelpFile = 2 - Preparación\PRP 02_03_02 - Susceptibilidad por ECM.htm
+<br>
+RadarHelpFile = 2 - Preparación\PRP 02_03_03 - Radar.htm
+<br>
+EsmHelpFile = 2 - Preparación\PRP 02_03_04 - ESM.htm
+<br>
+IffHelpFile = 2 - Preparación\PRP 02_03_05 - IFF.htm
+<br>
+NvgHelpFile = 2 - Preparación\PRP 02_03_06 - NVG.htm
+<br>
+ActiveSonarHelpFile = 2 - Preparación\PRP 02_03_07 - Sonar Activo.htm
+<br>
+PasiveSonarHelpFile = 2 - Preparación\PRP 02_03_08 - Sonar Pasivo.htm
+<br>
+SonobuoyHelpFile = 2 - Preparación\PRP 02_03_09 - Sonoboya.htm
+<br>
+SonobProHelpFile = 2 - Preparación\PRP 02_03_10 - Procesador Sonoboyas.htm
+<br>
+MadHelpFile = 2 - Preparación\PRP 02_03_11 - MAD.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Armas
+<br>
+#
+<br>
+SeekerHelpFile = 2 - Preparación\PRP 02_04_01 - Seeker.htm
+<br>
+MissileHelpFile = 2 - Preparación\PRP 02_04_02 - Misil.htm
+<br>
+TorpedoHelpFile = 2 - Preparación\PRP 02_04_03 - Torpedo.htm
+<br>
+DepthChargeHelpFile = 2 - Preparación\PRP 02_04_04 - Carga Profundidad.htm
+<br>
+GunHelpFile = 2 - Preparación\PRP 02_04_05 - Artillería.htm
+<br>
+BombHelpFile = 2 - Preparación\PRP 02_04_06 - Bomba.htm
+<br>
+AirWeaponHelpFile = 2 - Preparación\PRP 02_04_07 - Configuración Armas Aéreas.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Contramedidas
+<br>
+#
+<br>
+EcmHelpFile = 2 - Preparación\PRP 02_05_01 - ECM.htm
+<br>
+StandardEcmHelpFile = 2 - Preparación\PRP 02_05_02 - ECM Standard.htm
+<br>
+ComEsmHelpFile = 2 - Preparación\PRP 02_05_03 - COMSM.htm
+<br>
+ChaffHelpFile = 2 - Preparación\PRP 02_05_04 - Cartucho Chaff.htm
+<br>
+ChaffMortarHelpFile = 2 - Preparación\PRP 02_05_05 - Mortero Chaff.htm
+<br>
+FoxerHelpFile = 2 - Preparación\PRP 02_05_06 - Productor Ruido.htm
+<br>
+DecoyHelpFile = 2 - Preparación\PRP 02_05_07 - Señuelo.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Comunicaciones
+<br>
+#
+<br>
+CommunicationHelpFile = 2 - Preparación\PRP 02_06_01 - Equipos Comunicaciones.htm
+<br>
+FrqPlanHelpFile = 2 - Preparación\PRP 02_06_02 - Planes de Frecuencias.htm
+<br>
+SatelliteHelpFile = 2 - Preparación\PRP 02_06_03 - Satélite.htm
+<br>
+SatelliteSetHelpFile = 2 - Preparación\PRP 02_06_04 - Conjunto de Satélites.htm
+<br>
+CommBuoyHelpFile = 2 - Preparación\PRP 02_06_05 - Boyas de Comunicaciones.htm
+<br>
+EmconPlanHelpFile = 2 - Preparación\PRP 02_06_06 - Planes EMCOM.htm
+<br>
+ 
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Ambientales
+<br>
+#
+<br>
+BathithermHelpFile = 2 - Preparación\PRP 02_07_01 - Batitermia.htm
+<br>
+EnvironmentHelpFile = 2 - Preparación\PRP 02_07_02 - Condiciones Ambientales.htm
+<br>
+HourTableHelpFile = 2 - Preparación\PRP 02_07_03 - Tabla Horaria.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - ROEs
+<br>
+#
+<br>
+RoeZoneHelpFile = 2 - Preparación\PRP 02_08_01 - Zonas ROE.htm
+<br>
+ConditioningHelpFile = 2 - Preparación\PRP 02_08_02 - Condicionantes.htm
+<br>
+AuthrizationHelpFile = 2 - Preparación\PRP 02_08_03 - Autorizaciones.htm
+<br>
+RoeHelpFile = 2 - Preparación\PRP 02_08_04 - ROE.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Programación de acciones
+<br>
+#
+<br>
+ActionHelpFile = 2 - Preparación\PRP 02_09_01 - Acciones.htm
+<br>
+ProgActionHelpFile = 2 - Preparación\PRP 02_09_02 - Programación.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Unidades
+<br>
+#
+<br>
+UnitHelpFile = 2 - Preparación\PRP 03 - Preparación de Unidades.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Escenarios
+<br>
+#
+<br>
+SceneHelpFile = 2 - Preparación\PRP 04 - Escenarios.htm
+<br>
+ChartEditionHelpFile = 2 - Preparación\PRP 04_01 - Edición de Cartas.htm
+<br>
+SceneEditionHelpFile = 2 - Preparación\PRP 04_02 - Edición de Escenarios.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Ejercicios
+<br>
+#
+<br>
+GameHelpFile = 2 - Preparación\PRP 05 - Preparación de Ejercicios.htm
+<br>
+RoesHelpFile = 2 - Preparación\PRP 05_01 - Perfiles ROE.htm
+<br>
+FalseEchoesHelpFile = 2 - Preparación\PRP 05_02 - Falsos Ecos.htm
+<br>
+UnitsHelpFile = 2 - Preparación\PRP 05_03 - Unidades.htm
+<br>
+UnitFrqHelpFile = 2 - Preparación\PRP 05_04 - Frecuencias por Unidad.htm
+<br>
+FishingZoneHelpFile = 2 - Preparación\PRP 05_05 - Zonas Pesqueros.htm
+<br>
+MerchantTrafficHelpFile = 2 - Preparación\PRP 05_06 - Rutas Tráfico Mercante.htm
+<br>
+InterferenceZoneHelpFile = 2 - Preparación\PRP 05_07 - Zonas Interferencias.htm
+<br>
+MineZoneHelpFile = 2 - Preparación\PRP 05_08 - Zonas Minadas.htm
+<br>
+EnvironmentZoneHelpFile = 2 - Preparación\PRP 05_09 - Zonas Ambientales.htm
+<br>
+PimZoneHelpFile = 2 - Preparación\PRP 05_10 - Planes PIM.htm
+<br>
+AirwaysHelpFile = 2 - Preparación\PRP 05_11 - Aerovías.htm
+<br>
+ZigZagHelpFile = 2 - Preparación\PRP 05_12 - Planes ZigZag.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Mensajería
+<br>
+#
+<br>
+MsgDataBaseHelpFile = 2 - Preparación\PRP 06 - Base de Datos de Mensajería.htm
+<br>
+ 
+<br>
+# -----------------------------------------------------------------------------
+<br>
+# Ficheros de ayuda de Preparación - Modelos Básicos - Bibliografía
+<br>
+#
+<br>
+BibliogDataBaseHelpFile = 2 - Preparación\PRP 07 - Base de Datos de Bibliografía.htm
+<br>
+ 
+<br>
+[Scene]
+<br>
+#Tiempo para la persistencia de las demoras ESM especificado en segundos
+<br>
+TimeShowBearingsByLink11 = 0
+<br>
+<br>
+<br>
+ 
+</div>
+
+</body>
+
+</html>

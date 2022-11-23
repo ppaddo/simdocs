@@ -1,0 +1,75 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Lanzador de Torpedos</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El Lanzador de Torpedos es el encargado de simular el lanzamiento de torpedos desde las unidades, teniendo en cuenta los datos característicos del lanzador y de los torpedos seleccionados para lanzamiento, y las condiciones del lanzamiento solicitado..</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previo a poder llevar a cabo un lanzamiento de torpedo, se realizan las siguientes comprobaciones:</p>
+
+<ul>
+	<li>Comprobar que el tubo seleccionado para disparo no está vacío.</li>
+	<li>Si el disparo es a blanco, comprobar que la distancia al blanco es inferior al alcance del torpedo.</li>
+</ul>
+
+<p><i>Nota</i>: El alcance máximo y la orientación de salida del torpedo se presentan gráficamente en la Pantalla Táctica.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>Cálculo de Rumbo Recomendado para el lanzamiento:</p>
+
+<ul><font size=2 face=courier>
+	<p>Rumbo_Recomendado = Demora + TLA – Angulo_Giróscopo - Orientación_Tubo</p>
+</font></ul>
+
+<p>Donde:</p>
+
+<ul>
+	<p><font size=2 face=courier>TLA</font> es el introducido por el operador.</p>
+
+	<p>Para el TLA se realiza también una recomendación que se calcula de la siguiente forma:</p>
+
+	<p><font size=2 face=courier>TLA_Recomendado = arcsen(Vel_blanco/Vel_torpedo*sen(Rumbo_blanco–Demora))</font></p>
+
+	<p>Para determinar el signo del TLA recomendado, se realiza la siguiente comparación:</p>
+
+	<p><font size=2 face=courier>
+	Si Rumbo propio – Rumbo blanco ³ 90º Þ el TLA recomendado será negativo. <br>
+	Si Rumbo propio – Rumbo blanco < 90º Þ el TLA recomendado será positivo. <br>
+	</font></p>
+
+	<p><font size=2 face=courier>Orientación_Tubo</font> se obtiene de los datos característicos del lanzador de torpedos. Para unidades de superficie, es idéntico para los tubos de ambas bandas y será de valor positivo si la banda de lanzamiento es babor, y negativo si la banda de lanzamiento es estribor. Para unidades submarinas será 0º si el lanzamiento es desde lanzadores de proa o 180º si es desde popa.</p>
+
+	<p><font size=2 face=courier>Angulo_Giroscopo</font> es el seleccionado por el operador para el lanzamiento, con su signo.</p>
+
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Se crea el torpedo con rumbo el de la unidad más el ángulo orientación del lanzador teniendo en cuenta la banda en la que está instalado el lanzador (si es desde superficie) o si el lanzador está en proa o popa (si es desde submarino), más el giróscopo seleccionado y velocidad la de la fase de lanzamiento del torpedo.</p>
+
+<p>Se decrementa el contador de número de torpedos disponibles, y el tubo desde el que se efectuó el lanzamiento queda vacío.</p>
+
+<p>La carga de torpedos en tubo se produce a petición del operador, excepto para torpedos ASROC. Cuando se produce esta petición, se decrementa del pañol el número de torpedos del tipo solicitado, y se carga torpedo de dicho tipo en el tubo correspondiente. La carga de torpedos ASROC se produce de forma automática tras el lanzamiento, cargándose un torpedo del mismo tipo que el lanzado.</p>
+
+<p>Si en el lanzamiento se activa el modo circular, el tipo de carrera que realizará el torpedo lanzado será circular o helicoidal, dependiendo de si tiene definida ángulo de ascenso / descenso en la BD. Esta característica simula el modo NO RUNOUT de torpedos como el Mk-46.</p>
+
+<p>Tanto para unidades de superficie como submarinas se realiza una Recomendación de Rumbo de la unidad para el lanzamiento, que es mostrada en el diálogo de lanzamiento de torpedos. El Rumbo Recomendado se obtiene según los cálculos anteriores. El operador podrá activar Seguir Indicadores, con lo que el buque maniobrará al rumbo recomendado automáticamente.</p>
+
+</div>
+
+</body>
+
+</html>

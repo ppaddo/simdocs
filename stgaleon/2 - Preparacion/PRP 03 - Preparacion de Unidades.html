@@ -1,0 +1,877 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Preparación de Unidades</font></b></p>
+
+<font size=2 face=arial>
+
+<p>Mediante las tablas de Configuración de Unidades se determina la configuración completa de todas las unidades que podrán participar en un Ejercicio. Se especifican por tanto entre otros parámetros, la plataforma de la unidad y todos los equipos (sensores, armas, comunicaciones y contramedidas) que instala.</p>
+
+<p>La cantidad máxima de equipos de cada tipo que puede instalar una unidad depende del tipo de la misma, como se resume en la siguiente tabla:</p>
+
+<ul>
+	<table border=1 cellspacing=0 cellpadding=4>
+		<tr>
+			<td style='background:#D8D8D8' width=150><font size=2 face=arial><b>Sensores</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>SF</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>SB</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>AV</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>HE</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>BA</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>TE</b></td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Radar</td>
+			<td align=center width=40><font size=2 face=arial>8</td>
+			<td align=center width=40><font size=2 face=arial>8</td>
+			<td align=center width=40><font size=2 face=arial>2</td>
+			<td align=center width=40><font size=2 face=arial>2</td>
+			<td align=center width=40><font size=2 face=arial>8</td>
+			<td align=center width=40><font size=2 face=arial>8</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>IFF / SIF</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Infrarrojo</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>ESM</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>TACAN</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Sonar Activo</td>
+			<td align=center width=40><font size=2 face=arial>2</td>
+			<td align=center width=40><font size=2 face=arial>2</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Sonar Pasivo</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Lanzador Sonob.</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Procesador Sonob.</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>MAD</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>AIS</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+		</tr>
+	</table>
+	<br>
+
+	<table border=1 cellspacing=0 cellpadding=4>
+		<tr>
+			<td style='background:#D8D8D8' width=150><font size=2 face=arial><b>Armas</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>SF</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>SB</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>AV</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>HE</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>BA</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>TE</b></td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Conf. Armas</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>5</td>
+			<td align=center width=40><font size=2 face=arial>5</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Misiles</td>
+			<td align=center width=40><font size=2 face=arial>5</td>
+			<td align=center width=40><font size=2 face=arial>5</td>
+			<td align=center width=40><font size=2 face=arial>5</td>
+			<td align=center width=40><font size=2 face=arial>5</td>
+			<td align=center width=40><font size=2 face=arial>5</td>
+			<td align=center width=40><font size=2 face=arial>5</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Torpedos</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>ASROC</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Cañones</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+			<td align=center width=40><font size=2 face=arial>2</td>
+			<td align=center width=40><font size=2 face=arial>2</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Cargas Prof.</td>
+			<td align=center width=40><font size=2 face=arial>2</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Bombas</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+	</table>
+	<br>
+
+	<table border=1 cellspacing=0 cellpadding=4>
+		<tr>
+			<td style='background:#D8D8D8' width=150><font size=2 face=arial><b>Contramedidas</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>SF</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>SB</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>AV</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>HE</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>BA</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>TE</b></td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Chaff</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>2</td>
+			<td align=center width=40><font size=2 face=arial>2</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>ECM</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>COMSM</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Productor Ruido</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Señuelos</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>2</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+			<td align=center width=40><font size=2 face=arial>0</td>
+		</tr>
+	</table>
+	<br>
+
+	<table border=1 cellspacing=0 cellpadding=4>
+		<tr>
+			<td style='background:#D8D8D8' width=150><font size=2 face=arial><b>Comunicaciones</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>SF</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>SB</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>AV</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>HE</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>BA</b></td>
+			<td style='background:#D8D8D8' align=center width=40><font size=2 face=arial><b>TE</b></td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Link 11</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Link 16</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+			<td align=center width=40><font size=2 face=arial>3</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Data Link</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Mensajería</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+			<td align=center width=40><font size=2 face=arial>4</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Fonía</td>
+			<td align=center width=40><font size=2 face=arial>6</td>
+			<td align=center width=40><font size=2 face=arial>6</td>
+			<td align=center width=40><font size=2 face=arial>6</td>
+			<td align=center width=40><font size=2 face=arial>6</td>
+			<td align=center width=40><font size=2 face=arial>6</td>
+			<td align=center width=40><font size=2 face=arial>6</td>
+		</tr>
+
+		<tr>
+			<td width=40><font size=2 face=arial>Satélite</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+			<td align=center width=40><font size=2 face=arial>1</td>
+		</tr>
+	</table>
+	<br>
+</ul>
+
+<p>Para cada uno de los equipos que se instalan en la unidad, y dependiendo del tipo de equipo, se deberán especificar los datos característicos de su instalación, tales como sectores activos de sensores o direcciones de tiro asociadas a las armas, cantidades disponibles en pañol para cada arma y otras características de los lanzadores de armas.</p>
+
+<p><b>Descripción de los parámetros de Configuración de Unidades</b>:</p>
+
+<p>Dependiendo del tipo de Unidad se despliega una ventana diferente, aunque existe en todas ellas un área común donde se define la unidad. En la figura siguiente se muestra, como ejemplo, la ventana de configuración para unidades de superficie. A continuación se describen estos campos, que son comunes a todos los tipos de unidad.</p>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvUnits/SfUnitWnd.jpg"></p>
+
+<p><b>Plataforma</b>: Este parámetro determina la plataforma asociada a esta unidad, según el Tipo de unidad. Ver apartados Plataformas Superficies, Plataformas Submarinos, Plataformas Aviones, Plataformas Helicópteros, Plataformas Bases o Plataformas Terrestres.</p>
+
+<p><b>Numeral</b>: Este parámetro determina el numeral de la unidad, el cual es tenido en cuenta como un identificador único de las unidades. Es usado en varias ventanas de instructor y alumno para designar la unidad sobre la que se quiere realizar una acción concreta (Ir a Base, Control de Unidad,...). Debe ser introducido obligatoriamente. Este campo está limitado a 5 caracteres alfanuméricos.</p>
+
+<p><b>MMSI</b>: Este parámetro determina el MMSI (maritime mobile service identities) de la unidad.</p>
+
+<p><b>Número IMO</b>: Este parámetro determina el Número IMO de las unidades de superficie y submarinas.</p>
+
+<p><b>Identificador de Llamada</b>: Este parámetro determina el identificador de llamada de la unidad (callsign).</p>
+
+<p><b>Designador OTAN</b>: Este parámetro determina el designador OTAN, el cual es asignado a las unidades sólo a título ilustrativo, y puede ser dejado en blanco. Este campo está limitado a 5 caracteres alfanuméricos.</p>
+
+<p><b>Nacionalidad</b>: Este parámetro determina la nacionalidad de la unidad, la cual se asigna sólo a título ilustrativo, y puede ser dejado en blanco. El valor de este campo se selecciona de una lista. Una vez seleccionada una nacionalidad, a la derecha de este campo se muestra un icono de la bandera representativa de la misma. Esta bandera puede ser mostrada en la Presentación Táctica de las Consolas de Instructor junto la traza de cada unidad.</p>
+
+<p><b>Descripción de los parámetros de Configuración de Sistemas</b>:</p>
+
+<p>Dependiendo del tipo de unidad, podrán instalarse diferentes equipos, que aparecen listados en la ventana de configuración de cada unidad. Junto a la etiqueta correspondiente a cada tipo de equipo existe un botón con la leyenda “...”, que despliega una ventana de instalación para dicho tipo de equipos. A continuación se describe cada una de estas ventanas, indicando en qué tipo de unidades puede instalarse.</p>
+
+<p><b>Radares</b>: Se pueden instalar radares en todos los tipos de unidad, aunque en el caso de las aéreas y helicópteros, se agrupan con otros sensores bajo el nombre de sensores aéreos. En esta área de datos se especifican todos los equipos radar instalados en la unidad. El número de radares a instalar varía dependiendo del tipo de unidad donde vayan a ser instalados. Para cada radar deberá elegirse el nombre del sensor (de la lista de radares disponible), el sector en que operará dicho radar y la orientación en la que se instala.</p>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvUnits/RadarUnitSetWnd.jpg"></p>
+
+<p><b>Otros Sensores AWW</b>: Esta opción agrupa una serie de sensores que pueden instalarse en todas las unidades, excepto en aéreas y helicópteros, donde la ordenación de estos datos es diferente. Estos sensores son Infrarrojo, NVG, ESM, COMSM, AIS, IFF y TACAN. En esta área de datos se especifican todos los equipos de este tipo instalados en la unidad. Para los equipos Sensor IR, NVG, ESM y COMSM deberá elegirse el nombre del sensor (de la lista de sensores disponibles de cada tipo), el sector en que operará dicho sensor y la orientación en la que se instala.</p>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvUnits/AawSetWnd.jpg"></p>
+
+<p>Para el resto de los sensores que aparecen en esta ventana, la descripción de los campos es la siguiente:</p>
+
+<ul>
+	<p><b>AIS</b>: Esta parámetro determina si la unidad dispone de equipo AIS.</p>
+
+	<p><b>IFF / SIF</b>: Equipo IFF instalado en la unidad, a elegir de la lista de equipos IFF disponibles.</p>
+
+	<ul>
+		<p><b>Radar Asociado</b>: Radar asociado al equipo IFF. Podrá ser seleccionado de entre los radares aéreos instalados en la unidad. Este parámetro debe ser introducido obligatoriamente si el IFF seleccionado tiene Capacidad Interrogador.</p>
+
+		<p><b>Modo 1</b>: Código Modo 1 característico del equipo IFF (2 dígitos en octal).</p>
+
+		<p><b>Modo 2</b>: Código Modo 2 característico del equipo IFF (4 dígitos en octal).</p>
+
+		<p><b>Modo 3</b>: Código Modo 3 característico del equipo IFF (4 dígitos en octal).</p>
+
+	</ul>
+
+	<p><b>TACAN</b>: En esta área se especifican los siguientes parámetros:</p>
+
+	<ul>
+		<p><b>Tacan</b>: Esta parámetro determina si la unidad dispone de equipo TACAN instalado.</p>
+
+		<p><b>Canal</b>: Este parámetro determina el canal en el que transmite el equipo TACAN.</p>
+	
+		<ul>
+			<p><u>Unidades</u>: ---</p>
+			<p><u>Rango</u>: 00X – 99Y</p>
+		</ul>
+
+		<p><b>Frecuencia</b>: Este parámetro determina la frecuencia en el que transmite el equipo TACAN. Es tenido en cuenta por el modelo de ESM para determinar si detecta emisiones del equipo TACAN.</p>
+
+		<ul>
+			<p><u>Unidades</u>: MHz</p>
+			<p><u>Rango</u>: 0 – 99999</p>
+		</ul>
+
+	</ul>
+	
+</ul>
+
+<p><b>Sonares</b>: Se pueden instalar sonares en todos los tipos de unidad, excepto en las terrestres y bases, aunque en el caso de las aéreas y helicópteros, se agrupan con otros sensores bajo el nombre de sensores aéreos. En esta área de datos se especifican todos los equipos sonar, tanto activos como pasivos, instalados en la unidad. El número de sonares a instalar varía dependiendo del tipo de unidad donde vayan a ser instalados. Para cada sonar deberá elegirse el nombre del sensor de la lista de sonares disponible.</p>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvUnits/SonarUnitSetWnd.jpg"></p>
+
+<p><b>Conjunto Comunicaciones</b>: En esta área de datos se especifican todas las capacidades de comunicaciones tácticas de las que dispone la unidad. Esta ventana es idéntica para todos los tipos de unidad, y las opciones de instalación de equipos que incluye son las siguientes</p>
+
+<p align=center><img width=350 src="../IlvImages/Preparation/IlvUnits/CommunicationSetWnd.jpg"></p>
+
+<ul>
+	<p><b>Nº de PU/FJU</b>: Este parámetro determina un identificador único de la unidad para todas las redes Link-11 o Link-16 de las que forme parte. Se comprobará la validez de este identificador según los siguientes rangos:</p>
+
+	<ul>
+		<li>Si se seleccionó Link 11 el rango válido será:<br>
+		<font size=2 face=courier>00001 – 00076</font> (en octal)</li><br>
+
+		<li>Si se seleccionó Link 16 y C2JU (no Link11) los rangos válidos serán:<br>
+		<font size=2 face=courier>00001 – 00076 ó 00100 – 00175 ó 00200 – 77776</font> (en octal)</li><br>
+
+		<li>Si seleccionó solo Link 16 (ni Link11, ni C2JU) el rango válido será:<br>
+		<font size=2 face=courier>00200 ‑ 77776</font> (en octal)</li>
+	</ul>
+
+	<p><b>Capacidad Link 11</b>: Este parámetro determina si la unidad dispone de equipo Link-11, con lo cual podrá formar parte de las redes de Link-11 de su bando. Ver apartado Planes de Frecuencia.</p>
+
+	<p><b>Capacidad Link 16</b>: Este parámetro determina si la unidad dispone de equipo Link-16, con lo cual podrá formar parte de las redes de Link-16 de su bando. Ver apartado Planes de Frecuencia.</p>
+
+	<p><b>Capacidad C2JU</b>: Este parámetro determina si la unidad tiene capacidad de “Command and Control JU”, es decir, de ser controladora de las redes Link-16 de las que forme parte.</p>
+
+	<p><b>Data Link</b>: Este parámetro determina si la unidad dispone de equipo de Data Link. Puede ser de los siguientes tipos:</p>
+
+	<ul>
+		<p><b>ASUW / ASW</b>: Estos parámetros determinan si el equipo de Data-Link puede ser configurado en modo ASUW y/o ASW, en cuyo caso el Data-Link podrá emplearse en modo “Misión ASUW” (enlace orientado al envío automático de contactos Radar de la aeronave) y/o “Misión ASW” (enlace orientado al envío automático de contactos Sonar de la aeronave). Sólo podrán ser seleccionados si no se ha seleccionado Tipo VDL.</p>
+
+		<p><b>VDL</b>: Este parámetro determina si el equipo de Data-Link es tipo VDL (Video Data Link), en cuyo caso los contactos se transmiten desde la aeronave por selección del operador.</p>
+	</ul>
+
+	<p><b>Link Update</b>: Este parámetro determina si la unidad tiene capacidad de asignar o actualizar los datos del blanco de un misil lanzado por otra unidad.</p>
+
+	<ul>
+		<p><b>(Alcance Link Update)</b>: Máximo distancia a la que la unidad puede realizar “Link Update” sobre un misil en vuelo.</p>
+	</ul>
+
+	<p><b>Receptor Satélite</b>: Este parámetro determina el receptor satélite instalado en la unidad.</p>
+
+	<p><b>Boyas de Comunicaciones</b>: Estos parámetros determinan los tipos de Boyas de Comunicaciones, indicando la cantidad de cada tipo, de las que dispone la unidad. Sólo podrán ser introducidos si la unidad es de tipo Submarino.</p>
+
+</ul>
+
+<p><b>Sistema 1 / 2 Lanzamiento Chaff</b>: Esta instalación es exclusiva para unidades de superficie. Las unidades aéreas y helicópteros también tienen la posibilidad de instalar Chaffs, pero lo hacen de una forma diferente. A continuación se describe cada uno de los campos de esta ventana.</p>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvUnits/ChaffLchrSetWnd.jpg"></p>
+
+<p><b>Tipo de Mortero</b>: Este parámetro determina el tipo de mortero que compone el sistema de lanzamiento de Chaff. Ver apartado Mortero Chaff.</p>
+
+<p><b>Nº de Morteros</b>: Este parámetro determina el número de morteros del tipo indicado que compone el sistema de lanzamiento de chaff.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 2 – 6</p>
+</ul>
+
+<p><b>Tubos por Mortero</b>: Este parámetro es no editable y muestra el número de tubos que tiene un mortero del tipo seleccionado. Ver apartado Mortero Chaff.</p>
+
+<p><b>Orientación (Babor 2, 4 y 6, Estribor 1, 3 y 5)</b>: Estos parámetros determinan las orientaciones en las que se encuentran los morteros del sistema de lanzamiento chaff. Las orientaciones se expresan respecto a proa, y se considera una instalación simétrica por lo que sólo es editable una columna.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0 – 180</p>
+</ul>
+
+<p><b>Patrón de Carga</b>: Mediante los parámetros del patrón de carga se especifican los tipos de cartuchos chaff que pueden ser lanzados por el lanzador de chaff, especificando para cada tipo el número de cartuchos que se pueden cargar por mortero, así como el número de cartuchos de cada tipo de los que dispone la unidad en el pañol:</p>
+
+<ul>
+	<p><b>Chaff</b>:Este parámetro determinan los tipos de cartuchos chaff que pueden ser lanzados por el sistema de lanzamiento de chaff. Los cartuchos chaff aquí seleccionados deberán pertenecer al mismo grupo de compatibilidad. Ver apartado Cartucho Chaff.</p>
+
+	<p>Grupo 1: D, S, C, B, IR</p>
+	<p>Grupo 2: IR, RF, RF+IR</p>
+
+	<p>Si el patron de carga se define con cartuchos del grupo 1 cada cartucho debe ser de un tipo distinto. Por el contrario, si el patrón de carga se define con cartuchos del grupo 2 se puede definir el patrón con cartuchos del mismo tipo.</p>
+
+	<p><b>Tipo</b>: Este parámetro no es editable, y muestra el tipo de chaff (D, S, C, B, IR, RF, RF+IR) en función del tipo de cartucho chaff correspondiente. Ver apartado Cartucho Chaff.</p>
+
+	<p><b>Cartuchos por Mortero</b>: Este parámetro determina el número de cartuchos chaff del tipo correspondiente que pueden ser cargados en cada mortero. La suma del número de cartuchos por mortero de los tres tipos de chaff debe coincidir con el número de tubos por mortero.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 1 – 99</p>
+	</ul>
+
+	<p><b>Total Disparos</b>: Este parámetro es no editable, y muestra el número total de submuniciones en el mortero en función del tipo de cartucho chaff correspondiente y del número de cartuchos por mortero. Ver apartado Cartucho Chaff.</p>
+
+	<p><b>Cargo Pañoles</b>: Este parámetro determina el número de cartuchos chaff del tipo correspondiente disponibles en el pañol de la unidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 999</p>
+	</ul>
+
+</ul>
+
+<p><b>Secuenciador</b>: Mediante los parámetros del secuenciador se caracterizan los lanzamientos automáticos según el tipo de cartuchos:</p>
+
+<ul>
+	<p><b>Morteros / Tipo Cartucho</b>: Mediante esta matriz se especifican los morteros empleados para lanzamiento automático de cada tipo de chaff.</p>
+
+	<p><b>Lanzamiento Inicial</b>: Este parámetro determina el número de submuniciones del tipo de chaff correspondiente que se lanzan en la primera salva.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 1 – 999</p>
+	</ul>
+
+	<p><b>Intervalo</b>: Este parámetro determina el intervalo entre salvas.</p>
+
+	<ul>
+		<p><u>Unidades</u>: segundos</p>
+		<p><u>Rango</u>: 0 – 999</p>
+	</ul>
+
+	<p><b>Total Disparos</b>: Este parámetro determina el número total de submuniciones del tipo de chaff correspondiente que se disparan en el lanzamiento.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 1 – 999</p>
+	</ul>
+
+</ul>
+
+<p><b>Minas</b>: Esta instalación es exclusiva para unidades de superficie y determina loas tipos de minas (hasta dos) y cantidad de cada tipo que trasporta la unidad en pañol, disponibles para que puedan ser colocadas. Ver apartado Mina.</p>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvUnits/MineSetWnd.jpg"></p>
+
+<p><b>Cargas de Profundidad</b>: Esta instalación es exclusiva para unidades de superficie y determina las cargas de Profundidad que pueden ser lanzadas por la unidad. Ver apartado Cargas de Profundidad. A continuación se describe cada uno de los campos de la ventana.</p>
+
+<p align=center><img width=450 src="../IlvImages/Preparation/IlvUnits/DepthChargeSetWnd.jpg"></p>
+
+<ul>
+	<p><b>Cantidad Lanzadores</b>: Este parámetro determina el número de lanzadores que compone el sistema de lanzamiento de Cargas de Profundidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 1 – 2</p>
+	</ul>
+
+	<p><b>Fijo / Orientable</b>: Este parámetro determina si el lanzador de cargas es Orientable, en cuyo caso se especifican dos sectores de fuego o Fijo, en cuyo caso se especifican dos orientaciones fijas.</p>
+
+	<p><b>Orientación (Sector 1 y 2)</b>: Esta parámetro determina las orientaciones en las que puede hacer fuego el lanzador de cargas.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 359</p>
+	</ul>
+
+	<p><b>Sector Fuego (Sector 1 y 2)</b>: Esta parámetro determina los sectores centrados en la orientación correspondiente en las que puede hacer fuego el lanzador de cargas. Esta parámetro sólo puede ser introducido si se ha seleccionado Orientable.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 360</p>
+	</ul>
+
+	<p><b>Capacidad de Recarga</b>: Este parámetro determina si el sistema de lanzamiento de Cargas de Profundidad tiene capacidad de recarga desde el pañol de la unidad.</p>
+
+	<p><b>Carga de Profundidad (1 a 2)</b>: Tipos de cargas disponibles en el pañol de la unidad. Coincide con lo mostrado en el área de Cargas de Profundidad de la ventana de Configuración de Unidad.</p>
+
+	<p><b>Cantidad (1 a 2)</b>: Cantidad de cargas del tipo correspondiente cargado inicialmente en los lanzadores del sistema de lanzamiento de Cargas de Profundidad. Coincide con lo mostrado en el área de Cargas de Profundidad de la ventana de Configuración de Unidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 99</p>
+	</ul>
+
+	<p><b>Salva (1 a 2)</b>: Cantidad de cargas que componen una salva predeterminada del tipo correspondiente de Cargas de Profundidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 99</p>
+	</ul>
+
+	<p><b>Pañol (1 a 2)</b>: Cantidad de cargas del tipo correspondiente disponibles en el pañol de la unidad. Sólo podrá ser introducido si se ha seleccionado Capacidad de Recarga.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 99</p>
+	</ul>
+
+	<p><b>Tiempo de Recarga</b>: Tiempo requerido para recargar un lanzador vacío. Sólo podrá ser introducido si se ha seleccionado Capacidad de Recarga.</p>
+
+	<ul>
+		<p><u>Unidades</u>: segundos</p>
+		<p><u>Rango</u>: 0 – 999</p>
+	</ul>
+
+</ul>
+
+<p><b>Tubos de Torpedos</b>: Esta instalación es exclusiva en unidades de superficie y submarinas, siendo además diferente para cada una de ellas. Las unidades aéreas y helicópteros también tienen la posibilidad de instalar Torpedos, pero lo hacen de una forma diferente. A continuación se describe cada uno de los campos de esta ventana.</p>
+
+<p><b>Tubos de Torpedos en Unidades de Superficie</b>: Para las unidades de superficie la configuración del sistema de lanzamiento de torpedos se realiza rellenando los campos que se describen a continuación.</p>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvUnits/SfTorpedoLchrSetWnd.jpg"></p>
+
+<ul>
+	<p><b>Número de Montajes</b>: Esta parámetro determina el número de montajes que compone el sistema de lanzamiento de torpedos.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 2 ó 4</p>
+	</ul>
+
+	<p><b>Tubos por Montaje</b>: Esta parámetro determina el número de tubos instalados en cada montaje del lanzador.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 1 – 3</p>
+	</ul>
+
+	<p><b>Orientación Tubos</b>: Esta parámetro determina la orientación simétrica de los montajes de los tubos, referida a la proa del buque.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 180</p>
+
+		<p>Ejemplo: </p>
+
+		<p>Lanzador en dos montajes de tres tubos</p>
+		<p>orientados 45º a babor y estribor.</p>
+
+	</ul>
+
+	<p><b>Capacidad de Recarga</b>: Este parámetro determina si el sistema de lanzamiento de torpedos tiene capacidad de recarga desde el pañol de la unidad.</p>
+
+	<p><b>Pañoles</b>:</p>
+
+	<ul>
+		<p><b>Torpedo (1 a 3)</b>: Tipos de torpedos disponibles en el pañol de la unidad. Coincide con lo mostrado en el área de torpedos de la ventana de Configuración de Unidad.</p>
+
+		<p><b>Cantidad (1 a 3)</b>: Cantidad de torpedos del tipo correspondiente disponibles en el pañol de la unidad. Coincide con lo mostrado en el área de torpedos de la ventana de Configuración de Unidad.</p>
+
+		<ul>
+			<p><u>Unidades</u>: ---</p>
+			<p><u>Rango</u>: 0 – 99</p>
+		</ul>
+
+	</ul>
+
+	<p><b>Patrón de Carga</b>: Mediante esta matriz se especifica el tipo de torpedo cargado inicialmente en cada tubo del montaje, hasta un máximo de 12 tubos ( = 4 montajes x 3 tubos).</p>
+
+</ul>
+
+<p><b>Tubos de Torpedos en Unidades Submarinas</b>: Para las unidades submarinas la configuración del sistema de lanzamiento de torpedos se realiza rellenando los campos que se describen a continuación.</p>
+
+<p align=center><img width=450 src="../IlvImages/Preparation/IlvUnits/SbTorpedoLchrSetWnd.jpg"></p>
+
+<ul>
+	<p><b>Número de Tubos Proa</b>: Este parámetro determina el número de tubos en proa del sistema de lanzamiento de torpedos.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 8</p>
+	</ul>
+
+	<p><b>Número de Tubos Popa</b>: Este parámetro determina el número de tubos en popa del sistema de lanzamiento de torpedos.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 4</p>
+	</ul>
+
+	<p><b>Capacidad de Recarga (Proa y Popa)</b>: Este parámetro determina si el sistema de lanzamiento de torpedos tiene capacidad de recarga desde el pañol de la unidad.</p>
+
+	<p><b>Pañoles</b>:</p>
+
+	<ul>
+		<p><b>Torpedo (1 a 3)</b>: Tipos de torpedos disponibles en los pañoles de proa y popa de la unidad. Coincide con lo mostrado en el área de torpedos de la ventana de Configuración de Unidad.</p>
+
+		<p><b>Cantidad Proa (1 a 3)</b>: Cantidad de torpedos del tipo correspondiente disponibles en el pañol de proa de la unidad. Coincide con lo mostrado en el área de torpedos de la ventana de Configuración de Unidad.</p>
+
+		<ul>
+			<p><u>Unidades</u>: ---</p>
+			<p><u>Rango</u>: 0 – 99</p>
+		</ul>
+
+		<p><b>Cantidad Popa (1 a 3)</b>: Cantidad de torpedos del tipo correspondiente disponibles en el pañol de popa de la unidad.</p>
+
+		<ul>
+			<p><u>Unidades</u>: ---</p>
+			<p><u>Rango</u>: 0 – 99</p>
+		</ul>
+
+	</ul>
+
+	<p><b>Patrón de Carga</b>: Mediante esta matriz se especifica el tipo de torpedo cargado inicialmente en cada tubo del montaje, hasta un máximo de 12 tubos ( = 8 de proa + 4 de popa). Los tubos orientados a proa comenzarán por la numeración más baja y los tubos de popa estarán numerados consecutivamente a los de proa.</p>
+
+</ul>
+
+<p><b>Lanzadores de Misiles</b>: Se pueden instalar lanzadores de misiles en todos los tipos de unidad, aunque en el caso de las aéreas y helicópteros, esta instalación de realiza de una forma diferente. En esta área de datos se especifican todos los lanzadores de misiles instalados en la unidad. El número de lanzadores a instalar varía dependiendo del tipo de unidad donde vayan a ser instalados. Para cada tipo de misil deberá elegirse el nombre del arma (de la lista de misiles disponible), el tipo de lanzador (Fijo, Orientable o Vertical), la orientación en la que se instala, el sector que cubre, la cantidad de munición disponible en la unidad, y si el lanzador tiene capacidad de modo automático de disparo antiaéreo.</p>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvUnits/MssLchrUnitSetWnd.jpg"></p>
+
+<p>El Sector de Fuego del lanzador será como sigue, según su tipo:</p>
+
+<ul>
+	<li><b>Fijo</b>: Sólo se podrá introducir Orientación, y el Sector de Fuego del lanzador será:<br>
+	<font size=2 face=courier>Sector de Fuego = Orientación + / - Capacidad OFF AXIS</font></li><br>
+
+	<li><b>Orientable</b>: Se podrá introducir Orientación y Sector y el Sector de Fuego será:<br>
+	<font size=2 face=courier>Sector de Fuego = Orientación + / - Sector + / - Capacidad OFF AXIS en cada limite</font></li><br>
+
+	<li><b>Vertical</b>: Sólo se podrá introducir Orientación y el Sector se rellenará automáticamente con valor 360º. En este caso el Sector de Fuego del lanzador será:<br>
+	<font size=2 face=courier>Sector de Fuego = Sector = 360º</font></li>
+
+</ul>
+
+<p><b>Engaños</b>: Esta opción agrupa una serie de contramedidas que pueden instalarse en todas las unidades, de acuerdo con las tablas de instalación de equipos en unidades, y excepto en aéreas y helicópteros, donde la ordenación de estos datos es diferente. Estas contramedidas son Infrarrojo, ECM, Productor de Ruido, y Señuelos. En esta área de datos se especifican todos los equipos de este tipo instalados en la unidad. Para todos los equipos deberá elegirse el nombre de la lista de equipos disponibles de cada tipo.</p>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvUnits/JammingSetWnd.jpg"></p>
+
+<p><b>Artillería</b>: Se pueden instalar cañones en todos los tipos de unidad, aunque en el caso de las aéreas y helicópteros, esta instalación de realiza de una forma diferente. En esta área de datos se especifican todos los cañones instalados en la unidad. El número de cañones a instalar varía dependiendo del tipo de unidad donde vayan a ser instalados. Para cada cañón deberá elegirse el nombre del arma (de la lista de cañones disponible), la orientación en la que se instala, el sector que cubre y la cantidad de munición disponible en la unidad.</p>
+
+<p align=center><img width=450 src="../IlvImages/Preparation/IlvUnits/ArtillerySetWnd.jpg"></p>
+
+<ul>
+	<p><b>Sector</b>: Este parámetro determina los sectores centrados en la orientación correspondiente en las que puede hacer fuego el cañón.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 360</p>
+	</ul>
+
+	<p><b>Orientación</b>: Este parámetro determina la orientación del cañón.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 359</p>
+	</ul>
+
+	<p><b>Munición Pañol</b>: Cantidad de munición del cañón correspondiente disponibles en el pañol de la unidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 90000</p>
+	</ul>
+
+</ul>
+
+<p><b>ASROC</b>: Se pueden instalar Torpedos ASROC en unidades de superficie. A continuación se describe cada uno de los campos de la ventana correspondiente.</p>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvUnits/UnitAsrocLchrSetWnd.jpg"></p>
+
+<ul>
+	<p><b>Número de Tubos</b>: Este parámetro determina el número de tubos del sistema de lanzamiento de torpedos ASROC.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 1 – 8</p>
+	</ul>
+
+	<p><b>Fijo / Orientable</b>: Este parámetro determina si el lanzador de torpedos ASROC es Orientable, en cuyo caso se especifican dos sectores de fuego o Fijo, en cuyo caso se especifican dos orientaciones fijas.</p>
+
+	<p><b>Orientación (Sector 1 y 2)</b>: Este parámetro determina las orientaciones en las que puede hacer fuego el lanzador de torpedos ASROC.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 359</p>
+	</ul>
+
+	<p><b>Sector Fuego (Sector 1 y 2)</b>: Este parámetro determina los sectores centrados en la orientación correspondiente en las que puede hacer fuego el lanzador de torpedos ASROC. Esta parámetro sólo puede ser introducido si se ha seleccionado Orientable.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 360</p>
+	</ul>
+
+	<p><b>Capacidad de Recarga</b>: Este parámetro determina si el sistema de lanzamiento de torpedos tiene capacidad de recarga desde el pañol de la unidad.</p>
+
+	<p><b>Torpedo (1 a 3)</b>: Tipos de torpedos disponibles en el pañol de la unidad. Coincide con lo mostrado en el área de ASROC de la ventana de Configuración de Unidad.</p>
+
+	<p><b>Cantidad (1 a 3)</b>: Cantidad de torpedos del tipo correspondiente cargado inicialmente en los tubos del lanzador ASROC. La suma de las tres cantidades debe ser menor o igual que el número de tubos. Coincide con lo mostrado en el área de ASROC de la ventana de Configuración de Unidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 99</p>
+	</ul>
+
+	<p><b>Pañol (1 a 3)</b>: Cantidad de torpedos del tipo correspondiente disponibles en el pañol de la unidad. Sólo podrá ser introducido si se ha seleccionado Capacidad de Recarga.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 99</p>
+	</ul>
+
+	<p><b>Tiempo de Recarga</b>: Tiempo requerido para recargar un tubo vacío. Sólo podrá ser introducido si se ha seleccionado Capacidad de Recarga.</p>
+
+	<ul>
+		<p><u>Unidades</u>: segundos</p>
+		<p><u>Rango</u>: 0 – 999</p>
+	</ul>
+
+</ul>
+
+<p><b>Sensores Aéreos</b>: En el caso de las de las unidades aéreas y helicópteros, la instalación de sensores se realiza desde una ventana que agrupa todos los sensores de la unidad. En esta área de datos se especifican los nombres de los sensores, y en su caso, la orientación en la que se instalan y el sector que cubren. También se especifica la instalación del AIS, TACAN e IFF, con los mismos campos que se describen en la instalación de estos equipos en las otras unidades.</p>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvUnits/AirSensorSetWnd.jpg"></p>
+
+<p><b>Armas Fijas Aéreas</b>: En el caso de las de las unidades aéreas y helicópteros, la instalación de armas se hace de dos formas. Existe un conjunto de armas fijas, cuya instalación se describe aquí, y un conjunto de armas variables, que pueden modificarse durante el ejercicio mediante reconfiguración de armas de la unidad. Estas armas fijas son un cañón, un equipo de ECM y dos lanzadores de Chaff. Para instalarlos en la unidad debe seleccionarse el nombre del arma de la lista de armas disponibles de cada tipo, y además, para el ECM debe introducirse orientación y sector y para los chaffs, la cantidad de cada cartucho y la salva.</p>
+
+<p align=center><img width=500 src="../IlvImages/Preparation/IlvUnits/AirFixWeaponSetWnd.jpg"></p>
+
+<p><b>Sonoboyas</b>: Esta instalación es exclusiva para las unidades aéreas y helicópteros. A continuación se describen los campos de la ventana correspondiente a esta instalación.</p>
+
+<p align=center><img width=450 src="../IlvImages/Preparation/IlvUnits/SonobuoyUnitSetWnd.jpg"></p>
+
+<ul>
+
+	<p><b>Sonoboyas</b>: Sonoboyas que pueden ser lanzadas por la unidad. Ver apartado Sonoboya.</p>
+
+	<p><b>Cantidad</b>: Cantidad de sonoboyas del tipo correspondiente que lleva la unidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 999</p>
+	</ul>
+
+	<p><b>Procesador Sonoboyas</b>: Equipo Procesador de Sonoboyas que instala la unidad. Ver apartado Procesador de Sonoboyas.</p>
+
+</ul>
+
+<p><b>Configuración de Armas Aéreas</b>: Esta opción es exclusiva para unidades aéreas y especifica las distintas configuraciones de armas que pueden ser instaladas en una unidad aérea (Avión o Helicóptero). Ver apartado Configuración de Armas Aéreas. Estas configuraciones pueden ser cargadas en las unidades cuando están en base. Para cada configuración de armas se define un tiempo en minutos requerido para adoptar dicha configuración.</p>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvUnits/AirUnitWnd.jpg"></p>
+
+<p>Se comprobará que el máximo peso que puede soportar la unidad es superior al peso de cada una de las configuraciones, y en caso contrario se presentará un aviso. Se considera la primera configuración como la cargada inicialmente por la unidad. Si algún nombre de configuración se queda vacío, considerar una configuración VACIA como posible.</p>
+
+<p><b>Equipos en Mástiles</b>: Esta opción es exclusiva para unidades submarinas y en este diálogo se muestra la lista de equipos instalados en la unidad y una matriz para asignarles los mástiles, de entre los definidos para la plataforma, en los que se instala su antena. Aquellos equipos que tengan algún mástil asociado, podrán operar cuando el submarino se encuentre sumergido y con alguno de sus mástiles asociados izado.</p>
+
+<p align=center><img width=500 src="../Images/Equipos en Mastiles.jpg"></p>
+
+</div>
+
+</body>
+
+</html>

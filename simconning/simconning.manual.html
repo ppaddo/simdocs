@@ -1,0 +1,1385 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<a id="xxx01"></a>
+<p><b><font color=##084B8A face=arial size=4>Descripción General</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>El objeto de este documento es describir el funcionamiento de la de la Conning Display integrada en los Simuladores de Navegación y Comunicaciones. En él se detallan todas las funciones a las que el operador puede acceder. La disponibilidad o no de cada una de estas funciones depende en cada caso de la configuración del Simulador.</p>
+
+<p>La Conning Display es una única pantalla, que contiene un resumen completo y compacto de todos los subsistemas de la unidad (gobierno, propulsión, maniobras, pesca...), y por tanto permite al operador acceder a todos los mandos, indicadores y controles del buque a través de un MMI de fácil acceso.</p>
+
+<p align=center><img width=500 src="Imagenes/CD General.jpg"></p>
+
+<p>Esta interface software es muy útil en el Puesto de Instructor y en los Puestos de Alumno, que no tienen equipamiento hardware, para manejar la unidad controlada. Asimismo en los Puestos de Alumno con mandos y controles hardware, la Conning Display es compatible con dichos mandos y permite al operador visualizar de forma rápida la situación del buque.</p>
+
+<p>La Conning Display se compone de distintos paneles en los que se agrupan de forma ordenada los mandos, controles e indicadores de cada uno de los subsistemas de la unidad. Contiene además un menú desde el que se accede a los paneles de control de los equipos del buque y a otras funciones de control específicas del Instructor:</p>
+
+<p align=center><img width=600 src="Imagenes/CD Areas.jpg"></p>
+
+<p>El menú se compone de las siguientes opciones:</p>
+
+<table>
+	<tr>
+		<td width=300 height=40><font size=2 face=arial><b>Opciones de la Barra de Menú</b></td>
+		<td width=300><font size=2 face=arial><b>Funciones Asociadas</b></td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=arial>
+		<ul>
+			<b>Buque</b> &rarr;
+			<ul>
+				<li>Luces</li>
+				<li>Señales</li>
+				<li>Sonidos</li>
+				<li>Maniobras</li>
+			</ul>
+			<br>
+			<b>Equipos</b> &rarr;
+			<ul>
+				<li>Comunicaciones</li>
+				<li>Sensores</li>
+				<ul>
+					<li>GPS</li>
+					<li>Radio Direction Finder</li>
+					<li>Corredera</li>
+					<li>Sonda de Pesca</li>
+					<li>Sonda de Pesca de Red</li>
+					<li>Sonar</li>
+				</ul>
+			</ul>
+			<br>
+			<b>Control</b> &rarr;
+			<ul>
+				<li>Control Visual</li>
+				<li>Control Escenario</li>
+				<li>Control Vista Submarina</li>
+				<li>Control Averías y Capacidades</li>
+				<li>Control Comunicaciones</li>
+				<li>Control Emergencias</li>
+				<li>Control Artes de Pesca</li>
+			</ul>
+			<br>
+			<b>Ver (*)</b> &rarr;
+			<ul>
+				<li>Conning Display</li>
+				<li>GMDSS</li>
+			</ul>
+			<br>
+			<b>Ayuda</b> &rarr;
+			<ul>
+				<li>Índice</li>
+				<li>Acerca de ...</li>
+			</ul>
+		</ul>
+		</td>
+		
+		<td valign=top><font size=2 face=arial>
+			<br>
+			Acceso al Panel de Luces<br>
+			Acceso al Panel de Señales<br>
+			Acceso al Panel de Sonidos<br>
+			Acceso al panel de maniobras<br>
+			<br>
+			<br>
+			Acceso al Panel de Comunicaciones<br>
+			<br>
+			Acceso al Panel de GPS<br>
+			Acceso al Panel de RDF<br>
+			Acceso al Panel de Corredera<br>
+			Acceso a la Sonda de Pesca<br>
+			Acceso a la Sonda de Pesca de Red<br>
+			Acceso al Equipo Sonar<br>
+			<br>
+			<br>
+			Control de la Cámara del Visual<br>
+			Control del Escenario Visual<br>
+			Control de la Vista Submarina<br>
+			Control Averías y Capacidades de las Unidades<br>
+			Control de las Comunicaciones entre Unidades<br>
+			Control de Emergencias<br>
+			Control de las Artes de Pesca<br>
+			<br>
+			<br>
+			Presentación de la Conning Display<br>
+			Presentación de la Pantalla de Control de Equipos<br>
+			<br>
+			<br>
+			Acceso a la ayuda on line.<br>
+		</td>
+	</tr>
+</table>
+
+<p>(*) El menú Ver sólo tiene utilidad si el Simulador de Navegación está integrado con el Simulador de Comunicaciones GMDSS.</p>
+
+<a id="xxx02"></a>
+<p><b><font color=##084B8A face=arial size=4>Paneles</font></b></p>
+
+<a id="xxx03"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Vista de Pájaro</font></b></p>
+
+<p align=center><img width=300 src="Imagenes/CD Vista Pajaro.jpg"></p>
+
+<p>Este panel consiste en una vista reducida de la cartografía digital, con la escala limitada a un valor máximo configurable. El objetivo de este panel es presentar al operador la costa y elementos más cercanos, para que pueda llevar a cabo maniobras de precisión.</p>
+
+<p>Sobre esta vista se presenta gráficamente la silueta del buque sobre la que se marcan los puntos de amarre, de forma que el operador puede observar cómo están establecidos.</p>
+
+<p>Este panel se utiliza de forma combinada con el panel de amarras, anclas y remolques para establecer, mostrar y controlar estos elementos.</p>
+
+<p>La vista de pájaro dispone de los siguientes controles:</p>
+
+<ul>
+	<li>Botón <b>Hook</b>: Pulsando este botón se activa el “Modo Hook” del cursor. Mientras esté activo este modo y el cursor se sitúe dentro del área gráfica, el ratón se comporta de la siguiente forma:</li><br>
+
+	<ul>
+		<li>Al pulsar el botón izquierdo el Hook se sitúa en la posición del cursor.</li><br>
+
+		<li>Al pulsar y arrastrar el botón izquierdo se presenta una línea sobre la carta indicando la distancia y la demora del segundo punto respecto al primero.</li><br>
+
+	</ul>
+
+	<li>Botón <b>Zoom</b>: Pulsando este botón se activa el “Modo Zoom” del cursor. Mientras esté activo este modo del cursor el ratón se comporta de la siguiente forma:</li><br>
+
+	<ul>
+		<li>Al pulsar el botón izquierdo se realiza un Zoom Más x 2, es decir, se reduce la escala de presentación de la carta a la mitad de la actual, y la pantalla se centra en la posición del cursor.</li><br>
+		
+		<li>Al pulsar el botón derecho se realiza un Zoom Menos x 2, es decir, se amplia la escala de presentación de la carta al doble de la actual, y la pantalla se centra en la posición del cursor. Normalmente el zoom está limitado para los alumnos a un valor máximo configurable, de forma que no pueda ver más allá de las cercanías del buque propio.</li><br>
+		
+		<li>Al pulsar y arrastrar el botón izquierdo se realiza un zoom sobre un área de interés de la carta. Para ello deberá pulsar con el botón izquierdo del ratón sobre la carta y arrastrar el ratón manteniéndolo pulsado, con lo que se presentará un rectángulo sobre la carta. Al soltar el botón izquierdo del ratón se ajustará automáticamente la escala y centrado de la carta para mostrar el área seleccionada.</li><br>
+		
+		<li>Al pulsar y arrastrar el botón derecho se mueve la carta. Para ello, pulsar con el botón derecho del ratón sobre cualquier punto de la carta y arrastrar el ratón manteniéndolo pulsado hasta la posición deseada.</li><br>
+		
+	</ul>
+
+	<li>Botón <b>Attach</b>: Pulsando este botón se activa / desactiva el “Modo Attach” del cursor. Mientras esté activo este modo la vista de pájaro se mantiene centrada en el centro del buque propio. Normalmente este modo está bloqueado en activo para los alumnos, de forma que no pueda ver más allá de las cercanías del buque propio.</li><br>
+
+	<li>Posición del <b>Cursor</b>: Indicador digital en el que se muestra la latitud y longitud del punto en el que se encuentra el cursor.</li><br>
+	
+	<li>Posición del <b>Hook</b>: Indicador digital en el que se muestra la latitud y longitud del punto en el que se encuentra el hook.</li>
+	
+</ul>
+
+<p>En la conning display del puesto de instructor este panel está siempre presente, pero en el puesto de alumno, el instructor puede presentarlo u ocultarlo a través de la Ventana de Averías y Capacidades (ver apartado Control de Averías y Capacidades).</p>
+
+<p>En el puesto de alumno, el panel se puede configurar para que presente la barra superior de controles, o para que simplemente presente la vista sin controles.</p>
+
+<a id="xxx04"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Control de Amarras, Anclas y Remolques</font></b></p>
+
+<p align=center><img width=600 src="Imagenes/CD Amarras y Anclas.jpg"></p>
+
+<p>Este panel se ubica en la esquina inferior izquierda de la pantalla, compartiendo espacio con el panel de Control de Maquinillas. El intercambio entre un panel y otro se realiza pulsando la flecha situada en el ángulo superior derecho. Esta flecha sólo aparece cuando se controla un buque que tiene maquinillas.</p>
+
+<p>En este panel se representa, sobre la silueta del buque, los puntos de amarre a bordo y las posiciones de las anclas. Aunque ambos se representan con el mismo símbolo, al pasar el cursor sobre cada punto se muestra una etiqueta que indica si se trata de un punto de amarre o un ancla.</p>
+
+<table align=center>
+	<tr>
+		<td align=center width=200><img width=100 src="Imagenes/CD Ancla.jpg"></td>
+		<td align=center width=200><img width=100 src="Imagenes/CD Amarra.jpg"></td>
+	</tr>
+</table>
+
+<p>En la conning display del puesto de instructor este panel está siempre activado, pero en el puesto de alumno, el instructor puede activarlo o desactivarlo a través de la Ventana de Averías y Capacidades (ver apartado Control de Averías y Capacidades).</p>
+
+<p>Para seleccionar un punto de amarre o un ancla basta con hacer clic con el botón izquierdo del ratón sobre el punto correspondiente. El punto seleccionado se ilumina y se activan los botones de manipulación de amarras, anclas y remolcadores. Estos botones permiten llevar a cabo las distintas acciones asociadas al punto de amarre: largar o cobrar amarra, conectar o desconectar remolcadores, largar o izar anclas, y lascar o cobrar los cabos de los remolcadores.</p>
+
+<p>No se pueden seleccionar varios puntos de amarre o anclas simultáneamente, cada vez que se selecciona un punto de amarre o ancla, los botones de manipulación actúan sobre el punto seleccionado.</p>
+
+<p><b>Control de Amarras</b></p>
+
+<p>Para largar amarras es necesario que el buque esté situado cerca de una zona de amarre (dique o costa), una vez situado, hay que seguir el siguiente procedimiento.</p>
+
+<ol>
+	<li>En el Panel de Vista de Pájaro, se sitúa el Hook en el punto de amarre en tierra.</li><br>
+
+	<li>En el Panel de Control de Anclas, Amarras y Remolcadores se selecciona uno de los puntos de amarre disponibles en el buque. Al pulsarlo, el botón se ilumina y se activan los botones de Control de remolcadores y los botones Lascar y Cobrar.</li><br>
+
+	<li>Se pulsa el Botón de Lanzamiento de Amarras (representado por un noray). Al pulsarlo se larga una amarra desde el punto seleccionado en el buque hasta el punto marcado en tierra y junto al punto de amarre se presenta un icono de Noray y los datos de Longitud (L:), Tensión (T:) y Orientación (O:) de la amarra largada.</li>
+
+	<p align=center><img width=200 src="Imagenes/CD Lanzar Amarra.jpg"></p>
+
+	<p>Esta amarra aparece representada por una línea en el panel de Vista de Pájaro.</p>
+
+	<p align=center><img width=300 src="Imagenes/CD Amarra grafica.jpg"></p>
+
+	<p>La longitud de la amarra se mantiene constante mientras no se pulsen los botones de Cobrar y Lascar. La tensión y orientación pueden variar en función del movimiento del buque.</p>
+
+	<li>Pulsado el botón Lascar, la longitud de la amarra aumenta y junto al botón del punto de amarre y el icono de Noray se presenta el icono de lascar que indica que se está aflojando el cabo de amarre.</li><br>
+	
+	<p align=center><img width=200 src="Imagenes/CD Lascar Amarra.jpg"></p>
+
+	<li>Pulsado de nuevo el botón Lascar, se detiene el largado del cabo de amarre.</li><br>
+	
+	<li>Pulsando el botón Cobrar, la longitud de la amarra disminuye y junto al botón de punto de amarre y el icono de Noray se presenta el icono de cobrar que indica que se está recogiendo el cabo de amarre.</li><br>
+	
+	<p align=center><img width=200 src="Imagenes/CD Cobrar Amarra.jpg"></p>
+
+	<li>Pulsado de nuevo el botón Cobrar, se detiene la recogida del cabo de amarre.</li><br>
+	
+	<li>Para quitar la amarra, se selecciona el punto y a continuación se pulsa el Botón de Lanzamiento de Amarras (noray). Al pulsarlo, desaparecen los datos de Longitud, Tensión y Orientación de la amarra y el icono del Noray. También desaparece la línea que representa la amarra en el panel de Vista de Pájaro.</li>
+
+	<p><i>Nota</i>: El simulador permite que se puedan amarrar los buques en cualquier punto aunque no esté situado en tierra.</p>
+	
+</ol>
+
+<p><b>Control de Anclas</b></p>
+
+<p>Para controlar un ancla se pulsa uno de los botones de Ancla. Al pulsarlo, el botón se ilumina y se activan los botones Lascar y Cobrar.</p>
+
+<p align=center><img width=300 src="Imagenes/CD Lascar y Cobrar Ancla.jpg"></p>
+
+<p>Para tirar el ancla, pulsa el botón Lascar y trascurrido un tiempo, junto al punto de ancla se presenta el icono de Ancla, el icono de lascar (que indica que el ancla está cayendo) y los datos de Longitud (L:), Tensión (T:) y Orientación (O:) del ancla lanzada.</p>
+
+<p align=center><img width=200 src="Imagenes/CD Lascar Ancla.jpg"></p>
+
+<p>Mientras se mantenga pulsado el botón se Lascar, se continúa largando el ancla. Al pulsar de nuevo el botón de Lascar deja de largarse, manteniéndose constante la longitud de cadena largada.</p>
+
+<p>Para levar el ancla, se pulsa el botón de ancla correspondiente y a continuación se pulsa el botón Cobrar. La longitud de la cadena va disminuyendo, y junto al botón y el icono de ancla se presenta el icono de cobrar que indica que se está recogiendo la cadena.</p>
+
+<p align=center><img width=200 src="Imagenes/CD Cobrar Ancla.jpg"></p>
+
+<p>Cuando se ha recogido toda la cadena, desaparecen los iconos y los datos de longitud, tensión y orientación.</p>
+
+<p><b>Control de Remolcadores</b></p>
+
+<p><i>Nota</i>: Los puntos de conexión a los remolcadores son los mismos que los puntos de amarre del buque.</p>
+
+<p>El buque se puede conectar a remolcadores de tiro y remolcadores de empuje. Los remolcadores de tiro se conectan mediante un cabo que une el buque al remolcador, el remolcador tira de este cabo arrastrando consigo al buque. Los remolcadores de empuje no necesitan cabo, se unen directamente al buque y lo empujan.</p>
+
+<p>Los remolcadores de empuje sólo están disponibles para los buques con plataforma de 6GDL.</p>
+
+<p>Para la conexión del buque a un remolcador se requiere la presencia de otro buque que actúe como remolcador y que esté situado a una distancia y demora que permitan iniciar la maniobra de remolcado.</p>
+
+<p>La distancia máxima para iniciar la maniobra es un dato que puede variar de un buque a otro dependiendo de la plataforma que se le haya asignado.</p>
+
+<p>Los ángulos de demora permitidos se establecen en el fichero de configuración y se aplican por igual a todos los buques.</p>
+
+<p>Una vez situados los buques en la posición correcta, para conectar el buque a un Remolcador de tiro hay que seguir el siguiente procedimiento.</p>
+
+<ol>
+	<li>En el panel de Vista de Pájaro, se sitúa el Hook sobre el buque remolcador.</li><br>
+	
+	<li>En el Panel de Control de Anclas, Amarras y Remolcadores se selecciona uno de los puntos de amarre disponibles en el buque. Al pulsarlo, el botón se ilumina y se activan los botones de control de amarras y remolcadores, así como los botones Lascar y Cobrar.</li><br>
+	
+	<li>Se pulsa el botón de conexión con el Remolcador de tiro. Al pulsarlo se conecta el punto seleccionado en el buque con el remolcador y junto al punto de amarre se presenta el icono de Remolcador de tiro y los datos de Longitud (L:), Tensión (T:) y Orientación (O:) del cabo.</li>
+
+	<p align=center><img width=200 src="Imagenes/CD Conectar Remolcador.jpg"></p>
+
+	<p>El cabo de remolque aparece representado por una línea en el panel de Vista de Pájaro.</p>
+	
+	<p align=center><img width=200 src="Imagenes/CD Remolcador grafica.jpg"></p>
+
+	<li>Igual que con las amarras largadas, el operador podrá Lascar o Cobrar, para modificar la longitud del cabo.</li><br>
+	
+	<li>El operador puede aumentar o disminuir tanto la tensión ejercida por el remolcador, como la orientación en la que ejerce dicho tensión. Para ello debe seleccionar el punto de amarre al remolque y actuar sobre los pulsadores de Tensión+, Tensión–, Orientación+ y Orientación–.</li>
+
+	<p>Nota: Si el remolcador seleccionado es un buque de 6 GDL estos botones no funcionan ya que, en ese caso, el remolcador se controla con su propia maquinaria.</p>
+
+	<li>Para desconectar el remolque, se selecciona el punto y a continuación se pulsa el botón de conexión con el Remolcador de tiro. Al pulsarlo, desaparecen los datos de Longitud, Tensión y Orientación del cabo y el icono del Remolcador. También desaparece la línea que representa el cabo en el panel de Vista de Pájaro.</li>
+	
+</ol>
+
+<p>Para conectar el buque (de 6GDL) a un Remolcador de empuje hay que seguir el siguiente procedimiento.</p>
+
+<ol>
+	<li>En el panel de Vista de Pájaro, se sitúa el Hook sobre el buque remolcador.</li><br>
+	
+	<li>En el Panel de Control de Anclas, Amarras y Remolcadores se selecciona uno de los puntos de amarre disponibles en el buque. Al pulsarlo, el botón se ilumina y se activan los botones de control de amarras y remolcadores, así como los botones Lascar y Cobrar.</li><br>
+	
+	<li>Se pulsa el botón de conexión con el Remolcador de empuje. Al pulsarlo se conecta el punto seleccionado en el buque con el remolcador y junto al punto de amarre se presenta el icono de Remolcador de empuje y los datos de Tensión (T:) y Orientación (O:).</li><br>
+	
+	<p align=center><img width=200 src="Imagenes/CD Conectar Empujador.jpg"></p>
+
+	<li>El operador puede incrementar o decrementar tanto la tensión ejercida por el remolcador, como la orientación en la que ejerce dicho tensión. Para ello debe seleccionar el punto de amarre al remolque y actuar sobre los pulsadores de Tensión+, Tensión–, Orientación + y Orientación–.</li><br>
+	
+	<li>Para desconectar el remolque, se selecciona el punto y a continuación se pulsa el botón de conexión con el Remolcador de empuje. Al pulsarlo, desaparecen los datos de Tensión y Orientación y el icono del Remolcador.</li><br>
+	
+</ol>
+
+<a id="xxx05"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Control de Maquinillas</font></b></p>
+
+<p align=center><img width=400 src="Imagenes/CD Maquinillas.jpg"></p>
+
+<p>Este panel se ubica en la esquina inferior izquierda de la pantalla, compartiendo espacio con el panel de Control de Anclas, Amarras y Remolcadores. El intercambio entre un panel y otro se realiza pulsando la flecha situada en el ángulo superior derecho.</p>
+
+<p>En este panel están las palancas de control de las maquinillas del buque de pesca y los indicadores y controles de tensión del cable, cuyo funcionamiento se describe a continuación.</p>
+
+<p><b>Control de las Maquinillas</b></p>
+
+<p>Para desplazar las palancas hay que colocar el cursor sobre el extremo, pulsar el botón izquierdo del ratón, arrastrar hacia arriba o hacia abajo y soltar en la posición elegida. Pulsando los botones situados en la base de la palanca, esta se desplaza automáticamente a la posición marcada por el botón (tope superior, centro y tope inferior). Pulsando el botón de sincronización situado bajo la base de las palancas, ambas palancas se mueven solidariamente.</p>
+
+<p>Los campos situados bajo cada una de las palancas, actualizan en cada momento la posición de la palanca en una escala de -100 a 100 pasando por 0 en la posición central.</p>
+
+<p>Para largar la red al agua desde la cubierta del buque, es necesario accionar ambas palancas hasta el tope en la dirección de largar y para subirla de nuevo a cubierta se accionan igualmente ambas palancas en la dirección de virar.</p>
+
+<p>En el arte de Arrastre con Pareja, para largar la red es necesario, además, que el buque pareja se encuentre a estribor del buque principal y a una distancia inferior a la que se establece como distancia máxima en el fichero de configuración.</p>
+
+<p>Una vez que la red está en el agua, en las artes de Arrastre se puede controlar, de forma independiente, la velocidad de largado y/o recogida de los cables de babor y estribor, desplazando la palanca de babor o estribor respectivamente a posiciones intermedias. Cuando la palanca se sitúa en el tope en la dirección de largar, el cable se larga a la velocidad del buque, conforme se desplaza la palanca a posiciones cercanas al centro la velocidad de largado disminuye hasta que deja de largarse cable en la posición central. De la misma forma cuando la palanca se sitúa en el tope en la dirección de virar, el cable se recoge a una velocidad fija que se establece en Preparación y conforme se desplaza la palanca hacia el centro esta velocidad disminuye hasta que se hace cero en el centro.</p>
+
+<p>En las artes de Palangre y Cerco, las dos palancas se mueven solidariamente, con independencia de que está activa o no la función de sincronización de palancas. En estas artes, para recoger la red, además de situar la palanca en la posición de virar, es necesario que el buque se encuentre en la posición correcta, próximo a la primera boya y que la maniobra de largado de boyas (palangre) o el cierre de la jareta (cerco) haya concluido. Las posiciones intermedias de las maquinillas no tienen ningún efecto ya que el largado se efectúa siempre a la velocidad del buque.</p>
+
+<p>El área de máxima tensión de las maquinillas, situada en la parte inferior del panel, muestra la máxima tensión de cables que soporta la maquinilla. Si la tensión de los cables supera esta tensión, la maquinilla deja de funcionar y se enciende el indicador luminoso de avería situado en esta misma área. </p>
+
+<p><b>Control de las Tensiones de los Cables</b></p>
+
+<p>El panel dispone de dos módulos de control de tensiones uno para el cable de babor y otro para el de estribor. Para las artes que sólo tienen un cable sólo está activo el módulo de estribor.</p>
+
+<p>Cada módulo contiene los siguientes elementos:</p>
+
+<ul>
+	<li>Selector de Ajuste de Máxima Tensión del Cable: permite establecer el nivel de tensión que hará saltar la alarma de máxima tensión del cable. Se puede seleccionar un valor entre 0 y la tensión máxima soportada por el cable (ver el apartado Preparación de la Base de Datos/ Preparación de Modelos Básicos/ Aparejos de Pesca/ Cables en el Manual de Instructor).</li><br>
+	
+	<li>Indicador digital de Máxima Tensión del Cable: es un indicador digital de cinco cifras en el que se muestra máxima tensión del cable seleccionada con el selector.</li><br>
+	
+	<li>Indicador de Alarma de Máxima Tensión: es un indicador luminoso que se enciende cuando la tensión del cable supera la tensión establecida cómo máxima.</li><br>
+	
+	<li>Indicador digital de Tensión del Cable: es un indicador digital de cinco cifras en el que se muestra la tensión del cable en toneladas.</li><br>
+
+	<li>Indicador digital de Longitud del Cable: es un indicador digital de cuatro cifras en el que se muestra la longitud del cable largado en metros.</li>
+	
+</ul>
+
+<p>Para seleccionar la máxima tensión, el operador debe situar el cursor sobre el selector analógico en la posición elegida (de 0 a 100% del máximo) y a continuación pulsar y soltar el botón izquierdo del ratón.</p>
+
+<p>El valor marcado en el selector analógico aparece en el campo situado debajo. Para un ajuste fino del dato, se usan las flechas situadas a la derecha de este campo. Al pulsar la flecha arriba el dato se incrementa en una décima y al pulsar la flecha abajo el dato disminuye en una décima.</p>
+
+<a id="xxx06"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Gobierno</font></b></p>
+
+<p>Este panel muestra, sobre la silueta del buque, los valores actuales de posición, rumbo y velocidad, así como el timón y la caña.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Gobierno.jpg"></p>
+
+<p>En la parte superior de este panel aparecen los valores del rumbo real y aparente (heading) del buque e inmediatamente debajo se incluye un diagrama con divisiones de 10 grados y subdivisiones de 2, que permiten al operador visualizar de forma rápida la diferencia entre el rumbo (verde) y el heading (rojo) del buque. En este diagrama el heading siempre se presenta en el centro y el rumbo se marca con el indicador verde situándose a derecha o izquierda según la diferencia de grados entre ambos.</p>
+
+<p>El régimen de caída del buque indica los grados por minuto que el buque cae a babor o estribor.</p>
+
+<p>El clinómetro transversal, indica la escora del buque.</p>
+
+<p>Los indicadores de la velocidad trasversal de proa y popa muestran el valor de la velocidad (en nudos) en el campo central y las flechas situadas a izquierda y derecha del campo se iluminan para indicar la dirección.</p>
+
+<p>Los indicadores de la velocidad longitudinal muestran el valor de la velocidad (en nudos) en el campo central y las flechas situadas arriba y abajo del campo se iluminan para indicar la dirección de avance.</p>
+
+<p>Debajo de la velocidad longitudinal se muestra la distancia recorrida (en millas) por el buque desde que se inició el ejercicio, o desde la última vez que se inicializó el totalizador de la Corredera (ver el apartado Panel de Corredera).</p>
+
+<p>Los datos de velocidad del buque (longitudinal y transversal, así como la distancia recorrida, sólo se muestran si el buque tiene Corredera.</p>
+
+<p>El indicador de avería de la corredera cambia de color dependiendo del estado de la corredera:</p>
+
+<ul>
+	<li>Apagado - cuando la corredera no tiene avería, o el buque no tiene corredera.</li>
+	<li>Amarillo - cuando el instructor introduce una avería en la corredera.</li>
+	<li>Rojo – cuando el operador reconoce la avería (ver el apartado Panel de Corredera).</li>
+</ul>
+
+<p>Los botones de las bombas del servo sirven para encender y apagar las bombas. Para que el timón funcione es necesario que al menos una de las bombas esté encendida.</p>
+
+<p>El operador puede solicitar Caña para gobierno del buque, bien mediante las flechas anexas al indicador digital de caña o bien haciendo clic directamente, con el botón izquierdo del ratón, sobre el indicador analógico de caña, situado entre los campos de timón y caña, y arrastrándolo hasta la posición deseada. La línea verde de este indicador analógico marca la caña pedida y la línea roja el timón.</p>
+
+<p>Los indicadores de avería de las bombas de los servos cambian de color dependiendo del estado de las bombas:</p>
+
+<ul>
+	<li>Apagado - cuando la bomba no tiene avería.</li>
+	<li>Amarillo - cuando el instructor introduce una avería en la bomba.</li>
+	<li>Rojo – cuando el operador reconoce la avería. (Ver el apartado Consola de Gobierno/Control de Gobierno del Manual de Alumno del Simulador de Navegación Ulises).</li>
+</ul>
+
+<p>Si el simulador no dispone de botón de aceptación de avería los indicadores de avería de las bombas de los servos no se muestran en color rojo.</p>
+
+<p>En la parte inferior del panel se muestra la posición del buque siempre que el buque tenga un GPS, si no lo tiene estos campos están apagados.</p>
+
+<a id="xxx07"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Propulsión</font></b></p>
+
+<p>En este panel se muestran los indicadores de RPM y paso de hélice para cada eje, el telégrafo y la palanca de babor y estribor para control de la propulsión, y botones de listo, parada de emergencia y embrague, así como un indicador de presión del aire común para los dos ejes.</p>
+
+<p>Estos elementos están distribuidos simétricamente para los motores de estribor y babor. En los buques con un sólo motor sólo están activos los elementos de estribor.</p>
+
+<p>En la siguiente figura se detalla la distribución de estos elementos en el panel.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Propulsion.jpg"></p>
+
+<p>Los botones de listo (verde), embrague (amarillo) y parada de emergencia (rojo), así como el indicador de avería del motor están duplicados en cada eje para aquellos buques que tienen dos motores por eje. Los buques con un sólo motor por eje tendrán inactivos los botones e indicadores del segundo motor.</p>
+
+<p>Pulsando el botón de listo se enciende y se apaga el motor. Cuando el motor está listo (encendido), el botón se ilumina y cuado se apaga el botón también se apaga.</p>
+
+<p>Pulsando el botón de embrague se embraga y se desembraga el motor. Cuando el motor está embragado, el botón se ilumina y cuado se desembraga el botón se apaga.</p>
+
+<p>No se puede embragar el motor si no está listo.</p>
+
+<p>Cuando el motor está listo y embragado se puede solicitar el régimen de revoluciones y paso de hélice utilizando indistintamente la palanca o el telégrafo.</p>
+
+<p>La palanca de propulsión se mueve haciendo clic sobre ella con el botón izquierdo del ratón y desplazándola hasta la posición deseada. Al cambiar la posición de la palanca los campos paso de hélice y revoluciones se actualizan hasta alcanzar los valores correspondientes al régimen solicitado.</p>
+
+<p>Haciendo clic sobre cualquier posición del telégrafo también se envía una solicitud de régimen del motor.</p>
+
+<p>El botón de sincronización sirve para activar la función de sincronismo de palancas. Inicialmente esta función está desactivada y cada eje se controla con su palanca y su telégrafo. Al pulsar el botón, la función se activa, de manera que ambas líneas de ejes se controlan con la palanca y el telégrafo de estribor. Al pulsar el botón de nuevo se desactiva la función de sincronización.</p>
+
+<p>El botón de sincronización cambia dependiendo de si está activada la sincronización:</p>
+
+<p><img width=20 src="Imagenes/CD Sincro desactivada.jpg"> Sincronización desactivada</p>
+
+<p><img width=20 src="Imagenes/CD Sincro activada.jpg"> Sincronización activada</p>
+
+<p>Si el simulador dispone de un botón hardware para seleccionar el control por telégrafo o por palanca, la función de sincronismo no se podrá activar desde este panel.</p>
+
+<p>El indicador de parada de emergencia generalmente está apagado, sólo se enciende cuando el instructor establece la condición de parada de emergencia. (Ver el apartado Control de Averías y Capacidades). En este caso el motor se para automáticamente.</p>
+
+<p>Los indicadores de avería de los motores cambian de color dependiendo del estado del motor correspondiente:</p>
+
+<ul>
+	<li>Apagado - cuando el motor no tiene avería.</li>
+	<li>Amarillo - cuando el instructor introduce una avería en el motor.</li>
+	<li>Rojo – cuando el operador reconoce la avería (ver el apartado <i>Consola de Gobierno/Control de Gobierno</i> del Manual de Alumno del Simulador de Navegación Ulises).</li>
+</ul>
+
+<p>Si el simulador no dispone de botón de aceptación de avería, los indicadores de avería de los motores no se muestran en color rojo.</p>
+
+<p>Los indicadores de avería de las palancas y telégrafo cambian de color dependiendo del estado de la palanca y el telégrafo correspondiente:</p>
+
+<ul>
+	<li>Apagado - cuando la palanca y el telégrafo no tienen avería.</li>
+	<li>Rojo - cuando el instructor introduce una avería la palanca o el telégrafo.</li>
+</ul>
+
+<a id="xxx08"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Anemómetro y Rumbo</font></b></p>
+
+<p>En este panel se representa un indicador analógico de rumbo del buque y dirección del viento. También incluye indicadores digitales de rumbo y dirección e intensidad del viento.</p>
+
+<p align=center><img width=200 src="Imagenes/CD Anemometro.jpg"></p>
+
+<p>La línea roja marca la orientación del buque y la flecha verde indica la dirección del viento. En los dos campos digitales inferiores, se presentan los valores de intensidad y dirección del viento.</p>
+
+<a id="xxx09"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Reloj</font></b></p>
+
+<p>En este panel se representa un reloj de bitácora con la hora GMT y la fecha del Ejercicio en Ejecución.</p>
+
+<p align=center><img width=200 src="Imagenes/CD Reloj.jpg"></p>
+
+<a id="xxx10"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Sonda</font></b></p>
+
+<p>En este panel simula un equipo sonda, que incluye representación gráfica del perfil de profundidades por donde navega el buque, con un muestreo de un valor de profundidad por segundo. También incluye un indicador digital de la profundidad actual.</p>
+
+<p align=center><img width=500 src="Imagenes/CD Sonda.jpg"></p>
+
+<p>El campo Profundidad actual muestra el valor de la distancia desde la posición de la sonda hasta el fondo del mar.</p>
+
+<p>El instructor establece la posición de la sonda en el buque mediante la ventana de configuración de la sonda durante la preparación del ejercicio (ver el apartado Preparación del Ejercicio en el Manual de Instructor). La posición de la sonda se puede cambiar durante la ejecución del ejercicio.</p>
+
+<p>Si el buque no tiene sonda, este panel no aparece.</p>
+
+<a id="xxx11"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Piloto Automático</font></b></p>
+
+<p>En este panel se incluyen los controles e indicadores del Piloto Automático:</p>
+
+<ul>
+	<li>Selector e indicador del Rumbo Solicitado</li>
+	<li>Selector e indicador de Limitación de Ángulo de Timón</li>
+	<li>Selector e indicador de Estado de la Mar</li>
+	<li>Pulsador de Aceptación</li>
+	<li>Pulsador de Encendido/Apagado</li>
+</ul>
+
+<p align=center><img width=500 src="Imagenes/CD Piloto Automatico.jpg"></p>
+
+<p><b>Selector de Rumbo Solicitado</b></p>
+
+<p>Permite establecer el rumbo que debe mantener el buque y consta de un selector analógico (arriba), un campo de rumbo pedido (verde) y un campo de rumbo aceptado (rojo).</p>
+
+<p>Para introducir el rumbo, el operador debe situar el cursor sobre el selector analógico en la posición elegida (de 0 a 359) y a continuación pulsar y soltar el botón izquierdo del ratón.</p>
+
+<p>El valor marcado en el selector analógico aparece en el campo de rumbo pedido. Para un ajuste fino del dato, se usan las flechas situadas a la derecha de este campo. Al pulsar la flecha arriba el dato se incrementa en una unidad y al pulsar la flecha abajo el dato disminuye en una unidad.</p>
+
+<p><b>Selector e indicador de Limitación de Ángulo de Timón</b></p>
+
+<p>Permite establecer el máximo ángulo de timón del buque durante el funcionamiento del piloto automático y consta de un selector analógico (arriba), un campo de ángulo pedido (verde) y un campo de ángulo aceptado (rojo).</p>
+
+<p>Para introducir el ángulo, el operador debe situar el cursor sobre el selector analógico en la posición elegida (de 0 a 45) y a continuación pulsar y soltar el botón izquierdo del ratón.</p>
+
+<p>El valor marcado en el selector analógico aparece en el campo de ángulo pedido. Para un ajuste fino del dato, se usan las flechas situadas a la derecha de este campo. Al pulsar la flecha arriba el dato se incrementa en una unidad y al pulsar la flecha abajo el dato disminuye en una unidad.</p>
+
+<p><b>Selector e indicador de Estado de la Mar</b></p>
+
+<p>Permite establecer el funcionamiento del piloto automático en función del estado del mar y consta de un selector analógico (arriba), un campo de estado de mar pedido (verde) y un campo de estado de mar aceptado (rojo).</p>
+
+<p>Para introducir el estado del mar, el operador debe situar el cursor sobre el selector analógico en la posición elegida (de 0 a 10) y a continuación pulsar y soltar el botón izquierdo del ratón.</p>
+
+<p>El valor marcado en el selector analógico aparece en el campo de estado de mar pedido. Para un ajuste fino del dato, se usan las flechas situadas a la derecha de este campo. Al pulsar la flecha arriba el dato se incrementa en una unidad y al pulsar la flecha abajo el dato disminuye en una unidad.</p>
+
+<p>El selector e indicador de Estado de la Mar sólo tiene efecto en los buques de tres grados de libertad.</p>
+
+<p><b>Pulsador de Aceptación (REQUEST)</b></p>
+
+<p>Al presionar este pulsador, los valores introducidos en los campos pedidos pasan a los campos aceptados, siendo estos últimos valores los que usará el piloto automático para ejecutar la maniobra.</p>
+
+<p><b>Pulsador de Encendido/Apagado (ON)</b></p>
+
+<p>Al presionar este pulsador, se ilumina, y se inicia el funcionamiento del piloto automático. Al presionarlo de nuevo , se apaga y se detiene el funcionamiento del piloto automático.</p>
+
+<a id="xxx12"></a>
+<p><b><font color=##084B8A face=arial size=3>Paneles de UPAs</font></b></p>
+
+<p>Estos paneles se encuentran en la parte inferior izquierda de la Conning Display, son dos, y su contenido depende de la dotación del buque. Según ésta se presentarán dos paneles de UPA con control de dirección, dos paneles de UPA con control de potencia o un panel de cada tipo.</p>
+
+<p><b>Panel de UPA con control de dirección</b></p>
+
+<p align=center><img width=200 src="Imagenes/CD UPA direccion.jpg"></p>
+
+<p>Este panel contiene los siguientes elementos y controles:</p>
+
+<ul>
+	<li>Selector e Indicador de Orientación</li>
+
+	<p>Permite establecer la dirección de la UPA y consta de un selector analógico (arriba), un campo de dirección pedida (verde) y un campo de dirección aceptada (rojo).</p>
+
+	<p>Para introducir la dirección, el operador debe situar el cursor sobre el selector analógico en la posición elegida (de 0 a 359) y a continuación pulsar y soltar el botón izquierdo del ratón.</p>
+
+	<p>El valor marcado en el selector analógico aparece en el campo de dirección pedida. Para un ajuste fino del dato, se usan las flechas situadas a la derecha de este campo. Al pulsar la flecha arriba el dato se incrementa en una unidad y al pulsar la flecha abajo el dato disminuye en una unidad.</p>
+
+	<li>Pulsador de Despliegue</li>
+
+	<p>Cuando la UPA no está desplegada, este pulsador y el led anexo están apagados, al presionarlo y se inicia el despliegue de la UPA. Cuando está totalmente desplegada se enciende el led anexo al botón que indica que la UPA está lista para su encendido.</p>
+
+	<p>Cuando se presiona el botón estando la UPA desplegada, se inicia la recogida y cuando está totalmente recogida, el botón y el led se apagan.	</p>
+
+	<li>Pulsador de Encendido/Apagado</li>
+
+	<p>Cuando la UPA no está en funcionamiento, este pulsador está apagado, al presionarlo se ilumina y se inicia el funcionamiento de la UPA. Al presionarlo de nuevo, se apaga y el funcionamiento de la UPA se detiene.</p>
+
+</ul>
+
+<p><b>Panel de UPA con control de potencia</b></p>
+
+<p align=center><img width=200 src="Imagenes/CD UPA potencia.jpg"></p>
+
+<p>Este panel contiene los siguientes elementos y controles:</p>
+
+<ul>
+	<li>Selector e Indicador de Potencia</li>
+
+	<p>Permite establecer la potencia del propulsor lateral y consta de un selector analógico (arriba), un campo de potencia pedida (verde) y un campo de potencia aceptada (rojo).</p>
+
+	<p>Para introducir la potencia, el operador debe situar el cursor sobre el selector analógico en la posición elegida (de -100 a 100) y a continuación pulsar y soltar el botón izquierdo del ratón.</p>
+
+	<p>El valor marcado en el selector analógico aparece en el campo de dirección pedida. Para un ajuste fino del dato, se usan las flechas situadas a la derecha de este campo. Al pulsar la flecha arriba el dato se incrementa en una unidad y al pulsar la flecha abajo el dato disminuye en una unidad.</p>
+
+	<li>Pulsador de Encendido/Apagado</li>
+
+	<p>Cuando el propulsor lateral no está en funcionamiento, este pulsador está apagado, al presionarlo se ilumina y se inicia el funcionamiento. Al presionarlo de nuevo, se apaga y el funcionamiento se detiene.</p>
+</ul>
+
+<a id="xxx13"></a>
+<p><b><font color=##084B8A face=arial size=4>Buque</font></b></p>
+
+<a id="xxx14"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Luces</font></b></p>
+
+<p>Al seleccionar la opción del menú Buque &rarr; Luces, se presenta la ventana de Control de Buques con la solapa Luces activa.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Luces.jpg"></p>
+
+<p>En la consola de instructor, esta ventana contiene un campo Buque que al desplegarlo muestra la lista de todos los buques presentes en el ejercicio. Al seleccionar un buque de la lista, el contenido de la ventana se actualiza, presentando todas las luces que tiene el buque seleccionado, mostrando en el led situado a la derecha, el estado actual de dichas luces (encendidas/apagadas).</p>
+
+<p>En la consola de alumno, el campo Buque sólo muestra el buque propio.</p>
+
+<p>Para encender una luz, hay que situar el cursor sobre el led correspondiente (que debe estar apagado) y hacer clic con el botón izquierdo del ratón, de esta manera el led se ilumina (con el color que corresponda según el tipo de luz).</p>
+
+<p>Para apagar una luz se procede de igual manera que para encenderla, pero actuando sobre un led iluminado.</p>
+
+<p>También es posible encender varias luces a la vez utilizando el campo Maniobras. Al desplegar esta campo aparece un listado con todas las maniobras posibles, seleccionando cualquiera de ellas, se enciende el conjunto de luces que indican la ejecución de la maniobra elegida y se apaga el resto de las luces que estuvieran encendidas.</p>
+
+<p>Una vez que se han encendido o apagado las luces en la ventana, si se pulsa el botón Aplicar los cambios realizados se hacen efectivos en el buque y si se pulsa el botón Cancelar se descartan los cambios.</p>
+
+<p>Cuando en el panel de Maniobras se pulsa el botón de una maniobra, el panel de Luces se actualiza mostrando las luces correspondientes a la maniobra seleccionada.</p>
+
+<a id="xxx15"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Señales</font></b></p>
+
+<p>Al seleccionar la opción del menú Buque &rarr; Señales, se presenta la ventana de Control de Buques con la solapa Señales activa.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Señales.jpg"></p>
+
+<p>En la consola de instructor, esta ventana contiene un campo Buque que al desplegarlo muestra la lista de todos los buques presentes en el ejercicio. Al seleccionar un buque de la lista, el contenido de la ventana se actualiza, presentando todos los mástiles que tiene el buque seleccionado, mostrando en el área correspondiente a cada mástil, las señales que están situadas en ellos.</p>
+
+<p>En la consola de alumno, el campo Buque sólo muestra el buque propio.</p>
+
+<p>Para añadir una señal a un mástil, hay que situar el cursor sobre cualquiera de las señales que aparecen en el área de Señales Disponibles y pulsar el botón ADD del mástil.</p>
+
+<p>Para eliminar una señal de un mástil, hay que situar el cursor sobre cualquiera de las señales que aparecen en el área del mástil y pulsar el botón REM correspondiente a dicho mástil.</p>
+
+<p>Una vez que se han establecido las señales en la ventana, si se pulsa el botón Aplicar los cambios realizados se hacen efectivos en el buque y si se pulsa el botón Cancelar se descartan los cambios.</p>
+
+<p>Cuando en el panel de Maniobras se pulsa el botón de una maniobra que requiere señales en los mástiles, el panel de Señales se actualiza mostrando las señales correspondientes a la maniobra seleccionada.</p>
+
+<a id="xxx16"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Sonidos</font></b></p>
+
+<p>Al seleccionar la opción del menú Buque &rarr; Sonidos, se presenta la ventana de Control de Buques con la solapa Sonidos activa.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Sonidos.jpg"></p>
+
+<p>En la consola de instructor, esta ventana contiene un campo Buque que al desplegarlo muestra la lista de todos los buques presentes en el ejercicio. En esta lista se elige el buque para el cual se activarán las señales acústicas solicitada mediante este diálogo. Las señales acústicas emitidas por un buque se oyen en el conjunto de altavoces del Sistema Sonoro del puente que lo emite, y también en los otros puentes siempre que la distancia entre las unidades lo permita, y teniendo en cuenta las posiciones relativas para la orientación del sonido. En la consola de alumno, el campo Buque sólo muestra el buque propio.</p>
+
+<p>Al presionar los pulsadores del grupo de señales no repetitivas (LARGO, CORTO, GONG o CAMPANA), se emite un único sonido del tipo correspondiente.</p>
+
+<p>Al presionar cualquiera los pulsadores del grupo de Señales Repetitivas, el pulsador se ilumina y se emite la combinación de señales acústicas prevista para la condición establecida, según el reglamento COLREG 75, y se repetirá con la frecuencia prevista en dicho reglamento hasta que se presione de nuevo el pulsador y éste apague, eliminando así la condición establecida.</p>
+
+<p>Si estando establecida una condición, se pulsa otra distinta de entre las Señales Repetitivas, automáticamente se elimina la condición anterior, apagándose el pulsador correspondiente, y se establece la nueva.</p>
+
+<p>Al aplicar la Regla 35 de la COLREG 72 para determinar las señales acústicas emitidas, se tiene en cuenta de forma automática si la eslora del buque controlado es mayor o menor de100 metros.</p>
+
+<p>Cuando en el panel de Maniobras se pulsa el botón de una maniobra que requiere señales acústicas, el panel de Sonidos se actualiza iluminándose el botón correspondiente a la maniobra seleccionada.</p>
+
+<a id="xxx17"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Maniobras</font></b></p>
+
+<p>Al seleccionar la opción del menú Buque &rarr; Maniobras, se presenta la ventana de Control de Buques con la solapa Maniobras activa.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Maniobras.jpg"></p>
+
+<p>En la consola de instructor, esta ventana contiene un campo Buque que al desplegarlo muestra la lista de todos los buques presentes en el ejercicio. En esta lista se elige el buque para el cual se activarán las maniobras solicitadas desde este panel. En la consola de alumno, el campo Buque sólo muestra el buque propio.</p>
+
+<p>Cada botón establece la señalización de maniobra que se especifica en la siguiente tabla:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td><font size=2 face=arial><b>Botón</b></td>
+		<td><font size=2 face=arial><b>Luces (maniobra)</b></td>
+		<td><font size=2 face=arial><b>Señales</b></td>
+		<td><font size=2 face=arial><b>Sonidos</b></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Navegación C/Arr</td>
+		<td><font size=2 face=arial>NAVEGACION</td>
+		<td><font size=2 face=arial>Ninguna</td>
+		<td><font size=2 face=arial>Con Arrancada</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Navegación S/Arr</td>
+		<td><font size=2 face=arial>NAVEGACION</td>
+		<td><font size=2 face=arial>Ninguna</td>
+		<td><font size=2 face=arial>Sin Arrancada</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Sin Gobierno C/Arr</td>
+		<td><font size=2 face=arial>SIN-GOBIERNO-CON-ARRANCADA</td>
+		<td><font size=2 face=arial>bola, bola</td>
+		<td><font size=2 face=arial>Maniobra Restringida</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Sin Gobierno S/Arr</td>
+		<td><font size=2 face=arial>SIN-GOBIERNO-SIN-ARRANCADA</td>
+		<td><font size=2 face=arial>bola, bola</td>
+		<td><font size=2 face=arial>Maniobra Restringida</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Restringida C/Arr</td>
+		<td><font size=2 face=arial>RESTRINGIDA-CON-ARRANCADA</td>
+		<td><font size=2 face=arial>bola, bicónica, bola</td>
+		<td><font size=2 face=arial>Maniobra Restringida</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Restringida S/Arr</td>
+		<td><font size=2 face=arial>RESTRINGIDA-SIN-ARRANCADA</td>
+		<td><font size=2 face=arial>bola, bicónica, bola</td>
+		<td><font size=2 face=arial>Maniobra Restringida</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Restringida Por Calado</td>
+		<td><font size=2 face=arial>RESTRINGIDA-POR-CALADO</td>
+		<td><font size=2 face=arial>cilindro</td>
+		<td><font size=2 face=arial>Maniobra Restringida</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Fond</td>
+		<td><font size=2 face=arial>FONDEADO</td>
+		<td><font size=2 face=arial>bola a proa<br>bola en popa<br>(si hay mástil en popa)</td>
+		<td><font size=2 face=arial>Fondeado</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Rem</td>
+		<td><font size=2 face=arial>REMOLCADO</td>
+		<td><font size=2 face=arial>bicónica a proa</td>
+		<td><font size=2 face=arial>Remolcado</td>
+	</tr>
+
+</table>
+
+<p>En el área Lanzar referencia para cerco, este panel incluye un botón con la leyenda Lanzar/Recoger para lanzar y recoger un objeto de referencia. Este objeto se usa en la pesca de cerco para localizar la zona de lanzamiento de la red.</p>
+
+<p>Cuando se presiona el botón Lanzar/Recoger, se ilumina y es sistema crea un objeto que se puede ver en la cartografía del instructor y en el visual. El objeto aparece por la popa del buque y se mueve con la corriente del mar. Cuando el botón se presiona de nuevo, se apaga y el objeto desaparece.</p>
+
+<a id="xxx18"></a>
+<p><b><font color=##084B8A face=arial size=4>Equipos</font></b></p>
+
+<a id="xxx19"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de GPS</font></b></p>
+
+<p>Al seleccionar la opción del menú Equipos &rarr; Sensores &rarr; GPS, se presenta el panel del equipo GPS.</p>
+
+<p align=center><img width=600 src="Imagenes/CD GPS.jpg"></p>
+
+<p>El Panel de GPS simula un equipo GPS real que proporciona al operador situación geográfica, rumbo y velocidad del buque propio e indicación horaria, y además incluye funciones de gestión de waypoints (puntos de paso) y derrotas.</p>
+
+<p>El módulo de GPS se compone de los elementos siguientes:</p>
+
+<ul>
+	<li>Pantalla LCD de ocho líneas que muestra la información al operador.</li><br>
+
+	<li>Teclado funcional de 20 teclas que permite utilizar todas las funciones del equipo.</li>
+
+	<p>Mediante la fila superior del bloque de teclas de la izquierda, el operador puede acceder a las distintas pantallas de configuración (Programación de Rutas, Programación de Waypoints, y Configuración del equipo) y de modos de operación del equipo (Navegación y Seguimiento de Ruta).</p>
+
+	<p>El bloque de teclas de la derecha es un teclado numérico para la introducción de valores, y la fila inferior del bloque de teclas de la izquierda (excepto el pulsador de Encendido / Apagado) son teclas para la edición de campos, necesarias en las pantallas de configuración. El funcionamiento general de estas teclas es el siguiente:</p>
+
+	<p>Cuando el operador accede a cualquiera de las pantallas de configuración, aparece seleccionado para edición el primer campo editable de la misma. Bien mediante las teclas numéricas, o bien mediante el pulsador de Selección (Sel) si el campo es opcional, el operador puede introducir el nuevo valor deseado. Mediante el pulsador de validación (Ok), se acepta el valor introducido y se pasa a editar el siguiente campo de la pantalla. Mediante el pulsador de retorno (Back), se cancela el valor introducido en el campo en edición, y se pasa a editar el campo anterior. El campo en edición es indicado siempre mediante un cursor intermitente. Para las pantallas de configuración de Waypoints y Rutas, compuestas de varias páginas de valores, se debe usar el pulsador de avance (Scroll) pasar avanzar a las siguientes páginas.</p>
+
+</ul>
+
+<p>A continuación se describe con detalle el manejo de este equipo:</p>
+
+<ul>
+	<li>Pulsador e Indicador de ON / OFF del GPS: debe ser pulsado para encender o apagar el equipo. Cuando el equipo es encendido, inicialmente muestra la siguiente pantalla de búsqueda, que simula el tiempo de establecimiento de conexión con los satélites:</li>
+
+	<p align=center><img width=300 src="Imagenes/CD GPS Searching.jpg"></p>
+
+</ul>
+
+<p>Una vez finalizada la búsqueda el equipo comienza en Modo de Navegación.</p>
+
+<p><b>Modos de Operación</b>:</p>
+
+<ul>
+	<li>Modo de Navegación: en este modo de operación, el equipo muestra continuamente una pantalla no editable con los siguientes datos:</li><br>
+
+	<ul>
+		<li>Latitud y Longitud en grados y minutos, con precisión de centésimas de minuto,</li>
+		<li>Rumbo en grados, con precisión de un grado.</li>
+		<li>Velocidad en nudos o km/h, según la configuración del equipo, y con precisión de décimas de unidad.</li>
+		<li>Hora y Fecha actual, en formato HH:MM:SS y Día-Mes-Año.</li>
+	</ul>
+
+	<p align=center><img width=300 src="Imagenes/CD GPS Navegacion.jpg"></p>
+
+	<p>Este es el modo de operación por defecto del equipo, y se accede a este modo desde cualquier otro mediante pulsación de la tecla Nav.</p>
+
+	<li>Modo de Seguimiento de Rutas: en este modo de operación el equipo muestra continuamente una pantalla para control del seguimiento de una ruta, con los siguientes datos:</li><br>
+
+	<ul>
+		<li>Identificador de Ruta y Pierna seleccionadas. Estos campos pueden ser modificados por el operador. Una vez que selecciona una ruta y pierna válidas, se mostrarán los siguientes datos:</li>
+		<li>Distancia al siguiente Waypoint de la ruta, en millas o kilómetros, según configuración del equipo, y con precisión de décimas de unidad.</li>
+		<li>Tiempo (ETA, Elapsed Time on Arrival) hasta el siguiente Waypoint de la ruta, en minutos y segundos.</li>
+		<li>Distancia al último Waypoint de la ruta, en millas o kilómetros, según configuración del equipo, y con precisión de décimas de unidad.</li>
+		<li>Tiempo (ETA, Elapsed Time on Arrival) hasta el último Waypoint de la ruta, en minutos y segundos.</li>
+	</ul>
+
+	<p align=center><img width=300 src="Imagenes/CD GPS Seguimiento.jpg"></p>
+
+	<p>A este modo de operación se accede desde cualquier otro mediante pulsación de la tecla Route.</p>
+
+</ul>
+
+<p><b>Pantallas de Configuración</b>:</p>
+
+<ul>
+	<li>Pantalla de Programación de Waypoints: mediante esta pantalla el operador puede introducir o editar hasta 100 Waypoints:</li>
+
+	<p align=center><img width=300 src="Imagenes/CD GPS Waypoints.jpg"></p>
+
+	<p>A esta pantalla se accede desde cualquier otra mediante pulsación de la tecla W/P. Para la edición de los Waypoints se debe hacer uso de las teclas numéricas y de edición como se explica más arriba.</p>
+
+	<li>Pantalla de Programación de Rutas: mediante esta pantalla el operador puede introducir o editar hasta 100 rutas, definidas por los Waypoints que la componen:</li>
+
+	<p align=center><img width=300 src="Imagenes/CD GPS Rutas.jpg"></p>
+
+	<p>Cada una de las rutas se define por hasta 100 piernas, y cada pierna queda definida por un identificador de Waypoint previamente definido, que corresponderá al punto final de la pierna. El operador deberá introducir previamente el identificador de la ruta que desea modificar, y entonces podrá editar las piernas que la componen.</p>
+
+	<p>Para cada pierna se muestra la demora y distancia desde el punto inicial al punto final de la misma, excepto para la primera pierna, para la cual se muestra la demora y distancia desde la posición actual del buque al punto final de la pierna.</p>
+
+	<p>A esta pantalla se accede desde cualquier otra mediante pulsación de la tecla Route P.. Para la edición del identificador y de las piernas que la componen se debe hacer uso de las teclas numéricas y de edición como se explica más arriba.</p>
+
+	<li>Configuración del Equipo: mediante esta pantalla el operador puede modificar la configuración general del equipo:</li>
+
+	<p align=center><img width=300 src="Imagenes/CD GPS Configuracion.jpg"></p>
+
+	<p>Las opciones de configuración del equipo son las siguientes:</p>
+
+	<ul>
+		<li>TIME: Hora de referencia LOCAL o UTC (Coordinated Universal Time).</li>
+		<li>OFFSET: Desfase entre la hora local y la hora UTC.</li>
+		<li>UNITS: Unidades de medida para la distancia en millas náuticas (Nm) o kilómetros (Km).</li>
+		<li>WPT‑SWITCHING: Modo de seguimiento de ruta MANUAL o AUTO.</li>
+		<li>RADIUS: Distancia de aproximación del buque para cambio de waypoints.</li>
+	</ul>
+
+	<p>Los dos últimos campos afectan al modo de operación de Seguimiento de Ruta. Si WPT‑SWITCHING es MANUAL, el operador deberá seleccionar el siguiente Waypoint manualmente, y si es AUTO, cuando el buque se aproxime al siguiente Waypoint a una distancia menor que RADIUS, automáticamente cambiará al siguiente Waypoint.</p>
+
+	<p>A esta pantalla se accede desde cualquier otra mediante pulsación de la tecla Set. Pulsando una segunda vez sobre este pulsador se accede a la pantalla de configuración de los niveles de brillo y contraste del display:</p>
+
+	<p align=center><img width=300 src="Imagenes/CD GPS Brillo.jpg"></p>
+
+	<p>Mediante esta pantalla el operador puede realizar los siguientes ajustes del display:</p>
+
+	<ul>
+		<li>BRIGHTNESS: nivel de brillo del display de 0 a 9.</li>
+		<li>CONTRAST: nivel de contraste del display de 0 a 9.</li>
+	</ul>
+
+</ul>
+
+<a id="xxx20"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de RDF</font></b></p>
+
+<p>Al seleccionar la opción del menú Equipos &rarr; Sensores &rarr; RDF, se presenta el panel del equipo Radio Direction Finder (RDF).</p>
+
+<p align=center><img width=600 src="Imagenes/CD RDF.jpg"></p>
+
+<p>El Panel de RDF simula un equipo radiogoniómetro real que proporciona al operador detecciones de emisiones radio U/VHF y MF/HF en hasta cinco canales de radiofrecuencia.</p>
+
+<p>El módulo de RDF se compone de los elementos siguientes:</p>
+
+<ul>
+	<li>Pantalla LCD de ocho líneas que muestra la información al operador.</li><br>
+
+	<li>Teclado funcional de 20 teclas que permite utilizar todas las funciones del equipo.</li>
+
+	<p>Mediante la fila superior del bloque de teclas de la izquierda (excepto el pulsador de Encendido / Apagado), el operador puede acceder a la configuración del display y puede realizar la programación de canales del equipo.</p>
+
+	<p>El bloque de teclas de la derecha es un teclado numérico para la introducción de valores, y la fila inferior del bloque de teclas de la izquierda son teclas para la edición de campos, necesarias en las pantallas de configuración y programación del equipo. El funcionamiento general de estas teclas es el siguiente:</p>
+
+	<p>Cuando el operador accede a cualquiera de las pantallas de configuración, aparece seleccionado para edición el primer campo editable de la misma. Mediante las teclas numéricas el operador puede introducir el nuevo valor deseado. Mediante el pulsador de validación (Ok), se acepta el valor introducido y se pasa a editar el siguiente campo de la pantalla. Mediante el pulsador de retorno (Cancel), se cancela el valor introducido en el campo en edición, y se pasa a editar el campo anterior. Mediante la tecla retroceso (Back) se borra el último valor numérico introducido. El campo en edición es indicado siempre mediante un cursor intermitente. Mediante las teclas de flechas hacia arriba y abajo se posibilita cambiar de campo en edición.</p>
+
+</ul>
+
+<p>A continuación se describe con detalle el manejo de este equipo:</p>
+
+<ul>
+	<li>Pulsador e Indicador de ON / OFF del RDF: debe ser pulsador para encender o apagar el equipo. Cuando el equipo es encendido, muestra la pantalla de detecciones de emisiones radio, con la última programación de canales realizada, incluyendo los siguientes datos por cada uno de los cinco canales:</li><br>
+
+	<ul>
+		<li>Identificador del Canal (CH).</li>
+		<li>Frecuencia del canal (FRECUENCY).</li>
+		<li>Marcación de la detección en este canal (BEARING).</li>
+		<li>Intensidad de la señal detectada en este cana (ACCURACY).</li>
+	</ul><br>
+
+	<p align=center><img width=300 src="Imagenes/CD RDF Emisiones.jpg"></p>
+
+	<li>Pulsador de Programación de Canales (Program) del RDF: mediante este pulsador se accede a la pantalla programación de canales del RDF. Mediante las teclas numéricas y de edición el operador podrá seleccionar los cinco canales monitorizados mediante sus identificadores correspondientes.</li>
+
+	<p>Una vez finalizada la selección de canales se debe pulsar de nuevo la tecla Program Para salir de este modo y volver a la monitorización de los canales programados.</p>
+
+	<li>Pulsador de Canal 16: mediante este pulsador se programa automáticamente el Canal 16 como el canal número 3 de entre los monitorizados, sin necesidad de entrar en la pantalla de programación de canales.</li><br>
+
+	<li>Pulsador de 2182: mediante este pulsador se programa automáticamente la frecuencia de HF 2182 kHz como el canal número 4 de entre los monitorizados, sin necesidad de entrar en la pantalla de programación de canales.</li><br>
+
+	<li>Pulsador de Display: mediante este pulsador se accede a la pantalla de configuración de los niveles de brillo y contraste del display. Mediante esta pantalla el operador puede realizar los siguientes ajustes del display:</li><br>
+
+	<ul>
+		<li>BRIGHTNESS: nivel de brillo del display de 0 a 9.</li>
+		<li>CONTRAST: nivel de contraste del display de 0 a 9.</li>
+	</ul>
+
+</ul>
+
+<a id="xxx21"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Corredera</font></b></p>
+
+<p>Al seleccionar la opción del menú Equipos &rarr; Sensores &rarr; Corredera, se presenta el panel de control de la Corredera.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Corredera.jpg"></p>
+
+<p>El Panel de Corredera simula una Corredera Doppler dotada de sensores transversales a proa y popa del buque así como de sensor de velocidad longitudinal, con posibilidad de indicar la velocidad con respecto al agua o al fondo y en diversas unidades de medida.</p>
+
+<p>Contiene los siguientes elementos:</p>
+
+<ul>
+	<li>Indicador de Velocidad Transversal de Proa: indicador digital de dos cifras en el que se muestra la velocidad transversal de proa.</li><br>
+	
+	<li>Indicador de Proa a Babor / Estribor: se trata de dos flechas rojas situadas a izquierda y derecha del indicador de velocidad transversal de proa, que se encienden cuando el movimiento es hacia babor o estribor respectivamente.</li><br>
+	
+	<li>Indicador de Velocidad Longitudinal: indicador digital de dos cifras en el que se muestra la velocidad longitudinal.</li><br>
+	
+	<li>Indicador de Avante / Atrás: se trata de dos flechas rojas situadas arriba y abajo del indicador de velocidad longitudinal, que se encienden cuando el movimiento es adelante o atrás respectivamente.</li><br>
+	
+	<li>Indicador de Velocidad Transversal de Popa: indicador digital de dos cifras en el que se muestra la velocidad transversal de popa.</li><br>
+	
+	<li>Indicador de Popa a Babor / Estribor: se trata de dos LED rojos situados a izquierda y derecha del indicador de velocidad transversal de popa, que se encienden cuando el movimiento es hacia babor o estribor respectivamente.</li><br>
+
+	<li>Indicador de Totalizador: indicador digital de cuatro cifras en el que se muestra el valor del totalizador de distancia recorrida (en millas) de la corredera longitudinal o doppler, en función del modo seleccionado.</li><br>
+
+	<li>Pulsador de Reset de Totalizador de corredera: cuando es pulsado realiza la puesta a cero del totalizador de corredera longitudinal o doppler, en función del modo seleccionado.</li><br>
+
+	<li>Pulsador e Indicador de selección de referencia Agua: cuando se pulsa, la velocidad se muestra con respecto al agua (modo longitudinal). El pulsador permanece encendido hasta que se cambie el modo de presentación.</li><br>
+
+	<li>Pulsador e Indicador de selección de referencia Fondo: cuando se pulsa, la velocidad se muestra con respecto al fondo (modo doppler). El pulsador permanece encendido hasta que se cambie el modo de presentación.</li>
+
+	<p>El pulsador de selección de referencia al fondo sólo funciona cuando el buque controlado se encuentra en aguas poco profundas. La profundidad máxima para que el sistema considere que las aguas son poco profundas es configurable y se define en el fichero de configuración del sistema.</p>
+
+</ul>
+
+<p>Los dos pulsadores anteriores (Agua y Fondo) son excluyentes entre sí.</p>
+
+<ul>
+	<li>Pulsador e Indicador de presentación de la velocidad en Nudos: cuando se pulsa, la velocidad se muestra en nudos. El pulsador permanece encendido hasta que se cambie la unidad de presentación de la velocidad.</li><br>
+	
+	<li>Pulsador e Indicador de presentación de la velocidad en M/S: cuando se pulsa, la velocidad se muestra en metros por segundo. El pulsador permanece encendido hasta que se cambie la unidad de presentación de la velocidad.</li><br>
+	
+	<li>Pulsador e Indicador de presentación de la velocidad en Ft/S: cuando se pulsa, la velocidad se muestra en pies por segundo. El pulsador permanece encendido hasta que se cambie la unidad de presentación de la velocidad.</li>
+
+</ul>
+
+<p>Los tres pulsadores anteriores (Nudos, M/S y Ft/S ) son excluyentes entre sí.</p>
+
+<ul>
+	<li>Indicador de Avería y Pulsador de Aceptación: cuando el instructor introduce una avería en la corredera, este indicador se enciende de forma intermitente. Cuando el operador lo presiona (reconociendo la avería), el indicador se ilumina de forma fija, y finalmente se apaga cuando el instructor elimina la condición de avería.</li>
+</ul>
+
+<a id="xxx22"></a>
+<p><b><font color=##084B8A face=arial size=3>Sonda de Pesca</font></b></p>
+
+<p>Al seleccionar la opción del menú Equipos &rarr; Sensores &rarr; Sonda de Pesca, se presenta el Simulador de Sonda. Este simulador utiliza los parámetros de la sonda de pesca del buque propio.</p>
+
+<p>La funcionalidad del Simulador de Sonda, se describe en el documento <b><a target=main style="text-decoration:none" href="../simsonda.index.html">Manual de la Sonda</a></b>.</p>
+
+<a id="xxx23"></a>
+<p><b><font color=##084B8A face=arial size=3>Sonda de Pesca de Red</font></b></p>
+
+<p>Al seleccionar la opción del menú Equipos &rarr; Sensores &rarr; Sonda de Pesca de Red, se presenta el Simulador de Sonda. Este simulador utiliza los parámetros de la sonda de pesca de red del buque propio.</p>
+
+<p>La funcionalidad del Simulador de Sonda, se describe en el documento <b><a target=main style="text-decoration:none" href="../simsonda.index.html">Manual de la Sonda</a></b>.</p>
+
+<a id="xxx24"></a>
+<p><b><font color=##084B8A face=arial size=3>Sonar</font></b></p>
+
+<p>Al seleccionar la opción del menú Equipos &rarr; Sensores &rarr; Sonar, se presenta el Simulador de Sonar. Este simulador utiliza los parámetros de la sonda de pesca de red del buque propio.</p>
+
+<p>La funcionalidad del Simulador de Sonar, se describe en el documento <b><a target=main style="text-decoration:none" href="../simsonar.index.html">Manual del Sonar</a></b>.</p>
+
+<a id="xxx25"></a>
+<p><b><font color=##084B8A face=arial size=3>Panel de Comunicaciones</font></b></p>
+
+<p>Al seleccionar cualquiera de las opciones de Equipos &rarr; Comunicaciones &rarr; VHF (SMM, SMN o CT) se presenta el panel de control de los equipos de Comunicaciones.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Comunicaciones.jpg"></p>
+
+<p>El operador dispone de tres Paneles de Radioteléfono, para la simulación de las comunicaciones radio U/VHF en los tres servicios: SMM (Servicio Móvil Marítimo), SMN (Servicio Móvil Naval) y CT (Comunicaciones Tácticas).</p>
+
+<p>Contiene los siguientes elementos:</p>
+
+<ul>
+	<li>Pulsador e Indicador de ON / OFF del radioteléfono: pulsador e indicador de encendido y apagado del radioteléfono correspondiente. Debe ser pulsador para encender o apagar el equipo, y permanece iluminado mientras el equipo esté encendido.</li><br>
+	
+	<li>Pulsador e Indicador de Potencia de Transmisión: pulsador para conmutar entre potencia de transmisión baja y alta. Permanece iluminado cuando se selecciona potencia alta.</li><br>
+	
+	<li>Indicador de canal Duplex: indicador que se ilumina cuando el canal seleccionado es Duplex.</li><br>
+	
+	<li>Indicador de detección de Portadora: indicador que se ilumina cuando se recibe fonía en el equipo, simulando detección de portadora.</li><br>
+	
+	<li>Indicador digital de Canal: indicador digital de tres dígitos en el que se muestra el canal seleccionado por el operador.</li><br>
+	
+	<li>Selector de Canal: selector giratorio para selección de canal. Girándolo a la derecha avanza al siguiente canal de entre los disponibles para el equipo, y a la izquierda retrocede al canal anterior.</li><br>
+	
+	<li>Selector de Volumen: selector giratorio para regular el nivel de volumen del equipo.</li><br>
+	
+	<li>Selector de Squelch: selector giratorio para ajustar el nivel de squelch tenido en cuenta por el equipo.</li>
+		
+</ul>
+
+<p>Para usar las comunicaciones mediante este panel, el instructor dispone de cascos con micrófono y pulsador de PTT independiente.</p>
+
+<a id="xxx26"></a>
+<p><b><font color=##084B8A face=arial size=4>Control</font></b></p>
+
+<a id="xxx27"></a>
+<p><b><font color=##084B8A face=arial size=3>Control del Visual</font></b></p>
+
+<p>Al seleccionar la opción del menú Control &rarr; Control Visual, se presenta la ventana de Control del Visual.</p>
+
+<p>Esta ventana es distinta en la consola del instructor y en la del alumno.</p>
+
+<p><b>Control del visual en la consola del instructor</b>.</p>
+
+<p>Esta ventana presenta varias áreas, cada una identificada con un número, que se describen a continuación:</p>
+
+<p align=center><img width=700 src="Imagenes/CD Control Visual I.jpg"></p>
+
+<ol>
+	<li>Área de selección de la consola - Arriba a la derecha un campo desplegable permite seleccionar cualquiera de las consolas (puentes) que participan en el ejercicio para controlar su visual.</li><br>
+	
+	<li>Área de control de la cámara situada en el puente del buque - Esta área consta de 4 leds que permiten controlar la orientación de la cámara situada en el puente. Al posicionar el cursor sobre cada uno de estos leds y hacer clic con el botón izquierdo del ratón, el led se ilumina y se apaga cualquier otro led de la ventana que estuviera encendido, tanto en esta zona como en otra.</li>
+
+	<p>Seleccionar un led en esta ventana implica modificar la orientación de la cámara que se mantiene situada en el puente, de manera que si seleccionamos el led situado arriba, en el visual aparece la imagen del escenario visto desde el puente con una cámara orientada al frente y si seleccionamos el led situado a la derecha, abajo o a la izquierda, en el visual aparece la imagen del escenario visto desde el puente con una cámara orientada a estribor, popa o babor respectivamente.</p>
+
+	<li>Área de control de la cámara externa - Esta área consta de 5 leds situados en distintas posiciones alrededor y encima de la silueta de un barco. Al posicionar el cursor sobre cada uno de estos leds y hacer clic con el botón izquierdo del ratón, el led se ilumina y se apaga cualquier otro led de la ventana que estuviera encendido, tanto en esta zona como en otra.</li><br>
+	
+	<p>Seleccionar un led en esta área implica modificar la posición de la cámara que proporciona la imagen proyectada en el sistema visual, trasladándola fuera del buque al punto que se muestra en la ventana respecto a la silueta del buque, de manera que si seleccionamos el led situado delante de la proa, en el visual aparece la imagen del buque visto desde el exterior hacia la proa. Si seleccionamos el led que figura en el centro de la silueta, en el visual aparece una vista de pájaro centrada en el buque.</p>
+
+	<li>Área de selección del modo de la cámara – En esta área se puede cambiar el modo de uso y control de la cámara seleccionando cualquiera de los leds que aparecen en ella. El comportamiento de la cámara con cada led será el siguiente:</li><br>
+
+	<p>Subjetiva – cuando se selecciona este modo, la cámara está ligada al buque y se desplaza siempre con él, se puede mover y rotar con los controles correspondientes, pero tomando siempre como origen el centro del buque.</p>
+
+	<p>Independiente:</p>
+
+	<ul>
+		<p>Fija en un punto – en este modo la cámara está fija en un punto que puede moverse y rotarse con los controles correspondientes. El origen del punto está siempre referido al centro del buque.</p>
+
+		<p>Orientada al buque – es igual que la cámara fija en un punto pero con la salvedad de que se orienta por si misma hacia el buque, por lo tanto los controles de rotación no tienen efecto.</p>
+
+		<p>Siguiendo al buque – en este modo la cámara se orienta al buque manteniendo una distancia relativa que puede variarse con los controles correspondientes. Los controles de rotación no tienen efecto.</p>
+	</ul>
+
+	<li>Área de prismáticos - Al pulsar el led de esta área, el led se ilumina y la imagen visual del canal central se presenta ampliada en forma de vista a través de prismáticos. Al pulsar de nuevo el led, se apaga y la imagen vuelve a aparecer en la forma normal.</li><br>
+
+	<li>Área de cambio manual del punto de vista – En esta área se puede girar vertical y horizontalmente la cámara, así como desplazarla a lo largo de los ejes x, y ,z. El funcionamiento de las flechas y los botones (+) y (-) es distinto según esté o no encendido el led Fix View. El led Fix View se enciende y se apaga de la misma forma que el resto de los leds de la ventana.</li>
+
+	<p>Funcionamiento con el led FixView encendido.</p>
+
+	<ul>
+		<li>Flecha arriba - La cámara gira hacia arriba (aumenta el pitch).</li>
+		<li>Flecha abajo - La cámara gira hacia abajo (disminuye el pitch).</li>
+		<li>Flecha derecha - La cámara gira hacia la derecha (aumenta el yaw).</li>
+		<li>Flecha izquierda - La cámara gira hacia la izquierda (disminuye el yaw).</li>
+		<li>Botón (+) - La cámara se acerca a la imagen y la imagen se amplía (efecto zoom+).</li>
+		<li>Botón (-) - La cámara se aleja de la imagen y la imagen se reduce (efecto zoom-)</li>
+	</ul>
+
+	<p>Funcionamiento con el led FixView apagado.</p>
+
+	<ul>
+		<li>Flecha arriba - La cámara se desplaza hacia arriba manteniendo su orientación.</p></li>
+		<li>Flecha abajo - La cámara se desplaza hacia abajo manteniendo su orientación.</li>
+		<li>Flecha derecha - La cámara se desplaza a la derecha manteniendo orientación.</li>
+		<li>Flecha izquierda - La cámara se desplaza a la izquierda manteniendo orientación.</li>
+		<li>Botón (+) - La cámara se desplaza hacia delante manteniendo su orientación.</li>
+		<li>Botón (-) - La cámara se desplaza hacia atrás manteniendo su orientación.</li>
+	</ul>
+
+	<p>Cada vez que se pulsa una flecha, la cámara gira 5 grados (o el ángulo de giro que se haya configurado) en el sentido de la flecha.</p>
+
+	<p>Pulsando la tecla Ctrl.(del teclado) simultáneamente con las flechas, los giros de la cámara se realizan de grado en grado.</p>
+
+	<li>Área de posición del punto de vista - Esta área muestra en cada momento los valores que definen la posición y orientación en cada uno de los ejes de la cámara, y pueden ser modificados por el operador introduciendo en los campos inferiores los valores deseados y pulsado Aplicar. Estos valores son:</li>
+
+	<ul>
+		<li>Pitch - Ángulo que forma la orientación de la cámara con el plano horizontal.</li>
+		<li>Yaw - Orientación de la cámara respecto al norte.</li>
+		<li>X - Desplazamiento de la cámara, en eje X, respecto al origen.</li>
+		<li>Y - Desplazamiento de la cámara, en eje Y, respecto al origen.</li>
+		<li>Z - Desplazamiento de la cámara, en eje Z, respecto al origen.</li>
+	</ul>
+
+</ol>
+
+<p><b>Control del visual en la consola del alumno</b>.</p>
+
+<p>Desde el área de control de la orientación visual se puede cambiar la posición y orientación de la de la cámara.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Control Visual A.jpg"></p>
+
+<p>Al pulsar cualquiera de los cuatro leds de la zona BRIDGE, el led se ilumina y la cámara se orienta a proa, popa, babor o estribor, de manera que si seleccionamos el led situado arriba, en el visual aparece la imagen del escenario visto desde el puente con una cámara orientada al frente y si seleccionamos el led situado a la derecha, abajo o a la izquierda, en el visual aparece la imagen del escenario visto desde el puente con una cámara orientada a estribor, popa o babor respectivamente.</p>
+
+<p>Al pulsar el led de Zoom situado encima del icono de prismáticos, el led se ilumina y la imagen visual del canal central se presenta ampliada en forma de vista a través de prismáticos. Al pulsar de nuevo el led, se apaga y la imagen vuelve a aparecer en la forma de vista normal</p>
+
+<p>Las cuatro flechas de la zona ROTATE controlan la orientación horizontal (yaw) y vertical (pitch) de la cámara:</p>
+
+<ul>
+	<li>Flecha arriba - La cámara gira hacia arriba (aumenta el pitch).</li>
+	<li>Flecha abajo - La cámara gira hacia abajo (disminuye el pitch)</li>
+	<li>Flecha derecha - La cámara gira hacia la derecha (aumenta el yaw).</li>
+	<li>Flecha izquierda - La cámara gira hacia la izquierda (disminuye el yaw).</li>
+</ul>
+
+<p>Cada vez que se pulsa una flecha, la cámara gira 5 grados (o el ángulo de giro que se haya configurado) en el sentido de la flecha.</p>
+
+<p>Pulsando la tecla Ctrl.(del teclado) simultáneamente con las flechas, los giros de la cámara se realizan de grado en grado.</p>
+
+<p>Los valores de pitch y yaw también se pueden introducir a mano, pero en este caso para que los valores introducidos tengan efecto hay que pulsar el botón Aplicar.</p>
+
+<a id="xxx28"></a>
+<p><b><font color=##084B8A face=arial size=3>Control de Escenario</font></b></p>
+
+<p>Al seleccionar la opción del menú Control &rarr; Control Escenario, se presenta la ventana de Control del Escenario Visual.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Control Escenario.jpg"></p>
+
+<p>Mediante este diálogo el instructor puede seleccionar una unidad de entre las participante en un ejercicio, asignarle un escenario de entre los disponibles, y solicitar el cambio a este nuevo escenario en los sistemas visuales de las consolas (puentes) que controlen esta unidad.</p>
+
+<p>Este diálogo se le mostrará automáticamente al instructor, cada vez que el sistema detecte que la unidad se aproxima a un puerto que esté mejor modelado en un escenario distinto del que se le está presentado en el sistema visual. Cuando esto ocurra ya estará seleccionada en esta ventana la unidad para la que se propone el cambio y el nuevo escenario propuesto. El instructor podrá cambiar al escenario propuesto o cancelar, con lo que permanecerá el mismo. Además, podrá inhabilitar la propuesta de cambio de escenario automática durante un tiempo, usando el selector de “No volver a preguntar hasta pasados N minutos”</p>
+
+<a id="xxx29"></a>
+<p><b><font color=##084B8A face=arial size=3>Control de Comunicaciones</font></b></p>
+
+<p>Al seleccionar la opción del menú Control &rarr; Control Comunicaciones , se presenta la ventana de Control de Comunicaciones.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Control Comunicaciones.jpg"></p>
+
+<p>Este diálogo muestra en cada momento la lista de canales seleccionados en cada uno de los equipos de comunicaciones de las unidades participantes en el ejercicio.</p>
+
+<p>Actuando sobre esta lista, el instructor podrá seleccionar para escucha simultáneamente varios canales, especificando el interfaz (headset, headset+mic, todos o ninguno) y auricular del interfaz seleccionado por el que desea escucharlo (izquierda, derecha, o izquierda y derecha simultáneamente).</p>
+
+<p>Además, actuando sobre el campo “Hablar como ...” en la parte superior de este diálogo, el instructor podrá emplear las comunicaciones como si fuera la unidad y canal seleccionado. Es decir, transmitirá y recibirá de otras unidades si están en alcance de la unidad seleccionada. Para ello usará el micrófono y pulsador de PTT del que están dotados los puestos de instructor.</p>
+
+<p>Por último, el instructor puede establecer filtros sobre la lista de canales mostrada.</p>
+
+<a id="xxx30"></a>
+<p><b><font color=##084B8A face=arial size=3>Control de Averías y Capacidades</font></b></p>
+
+<p>Al seleccionar la opción del menú Control &rarr; Control Averías y Capacidades, se presenta la ventana de Control de Averías y Capacidades.</p>
+
+<p>Esta ventana es distinta en la consola del instructor y en la del alumno:</p>
+
+<ul>
+	<li>El instructor puede seleccionar (en el campo desplegable situado arriba a la derecha) una unidad de entre las participantes en el ejercicio para asignar averías y repararlas.</li><br>
+
+	<li>El alumno sólo puede ver el estado general del buque que controla con indicación de las averías activadas.</li>
+</ul>
+
+<p>La ventana contiene tres solapas Propulsión y Gobierno, Equipos y Comunicaciones, cada una de estas solapas presenta todos los elementos que pueden ser dañados por el instructor con una casilla anexa que muestra si el elemento está o no dañado y en aquellas cuyo daño se pueda introducir en porcentaje aparece un campo que contiene el porcentaje de daño aplicado.</p>
+
+<p>Para introducir un daño en un elemento se marca la casilla anexa haciendo clic sobre ella con el botón izquierdo del ratón, y para eliminar el daño se quita la marca de la misma manera. En aquellos elementos que se dañan en porcentaje, hay que introducir el porcentaje de daño en el campo correspondiente, este valor debe estar comprendido entre 0 y 100.</p>
+
+<p><b>Averías de Propulsión y Gobierno</b>:</p>
+
+<p align=center><img width=600 src="Imagenes/CD Averias PropGob.jpg"></p>
+
+<p><b>Averías de Equipos</b>:</p>
+
+<p align=center><img width=600 src="Imagenes/CD Averias Equipos.jpg"></p>
+
+<p>En esta solapa se presenta además de las averías de los equipos, las capacidades de la Conning Display.</p>
+
+<p>Estas capacidades son:</p>
+
+<ul>
+	<p>Vista de pájaro: al marcar esta casilla se muestra la vista de pájaro en la Conning Display del puesto de alumno que controla el buque seleccionado.</p>
+
+	<p>Control de amarras y anclas: al marcar esta casilla se activa el panel de anclas y amarras en la Conning Display del puesto de alumno que controla el buque seleccionado, de manera que el operador pueda controlar este panel. Si la casilla no está marcada el panel permanece inactivo y no se pueden controlar desde él las amarras, anclas y remolcadores, aunque si se pueden ver los datos.</p>
+</ul>
+
+<p><b>Averías de Comunicaciones</b>:</p>
+
+<p align=center><img width=600 src="Imagenes/CD Averias Comunicaciones.jpg"></p>
+
+<a id="xxx31"></a>
+<p><b><font color=##084B8A face=arial size=3>Control de Emergencias</font></b></p>
+
+<p>Al seleccionar la opción del menú Control &rarr; Control Emergencias, se presenta la ventana de Control de Emergencias.</p>
+
+<p>Mediante este diálogo el instructor puede activar las emergencias de boya SART, hombre al agua e incendio.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Control Emergencias.jpg"></p>
+
+<p>En la parte superior de este diálogo, el instructor puede seleccionar una posición y lanzar una boya SART u hombre al agua mediante los botones Lanzar hombre y Lanzar SART. Ambas acciones crean un objeto que se muestra tanto en la presentación cartográfica del instructor como en el sistema visual. Estos objetos derivan con la corriente.</p>
+
+<p>Para seleccionar la posición de lanzamiento, el operador puede introducir la Latitud y la Longitud de forma manual o de forma automática situando el Hook en la posición elegida y pulsando el botón Hook.</p>
+
+<p>Pulsando la flecha situada a la derecha de los campos SART y Hombre al agua, el instructor puede seleccionar una boya SART u hombre al agua de entre los previamente lanzados y pulsar el botón Recoger SART o Recoger Hombre respectivamente para recogerlos. El objeto recogido desaparece de la cartografía y del visual.</p>
+
+<p>En la parte inferior de la ventana se controlan las alarmas y los puntos de fuego de los buques.</p>
+
+<p>Pulsando la flecha situada a la derecha del campo Buque, el instructor puede seleccionar cualquiera de los buques incluido en el ejercicio. Al seleccionar un buque, los paneles Alarmas e Incendios muestran las alarmas y los puntos de incendio asociados al buque seleccionado.</p>
+
+<p>Las alarmas y los puntos de incendio tienen un led que aparece encendido cuando están activos, y apagado cuando están desactivados. Pulsando sobre el led cambia el estado de activo a inactivo y viceversa.</p>
+
+<p>Cuando una alarma está activa, suena en la consola del buque correspondiente.</p>
+
+<p>Cuando un punto de incendio está activo, en el visual aparece fuego en el punto correspondiente del buque.</p>
+
+<a id="xxx32"></a>
+<p><b><font color=##084B8A face=arial size=3>Control de Artes de Pesca</font></b></p>
+
+<p>Al seleccionar la opción del menú Control &rarr; Control Artes de Pesca, se presenta la ventana de Control de Artes de Pesca.</p>
+
+<p align=center><img width=600 src="Imagenes/CD Control Pesca.jpg"></p>
+
+<p>Mediante esta ventana el instructor puede controlar el estado y los parámetros de las redes de pesca de los buques.</p>
+
+<p>A continuación se describen los distintos campos de la ventana:</p>
+
+<ul>
+	<li>Buque – Buque cuyas artes de pesca se están controlando.</li><br>
+
+	<li>Estado - Estado de la red. Puede tomar los siguientes valores:</li><br>
+
+	<ul>
+		<li>En cubierta</li>
+		<li>Largando</li>
+		<li>Cerrando</li>
+		<li>Izando</li>
+		<li>Recogiendo</li>
+		<li>En arrastre</li>
+		<li>Enredada</li>
+		<li>Enganchada</li>
+		<li>Rota</li>
+		<li>Inestable</li>
+		<li>Agotada</li>
+		<li>A la deriva</li>
+		<li>En colisión</li>
+	</ul><br>
+
+	<li>Razón - Razón por la que la red pasa a un determinado estado. Puede tomar los siguientes valores:</li><br>
+
+	<ul>
+		<li>La unidad se está moviendo hacia atrás</li>
+		<li>Red enredada por marcha atrás</li>
+		<li>Red enredada por ángulo incorrecto</li>
+		<li>Red enredada por velocidad incorrecta</li>
+		<li>Red enredada por longitud de cable incorrecta</li>
+		<li>Red enredada por posición incorrecta de una boya</li>
+		<li>Red enredada por mala mar</li>
+		<li>Red rota por máxima tensión del cable</li>
+		<li>Red rota por máxima tensión del botalón</li>
+		<li>Colisión por buque pareja en babor</li>
+		<li>Colisión por buque pareja demasiado cerca</li>
+		<li>Red rota por buque pareja demasiado lejos</li>
+		<li>Red perdida por no haber definido un buque pareja</li>
+		<li>Red perdida por no tener botalón la unidad</li>
+		<li>Red enredada por cables cruzados</li>
+		<li>Superado ángulo máximo</li>
+	</ul><br>
+
+	<li>Capturas - Número total de kilogramos de peces capturados.</li><br>
+
+	<li>Botón Recuperar Red - Este botón permite al instructor subir la red a cubierta en cualquier momento.</li>
+
+</ul>
+
+<p>Al desplegar el campo Buque aparece la lista de todos los buques presentes en el ejercicio. Al seleccionar un buque de la lista, el contenido de la ventana se actualiza, presentando el estado y los parámetros de la red correspondientes al buque seleccionado.</p>
+
+<p>Dependiendo del arte de pesca asignado al buque, la ventana muestra distintos parámetros.</p>
+
+<p><b>Parámetros de la Ventana de control de Arrastre</b></p>
+
+<p align=center><img width=400 src="Imagenes/CD Control Arrastre.jpg"></p>
+
+<ul>
+	<li>Buque pareja – En el arrastre con pareja, en este campo se selecciona el buque pareja. Es necesario seleccionar este buque para poder largar la red. En el arrastre simple y tangones, este campo no se rellena.</li>
+	<li>Profundidad cable de babor – Profundidad de la unión del cable de babor a la red.</li>
+	<li>Profundidad cable de estribor – Profundidad de la unión del cable de estribor a la red.</li>
+	<li>Abertura vertical – Separación máxima de la boca de la red en el eje vertical.</li>
+	<li>Abertura horizontal – Separación máxima de la boca de la red en el eje horizontal.</li>
+	<li>Separación – Distancia entre las puertas.</li>
+	<li>Ángulo ataque puertas – Ángulo de ataque de las puestas definido en preparación. Si no hay puertas este campo aparece vacío.</li>
+	<li>Tiempo restante (segundos) – Contador del tiempo de largado de la red.</li>
+</ul>
+
+<p><b>Parámetros de la Ventana de control de Cerco y Palangre</b></p>
+
+<p align=center><img width=400 src="Imagenes/CD Control Cerco.jpg"></p>
+
+<ul>
+	<li>Longitud de largada (metros) - Longitud de red largada (parte superior de la red). Este campo sólo se actualiza para buques con artes de cerco y palangre.</li>
+	<li>Longitud de jareta (metros) - Longitud de la parte inferior de la red. En el arte de palangre presenta siempre el mismo valor que el campo anterior.</li>
+	<li>Profundidad primera boya (metros) - Profundidad a la que se encuentra la primera boya largada.</li>
+	<li>Profundidad boya intermedia (metros) - Profundidad a la que se encuentra la primera boya intermedia entre la totalidad de las largadas.</li>
+	<li>Profundidad última boya (metros) - Profundidad a la que se encuentra la última boya largada.</li>
+	<li>Tiempo de izado (segundos) - Tiempo que queda para que la red suba a cubierta.</li>
+</ul>
+
+<a id="xxx33"></a>
+<p><b><font color=##084B8A face=arial size=3>Control de Vista Submarina</font></b></p>
+
+<p>Al seleccionar la opción del menú Control &rarr; Control Vista Submarina, se presenta la ventana de Control de Vista Submarina.</p>
+
+<p align=center><img width=700 src="Imagenes/CD Control Submarina.jpg"></p>
+
+<p>Mediante este diálogo el operador controla la imagen que se proyecta en la vista submarina.</p>
+
+<p>A continuación se describen los distintos campos de la ventana:</p>
+
+<ol>
+	<li>Área de selección de la consola - Arriba a la derecha un campo desplegable permite seleccionar cualquiera de las consolas (puentes) que participan en el ejercicio para controlar su vista submarina. En la consola del alumno este campo está desactivado, sólo puede controlar la vista submarina de su consola.</li><br>
+	
+	<li>Área de control de la cámara externa - Esta área consta de 5 leds situados en distintas posiciones alrededor y encima de la silueta de un barco. Al posicionar el cursor sobre cada uno de estos leds y hacer clic con el botón izquierdo del ratón, el led se ilumina y se apaga cualquier otro led de la ventana que estuviera encendido, tanto en esta zona como en otra.</li>
+	
+	<p>Seleccionar un led en esta área implica modificar la posición de la cámara que proporciona la imagen proyectada en la vista submarina, trasladándola fuera del buque al punto que se muestra en la ventana respecto a la silueta del buque, de manera que si seleccionamos el led situado delante de la proa, en la vista submarina aparece la imagen del buque visto desde el exterior hacia la proa. Si seleccionamos el led que figura en el centro de la silueta, en la vista submarina aparece una vista de pájaro centrada en el buque.</p>
+
+	<li>Área de control del modo de la cámara - En esta área al pulsar el led Buque se centra la vista en el buque y al pulsar el led Red se centra la vista en la red, manteniéndose en ambos casos la orientación de la cámara.</li><br>
+	
+	<li>Área de control de planos – En esta área se pueden seleccionar dos planos para que se muestren en la vista submarina.</li>
+
+	<p>Marcando el led Superficie del agua se muestra el plano de la superficie del agua.</p>
+
+	<p>Marcando el led Plano de profundidad se muestra un plano de corte situado a la profundidad que se introduzca en la casilla anexa.</p>
+
+	<li>Área de control de ejes – En esta área se controla la presentación de los ejes.</li>
+
+	<p>Marcando el led Ejes se muestran los ejes en la vista submarina.</p>
+
+	<p>Marcando el led 10 las divisiones de los ejes aparecen de 10 en 10 metros.</p>
+
+	<p>Marcando el led 100 las divisiones de los ejes aparecen de 100 en 100 metros.</p>
+
+	<li>Área de cambio manual del punto de vista –girar vertical y horizontalmente la cámara, así como desplazarla a lo largo de los ejes x, y ,z. El funcionamiento de las flechas y los botones (+) y (-) es distinto según esté o no encendido el led Fix View. El led Fix View se enciende y se apaga de la misma forma que el resto de los leds de la ventana.</li>
+	
+	<p>Funcionamiento con el led FixView encendido.</p>
+
+	<ul>
+		<li>Flecha arriba - La cámara gira hacia arriba (aumenta el pitch).</li>
+		<li>Flecha abajo - La cámara gira hacia abajo (disminuye el pitch).</li>
+		<li>Flecha derecha - La cámara gira hacia la derecha (aumenta el yaw).</li>
+		<li>Flecha izquierda - La cámara gira hacia la izquierda (disminuye el yaw).</li>
+		<li>Botón (+) - La cámara se acerca a la imagen y la imagen se amplía (efecto zoom+).</li>
+		<li>Botón (-) - La cámara se aleja de la imagen y la imagen se reduce (efecto zoom-).</li>
+	</ul>
+
+	<p>Funcionamiento con el led FixView apagado.</p>
+
+	<ul>
+		<li>Flecha arriba - La cámara se desplaza hacia arriba manteniendo su orientación.</li>
+		<li>Flecha abajo - La cámara se desplaza hacia abajo manteniendo su orientación.</li>
+		<li>Flecha derecha - La cámara se desplaza a la derecha manteniendo orientación.</li>
+		<li>Flecha izquierda - La cámara se desplaza a la izquierda manteniendo orientación.</li>
+		<li>Botón (+) - La cámara se desplaza hacia delante manteniendo su orientación.</li>
+		<li>Botón (-) - La cámara se desplaza hacia atrás manteniendo su orientación.</li>
+	</ul>
+
+	<p>Cada vez que se pulsa una flecha, la cámara gira 5 grados (o el ángulo de giro que se haya configurado) en el sentido de la flecha.</p>
+
+	<p>Pulsando la tecla Ctrl (del teclado) simultáneamente con las flechas, los giros de la cámara se realizan de grado en grado.</p>
+
+	<li>Área de posición del punto de vista - Esta área muestra en cada momento los valores que definen la posición y orientación en cada uno de los ejes de la cámara, y pueden ser modificados por el operador introduciendo en los campos inferiores los valores deseados y pulsado Aplicar. Estos valores son:</li><br>
+
+	<ul>
+		<li>Pitch - Ángulo que forma la orientación de la cámara con el plano horizontal.</li>
+		<li>Yaw - Orientación de la cámara respecto al norte.</li>
+		<li>X - Desplazamiento de la cámara, en eje X, respecto al origen.</li>
+		<li>Y - Desplazamiento de la cámara, en eje Y, respecto al origen.</li>
+		<li>Z - Desplazamiento de la cámara, en eje Z, respecto al origen.</li>
+	</ul>
+
+</ol>
+
+<a id="xxx34"></a>
+<p><b><font color=##084B8A face=arial size=4>Ayuda</font></b></p>
+
+<p>A través de este menú se puede acceder a las opciones de Índice del contenido de la ayuda del sistema y al diálogo de Acerca de..., en el que se muestra información de copyright y versión de la aplicación.</p>
+
+</div>
+
+</body>
+
+</html>

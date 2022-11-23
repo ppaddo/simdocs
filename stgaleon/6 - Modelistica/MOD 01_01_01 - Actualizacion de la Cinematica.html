@@ -1,0 +1,128 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Actualización de la Cinemática</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>La actualización de la cinemática se realiza periódicamente, de forma que se simula el gobierno de la unidad teniendo en cuenta sus parámetros cinemáticos y las condiciones meteorológicas (corriente o viento) de la zona en la que se encuentra, y las maniobras y cambios cinemáticos solicitados por el operador.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+ 
+<p>Se realiza comprobación de las siguientes situaciones especiales:</p>
+
+<ul>
+	<li>Si una unidad de superficie agota el combustible, se detiene.</li>
+	<li>Si una unidad submarina agota la batería, se detiene a la misma profundidad a la que avanzaba.</li>
+	<li>Si una unidad avión agota el combustible, pierde velocidad y si la velocidad de un avión es inferior a la de sustentación, la unidad cae.</li>
+	<li>Si una unidad helicóptero agota el combustible, la unidad cae.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>Cálculo de la velocidad real de la unidad, componiendo la velocidad y rumbo reales, con los de la meteorología de la zona específica en la que se encuentra la unidad:</p>
+
+<p>Componentes del vector velocidad de la unidad:</p>
+
+<ul><font size=2 face=courier>
+	<p>velocidad_unidad_x = velocidad_unidad * sin( rumbo_unidad )</p> 
+	<p>velocidad_unidad_y = velocidad_unidad * cos( rumbo_unidad )</p>
+</font></ul>
+ 
+<p>Componentes del vector velocidad del viento o corriente:</p>
+ 
+<ul><font size=2 face=courier>
+	<p>velocidad_meteorologia_x = velocidad_meteorologia * sin(rumbo_meteorologia)</p>
+	<p>velocidad_meteorologia_y = velocidad_meteorologia * cos(rumbo_meteorologia)</p>
+</font></ul>
+
+<p>Calcular las componentes del vector resultante:</p>
+
+<ul><font size=2 face=courier>
+	<p>velocidad_resultante_x = velocidad_unidad_x + velocidad_meteorologia_x</p>
+	<p>velocidad_resultante_y = velocidad_unidad_y + velocidad_meteorologia_y</p>
+</font></ul>
+
+<p>Calcular la velocidad resultante y el rumbo resultante respecto al norte:</p>
+
+<ul><font size=2 face=courier>
+	<p>velocidad_resultante = sqrt(pot(velocidad_resultante_x,2) + pot(velocidad_resultante_y,2))</p>
+	<p>demora = atan(velocidad_resultante_y,velocidad_resultante_x)</p>
+</font></ul>
+
+<p>Calcular la distancia recorrida en el intervalo indicado:</p>
+
+<ul><font size=2 face=courier>
+	<p>distancia = velocidad_resultante * incremento_tiempo</p>
+</font></ul>
+
+<p>Calcular diferencia de latitud y apartamento:</p>
+
+<ul><font size=2 face=courier>
+	<p>apartamento = distancia * sin(demora)</p>
+	<p>dlat = distancia * cos(demora)</p>
+</font></ul>
+
+<p>Calcular la latitud media y la diferencia de longitud:</p>
+
+<ul><font size=2 face=courier>
+	<p>apartamento = (apartamento * PI) / (180 * 60)</p>
+	<p>dlat = (dlat * PI) / (180 * 60)</p>
+	<p>lat_media = posicion_unidad_y + (dlat / 2.0)</p>
+	<p>dlon = apartamento / cos(lat_media)</p>
+</font></ul>
+
+<p>Calcular la posición (longitud y latitud) a la distancia y demora de la posición dada:</p>
+
+<ul><font size=2 face=courier>
+	<p>nueva_posicion_lat = posicion_lat + dlat;</p>
+	<p>nueva_posicion_lon = posicion_lon + dlon;</p>
+</font></ul>
+
+<p>Esta será la nueva posición de la unidad.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Actualización de los parámetros cinemáticos que lo requieran, bien por solicitud de cambio del operador o bien periódicamente (consumos y recarga). Los algoritmos para calcular estas actualizaciones se describen en los correspondientes apartados.</p>
+
+<ul>
+	<li>Cambio de velocidad</li>
+	<li>Cambio de rumbo</li>
+	<li>Cambio de altura</li>
+	<li>Cambio de profundidad</li>
+	<li>Consumo de combustible</li>
+	<li>Consumo de batería</li>
+	<li>Recarga de batería</li>
+</ul>
+
+<p>Actualización de la posición de la unidad según el cálculo descrito. La actualización de la posición se realiza periódicamente, de forma que se simula el movimiento de la unidad teniendo en cuenta su rumbo y velocidad y las condiciones meteorológicas (corriente o viento) de la zona en la que se encuentra.</p>
+
+<p>Procesar la evaluación de las maniobras que estén activadas. Los algoritmos asociados a la funcionalidad de las maniobras se describen en los apartados correspondientes.</p>
+
+<ul>
+	<li>Interceptación</li>
+	<li>Formación</li>
+	<li>Salir-Retornar a Base</li>
+	<li>Reabastecimiento</li>
+	<li>Abrir-Cerrar Rampas</li>
+	<li>Fondear-Levar Anclas</li>
+	<li>Aterrizar</li>
+	<li>Vuelo Estacionario</li>
+	<li>Configuración de Armas Aéreas</li>
+	<li>Operaciones Especiales</li>
+	<li>Neutralizar Minas</li>
+</ul>
+ 
+</div>
+
+</body>
+
+</html>

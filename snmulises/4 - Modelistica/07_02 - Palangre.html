@@ -1,0 +1,109 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Palangre</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>En este modelo se distinguen las siguientes variantes.</p>
+
+<table>
+	<tr>
+		<td><font size=2 face=arial>Palangre de superficie</td>
+		<td><p align=center><img width=200 src="../Imagenes/Palangre Superficie.jpg"></p></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Palangre de mediaagua</td>
+		<td><p align=center><img width=200 src="../Imagenes/Palangre Media Agua.jpg"></p></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Palangre de de fondo o piedrabola</td>
+		<td><p align=center><img width=200 src="../Imagenes/Palangre Pedra Bola.jpg"></p></td>
+	</tr>
+
+</table>
+
+<p>El tipo de palangre se selecciona en la preparación del arte y se puede cambiar durante la ejecución.
+Se consideran cinco posibles estados para la red:</p>
+
+<ul>
+	<li>En cubierta</li>	
+	<li>Largando</li>	
+	<li>A la deriva</li>	
+	<li>Recogiendo</li>	
+	<li>Enredada</li>	
+</ul>
+
+<p>En función del estado en que se encuentre la red, el operador puede realizar unas acciones u otras. El paso de un estado a otro de la red se describe a continuación</p>
+
+<p>El estado inicial de la red es En cubierta. Este estado indica que la red permanece en la cubierta del barco y por tanto no aparece el dibujo de la red en la Ventana de Vista Submarina.</p>
+
+<p>Estando la red en cubierta, el operador puede calar la boya del extremo de la red mediante la activación de las maquinillas (Ver Manual Conning Display). Activadas las maquinillas el largado se da por iniciado y la red pasa a estado Largando. En este estado ya se visualiza el dibujo de la red en la Ventana de Vista Submarina.</p>
+
+<p>Para largar el resto de las boyas, es necesario que el buque tenga velocidad, ya que estas se van largando a una distancia fija de la boya anterior. Esta distancia se establece en preparación. Si durante el largado la velocidad del buque se reduce a cero, las boyas dejan de largarse.</p>
+
+<p>Si el buque se mueve hacia atrás o pasa por encima de la red, la red pasa a estado Enredada.</p>
+
+<p>Cuando se han largado todas las boyas, la red pasa al estado A la deriva.</p>
+
+<p>Para pasar a estado Recogiendo, es necesario que se cumplan las siguientes condiciones:</p>
+
+<ol>
+ 	<li>Que la distancia entre el buque y la boya inicial sea inferior a la distancia máxima.</li>
+ 	<li>Que la velocidad del buque sea inferior a la velocidad máxima.</li>
+ 	<li>Que el ángulo de aproximación sea correcto.</li>
+ </ol> 
+
+<p>El porcentaje de longitud de red, la velocidad máxima del buque y la distancia máxima del buque a la boya, se establecen en el fichero Ulises.ini.</p>
+
+<p>Si el tipo de tracción de la maquinilla del buque es banda, la recogida se produce cuando el buque se aproxima a la boya inicial por la banda de tracción elegida por el operador (babor o estribor), pero si el tipo de tracción es popa o rampero, el cierre siempre se efectúa por babor.</p>
+
+<p>Una vez que la red está en estado Recogiendo, el operador debe accionar las maquinillas en la dirección de virar para que efectivamente se efectúe la recogida. La velocidad de recogida depende de la posición de palanca de la maquinilla y varía de 0% a 100% de la velocidad máxima establecida en preparación para la maquinilla.</p>
+
+<p>Si durante la recogida, el buque incrementa su velocidad por encima de la máxima permitida o va marcha atrás, la red pasa a estado Enredada.</p>
+
+<p>Cuando se recoge la última boya, la red pasa a estado En cubierta.</p>
+
+<p>El cálculo de las capturas sólo se ejecuta cuando la red está en los estados A la deriva o Recogiendo y siempre que se cumplan las siguientes condiciones:</p>
+
+<ol>
+	<li>El cardumen y el palangre tienen que entrar en contacto. ( Si varios cardúmenes entran en contacto a la vez, sólo se evalúa el primero que llega).</li>
+	<li>La relación entre el diámetro del pez (DP) y el tamaño del anzuelo (TA) tiene que ser</li>
+
+	<p><font size=2 face=arial>8.0 * TA >= DP >= 3.0 * TA </p>
+
+</ol>
+
+<p>Siempre que se cumplan las dos condiciones anteriores, el modelo evalúa el número de peces que pasan por cada sección del palangre teniendo en cuenta la densidad de peces del cardumen y el área de intersección entre la sección del palangre y el cardumen.</p>
+
+<p>Cuando el cardumen y la sección del palangre dejan de estar en contacto (no hay intersección) se efectúa el recuento de peces capturados en la sección, teniendo en cuenta la densidad de peces, el número de anzuelos y el área de influencia de cada anzuelo. El número de capturas no puede ser mayor que el número de anzuelos por sección.</p>
+
+<p>Terminado el recuento de capturas, se actualiza el número de anzuelos libres en la sección y el área del cardumen.</p>
+
+<p>Cuando la red pasa a estado En cubierta se calcula el total de capturas en kilogramos.</p>
+
+<p>Durante toda la maniobra de palangre, el instructor puede interrumpirla, subiendo la red a cubierta (Ver Manual Conning Display). En este caso las capturas se pierden.</p>
+
+<p>Otras consideraciones del modelo de palangre:</p>
+
+<ul>
+	<li>No tiene en cuenta los obstáculos del fondo.</li>
+	<li>La red no afecta al movimiento del buque.</li>
+	<li>No se consideran los efectos del viento.</li>
+	<li>Si tiene en cuenta los efectos de la corriente.</li>
+	<li>La red sólo tiene un cable.</li>
+</ul>
+
+</div>
+
+</body>
+
+</html>

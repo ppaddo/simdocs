@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Aerovías</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvGame/AirwaysZoneSetWnd.jpg"></p>
+
+<p>Mediante esta tabla se especifican todas las Aerovías incluidas en el Ejercicio, clasificadas por bando. Para cada una de ellas, se crearán al inicio del Ejercicio un número aleatorio de aeronaves del tipo especificado según el % de probabilidad asignado, repartidas aleatoriamente a lo largo de la aerovía. Durante el Ejercicio se moverán recorriendo la aerovía con todos sus radares e IFF encendidos, y con todos los modos de Responder del IFF, para los que tenga capacidad, activados.</p>
+
+<p>Durante la ejecución del ejercicio, a cada unidad se le presenta en la Pantalla Táctica las Aerovías correspondientes a su bando y al bando neutral.</p>
+
+<p>Para cada ruta se especifican los siguientes parámetros:</p>
+
+<ul>
+	<p><b>Aeronave</b>: Este parámetro determina el tipo de aeronaves que se crearán en la Aerovía. Se podrá seleccionar de entre todas las unidades aviones ya incluidas en el Ejercicio, cuya plataforma sea de Tipo de Plataforma igual a Transport (ver apartado Plataformas Aviones).</p>
+
+	<p><b>Cantidad</b>: Este parámetro determina la cantidad máxima de aeronaves que se crearán en la Aerovías.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 99</p>
+	</ul>
+
+	<p><b>Probabilidad</b>: Este parámetro determina la probabilidad de que se cree cada aeronave en esta Aerovía, con el fin de que el número de aeronaves en esta aerovía sea variable en distintas ejecuciones del Ejercicio.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Rango IFF code modo3</b>: Este parámetro determina el rango de códigos IFF que se asignan a las aeronaves de forma aleatoria.</p>
+
+	<ul>
+		<p><u>Unidades</u>: 4 dígitos en octal</p>
+		<p><u>Rango</u>: 1111 – 7777</p>
+	</ul>
+
+	<p><b>M. Altura</b>: Este parámetro determina el margen de variación de la altura y se utiliza para calcular la altura de la aeronave en cada tramo de la aerovía. El uso de este parámetro se describe al final de este apartado.</p>
+
+	<ul>
+		<p><u>Unidades</u>: Pies</p>
+		<p><u>Rango</u>: 0.0 – 100000.0</p>
+	</ul>
+
+	<p><b>M. Anchura</b>: Este parámetro determina el margen de anchura de la aerovía y se utiliza para calcular la trayectoria recorrida por cada aeronave. El uso de este parámetro se describe al final de este apartado.</p>
+
+	<ul>
+		<p><u>Unidades</u>: Millas</p>
+		<p><u>Rango</u>: 0.0 – 100.0</p>
+	</ul>
+
+	<p><b>M. Velocidad</b>: Este parámetro determina el margen de variación de la velocidad de la aeronave y se utiliza para calcular la velocidad de la aeronave en cada tramo de la aerovía. El uso de este parámetro se describe al final de este apartado.</p>
+
+	<ul>
+		<p><u>Unidades</u>: Nudos</p>
+		<p><u>Rango</u>: 0.0 – 1000.0</p>
+	</ul>
+
+	<p><b>Único Sentido</b>: Este parámetro determina si la aerovía es de único sentido, en cuyo caso, si la aeronave llega al punto final, inicia de nuevo el recorrido desde el principio. En caso contrario, al llegar al final iniciará el recorrido en sentido contrario.</p>
+
+</ul>
+
+<p><b>Editar</b>: Mediante este botón se abre la ventana de Preparación de Escenarios, sobre la que se mostrará una Herramienta de Dibujo con la que se podrá especificar gráficamente los puntos de la Aerovía (ver la descripción de esta herramienta en el apartado Preparación de Escenario).</p>
+
+<p>Cada punto incluye los siguientes parámetros:</p>
+
+<ul>
+	<li>Posición del punto</li>
+	<li>Velocidad</li>
+	<li>Nivel de Vuelo (Flight Level)</li>
+
+	<p>Se considera como valores de Velocidad y Nivel de Vuelo para cada tramo de la aerovía, los valores correspondientes asignados al punto al que se dirige la unidad. Un tramo, por tanto podrá tener valores de parámetros distintos en función del sentido (ida o vuelta) del movimiento de la unidad, si estos valores son distintos para los puntos inicial y final que definen el tramo.</p>
+
+</ul>
+
+<p>Con los parámetros definidos, la aerovía se define como una línea que une los puntos especificados sobre la carta mediante la Herramienta de Dibujo que se abre con el botón Editar, con un número aleatorio de aeronaves del tipo especificado que se desplazan en las proximidades de esta línea con una velocidad y altura variables dentro de los límites establecidos.</p>
+
+<p>Durante la ejecución del ejercicio, las aeronaves que se crean en la aerovía no se desplazan directamente sobre la línea de ruta sino sobre una línea aleatoria cercana que se calcula de la siguiente forma:</p>
+
+<ol>
+	<li>Se elige de forma aleatoria un punto de la ruta, por ejemplo el punto P2.</li><br>
+
+	<li>Se elige de forma aleatoria un punto T2 dentro del círculo de radio M. Anchura y centro en el punto P2.</li><br>
+
+	<li>Tomando como referencia el desplazamiento del punto T2 respecto a P2 se traza una línea paralela a la línea de la ruta inicial.</li><br>
+
+	<li>La aeronave inicia la ruta en un punto aleatorio de la línea que une los puntos T2 y T3 y se desplaza por la línea T2-T3 hasta el punto T3 y continúa hasta el final de la línea.</li><br>
+
+	<p align=center><img width=600 src="../Images/Aerovia.jpg"></p>
+
+	<p align=center><img width=200 src="../Images/AeroviaRadio.jpg"></p>
+
+	<li>Si la aerovía es de sentido único, la dirección de avance de la aeronave es siempre la que marca el orden de los puntos de la ruta, es decir la aeronave se desplaza hacia el último punto y cuando termina (tras el tiempo de despegue) vuelve al punto T1 e inicia de nuevo el recorrido.</li><br>
+
+	<li>Si la aerovía es de doble sentido, la dirección de avance de la aeronave puede ser la que marca el orden de los puntos de la ruta o la contraria, esta dirección se elige también de forma aleatoria. Cuando la aeronave llega al final de la ruta (tras el tiempo de despegue) inicia el recorrido en sentido contrario.</li>
+
+</ol>
+
+<p><b>Velocidad de la aeronave</b></p>
+
+<p>En cada punto de la ruta se calcula una nueva velocidad, eligiéndola de forma aleatoria dentro del margen que se detalla a continuación:</p>
+
+<ul>
+	<p><font face=courier>Velocidad máxima = Velocidad en el tramo + M. Velocidad</font></p>
+	<p><font face=courier>Velocidad mínima = Velocidad en el tramo – M. Velocidad</font></p>
+</ul>
+
+<p><b>Altura de la aeronave</b></p>
+
+<p>En cada punto de la ruta se calcula una nueva altura, eligiéndola de forma aleatoria dentro del margen que se detalla a continuación:</p>
+
+<ul>
+	<p><font face=courier>Altura máxima = Nivel de Vuelo en el tramo + M. Altura</font></p>
+	<p><font face=courier>Altura mínima = Nivel de Vuelo en el tramo – M. Altura</font></p>
+</ul>
+
+<p><i>Nota</i>: Las aeronaves vuelan a alturas pares (múltiplos de 1000) cuando se desplazan en la dirección que marca el orden de los puntos de la aerovía y a alturas impares (múltiplo de 500) cuando se desplazan en sentido contrario. Por tanto en el cálculo de la altura se asignará el valor válido (múltiplo de 1000 o de 500) más próximo al valor aleatorio obtenido.</p>
+
+</div>
+
+</body>
+
+</html>

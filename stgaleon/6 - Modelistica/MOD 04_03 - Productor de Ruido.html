@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Productor de Ruido</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El Productor de Ruido es una contramedida que se emplea como un elemento remolcado por la unidad que produce un nivel de ruido en banda ancha, que puede afectar a los sónares.</p>
+
+<p>El Productor de Ruido puede ser extendido y recogido por el operador.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Se realizan siempre las siguientes comprobaciones de condiciones necesarias para extender o recoger el productor de ruido:</p>
+
+<ul>
+	<li>Comprobar que la Unidad no esta en base.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Cuando el Productor de Ruido es extendido o recogido por el operador, el modelo simula el tiempo necesario para efectuar ambas acciones. Mientras está extendido, se simula como un elemento que es remolcado por la unidad y emite un ruido en banda ancha. Tanto los tiempos necesarios como el ruido emitido es introducido en Preparación.</p>
+
+<p>Si el operador activa algún filtro, el modelo simula que el Productor de Ruido no emite en frecuencias dentro del intervalo asignado a dicho filtro. Estos filtros son empleados para que el Productor de Ruido no interfiera con los torpedos lanzados por la unidad propia. Por tanto, para comprobar si emite en una determinada frecuencia, el hay que comprobar si dicha frecuencia ( f ) se encuentra en los rangos:</p>
+
+<ul>
+	<p><font face=courier size=2>f &isin; [FrecMin, FrecMax] y f &isin; [FrecFiltro1Min, FrecFiltro1Max]</font>, si está activado el Filtro1</p>
+	<p><font face=courier size=2>f &isin; [FrecMin, FrecMax] y f &isin; [FrecFiltro2Min, FrecFiltro2Max]</font>, si está activado el Filtro2</p>
+	<p><font face=courier size=2>f &isin; [FrecMin, FrecMax] y f &isin; [FrecFiltro3Min, FrecFiltro3Max]</font>, si está activado el Filtro3</p>
+
+	<p>donde <font face=courier size=2>FrecMin</font> y <font face=courier size=2>FrecMax</font> son las frecuencias mínimas y máximas a las que se considera que emite el Productor de Ruido (configurable en <b>Galeon.ini</b>).</p>
+</ul>
+
+<p>La profundidad a la que se sitúa el Productor de Ruido cuando está extendido se calcula en función de la longitud del cable y según la tabla de cota según largada asignadas en Preparación.</p>
+
+<p>Si el productor de ruido tiene capacidad de Cycle Timer, y el operador ha habilitado la misma, el equipo se encenderá y apagará automáticamente con el tiempo especificado en Preparación.</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Menú Principal</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>En la zona superior de la Pantalla de Presentación Cartográfica se encuentra esta barra de menú.</p>
+
+<p align=center><img width=400 src="../Imagenes/Menu principal.jpg"></p>
+
+<p>Mediante esta barra de menú, el operador puede acceder a la siguiente funcionalidad asociada al control del ejercicio y la presentación de ayuda:</p>
+
+<ul>
+	<b>Archivo</b> &rarr;
+
+	<ul>
+		<li>Ejercicio &rarr;</li>
+
+		<ul>
+			<li>Preparación &rarr;</li>
+
+			<ul>
+				<li>Nuevo</li>
+				<li>Cargar</li>
+				<li>Importar</li>
+				<li>Salvar</li>
+				<li>Salvar como</li>
+			</ul>
+
+			<li>Ejecución &rarr;</li>
+
+			<ul>
+				<li>Cargar</li>
+				<li>Salvar</li>
+				<li>Salvar como</li>
+			</ul>
+
+			<li>Análisis &rarr;</li>
+
+			<ul>
+				<li>Cargar</li>
+				<li>Salvar</li>
+				<li>Salvar como</li>
+			</ul>
+
+		</ul>
+	
+		<li>Imprimir</li>
+		<li>Salir</li>
+	
+	</ul>
+
+	<b>Ver</b> &rarr;
+
+	<ul>
+		<li>Pantalla Completa</li>
+		<li>Panel Resumen</li>
+	</ul>
+
+	<b>Idioma</b> &rarr;
+
+	<ul>
+		<li>Inglés</li>
+		<li>Español</li>
+	</ul>
+
+</ul>
+
+<p>A continuación se describen las funciones asociadas a cada una de las opciones de este menú.</p>
+
+<p><b>Menú Archivo:</b></p>
+
+<ul>
+	<p><b>Ejercicio</b>: Desde esta opción el instructor puede gestionar la carga o almacenamiento de datos de preparación, ejercicios para ejecución y archivos para análisis de ejercicios.</p>
+
+	<ul>
+		<li><b>Preparación</b>: Mediante esta opción el operador puede gestionar los archivos con los datos de preparación de ejercicios y modelos básicos. El fichero de datos de preparación en uso, se muestra en el campo Base de datos.</li>
+
+		<p align=center><img width=200 src="../Imagenes/Base de Datos Cargada.jpg"></p>
+
+		<p>Para manejar estos ficheros se dispone de las siguientes opciones:</p>
+
+		<ul>
+			<p><b>Nuevo</b>: Al seleccionar esta opción se eliminan todos los datos cargados, el campo Base de datos se presenta en blanco y se crea una base de datos vacía. El simulador permite crear un fichero que contenga un conjunto de datos mínimos que puedan ser usados al crear cualquier base de datos nueva. Si este fichero existe, cuando se pulsa la opción Nuevo se carga directamente proporcionando una serie de datos básicos sobre los que construir el resto de los elementos de preparación. El nombre de este fichero se establece en el fichero de configuración (Ulises.ini).</p>
+
+			<p><b>Cargar</b>: Al seleccionar esta opción se presenta una ventana con la lista de archivos de base de datos existentes. El operador debe seleccionar en dicha ventana el archivo que contiene los datos de preparación que desea cargar para su consulta o edición y pulsar el botón Cargar. Los archivos deben haber sido creados previamente mediante la opción Salvar como.</p>
+
+			<p>El simulador incluye un archivo de base de datos que se carga automáticamente al iniciar la aplicación.</p>
+
+			<p align=center><img width=300 src="../Imagenes/Seleccion de BD.jpg"></p>
+
+			<p>También es posible mediante esta ventana eliminar un archivo de base de datos seleccionándolo y pulsando el botón Eliminar.</p>
+
+			<p>Se presentará un aviso de error si se intenta utilizar la opción Cargar con un ejercicio en ejecución.</p>
+
+			<p><b>Importar</b>: Mediante esta opción el operador puede incluir en el fichero de base de datos actual, datos procedentes de otras bases de datos. Al seleccionar esta opción, se muestra una ventana para seleccionar el fichero de la base de datos desde la que se quieren importar datos</p>
+
+			<p>Una vez seleccionado el fichero se muestra la siguiente ventana.</p>
+
+			<p align=center><img width=300 src="../Imagenes/Ventana Importacion.jpg"></p>
+
+			<p>Pulsando el botón Ejercicios (en la barra de botones situada encima de la lista) se muestra la lista de ejercicios que existen en la base de datos seleccionada. Para agregar un ejercicio a la base de datos actual, hay que seleccionarlo en la lista y pulsar el botón Importar.</p>
+
+			<p>El operador puede introducir caracteres en el campo Filtro, para que en la lista sólo se muestren los ejercicios que contengan estos caracteres. Pulsando el botón Limpiar se vuelven a mostrar todos los ejercicios.</p>
+
+			<p>Si el ejercicio seleccionado contiene elementos cuyo nombre coincide con algún elemento de la base de datos actual, se muestra la siguiente ventana.</p>
+
+			<p align=center><img width=400 src="../Imagenes/Ventana Duplicados.jpg"></p>
+
+			<p>Esta ventana muestra el nombre del objeto duplicado y una tabla en la que aparecen los valores de todos los atributos del objeto de la base de datos actual y de la de la base de datos importada.</p>
+
+			<p>Para resolver la duplicidad de objetos el operador tiene dos posibilidades:</p>
+
+			<ul>
+				<li>Importar el objeto con un nuevo nombre – Si el operador elige esta opción, debe introducir un nombre y pulsar el botón Importar Nuevo. El objeto se añadirá a la base de datos actual con el nuevo nombre.</li>
+				<li>No importar el objeto – Si el operador elige esta opción, debe pulsar el botón Mantener Viejo. El objeto no se añade a la base de datos actual.</li>
+			</ul>
+
+			<p>La ventana se sigue mostrando hasta que se resuelvan todos los objetos duplicados. Una vez resueltos, el ejercicio se añade a la base de datos actual.</p>
+
+			<p>De la misma manera se pueden importar escenarios, unidades y artes de pesca, seleccionando respectivamente los botones Escenarios, Unidades y Pesca situados en la parte superior de la ventana.</p>
+
+			<p><b>Salvar</b>: Mediante esta opción el operador guarda, en el archivo actualmente cargado, los cambios realizados en los datos de preparación (modelos básicos y ejercicios). El sistema pide confirmación antes de salvar los datos.</p>
+
+			<p><b>Salvar como</b>: Mediante esta opción el operador puede crear un nuevo archivo con los valores actuales de los datos de preparación. Al seleccionar esta opción el simulador presenta una ventana con la lista de ficheros de preparación existentes. El operador debe introducir el nombre del nuevo archivo y pulsar el botón Salvar.</p>
+
+			<p align=center><img width=300 src="../Imagenes/Salvar como.jpg"></p>
+
+		</ul>
+
+		<li><b>Ejecución</b>: Mediante esta opción el operador puede gestionar los archivos con los ejercicios salvados. Para manejar estos archivos dispone de las siguientes opciones:</li>
+
+		<ul>
+			<p><b>Cargar</b>: Esta opción permite reanudar la ejecución de un ejercicio previamente salvado. Al seleccionar esta opción se presenta una ventana con la lista de ejercicios previamente salvados El operador debe seleccionar en dicha ventana el ejercicio que desea reanudar y pulsar el botón Cargar. El ejercicio elegido queda seleccionado como ejercicio en ejecución y está listo para que el instructor dé la orden de comienzo.</p>
+
+			<p align=center><img width=300 src="../Imagenes/Seleccion de Ejercicios.jpg"></p>
+
+			<p>También es posible mediante esta ventana eliminar un ejercicio previamente salvado seleccionándolo y pulsando el botón Eliminar.</p>
+
+			<p>Se presentará un aviso de error si se intenta utilizar la opción Cargar con un ejercicio en ejecución.</p>
+
+			<p><b>Salvar</b>: Mediante esta opción el operador salva el ejercicio en ejecución, almacenando en un archivo el estado actual de las unidades que participan en el ejercicio. Equivale a tomar una fotografía de la situación actual del ejercicio. Esta acción permite reanudar el juego en un futuro a partir del instante en el que se salvo simplemente cargando el fichero salvado.</p>
+
+			<p>El sistema pide confirmación antes de proceder a salvar el ejercicio. El archivo creado tiene el mismo nombre que el ejercicio en ejecución.</p>
+
+			<p><b>Salvar como</b>: Mediante esta opción el operador crea un nuevo archivo de ejercicio a partir del que está actualmente en ejecución, almacenando el estado actual de las unidades que participan en el ejercicio. Al seleccionar esta opción se presenta una ventana como la mostrada anteriormente con la lista de ejercicios salvados. El operador debe introducir el nombre del nuevo archivo y pulsar el botón Salvar.</p>
+
+		</ul>
+
+		<li><b>Análisis</b>: Mediante esta opción el operador puede gestionar los archivos con los ejercicios grabados para su análisis. Para manejar estos archivos dispone de las siguientes opciones:</li>
+
+		<ul>
+			<p><b>Cargar</b>: Al seleccionar esta opción se presenta una ventana (análoga a las mostradas anteriormente) con la lista de ejercicios previamente grabados para su análisis. El operador debe seleccionar en dicha ventana el ejercicio que desea cargar y pulsar el botón Cargar. El ejercicio elegido queda seleccionado para su análisis. Esta opción sólo está disponible cuando no hay ningún ejercicio en ejecución.</p>
+			
+			<p><b>Salvar</b>: Mediante esta opción el operador graba el ejercicio en ejecución permitiendo su posterior análisis.</p>
+			
+			<p>El sistema pide confirmación antes de proceder a grabar el ejercicio. El archivo de análisis creado tiene el mismo nombre que el ejercicio en ejecución.</p>
+			
+			<p><b>Salvar como</b>: Mediante esta opción el operador crea un nuevo archivo de análisis a partir del ejercicio en ejecución. Al seleccionar esta opción se presenta una ventana como la mostrada anteriormente con la lista de archivos de análisis existentes. El operador debe introducir el nombre del nuevo archivo y pulsar el botón Salvar.</p>
+			
+			<p>Las opciones Salvar y Salvar como guardan los ficheros que contienen todos los datos necesarios para poder reproducir el ejercicio con todas las acciones que se realizaron durante la ejecución del mismo. Para salvar un fichero de análisis es necesario que haya un ejercicio en ejecución con la función de grabación activada. La función de grabación de ejercicios se describe en el apartado Ejecución de Ejercicios.</p>
+
+		</ul>
+
+	</ul>
+
+	<p><b>Imprimir</b>: Mediante esta opción el operador puede imprimir el contenido de la presentación cartográfica.</p>
+
+	<p><b>Salir</b>: Mediante esta opción el operador termina la ejecución de la sesión actual del simulador.</p>
+
+</ul>
+
+<p><b>Menú Ver:</b></p>
+
+<ul>
+	<p><b>Pantalla Completa</b>: Esta opción permite seleccionar la presentación a pantalla completa de la Presentación Cartográfica ocultando el Área de Preparación, Ejecución y Análisis de Ejercicios en la consola de instructor.</p>
+
+	<p><b>Panel Resumen</b>: Al seleccionar esta opción se presenta tanto el Área de Preparación, Ejecución y Análisis de Ejercicios como la Presentación Cartográfica en la consola de instructor.</p>
+
+</ul>
+
+<p><b>Menú Idioma:</b></p>
+
+<ul>
+	<p><b>Inglés</b>: Cuando se selecciona esta opción, las etiquetas de los menús, campos y botones aparecen escritas en inglés.</p>
+
+	<p><b>Español</b>: Cuando se selecciona esta opción, las etiquetas de los menús, campos y botones aparecen escritas en español.</p>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>

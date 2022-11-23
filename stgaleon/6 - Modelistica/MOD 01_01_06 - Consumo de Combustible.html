@@ -1,0 +1,96 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Consumo de Combustible</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El consumo de combustible de las unidades se calcula periódicamente teniendo en cuenta la velocidad de la unidad en cada momento.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo, se realizan las siguientes comprobaciones de condiciones necesarias para evaluar el consumo de combustible:</p>
+
+<ul>
+	<li>Comprobar que está fuera de Base.</li>
+	<li>Comprobar que la unidad no tenga dañada su cinemática.</li>
+	<li>Comprobar que la cantidad de Combustible es mayor que cero.</li>
+	<li>Comprobar que el valor de velocidad actual es mayor que cero.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>Cálculo del consumo de combustible de la unidad según la siguiente fórmula:</p>
+
+<p>Para unidades de superficie y submarinas en superficie:</p>
+
+<ul><font size=2 face=courier>
+	<p>COMBUSTIBLE = COMBUSTIBLE_anterior ‑ CONSUMO</p>
+	<p>CONSUMO = TCcons() * INCtmp * (1 + Factor_Mar * Estado_Mar)</p>
+</font></ul>
+
+<p>Para unidades submarinas sumergidas y terrestres motorizadas:</p>
+
+<ul><font size=2 face=courier>
+	<p>COMBUSTIBLE = COMBUSTIBLE_anterior ‑ CONSUMO</p>
+	<p>CONSUMO = TCcons() * INCtmp</p>
+</font></ul>
+
+<p>Para unidades aviones y helicópteros:</p>
+
+<ul><font size=2 face=courier>
+	<p>COMBUSTIBLE = COMBUSTIBLE_anterior ‑ CONSUMO</p>
+	<p>CONSUMO = TCcons() * TCpeso() * INCtmp</p>
+</font></ul>
+
+<p>Donde:</p>
+
+<ul>
+<table>
+	<tr>
+		<td valign=top><font size=2 face=courier>Factor_Mar:</td>
+		<td><font size=2 face=arial>Factor de dependencia del consumo de combustible en función del estado del mar. Por defecto su valor es cero (configurable en Galeon.ini).</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>Estado_Mar:</td>
+		<td><font size=2 face=arial>Estado del Mar de la zona meteorológica en la que se encuentra la unidad (ver Preparación – Condiciones Ambientales).</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>TCcons():</td>
+		<td><font size=2 face=arial>Tabla del combustible consumido en función de la velocidad del mismo proporcional a la velocidad máxima con 8 intervalos (1/8, 2/8, 3/8, 4/8, 5/8, 6/8, 7/8, 8/8) y al tipo de móvil.</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>TCpeso():</td>
+		<td><font size=2 face=arial>Tabla de porcentaje de combustible consumido en función del peso máximo con 4 intervalos (1/4, 2/4, 3/4, 4/4) y al tipo de aeronave.</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>INCtmp:</td>
+		<td><font size=2 face=arial>Incremento de tiempo entre cálculo actual y el anterior</td>
+	</tr>
+
+</table>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Se realizan las comprobaciones y si son válidas, se calcula el combustible consumido según el cálculo anterior.</p>
+
+<p>Comprobar si el nuevo nivel de combustible calculado está por debajo del valor remanente definido y si es así se activa una alarma.</p>
+
+</div>
+
+</body>
+
+</html>

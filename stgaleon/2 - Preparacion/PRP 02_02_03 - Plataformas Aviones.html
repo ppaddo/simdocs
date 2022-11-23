@@ -1,0 +1,225 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Plataformas Aviones</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvPlatforms/AirPlatformWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Fotografías</b>: Pulsando este botón se accede a la ventana de Fotografías desde la que se pueden incluir varias fotografías de una plataforma, asociadas a distintos niveles de reconocimiento. Durante la ejecución del ejercicio, cuando se sitúe el Hook en una detección, dependiendo del nivel de reconocimiento de la misma se mostrará una de estas fotografías.</p>
+
+<p>Para las plataformas aéreas se consideran 4 niveles de reconocimiento por lo que se podrán incluir hasta 4 fotografías.</p>
+
+<p align=center><img width=400 src="../Images/Fotografias.jpg"></p>
+
+<p>En esta ventana pulsando en los botones Nivel 1 (2,3 ó 4) se accede al navegador desde el que se puede buscar y cargar una imagen.</p>
+
+<p>Los botones Nivel 5 y Nivel 6 no están accesibles para las plataformas aéreas.</p>
+
+<p>Pulsando el botón Aceptar se cierra la ventana y se guardan en memoria todas las imágenes cargadas hasta que finalmente se acepten o rechacen los datos de la plataforma en edición.</p>
+
+<p><b>Tipo de Plataforma</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>FIGTHER</li>
+	<li>BOMBER</li>
+	<li>AEW</li>
+	<li>MPA</li>
+	<li>TANKER</li>
+	<li>TRANSPORT</li>
+	<li>CIVILFIX_WING</li>
+	<li>EW</li>
+
+	<p>Este parámetro determina la clasificación de los contactos correspondientes a esta plataforma obtenidos por los sensores de otras unidades.</p>
+
+</ul>
+
+
+<p><b>Clase</b>: Campo alfanumérico de hasta 30 caracteres que describe la clase de la plataforma.</p>
+
+<p><b>Tabla Aceleración-Giro</b>: Ver apartado Aceleración y Giro de Aéreas.</p>
+
+<p><b>Reducción Aceleración por Carga</b>: Ver apartado Reducción de Aceleración de Aéreas según Carga.</p>
+
+<p><b>Envergadura</b>: Este parámetro es tenido en cuenta por los modelos de sensores optrónicos y radar para calcular la distancia a la que esta plataforma es detectada.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0,1 – 100</p>
+</ul>
+
+<p><b>Altura Aeronave</b>: Este parámetro es tenido en cuenta por los modelos de sensores optrónicos y radar para calcular la distancia a la que esta plataforma es detectada.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0,1 – 100</p>
+</ul>
+
+<p><b>Longitud</b>: Este parámetro es tenido en cuenta por los modelos de sensores optrónicos y radar para calcular la distancia a la que esta plataforma es detectada.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0,1 – 100</p>
+</ul>
+
+<p><b>Velocidad de Sustentación</b>: Este parámetro es tenido en cuenta por el modelo de dinámica como límite inferior de velocidad para la plataforma. Por debajo de esta velocidad, se modela que la plataforma pierde altura, pudiendo llegar a colisionar con superficie.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Máxima Velocidad de Giro</b>: Este parámetro es tenido en cuenta por el modelo de dinámica como límite superior de velocidad de giro para la plataforma.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados / segundo</p>
+	<p><u>Rango</u>: 1 – 99,9</p>
+</ul>
+
+<p><b>Máximo Ángulo de Asc/Des</b>: Este parámetro es tenido en cuenta por el modelo de dinámica como límite superior del ángulo de ascenso y descenso para la plataforma.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0.0 – 90.0</p>
+</ul>
+
+<p><b>Velocidad Máxima</b>: Este parámetro es tenido en cuenta por el modelo de dinámica como límite superior de velocidad para la plataforma.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Factor IR ventana media</b>: Factor que modela la variación de Tamaño IR con el "Aspecto" (dado por el ángulo alfa = rumbo del contacto - marcación del contacto) de la unidad.</p>
+
+<ul>
+	<p><u>Unidades</u>: Tanto por uno</p>
+	<p><u>Rango</u>: 0,0 – 1,0</p>
+
+	<p>Ejemplo:</p>
+
+	<p>Si Factor IR = 0 &rArr; Tamaño IR = Tamaño IR · seno (alfa).</p>
+	<p>Si Factor IR = 0,25 &rArr; Tamaño IR = Tamaño IR ( 0,25 + 0,75 · seno (alfa) ).</p>
+	<p>Si Factor IR = 1 &rArr; Tamaño IR no cambia con Aspecto.</p>
+</ul>
+
+<p><b>Factor Stealth</b>: Factor que reduce el RCS de la plataforma. Simula el grado de invisibilidad de la plataforma ante radares debido a las técnicas de construcción empleadas.</p>
+
+<ul>
+	<p><u>Unidades</u>: Tanto por uno</p>
+	<p><u>Rango</u>: 0,0 – 1,0</p>
+</ul>
+
+<p><b>Factor RCS</b>: Factor que modela la variación de RCS con el "Aspecto" (dado por el ángulo alfa = rumbo del contacto - marcación del contacto) de la unidad.</p>
+
+<ul>
+	<p><u>Unidades</u>: Tanto por uno</p>
+	<p><u>Rango</u>: 0,0 – 1,0</p>
+
+	<p>Ejemplo:</p>
+
+	<p>Si Factor RCS = 0 &rArr; RCS = RCS · seno (alfa).</p>
+	<p>Si Factor RCS = 0,25 &rArr; RCS = RCS ( 0,25 + 0,75 · seno (alfa) ).</p>
+	<p>Si Factor RCS = 1 &rArr; RCS no cambia con Aspecto.</p>
+</ul>
+
+<p><b>Capacidad de Despegue Vertical</b>: Determina si la plataforma tiene capacidad de realizar despegues y volar en vertical. Este parámetro sólo podrá ser introducido si se ha seleccionado Velocidad de Sustentación cero.</p>
+
+<p><b>Máximo Régimen de Ascenso / Descenso</b>: Máximo régimen de ascenso / descenso que puede aplicar la unidad en despegue o vuelo en vertical. Este parámetro sólo podrá ser introducido si se ha seleccionado Capacidad de Despegue Vertical.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies / segundos</p>
+	<p><u>Rango</u>: 0,0 – 999,9</p>
+</ul>
+
+<p><b>Máximo Altura Permitida</b>: Este parámetro es tenido en cuenta por el modelo de dinámica como límite superior de altura para la plataforma.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 1 – 99999</p>
+</ul>
+
+<p><b>Tiempo de Despegue</b>: Tiempo que tarda la plataforma en efectuar la maniobra de despegue.</p>
+
+<ul>
+	<p><u>Unidades</u>: segundos</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p><b>Número de Misiones Continuas</b>: Número máximo de misiones consecutivas que puede llevar a cabo la unidad. Cuando se supera este número de misiones, la unidad debe esperar un Tiempo entre Misiones para llevar a cabo otra misión.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 1 – 999</p>
+</ul>
+
+<p><b>Tiempo entre Misiones</b>: Tiempo que debe esperar la unidad cuando supera el número máximo de misiones para efectuar la siguiente. Simula el tiempo dedicado a revisiones de mantenimiento de la plataforma.</p>
+
+<ul>
+	<p><u>Unidades</u>: horas</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p><b>Carga Máxima Soportada</b>: Este parámetro es tenido en cuenta para los consumos y recarga de combustible y para permitir o no cargar una configuración de armas.</p>
+
+<ul>
+	<p><u>Unidades</u>: libras</p>
+	<p><u>Rango</u>: 0 – 999999</p>
+</ul>
+
+<p><b>Máxima Capacidad Combustible</b>: Este parámetro es tenido en cuenta por el modelo de dinámica en la simulación de consumos y recargas de combustibles. El tanto por ciento de combustible inicial de una unidad se calcula sobre este valor.</p>
+
+<ul>
+	<p><u>Unidades</u>: libras</p>
+	<p><u>Rango</u>: 0 – 999999</p>
+</ul>
+
+<p><b>Mínima Capacidad Combustible</b>: Este parámetro se emplea para presentar una alarma a operador cuando el combustible de la plataforma está por debajo de esta cantidad, avisándole de que el combustible está próximo a agotarse.</p>
+
+<ul>
+	<p><u>Unidades</u>: libras</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Consumo Combustible por Carga</b>: Ver apartado Consumo de Combustible de Aéreas según Carga.</p>
+
+<p><b>Consumo Combustible por Altura</b>: Ver apartado Consumo de Combustible de Aéreas según Altura.</p>
+
+<p><b>Capacidad de Aterrizaje en Portaaviones</b>: Determina si la plataforma tiene capacidad de aterrizar en plataformas de superficie que tengan Capacidad de Portar Aviones.</p>
+
+<p><b>Capacidad de Reabastecimiento en Vuelo</b>: Determina si la plataforma tiene capacidad de ser reabastecida en vuelo por otras plataformas aviones que tengan Capacidad de Suministrar Combustible.</p>
+
+<p><b>Capacidad de Portar Terrestres</b>: Determina si la plataforma tiene capacidad de transportar unidades terrestres.</p>
+
+<p><b>Capacidad RRA</b>: Determina si la plataforma tiene capacidad de RRA, lo cual es tenido en cuenta por el modelo de radar para ampliar el alcance al que detecta esta unidad siempre que el equipo sea RRA y la unidad sea del mismo bando.</p>
+
+<p><b>Factor RRA</b>: Factor que amplía el alcance de radares RRA de unidades amigas detectando a esta unidad. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad RRA.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 1,0 – 2,0</p>
+</ul>
+
+<p><b>Capacidad de Suministrar Combustible</b>: Determina si la plataforma tiene capacidad de ser reabastecer en vuelo a otras plataformas aéreas (aviones o helicópteros) que tengan Capacidad de Reabastecimiento en Vuelo.</p>
+
+<p><b>Régimen de Suministro</b>: Régimen con el que esta plataforma suministra combustible en vuelo a otras plataformas aéreas. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Suministrar Combustible.</p>
+
+<ul>
+	<p><u>Unidades</u>: libras / minuto</p>
+	<p><u>Rango</u>: 0 – 999999,9</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Recarga de Batería</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>La maniobra de recarga de batería se lleva a cabo por petición del operador en la que especifica el régimen de recarga (lenta, normal o rápida) solicitado.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo, se realizan las siguientes comprobaciones de condiciones necesarias para evaluar la recarga de batería:</p>
+
+<ul>
+	<li>Comprobar que está fuera de Base.</li>
+	<li>Comprobar que la unidad no tenga dañada su cinemática.</li>
+	<li>Comprobar que la cantidad de Combustible y Batería es mayor que cero.</li>
+	<li>Si el tipo de propulsión del submarino es DIESEL, comprobar que la unidad está en superficie o sumergida con el snorkel izado.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>Cálculo del nuevo valor de batería durante la carga:</p>
+
+<ul><font size=2 face=courier>
+	<p>BATERÍA = BATant + TBrec(1) * INCtmp</p>
+</font></ul>
+
+<p>Donde:</p>
+
+<ul>
+<table>
+	<tr>
+		<td valign=top><font size=2 face=courier>BATant:</td>
+		<td><font size=2 face=arial>Valor de la batería anterior</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>TBrec(1):</td>
+		<td><font size=2 face=arial>Tabla de recarga de batería en función del régimen de carga (lento, normal y rápido).</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>INCtmp:</td>
+		<td><font size=2 face=arial>Incremento de tiempo entre cálculo actual y el anterior</td>
+	</tr>
+
+</table>
+</ul>
+
+<p>Cálculo del consumo de diesel durante la recarga de batería:</p>
+
+<ul><font size=2 face=courier>
+	<p>COMBSTIBLE = COMBant ‑ TBrec(2) * INCtiempo</p>
+</font></ul>
+
+<p>Donde:</p>
+
+<ul>
+<table>
+	<tr>
+		<td valign=top><font size=2 face=courier>COMBant:</td>
+		<td><font size=2 face=arial>Valor del combustible anterior</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>TBrec(2):</td>
+		<td><font size=2 face=arial>Tabla de consumo de combustible en función del régimen de carga (lento, normal y rápido).</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>INCtmp:</td>
+		<td><font size=2 face=arial>Incremento de tiempo entre cálculo actual y el anterior</td>
+	</tr>
+
+</table>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Se realizan las comprobaciones y si es aceptada la petición, se calcula periódicamente el combustible consumido y el nuevo valor de carga de batería de la unidad según el cálculo anterior.</p>
+
+<p>Comprobar si el nuevo nivel de batería calculado está por debajo del valor remanente definido y si es así se activa una alarma. Además se comprueba que el nuevo valor calculado no sea superior al máximo (100 %).</p>
+
+<p>Si estando activada la maniobra de recarga de batería el submarino cambia a una profundidad mayor a la permitida para mantener el snorkel izado ó distinta de cero si posee el snorkel recogido, la maniobra se suspende automáticamente.</p> 
+
+</div>
+
+</body>
+
+</html>

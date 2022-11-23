@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Vuelo Estacionario</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>Las unidades de tipo helicóptero pueden situarse en vuelo estacionario por petición del operador. Esta maniobra también se denomina Hover.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo, se realizan las siguientes comprobaciones de condiciones necesarias para evaluar la maniobra de vuelo estacionario:</p>
+ 
+<ul>
+	<li>Comprobar que la unidad está fuera de Base.</li>
+	<li>Comprobar compatibilidad de la maniobra.</li>
+	<li>Comprobar que la unidad no tenga dañada su cinemática.</li>
+	<li>Comprobar que Combustible es mayor que cero.</li>
+	<li>Comprobar que la intensidad del viento no sea superior a la máxima velocidad de la unidad.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Se realizan las comprobaciones y si es aceptada la petición, la unidad realiza la maniobra según el siguiente algoritmo.</p>
+
+<p>Si el helicóptero no se encuentra en el punto indicado para realizar el vuelo estacionario, realizará una maniobra de salto a vuelo estacionario, consistente en una aproximación a un punto a 1000 yardas (configurable en Galeon.ini) de la posición de Hover en la dirección del viento manteniendo la misma altura y velocidad que llevaba, y una vez alcanzado este punto de aproxima al punto de Hover (avanzando contra el viento), reduciendo la velocidad hasta adquirir la necesaria para compensar el viento y reduciendo la altura hasta alcanzar la cota solicitada para el vuelo estacionario sobre el punto de Hover.</p>
+
+<p>Una vez alcanzado el punto y altura de vuelo estacionario la unidad actualiza el rumbo y la velocidad de la unidad con la intensidad de la velocidad del viento y rumbo contrario a este y permanecerá en este punto hasta que se cancele la maniobra.</p>
+
+<p>Si el instructor modifica la meteorología (dirección y / o intensidad del viento) mientras el helicóptero se encuentra en vuelo estacionario, la unidad alcanzará la nueva velocidad y dirección (opuesta) del viento de manera instantánea. Si está en aproximación al punto de Hover, se calculará un nuevo punto de aproximación teniendo en cuenta la nueva dirección del viento y la unidad se dirigirá a ese nuevo punto (el cambio de intensidad del viento no le afectará).</p>
+
+</div>
+
+</body>
+
+</html>

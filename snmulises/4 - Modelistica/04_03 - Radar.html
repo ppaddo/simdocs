@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Radar</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>El modelo de Radar es el encargado de generar la imagen obtenida por el radar del buque propio, y procesar las acciones del operador. La entrada / salida de datos de este modelo es presentada en la Consola Radar que se describe en el documento “Simulador Radar Arpa. Manual de Usuario”.</p>
+
+<p>El modelo calcula el alcance de detección del radar teniendo en cuenta los siguientes datos:</p>
+
+<ul>
+	<li><b>Temperatura del aire</b></li>
+	<li><b>Velocidad de la luz</b></li>
+	<li><b>Frecuencia</b></li>
+	<li><b>RPM</b></li>
+	<li><b>PRF</b></li>
+	<li><b>Ancho de pulso</b></li>
+	<li><b>Potencia</b></li>
+</ul>
+
+<p>Asimismo para la detección de costa, buques y aves se tiene en cuenta el horizonte radar que simula el efecto que tiene la curvatura de la tierra en la distancia de detección y se calcula considerando la altura de la detección y la altura de la antena del radar.</p>
+
+<p>Se considera también una distancia mínima por debajo de la cual no hay detecciones.</p>
+
+<p>El modelo radar simula las siguientes detecciones y efectos.</p>
+
+<ul>
+	<li><b>Detección de la costa</b></li>
+
+	<p>La distancia máxima de detección de la costa será siempre la menor entre la distancia máxima de detección del radar (alcance) y el horizonte radar. Para determinar la presentación de la detección de la costa, se aplican una serie de factores configurables (Ulises.ini) que inciden sobre el tamaño y el brillo de la detección.</p>
+
+	<li><b>Detección de buques</b></li>
+
+	<p>La distancia máxima de detección de lo buques será siempre la menor entre la distancia máxima de detección del radar (alcance) y el horizonte radar. Para determinar la presentación de la detección de los buques, se aplican los mismos factores que para la costa añadiéndoles dos factores configurables específicos para buques que inciden de la misma manera sobre el tamaño y el brillo de la detección.</p>	
+
+	<li><b>Detección de aves sobre los bancos de cardumen</b></li>
+
+	<p>La distancia máxima de detección de las aves será siempre la menor entre la distancia máxima de detección del radar (alcance) y el horizonte radar.Para determinar la presentación de la detección de aves, se aplican los mismos factores que para la costa añadiéndoles dos factores configurables específicos para las aves que inciden de la misma manera sobre el tamaño y el brillo de la detección.</p>
+
+	<li><b>Detección de faros</b></li>
+
+	<p>La distancia máxima de detección del faro será siempre la menor entre la distancia máxima de detección del radar (alcance) y la distancia de detección, establecida por el instructor, para cada faro.</p>
+
+	<li><b>Detección de racones</b></li>
+
+	<p>Los racones sólo se detectan si el radar esta operando en banda X. La distancia máxima de detección del racon será siempre la menor entre la distancia máxima de detección del radar (alcance) y la distancia de detección, establecida por el instructor, para cada racon.</p>
+
+	<li><b>Detección de boyas</b></li>
+
+	<p>La distancia máxima de detección de las boyas será siempre la menor entre la distancia máxima de detección del radar (alcance) y la distancia de detección de boyas, establecida en el fichero de configuración Ulises.ini (por defecto 3 millas).</p>
+
+	<li><b>Detección de boyas SART</b></li>
+
+	<p>La distancia máxima de detección de las boyas SART será siempre la menor entre la distancia máxima de detección del radar (alcance) y la distancia de detección de boyas sart, establecida en el fichero de configuración Ulises.ini (por defecto 8 millas).</p>
+
+	<li><b>Detección de falsos ecos</b></li>
+
+	<p>Los falsos ecos se consideran producidos por rebote de la onda en el propio buque. Sólo producirán falsos ecos, los buques que tengan o superen un desplazamiento mínimo y estén situados a una distancia máxima del buque propio. El desplazamiento mínimo y la distancia máxima se establecen en el fichero de configuración Ulises.ini, con un valor por defecto de 5000 Tm y 0.8 millas respectivamente. La posibilidad de aparición de este efecto se calcula aplicando criterios de probabilidad.</p>
+
+	<li><b>Detección de zonas de lluvia</b></li>
+
+	<p>Las zonas de lluvia se detecta y simulan el efecto rain clutter, ocultando los móviles que se detecten dentro de ellas. El radar sólo detectará la parte de la zona de lluvia que se encuentre dentro del alcance del radar. El brillo de la detección dependerá de la intensidad de la zona de lluvia así como de la distancia.</p>
+
+	<li><b>Generación del efecto de las olas (sea-clutter)</b></li>
+
+	<p>Según el estado de la mar, se presentarán 3 posibles estados que introducirán ruido en el radar.</p>
+
+	<li><b>Sectores ciegos</b></li>
+
+	<p>El instructor puede establecer sectores ciegos en el radar, dentro de los cuales no se producirá ninguna detección.</p>
+
+	<li><b>Averías en el radar</b></li>
+
+	<p>El Instructor puede introducir o eliminar distintas averías en el equipo radar, tales como: unidad inoperativa, fallo de datos de giroscópica y corredera, y fallo en la línea de datos GPS.</p>
+
+	<li><b>Interferencias</b></li>
+
+	<p>Interferencias producidas en el radar, por el radar de otro buque seleccionado por el instructor.</p>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>TACAN</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El TACAN es un sistema radar que tiene funciones de pregunta - respuesta, el avión envía una señal codificada que es respondida por la estación. En base al tiempo de respuesta y a los códigos transmitidos se determina la posición del avión.</p>
+
+<p>El modelo de TACAN es el encargado de determinar si una unidad obtiene detección de otra mediante sensor TACAN. Este modelo se basa en el cálculo de los alcances para los cuales una unidad obtiene detección por TACAN de otra.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo de TACAN, se realizan las siguientes comprobaciones de condiciones necesarias para la detección por TACAN:</p>
+
+<ul>
+	<li>Comprobar que NO existe ocultación visual entre unidad y contacto.</li>
+	<li>Comprobar que la altura de las olas de la zona meteorológica del contacto NO es mayor que la altura de sensores del contacto.</li>
+	<li>Para unidades submarinas sumergidas, comprobar que mástil correspondiente está izado.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>El Alcance de detección del TACAN es un valor definido por el menor valor de los obtenidos según los siguientes algoritmos:</p>
+
+<ul>
+	<p><font face=courier size=2>ALCANCE = Alcance_Horizonte_Visual</font> (ver apartado Visual)<br>
+	<font face=courier size=2>ALCANCE = </font> máximo de 100 millas (configurable en <b>Galeon.ini</b>).
+	</p>
+</ul>
+
+<p>El Alcance se ve afectado del nivel de operatividad (NRO) de la unidad:</p>
+
+<ul>
+	<p><font face=courier size=2>ALCANCE = ALCANCE * Operatividad</font></p>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Las unidades Submarino, Superficie, Terrestres y Base no disponen de receptor TACAN sino sólo transmisor.</p>
+
+<p>Si el contacto se encuentra a menor o igual distancia que el Alcance calculado, podrá ser detectado por TACAN. El receptor TACAN detecta otra unidad con el transmisor de TACAN encendido, si tiene seleccionado el mismo canal. Si tiene seleccionado un canal superior a 63, también detectará el canal seleccionado menos 63 (canal alterno).</p>
+
+<p>El TACAN determina marcación y distancia de la entidad transmisora si es detectada por el canal principal. Sólo se detectará por canal alterno si no se detecta ninguna unidad por el canal principal. Si la detección se realiza por el canal alterno, sólo se determina la distancia. Si dos unidades están transmitiendo en un mismo canal (principal o alterno) y dentro del alcance de la unidad receptora, se detectará a la más cercana.</p>
+ 
+</div>
+
+</body>
+
+</html>

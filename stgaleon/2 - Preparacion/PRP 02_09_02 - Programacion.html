@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Programación</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvGame/ProgActionSetWnd.jpg"></p>
+
+<p>Mediante esta tabla el operador podrá definir las distintas Programaciones de Acciones que podrán ser asignadas a unidades (ver <i>Preparación de Ejercicios – Unidades</i>). Al asignarle a una unidad una Programación de Acciones, la unidad ejecutará automáticamente la secuencia lógica de acciones definida en la programación.</p>
+
+<p>La Programación de Acciones se define mediante un árbol de acciones. Cada una de las ramas se inicia mediante un nodo, en el que se define la hora de inicio de la programación. A cada nodo se le pueden asociar una o más acciones, y a cada una de las acciones, se le puede asociar a su vez una o varias acciones, componiéndose así un árbol de acciones. Para una misma programación, se pueden definir distintos nodos, teniendo así distintas ramas.</p>
+
+<p>Por ejemplo:</p>
+
+<p align=center><img width=300 src="../Images/Programacion de Acciones.jpg"></p>
+
+<p>Para introducir un nuevo modo, el operador debe especificar la hora de inicio, y pulsar validar. Para introducir nuevas acciones, debe seleccionar la acción de la que cuelga, seleccionar la acción que se desea añadir, y pulsar Insertar. Los nodos y acciones pueden ser eliminados. Si el nodo o acción eliminado tenía acciones asociadas, éstas también son eliminadas.</p>
+
+<p>En la hora especificada para cada nodo, se iniciará la secuencia de Acciones especificada en la rama de dicho nodo. La secuencia se realizará de forma que se ejecutan las acciones de un nivel, y cuando se consigue ejecutar, se continúa con las Acciones del siguiente nivel asociadas a dicha Acción. Por tanto, las Acciones que se encuentran a un mismo nivel se ejecutarán con condición OR, y las de niveles sucesivos con condición AND, y en secuencia.</p>
+
+<p>En el ejemplo anterior, las secuencias de acciones definidas para cada nodo consisten en:</p>
+
+<ul>
+	<li>Primer nodo: Comenzar a las 1H 15M. Ejecutar Acción 1, Acción 2 o Acción 3. Cuando se consiga ejecutar cualquiera de ella, se finaliza la secuencia.</li><br>
+
+	<li>Segundo nodo: Comenzar a las 2H 00M. Ejecutar Acción 1; una vez que se consiga ejecutar la Acción 1, ejecutar la Acción 2; y una vez que se consiga ejecutar la Acción 2, ejecutar la Acción 3.</li><br>
+
+	<li>Tercer nodo: Comenzar a las 3H 30M. Ejecutar Acción 1 o Acción 2. Si se consigue ejecutar la Acción 1, finaliza la secuencia, y si se consigue ejecutar la Acción 2, ejecutar la Acción 3 o la Acción 4. En el momento en el que se consiga ejecutar la Acción 3 o la Acción 4, finaliza la secuencia.</li>
+</ul>
+
+<p>Una descripción más detallada del funcionamiento de la Programación de Acciones se incluye en el apartado <i>Modelística – Programación de Acciones</i>.</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Informacion del Ejercicio</font></b></p>
+
+<font size=2 face=arial>
+
+<p>En las siguientes ventanas se muestran los siguientes informes que recopilan y resumen información del Ejercicio en Ejecución:</p>
+
+<ul>
+	<li>Informe de Unidades.</li>
+	<li>Informe de Entidades Perecederas.</li>
+	<li>Informe de Lanzamientos.</li>
+	<li>Informe de Daños.</li>
+	<li>Plan de Acciones.</li>
+	<li>Generación de Informes de Rutas de Tráfico Mercante y Aerovías.</li>
+</ul>
+ 
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/ReportsWnd.jpg"></p>
+
+<p><b>Información de Unidades:</b></p>
+
+<p>En este diálogo se presenta una lista con todas las unidades que forman parte del Ejercicio, mostrando la siguiente información de cada una:</p>
+
+<ul>
+	<li>Numeral de la unidad</li>
+	<li>Bando (ROJO, AZUL o BLANCO) al que pertenece la unidad.<br>
+	Si se trata de Unidad de Ambientación, el bando aparece entre corchetes.</li>
+	<li>Categoría (SUP., SUB., AIRE, HELO, BASE, TERR.) de la unidad.</li>
+	<li>% Daño.</li>
+	<li>Posición</li>
+	<li>Rumbo (en grados)</li>
+	<li>Velocidad (en nudos)</li>
+	<li>Altura / Profundidad (en pies)</li>
+	<li>% Combustible</li>
+	<li>% Batería</li>
+</ul>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/UnitsInformationWnd.jpg"></p>
+
+<p>Las unidades en la lista pueden ser ordenadas por Numeral o por Categoría, y pueden ser filtradas por Bando.</p>
+
+<p>Seleccionando una Unidad de la lista el Instructor puede:</p>
+
+<ul>
+	<li>Consultar Datos Generales de la unidad (ver apartado correspondiente).</li><br>
+
+	<li>Copiar Unidad. Abre el siguiente diálogo, mediante el que el Instructor puede asignar Nombre, Numeral y Posición para la nueva unidad copia.</li>
+
+</ul>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModelsAux/CopyUnitWnd.jpg"></p>
+
+<p><b>Información de Entidades Perecederas:</b></p>
+
+<p>En este diálogo se presenta una lista con todas las Entidades Perecederas (Misiles, Torpedos, Chaff, Cargas de Profundidad, Bombas, Burbujas, Sonoboyas y Falsos Ecos) lanzadas durante el Ejercicio, mostrando la siguiente información de cada una de ellas:</p>
+
+<ul>
+	<li>Numero</li>
+	<li>Tipo de Entidad Perecedera.</li>
+	<li>Bando de la unidad que la lanzó.</li>
+	<li>Posición</li>
+	<li>Rumbo (en grados)</li>
+	<li>Velocidad (en nudos)</li>
+	<li>Altura / Profundidad (en pies)</li>
+</ul>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/PerishableCompanyControlWnd.jpg"></p>
+
+<p>Las Entidades Perecederas en la lista pueden ser filtradas por Bando.</p>
+
+<p>Seleccionando una Entidad Perecedera de tipo Misil o Torpedo de la lista el Instructor puede:</p>
+
+<ul>
+	<li>Consultar Datos Generales de la Entidad Perecedera (ver apartado correspondiente)</li><br>
+	
+	<li>Borrar la Entidad Perecedera seleccionada.</li><br>
+	
+	<li>Además, desde este diálogo el Instructor puede abrir el siguiente diálogo para creación de Falsos Ecos, en el que especifica todos los datos característicos del Falso Eco creado, según el tipo seleccionado.</li>
+	
+</ul>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModelsAux/GenerateFalsesEchosWnd.jpg"></p>
+
+<p><b>Información de Lanzamientos:</b></p>
+
+<p>En este diálogo se presenta una lista con todos los Lanzamientos llevados a cabo durante el Ejercicio, mostrando la siguiente información de cada uno de ellos:</p>
+
+<ul>
+	<li>Fecha</li>
+	<li>Tipo</li>
+	<li>Atacante</li>
+	<li>Blanco</li>
+	<li>Demora (en grados)</li>
+	<li>Distancia (en Millas)</li>
+	<li>Cantidad (kg explosivo)</li>
+	<li>% Daño (causado en el impacto)</li>
+	<li>Daños Aceptados o pendiente de Aceptación</li>
+</ul>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/LaunchingReportWnd.jpg"></p>
+
+<p>Los Lanzamientos en la lista pueden ser filtrados por Unidad lanzadora.</p>
+
+<p><b>Información de Daños:</b></p>
+
+<p>En este diálogo se presenta una lista con todos los Lanzamientos llevados a cabo durante el Ejercicio, mostrando la siguiente información de cada uno de ellos:</p>
+
+<ul>
+	<li>Fecha</li>
+	<li>Tipo Arma</li>
+	<li>Atacante</li>
+	<li>Blanco</li>
+	<li>% Daño (causado en el impacto)</li>
+</ul>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/AceptRejectDamagesWnd.jpg"></p>
+
+<p>Este diálogo permite además al Instructor Aceptar o Rechazar manualmente los Daños producidos durante el Ejercicio, cuando el Modo de Daños es Manual.</p>
+
+<p><b>Plan de Acciones:</b></p>
+
+<p>En este diálogo se presenta una lista con todas las unidades que forman parte del Ejercicio y que tengan alguna Plan de Acciones Programadas asignado, mostrando la siguiente información de cada una:</p>
+
+<ul>
+	<li>Numeral de la unidad</li>
+	<li>Nombre de la unidad</li>
+	<li>Bando (ROJO, AZUL o BLANCO) al que pertenece la unidad.<br>
+	Si se trata de Unidad de Ambientación, el bando aparece entre corchetes.	</li>
+	<li>Nombre del Plan de Acciones Programadas que tiene asignado.</li>
+	<li>Estado (ON / OFF) del plan.</li>
+	<li>Acción programada que está ejecutando.</li>
+</ul>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/ActionsPlansWnd.jpg"></p>
+
+<p>Desde este diálogo el Instructor puede llevar a cabo el Control de las Acciones Programadas (ver apartado <i>Manual del Instructor - Control del Ejercicio - Control de Acciones Programadas</i>).</p>
+
+<p><b>Generación de Informes de Rutas de Tráfico Mercante y Aerovías:</b></p>
+
+<p>En este diálogo se presentan dos listas una con las rutas de tráfico mercante y otra con las aerovías, indicando el bando al que pertenecen y su nombre:</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/RouteReportControlWnd.jpg"></p>
+
+<p>En estas listas se puede:</p>
+
+<ul>
+	<li>filtrar por bando para mostrar sólo las rutas o aerovías de un bando o mostrarlas todas.</li>
+	<li>seleccionar una, varias rutas (manteniendo pulsando la tecla mayúscula o ctrl).</li>
+	<li>seleccionar todas las rutas o aerovías marcando la casilla “Selecciona todas”.</li>
+</ul>
+
+<p>Una vez seleccionadas las rutas y aeroviás, pulsando el botón Informes, se genera un informe con los datos de las unidades que están en las rutas de tráfico mercante seleccionadas y otro informe con los datos de las unidades que están en las aerovías seleccionadas.</p>
+
+<p align=center><img width=600 src="../Images/Informe%20Ruta.jpg"></p>
+
+<p>Los informes se generan en formato excel en el fichero y carpeta que se haya configurado en Galeon.ini.</p>
+
+<p><i>Nota</i>: Cada vez que se pulsa el botón Informes, si hay alguna ruta seleccionada, se genera un nuevo informe de rutas que sustituye al anterior. Lo mismo ocurre con el informe de aerovías, siempre que haya alguna aerovía seleccionada. Si se quieren conservar informes anteriores, antes de generar un nuevo informe hay que renombrar el anterior.</p>
+
+<p>En el informe generado se incluyen las unidades que están actualmente en la ruta o aerovía más las unidades futuras que se establezcan en el fichero de configuración <b>Galeon.ini</b>.</p>
+
+<p>Cuando se trata de rutas o aerovías de doble sentido se mostrará el doble de unidades futuras.</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Cartuchos Chaff</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El Chaff es una contramedida que cuando es lanzada se despliega en una nube de características tales que pueden ser detectadas por radar o infrarrojo. Se emplean por tanto contra misiles con seeker radar o infrarrojo. Que sean detectados o no por un sensor radar o infrarrojo va a depender del tamaño visual o RCS de la nube formada.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>Para los chaff tipo IR se calcula un tamaño visual y para el resto de tipos de chaff se calcula un RCS:</p>
+
+<p><b>Tamaño Visual de Chaff IR</b></p>
+
+<ul>
+	<p>El tamaño visual de un chaff tipo IR se calcula como:</p>
+
+	<ul>
+		<p><font size=2 face=courier>tamaño_visual = log10 (intensidad * desplazamiento_estándar) * 20.0</font></p>
+
+		<p>Donde <font size=2 face=courier>intensidad</font> es el radio de la nube del cartucho, y <font size=2 face=courier>desplazamiento_estándar</font> se define como el desplazamiento tipo de una fragata (configurable en <b>Galeon.ini</b>).</p>
+
+	</ul>
+
+	<p>Para calcular el tamaño visual de la nube formada por varios cartuchos IR, se emplea la fórmula:</p>
+
+	<ul>
+		<p><font size=2 face=courier>tamaño_visual + 0.8 * tamaño_visual + 0.6 * tamaño_visual + ...</font></p>
+
+		<p>Donde <font size=2 face=courier>tamaño_visual</font> es el tamaño visual calculado para un único cartucho, y se incluyen tantos sumandos como cartuchos componen la nube, con un máximo de cinco.</p>
+
+	</ul>
+
+</ul>
+
+<p><b>RCS de Chaff no IR</b></p>
+
+<ul>
+	<p>El RCS de un chaff de tipo distinto a IR, una vez desplegada la nube, es el asignado en Preparación para el cartucho (ver <i>Manual de Preparación – Modelos Básicos – Contramedidas – Cartucho Chaff</i>). El valor del RCS mientras se está desplegando la nube (durante el tiempo de despliegue) se calcula en función del tiempo transcurrido desde el lanzamiento, según las siguiente expresión:</p>
+
+	<ul>
+		<p><font size=2 face=courier>RCS (t) = (RCS * t / tiempo de despliegue)</font></p>
+	</ul>
+
+	<p>Si dos nubes de chaff se llegan a tocar, el RCS (si no es IR) o tamaño visual (si es IR) que se considera es la suma de los valores de ambas nubes.</p>
+
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Los chaff lanzados se despliega en una nube de tamaño visual (si es Chaff tipo IR) o RCS (si es Chaff de tipo distinto a IR) según los cálculos anteriores.</p>
+
+<p>Los chaff lanzados, permanecen en el aire mientras les quede tiempo de vida, simulando su movimiento mediante la evaluación de su dinámica. En la evaluación de la dinámica del chaff, se tiene en cuenta el desplazamiento debido a la intensidad y el rumbo del viento según la zona meteorológica en que se encuentra el chaff y se simula la caída, para calcular su nueva posición.</p>
+
+<p>Los chaff lanzados son representadas gráficamente en la Pantalla Táctica como un circulo de radio igual al valor de su radio de nube asignado en Preparación para el cartucho.</p>
+
+</div>
+
+</body>
+
+</html>

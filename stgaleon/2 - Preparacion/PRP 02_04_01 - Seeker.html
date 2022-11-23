@@ -1,0 +1,186 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Seeker</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvWeapons/MissileSeekerWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Tipo de Seeker</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>RADAR</li>
+	<li>IR</li>
+	<li>EO</li>
+	<li>ARM</li>
+	<li>SEMIACTIVO</li>
+	<li>CLOS</li>
+	<li>LASER</li>
+	<li>FILOGUIADO</li>
+
+	<p>Este parámetro determina el comportamiento del seeker y por tanto también el comportamiento del misil en vuelo que monte este seeker. En general, el comportamiento del misil en vuelo en cada una de sus fases es distinto dependiendo del tipo de navegación del misil y del tipo de seeker que incorpore. En cuanto al comportamiento del modelo de seeker, este parámetro determina qué sensor tiene asociado. Además, el tipo de navegación del misil condiciona el tipo de seeker que monta:</p>
+
+	<table border=1 cellspacing=0 cellpadding=5>
+		<tr>
+			<td><font size=2 face=arial><b>Tipo de Seeker</b></td>
+			<td><font size=2 face=arial><b>Sensor Asociado</b></td>
+			<td><font size=2 face=arial><b>Tipo de Navegación</b></td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>RADAR</td>
+			<td><font size=2 face=arial>Radar</td>
+			<td><font size=2 face=arial>LOCK-ON PREVIO, DESIGNACIÓN RADAR, PREPROGRAMADA, CLOS</td>
+		</tr>
+		
+		<tr>
+			<td><font size=2 face=arial>IR</td>
+			<td><font size=2 face=arial>IR</td>
+			<td><font size=2 face=arial>LOCK-ON PREVIO, DESIGNACIÓN RADAR, PREPROGRAMADA, CLOS, EO</td>
+		</tr>
+		
+		<tr>
+			<td><font size=2 face=arial>EO</td>
+			<td><font size=2 face=arial>Visual</td>
+			<td><font size=2 face=arial>LOCK-ON PREVIO, DESIGNACIÓN RADAR, PREPROGRAMADA, CLOS, EO</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>ARM</td>
+			<td><font size=2 face=arial>ESM</td>
+			<td><font size=2 face=arial>LOCK-ON PREVIO, DESIGNACIÓN RADAR, PREPROGRAMADA, ARM</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>SEMIACTIVO</td>
+			<td><font size=2 face=arial>Ninguno</td>
+			<td><font size=2 face=arial>LOCK-ON PREVIO, DESIGNACIÓN RADAR, SEMIACTIVA, CLOS</td>
+		</tr>
+		
+		<tr>
+			<td><font size=2 face=arial>CLOS</td>
+			<td><font size=2 face=arial>Ninguno</td>
+			<td><font size=2 face=arial>LOCK-ON PREVIO, DESIGNACIÓN RADAR, CLOS</td>
+		</tr>
+		
+		<tr>
+			<td><font size=2 face=arial>LASER</td>
+			<td><font size=2 face=arial>Visual</td>
+			<td><font size=2 face=arial>LOCK-ON PREVIO, DESIGNACIÓN RADAR, LASER</td>
+		</tr>
+		
+		<tr>
+			<td><font size=2 face=arial>FILOGUIADO</td>
+			<td><font size=2 face=arial>Ninguno</td>
+			<td><font size=2 face=arial>LOCK-ON PREVIO, DESIGNACIÓN RADAR, FILOGUIADA</td>
+		</tr>
+		
+	</table>
+
+</ul>
+
+<p><b>Sector de Búsqueda</b>: Este parámetro determina sector activo del sensor asociado al seeker. Además determina el tamaño de la célula de resolución si el seeker es tipo RADAR. Es tenido en cuenta por el misil para filtrar los contactos detectados por el sensor asociado al seeker y para la simulación del efecto centroide.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0 – 360</p>
+</ul>
+
+<p><b>Patrón de Búsqueda</b>: Los siguientes parámetros determinan la ventana de búsqueda y el patrón de búsqueda de blancos para el misil mediante el sensor asociado al seeker. Es tenido en cuenta por el modelo de misil en la fase de búsqueda para seleccionar el blanco. Se distinguen tres ventanas (corta, media y larga), caracterizadas por un ancho y una distancia (largo), que podrán ser seleccionadas por el operador en el lanzamiento del misil. Estos parámetros sólo serán introducidos si se ha seleccionado tipo de seeker RADAR o IR (MEDIO o LEJANO).</p>
+
+<p align=center><img width=150 src="../Images/Preparacion Seeker - Patron.gif"></p>
+
+<p><b>Ventana Corta / Media / Larga</b>:</p>
+
+<ul>
+	<p><b>Ancho</b>:</p>
+
+	<ul>
+		<p><u>Unidades</u>: yardas</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Distancia</b>:</p>
+
+	<ul>
+		<p><u>Unidades</u>: yardas</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Apertura</b>:</p>
+
+	<ul>
+		<p><u>Unidades</u>: yardas</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+</ul>
+
+<p><b>Distancia de Barrido</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>MIN a MAX</li>
+	<li>MAX a MIN</li>
+
+	<p>Este parámetro determina cómo se realiza el barrido en distancia de la ventana del seeker. Es tenido en cuenta por el modelo de misil en la fase de búsqueda para seleccionar el blanco si el seeker puede detectar varios dentro de la ventana. Si el barrido en MIN a MAX seleccionará el más cercano, y si es MAX a MIN, el más lejano. Este parámetro sólo será introducido si se ha seleccionado tipo de seeker RADAR o IR (MEDIO o LEJANO).</p>
+
+</ul>
+
+
+<p><b>Dirección de Barrido</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>DERECHA a IZQUIERDA</li>
+	<li>IZQUIERDA a DERECHA</li>
+
+	<p>Este parámetro determina cómo se realiza el barrido en ángulo de la ventana del seeker. Es tenido en cuenta por el modelo de misil en la fase de búsqueda para seleccionar el blanco si el seeker puede detectar varios dentro de la ventana y a la misma distancia. Si el barrido es a DERECHA a IZQUIERDA se seleccionará el que esté más a la derecha, y si el barrido es a IZQUIERDA a DERECHA, el que esté más a la izquierda. Este parámetro sólo será introducido si se ha seleccionado tipo de seeker RADAR o IR (MEDIO o LEJANO).</p>
+
+</ul>
+
+<p><b>Radar</b>: Este parámetro determina el sensor Radar asociado al seeker. Es tenido en cuenta por el misil para la búsqueda de blancos. Ver apartado Radar. Este parámetro sólo será introducido si se ha seleccionado tipo de seeker RADAR.</p>
+
+<p><b>IR</b>: Este parámetro determina el sensor IR asociado al seeker. Es tenido en cuenta por el misil para la búsqueda de blancos. Ver apartado IR. Este parámetro sólo será introducido si se ha seleccionado tipo de seeker IR MEDIO o IR LEJANO.</p>
+
+<p><b>ESM</b>: Este parámetro determina el sensor ESM asociado al seeker. Es tenido en cuenta por el misil para la búsqueda de blancos. Ver apartado ESM. Este parámetro sólo será introducido si se ha seleccionado tipo de seeker ARM.</p>
+
+<p><b>Ancho Lóbulo RF/FOV</b>: Este parámetro determina la célula de resolución del seeker tipo RADAR, IR MEDIO o IR LEJANO. Es tenido en cuenta por el misil para la simulación del efecto centroide. Este parámetro sólo será introducido si se ha seleccionado tipo de seeker RADAR, IR MEDIO o IR LEJANO.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0 – 99,9</p>
+</ul>
+
+<p><b>Mínimo IR Medio</b>: Este parámetro determina el mínimo Tamaño IR de un contacto para que pueda ser tenido en cuenta como blanco para el misil con seeker IR MEDIO. Es tenido en cuenta por el modelo de misil en la fase de búsqueda para seleccionar el blanco. Este parámetro sólo será introducido si se ha seleccionado tipo de seeker IR MEDIO.</p>
+
+<ul>
+	<p><u>Unidades</u>: m2</p>
+	<p><u>Rango</u>: 0 – 100</p>
+</ul>
+
+<p><b>Mínimo IR Lejano</b>: Este parámetro determina el mínimo Tamaño IR de un contacto para que pueda ser tenido en cuenta como blanco para el misil con seeker IR LEJANO. Es tenido en cuenta por el modelo de misil en la fase de búsqueda para seleccionar el blanco. Este parámetro sólo será introducido si se ha seleccionado tipo de seeker IR LEJANO.</p>
+
+<ul>
+	<p><u>Unidades</u>: m2</p>
+	<p><u>Rango</u>: 0 – 100</p>
+</ul>
+
+<p><b>Tamaño Mínimo Visual</b>: Este parámetro determina el mínimo Tamaño Visual de un contacto para que pueda ser tenido en cuenta como blanco para el misil con seeker EO. Es tenido en cuenta por el modelo de misil en la fase de búsqueda para seleccionar el blanco. Este parámetro sólo será introducido si se ha seleccionado tipo de seeker EO.</p>
+
+<ul>
+	<p><u>Unidades</u>: m2</p>
+	<p><u>Rango</u>: 0 – 100</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

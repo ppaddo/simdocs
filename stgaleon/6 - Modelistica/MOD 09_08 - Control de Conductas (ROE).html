@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Control de Conductas (ROE)</font></b></p>
+
+<font size=2 face=arial>
+
+<p>La implementación de cada ROE se realiza mediante una “frase” del tipo:</p>
+
+<ul>
+	<p>Si <b>< condición ></b> entonces <b>< autorización | prohibición | obligación ></b></p>
+</ul>
+
+<p>Donde:</p>
+
+<p><b>< condición ></b> expresa una situación válida para aplicación de la ROE, como por ejemplo:</p>
+
+<ul>
+	<li>Ninguna.</li>
+	<li>Una unidad del bando contrario entra en una zona determinada.</li>
+	<li>Una unidad del bando contrario efectúa alguna acción sobre una unidad de otro bando.</li>
+</ul>
+
+<p><b>< autorización | prohibición | obligación ></b> expresa una acción que está autorizada / prohibida o que es obligatorio efectuar cuando se da la condición anterior. Dado que las condiciones de obligación pueden expresarse en términos de prohibición (por ejemplo, obligatorio permanece en un área = prohibido estar fuera de dicha área), pueden eliminarse este tipo de condiciones quedando entonces reducidas a <b>< autorización | prohibición ></b>.</p>
+
+<p>Durante el ejercicio, el instructor podrá, a su voluntad activar (implementar) o desactivar las ROEs, simulando de esta manera los diferentes escenarios ROE que puedan aparecer.</p>
+
+<p>Cuando una ROE está activa, el sistema supervisará tanto su condición como la autorización / prohibición, utilizando un mecanismo como el que sigue:</p>
+
+<ul>
+	<li>Se supervisa el cumplimiento de la condición. Si esta se produce se registran los datos relevantes del suceso, junto con la hora del juego en que se produjo, y se informa al instructor.</li>
+</ul>
+
+<ul>
+	<li>Se supervisa si se cumple el suceso autorizado o prohibido. Si este se produce, se registran los datos relevantes del suceso, junto con la hora del juego, y si no está activo (si se trata de autorización) o si está activo (si se trata de prohibición) el condicionante asociado, se informa al instructor.</li>
+</ul>
+
+</div>
+
+</body>
+
+</html>

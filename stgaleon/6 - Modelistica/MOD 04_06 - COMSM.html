@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>COMSM</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El COMSM es un sensor parecido al ESM pero que detecta emisiones de frecuencias radio (HF y U / VHF). Al igual que el ESM, no es capaz de determinar la posición, sólo determina la demora y distancia del origen de la emisión con un margen de error. Además es capaz de determinar la frecuencia de la emisión también con un margen de error.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Para que una emisión pueda ser detectada por el COMSM deben cumplirse las siguientes condiciones:</p>
+
+<ul>
+	<li>No existe Ocultación entre la unidad y el contacto.</li>
+	<li>La banda de operación del transmisor está dentro del rango de frecuencias seleccionado por el operador, dentro de las frecuencias mínima y máxima del equipo definidas en Preparación (ver <i>Preparación – Contramedidas – COMSM</i>).</li>
+	<li>Que el origen de la emisión esté dentro del alcance del COMSM.</li>
+	<li>Para unidades submarinas sumergidas, comprobar que mástil correspondiente está izado.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>El Alcance del COMSM se determina según la siguiente fórmula:</p>
+
+<ul><font size=2 face=courier>
+	<p>ALCANCE Máximo = Alcance_Equipo * Factor_Ventaja * Factor_Propagación_Comunicaciones</p>
+</font></ul>
+
+<p>En función de la banda de comunicación usada, el valor de Alcance_equipo será:</p>
+
+<ul>
+	<li><font size=2 face=courier>Alcance Equipo HF = Infinito</font></li>
+	<li><font size=2 face=courier>Alcance Equipo UHF = Alcance Horizonte Radar * FactorUHF</font></li>
+	<li><font size=2 face=courier>Alcance Equipo VHF = Alcance Horizonte Radar * FactorVHF\</font></li>
+	<p></p>
+	<p><font size=2 face=courier>FactorUHF</font> y <font size=2 face=courier>FactorVHF</font> configurables en <b>Galeon.ini</b>.</p>
+	<p><font size=2 face=courier>Alcance Horizonte Radar</font> calculado como se indica en <i>Modelos - Sensores – Radar</i>.</p>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Las emisiones que el modelo de COMSM es capaz de detectar son las simuladas por los modelos de Fonía (cifrada o no cifrada), Link‑11, Link‑16 y Mensajería, pero sólo aquellas cuya banda es HF, UHF o VHF y cuyo origen esté a una distancia menor al Alcance del COMSM, según los cálculos anteriores.</p>
+
+<p>Una vez que es detectada una emisión, desde este equipo se puede interferir a las emisiones de audio. Se pueden realizar dos tipos de interferencias sobre una detección audio: perturbación o decepción (= engaño). Además, se puede ordenar al equipo de comunicaciones audio (fonía) que pase a monitorizar la frecuencia de una detección.</p>
+
+<p>La Perturbación consiste en que se aplicará un nivel de ruido (similar al sonido de campanas), a las recepciones y transmisiones en la redes de fonía a la que corresponde la emisión seleccionada. El número máximo de redes que pueden ser perturbadas simultáneamente, y el nivel de ruido aplicado son los especificados para el equipo en Preparación (ver <i>Preparación – Contramedidas – COMSM</i>).</p>
+
+<p>La Monitorización consiste en seleccionar para su escucha la red correspondiente a la emisión seleccionada. Se considera que si el operador además trasmite (habla) en la red monitorizada, esta realizando Decepción (engaño) en la red.</p>
+
+</div>
+
+</body>
+
+</html>

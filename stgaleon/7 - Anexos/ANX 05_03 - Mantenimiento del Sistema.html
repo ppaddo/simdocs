@@ -1,0 +1,153 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Mantenimiento del Sistema</font></b></p>
+
+<font size=2 face=arial>
+
+<p>A medida que se vaya prolongando en el tiempo el empleo del Simulador Táctico Galeón, la Base de Datos del sistema puede ser actualizada o ampliada por el usuario al introducir nuevos equipos, unidades, juegos, etc.. Por tanto, con el paso del tiempo la Base de Datos puede evolucionar, enriquecerse, y permitirá cada vez un mayor número de posibilidades para la simulación de distintas situaciones tácticas.</p>
+
+<p>Por otro lado, las grabaciones de Ejercicios, tanto en modo continuo como en modo fotografía, proporcionada por el Logger que incorpora el sistema, permite conservar un histórico de los mismos, permitiendo así, de alguna manera, almacenar la experiencia adquirida.</p>
+
+<p>Por tanto, ya que son elementos que evolucionan con la experiencia y que dan valor añadido al Simulador Táctico Galeón, se recomienda prestar una especial atención al mantenimiento de la Base de Datos y de las Grabaciones de Ejercicios generadas. Este mantenimiento consistirá en el almacenamiento fuera del sistema de estos datos, de forma que sólo será necesario conservar instalado en el sistema exclusivamente lo que esté en uso en cada momento, ya que podremos recuperarlos si es necesario. Esto permitirá además mantener el sistema limpio de datos obsoletos.</p>
+
+<p>Para realizar este mantenimiento, se hace necesario un mecanismo de copias de seguridad de estos datos. En este apartado se incluyen instrucciones y recomendaciones para realizar copias de seguridad de la Base de Datos y de las Grabaciones de Ejercicios.</p>
+
+<p><b>Instrucciones para realizar Copias de Seguridad de la Base de Datos</b>:</p>
+
+<p>Para hacer copias de seguridad de la Base de Datos del Simulador es necesario un mecanismo que permita el paso a fichero de los datos. Este mecanismo se implementa mediante dos herramientas del sistema de gestión de la base de datos denominadas <i>Export</i> e <i>Import</i>.</p>
+
+<ul>
+	<li><i>Export</i> hace una copia de los datos y el esquema de los mismos en un archivo del sistema operativo.</li>
+	<p></p>
+	<li><i>Import</i> lee los archivos creados al exportar y coloca los datos y su esquema en el sistema de gestión de base de datos.</li>
+</ul>
+
+<p>Estas herramientas son accesibles desde la Herramienta de Preparación del Simulador Táctico Galeón (ver <i>Manual de Preparación – Descripción General</i>).</p>
+ 
+<p>Las copias de seguridad deben hacerse de los ficheros de exportaciones.</p>
+
+<p>Este mecanismo es el que debe emplearse también para realizar una réplica de una base de datos sobre otro usuario, exportando la base de datos del usuario que se desea replicar, e importándola con el nuevo usuario. Ver el apartado <i>Anexos – Administración de la BD</i>.</p>
+
+<p><b>Instrucciones para realizar Copias de Seguridad de las Grabaciones de Ejercicios</b>:</p>
+
+<p>Como se explica en el apartado Manual de Análisis - Grabación de Ejercicios, los ejercicios pueden ser grabados en modo continuo o en modo fotografía. Tanto los ficheros correspondientes a las grabaciones en modo fotografía como todos los ficheros en subdirectorios correspondientes a una grabación continua, son almacenados en el directorio al que apunta el parámetro LoggerPath configurado en el <i>Galeon.ini</i>.</p>
+
+<p>Las grabaciones en modo fotografía pueden realizarse desde cualquier Consola de Instructor, y la grabación continua es realizada bien por el servidor cuando se trata de una ejecución en red de un ejercicio como por cualquier consola si se trata de una ejecución local. Por tanto, para mantener los ficheros de grabaciones en un único sitio, se recomienda configurar el parámetro LoggerPath apuntando a un directorio compartido por la red. De este modo, al estar todas las grabaciones en un único sitio se facilita su gestión y uso (cargarlos desde cualquier consola, clasificarlos en directorios, borrado de ficheros obsoletos, etc.).</p>
+
+<p>Si se sigue esta recomendación, las copias de seguridad de las grabaciones deberán hacerse simplemente del contenido de este directorio.</p>
+
+<p><b>Recomendaciones de Soporte y Periodicidad para las Copias de Seguridad</b>:</p>
+
+<p>El soporte recomendado para realizar las Copias de Seguridad, por su capacidad y facilidad de uso es CD-R y CD-RW.</p>
+
+<p>Se recomienda hacer copias de seguridad en un ciclo mensual como se explica:</p>
+
+<ul>
+ 	<li>Seleccionar un día fijo de la semana para hacer copias de seguridad.</li>
+ 	<li>Hacer copias semanales en CD-RW reutilizando el soporte cada cuatro semanas.</li>
+ 	<li>Hacer copia de seguridad permanente en CD-R al final de cada ciclo mensual.</li>
+ </ul> 
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td rowspan=4><font size=2 face=arial>Mes 1</td>
+		<td><font size=2 face=arial>Semana 1</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº1 de CD-RW</td>
+		<td><font size=2 face=arial></td>
+	</tr>
+	<tr>
+		<td><font size=2 face=arial>Semana 2</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº2 de CD-RW</td>
+		<td><font size=2 face=arial></td>
+	</tr>
+	<tr>
+		<td><font size=2 face=arial>Semana 3</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº3 de CD-RW</td>
+		<td><font size=2 face=arial></td>
+	</tr>
+	<tr>
+		<td><font size=2 face=arial>Semana 4</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº4 de CD-RW</td>
+		<td><font size=2 face=arial>Copia PERMANENTE<br>En juego nº1 de CD-R</td>
+	</tr>
+
+	<tr>
+		<td rowspan=4><font size=2 face=arial>Mes 2</td>
+		<td><font size=2 face=arial>Semana 1</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº1 de CD-RW</td>
+		<td><font size=2 face=arial></td>
+	</tr>
+	<tr>
+		<td><font size=2 face=arial>Semana 2</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº2 de CD-RW</td>
+		<td><font size=2 face=arial></td>
+	</tr>
+	<tr>
+		<td><font size=2 face=arial>Semana 3</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº3 de CD-RW</td>
+		<td><font size=2 face=arial></td>
+	</tr>
+	<tr>
+		<td><font size=2 face=arial>Semana 4</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº4 de CD-RW</td>
+		<td><font size=2 face=arial>Copia PERMANENTE<br>En juego nº1 de CD-R</td>
+	</tr>
+
+	<tr>
+		<td rowspan=4><font size=2 face=arial>Mes 3</td>
+		<td><font size=2 face=arial>Semana 1</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº1 de CD-RW</td>
+		<td><font size=2 face=arial></td>
+	</tr>
+	<tr>
+		<td><font size=2 face=arial>Semana 2</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº2 de CD-RW</td>
+		<td><font size=2 face=arial></td>
+	</tr>
+	<tr>
+		<td><font size=2 face=arial>Semana 3</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº3 de CD-RW</td>
+		<td><font size=2 face=arial></td>
+	</tr>
+	<tr>
+		<td><font size=2 face=arial>Semana 4</td>
+		<td><font size=2 face=arial>Copia NO PERMANENTE<br>En juego nº4 de CD-RW</td>
+		<td><font size=2 face=arial>Copia PERMANENTE<br>En juego nº1 de CD-R</td>
+	</tr>
+
+	<tr>
+		<td colspan=4><font size=2 face=arial>Y así sucesivamente ...</td>
+	</tr>
+
+</table>
+
+
+
+ 
+<p>Material necesario:</p>
+
+<ul>
+	<li>4 juegos de CD-RW.</li>
+	<li>1 juego de CD-R por cada mes transcurrido.</li>
+</ul>
+
+<p><i>Nota</i>: Cada juego con la cantidad necesaria de CD para contar con capacidad suficiente para hacer una copia de seguridad completa (Base de Datos y Grabaciones de Ejercicios).</p>
+
+<p><b>Recomendaciones adicionales</b>:</p>
+
+<p>En periodos en los que se considere que se estén generando muchos datos nuevos semanalmente, ya sea en Base de Datos como de Grabaciones de Ejercicios, se recomienda aumentar la periodicidad de las copias de seguridad, intentando siempre seguir un patrón parecido al recomendado. Por ejemplo, realizando dos o tres copias NO PERMANENTES semanales en vez de una y dos copias PERMANENTES mensuales.</p>
+
+<p>En aquellas ocasiones en las que se considere que puntualmente se han generado datos de especial importancia o interés, ya sea en Base de Datos como de Grabaciones de Ejercicios, se recomienda realizar copia de seguridad PERMANENTE adicional.</p>
+
+</div>
+
+</body>
+
+</html>

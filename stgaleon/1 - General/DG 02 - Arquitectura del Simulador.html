@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<font size=2 face=arial>
+
+<a id="arquitectura"></a>
+<p><b><font color=##084B8A face=arial size=4>Arquitectura</font></b></p>
+
+<p><b>El Simulador Táctico Galeón está diseñado con arquitectura modular y distribuida, de forma que es totalmente escalable en función de las necesidades de: número de puestos de alumno e instructor, número de ejercicios que se deseen ejecutar simultáneamente, número de unidades participantes en cada uno de ellos.</b></p>
+
+<p>La configuración ms general y completa del Simulador es la compuesta por un número suficiente de Consolas de Alumno, distribuidas en distintas Cabinas, cada una de las cuales corresponderá normalmente a una unidad en la simulación, un número normalmente inferior de Consolas de Instructor, normalmente ubicadas en una sala independiente que denominaremos Sala de Control y opcionalmente una Sala de Mantenimiento y un Auditorio. La Sala de Mantenimiento está equipada con PCs de sobremesa, impresoras, etc. y si las dimensiones del Simulador lo requieren, un Servidor. El auditorio se equipa con sistema de proyección y los medios audiovisuales necesarios para la exposición de los resultados de los Ejercicios. Todos los equipos que componen el simulador están conectados por red Local.</p>
+
+<p align=center><img width=600 src="../Images/Arquitectura del Simulador.jpg"></p>
+
+<p>Para esta configuración completa, las distintas salas las podemos identificar con las distintas fases de la simulación como sigue:</p>
+
+<table align=center border=10 cellspacing=5 cellpadding=8 style='border:none'>
+
+<tr>
+	<td style='border:none;background:#D8D8D8'>
+	<font color=#084B8A size=2 face=arial>
+	<p><b>Preparación</b></span></p>
+	</td>
+	<td style='border:none;background:#D8D8D8'>
+	<font color=#084B8A size=2 face=arial>
+	<p>Sala de Mantenimiento</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#BDBDBD'>
+	<font color=#084B8A size=2 face=arial>
+	<p><b>Ejecución</b></span></p>
+	</td>
+	<td style='border:none;background:#BDBDBD'>
+	<font color=#084B8A size=2 face=arial>
+	<p>Cabinas y Sala de Control</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#A4A4A4'>
+	<font color=#084B8A size=2 face=arial>
+	<p><b>Análisis</b></span></p>
+	</td>
+	<td style='border:none;background:#A4A4A4'>
+	<font color=#084B8A size=2 face=arial>
+	<p>Auditorio</p>
+	</td>
+</tr>
+
+</table>	
+
+<p>La necesidad de instalar o no un servidor y las características requeridas para el mismo dependen fundamentalmente del número máximo de unidades que participen en cada ejercicio y del número de ejercicios que se ejecuten simultáneamente. En el caso de un simulador que ejecute un único ejercicio involucrando a un máximo de 50 unidades participantes no sera necesaria la instalación del mismo.</p>
+
+<p>El caso extremo de una arquitectura simplificada será un simulador constituido por una única consola de Alumno / Instructor. Sin embargo, aunque técnicamente el simulador puede ser ejecutado íntegramente en una consola, la configuración mínima que se precisa para que realmente cumpla funciones de adiestramiento es la formada por dos consolas, una de alumno controlando una de las unidades asignadas, y la otra de instructor. La posibilidad de asignar un número variable de unidades a cada consola, y la capacidad del alumno para conmutar fácilmente entre estas unidades, hace viable la posibilidad de ejecutar un ejercicio táctico completo en esta configuración extremadamente reducida.</p>
+
+<p>Obviamente, la capacidad del simulador para adiestrar alumnos se incrementar conforme se incremente el número de consolas. En configuraciones que impliquen a ms de una consola por fuerza es posible, a voluntad de los instructores, agrupar a un conjunto de alumnos para formar la dotación de una unidad (sólo válido para unidades de superficie). En este caso, varias consolas de alumno realizan acciones sobre una sola unidad, pudiendo distribuirse las funciones entre ellas, de la misma forma que se realiza en el CIC de un buque (TAO/WCO/ASWO/EWS/CTA). Normalmente, las consolas que componen el CIC de una unidad se ubican en una misma Cabina, lo que dota de realismo a la simulación.</p>
+
+<p>La Consola del Simulador Táctico Galen puede arrancar de forma que inicie una <b>Ejecución Local</b> de un Ejercicio, o conectando con un ejercicio que se encuentre en <b>Ejecución en Red</b>. Al lanzar la Consola del Simulador Táctico Galen, se muestra una ventana de bienvenida durante algunos segundos. Si mientras se est mostrando este splash, el operador pulsa Escape, la consola iniciar una Ejecución Local de un Ejercicio. Si por el contrario se pulsa Enter o se deja que transcurran estos segundos, la consola intentar conectar con un Ejercicio que se encuentre en Ejecución en Red, y que incorpore a esta consola bien como Instructor o asignada a una unidad. En el siguiente apartado se explica cómo realizar una Ejecución en Red.</p>
+
+<p>Por otro lado, la consola también admite diferentes posibilidades hardware, todas ellas basadas en ordenadores personales compatibles PC. Estas van desde un PC de sobremesa con una única pantalla hasta una consola metálica vertical con doble pantalla y dispositivo táctil en una de ellas. Esta ultima opción es muy recomendable, ya que proporciona realismo al ejercicio al permitir simular la apariencia de un CIC y además resulta muy fácil de manejar por el usuario. El diseño de las comunicaciones tácticas, haciendo uso de tarjetas de sonido para PC y de tecnologías de transmisión de audio por red local, permite integrar los módulos de comunicaciones en las consolas sin necesidad de añadir elementos adicionales.</p>
+
+</div>
+
+</body>
+
+</html>

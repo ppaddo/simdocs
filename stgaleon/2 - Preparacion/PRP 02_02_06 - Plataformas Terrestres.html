@@ -1,0 +1,104 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Plataformas Terrestres</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvPlatforms/TrrPlatformWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Fotografías</b>: Pulsando este botón se accede a la ventana de Fotografías desde la que se pueden incluir varias fotografías de una plataforma, asociadas a distintos niveles de reconocimiento. Durante la ejecución del ejercicio, cuando se sitúe el Hook en una detección, dependiendo del nivel de reconocimiento de la misma se mostrará una de estas fotografías.</p>
+
+<p>Para las plataformas terrestres se consideran 4 niveles de reconocimiento por lo que se podrán incluir hasta 4 fotografías.</p>
+
+<p align=center><img width=400 src="../Images/Fotografias.jpg"></p>
+
+<p>En esta ventana pulsando en los botones Nivel 1 (2,3 ó 4) se accede al navegador desde el que se puede buscar y cargar una imagen.</p>
+
+<p>Los botones Nivel 5 y Nivel 6 no están accesibles para las plataformas aéreas.</p>
+
+<p>Pulsando el botón Aceptar se cierra la ventana y se guardan en memoria todas las imágenes cargadas hasta que finalmente se acepten o rechacen los datos de la plataforma en edición.</p>
+
+<p><b>Tamaño RCS</b>: Este parámetro es tenido en cuenta el modelo de radar para calcular la distancia a la que esta plataforma es detectada.</p>
+
+<ul>
+	<p><u>Unidades</u>: m2</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Superficie</b>: Este parámetro es tenido en cuenta el modelo de visual para calcular la distancia a la que esta plataforma es detectada.</p>
+
+<ul>
+	<p><u>Unidades</u>: m2</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Factor IR</b>: Factor que modela la variación de Tamaño IR de la plataforma con el "Aspecto" (dado por el ángulo alfa = rumbo del contacto - marcación del contacto).</p>
+
+<ul>
+	<p><u>Unidades</u>: Tanto por uno</p>
+	<p><u>Rango</u>: 0,0 – 1,0</p>
+
+	<p>Ejemplo: </p>
+
+	<p>Si Factor IR = 0 &rArr; Tamaño IR = Tamaño IR · seno (alfa).</p>
+	<p>Si Factor IR = 0,25 &rArr; Tamaño IR = Tamaño IR ( 0,25 + 0,75 · seno (alfa) ).</p>
+	<p>Si Factor IR = 1 &rArr; Tamaño IR no cambia con Aspecto.</p>
+</ul>
+
+<p><b>Altura Sensores</b>: Altura de instalación de los sensores en la plataforma. Este parámetro influye en los modelos de sensores, tanto para determinar el alcance de los sensores propios como para determinar el alcance al que es detectada esta plataforma por sensores de otras unidades.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Tiempo de Embarque</b>: Tiempo requerido para que la unidad terrestre complete una maniobra de embarco o desembarco (tanto en unidades de superficie como cuando es aerotransportada).</p>
+
+<ul>
+	<p><u>Unidades</u>: minutos</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Unidad Motorizada</b>: Determina si la plataforma es móvil.</p>
+
+<p><b>Velocidad Máxima</b>: Este parámetro es tenido en cuenta por el modelo de dinámica como límite superior de velocidad para la plataforma.</p>
+
+<ul>
+	<p><u>Unidades</u>: kilómetros / hora</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Máxima Capacidad Combustible</b>: Este parámetro es tenido en cuenta por el modelo de dinámica en la simulación de consumos y recargas de combustibles. El tanto por ciento de combustible inicial de una unidad se calcula sobre este valor.</p>
+
+<ul>
+	<p><u>Unidades</u>: litros</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Tabla Aceleración-Giro</b>: Ver apartado Aceleración y Giro de Terrestres.</p>
+
+<p><b>Consumo de Combustible por Velocidad</b>: Ver apartado Consumo de Combustible de Superficies y Submarinos.</p>
+
+<p><b>Capacidad Aerotransportable</b>: Determina si la plataforma tiene de ser transportada por helicóptero que tenga la Capacidad de Transporte.</p>
+
+<p><b>Peso</b>: Peso que debe ser incrementado a la unidad helicóptero, cuando transporta a esta plataforma.</p>
+
+<ul>
+	<p><u>Unidades</u>: kilogramos</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

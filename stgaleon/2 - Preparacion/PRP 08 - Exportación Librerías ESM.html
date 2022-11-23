@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Exportación de Librerías ESM</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvMain/ESMLibWnd.jpg"></p>
+
+<p>Mediante este diálogo se permite la generación de una librería genérica de ESM con los Spot Modes de todos los radares incluidos en la base de datos, para todos los ejercicios o para un ejercicio concreto.</p>
+
+<p>Al pulsar exportar se genera un fichero csv con el listado de todos los Spot Modes y sus datos característicos. Durante el proceso de exportación se muestran en la ventana, si los hubiera, los errores y avisos producidos, como se observa en el siguiente ejemplo, en el que aparecen errores por Spot Modes repetidos (que no serán generados por segunda vez), y avisos de radares cuyo número de Spot Modes supera el máximo admitido (99).</p>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvExportESMLib/ExportESMLibWnd.jpg"></p>
+
+<p>El resultado final de la exportación se guarda en un fichero denominado ESMLibrary.csv, en el directorio C:\Galeon\ (modificable por configuración), y su estructura, en sus primeras columnas, es la siguiente:</p>
+
+<p align=center><img width=800 src="../IlvImages/Preparation/IlvExportESMLib/ESMLibraryCsv.jpg"></p>
+
+<p>Este fichero constituye la librería por defecto de la base de datos del Galeón, y contiene muchas más columnas de las que se muestran en la imagen. Por lo que respecta a este manual, las columnas relevantes son las cinco primeras, que indican:</p>
+<ul>
+	<li><b>Seleccionado</b>: Indica si el Spot Mode debe incluirse en la librería (SI) o no (NO).</li>
+	<li><b>Spot Mode</b>: Número de cada Spot Mode.</li>
+	<li><b>Name</b>: El nombre del radar para esos Spot Modes, tal y como aparece en la base de datos.</li>
+	<li><b>Clasificación</b>: Afecta a si la paramétrica del radar se muestra o no en la ventana de ESM del alumno. La regla aplicada es que solo se muestran los radares de nivel de clasificación igual o menor al nivel de clasificación del ejercicio.</li>
+	<li><b>Tipo</b>: Indica el tipo de radar, que puede ser Air, Base, Helo, Submarine, Surface, Terrestrial. Estos valores se calculan automáticamente dependiendo del tipo de radar declarado en base de datos, pero puede modificarse en la librería para afinar el tipo.</li>
+	<li><b>Nivel Amenaza</b>: Puede tomar tres valores H (hostil), F (Friend) o HOF (Desconocido). Por defecto, al generar la librería, todos los Spot Modes toman el valor HOF, por lo que este dato debe ser modificado con posterioridad en el fichero si se desea asignar nivel de amenaza a determinados Spot Modes.</li>
+</ul>
+<p>El procedimiento para particularizar la librería es simplemente editar este fichero, realizar los cambios pertinentes y guardarlo, con el nombre apropiado, en el directorio C:\Galeon\ESMLibrary\ (modificable por configuración). El ámbito de aplicación de la librería se puede establecer a tres niveles diferentes, dependiendo del nombre que se ponga al fichero:</p>
+<ul>
+	<li>El fichero ESMLibrary.csv será la librería por defecto, utilizado para todos los ejercicios y unidades si no existen ficheros particulares.</li>
+	<li>Si en el directorio indicado existe un fichero denominado "nombre del ejercicio".csv, se utilizará esta librería para todas las unidades en dicho ejercicio.</li>
+	<li>Si en el directorio indicado existe uno o más ficheros denominados "nombre de unidad"_"nombre de ejercicio".csv, se utilizarán estas librerías para dichas unidades en dicho ejercicio.</li>
+</ul>
+
+<p>Por ejemplo, si en el ejercicio Maniobra1 tenemos las unidades Rayo1 y Rayo2, y en el directorio de las librerías ESM tenemos los ficheros ESMLibrary.csv, Maniobra1.csv y Maniobra1_Rayo1.csv, se utilizarán las siguientes librerías en el ejercicio:</p>
+
+<ul>
+<li>Para la unidad Rayo1, la librería Maniobra1_Rayo1.csv</li>
+<li>Para la unidad Rayo2, la librería Maniobra1.csv</li>
+</ul>
+
+<p>Y en el caso de que el fichero Maniobra1.csv no existiera, se usarían las siguientes:</p>
+<ul>
+<li>Para la unidad Rayo1, la librería Maniobra1_Rayo1.csv</li>
+<li>Para la unidad Rayo2, la librería genérica ESMLibrary.csv</li>
+</ul>
+
+<p>Un detalle importante que debe de tenerse en cuenta es que dependiendo del uso que se vaya a dar a la librería genérica puede ser conveniente generarla con todos los Spot Modes seleccionados (si se va a usar directamente como librería genérica) o con ninguno (si se va a usar como plantilla para que el alumno seleccione los que quiere incluir en su librería). Esta opción se puede modificar por configuración, y lo puede hacer ADDocean en el momento, a petición de los usuarios.</p>
+
+
+</div>
+
+</body>
+
+</html>

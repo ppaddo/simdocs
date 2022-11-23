@@ -1,0 +1,118 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Peces</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>La creación y edición de peces se realiza mediante la siguiente ventana.</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosPeces.jpg"></p>
+
+<p>Esta ventana permite especificar los datos que definen cada tipo de pez, así como la tabla de distancias y factor sorpresa que se aplicará para evaluar cómo afectan los buques cercanos al desplazamiento del cardumen.</p>
+
+<p>Para cada pez se definen los datos que se describen a continuación:</p>
+
+<p>Nombre: Nombre del pez.</p>
+
+<p><b>Formato</b>: caracteres alfanuméricos.</p>
+
+<p>Fichero de textura: Nombre del fichero de textura que se aplica al pez en la ventana de vista submarina.</p>
+
+<p><b>Longitud</b>: Longitud del pez.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0- 10.0</p>
+</ul>
+
+<p><b>Peso</b>: Peso del pez.</p>
+
+<ul>
+	<p><u>Unidades</u>: kilogramos</p>
+	<p><u>Rango</u>: 0.0- 200.0</p>
+</ul>
+
+<p><b>Velocidad Máxima</b>: Velocidad máxima a la que se mueve el cardumen cuando hay un buque cercano y se ha definido factor sorpresa.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0 - 50.0 nudos</p>
+</ul>
+
+<p><b>Diámetro Máximo</b>: Diámetro del pez.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0 - 2.0</p>
+</ul>
+
+ 
+
+<p><b>Fuerza</b>: Fuerza con la que puede empujar los peces cuando se alinean.</p>
+
+<ul>
+	<p><u>Unidades</u>: kilogramos</p>
+	<p><u>Rango</u>: 0.0 - 1000.0</p>
+</ul>
+
+<p><b>Probab. Alineación</b>: Probabilidad de que los peces se alineen.</p>
+
+<ul>
+	<p><u>Unidades</u>: %</p>
+	<p><u>Rango</u>: 0 - 100</p>
+</ul>
+
+<p><b>Tabla de comportamiento</b>: Tabla que define el comportamiento del pez ante la proximidad de un elemento externo.</p>
+
+<ul>
+	<p><b>Distancia</b>: Distancia máxima a la que un elemento externo afecta al comportamiento del pez.</p>
+
+	<ul>
+		<p><u>Unidades</u>: metros</p>
+		<p><u>Rango</u>: 0.0 - 10000.0/p>
+	</ul>
+
+	<p><b>Factor</b>: Determina el comportamiento del pez. Es el factor por el que se multiplica la velocidad máxima del pez, para obtener la velocidad horizontal del cardumen.</p>
+
+	<p>	Valores negativos indican que el pez huye del elemento externo.</p>
+
+	<p>	Valores positivos indican que el pez se acerca al elemento externo.</p>
+
+	<ul>
+		<p><u>Unidades</u>: adimensional</p>
+		<p><u>Rango</u>: -1.0 - 1.0</p>
+	</ul>
+
+	<p><b>Respecto a</b>: Elemento externo que altera el comportamiento del pez. Puede tomar los siguientes valores:</p>
+
+	<ul>
+		<li>Buque</li>
+		<li>Arrastre</li>
+		<li>Cerco</li>
+		<li>Palangre</li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<p><b>Cebo</b>: Si el elemento externo elegido es Palangre hay que seleccionar uno de los cebos disponibles (los cebos se establecen en el fichero de configuración Ulises.ini).</p>
+
+	<p>Para introducir valores en la tabla, hay que rellenar los campos Distancia, Factor, Respecto a y Cebo y pulsar el botón Añadir.</p>
+
+	<p>Para eliminar valores de la tabla, hay que seleccionar un valor y pulsar el botón Eliminar.</p>
+
+</ul>
+
+<p>Los peces, una vez creados, se añaden a los cardúmenes, los cuales a su vez pueden ser añadidos a los escenarios.</p>
+
+</div>
+
+</body>
+
+</html>

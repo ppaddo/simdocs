@@ -1,0 +1,123 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Rutas de Tráfico Mercante</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvGame/MerchantZoneSetWnd.jpg"></p>
+
+<p>Mediante esta tabla se especifican todas las Rutas de Tráfico Mercante incluidas en el Ejercicio, clasificadas por bando. Para cada una de ellas, al inicio del Ejercicio se crearán un número aleatorio de mercantes de hasta 6 tipos distintos, repartidas aleatoriamente a lo largo de la ruta. Durante el Ejercicio, los mercantes se moverán recorriendo la ruta y encenderán o apagarán sus radares de forma aleatoria (según la pauta establecida en Galeon.ini).</p>
+
+<p>Durante la ejecución del Ejercicio, a cada unidad se le presenta en la Pantalla Táctica las Rutas de Tráfico Mercante de su bando y del bando neutral.</p>
+
+<p>Para cada ruta se especifican los siguientes parámetros:</p>
+
+<ul>
+
+	<p><b>Mercantes</b>: Este parámetro determina el tipo de mercantes que se crearán en la Ruta de Tráfico Mercante. Se podrán seleccionar hasta 6 tipos distintos de mercantes de entre todas las unidades de superficie ya incluidas en el Ejercicio, cuya plataforma sea de Tipo Mercante (ver apartado Plataformas de Superficie).</p>
+
+	<p><b>Cantidad</b>: Este parámetro determina la cantidad de mercantes que se crearán en la Ruta de Tráfico Mercante.</p>
+
+	<ul>
+		<u>Unidades</u>: ---</p>
+		<u>Rango</u>: 0 – 99</p>
+	</ul>
+
+	<p><b>Probabilidad</b>: Este parámetro introduce un elemento de aleatoriedad en la cantidad de cada tipo de mercantes creados una ejecución del Ejercicio, de tal manera que cada vez que se ejecute este Ejercicio el número de mercantes creados en la Ruta de Tráfico Mercante puede ser distinto.</p>
+
+	<ul>
+		<u>Unidades</u>: %</p>
+		<u>Rango</u>: 0 – 100</p>
+
+		<p>Ejemplo: Para una cantidad de 10, en cada ejercicio:</p>
+
+		<p>Si Probabilidad = 0 % &rArr; No se crea ningún mercante nunca.<br>
+		Si Probabilidad = 50 % &rArr; Se crean aproximadamente 5 mercantes.<br>
+		Si Probabilidad = 100 % &rArr; Se crean 10 mercantes siempre.</p>
+
+		<p>Para una cantidad de 50, en cada ejercicio:</p>
+
+		<p>Si Probabilidad = 0 % &rArr; No se crea ningún mercante nunca.<br>
+		Si Probabilidad = 10 % &rArr; Se crean aproximadamente 5 mercantes.<br>
+		Si Probabilidad = 100 % &rArr; Se crean 10 mercantes siempre.</p>
+
+		<p>Debe tenerse en cuenta el error cometido con respecto al valor esperado según el porcentaje, será menor mientras mayor sea la Cantidad.</p>
+	</ul>
+
+</ul>
+
+<p><b>Rango Velocidades</b>: Este parámetro determina la velocidad máxima y mínima que se asigna a los mercantes. La velocidad asignada es un valor aleatorio comprendido entre el máximo y el mínimo. Por defecto la velocidad del mercante se calcula de nuevo cuando el buque llega a cada punto de la ruta e inicia un nuevo tramo. No obstante, se puede configurar para que la velocidad sólo se calcule al crear la ruta y se mantenga constante durante todo el recorrido (configurable en Galeon.ini).</p>
+
+<ul>
+	<u>Unidades</u>: Nudos</p>
+	<u>Rango</u>: 0.0 – 100.0</p>
+</ul>
+
+<p><b>M. Anchura</b>: Este parámetro determina el margen de anchura de la ruta que se utiliza para calcular la trayectoria recorrida por cada mercante. El uso de este parámetro se describe al final de este apartado.</p>
+
+<ul>
+	<u>Unidades</u>: Millas</p>
+	<u>Rango</u>: 0.0 – 100.0</p>
+</ul>
+
+<p><b>Único Sentido</b>: Este parámetro determina si la ruta es de único sentido, en cuyo caso, si el mercante llega al punto final de la ruta, inicia de nuevo el recorrido de la ruta desde el principio. En caso contrario, al llegar al final iniciará la ruta en sentido contrario.</p>
+
+<p><b>Editar</b>: Mediante este botón se abre la ventana de Preparación de Escenarios, sobre la que se mostrará una Herramienta de Dibujo con la que se podrá especificar gráficamente la ruta en la que se crearán los mercantes (ver la descripción de esta herramienta en el apartado Preparación de Escenario).</p>
+
+<p>Con los parámetros definidos, la ruta de tráfico mercante se define como una línea que une los puntos especificados sobre la carta mediante la Herramienta de Dibujo que se abre con el botón Editar, con un número aleatorio de mercantes del tipo especificado que se desplazan en las proximidades de esta línea con una velocidad variable dentro de los límites establecidos.</p>
+
+<p>Durante la ejecución del ejercicio, los mercantes que se crean en la ruta no se desplazan directamente sobre la línea de ruta sino sobre una línea aleatoria cercana que se calcula de la siguiente forma:</p>
+
+<ol>
+	<li>Se elige de forma aleatoria un punto de la ruta, por ejemplo el punto P2.</li><br>
+	
+	<li>Se elige de forma aleatoria un punto T2 dentro del círculo de radio M. Anchura y centro en el punto P2.</li><br>
+	
+	<li>Se elige de forma aleatoria un punto T3 dentro del círculo de radio M. Anchura y centro en el punto P3.</li><br>
+
+	<li>El mercante inicia la ruta en un punto aleatorio de la línea que une los puntos T2 y T3 y se desplaza por la línea T2-T3 hasta el punto T3,</li><br>
+
+	<li>De la misma forma que T2 y T3 se calcula T4 y el buque se desplaza por la línea T3-T4 hasta el punto T4.</li><br>
+
+	<p align=center><img width=600 src="../Images/RutaMercantes.jpg"></p>
+
+	<p align=center><img width=200 src="../Images/RutaMercantesRadio.jpg"></p>
+
+	<li>El proceso se repite hasta agotar todos los puntos de la ruta.</li><br>
+		
+	<li>Si la ruta es de sentido único, la dirección de avance del buque es siempre la que marca el orden de los puntos de la ruta, es decir el buque se desplaza hacia el último punto y cuando termina vuelve al punto P1 e inicia de nuevo el recorrido repitiendo los cálculos de los puntos T1, T2, T3…detallado en los pasos anteriores.</li><br>
+		
+	<li>Si la ruta es de doble sentido, la dirección de avance del buque puede ser la que marca el orden de los puntos de la ruta o la contraria, esta dirección se elige también de forma aleatoria. Cuando el buque llega al final de la ruta gira y continúa en sentido contrario.</li><br>
+		
+</ol>
+
+<p>Además de los datos que se incluyen en esta ventana, los buques de las zonas de tráfico marítimo tienen otros datos que se obtienen a través de ficheros de texto, se trata de los datos que proporciona el sensor AIS y el Puerto de Destino. El nombre y la ubicación de estos ficheros se establecen en Galeon.ini.</p>
+
+<p>Cuando se crean las rutas se lee el fichero que contiene los datos AIS y los asigna aleatoriamente a cada buque. Estos datos son los siguientes:</p>
+
+<ul>
+	<li>Nombre</li>
+	<li>MMSI</li>
+	<li>Número OMI (IMO number)</li>
+	<li>Distintivo de Llamada (Callsign)</li>
+	<li>Tipo / Carga</li>
+	<li>Bandera</li>
+	<li>Destino</li>
+	<li>Eslora y Manga</li>
+	<li>Calado</li>
+</ul>
+
+<p>A continuación se lee el fichero de Puertos de Destino que contiene la lista de puertos y sus posiciones. Para asignar un puerto a un buque, se toma la posición del buque y se busca en el fichero los n puertos más cercanos al buque considerando la dirección de desplazamiento. Entre estos puertos se asigna uno de ellos de forma aleatoria como Puerto de Destino del buque. El número de puertos seleccionados n es también un valor configurable en Galeon.ini.</p>
+
+</div>
+
+</body>
+
+</html>

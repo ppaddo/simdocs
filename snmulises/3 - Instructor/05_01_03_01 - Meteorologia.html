@@ -1,0 +1,334 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Meteorología</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>Las zonas meteorológicas están formadas por una zona geográfica delimitada por un polígono cerrado con unas condiciones meteorológicas uniformes que durante la ejecución del ejercicio afectarán a las unidades que se encuentren en el interior de dicha zona.</p>
+
+<p>La creación y edición de estas zonas se realiza mediante la ventana de Meteorología. Esta ventana tiene tres solapas, General, Estado del Mar y Ruido Atmosférico, al seleccionar cada una de ellas el contenido de la ventana varía, presentando los datos necesarios para la definición completa de la zona.</p>
+
+<p>A continuación se describen los datos y botones que incluye esta ventana.</p>
+
+<p><b>Nombre</b>: Nombre de la zona meteorológica.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p>Datos y botones de la solapa <b>General</b>:</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosMetGeneral.jpg"></p>
+
+<p>Esta solapa contiene la lista de puntos que definen el polígono que delimita la zona meteorológica, y los datos de movimiento de la misma.</p>
+
+<p>Botones de manejo de la lista de puntos que definen el polígono:</p>
+
+<ul>
+	<p><b>Editar</b>: Este botón sirve para mostrar el gráfico de la zona meteorológica en la presentación cartográfica y para modificar los datos de los puntos del polígono.</p>
+
+	<p>Cuando se abre la ventana para crear una nueva zona, la lista de puntos está vacía y el botón Editar está pulsado, en estas condiciones, al picar con el botón izquierdo del ratón sobre la presentación cartográfica, se añaden puntos a la lista a la vez que se van dibujando sobre la carta.</p>
+
+	<p>Cuando se abre la ventana para consultar los datos de una zona ya creada, al pulsar el botón Editar, el gráfico de la zona aparece en la presentación cartográfica. Mientras el botón Editar esté pulsado, se pueden seleccionar los puntos picando sobre ellos con el botón izquierdo del ratón, y cambiarlos de posición arrastrando el ratón hasta la nueva posición.</p>
+
+	<p><i>Nota</i>: Durante la edición de objetos gráficos (zonas meteorológicas, balizas, mapas de viento y corriente, rutas…) se anulan las funciones asignadas a los botones del ratón para control de la presentación cartográfica (posicionar hook, zoom+, zoom- demora/distancia…), por tanto para ver el gráfico de la zona meteorológica hay que hacer zoom sobre la zona de la carta en la que se encuentra dicha zona antes de pulsar el botón Editar.</p>
+
+	<p><b>Añadir</b>: Al pulsar este botón se inserta un nuevo punto entre el punto seleccionado y el siguiente. También se pueden insertar puntos seleccionando con el ratón un segmento del gráfico de la zona meteorológica y pulsando la tecla "Insertar".</p>
+
+	<p><i>Nota</i>: Sólo se pueden añadir puntos cuando se está mostrando el gráfico de la zona meteorológica, es decir, si el botón Editar está pulsado.</p>
+
+	<p><b>Eliminar</b>: Al pulsar este botón se elimina de la lista el punto seleccionado. También se pueden eliminar puntos seleccionando con el ratón un punto del gráfico de la zona y pulsando la tecla "Suprimir".</p>
+
+	<p><i>Nota</i>: Sólo se pueden eliminar puntos cuando se está mostrando el gráfico de la zona meteorológica, es decir, si el botón Editar está pulsado.</p>
+
+</ul>
+
+<p>Botones de recursos gráficos</p>
+
+<p align=center><img width=200 src="../Imagenes/BarraRecursosGraficos.jpg"></p>
+
+<ul>
+	<p>Estos botones sirven para definir el color, el estilo y el tipo de letra que se aplica al gráfico de la zona meteorológica.</p>
+
+	<p>El funcionamiento de los botones de la barra de recursos gráficos se describe en el apartado <i>Definición de Recursos Gráficos</i>.</p>
+
+</ul>
+
+<p>Datos generales:</p>
+
+<p><b>Dirección de avance</b>: Dirección hacia la que se desplaza la zona.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0.0- 360.0</p>
+</ul>
+
+<p><b>Velocidad de avance</b>: Velocidad con la que se desplaza la zona.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0.0- 100.0</p>
+</ul>
+
+<p>Datos y botones de la solapa <b>Estado de la mar</b>:</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosMetMar.jpg"></p>
+
+<p><b>Condiciones meteorológicas</b>: Este campo es un desplegable que muestra las opciones que se hayan establecido por defecto en el fichero de configuración Ulises.ini. Al seleccionar cualquier opción de este campo, automáticamente se establecen los valores correspondientes a dicha opción para los campos Altura de Olas, Intensidad de Viento, Nubosidad, Niebla, Densidad de Lluvia, y Luz de Luna. Por defecto se configuran las siguientes opciones:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=80><font size=2 face=arial><b>Opciones</b></td>
+		<td width=80 align=center><font size=2 face=arial><b>Altura de<br>las Olas</b></td>
+		<td width=80 align=center><font size=2 face=arial><b>Intensidad<br>del Viento</b></td>
+		<td width=80 align=center><font size=2 face=arial><b>Nubosidad</b></td>
+		<td width=80 align=center><font size=2 face=arial><b>Niebla</b></td>
+		<td width=80 align=center><font size=2 face=arial><b>Densidad<br>de Lluvia</b></td>
+		<td width=80 align=center><font size=2 face=arial><b>Luz de Luna</b></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Calma</b></td>
+		<td align=center><font size=2 face=arial>0</td>
+		<td align=center><font size=2 face=arial>0</td>
+		<td align=center><font size=2 face=arial>0</td>
+		<td align=center><font size=2 face=arial>5</td>
+		<td align=center><font size=2 face=arial>0</td>
+		<td align=center><font size=2 face=arial>50</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Rizada</b></td>
+		<td align=center><font size=2 face=arial>0.1</td>
+		<td align=center><font size=2 face=arial>5</td>
+		<td align=center><font size=2 face=arial>0</td>
+		<td align=center><font size=2 face=arial>50</td>
+		<td align=center><font size=2 face=arial>0</td>
+		<td align=center><font size=2 face=arial>50</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Marejadilla</b></td>
+		<td align=center><font size=2 face=arial>0.8</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>0</td>
+		<td align=center><font size=2 face=arial>60</td>
+		<td align=center><font size=2 face=arial>0</td>
+		<td align=center><font size=2 face=arial>50</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Marejada</b></td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>14</td>
+		<td align=center><font size=2 face=arial>0</td>
+		<td align=center><font size=2 face=arial>70</td>
+		<td align=center><font size=2 face=arial>0</td>
+		<td align=center><font size=2 face=arial>50</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Fuerte Marejada</b></td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>19</td>
+		<td align=center><font size=2 face=arial>10</td>
+		<td align=center><font size=2 face=arial>80</td>
+		<td align=center><font size=2 face=arial>10</td>
+		<td align=center><font size=2 face=arial>10</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Gruesa</b></td>
+		<td align=center><font size=2 face=arial>2.5</td>
+		<td align=center><font size=2 face=arial>25</td>
+		<td align=center><font size=2 face=arial>20</td>
+		<td align=center><font size=2 face=arial>90</td>
+		<td align=center><font size=2 face=arial>20</td>
+		<td align=center><font size=2 face=arial>10</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Muy Gruesa</b></td>
+		<td align=center><font size=2 face=arial>4</td>
+		<td align=center><font size=2 face=arial>30</td>
+		<td align=center><font size=2 face=arial>30</td>
+		<td align=center><font size=2 face=arial>90</td>
+		<td align=center><font size=2 face=arial>30</td>
+		<td align=center><font size=2 face=arial>10</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Arbolada</b></td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>50</td>
+		<td align=center><font size=2 face=arial>40</td>
+		<td align=center><font size=2 face=arial>100</td>
+		<td align=center><font size=2 face=arial>40</td>
+		<td align=center><font size=2 face=arial>10</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Montañosa</b></td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>60</td>
+		<td align=center><font size=2 face=arial>50</td>
+		<td align=center><font size=2 face=arial>100</td>
+		<td align=center><font size=2 face=arial>40</td>
+		<td align=center><font size=2 face=arial>10</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Enorme</b></td>
+		<td align=center><font size=2 face=arial>12</td>
+		<td align=center><font size=2 face=arial>70</td>
+		<td align=center><font size=2 face=arial>60</td>
+		<td align=center><font size=2 face=arial>100</td>
+		<td align=center><font size=2 face=arial>da40ta</td>
+		<td align=center><font size=2 face=arial>10</td>
+	</tr>
+
+</table>
+
+<p><b>Datos personalizados</b>: Si esta casilla no está seleccionada, los campos que se rellenan por defecto al seleccionar una de las condiciones anteriores aparecen desactivados. Al seleccionar esta casilla, estos campos se habilitan, y se pueden modificar.</p>
+
+<p>Si una vez modificados se quita la marca de esta casilla, el sistema muestra un mensaje al operador indicando que se perderán los cambios introducidos y se recuperarán los valores por defecto.</p>
+
+<p><b>Dirección de las olas</b>: Dirección hacia la que se desplazan las olas.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0.0 - 360.0</p>
+</ul>
+
+<p><b>Altura de las olas</b>:</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0 - 15.0</p>
+</ul>
+
+<p><b>Dirección del viento</b>:</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0.0 - 360.0</p>
+</ul>
+
+<p><b>Intensidad del viento</b>:</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0.0 - 70.0</p>
+</ul>
+
+<p><b>Dirección de la corriente</b>:</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0.0 - 360.0</p>
+</ul>
+
+<p><b>Intensidad de la corriente</b>:</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0.0 - 50.0</p>
+</ul>
+
+<p><b>Nubosidad</b>: Factor que determina el aspecto del cielo del visual, en cuanto a presencia de nubes.</p>
+
+<ul>
+	<p><u>Unidades</u>: porcentaje</p>
+	<p><u>Rango</u>: 0 - 100</p>
+</ul>
+
+<p><b>Niebla</b>: Intensidad de la niebla.</p>
+
+<ul>
+	<p><u>Unidades</u>: porcentaje</p>
+	<p><u>Rango</u>: 0 - 100</p>
+</ul>
+
+<p><b>Densidad de la lluvia</b>: Intensidad de la lluvia.</p>
+
+<ul>
+	<p><u>Unidades</u>: porcentaje</p>
+	<p><u>Rango</u>: 0 - 100</p>
+</ul>
+
+<p><b>Densidad de la nieve</b>: Intensidad de la nieve.</p>
+
+<ul>
+	<p><u>Unidades</u>: porcentaje</p>
+	<p><u>Rango</u>: 0 - 100</p>
+</ul>
+
+<p><b>Luz de luna</b>: Intensidad de la luz de la luna.</p>
+
+<ul>
+	<p><u>Unidades</u>: porcentaje</p>
+	<p><u>Rango</u>: 0 - 100</p>
+</ul>
+
+<p>Todos estos datos se pueden introducir de dos maneras tecleando el valor directamente sobre el campo o desplazando la barra anexa.</p>
+
+<p><b>Beaufort</b>: Cuando se selecciona una altura de olas, en la parte inferior izquierda de la ventana se actualiza el valor de la escala Beaufort correspondiente a la intensidad de viento seleccionada. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>Calma</li>
+	<li>Ventolina</li>
+	<li>Flojito</li>
+	<li>Flojo</li>
+	<li>Moderado</li>
+	<li>Fresquito</li>
+	<li>Fresco</li>
+	<li>Frescachón</li>
+	<li>Temporal</li>
+	<li>Temporal Fuerte</li>
+	<li>Temporal Duro</li>
+	<li>Temporal muy Duro</li>
+	<li>Huracanado</li>
+</ul>
+
+<p><b>Douglas</b>: Cuando se selecciona una intensidad de viento, en la parte inferior izquierda de la ventana se actualiza el valor de la escala Douglas correspondiente a la altura de olas seleccionada. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>Calma</li>
+	<li>Rizada</li>
+	<li>Marejadilla</li>
+	<li>Marejada</li>
+	<li>Fuerte Marejada</li>
+	<li>Gruesa</li>
+	<li>Muy Gruesa</li>
+	<li>Arbolada</li>
+	<li>Montañosa</li>
+	<li>Enorme</li>
+</ul>
+
+<p>Datos y botones de la solapa <b>Ruido atmosférico</b></p>
+
+<p><b>Ruido atmosférico</b>: Nivel de ruido atmosférico.</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosMetRuido.jpg"></p>
+
+<ul>
+	<p><u>Unidades</u>: adimensional</p>
+	<p><u>Rango</u>: 0 - 10</p>
+</ul>
+
+<p>Las zonas meteorológicas creadas podrán ser añadidas a los Escenarios, los cuales a su vez pueden ser incorporados en distintos Ejercicios.</p>
+
+<p>Las zonas meteorológicas se muestran gráficamente en la Presentación Cartográfica del instructor, tanto durante la preparación como durante la ejecución de ejercicios que incluyan zonas meteorológicas.</p>
+
+</div>
+
+</body>
+
+</html>

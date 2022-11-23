@@ -1,0 +1,254 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>ESM</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El ESM es un equipo que se emplea para detectar y ubicar geográficamente los radares, y otros sistemas emisores del enemigo, mediante el análisis de la energía electromagnética que emiten.</p>
+
+<p>El modelo de ESM es el encargado de determinar si una unidad obtiene detección de otra mediante sensor ESM, teniendo en cuenta sus sensores activos. Este modelo se basa en los valores de los alcances de los sensores activos correspondientes.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo de ESM, se realizan las siguientes comprobaciones de condiciones necesarias para la detección por ESM:</p>
+
+<ul>
+	<li>Comprobar que NO existe ocultación visual entre unidad y contacto.</li>
+	<li>Comprobar que el contacto está dentro del sector de operación del ESM.</li>
+	<li>Comprobar que la banda de operación del transmisor es alguna de las que tiene el equipo de ESM seleccionada, y su frecuencia está dentro de la mínima y máxima del equipo.</li>
+	<li>Para unidades submarinas sumergidas, comprobar que el mástil correspondiente está izado.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>El Alcance del ESM se calcula como:</p>
+
+<ul>
+	<p><font size=2 face=courier>ALCANCE_ESM = Alcance_sensor_activo * Factor_ventaja * Operatividad</font></p>
+	<p><font size=2 face=courier>ALCANCE_FINAL_ESM = MIN (ALCANCE_ESM, Horizonte_Radar * CTE_ESM)</font></p>
+	<p>Donde: <font size=2 face=courier>CTE_ESM = 1.5</font> (configurable en Galeon.ini)</p>
+</ul>
+
+<p>Si el sensor es un Radar, el alcance calcuado en el modelo radar hay que aplicarle el factor de detectabilidad por ESM:</p>
+
+<ul>
+	<p><font size=2 face=courier>Alcance_sensor_activo = Alcance_sensor_activo_equipo * Detectabilidad_por_ESM</font></p>
+</ul>
+
+<p>En cambio, si el sensor es un IFF o ECM o TACAN:</p>
+
+<ul>
+	<p><font size=2 face=courier>Alcance_sensor_activo = Alcance_sensor_activo_equipo</font></p>
+</ul>
+
+<p>Siendo <font size=2 face=courier>Alcance_sensor_activo</font>, el alcance calculado para el ESM por el sensor correspondiente.</p>
+
+<p>Estos alcances no se verán afectados por el NRO del blanco ni por factores ambientales.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Para obtener detección por ESM el contacto debe estar a una distancia respecto a la unidad inferior o igual al del Alcance del ESM, según el tipo de sensor activado por el contacto.</p>
+ 
+<p><b>Detección de la Potencia de emisión:</b></p>
+
+<ul>
+	<p>La potencia con la que emite el sensor determina su alcance de detección por ESM (sin considerar PRF u horizonte, pero sí el Factor de Detectabilidad por ESM). Por tanto cuando el ESM detecta una emisión, la señal tendrá una potencia que es función de la potencia de emisión del sensor (y por tanto de su alcance) y de la distancia a la que me encuentre de dicho sensor.</p>
+
+	<p>Se definen tres niveles de potencia discretos, Baja, Media y Alta que corresponden a tres alcances especificados en <b>Galeon.ini</b> (por ejemplo, Baja < 30 Nm, Media entre 30 y 100 y Alta > 100). La potencia con la que el ESM detectará una emisión se determinará de la siguiente forma:</p>
+
+	<p>Primero se calcula el alcance de detección por ESM del radar y se compara con estos valores discretos, determinando si es Bajo, Medio o Alto.</p>
+
+	<ul>
+		<li>Si es Baja, la potencia de la emisión detectada siempre será Baja.</li><br>
+
+		<li>Si es Media, se calcula la distancia entre el emisor y el ESM, y se divide por el factor de ventaja del ESM. Si esta distancia es inferior al alcance de detección por ESM del radar menos el alcance especificado para Potencia Baja, entonces la potencia de la detección será Media. En caso contrario será Baja. (por ejemplo, si el alcance de detección es de 40 Nm, si la distancia es de 0 a 10 Nm, la potencia será Media, si es de 10 a 40 será Baja).</li><br>
+
+		<li>Si es Alta, se calcula la distancia entre el emisor y el ESM, y se divide por el factor de ventaja del ESM. Si esta distancia es inferior al alcance de detección por ESM del radar menos el alcance máximo especificado para Potencia Media, entonces la potencia de la detección será Alta. En caso contrario, si esta distancia es inferior al alcance de detección por ESM del radar menos el alcance especificado para Potencia Baja, entonces la potencia de la detección será Media. En caso contrario será Baja. (por ejemplo, si el alcance de detección es de 120 Nm, si la distancia es de 0 a 20 Nm, la potencia será Alta, si es de 20 a 90 será Media y si es de 90 a 120 será Baja).</li>
+	</ul>
+
+	<p>Este valor de potencia se indicará en los parámetros de la emisión, de forma alfanumérica.</p>
+
+</ul>
+
+<p><b>Detección del Grado de Amenaza:</b></p> 
+
+<ul>
+	<li>Los radares (que no estén en iluminación sobre la unidad propia) de unidades amigas se considerarán con Grado de Amenaza de valor 0 y los de unidades enemigas con un Grado de Amenaza igual al calculado para el primer elemento de la librería. Los radares en Iluminación sobre la unidad propia se detectarán con un Grado de Amenaza = 15.</li><br>
+
+	<li>Se considera el IFF, TACAN y ECM con Grado de Amenaza = 0 para emisiones de unidades amigas y Grado de Amenaza = 10 para emisiones de unidades enemigas.</li>
+
+</ul>
+ 
+<p><b>Detección del ARP:</b></p>
+ 
+<ul>
+	<li>Cuando un ESM detecta a un Radar haciendo Lock-On o Iluminación sobre él, debe presentar ARP = 0 para este radar.</li><br>
+
+	<li>Si el ESM tiene capacidad de detección de ARP compleja (variable) detectará ARP y Tipo de Radar. Los tipos de Radar detectados serán:</li>
+
+	<ul>
+		<li>Lock-On (cuando el radar se encuentre en Lock-on sobre la unidad con el ESM).</li>
+		<li>Sectorial.</li>
+		<li>Circular.</li>
+		<li>Sectorial y Variable (si el radar además de sectorial tiene ARP variable).</li>
+		<li>Circular y Variable (si el radar además de circular tiene ARP variable).</li>
+	</ul>
+
+	<li>Si el ESM no tiene capacidad de detección de ARP compleja (variable):</li>
+
+	<ul>
+		<li>Si el Radar está trabajando con ARP variable el ESM no podrá conocer ni ARP ni Tipo de Radar.</li>
+		<li>Si el Radar no está trabajando con ARP variable el ESM detectará ARP y Tipo de Radar. Los tipos de Radar detectados serán:</li>
+		<ul>
+			<li>Lock-On.</li>
+			<li>Sectorial.</li>
+			<li>Circular.</li>
+		</ul>
+
+	</ul>
+
+</ul>
+
+<p>De las emisiones detectadas por el ESM sólo detecta spot si tiene capacidad de identificación. El spot obtenido corresponde al primer elemento de la librería calculada.</p>
+
+<p>El IFF es detectado por el ESM durante el tiempo que dura el pulso de interrogación (3 segundos, configurable en <b>Galeon.ini</b>). Los parámetros del IFF, se obtendrán de su radar asociado. De los equipos ECM y TACAN se mostrará en la lista de detecciones el nombre del equipo en lugar de la paramétrica.</p>
+
+<p>Cuando una unidad detecte por ESM una emisión de un radar cuya clasificación sea superior a la de la unidad, se ocultará la paramétrica de la emisión al operador. De igual forma se actuará con el radar asociado a un IFF y los engaños.</p>
+
+<p>La densidad electromagnética de la zona en la que se encuentra la unidad poseedora del ESM es tenida en cuenta de la siguiente forma. Se calcula la influencia electromagnética como el cociente entre la densidad electromagnética y la capacidad de proceso del ESM:</p>
+
+<ul>
+	<p><font size=2 face=courier>EMInfluence = EMDensity / ESMProcessCpb</font></p>
+
+	<p>Y entonces:</p>
+
+	<ul>
+		<li>Si <font size=2 face=courier>EMInfluence < 0.5</font> (configurable en <b>Galeon.ini</b>), el ESM no se ve afectado.</li><br>
+
+		<li>Si <font size=2 face=courier>EMInfluence >= 0.5</font> (configurable en <b>Galeon.ini</b>), el ESM no detectará ARP y además debe perder un número de detecciones igual al porcentaje correspondiente al valor calculado para la influencia electromagnética.</li>
+	</ul>
+
+	<p>Ejemplo:</p>
+
+	<ul>
+		<p>Si <font size=2 face=courier>EMInfluence = 0.5</font> se deben perder el 50% de las detecciones.</p>
+		<p>Si <font size=2 face=courier>EMInfluence = 0.75</font> se deben perder el 75% de las detecciones.</p>
+		<p>Si <font size=2 face=courier>EMInfluence >= 1</font> se deben perder TODAS las detecciones.</p>
+	</ul>
+
+	<p>Para eliminar las detecciones se tendrá en cuenta el siguiente criterio:</p>
+
+	<p>1º) Por Tipo de ARP. El orden de eliminación será:</p>
+
+	<ul>
+		<li>Emisiones NO en Lock-On sobre la unidad:</li>
+		<ul>
+			<li>ARP VARIABLE</li>
+			<li>ARP SECTORIAL</li>
+			<li>ARP CIRCULAR</li>
+		</ul>
+		<li>Emisiones en Lock-On sobre la unidad.</li>
+	</ul>
+
+	<p>2º) Por número de elementos "complejos" (FREC, PRF, PW): Se eliminarán primero las que tengan mayor número de elementos complejos.</p>
+
+	<p>3º) Por relación distancia / alcance: Se eliminarán primero las que tengan mayor relación distancia / alcance.</p>
+
+	<p>Nota: TACAN y perturbaciones se suponen en Lock-On y con número de elementos complejos = 0. Para engaños, se obtienen los datos de ARP, FREC, PRF, PW del radar engañado.</p>
+
+</ul>
+
+<p><b>Obtención de la Librería de ESM:</b></p>
+
+
+<ul>
+	<p>Se calcula para todos los Radares de Base de Datos los siguientes valores, partiendo de los valores de PRF, ARP, PW y frecuencia de la Base de Datos:</p>
+
+	<table border=1 cellspacing=0 cellpadding=5>
+		<tr>
+			<td align=center width=100><font size=2 face=arial><b>Datos Librería</b></td>
+			<td align=center width=100><font size=2 face=arial><b>Valor Mínimo</b></td>
+			<td align=center width=100><font size=2 face=arial><b>Valor Máximo</b></td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial><b>Frecuencia</b></td>
+			<td align=center><font size=2 face=courier>(Frecuencia – Margen_frecuencia ) *<br>* (1 – margen_lib /100)</td>
+			<td align=center><font size=2 face=courier>(Frecuencia + Margen_frecuencia ) *<br>* (1 + margen_lib /100)</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial><b>PRF</b></td>
+			<td align=center><font size=2 face=courier>PRF * (1 - margen_lib /100)</td>
+			<td align=center><font size=2 face=courier>PRF * (1 + margen_lib /100)</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial><b>ARP</b></td>
+			<td align=center><font size=2 face=courier>ARP * (1 - margen_lib /100)</td>
+			<td align=center><font size=2 face=courier>ARP * (1 + margen_lib /100)</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial><b>PW</b></td>
+			<td align=center><font size=2 face=courier>PW * (1 - margen_lib /100)</td>
+			<td align=center><font size=2 face=courier>PW * (1 + margen_lib /100)</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial><b>ECM<br>recomendado</b></td>
+			<td align=center><font size=2 face=courier>El mayor porcentaje en la tabla de<br>susceptibilidad por ECM asociada</td>
+			<td align=center><font size=2 face=courier>No tiene</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial><b>SPOT</b></td>
+			<td align=center><font size=2 face=courier>Dato del Radar o IFF</td>
+			<td align=center><font size=2 face=courier>No tiene</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial><b>Grado de<br>Amenaza</b></td>
+			<td align=center><font size=2 face=courier>Dato del Radar o IFF</td>
+			<td align=center><font size=2 face=courier>No tiene</td>
+		</tr>
+
+	</table>
+
+	<p>Se comprueba si los valores de la detección están dentro de los límites anteriores, dando un valor FIT de 1 a 4 según los valores que estén dentro de los márgenes mínimo y máximo anteriormente calculados.</p>
+
+	<ul><font size=2 face=courier>
+		<li>Frec_min &le; Frecuencia_deteccion &le; Frec_max</li>
+		<li>PRF_min &le; PRF_detección &le; PRF_max</li>
+		<li>ARP_min &le; ARP_detección &le; ARP_max</li>
+		<li>PW_min &le; PW_detección &le; PW_max</li>
+		</font>
+	</ul>
+
+	<p>Se ordena la librería de identificaciones según su rango de FIT, si coinciden ordenar por Grado de Amenaza, si coinciden ordenar por diferencia respecto a la frecuencia, PRF, ARP, y PW.</p>
+
+	<p>Las emisiones para las que se calcule un FIT de 0 no son relevantes, por lo que no se presentan.</p>
+
+</ul>
+
+
+
+ 
+
+ 
+
+ 
+</div>
+
+</body>
+
+</html>

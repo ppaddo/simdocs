@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Lanzador de Cargas</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El Lanzador de Cargas es el encargado de simular el lanzamiento de cargas desde las unidades, teniendo en cuenta los datos característicos del lanzador y de las cargas de profundidad seleccionadas para lanzamiento, y las condiciones del lanzamiento solicitado.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previo a poder llevar a cabo un lanzamiento de cargas, se realizan las siguientes comprobaciones:</p>
+
+<ul>
+	<li>Comprobar que existen cargas del tipo seleccionado en el pañol.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Se crea un objeto carga de profundidad con un ángulo vertical de salida determinado por el ángulo de lanzamiento de cargas (configurable en <b>Galeon.ini</b>) y con rumbo y velocidad inicial necesarios para que la carga describa un tiro parabólico y caiga sobre el punto de lanzamiento y se decrementa el contador de número de cargas disponibles.</p>
+
+<p>El punto de lanzamiento de las cargas será distinto dependiendo del tipo de lanzador, tipo de carga lanzada y tipo de lanzamiento solicitado:</p>
+
+<ul>
+	<li><b>Lanzador fijo y carga proyectada</b>: el punto de lanzamiento será el determinado por la orientación del lanzador y distancia de proyección de la carga.</li>
+	<br>
+
+	<li><b>Lanzador fijo y carga propulsada</b>: el punto de lanzamiento será el determinado por la orientación del lanzador y la distancia de lanzamiento solicitada. Se comprobará que la distancia de lanzamiento está dentro del rango de alcances de la carga.</li>
+	<br>
+
+	<li><b>Lanzador orientable y carga proyectada</b>: el punto de lanzamiento será el determinado por la demora de lanzamiento solicitada y la distancia de proyección de la carga. Se comprobará que la demora de lanzamiento está dentro de los sectores de fuego del lanzador.</li>
+	<br>
+
+	<li><b>Lanzador orientable, carga propulsada y lanzamiento a punto fijo</b>: el punto de lanzamiento será el determinado por la demora y distancia de lanzamiento solicitada. Se comprobará que la distancia de lanzamiento está dentro del rango de alcances de la carga y la demora de lanzamiento está dentro de los sectores de fuego del lanzador.</li>
+	<br>
+
+	<li><b>Lanzador orientable, carga propulsada y lanzamiento a blanco</b>: el punto de lanzamiento será el determinado por la posición futura del blanco seleccionado, considerando el tiempo de vuelo necesario para que la carga alcance al blanco en su posición actual. En este cálculo se tiene en cuenta el viento, de forma que se compense. Se comprobará que la distancia de lanzamiento está dentro del rango de alcances de la carga y la demora de lanzamiento está dentro de los sectores de fuego del lanzador.</li>
+
+</ul>
+
+<p>En los cuatro primeros casos no se tiene en cuenta el viento, por lo que la carga lanzada, al verse afectada en su vuelo por dicho viento, puede no alcanzar con exactitud el punto de lanzamiento. Por otro lado, en el quinto caso, aunque si se tiene en cuenta el viento, en el cálculo a posición futura del blanco se aproxima que el tiempo de vuelo necesario para alcanzar al blanco en su posición futura es el mismo que el necesario para alcanzarlo en su posición actual, por lo que la carga puede no alcanzar con exactitud dicho punto.</p>
+
+<p>Si se efectuó un lanzamiento en salva, se crea un único objeto carga, pero se considera que el radio de acción de la carga creada es el radio de acción de una carga multiplicado por el número de cargas.</p>
+
+</div>
+
+</body>
+
+</html>

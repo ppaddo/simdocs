@@ -1,0 +1,110 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Servidor de Ejercicios</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/ControlWnd.jpg"></p>
+
+<p>El Simulador Táctico Galeón permite la ejecución de Ejercicios de las siguientes formas:</p>
+
+<ul>
+	<li>Ejecución en Red.</li>
+	<li>Ejecución Local.</li>
+</ul>
+
+<p>Para iniciar una Ejecución de un Ejercicio en Red el administrador del sistema debe ejecutar la herramienta de Servidor de Ejercicios:</p>
+
+<p align=center><img width=600 src="../IlvImages/ExercisesWnd.jpg"></p>
+
+<p>Esta herramienta le permite al administrador cargar para su Ejecución en Red varios ejercicios simultáneos, finalizar los ejercicios cargados, consultar las consolas asignadas y conectadas a cada Ejercicio cargado, y resolver conflictos de asignación de consolas a más de un Ejercicio simultáneamente:</p>
+
+<p><i>Nota</i>: Aunque esta herramienta no limita el número de Ejercicios que pueden ser cargados simultáneamente, la cantidad total de Elementos que forman parte del conjunto de Ejercicios cargados está restringida a los límites descritos en <i>Descripción General – Capacidades del Sistema</i>.</p>
+
+<ul>
+ 	<li><b>Cargar</b>: se abre un nuevo diálogo para carga de Ejercicios (ver apartado Carga de Ejercicios). Los Ejercicios cargados se muestran en la lista, indicando su clasificación y tipo.</li><br>
+
+ 	<li><b>Finalizar</b>: seleccionando un Ejercicio cargado de la lista, y pulsando este botón, se finaliza este Ejercicio en el servidor.</li><br>
+
+ 	<li><b>Cabinas / Cabina de Control / Consolas</b>: Mediante estos leds, se muestran las cabinas, y dentro de cada cabina, las consolas asignadas al Ejercicio seleccionado.</li>
+
+	<p>El significado de los leds para las Cabinas es el siguiente:</p>
+
+ 	<ul>
+ 		<li>Led NO PRESENTE: No hay consolas en la cabina asignadas al Ejercicio seleccionado.</li><br>
+
+ 		<li>Led APAGADO: Hay consolas en la cabina asignadas al Ejercicio seleccionado, pero no están conectadas aún ninguna al Ejercicio.</li><br>
+
+ 		<li>Led AMARILLO: Hay consolas en la cabina asignadas al Ejercicio seleccionado, y no todas están conectadas al Ejercicio.</li><br>
+
+ 		<li>Led VERDE: Hay consolas en la cabina asignadas al Ejercicio seleccionado, y todas están conectadas al Ejercicio.</li><br>
+
+ 		<li>Led ROJO: Hay consolas en la cabina asignadas al Ejercicio seleccionado, pero existe conflicto debido a que estas consolas están asignadas a más de un Ejercicio cargado.</li><br>
+
+ 	</ul>
+
+	<p>Pulsando en el led de una Cabina, se muestran a la derecha los leds correspondientes a las consolas pertenecientes a dicha Cabina. El significado de los leds para las Consolas es el siguiente:</p>
+
+	<ul>
+		<li>Led NO PRESENTE: La Consola no está asignada al Ejercicio seleccionado. Si el botón sobre el que está el led no está disponible (hundido) significa que la consola no está asignada en el Ejercicio seleccionado por lo que no podrá ser incluida. Si dicho botón está disponible (no hundido) significa que la consola sí había sido asignada a este Ejercicio en Preparación pero ha sido quitada para resolver conflicto (como se explica más adelante). Puede por tanto volver a ser asignada, pulsando el botón.</li><br>
+
+		<li>Led APAGADO: La Consola está asignada al Ejercicio seleccionado, pero no está conectada al Ejercicio.</li><br>
+
+		<li>Led AMARILLO: La Consola está asignada al Ejercicio seleccionado, y está en proceso de conexión con el Ejercicio.</li><br>
+
+		<li>Led VERDE: La Consola está asignada al Ejercicio seleccionado, y está conectada al Ejercicio.</li><br>
+
+		<li>Led ROJO: La consolas está asignada al Ejercicio seleccionado, pero existe conflicto debido a que esta consola están asignada a más de un Ejercicio cargado. Esta consola no podrá conectar con ningún Ejercicio hasta que se resuelva el conflicto.</li><br>
+
+	</ul>
+
+	<p>Actuando sobre los leds de Consolas, el administrador podrá también resolver conflictos de asignación de consolas a más de un Ejercicio simultáneamente. Pulsando sobre los leds en estado ROJO o VERDE, la consola dejará de estar asignada al Ejercicio seleccionado. Estos leds pasarán a estado NO PRESENTE, pero podrán ser pulsados de nuevo para volver a incluir la Consola al Ejercicio seleccionado.</p>
+
+	<p>Al Lanzar la Consola para una Ejecución en Red (no pulsar ESCAPE mientras se presenta el splash), la consola intentará conectar con un ejercicio que se encuentre en Ejecución en Red, y que incorpore a esta Consola bien como Instructor o asignada a una Unidad, teniendo en cuenta las reasignaciones de Consolas de Alumno realizadas por el administrador para resolver conflictos entre varios Ejercicios cargados.</p>
+
+	<p>Además, en este tipo de Ejecuciones, las Consolas de Instructor pueden estar asignadas en Preparación a más de un Ejercicio, por lo que puede ser Consola de Instructor de más de un Ejercicio cargado en Red por el Servidor de Ejercicios. Cuando se produce esta circunstancia, y se arranca la consola en cuestión, el Instructor deberá seleccionar a qué Ejercicio desea conectarse.</p>
+
+	<li><b>Control Remoto</b>: se abre el siguiente diálogo:</li>
+
+	<p align=center><img width=600 src="../IlvImages/ConsolesManager.jpg"></p>
+
+	<p>Esta herramienta permite al administrador ejecutar comandos o aplicaciones remotamente en las consolas del sistema.</p>
+
+	<ul>
+		<li>Mediante expresiones con caracteres comodín (*,?,[]) se seleccionan las consolas sobre las que ejecutar las siguientes acciones. Por ejemplo:</li>
+
+		<ul><p><font size=2 face=courier>
+			Con1* <br>
+			Con??1 <br>
+			Con11[123]
+		</font></p></ul>
+
+		<li>Las acciones que se pueden ejecutar remotamente en las consolas son las siguientes:</li>
+
+		<ul><p><i>
+			Ping <br>
+			PowerOff <br>
+			Reboot <br>
+			Ejecutar (comando o aplicación) <br>
+			Terminar (proceso)
+		</i></p></ul>
+
+		<li>Las respuestas de las consolas se muestran en el área inferior, y pueden ser ordenadas alfabéticamente.</li>
+
+	</ul>
+
+</ul>
+<br>
+
+</div>
+
+</body>
+
+</html>

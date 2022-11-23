@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Mensajería</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El modelo de mensajería simula el uso de sistemas de comunicaciones en radio frecuencia para transmisión y recepción de mensajes de texto en una misma red, determinando las condiciones de recepción que deben producirse para la recepción de los mensajes transmitidos por otra unidad.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Se realizan las siguientes comprobaciones de condiciones necesarias para que varias unidades puedan establecer comunicación (intercambiar mensajes) en una misma red de mensajería:</p>
+
+<ul>
+	<li>Todas ellas deben tener la misma red de mensajería en su plan de frecuencias.</li>
+	<li>Para que una unidad pueda recibir un mensaje, debe estar en alcance (según el cálculo a continuación) de la unidad que lo envía, y no debe existir ocultación entre transmisor y receptor.</li>
+	<li>Para que las unidades submarinas sumergidas, puedan recibir o transmitir mensajes, deben tener un mástil con antena para la banda correspondiente izado.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>El Alcance Máximo de la comunicación será:</p>
+
+<ul><font size=2 face=courier>
+	<p>ALCANCE máximo = Alcance_equipo * Factor_prop_comunicaciones</p>
+</font></ul>
+
+<p>En función de la banda de comunicación usada, el valor de <font size=2 face=courier>Alcance_equipo</font> será:</p>
+
+<ul><font size=2 face=courier>
+	<li>Alcance Equipo HF = Alcance Equipo SATCOM = Infinito.</li>
+	<li>Alcance Equipo UHF = Alcance Horizonte Radar * FactorUHF.</li>
+	<li>Alcance Equipo VHF = Alcance Horizonte Radar * FactorVHF.</li>
+</font></ul>
+
+<ul>
+	<p><font size=2 face=courier>FactorUHF</font> y <font size=2 face=courier>FactorVHF</font> configurables en <b>Galeon.ini</b>.</p>
+	<p><font size=2 face=courier>Alcance Horizonte Radar</font> calculado como se indica en <i>Modelos - Sensores – Radar</i>.</p>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Cuando se crea un nuevo mensaje, éste pasa al estado En Proceso mientras que no se ordena su envío. Una vez que se envía el mensaje pasa a estado Transmitiendo. Cuando todas las unidades destinatarias o informadas hayan recibido el mensaje, éste pasará a estado Transmitido permaneciendo ya en este estado.</p>
+
+<p>Mientras el mensaje esté en estado Transmitiendo, el modelo evalúa periódicamente la transmisión y recepción del mensaje. Es decir, determina qué unidades, de entre las que están como destinatarias e informadas del mensaje, reciben efectivamente el mensaje. Para que estas unidades reciban el mensaje, deben cumplir las comprobaciones anteriores. Mientras alguna de las unidades destinatarias o informadas no haya recibido el mensaje por no cumplir estas comprobaciones, el mensaje permanece en el estado Transmitiendo, y se continúa evaluando su transmisión periódicamente.</p>
+
+<p>El equipo de mensajería sólo será detectado por un equipo de COMSM si alguno de sus mensajes se encuentra en modo Transmitiendo, ya que se simula que se reintenta mandar el mensaje a cada destinatario pendiente de envío automáticamente en cada evaluación.</p>
+ 
+</div>
+
+</body>
+
+</html>

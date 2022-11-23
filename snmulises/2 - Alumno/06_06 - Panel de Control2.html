@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Panel de Control 2</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>Este panel de control es una pantalla táctil dividida en varias áreas desde las que se pueden realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Observar evolución del timón y la caña.</li>
+	<li>Controlar el piloto automático.</li>
+	<li>Controlar el/los motor/es del buque.</li>
+	<li>Controlar servos y gobierno de emergencia.</li>
+	<li>Seleccionar el modo de control de la propulsión (Telégrafo o Manual).</li>
+	<li>Reconocer averías.</li>
+</ul>
+
+<p align=center><img width=600 src="../Imagenes/ConsolaPyGPanelControl2.jpg"></p>
+
+<p>A continuación se describe cada una de las áreas que integran el panel.</p>
+
+<p><b>Indicadores de gobierno</b></p>
+
+<p>El área de indicadores de gobierno muestra en cada momento el ángulo de timón actual del buque y la caña solicitada</p>
+
+<p><b>Piloto automático</b></p>
+
+<p>El área de Piloto Automático contiene los controles e indicadores del Piloto Automático que a continuación se describen:</p>
+
+<p align=center><img width=600 src="../Imagenes/ConsolaPyGPilotoAutomatico.jpg"></p>
+
+<ul>
+	<li>Selector e Indicador del <b>Rumbo Solicitado</b></li>
+
+	<p>Permite establecer el rumbo que debe mantener el buque y consta de un selector analógico (arriba), un campo de rumbo pedido (verde) y un campo de rumbo aceptado (rojo).</p>
+
+	<p>Para introducir el rumbo, el operador debe tocar el selector analógico en la posición elegida (de 0 a 359) y el valor marcado aparece inmediatamente en el campo de rumbo pedido.</p>
+
+	<p>Para un ajuste fino del dato, se usan las flechas situadas a la derecha de este campo. Al tocar la flecha arriba el dato se incrementa en una unidad y al tocar la flecha abajo el dato disminuye en una unidad.</p>
+
+	<li>Selector e Indicador de <b>Limitación de Ángulo de Timón</b></li>
+
+	<p>Permite establecer el máximo ángulo de timón del buque durante el funcionamiento del piloto automático y consta de un selector analógico (arriba), un campo de ángulo pedido (verde) y un campo de ángulo aceptado (rojo).</p>
+
+	<p>Para introducir el ángulo, el operador debe tocar el selector analógico en la posición elegida (de 0 a 45) y el valor marcado aparece inmediatamente en el campo de ángulo pedido.</p>
+
+	<p>Para un ajuste fino del dato, se usan las flechas situadas a la derecha de este campo. Al tocar la flecha arriba el dato se incrementa en una unidad y al tocar la flecha abajo el dato disminuye en una unidad.</p>
+
+	<li>Selector e Indicador del <b>Estado de la Mar</b></li>
+
+	<p>Permite establecer el funcionamiento del piloto automático en función del estado del mar y consta de un selector analógico (arriba), un campo de estado de mar pedido (verde) y un campo de estado de mar aceptado (rojo).</p>
+
+	<p>Para introducir el estado del mar, el operador debe tocar el selector analógico en la posición elegida (de 0 a 10) y el valor marcado aparece en el campo de estado de mar pedido.</p>
+
+	<p>Para un ajuste fino del dato, se usan las flechas situadas a la derecha de este campo. Al tocar la flecha arriba el dato se incrementa en una unidad y al tocar la flecha abajo el dato disminuye en una unidad.</p>
+
+	<p>El selector e indicador de Estado de la Mar sólo tiene efecto en los buques de tres grados de libertad.</p>
+
+	<li>Botón de <b>Aceptación</b> (REQUEST)</li>
+
+	<p>Al tocar este botón, los valores introducidos en los campos pedidos pasan a los campos aceptados, siendo estos últimos valores los que usará el piloto automático para ejecutar la maniobra.</p>
+
+	<li>Botón de <b>Encendido/Apagado</b> (ON)</li>
+
+	<p>Al tocar este botón, se ilumina y se inicia el funcionamiento del piloto automático considerando los valores de rumbo y ángulo de timón aceptados (rojos). Al tocarlo de nuevo, el botón se apaga y se detiene el funcionamiento del piloto automático.</p>
+
+</ul>
+
+<p><b>Control de Motores</b></p>
+
+<p>El área de control de motores contiene los botones de control de los cuatro motores que puede llevar el buque: motor de babor a proa, motor de babor a popa, motor de estribor a proa y motor de estribor a popa.</p>
+
+<p>En los buques con un solo motor sólo están activos los botones de estribor.</p>
+
+<p>Si el buque tiene un solo motor por eje, sólo están activos los botones del motor de popa.</p>
+
+<p>Cada motor se controla con los siguientes botones:</p>
+
+<ul>
+	<li><b>Listo</b> – Este botón debe estar encendido para poder pulsar el botón de embrague. El botón se enciende y se apaga simplemente tocándolo.</li><br>
+	
+	<li><b>Embragado</b> – Inicialmente este botón está apagado y no se puede encender hasta que no esté encendido el botón Listo que indica que el motor está preparado. Estando el motor preparado, el botón se enciende, para embragar, y se apaga, para desembragar, simplemente tocándolo.</li><br>
+	
+	<li><b>Parada de Emergencia</b> – Este botón actúa como indicador de parada de emergencia. Cuando el Instructor impone la condición de Parada de Emergencia de un motor, se para el motor y se enciende el indicador de Parada de Emergencia correspondiente.</li>
+	
+</ul>
+
+<p><b>Control de Gobierno</b></p>
+
+<p>El área de control de gobierno contiene los siguientes botones:</p>
+<ul>
+	<li><b>Servo1</b> – Cada vez que se toca este botón conmuta el estado de marcha o parada del Servo 1.</li><br>
+
+	<li><b>Servo2</b> – Cada vez que se toca este botón conmuta el estado de marcha o parada del Servo 2.</li><br>
+
+	<li><b>Babor</b> – Cada vez que se toca este botón el timón se mueve 1 grado a babor. Este botón funciona aunque los servos estén apagados o averiados.</li><br>
+
+	<li><b>Estribor</b> – Cada vez que se toca este botón el timón se mueve 1 grado a estribor. Este botón funciona aunque los servos estén apagados o averiados.</li>
+
+</ul>
+
+<p><b>Control de Propulsión</b></p>
+
+<p>El área de control de propulsión contiene los siguientes botones:</p>
+
+<ul>
+	<li><b>Telégrafo</b> – Cuando se toca este botón, se activa el control de la propulsión mediante el Telégrafo y se desactiva el control manual. Este botón permanece iluminado mientras está activo este modo de propulsión.</li><br>
+	
+	<li><b>Manual</b> – Cuando se toca este botón, se activa el control de la propulsión mediante Palanca y se desactiva el control mediante Telégrafo. Este botón permanece iluminado mientras está activo este modo de propulsión.</li>
+	
+</ul>
+
+<p><b>Averías</b></p>
+
+<p>Cuando el Instructor introduce cualquier avería en el buque (en los equipos, comunicaciones o motores), este indicador se enciende de forma intermitente y suena una alarma. Cuando el operador lo presiona (reconociendo la avería), el indicador se ilumina de forma fija y la alarma sonora se para; finalmente se apaga cuando el instructor elimina todas las averías del buque.</p>
+
+<p>Cuando la avería provocada por el instructor es una reducción de la potencia del motor, el led situado a la derecha del botón de Listo se ilumina.</p>
+
+<p>Una vez reconocida la avería, al volver a tocar el botón, se abre la ventana de Control de Averías y Capacidades en la que el operador puede consultar las averías que el instructor ha asignado al buque. En esta ventana se muestran todos los elementos (distribuidos en tres solapas) que el instructor puede averiar, cada elemento tiene una casilla anexa que aparece marcada cuando el elemento está dañado.</p>
+
+</div>
+
+</body>
+
+</html>

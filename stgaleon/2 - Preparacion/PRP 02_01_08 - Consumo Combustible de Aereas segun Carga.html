@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Consumo de Combustible de Aéreas según Carga</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvDynamics/AirFuelCsmLoadWnd.jpg"></p>
+
+<p>Los modelos de Consumo de Combustible de unidades Aéreas según Altura se ven afectados por el rango de Carga de la unidad. Esta influencia se parametrizan mediante una tabla en la que se introducen coeficientes de corrección para los siguientes rangos de carga de la unidad, expresados en fracciones de la carga máxima de la unidad:</p>
+
+<ul>
+	<p>0 – 1/4, 1/4 – 2/4, 2/4 – 3/4, 3/4 – 1</p>
+</ul>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Coeficiente</b>: Factor que aumenta el consumo de combustible de la unidad aérea.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 1.000 - 9.999</p>
+
+	<p>Ejemplo:</p>
+
+	<p>Si Coeficiente = 1.000 &rArr; no afecta al consumo combustible.</p>
+	<p>Si Coeficiente = 9.999 &rArr; multiplica por ~10 el consumo.</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

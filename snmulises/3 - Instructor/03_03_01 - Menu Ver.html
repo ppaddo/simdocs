@@ -1,0 +1,104 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Menú Ver</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>El menú Ver consta de las siguientes opciones:</p>
+
+<li><b>NAVAREAS</b>: Activando esta opción se presenta la división en NAVAREAS. Al desactivar la opción la división en NAVAREAS se oculta.</li><br>
+
+<li><b>Regiones INMARSAT</b>: Al activar esta opción se presentan las cuatro regiones oceánicas, correspondientes a las zonas de cobertura de cada satélite de Inmarsat, en las que se divide el globo terrestre.</li>
+
+<p>Estas regiones se muestran en la siguiente tabla:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=200><font size=2 face=arial><b>Región</b></td>
+		<td width=100><font size=2 face=arial><b>Posición</b></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>AOR-W (Océano Atlántico Oeste)</td>
+		<td><font size=2 face=arial>54.0º W</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>AOR-E (Océano Atlántico Este)</td>
+		<td><font size=2 face=arial>15.5º W</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>IOR (Océano Índico)</td>
+		<td><font size=2 face=arial>64.0º E</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>POR (Océano Pacífico)</td>
+		<td><font size=2 face=arial>178.0º E</td>
+	</tr>
+
+</table>
+
+<p>Al desactivar la opción, las zonas de cobertura Inmarsat se ocultan.</p>
+
+<li><b>Cambio de Carta</b>: Desde esta opción se pueden seleccionar tres modos diferentes de operación para el cambio de carta:</li><br>
+
+<ul>
+	<li><b>Automático</b>: El sistema presenta siempre la carta de menor escala (de entre las incluidas en el ejercicio) que cubra el área de trabajo seleccionada en la Presentación Cartográfica.</li><br>
+
+	<li><b>Inactivo</b>: El sistema no comprueba si existe alguna carta de menor escala que cubra el área de trabajo seleccionada. Los cambios de carta deben realizarse a través de la opción Herramientas &rarr; Selección de Carta.</li>
+
+	<p>Nota: Esta opción no aparece cuando se usa cartografía C-Map.</p>
+</ul>
+
+<li><b>Meridianos y Paralelos</b>: Mientras esta opción esté seleccionada, el sistema presenta sobre la carta una rejilla de meridianos y paralelos.</li><br>
+
+<li><b>Escala</b>: Al seleccionar esta opción, se abre la ventana de selección de escala, donde el operador puede seleccionar directamente la escala de presentación, bien introduciendo el valor de escala deseado y pulsando el botón Aceptar o bien seleccionándola de entre una de las predefinidas. Mediante el botón Vista general la carta se centra y escala con los parámetros establecidos por defecto en el fichero de configuración (Ulises.ini).</li><br>
+
+<p align=center><img width=300 src="../Imagenes/Escala.jpg"></p>
+
+<li><b>Ayudas de Pesca</b>: (Sólo para Simuladores que incluyan la opción de Pesca).</li>
+
+<p>Mientras esta opción esté seleccionada, el sistema presenta sobre la carta las ayudas gráficas para el cierre de la red de cerco o la recogida del palangre. Estas ayudas sólo se mostrarán si hay una maniobra de cerco o palangre en ejecución.</p>
+
+<p align=center><img width=300 src="../Imagenes/Ayuda Pesca Cerco.jpg"></p>
+
+<p>Estas ayudas muestran la siguiente información al operador:</p>
+
+<ul>
+	<li><b>Iconos de boyas</b>: Durante el largado, cada boya de la red que se lanza aparece representada como un círculo rojo. En el arte de cerco, cuando la posición del buque respecto a una boya es incorrecta para poder efectuar el cierre (ver manual de modelística), la boya se representa como un cuadrado con un aspa.</li><br>
+	
+	<li><b>Círculo centrado en el buque</b>: Este círculo marca la distancia máxima entre el buque y la boya inicial para que se evalúe la posibilidad de cierre o recogida. La zona clara del círculo indica el sector de demoras (desde el buque a la boya inicial) válidas para que se pueda efectuar el cierre o recogida. La zona oscura indica el sector de demoras inválidas. Con este gráfico se puede ejecutar una maniobra de cierre o recogida correcta, siempre que el buque se sitúe, de manera que la boya inicial quede dentro de la zona clara del círculo. Para cerrar el cerco, también es necesario que todas las boyas queden dentro del sector marcado por la zona clara del círculo.</li><br>
+	
+	<li><b>Línea del buque a la boya inicial</b>: Esta línea marca en cada momento la demora desde el centro del buque a la boya inicial. Esta línea debe cruzar la zona clara del círculo para que la maniobra de cierre o recogida sea correcta.</li><br>
+	
+	<li>Dato <b>Vel. max.</b>: Este dato muestra la velocidad máxima que puede llevar el buque para efectuar el cierre o recogida. El dato se presenta en rojo si la velocidad actual del buque es mayor que la máxima y en verde si la velocidad actual es menor o igual. Este dato debe estar verde para que la maniobra de cierre o recogida sea correcta.</li><br>
+	
+	<li>Dato <b>Largada</b>: Este dato muestra en cada momento la longitud de cable que se ha largado, así como los límites máximo y mínimo, entre los debe estar ésta longitud, para que se pueda efectuar el cierre. Cuando la longitud largada está dentro de los límites establecidos, este dato se presenta en color verde, en otro caso se presenta en rojo. Este dato sólo se presenta para la maniobra de cerco y debe estar verde para que el cierre sea correcto.</li><br>
+	
+</ul>
+
+<li><b>Movimiento</b>: Desde esta opción se puede seleccionar dos tipos diferentes de movimiento para la presentación cartográfica.</li><br>
+
+<ul>
+	<li><b>Absoluto</b>: La carta permanece fija en pantalla y los símbolos correspondientes a las unidades se mueven según su rumbo y velocidad.</li><br>
+	
+	<li><b>Relativo</b>: La posición propia permanece fija en el centro de la pantalla y la carta se mueve manteniendo el norte hacia arriba.</li><br>
+	
+</ul>
+
+<li><b>Alcance de Comunicaciones</b>: Esta opción, permite al operador ver sobre la pantalla gráfica, el alcance de las comunicaciones VHF y MF entre dos unidades. Para ello hay que asignar el hook a una unidad y la marca a otra unidad.</li><br>
+
+</div>
+
+</body>
+
+</html>

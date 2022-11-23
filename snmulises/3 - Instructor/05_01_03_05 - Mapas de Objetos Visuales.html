@@ -1,0 +1,96 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Objetos</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+
+<p>Los mapas de objetos visuales están formados por una colección de objetos para cada uno de los cuales se define un modelo, una altura, un tamaño y una posición.</p>
+
+<p>La creación y edición de estos mapas se realiza mediante la siguiente ventana.</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosObjetosVisuales.jpg"></p>
+
+<p>Esta ventana incluye los datos y botones que se describen a continuación:</p>
+
+<p><b>Nombre</b>: Nombre del mapa.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p>Botones de manejo de la lista de objetos:</p>
+
+<ul>
+	<p><b>Añadir</b>: Al pulsar este botón, se añade un objeto a la lista con los datos introducidos en la solapa General. El icono del objeto visual se muestra en la presentación cartográfica.</p>
+	
+	<p><b>Editar</b>: Al pulsar este botón se pueden seleccionar los objetos picando sobre ellos con el botón izquierdo del ratón en el área de Presentación Cartográfica, y cambiarlos de posición arrastrando el ratón hasta la nueva posición. Asimismo, se pueden seleccionar los objetos sobre la lista para consultar o modificar sus datos, en este caso, el botón Editar se pulsa automáticamente y el icono gráfico se marca. La modificación de los datos requiere confirmación mediante el botón Actualizar.</p>
+	
+	<p><i>Nota</i>: Durante la edición de objetos gráficos (zonas meteorológicas, balizas, mapas de viento y corriente, rutas, objetos visuales…) se anulan las funciones asignadas a los botones del ratón para control de la presentación cartográfica (posicionar hook, zoom+, zoom- demora/distancia…), por tanto para ver los objetos hay que hacer zoom sobre la zona de la carta en la que se encuentran dichos objetos antes de pulsar el botón Editar.</p>
+	
+	<p><b>Actualizar</b>: Al pulsar este botón se actualizan los datos del objeto seleccionado, con los nuevos datos introducidos.</p>
+	
+	<p><b>Eliminar</b>: Al pulsar este botón se elimina de la lista el objeto seleccionado. También se pueden eliminar objetos picando sobre ellos con el botón izquierdo del ratón en el área de presentación cartográfica y pulsando la tecla "Suprimir".</p>
+	
+</ul>
+
+<p>Datos para la definición de cada objeto (solapa <b>General</b>)</p>
+ 
+<p><b>Nombre</b>: Nombre del objeto.</p>
+
+<ul>
+	<p><b>Formato</b>: caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>Modelo visual</b>: Fichero con formato "flt" que contiene el modelo tridimensional del objeto.</p>
+
+<p>El nombre del fichero se puede incluir a mano o insertarlo directamente desde una carpeta pulsando el botón <img width=25 src="../Imagenes/BotonInsertarFichero.jpg">.</p>
+
+<p><i>Nota</i>: Si el simulador tiene sistema visual, para visualizar correctamente el objeto, el fichero flt debe estar incluido en la carpeta correspondiente del PC del visual.</p>
+
+<p><b>Altura</b>: Altura a la que se sitúa el objeto.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0 – 1000000.0</p>
+</ul>
+
+<p><b>Latitud</b>: Latitud a la que se sitúa el objeto.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados y minutos con formato ggºmm.mmm’N/S</p>
+	<p><u>Rango</u>: 00º00.000’N a 89º59.999’N y 00º00.000’S a 89º59.999’S</p>
+</ul>
+
+<p><b>Longitud</b>: Longitud a la que se sitúa el objeto.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados y minutos con formato gggºmm.mmm’E/W</p>
+	<p><u>Rango</u>: 000º00.000’E a 179º59.999’E y 00º00.000’W a 179º59.999’W</p>
+</ul>
+
+<p><b>Hook</b>: Al pulsar este botón los campos Latitud y Longitud se rellenan automáticamente con la posición del Hook.</p>
+
+<p><b>Tamaño</b>: Factor de escala que se aplica al tamaño original del modelo visual.</p>
+
+<ul>
+	<p><u>Unidades</u>: adimensional</p>
+	<p><u>Rango</u>: 1 – 100</p>
+</ul>
+
+<p>Los mapas de objetos visuales, una vez preparados, podrán ser añadidos a los Escenarios, los cuales a su vez pueden ser incorporados en distintos Ejercicios.</p>
+
+<p>Los objetos visuales se muestran gráficamente en la Presentación Cartográfica del instructor, tanto durante la preparación como durante la ejecución de ejercicios que incluyan mapas de objetos visuales. Asimismo también aparecen en el sistema visual.</p>
+
+</div>
+
+</body>
+
+</html>

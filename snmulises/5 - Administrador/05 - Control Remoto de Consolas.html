@@ -1,0 +1,96 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Control Remoto de Consolas</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>Esta herramienta permite al operador ejecutar comandos o aplicaciones remotamente en las consolas del sistema. La herramienta consta de dos aplicaciones independientes:</p>
+
+<ul>
+	<li><b>Remote Control Receiver</b>. Se encarga de recibir y ejecutar las ordenes remotas.</li><br>
+
+	<li><b>Remote Control Unit</b>. Se encarga de emitir las ordenes del operador.</li>
+</ul>
+
+<p><b>Remote Control Receiver</b></p>
+
+<p>Es la parte de la herramienta encargada de recibir y ejecutar las ordenes remotas. Debe estar permanentemente funcionando por lo que durante la instalación de la herramienta se incluye en la carpeta de inicio de la consola.</p>
+
+<p>En la Barra de Tareas se presenta el icono correspondiente a esta aplicación. Picando sobre él con el botón derecho del ratón se presenta un menú que permite deshabilitar o volver a habilitar el receptor y terminar la aplicación del receptor. </p>
+
+<p align=center><img width=100 src="../Imagenes/MenuReceptor.jpg"></p>
+
+<p>Si se deshabilita o se termina la aplicación del receptor, la consola no aceptará las ordenes emitidas remotamente desde otras consolas.</p>
+
+<p>Un acceso directo a esta aplicación puede encontrarse en la lista de Todos los Programas del menú Inicio de Windows dentro del apartado ADDocean – Remote Control.</p>
+
+<p><b>Remote Control Unit</b></p>
+
+<p>Es la parte de la herramienta encargada de emitir las ordenes del operador. Incluye una ventana que permite al operador especificar las ordenes y consolas en las que se ejecutarán.</p>
+
+<p>Un acceso directo a esta aplicación puede encontrarse en la lista de Todos los Programas del menú Inicio de Windows dentro del apartado ADDocean – Remote Control.</p>
+
+<p>Al iniciar la aplicación se presenta la siguiente ventana con la lista de consolas que pueden ser controladas remotamente:</p>
+
+<p align=center><img width=600 src="../Imagenes/ControlRemotoConsolas.jpg"></p>
+
+<p>Para actuar remotamente sobre una consola o grupo de consolas, el operador debe seleccionarlas previamente y a continuación pulsar el botón asociado a la acción que quiere realizar.</p>
+
+<p>Las consolas pueden ser seleccionadas en la lista picando sobre su nombre con el botón izquierdo del ratón. Para eliminar la selección de la consola en la lista picar con el botón derecho del ratón.</p>
+
+<p>Otra manera de seleccionar consolas es escribir su nombre en el campo Consolas pudiéndose utilizar expresiones con caracteres comodín para referirse a un grupo de consolas. Se admiten los siguientes caracteres comodín:</p>
+
+<ul>
+	<li><font size=2 face=courier>*</font> Sustituye a un grupo de caracteres sin especificar su número. Si se utiliza solo * se seleccionan todas las consolas de la lista.</li>
+	<li><font size=2 face=courier>?</font> Sustituye a un carácter.</li>
+	<li><font size=2 face=courier>[ ]</font> Se utiliza para especificar un rango. Sustituye un carácter por cada uno de los caracteres incluido en el rango. Por ejemplo <font size=2 face=courier>Consola[125]</font> selecciona Consola1, Consola2 y Consola5. También puede especificarse un rango utilizando guiones como <font size=2 face=courier>Consola[1-3]</font> que seleccionaría Consola1, Consola2 y Consola3.</li>
+</ul>
+
+<p>Las acciones que se pueden ejecutar remotamente en las consolas son las siguientes:</p>
+
+<ul>
+	<li>Comprobar la comunicación con las consolas. Pulsando el botón Ping se puede comprobar la comunicación con las consolas seleccionadas.</li>
+	<li>Apagar consolas. Pulsando el botón Apagar se iniciará el apagado de las consolas seleccionadas.</li>
+	<li>Reiniciar consolas. Pulsando el botón Reiniciar se reiniciarán las consolas seleccionadas.</li>
+	<li>Ejecutar un comando o aplicación. Seleccionando el comando o la aplicación a ejecutar en el campo Programa y pulsando el botón Ejecutar se ordenará la ejecución de dicho comando o aplicación en las consolas seleccionadas.</li>
+	<li>Terminar un proceso. Seleccionando el proceso a terminar en el campo Programa y pulsando el botón Terminar se ordena la terminación de dicho proceso en las consolas seleccionadas.</li>
+</ul>
+
+<p>Las respuestas de las consolas se muestran en el área inferior de la ventana, y pueden ser ordenadas alfabéticamente pulsando el botón Ordenar.</p>
+
+<p><b>Instalación de la herramienta</b></p>
+
+<p>La herramienta de Control Remoto de Consolas se distribuye conjuntamente con los ficheros del Simulador. Para su instalación se entrega un único fichero ejecutable: Install Remote Control.exe.</p>
+
+<p>Ejecutar el fichero de instalación y seguir las instrucciones que presenta en la pantalla para seleccionar idioma y el directorio en el que se almacenarán los ficheros.</p>
+
+<p>Durante el proceso de almacenaje de los ficheros que componen la herramienta, se presenta una ventana del bloc de notas con el contenido por defecto del fichero RemoteControl.ini. Este fichero de configuración almacena la dirección de broadcast de la red a la que están conectadas las consolas, la lista de aplicaciones a ejecutar remotamente y la lista de consolas sobre las que se puede actuar.</p>
+
+<p>Actualizar en el fichero RemoteControl.ini los siguientes parámetros:</p>
+
+<ul>
+	<li>La dirección de broadcast de la red a la que están conectadas las consolas (etiqueta BroadcastIP).</li>
+	<li>La lista de consolas que pueden ser controladas. Se debe escribir sus nombres separados por comas a continuación de la etiqueta ConsoleList.</li>
+	<li>La lista de aplicaciones o comandos a ejecutar. Por defecto se incluye la aplicación del Simulador, pero la lista puede ser ampliada escribiendo los nombres de las aplicaciones separados por comas a continuación de la etiqueta ProcessList.</li>
+</ul>
+
+<p>Tras salvar el fichero RemoteControl.ini continua el proceso de instalación. Seguir las instrucciones presentadas en pantalla hasta su finalización.</p>
+
+<p>Por defecto el fichero RemoteControl.ini se almacena en el directorio “raíz” del Sistema Operativo, es decir, “C:\” para Windows. Si se desea cambiar, el nuevo camino hasta este fichero se puede especificar con la variable de entorno REMOTE_CONTROL_INI_PATH.</p>
+
+<p>El proceso de instalación incluye en la lista de Todos los Programas del menú Inicio de Windows un apartado ADDocean – Remote Control con los accesos directos a las aplicaciones Remote Control Unit, Remote Control Receiver y Uninstall. Copiar el acceso directo de la aplicación Remote Control Unit en el escritorio.</p>
+
+<p>El proceso de instalación también incluye en la Barra de Tareas de Windows el icono correspondiente al Remote Control Receiver. Esta aplicación se incluye en la carpeta Inicio de Windows para que inicie cada vez que se inicia Windows.</p>
+
+</div>
+
+</body>
+
+</html>

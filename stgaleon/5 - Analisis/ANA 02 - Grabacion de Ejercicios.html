@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Grabación de Ejercicios</font></b></p>
+
+<font size=2 face=arial>
+
+<p>El Sistema de Grabación de Juegos, al que llamaremos también Logger (cuaderno de bitácora), se encarga de realizar una grabación del ejercicio en ficheros de texto de manera que pueda recuperarse esa información posteriormente para diferentes usos (jugar de nuevo, realizar informes, recuperar juegos que no se cerraron correctamente,…)</p>
+
+<p>El logger tiene dos funciones básicas: grabación y reproducción.</p>
+
+<p><b><u>Grabación:</u></b></p>
+
+<p>Para que la grabación automática de un juego tenga lugar el logger debe estar activo, es decir, en el fichero de configuración (Galeon.ini / Galeon.rc) la variable UseLogger debe tener el valor 1 y los directorios indicados en LoggerPath y ActiveLoggerDir deben estar creados. Si se dan todas estas condiciones, una vez se comience la ejecución del juego (se pulse Start por primera vez) se comenzará a grabar el ejercicio en el directorio de trabajo del logger.</p>
+
+<p>En cualquier momento del juego el instructor tendrá la posibilidad de salvar la información grabada hasta ese instante. Existen dos formas de grabación: modo fotografía (se graba un instante del juego) o modo continuo (se graba todas las acciones realizadas desde el inicio del juego hasta el instante actual). El modo fotografía está siempre disponible, mientras que el modo continuo sólo puede utilizarse si se configura la grabación automática (UseLogger = 1, ver definición de variables en Galeon.ini / Galeon.rc). Grabar el juego de un modo u otro permite posteriormente realizar distintas acciones con el juego grabado durante la reproducción. En el caso del juego grabado en modo fotografía se guarda un solo fichero con extensión “.pho” en el directorio al que apunta LoggerPath, mientras que si se guarda un juego en modo continuo, se copian todos los ficheros que genera el Logger y que están en ActiveLoggerDir en un subdirectorio cuyo nombre elige el usuario y que estará situado dentro del directorio LoggerPath.</p>
+
+<p><b><u>Reproducción:</u></b></p>
+
+<p>En cuanto a la reproducción, podemos decir que existen dos maneras de recuperar un juego: a partir de una fotografía (fichero “.pho”) o a partir de un directorio de informe.</p>
+
+<p>Si el juego se recupera a partir de un fichero “.pho”, sólo está disponible el modo de ejecución que es exactamente igual al que se realiza cuando el juego es cargado desde una base de datos, con la diferencia de que los datos del juego (posición, velocidad, estado de las unidades y el resto de parámetros del juego en general) se encuentran en el mismo estado en el que estaban en el momento de la grabación de la fotografía.</p>
+
+<p>Si el juego se recupera a partir de un directorio de informe (debriefing en inglés) podemos distinguir dos modos de funcionamiento:</p>
+
+<ul>
+
+<p><b>Modo repetición</b>: desde el inicio del juego hasta el último instante guardado en el directorio donde se encuentra el informe, el juego solo puede ejecutarse en modo análisis, es decir, la consecución de eventos del juego se producen en el mismo orden, velocidad y estado en el que se produjeron en el momento de la ejecución original.</p>
+
+<p><b>Modo ejecución</b>: Se puede acceder a é en cualquier instante y consiste en que la ejecución del mismo se realiza de manera normal (el instructor y los alumnos pueden participar en la consecución de los eventos e influir en el juego).</p>
+
+</ul> 
+
+<p><i>Nota</i>: Recuperar un juego que no se salvó correctamente consiste en reproducir un juego a partir de la última fotografía que se obtuvo del mismo.</p>
+
+<p>Por último, si el juego se guarda de forma automática, cuando por cualquier motivo el juego no se termina de forma adecuada (corte de suministro eléctrico o mal funcionamiento) puede recuperarse posteriormente a partir de la información que se guarda en el directorio indicado en ActiveLoggerDir.</p>
+
+<p>Si el programa detecta que existe información suficiente en el directorio ActiveLoggerDir para recuperar un juego, pregunta al usuario si desea recuperar ese juego. En caso de que la respuesta sea afirmativa se realiza una recuperación similar a la recuperación a partir de un fichero “.pho” (en realidad se recupera el juego a partir del fichero “.pho” mas moderno que exista en el citado directorio). Si la respuesta a la pregunta anterior es negativa, el contenido del directorio ActiveLoggerPath se borra.</p>
+
+<p>Si el juego se termina correctamente, se pregunta al usuario si desea grabarlo. En caso afirmativo se realiza una grabación en modo fotografía o informe según elija el operador.</p>
+
+<p><u>Variables en Galeon.ini / Galeon.rc</u>:</p>
+
+<p>Las variables que permiten configurar el funcionamiento del Logger son:</p>
+
+<p><b>LoggerPath</b>: Cadena de texto que indica donde deben guardarse los ficheros que genera el Logger.</p>
+
+<p><b>ActiveLoggerDir</b>: Cadena de texto que indica el directorio (relativo a LoggerPath) de trabajo por defecto del Logger. Por ejemplo, si LoggerPath tiene el valor “C:/Logger” y ActiveLoggerDir vale “default”, el directorio de trabajo por defecto del Logger será “C:/Logger/default”.</p>
+
+<p><b>TimePeriodicPhoto</b>: Tiempo, en segundos, que transcurre desde que el sistema de grabación realiza una fotografía del juego hasta que realiza la siguiente. Si el valor es muy pequeño, el sistema de grabación será mas lento (ya que realizar las fotografías es costoso) mientras que si el valor de esta variable es demasiado grande, el sistema de reproducción será mas lento ya que éste utiliza las fotografías periódicas para posicionarse más rápidamente en los determinados instantes de tiempo. Los valores de esta variable se limitan entre 150 y 7200 segundos: si se establece un valor fuera de ese rango, se toma 150, si el valor es menor que 150, o 7200 si el valor es mayor que 7200.</p>
+
+<p><b>UseLogger</b>: sus valores pueden ser 1 ó 0. Si UseLogger vale 0 el modo automático de grabación no funcionará y por tanto sólo se podrán grabar los juegos en modo fotografía. Si vale 1 el sistema de grabación funcionará automáticamente y su modo de funcionamiento dependerá del resto de variables.</p>
+
+<p><b>OnlyPhoto</b>: sus valores pueden ser 1 ó 0. Si vale 0 el sistema automático de grabación (en caso de estar activado) funcionará normalmente mientras que si vale 1 se grabarán fotografías periódicas pero no información de debriefing entre dos fotografías consecutivas. Es importante entender que si OnlyPhoto vale 1, el juego que se está grabando sólo podrá ser recuperado en modo fotografía (a partir de la última fotografía), mientras que si vale 0 la reproducción admite todas las variedades. En este punto, la variable TimePeriodicPhoto toma especial importancia ya que si OnlyPhoto vale 1, solo podrá recuperarse el juego a partir de la última fotografía grabada y por tanto se pierde un tiempo de juego que será como máximo TimePeriodicPhoto segundos.</p>
+
+</div>
+
+</body>
+
+</html>

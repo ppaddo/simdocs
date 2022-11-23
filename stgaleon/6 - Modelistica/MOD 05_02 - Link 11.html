@@ -1,0 +1,152 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Link-11</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El Modelo de Link-11 (también conocido como Tactical Digital Information Link A o TADIL A) simula el intercambio de información táctica mediante el empleo de sistemas de comunicaciones en radiofrecuencia. Por ello, se tiene en cuenta un límite en el alcance de la dicha comunicación.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Se realizan las siguientes comprobaciones de condiciones necesarias para que varias unidades puedan establecer comunicación en una misma red de Link 11:</p>
+
+<ul>
+	<li>Todas ellas deben tener seleccionada la misma red y con la misma frecuencia.</li>
+	<li>Para que una unidad pueda recibir lo que se transmite en la red, debe estar en alcance (según el cálculo a continuación) de la unidad que transmite.</li>
+	<li>Para que las unidades submarinas sumergidas puedan recibir o transmitir, deben tener un mástil con antena para la banda correspondiente izado.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>El Alcance Máximo de la comunicación será:</p>
+
+<ul><font size=2 face=courier>
+	<p>ALCANCE máximo = Alcance_equipo * Factor_prop_comunicaciones</p>
+</font></ul>
+
+<p>En función de la banda de comunicación usada, el valor de Alcance_equipo será:</p>
+
+<ul>
+	<li><font size=2 face=courier>Alcance Equipo HF = Alcance Equipo SATCOM = Infinito</font></li>
+	<li><font size=2 face=courier>Alcance Equipo UHF = Alcance Horizonte Radar * FactorUHF</font></li>
+	<li><font size=2 face=courier>Alcance Equipo VHF = Alcance Horizonte Radar * FactorVHF</font></li>
+</ul>
+
+<ul>
+	<p><font size=2 face=courier>FactorUHF</font> y <font size=2 face=courier>FactorVHF</font> configurables en <b>Galeon.ini</b>.</p>
+	<p><font size=2 face=courier>Alcance Horizonte Radar</font> calculado como se indica en <i>Modelos - Sensores – Radar</i>.</p>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>En este modelo se tiene en cuenta que la red Link-11 opera normalmente bajo un protocolo denominado Roll Call, bajo el cual las unidades participantes (Participant Unit), transmiten sus datos bajo petición (protocolo de polling) de la unidad controladora de la red (Net Control Station o NCS). El rol NCS sólo lo puede tener una unidad, las demás deben tener el rol Picket. Cada red Link-11 opera en una frecuencia.</p>
+
+<p>La primera unidad que enciende el Link-11 se establece como NCS. Cuando otra unidad que se encuentre dentro de la red solicita ser NCS, le quita ese rol a la que lo poseía hasta el momento. Es indispensable que en la red Link-11 exista una unidad NCS, en caso contrario no se produce ningún tipo de intercambio de información. El NCS además, cuando se encuentra en modo ROLL CALL, hace de repetidor de la información transmitida por unidades que se encuentran dentro de su alcance pero no se encuentran en alcance entre sí.</p>
+
+<p>Además de compartir información táctica, en el Link-11, una sola unidad, la que tiene activo FO (Force Order), es capaz de enviar ordenes tácticas a las demás. Las órdenes que puede enviar son: ASSIGNED y ENGAGE. La orden de ASSIGNED indica a la unidad que la recibe que el blanco es de su responsabilidad y la orden ENGAGE le indica que debe atacar al blanco. Una vez que se ha recibido una orden de Link-11, el operador de la unidad receptora debe responder a la orden (puede haber varias respuestas a la misma orden indicando los pasos que se están siguiendo). Se da por terminada una orden cuando el operador envía una respuesta de Fin de FO. Cuando se recibe una orden mientras esta completando la anterior, se descarta la inicial y se procesa la segunda.</p>
+
+<p>La unidad que detecta la traza se dice que tiene Report Responsability (RR o R2). Cuando hay mas de una unidad que tiene la misma traza por link, la que tiene RR será la más cercana. La que tiene RR será la única unidad que podrá cambiar la simbología del contacto.</p>
+
+<p>Cuando se comparte información de trazas en la red, cada unidad de la misma reserva un rango de identificadores, de tal manera que todas las trazas propias que transmite a la red link son numeradas secuencialmente con ese rango. Cuando dos unidades de la red link detectan a un mismo contacto, se queda con la numeración del primero que lo detectó. La numeración dada al contacto inicialmente perdura durante todo el tiempo de permanencia del mismo independientemente de los cambios de responsabilidad.</p>
+
+<p>Los contactos, antes de ser transmitidos por Link-11 deben haber sido clasificados (el operador o el sensor que lo detectó debe haber determinado alguna información acerca del mismo). Los envíos de datos serán de cualquier detección clasificada, y de cualquier demora acústica o de ESM.</p> 
+
+<p>Las unidades con Link-11 operativo y en funcionamiento, con una misma frecuencia y con un mismo Modo de Red integrarán una red Link independiente. Los Modos de Red pueden ser los siguientes:</p>
+
+<br>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b></b></td>
+		<td align=center colspan="3" style='background:#D8D8D8'><font size=2 face=arial><b>MODO DE RED</b></td>
+	</tr>
+
+	<tr>
+		<td align=center width=150 style='background:#D8D8D8'><font size=2 face=arial><b>Modo Funcionamiento</b></td>
+		<td align=center width=150 style='background:#D8D8D8'><font size=2 face=arial><b>ROLL CALL</b></td>
+		<td align=center width=150 style='background:#D8D8D8'><font size=2 face=arial><b>BROADCAST</b></td>
+		<td align=center width=150 style='background:#D8D8D8'><font size=2 face=arial><b>SHORT-BROADCAST</b></td>
+	</tr>
+
+	<tr>
+		<td rowspan=3 width=150><font size=2 face=arial><b>Activo</b></td>
+		<td width=150><font size=2 face=arial>Sólo si la unidad está dentro del alcance del NCS, la unidad transmite los datos propios (datos de la Picket Unit) y sus detecciones.</td>
+		<td width=150><font size=2 face=arial>Transmite todos sus datos a todas las unidades que estén en modo Silence si se encuentran en alcance de la unidad.</td>
+		<td width=150><font size=2 face=arial>Transmite una única vez todos sus datos a todas las unidades que estén en modo Silence, si se encuentran en alcance de la unidad, cuando el operador solicita la transmisión.</td>
+	</tr>
+
+	<tr>
+		<td width=150><font size=2 face=arial>Recibirá datos de cualquier unidad que esté en alcance aunque no esté en alcance del NCS.</td>
+		<td width=150><font size=2 face=arial>Si se establece otra unidad con el modo Activo + Broadcast en alcance, se simulan interferencias entre ellas, anulándose las transmisiones y recepciones de ambas.</td>
+		<td width=150><font size=2 face=arial>Si se establece otra unidad con el modo Activo + Broadcast en alcance, se simulan interferencias, anulándose las transmisiones en Short-Broadcast.</td>
+	</tr>
+
+	<tr>
+		<td width=150><font size=2 face=arial>Detectable por ESM.</td>
+		<td width=150><font size=2 face=arial>Detectable por ESM.</td>
+		<td width=150><font size=2 face=arial>No detectable por ESM.</td>
+	</tr>
+
+	<tr>
+		<td width=150><font size=2 face=arial><b>Silence</b></td>
+		<td width=150><font size=2 face=arial>Recibirá datos de cualquier unidad que esté en alcance aunque no esté en alcance del NCS</td>
+		<td width=150><font size=2 face=arial>Recibirá datos de cualquier unidad que esté en alcance aunque no esté en alcance del NCS</td>
+		<td width=150><font size=2 face=arial>Recibirá datos de cualquier unidad que esté en alcance aunque no esté en alcance del NCS</td>
+	</tr>
+
+	<tr>
+		<td rowspan=2 width=150><font size=2 face=arial><b>Listen</b></td>
+		<td width=150><font size=2 face=arial>Sólo si la unidad está dentro del alcance del NCS, la unidad transmite exclusivamente los datos propios (datos de la Picket Unit).</td>
+		<td rowspan=2 width=150><font size=2 face=arial>Incompatible</td>
+		<td rowspan=2 width=150><font size=2 face=arial>Incompatible</td>
+	</tr>
+
+	<tr>
+		<td width=150><font size=2 face=arial>Recibo a todas las unidades que estén en transmisión</td>
+	</tr>
+
+</table>
+
+<br>
+
+<p>El modo de funcionamiento de las redes de comunicación Link-11 de cada bando cumple las premisas siguientes:</p>
+
+<ul>
+	<li>Actualización de las unidades de cada red Link por comprobación de las unidades que están dentro del Alcance del NCS, según cálculos anteriores.</li>
+</ul>
+
+<ul>
+	<li>Compilación de la información a partir de las distintas matrices de detección que cada Unidad de la red Link tiene sobre cada contacto. El sistema producirá una Matriz de detección de Link por cada red y cada contacto.</li>
+</ul>
+
+<ul>
+	<li>Cada contacto tendrá una numeración idéntica para cada red Link, según la unidad que informa de la misma, y el bloque de traza destinada a la misma.</li>
+</ul>
+
+<ul>
+	<li>El error en la detección de cada contacto, es el menor del conjunto de las detecciones que tiene cada Unidad que forma la red sobre el contacto.</li>
+</ul>
+
+<ul>
+	<li>Resolución de los conflictos de identidad y categoría planteados, ya que el símbolo usado como designación de un contacto será función de las designaciones locales de los miembros de la red:</li>
+	<p></p>
+	<ul>
+		<li>Si el contacto no está clasificado no se transmitirá por la red Link</li>
+		<li>Si el contacto está clasificado con varios símbolos, se escogerá el que ha transmitido el primero.</li>
+	</ul>
+</ul>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>IFF</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_sensors/IffWnd.jpg"></p>
+
+<p>Desde este panel de detalle del IFF pueden realizarse las siguientes acciones:</p>
+
+<ul>
+	<li>Encender / Apagar el equipo: Pulsando el botón ON / OFF. Las unidades neutrales se inician siempre con el Responder encendido. En las unidades submarinas solo se puede encender el IFF si están en superficie o tienen el mástil correspondiente izado. En general, para todas las unidades, deben estar fuera de la base.</li><br>
+	
+	<li>Activar Modos Responder: Los botones para activar los distintos modos del Responder aparecerán activos si el IFF posee la capacidad correspondiente. Pulsando en los botones de los Modos 1, 2, 3, 4 y C, se activarán en el responder los modos correspondientes. En la parte inferior del panel aparece el tipo de compatibilidad del IFF, que no puede modificarse.</li><br>
+	
+	<li>Asignar Códigos Responder: Pueden asignarse los códigos para los modos 1 (dos dígitos en octal) y 3 (dos dígitos en octal), introduciendo el código en el campo correspondiente y pulsando el botón Petición. El código del Modo 2 está predefinido y no puede modificarse, aunque sí consultarse.</li><br>
+	
+	<li>Activar Modos Interrogador: Los botones para activar los distintos modos del Interrogador aparecerán activos si el IFF tiene capacidad de interrogador y si el IFF posee la capacidad de los modos correspondientes. Pulsando en los botones correspondientes a los Modos 1, 2, 3, 4 y C, se activarán en el Interrogador los modos correspondientes.</li><br>
+	
+	<li>Interrogar: Existen dos métodos diferentes para interrogar, que afectan a todos los modos de interrogación que estén activos. Estos dos métodos son:</li><br>
+
+	<ul>
+		<li>Interrogación simple: Al pulsar el botón Discreto, se lleva a cabo un Pulso de Interrogación del IFF completo (3 segundos, configurable en Galeon.ini) en los modos que estén seleccionados, tras el cual el interrogador se apaga. El IFF sólo será detectado por los equipos de ESM durante el tiempo que permanezca con el Interrogador encendido.</li><br>
+		
+		<li>Interrogación continua: Al pulsar el botón Continuo, se interrogará de forma cíclica. En cada ciclo (4 segundos, configurable en Galeon.ini) el interrogador estará encendido (ON) durante el tiempo que dure el Pulso de Interrogación del IFF (3 segundos, configurable en Galeon.ini) y se mantendrá en espera (STANDBY) el resto de tiempo.</li>
+		
+	</ul>
+
+	<p>Si se especifica un contacto (poniendo dicho contacto en Hook y pulsando el botón Unidad) la interrogación se llevará a cabo únicamente sobre el contacto seleccionado. Si no existe ningún contacto seleccionado, la interrogación se realizará en todas las direcciones. Si se pierde el contacto interrogado, el Interrogador se apaga automáticamente.</p>
+	
+	<p>El indicador ON / OFF se encenderá de color verde durante el tiempo que dure la interrogación (ON), y lo hará de color amarillo durante el tiempo en que esté sin interrogar en el transcurso del ciclo (STANDBY), en el caso de interrogación continua. El contador que está junto a este indicador contará el tiempo de la interrogación y del ciclo, en los casos de interrogación simple y continua, respectivamente.</p>
+
+	<p>Si el equipo de IFF está apagado y se pulsa el botón Interrogar, los indicadores de interrogación se encienden pero no se ejecuta la interrogación a menos que se encienda el equipo. Si el interrogador está encendido con un ciclo mayor que el Pulso de Interrogación del IFF y se apaga el IFF, el ciclo se corta por donde vaya quedándose los indicadores de interrogación en el estado en que estuviesen ON o STANDBY hasta que se vuelva a encender el IFF momento en el que se continúa el ciclo por donde estuviese.</p>
+
+	<p>El IFF muestra distinta información de las detecciones obtenidas dependiendo del modo de operación de Interrogador y Responder (ver <i>Modelística – Sensores – IFF</i>). Esta información se muestra en el Área de Información Táctica de la Pantalla Táctica.</p>
+
+	<p>Si el equipo está dañado, no se podrá realizar ninguna operación sobre él.</p>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>

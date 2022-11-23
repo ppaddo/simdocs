@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>ECM</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El ECM es un equipo de contramedidas electrónicas mediante el cual se pueden perturbar o interferir los equipos radar detectados por ESM.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previo a poder llevar a cabo una perturbación / engaño, se realizan las siguientes comprobaciones:</p>
+
+<ul>
+	<li>Comprobar que la unidad interferida / engañada se encuentra a una distancia del interferidor / engañador entre el Alcance Mínimo y Máximo del ECM.</li>
+	<li>Comprobar que la frecuencia seleccionada en la interferencia / engaño difiere con la del RADAR interferido en menos de 5%.</li>
+	<li>Comprobar que el radar a interferir / engañar se encuentre dentro del cono de radiación del interferidor / engañador.</li>
+	<li>Comprobar que el número de perturbaciones / engaños en el cuadrante considerado es inferior al máximo permitido por la Base de Datos en ese cuadrante. Se considera la técnica CW / Vobulación como 2 perturbaciones.</li>
+	<li>Para unidades submarinas sumergidas, comprobar que mástil correspondiente está izado.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>Cálculos necesarios para evaluar la Perturbación:</p>
+
+<p>Reducción del Alcance Radar:</p>
+
+<ul><font size=2 face=courier>
+	<p>Alcance_Radar = Alcance_Radar * (1 – Factor_Engaño)</p>
+</font></ul>
+
+<ul>
+	<p>donde <font size=2 face=courier>Factor_Engaño</font> se define en Preparación (ver <i>Preparación – Sensores – Radar</i>)</p>
+</ul>
+
+<p>El Sector Interferido (ángulo de apertura del sector circular en el que la perturbación es efectiva) se calcula según el siguiente algoritmo:</p>
+
+<ul><font size=2 face=courier>
+	<p>Sector_Interferido = 180 * Factor_Tecnica * (1 - Factor_Angulo)</p>
+</font></ul>
+
+<p>Donde:</p>
+
+<ul>
+	<p><font size=2 face=courier>Factor_Angulo = ABS(Marcacion_Jamming - Marcacion_Verdadera) / (Angulo_Irradiado /2)</font></p>
+	<p>donde <font size=2 face=courier>Angulo_Irradiado</font> se define en Preparación (ver <i>Preparación – Contramedidas – ECM</i>).</p>
+</ul>
+
+<ul>
+	<p><font size=2 face=courier>Factor_Tecnica = bd_tecnica_ecm(%)/100 * bd_tecnica_radar(%)/100</font></p>
+	<p>donde <font size=2 face=courier>bd_tecnica_ecm y bd_tecnica_radar</font> se define en Preparación (para Radar y ECM) según la técnica de perturbación aplicada (ver <i>Preparación – Sensores – Radar y Preparación – Contramedidas – ECM)</i>.</p>
+</ul>
+
+<ul>
+	<p>Si el <font size=2 face=courier>Sector_Interferido</font> es superior a 180 grados se considerará de 180 grados.</p>
+</ul>
+
+<p>Las Distancias Inicial y Final del sector circular en el que la perturbación es efectiva son:</p>
+
+<ul>
+	<p>Para técnicas <b>CW</b> y <b>CW / Vobulación</b>:</p>
+	<ul>
+		<p>Distancia inicial: distancia autoprotección</p>
+		<p>Distancia final: máximo alcance del radar perturbado.</p>
+	</ul>
+</ul>
+
+<ul>
+	<p>Para técnica <b>HDT</b>:</p>
+	<ul>
+		<p>Distancia inicial: distancia al contacto menos 2 Millas</p>
+		<p>Distancia final: distancia al contacto más 2 Millas.</p>
+	</ul>
+</ul>
+
+<ul>
+	<p>Para técnica <b>NCP</b>:</p>
+	<ul>
+		<p>Distancia inicial: distancia al contacto menos 1 Millas</p>
+		<p>Distancia final: distancia al contacto más 1 Millas.</p>
+	</ul>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p><b>Perturbación:</b></p>
+
+<ul>
+	<p>Si el equipo está en modo automático se realizará automáticamente la perturbación (con la técnica recomendada por la librería de ESM) a aquellas emisiones que superen el valor de Grado de Amenaza seleccionado por el operador.</p>
+
+	<p>La perturbación tiene como consecuencia un sector circular (definido por el sector interferido y distancias inicial y final, según los cálculos anteriores) en el que los alcance máximo y del lóbulo del radar interferido se reduce según los cálculos anteriores. El alcance horizonte radar no se verá afectado por la perturbación.</p>
+
+	<p>A una distancia SSR (Self Screen Range) del radar, se considera que el alcance del radar no se ve afectado por la perturbación, aunque el radar sigue estando perturbado.</p>
+
+</ul>
+
+<p><b>Engaño:</b></p>
+
+<ul>
+	<p>Si el equipo está en modo automático se realizará automáticamente el engaño (con la técnica recomendada por la librería de ESM) a aquellas emisiones que superen el valor de Grado de Amenaza seleccionado por el operador.</p>
+
+	<p>El engaño tendrá las siguientes consecuencias según la técnica empleada:</p>
+
+	<li>RGPO: Sólo para radares en lock-on. Se producirá un desplazamiento en distancia (según las yardas especificadas en B.D.) en la detección que tiene la unidad engañada de la que realiza la contramedida. La probabilidad de engaño vendrá dada por el % que tiene el radar de ser engañado.</li>
+	<br>
+
+	<li>HDC: Se crearán 8 falsos ecos (según las yardas especificadas en B.D.) en la detección radar de la unidad engañada. La probabilidad de engaño vendrá dada por el % que tiene el radar de ser engañado.</li>
+	<br>
+
+	<li>RGPO / Vobulación y RGPO / Countdown: Se calculará la probabilidad de que se produzca el engaño como producto de bd_tecnica_ecm (%) y bd_tecnica_radar (%) , y considerando un valor aleatorio desaparecerá del radar víctima la detección de la unidad que ha realizado la contramedida.</li>
+	<br>
+
+	<li>RGPO / AGPO: Se producirá un desplazamiento en distancia (según las yardas especificadas en Preparación) y en demora (+/- 10 grados) en la detección que tiene la unidad engañada de la que realiza la contramedida. La probabilidad de engaño vendrá dada por el % de engaño del ECM y el % que tiene el radar de ser engañado.</li>
+
+	<p>A una distancia SSR (Self Screen Range) del radar, se considera que la unidad que hace la contramedida es detectable.</p>
+
+</ul>
+ 
+</div>
+
+</body>
+
+</html>

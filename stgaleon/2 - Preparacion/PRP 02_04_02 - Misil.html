@@ -1,0 +1,496 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Misil</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvWeapons/MissileWnd.jpg"></p>
+
+<table align=center>
+	<tr>
+		<td><img width=200 src="../IlvImages/Preparation/IlvWeapons/MissileWndNtbFiring.jpg"></td>
+		<td><img width=200 src="../IlvImages/Preparation/IlvWeapons/MissileWndntbInter.jpg"></td>
+		<td><img width=200 src="../IlvImages/Preparation/IlvWeapons/MissileWndNtbAttack.jpg"></td>
+	</tr>
+</table>
+		
+<p>Descripción de los parámetros:</p>
+
+<p><b>Tipo de Misil</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>SSM</li>
+	<li>SAM</li>
+	<li>AAM</li>
+	<li>ASM</li>
+	<li>UAM</li>
+	<li>USM</li>
+
+	<p>Este parámetro determina el comportamiento del misil en la fase de lanzamiento. Es tenido en cuenta en la comprobación de las condiciones de lanzamiento y también en la comprobación de si el blanco atacado es válido para este misil.</p>
+
+</ul>
+
+<p><b>Tipo de Navegación</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>PREPROGRAMADO</li>
+	<li>DESIGNATION RADAR</li>
+	<li>LOCKON PREVIO</li>
+	<li>SEMIACTIVO</li>
+	<li>ARM</li>
+	<li>CLOS</li>
+	<li>FILOGUIADO</li>
+	<li>LÁSER</li>
+	<li>ELECTRO-ÓPTICO</li>
+
+	<p>Este parámetro determina las condiciones de vuelo del misil en la fase de crucero. Es tenido en cuenta por tanto en la actualización de la posición del misil en esta fase, aunque esta fase se ve afectada también por el seeker del misil, por la plataforma lanzadora y por el blanco designado. El tipo de navegación PREPROGRAMADO sólo podrá ser asignado si se ha seleccionado Tipo de Misil SSM, ASM o USM.</p>
+
+</ul>
+
+
+<p><b>Datos de la Entidad</b>:</p>
+
+<ul>
+	<p><b>Peso</b>: Este parámetro es tenido en cuenta para el cálculo del peso transportado por las unidades aéreas que lo instalen. Sólo podrá ser introducido si se ha seleccionado Tipo de Misil AAM o ASM.</p>
+
+	<ul>
+		<p><u>Unidades</u>: Kilogramos</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Longitud</b>: Este parámetro es tenido en cuenta por los modelos de sensores optrónicos y radar para calcular la distancia a la que el misil es detectado.</p>
+
+	<ul>
+		<p><u>Unidades</u>: metros</p>
+		<p><u>Rango</u>: 0,1 – 99,9</p>
+	</ul>
+
+	<p><b>Envergadura</b>: Este parámetro es tenido en cuenta por los modelos de sensores optrónicos y radar para calcular la distancia a la que el misil es detectado.</p>
+
+	<ul>
+		<p><u>Unidades</u>: metros</p>
+		<p><u>Rango</u>: 0,1 – 99,9</p>
+	</ul>
+
+	<p><b>Diámetro</b>: Este parámetro es tenido en cuenta por los modelos de sensores optrónicos y radar para calcular la distancia a la que el misil es detectado.</p>
+
+	<ul>
+		<p><u>Unidades</u>: metros</p>
+		<p><u>Rango</u>: 0,1 – 99,9</p>
+	</ul>
+
+	<p><b>Factor RCS</b>: Factor que modela la variación de RCS con el "Aspecto" (dado por el ángulo alfa = rumbo del contacto - marcación del contacto) del misil.</p>
+
+	<ul>
+		<p><u>Unidades</u>: Tanto por uno</p>
+		<p><u>Rango</u>: 0,0 – 1,0</p>
+
+		<p>Ejemplo: </p>
+
+		<p>Si Factor RCS = 0 &rArr; RCS = RCS · seno (alfa).</p>
+		<p>Si Factor RCS = 0,25 &rArr; RCS = RCS ( 0,25 + 0,75 · seno (alfa) ).</p>
+		<p>Si Factor RCS = 1 &rArr; RCS no cambia con Aspecto.</p>
+	</ul>
+
+	<p><b>Velocidad de Crucero</b>: Este parámetro determina la velocidad de navegación del misil en la fase de crucero.</p>
+
+	<ul>
+		<p><u>Unidades</u>: nudos</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Tiempo Máximo de Vuelo</b>: Este parámetro determina el intervalo de tiempo máximo que puede estar volando el misil. Transcurrido este tiempo sin impacto, el misil se destruye.</p>
+
+	<ul>
+		<p><u>Unidades</u>: segundos</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Alcance Máximo</b>: Este parámetro determina la distancia máxima a la que puede ser lanzado el misil.</p>
+
+	<ul>
+		<p><u>Unidades</u>: millas</p>
+		<p><u>Rango</u>: 0 – 9999,99</p>
+	</ul>
+
+	<p><b>Alcance Mínimo</b>: Este parámetro determina la distancia mínima a la que puede ser lanzado el misil.</p>
+
+	<ul>
+		<p><u>Unidades</u>: millas</p>
+		<p><u>Rango</u>: 0 – 9999,99</p>
+	</ul>
+
+	<p><b>Tiempo con Propulsión</b>: Este parámetro determina el tiempo durante el que el misil es capaz de mantener la velocidad. Transcurrido este tiempo el misil pierde progresivamente velocidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: segundos</p>
+		<p><u>Rango</u>: 0.0 – 9999,9</p>
+	</ul>
+
+</ul>
+
+<p><b>Datos de Impacto</b>: Los siguientes parámetros caracterizan la fase de impacto del misil:</p>
+
+<ul>
+	<p><b>Carga de Combate</b>: Este parámetro determina la carga explosiva del misil. Es tenido en cuenta para la evaluación de los daños producidos por el impacto de este misil en una unidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: Kilogramos</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Probabilidad de Impacto</b>: Este parámetro es tenido en cuenta para decidir si una vez que se producen las condiciones de impacto, el misil efectivamente produce impacto o no.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+
+		<p>Ejemplo: </p>
+
+		<p>Una vez que se producen las condiciones de impacto:</p>
+		<p>Si Prob. de Impacto = 100 &rArr; Impacta siempre.</p>
+		<p>Si Prob. de Impacto = 50 &rArr; Impacta aleatoriamente (@50% veces).</p>
+		<p>Si Prob. de Impacto = 0 &rArr; No impacta nunca.</p>
+	</ul>
+
+	<p><b>Capacidad SASS</b>: Este parámetro determina si el misil tipo SAM puede ser empleado para atacar blancos de superficie. Sólo puede ser introducido si se ha seleccionado Tipo de Misil SAM.</p>
+
+	<p><b>Probabilidad de Impacto Modo SASS</b>: Este parámetro determina la probabilidad de impacto del misil tipo SAM cuando es empleado para atacar un blanco de superficie. Sólo podrá ser introducido si se ha seleccionado Capacidad SASS.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Probabilidad de Engaño por Chaff D</b>: Este parámetro determina la probabilidad de que el misil sea engañado por Chaff D. Es tenido en cuenta para decidir si el misil es capaz de discernir entre el blanco correcto y el Chaff D cuando se producen las condiciones de posible engaño.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+
+		<p>Ejemplo: </p>
+
+		<p>Una vez que se producen las condiciones de posible engaño:</p>
+		<p>Si Prob. de Engaño = 100 &rArr; Siempre es engañado.</p>
+		<p>Si Prob. de Engaño = 50 &rArr; Es engañado aleatoriamente (@50% veces).</p>
+		<p>Si Prob. de Engaño = 0 &rArr; No es engañado nunca.</p>
+	</ul>
+
+	<p><b>Probabilidad de Engaño por Chaff C</b>: Este parámetro determina la probabilidad de que el misil sea engañado por Chaff C. Es tenido en cuenta para decidir si el misil es capaz de discernir entre el blanco correcto y el Chaff C cuando se producen las condiciones de posible engaño.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+
+		<p>Ejemplo: </p>
+
+		<p>Igual que Probabilidad de Engaño por Chaff D.</p>
+	</ul>
+
+	<p><b>Probabilidad de Engaño por Chaff S</b>: Este parámetro determina la probabilidad de que el misil sea engañado por Chaff S. Es tenido en cuenta para decidir si el misil es capaz de discernir entre el blanco correcto y el Chaff S cuando se producen las condiciones de posible engaño.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+
+		<p>Ejemplo: </p>
+
+		<p>Igual que Probabilidad de Engaño por Chaff D.</p>
+	</ul>
+
+	<p><b>Probabilidad de Engaño por Chaff RF</b>: Este parámetro determina la probabilidad de que el misil sea engañado por Chaff RF. Es tenido en cuenta para decidir si el misil es capaz de discernir entre el blanco correcto y el Chaff RF cuando se producen las condiciones de posible engaño.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+
+		<p>Ejemplo: Igual que Probabilidad de Engaño por Chaff D.</p>
+
+	</ul>
+
+
+	<p><b>Probabilidad de Engaño por Chaff IR</b>: Este parámetro determina la probabilidad de que el misil sea engañado por Chaff IR. Es tenido en cuenta para decidir si el misil es capaz de discernir entre el blanco correcto y el Chaff IR cuando se producen las condiciones de posible engaño.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+
+		<p>Ejemplo: </p>
+
+		<p>Igual que Probabilidad de Engaño por Chaff D.</p>
+	</ul>
+
+	<p><b>Probabilidad de Engaño por Chaff Aéreo</b>: Este parámetro determina la probabilidad de que el misil sea engañado por Chaff Aéreo. Es tenido en cuenta para decidir si el misil es capaz de discernir entre el blanco correcto y el Chaff Aéreo cuando se producen las condiciones de posible engaño.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+
+		<p>Ejemplo: </p>
+
+		<p>Igual que Probabilidad de Engaño por Chaff D.</p>
+	</ul>
+
+	<p><b>Probabilidad de Engaño por Chaff Helo</b>: Este parámetro determina la probabilidad de que el misil sea engañado por Chaff Helo. Es tenido en cuenta para decidir si el misil es capaz de discernir entre el blanco correcto y el Chaff Helo cuando se producen las condiciones de posible engaño.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+
+		<p>Ejemplo: </p>
+
+		<p>Igual que Probabilidad de Engaño por Chaff D.</p>
+	</ul>
+
+	<p><b>Capacidad OFF AXIS</b>: Este parámetro determina si el misil tiene capacidad OFF AXIS. Es tenido en cuenta en el cálculo del sector de fuego del lanzador de misil correspondiente. Si este ángulo es distinto de cero, se suma al sector de fuego del lanzador cuando éste es tipo FIJO u ORIENTABLE.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 180</p>
+	</ul>
+
+	<p><b>Capacidad HOJ</b>: Este parámetro determina si el misil tiene capacidad HOJ, es decir si puede ser guiado por una perturbación desde un ECM sobre el radar asociado a su seeker tipo Radar.</p>
+
+	<p><b>Capacidad Link Update</b>: Este parámetro determina si el misil tiene capacidad de Link Update.</p>
+
+	<p><b>Altura Máxima TRU</b>: Este parámetro determina la máxima altura de la unidad que actúa asistente para que pueda efectuar guiado de este misil. Sólo podrá ser introducido si se ha seleccionado Capacidad Link Update.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Máximo Ángulo de Giro</b>: Este parámetro determina el máximo ángulo de giro del misil mientras no tenga actualización del blanco por el asistente. Sólo podrá ser introducido si se ha seleccionado Capacidad Link Update.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 135</p>
+	</ul>
+
+	<p><b>Máximo Alcance del Asistente</b>: Este parámetro determina la distancia al aiming point a la que el misil inicia transmisión para su actualización. Sólo podrá ser introducido si se ha seleccionado Capacidad Link Update.</p>
+
+	<ul>
+		<p><u>Unidades</u>: millas</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+</ul>
+
+<p><b>Seeker</b>: Los siguientes parámetros determinan el seeker principal y el seeker secundario asociados al misil. Son tenidos en cuenta en el modelo de misil en vuelo.</p>
+
+<ul>
+	<p><b>Seeker Principa</b>l: Ver apartado Seeker.</p>
+
+	<p><b>Seeker Secundario</b>: Ver apartado Seeker. Este parámetro sólo podrá ser introducido si se ha introducido un Seeker Principal.</p>
+
+	<p><b>Envelope</b>: Para cada misil se puede definir un "envelope" que se usará para obtener el alcance en función de la distancia y la altura del blanco. Este parámetro afecta a la comprobación que se realiza en el momento del lanzamiento, de manera que si el blanco está fuera de este alcance el misil no se lanza.</p>
+
+	<p>El envelope se define mediante 5 puntos con una altura y un alcance:</p>
+
+	<p><b>Altura</b>:</p>
+
+	<ul>
+		<p><u>Unidades</u>: metros</p>
+		<p><u>Rango</u>: -99999,9 – 99999,9</p>
+	</ul>
+
+	<p><b>Alcance</b>:</p>
+
+	<ul>
+		<p><u>Unidades</u>: Millas</p>
+		<p><u>Rango</u>: 0,0 – 99999,9</p>
+	</ul>
+
+	<p><img align=left width=300 src="../IlvImages/Preparation/IlvWeapons/MissileWndEnvelope.jpg"></p>
+
+	<p>El gráfico es una ayuda que representa la forma del envelope introducido.</p>
+
+	<p>El gráfico se actualiza pulsando el botón Redibujar o el botón Validar de la Barra de Navegación.</p>
+
+	<p><br clear="left"></p>
+
+</ul>
+
+<p><b>Lanzamiento</b>: Los siguientes parámetros caracterizan la fase de lanzamiento del misil:</p>
+
+<ul>
+	<b>Mínima Altura Disparo</b>: Este parámetro determina la mínima altura de la unidad aérea lanzadora a la que puede llevar a cabo un lanzamiento de este misil. Sólo podrá ser introducido si se ha seleccionado Tipo de Misil AAM o ASM.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Máxima Altura Disparo</b>: Este parámetro determina la máxima altura de la unidad aérea lanzadora a la que puede llevar a cabo un lanzamiento de este misil. Sólo podrá ser introducido si se ha seleccionado Tipo de Misil AAM o ASM.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 999999</p>
+	</ul>
+
+	<p><b>Máxima Profundidad Disparo</b>: Este parámetro determina la máxima profundidad de la unidad submarina lanzadora a la que puede llevar a cabo un lanzamiento de este misil. Sólo podrá ser introducido si se ha seleccionado Tipo de Misil UAM o USM.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Velocidad Ascenso en Agua</b>: Este parámetro determina la velocidad de ascenso en el agua del misil al ser lanzado desde unidad submarina sumergida. Sólo podrá ser introducido si se ha seleccionado Tipo de Misil UAM o USM.</p>
+
+	<ul>
+		<p><u>Unidades</u>: metros / segundo</p>
+		<p><u>Rango</u>: 0 – 999</p>
+	</ul>
+
+	<p><b>Tiempo de Alistamiento</b>: Este parámetro determina el tiempo que transcurre desde que se da la orden de fuego hasta que efectivamente se produce el lanzamiento de este misil. Durante este intervalo de tiempo se podrá cancelar el lanzamiento.</p>
+
+	<ul>
+		<p><u>Unidades</u>: segundo</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Retardo entre Lanzamientos</b>: Este parámetro determina el tiempo entre cada dos lanzamientos cuando se dispara una salva de este misil.</p>
+
+	<ul>
+		<p><u>Unidades</u>: segundo</p>
+		<p><u>Rango</u>: 0 – 999</p>
+	</ul>
+
+	<p><b>Máxima Velocidad del Blanco</b>: Este parámetro determina la máxima velocidad del blanco aéreo para la que se puede llevar a cabo un lanzamiento de este misil contra el mismo. Sólo podrá ser introducido si se ha seleccionado Tipo de Misil UAM, SAM o AAM.</p>
+
+	<ul>
+		<p><u>Unidades</u>: nudos</p>
+		<p><u>Rango</u>: 0 – 999</p>
+	</ul>
+
+	<p><b>Velocidad Horizontal</b>: Este parámetro determina la velocidad horizontal con la que navega el misil durante la fase de lanzamiento.</p>
+
+	<ul>
+		<p><u>Unidades</u>: nudos</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Altura de Lanzamiento</b>: Este parámetro determina la altura que alcanza el misil al final de la fase de lanzamiento. Sólo podrá ser introducido si NO se ha seleccionado Tipo de Misil AAM ni ASM.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Tiempo hasta Máximo Altura</b>: Este parámetro determina el tiempo que tarda el misil en alcanzar la altura máxima (final de la fase de lanzamiento). Sólo podrá ser introducido si NO se ha seleccionado Tipo de Misil AAM ni ASM.</p>
+
+	<ul>
+		<p><u>Unidades</u>: segundos</p>
+		<p><u>Rango</u>: 0 – 999</p>
+	</ul>
+
+</ul>
+
+<p><b>Intermedia</b>: Los siguientes parámetros caracterizan las fases de crucero y búsqueda del misil:</p>
+
+<ul>
+	<p><b>Altura de Crucero</b>: Este parámetro determina la altura a la que navega el misil durante la fase de crucero. Sólo podrá ser introducido si se ha seleccionado Tipo de Misil SSM, ASM o USM y si no tiene Capacidad Interceptación.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Régimen Giro Horizontal</b>: Este parámetro determina la velocidad de giro horizontal del misil en vuelo en cualquiera de sus fases de navegación.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados / segundo</p>
+		<p><u>Rango</u>: 0 – 99,9</p>
+	</ul>
+
+	<p><b>Régimen Giro Vertical</b>: Este parámetro determina la velocidad de giro vertical del misil en vuelo en cualquiera de sus fases de navegación.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados / segundo</p>
+		<p><u>Rango</u>: 0 – 99,9</p>
+	</ul>
+
+	<p><b>Capacidad Interceptación</b>: Este parámetro determina si el misil tiene capacidad de interceptación en altura de blanco. Si tiene esta capacidad, el misil no realiza cambios de altura por fase sino que se dirige a cota del blanco.</p>
+
+	<p><b>Misiles con Guía Programada</b>: Los siguientes parámetros caracterizan las fases de crucero y búsqueda del misil con tipo de navegación PREPROGRAMADO:</p>
+
+	<p><b>Número de Waypoint</b>: Este parámetro determina el número máximo de waypoints que pueden ser preprogramados para este misil. Sólo podrá ser introducido si se ha seleccionado Tipo de Navegación PREPROGRAMADO.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 9</p>
+	</ul>
+
+	<p><b>Máximo Ángulo Giro en Waypoint</b>: Este parámetro determina el máximo ángulo de giro entre un waypoint y el siguiente con el que pueden ser preprogramados los waypoints para este misil. Sólo podrá ser introducido si se ha seleccionado Tipo de Navegación PREPROGRAMADO.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 135</p>
+	</ul>
+</ul>
+
+<p><b>Ataque</b>: Los siguientes parámetros caracterizan la fase de seguimiento del misil:</p>
+
+<ul>
+	<p><b>Comienzo de Búsqueda</b>: Este parámetro determina la distancia desde el misil al aiming point a la cual el misil pasa de la fase de crucero a la de búsqueda.</p>
+
+	<ul>
+		<p><u>Unidades</u>: yardas</p>
+		<p><u>Rango</u>: 0 – 999999</p>
+	</ul>
+
+	<p><b>Altura de Búsqueda</b>: Este parámetro determina la altura a la que navega el misil durante la fase de búsqueda. Sólo podrá ser introducido si se ha seleccionado Tipo de Misil SSM, ASM o USM y si no tiene Capacidad Interceptación.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Altura Fase Final</b>: Este parámetro determina la altura a la que navega el misil durante la fase de seguimiento. Sólo podrá ser introducido si se ha seleccionado Tipo de Misil SSM, ASM o USM y si no tiene Capacidad Interceptación.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Velocidad de Ataque</b>: Este parámetro determina la velocidad a la que navega el misil durante la fase de seguimiento.</p>
+
+	<ul>
+		<p><u>Unidades</u>: nudos</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Pop-Up</b>: Este parámetro determina si el misil tiene capacidad de POP-UP. Los siguientes parámetros caracterizan la trepada. Sólo podrá ser introducido si se ha seleccionado Tipo de Misil SSM, ASM o USM.</p>
+
+	<p><b>Comienzo</b>: Este parámetro determina la distancia al blanco a la que el misil comienza la trepada. Sólo podrá ser introducido si el misil tiene Capacidad de POP-UP.</p>
+
+	<ul>
+		<p><u>Unidades</u>: millas</p>
+		<p><u>Rango</u>: 0 – 99,9</p>
+	</ul>
+
+	<p><b>Altura</b>: Este parámetro determina la altura que alcanza el misil en la trepada. Esta altura es alcanzada a mitad de camino hasta el blanco desde la distancia de comienzo. A partir de ahí el misil desciende hasta impactar en el blanco. Sólo podrá ser introducido si el misil tiene Capacidad de POP-UP.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Opcional</b>: Este parámetro determina si el POP-UP puede ser seleccionado opcionalmente al lanzar el misil. Sólo podrá ser introducido si el misil tiene Capacidad de POP-UP.</p>
+
+	<p><b>Fly-Through</b>: Este parámetro determina si el misil tiene capacidad de seguir activo tras atravesar nube de Chaff.</p>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Sonoboya</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvSensors/SonobuoyWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p>Tipo de Sonoboya: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>ACTIVA OMNI</li>
+	<li>ACTIVA DIR</li>
+	<li>PASIVA OMNI</li>
+	<li>IVA DIR</li>
+	<li>PAS</li>
+	<li>ANM</li>
+	<li>BT</li>
+	<li>VLAD</li>
+
+	<p>Este parámetro determina el comportamiento del modelo de sonoboya. Es tenido en cuenta para seleccionar la representación gráfica de las detecciones de la sonoboya. Las sonoboyas activas (omni y dir) tienen asociado un sonar activo, las pasivas (omni y dir) y las VLAD un sonar pasivo. Las sonoboyas ANM proporcionan información del nivel de ruido ambiental, y las BT obtienen la traza batitérmica. Este parámetro determina también el número de canales del procesador de sonoboya que consume al ser procesada.</p>
+
+</ul>
+
+
+<p><b>Tiempo de Vida</b>: Este parámetro determina el tiempo que permanece activa una sonoboya a partir de su activación automática. Una vez transcurrido este tiempo, la sonoboya deja de estar activa, por lo que no conectará con ningún Procesador de Sonoboyas y no podrá ser procesada.</p>
+
+<ul>
+	<p><u>Unidades</u>: minutos</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Tiempo de Retardo</b>: Este parámetro determina el tiempo que transcurre desde que la sonoboya cae al agua hasta que se produce su activación. La sonoboya no podrá ser adquirida por un Procesador de Sonoboyas hasta que haya transcurrido este tiempo.</p>
+
+<ul>
+	<p><u>Unidades</u>: minutos</p>
+	<p><u>Rango</u>: 0 – 100</p>
+</ul>
+
+<p><b>Alcance Comunicación</b>: Este parámetro determina la distancia máxima a la que un procesador de sonoboya puede conectar con este tipo de sonoboya. Por encima de esta distancia la sonoboya no podrá ser adquirida por el Procesador de Sonoboya por lo que no podrá procesarla.</p>
+
+<ul>
+	<p><u>Unidades</u>: millas</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Altura Mínima de Lanzamiento</b>: Este parámetro determina la altura mínima de la unidad lanzadora de sonoboyas a la que puede lanzar esta sonoboya.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Altura Máxima de Lanzamiento</b>: Este parámetro determina la altura máxima de la unidad lanzadora de sonoboyas a la que puede lanzar esta sonoboya.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Niveles de Profundidad</b>: Estos parámetros determinan los tres niveles de profundidad a los que la sonoboya puede ser lanzada o desplegada. El nivel de profundidad del lanzamiento de la sonoboya podrá ser seleccionado por el operador. Si la sonoboya es activa, y se encuentra adquirida por un Procesador de Sonoboyas, el operador podrá desplegar la sonoboya, es decir, pasarla al siguiente nivel de profundidad, o hundirla si se encuentra en el nivel profundo. Si la sonoboya es pasiva, se pude seleccionar la profundidad al lanzarla, pero una vez en el agua, ya no se puede cambiar. Estos parámetros sólo podrán ser introducidos si la sonoboya es de tipo Activa Omni, Activa Dir, Pasiva Omni o Pasiva Dir. Estas profundidades no podrán ser superiores a la longitud del cable del sonar asociado.</p>
+
+<ul>
+	<p><b>Superficial</b>: Mínimo nivel de profundidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Medio</b>: Nivel de profundidad intermedio.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Profundo</b>: Máximo nivel de profundidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+</ul>
+
+<p><b>Sonar</b>: Estos parámetros determinan el modelo de sonar asociado al modelo de sonoboya.</p>
+
+<ul>
+	<p><b>Sonar Activo</b>: Sonar Activo asociado al modelo de sonoboya. Ver apartado Sonar Activo. Este parámetro sólo puede ser introducido si se ha seleccionado tipo de sonoboya Activa Omni o Activa Dir.</p>
+
+	<p><b>Sonar Pasivo</b>: Sonar Pasivo asociado al modelo de sonoboya. Ver apartado Sonar Pasivo. Este parámetro sólo puede ser introducido si se ha seleccionado tipo de sonoboya Pasiva Omni, Pasiva Dir o VLAD.</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

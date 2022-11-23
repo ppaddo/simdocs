@@ -1,0 +1,348 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Misiles</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_weapons/MissileWnd.jpg"></p>
+
+<p>El panel de detalle de Misiles muestra la lista de lanzadores de misiles instalados en la unidad, con indicación del estado del lanzador, su nombre y tipo, la cantidad de misiles en el pañol y el sector de fuego, representado gráficamente. También se presentan en este panel si se están recibiendo peticiones de Link Update de misiles en vuelo, si la unidad dispone de esta capacidad.</p>
+
+<p>Al pulsar el botón Alistar para un lanzador determinado o Actualizar para misil por Link Update se abre el panel de alistamiento y lanzamiento de misiles:</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_weaponsAux/MissileFireProgrammedNavigationWnd.jpg"></p>
+
+<p>En este panel de lanzamiento de misiles se muestra (derecha) el tipo de misil, tipo de navegación y nombre del misil. Mientras esté abierto este panel de lanzamiento de misiles, se presentará en la Pantalla Táctica gráficamente sector y alcance de fuego de este misil.</p>
+
+<p>En este panel se pueden realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Designar un blanco para disparo: Al pulsar el botón Blanco se designará al contacto en hook como blanco para el disparo. En el campo Distancia aparecerá la distancia a la que se encuentra dicho blanco respecto a la unidad propia. En el caso de que no haya ningún contacto asociado al Hook, al pulsar este botón aparecerá en el campo Distancia la distancia de la unidad propia al Hook y en el campo Demora aparecerá la demora de la posición del Hook respecto a la unidad propia.</li>
+
+	<p>Para asignar un misil a un blanco (para poder disparar un misil) la plataforma debe cumplir determinadas condiciones dependiendo del tipo de navegación del misil y del tipo de seeker que incorpora, tal y como se muestra en la siguiente tabla:</p>
+
+	<table border=1 cellspacing=0 cellpadding=5>
+		<tr>
+			<td width=150 align=center style='background:#D8D8D8'><font size=2 face=arial><b>Tipo<br>Navegación</b></td>
+			<td width=100 align=center style='background:#D8D8D8'><font size=2 face=arial><b>Tipo<br>Seeker</b></td>
+			<td width=200 align=center style='background:#D8D8D8'><font size=2 face=arial><b>Condición<br>Plataforma</b></td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>LOCK-ON<br>PREVIO</td>
+			<td rowspan=4><font size=2 face=arial>RADAR</td>
+			<td><font size=2 face=arial>Lock-On radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>DESIGNACIÓN<br>RADAR</td>
+			<td><font size=2 face=arial>Detección radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>PREPROGRAMADA</td>
+			<td><font size=2 face=arial>Detección por cualquier sensor<br>que proporcione distancia<br>O AP manual<br>O Demora ESM<br>O Demora manual lanzamiento</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>CLOS</td>
+			<td><font size=2 face=arial>Lock-On o TWS radar asociado<br>para blancos aéreos</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>LOCK-ON<br>PREVIO</td>
+			<td rowspan=4><font size=2 face=arial>SEMIACTIVO</td>
+			<td><font size=2 face=arial>CWI de radar asociado</td>
+
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>DESIGNACIÓN<br>RADAR</td>
+			<td><font size=2 face=arial>CWI de radar asociado</td>
+
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>SEMIACTIVA</td>
+			<td><font size=2 face=arial>CWI de radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>CLOS</td>
+			<td><font size=2 face=arial>CWI de radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>LOCK-ON<br>PREVIO</td>
+			<td rowspan=4><font size=2 face=arial>ARM</td>
+			<td><font size=2 face=arial>Lock-On radar asociado<br>O Detección ESM plataforma<br>O Detección ESM seeker</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>DESIGNACIÓN<br>RADAR</td>
+			<td><font size=2 face=arial>Lock-On radar asociado<br>O Detección ESM plataforma<br>O Detección ESM seeker</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>PREPROGRAMADA</td>
+			<td><font size=2 face=arial>Detección por cualquier sensor<br>que proporcione distancia<br>O Detección ESM plataforma<br>O Detección ESM seeker<br>O AP manual</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>ARM</td>
+			<td><font size=2 face=arial>Detección ESM plataforma<br>O Detección ESM seeker<br>O AP manual</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>LOCK-ON<br>PREVIO</td>
+			<td rowspan=5><font size=2 face=arial>IR</td>
+			<td><font size=2 face=arial>Lock-On radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>DESIGNACIÓN<br>RADAR</td>
+			<td><font size=2 face=arial>Lock-On radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>PREPROGRAMADA</td>
+			<td><font size=2 face=arial>Detección por cualquier sensor<br>que proporcione distancia<br>O Detección ESM plataforma<br>O AP manual<br>O Demora manual lanzamiento</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>EO</td>
+			<td><font size=2 face=arial>Detección por visual</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>CLOS</td>
+			<td><font size=2 face=arial>Lock-On o TWS radar asociado<br>para blancos aéreos</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>LOCK-ON<br>PREVIO</td>
+			<td rowspan=5><font size=2 face=arial>EO</td>
+			<td><font size=2 face=arial>Lock-On radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>DESIGNACIÓN<br>RADAR</td>
+			<td><font size=2 face=arial>O Detección radar asociado<br>O Detección visual</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>PREPROGRAMADA</td>
+			<td><font size=2 face=arial>Detección por cualquier sensor<br>que proporcione distancia<br>O Detección ESM plataforma<br>O AP manual<br>O Demora manual lanzamiento<br>O Detección EO seeker misil</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>EO</td>
+			<td><font size=2 face=arial>Detección EO seeker misil</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>CLOS</td>
+			<td><font size=2 face=arial>Lock-On o TWS radar asociado<br>para blancos aéreos</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>LOCK-ON<br>PREVIO</td>
+			<td rowspan=3><font size=2 face=arial>CLOS</td>
+			<td><font size=2 face=arial>Lock-On radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>DESIGNACIÓN<br>RADAR</td>
+			<td><font size=2 face=arial>Lock-On o TWS radar asociado<br>para blancos aéreos<br>O Detección radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>CLOS</td>
+			<td><font size=2 face=arial>Lock-On o TWS radar asociado<br>para blancos aéreos</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>LOCK-ON<br>PREVIO</td>
+			<td rowspan=3><font size=2 face=arial>FILOGUIADO</td>
+			<td><font size=2 face=arial>Lock-On radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>DESIGNACIÓN<br>RADAR</td>
+			<td><font size=2 face=arial>Detección radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>FILOGUIADA</td>
+			<td><font size=2 face=arial>Detección visual plataforma</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>LOCK-ON<br>PREVIO</td>
+			<td rowspan=3><font size=2 face=arial>LÁSER</td>
+			<td><font size=2 face=arial>Lock-On radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>DESIGNACIÓN<br>RADAR</td>
+			<td><font size=2 face=arial>Detección radar asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>LÁSER</td>
+			<td><font size=2 face=arial>Detección visual plataforma</td>
+		</tr>
+
+		<tr>
+			<td colspan=5><font size=2 face=arial>Nota: Los misiles con tipo de navegación CLOS, LOCK ON PREVIO,<br>DESIGNACIÓN RADAR y SEMIACTIVA cuando asocian<br>un sensor infrarrojo (*) a la dirección de torpedo, pueden disparar<br>a cualquier blanco detectado por este sensor.<br>(*) Esta capacidad no está disponible en todas las<br>versiones del simulador.</td>
+		</tr>
+
+	</table>
+	<br>
+
+	<li>Designar una demora fija para disparo: Al pulsar el botón Demora se designará una demora para disparo, con una distancia de apertura del seeker y de destrucción del misil por defecto, que deben modificarse si se desean valores diferentes a los establecidos. Esta opción solo está disponible para misiles con navegación preprogramada.</li><br>
+
+	<li>Activar / Desactivar Pop-up: Pulsando el botón Pop-up se activa o desactiva la opción de lanzar el misil en modo Pop-up, si este dispone de esa capacidad.</li><br>
+
+	<li>Introducir número de salva: Permite introducir el número de misiles que se disparan al ordenar Fuego.</li><br>
+
+	<li>Seleccionar la opción Link Update: Permite el disparo del misil guiado en vuelo por otra unidad, con capacidad Link Update.</li><br>
+
+	<li>Establecer el patrón de búsqueda del seeker radar: Si el misil dispone de seeker radar, se puede elegir el tamaño de la ventana de búsqueda entre corta, media y larga. Para ello se utiliza la barra deslizante correspondiente.</li><br>
+
+	<li>Configurar el seeker ARM: Si el misil dispone de seeker ARM, deberá introducirse el spot del blanco y las frecuencias máxima y mínima de búsqueda.</li><br>
+
+	<li>Al pulsar el botón Fuego se inicia una cuenta atrás, cuyo tiempo depende del tipo de lanzador, tras la cual se dispara el misil. Si la salva es mayor que uno, comenzará de nuevo la cuenta atrás y se dispara el siguiente misil, y así de forma consecutiva hasta que se lance la cantidad que se ha introducido. El campo alistamiento muestra la cuenta atrás y el campo salva la cantidad de misiles que quedan por disparar. Si durante la cuenta atrás de lanzamiento se pulsa de nuevo el botón Fuego (cuya leyenda ha sido sustituida por Cancelar) se cancela el lanzamiento.</li>
+
+	<p>El lanzamiento no se produce si se dan alguna de las siguientes circunstancias:</p>
+
+	<ul>
+		<li>La distancia al blanco (o al primer way point en el caso de navegación preprogramada) está fuera del sector de fuego del misil.</li><br>
+		
+		<li>La marcación del blanco (o al primer way point en el caso de navegación preprogramada) está fuera del sector de fuego del misil.</li><br>
+		
+		<li>En caso de disparo desde unidad aérea, ésta se encuentra a una altura mayor que la máxima o menor que la mínima de disparo introducida en la Base de Datos del misil.</li><br>
+		
+		<li>La velocidad del blanco es superior a la máxima velocidad de blanco válida para el Misil (si misil es tipo UAM, SAM o AAM).</li><br>
+		
+		<li>En el caso de seeker ARM, si la frecuencia de la emisión no está dentro del margen de frecuencias del seeker.</li><br>
+		
+		<li>El blanco está fuera del envelope del misil, fuera de alcance por distancia y altura.</li><br>
+		
+		<li>El blanco está fuera del envelope del misil, fuera de alcance por distancia.</li><br>
+		
+		<li>El blanco está fuera del envelope del misil, fuera de alcance por altura.</li>
+		
+		<p>En todos estos casos se muestra un aviso al operador informado de la circunstancia que impide el lanzamiento.</p>
+
+	</ul>
+
+	<li>Activar / Desactivar el modo de lanzamiento automático. Cuando el modo automático está activado, el lanzador de misiles disparará automáticamente la salva indicada a todo contacto que cumpla las condiciones establecidas en el filtro ASMD, que pueden consultarse o modificarse pulsando el botón ASMD.</li>
+
+	<p align=center><img width=600 src="../IlvImages/Console/console_wnd_weaponsAux/MissileAsmdFilterWnd.jpg"></p>
+
+	<p> Las condiciones que pueden establecerse en este panel son las siguientes:</p>
+
+	<ul>
+		<li>Distancia menor que ... millas</li>
+		<li>Velocidad mayor que ... nudos</li>
+		<li>Altura menor que ... pies</li>
+		<li>CPA menor que ... millas</li>
+	</ul>
+
+	<p>Para que se produzca el disparo deben cumplirse las cuatro condiciones simultáneamente (con la excepción de que la condición de altura sólo será tenida en cuenta si se detecta altura del blanco).</p>
+
+	<p>Para no considerar los proyectiles lanzados por la propia unidad en los filtros ASMD, se comprueba si la amenaza se está acercando o alejando de la unidad. Para ello se examinará la dirección de avance de esa posible amenaza, es decir, una unidad sólo se tiene en cuenta como amenaza para el filtro ASMD si la demora del blanco menos su rumbo es inferior en valor absoluto a 90º.</p>
+
+	<p>Si el lanzador de misiles está en modo automático y se solicitan disparos en manual, se desactiva el modo automático y lanzador de misiles realiza los disparos en modo manual. Si el lanzador de misiles está disparando en modo manual, y se solicita activar el modo automático, se cancelan los disparos en manual y se activa el modo automático.</p>
+
+	<p>Dependiendo del tipo de misil, existen algunas funciones especiales para el disparo que aparecen en la parte derecha del panel de Fuego.</p>
+
+	<table border=0 cellspacing=0 cellpadding=2>
+		<tr>
+			<td width=160><font size=2 face=arial>PREPROGRAMADO:</td>
+			<td width=220><font size=2 face=arial>Way Points</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>DESIGNATION RADAR:</td>
+			<td><font size=2 face=arial>Sensor Asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>LOCKON PREVIO:</td>
+			<td><font size=2 face=arial>Sensor Asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>SEMIACTIVO:</td>
+			<td><font size=2 face=arial>Sensor Asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>ARM:</td>
+			<td><font size=2 face=arial>Ninguna</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>CLOS:</td>
+			<td><font size=2 face=arial>Sensor Asociado</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>FILOGUIADO:</td>
+			<td><font size=2 face=arial>Ninguna</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>LÁSER:</td>
+			<td><font size=2 face=arial>Designador</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>ELECTRO-ÓPTICO:</td>
+			<td><font size=2 face=arial>Ninguna</td>
+		</tr>
+
+	</table>
+
+	<p>A continuación se describen estas funciones:</p>
+
+	<li>Sensor Asociado: Permite asociar la dirección de tiro del misil a un sensor radar o infrarrojo (*). Determinados tipos de misiles se pueden asociar a sensores, de manera que se dispararán sobre blancos detectados por los sensores asociados y en su caso, serán guiados por ellos cuando iluminan al blanco.</li>
+
+	<p align=center><img src="../IlvImages/Console/console_wnd_weaponsAux/MissileAssociatedSensorWnd.jpg"></p>
+
+	<p>En este panel se muestra la lista de los posibles sensores que pueden asociarse, el operador debe elegir uno de ellos, cuyo nombre aparece en el campo inferior, junto con su estado (Encendido / Apagado / Dañado) que se muestra en el led mayor. Los dos leds miniatura indican Lock-On e Iluminación en el caso de que el sensor sea de tipo radar. Por último, pulsando en el botón FC se accede al panel de configuración del sensor seleccionado (Para una descripción detallada ver los capítulos correspondientes a Radar e Infrarrojo (*)).</p>
+
+	<p>(*) Infrarrojo no disponible en todas las versiones del Simulador.</p>
+
+	<li>Designador: Permite seleccionar Unidad Designadora. En el caso de misiles con navegación de guiado láser, puede elegirse a una unidad diferente de la propia como designadora del misil, con la condición de que esta unidad disponga de esa capacidad y detecte al blanco seleccionado.</li>
+
+	<p align=center><img src="../IlvImages/Console/console_wnd_weaponsAux/MissileDesignerWnd.jpg"></p>
+
+	<p>En el panel correspondiente se muestra la lista de posibles unidades designadoras, de las cuales debe elegirse una, cuyo nombre aparece en la parte inferior del panel.</p>
+
+	<li>Way Points: Permite Establecer Way Points para la navegación del misil. Determinados misiles tienen la capacidad de navegación por Way Points, lo que permite introducir una serie de puntos (hasta 9) que el misil debe recorrer.</li>
+
+	<p align=center><img src="../IlvImages/Console/console_wnd_weaponsAux/WayPointsSubWnd.jpg"></p>
+
+	<p>En el panel correspondiente sólo aparece un botón Way Points, y al pulsarlo se accede al panel de introducción de Way Points.</p>
+
+	<p align=center><img src="../IlvImages/Console/console_wnd_weaponsAux/WayPointsMissileWnd.jpg"></p>
+
+	<p>Para introducir un Way Point debe situarse el Hook sobre la posición deseada y pulsar el botón Hook. Cada Way Point puede ser eliminado eligiéndolo de la lista y pulsando el botón Eliminar. Por último, al pulsar el botón Petición, quedan registrados los Way Points para el misil. En la pantalla táctica aparece un símbolo en cada way point con su número correspondiente.</p>
+
+</ul> 
+
+</div>
+
+</body>
+
+</html>

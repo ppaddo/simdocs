@@ -1,0 +1,381 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Condiciones Ambientales</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvEnvironment/EnvironmentWnd.jpg"></p>
+
+<p>Mediante la tabla de condiciones ambientales se especifican aquellos parámetros Acústicos, Electromagnéticos y Meteorológicos que afectan a sensores y comunicaciones. Estas condiciones ambientales podrán ser incluidas en un Ejercicio como condiciones ambientales generales o asociadas a una zona geográfica (Ver apartado Preparación de Ejercicios). Las condiciones ambientales de las distintas zonas podrán ser modificadas dinámicamente por el instructor durante la Ejecución de Ejercicios.</p>
+
+<p><b>Acústica</b>:</p>
+
+<ul>
+	<p><b>Batitermia</b>: Ver apartado Batitermia.</p>
+
+	<p><b>Nivel de Tráfico Mercante</b>: Este parámetro es tenido en cuenta para el cálculo del ruido ambiental, por tanto afecta al cálculo del exceso de señal recibido por los sonares activos y pasivos.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 1 – 7</p>
+
+		<p>Ejemplo: </p>
+		<p>Para frecuencias de 0 – 100 Hz:</p>
+		<p>Si Nivel de Tráfico Mercante = 1 Þ Ruido Ambiental = 55 dB.</p>
+		<p>Si Nivel de Tráfico Mercante = 4 Þ Ruido Ambiental = 70 dB.</p>
+		<p>Si Nivel de Tráfico Mercante = 7 Þ Ruido Ambiental = 85 dB.</p>
+	</ul>
+
+	<p><b>Factor AN</b>: Este parámetro es un factor de corrección del ruido ambiental recibido por una unidad. El ruido ambiental calculado a partir del nivel del tráfico mercante y del estado del mar es multiplicado por el Factor AN. Dado que las condiciones ambientales pueden ser modificadas por el instructor durante la ejecución de ejercicios, este factor le permitirá ajustar la influencia de del ruido ambiental sin alterar otros parámetros ambientales.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 10,0</p>
+
+		<p>Ejemplo: </p>
+		<p>Si Factor AN = 0 Þ Ruido Ambiental = 0 dB.</p>
+		<p>Si Factor AN = 1 Þ Ruido Ambiental = Ruido Ambiental calculado.</p>
+		<p>Si Factor AN = 10 Þ Ruido Ambiental = 10*Ruido Ambiental calculado.</p>
+	</ul>
+</ul>
+
+<p><b>Electromagnetismo</b>:</p>
+
+<ul>	
+	<p><b>Densidad Electromagnética</b>: Este parámetro es tenido en cuenta por los modelos de Radar y ESM, afectando a la probabilidad de detección de contactos.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pps (pulsos por segundo)</p>
+		<p><u>Rango</u>: 0 – 9999999</p>
+	</ul>
+
+	<p><b>Factor de Propagación Electromagnética</b>: Los siguientes parámetros determinan los factores de propagación anómala en los ductos de Superficie, Elevada y Evaporación. Estos parámetros afectan al cálculo del alcance del radar según su lóbulo. Las alturas de los ductos de propagación consideradas se configuran en el fichero Galeon.ini. Por defecto son:</p>
+
+	<ul>
+		<li>Superficie: 0 – 100 pies</li>
+		<li>Elevada: 100 – 3000 pies</li>
+		<li>Evaporación: 14.000 – 18.000 pies</li>
+	</ul>
+
+	<ul>
+		<p><b>Superficie</b>: Factor de propagación anómala en ducto de Superficie.</p>
+
+		<ul>
+			<p><u>Unidades</u>: ---</p>
+			<p><u>Rango</u>: 0 – 10,0</p>
+		</ul>
+
+		<p><b>Elevada</b>: Factor de propagación anómala en ducto Elevado.</p>
+
+		<ul>
+			<p><u>Unidades</u>: ---</p>
+			<p><u>Rango</u>: 0 – 10,0</p>
+		</ul>
+
+		<p><b>Evaporación</b>: Factor de propagación anómala en ducto de Evaporación.</p>
+
+		<ul>
+			<p><u>Unidades</u>: ---</p>
+			<p><u>Rango</u>: 0 – 10,0</p>
+
+			<p>Ejemplo:</p>
+			<p>Si Factor Propagación EM = 0 Þ Alcance radar nulo.</p>
+			<p>Si Factor Propagación EM = 1 Þ No afecta al alcance radar.</p>
+			<p>Si Factor Propagación EM = 10 Þ Alcance radar * 10.</p>
+		</ul>
+	</ul>
+
+	<p><b>Factor de Propagación de Comunicaciones</b>: Este parámetro determina el factor de propagación para las comunicaciones. Es tenido en cuenta para el cálculo del alcance de las redes de comunicaciones.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 10,0</p>
+
+		<p>Ejemplo:</p>
+		<p>Si Factor Propagación Com. = 0 Þ Alcance com. nulo.</p>
+		<p>Si Factor Propagación Com. = 1 Þ No afecta al alcance com..</p>
+		<p>Si Factor Propagación Com. = 10 Þ Alcance com. * 10.</p>
+	</ul>
+</ul>
+
+<p><b>Meteorología</b>:</p>
+
+<ul>
+	<p><b>Visibilidad</b>: Este parámetro determina la distancia a la que se dispone de visibilidad. Es tenido en cuenta para el cálculo de los alcances de los sensores optrónicos.</p>
+
+	<ul>
+		<p><u>Unidades</u>: Millas</p>
+		<p><u>Rango</u>: 0 – 99</p>
+	</ul>
+
+	<p><b>Factor de Visibilidad</b>: Este parámetro es un factor de corrección del parámetro visibilidad el cual es multiplicado por este factor. Dado que las condiciones ambientales pueden ser modificadas por el instructor durante la ejecución de ejercicios, este factor le permitirá ajustar los alcances de los sensores optrónicos sin alterar otros parámetros ambientales.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 10,0</p>
+	</ul>
+
+	<p><b>Lluvia</b>: Este parámetro es un factor que modela la reducción del alcance de los sensores optrónicos y radares debido a la lluvia.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+
+		<p>Ejemplo: </p>
+		<p>Si Lluvia = 0 Þ Los alcances no se ven afectados.</p>
+		<p>Si Lluvia = 25 Þ El alcance se ve reducido a un 75%.</p>
+		<p>Si Lluvia = 100 Þ Alcance = 0.</p>
+	</ul>
+
+	<p><b>Nubosidad</b>: Este parámetro es un factor que modela la reducción del alcance de los sensores optrónicos debido a la nubosidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 8</p>
+
+		<p>Ejemplo: </p>
+		<p>Si Nubosidad = 0 Þ Los alcances no se ven afectados.</p>
+		<p>Si Nubosidad = 4 Þ El alcance se ve reducido a un 50%.</p>
+		<p>Si Nubosidad = 8 Þ Alcance = 0.</p>
+	</ul>
+
+	<p><b>Altura de la Nube</b>: Este parámetro determina la altura de las nubes cuando se modela un nivel de nubosidad. Es tenido en cuenta por los sensores optrónicos para determinar si las nubes obstaculizan la detección, en cuyo caso, se reduce el alcance como se explica en el parámetro Nubosidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p>Los siguientes parámetros determinan la Dirección e Intensidad del Viento. Son tenidos en cuenta por los modelos de dinámica de aviones y helicópteros, y por misiles, torpedos, bombas, chaff y cargas de profundidad.</p>
+
+	<p><b>Dirección del Viento</b>: Determina la Dirección del Viento.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 360</p>
+	</ul>
+
+	<p><b>Intensidad del Viento</b>: Determina la Intensidad del Viento.</p>
+
+	<ul>
+		<p><u>Unidades</u>: nudos</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Estado del Viento</b>: Este parámetro es no editable y en él se muestra el valor correspondiente en la Escala Beaufort de Fuerza del Viento según el valor introducido de Intensidad de Viento. Ver tabla Equivalencia entre Viento y Estado de la Mar más adelante. Puede tomar los siguientes valores:</p>
+
+	<ul>
+		<li>0 – CALMA</li>
+		<li>1 – VENTOLINA</li>
+		<li>2 – FLOJITO</li>
+		<li>3 – FLOJO</li>
+		<li>4 – BONANCIBLE MODERADO</li>
+		<li>5 – FRESQUITO</li>
+		<li>6 – FRESCO</li>
+		<li>7 – FRESCACHÓN</li>
+		<li>8 – TEMPORAL</li>
+		<li>9 – TEMPORAL FUERTE</li>
+		<li>10 – TEMPORAL DURO</li>
+		<li>11 – TEMPORAL MUY DURO</li>
+		<li>12 – TEMPORAL HURACANADO</li>
+	</ul>
+
+	<p><b>Estado del Mar</b>: Este parámetro es no editable y en él se muestra el valor correspondiente en la Escala Douglas de Estado del Mar según el valor introducido de Intensidad del Viento. Es tenido en cuenta para el cálculo del ruido ambiental que afecta a los sonares. Ver tabla Equivalencia entre Viento y Estado de la Mar más adelante. Puede tomar los siguientes valores:</p>
+
+	<ul>
+		<li>0 – CALMA O LLANA</li>
+		<li>1 – RIZADA</li>
+		<li>2 – MAREJADILLA</li>
+		<li>3 – MAREJADA</li>
+		<li>4 – FUERTE MAREJADA</li>
+		<li>5 – GRUESA</li>
+		<li>6 – MUY GRUESA</li>
+		<li>7 – ARBOLADA</li>
+		<li>8 – MONTAÑOSA</li>
+		<li>9 – ENORME</li>
+	</ul>
+
+	<p><b>Altura de la Ola</b>: Este parámetro determina la altura de la ola. El valor introducido debe estar en el rango correspondiente al Estado del Mar según la Escala Douglas. Ver tabla Equivalencia entre Viento y Estado de la Mar más adelante. Es tenido en cuenta por los modelos de sensores optrónicos y radares (Sea Clutter).</p>
+
+	<ul>
+		<p><u>Unidades</u>: metros</p>
+		<p><u>Rango</u>: El correspondiente al Estado del Mar según Escala Douglas.</p>
+	</ul>
+
+	<p><b>Corriente</b>: Los siguientes parámetros determinan la dirección e intensidad de la corriente. Son tenidos en cuenta por los modelos de dinámica de superficies y submarinos, y por sonoboyas, torpedos y cargas de profundidad.</p>
+
+	<ul>
+		<p><b>Dirección</b>: Determina la Dirección de la Corriente.</p>
+
+		<ul>
+			<p><u>Unidades</u>: grados</p>
+			<p><u>Rango</u>: 0 – 359</p>
+		</ul>
+
+		<p><b>Intensidad</b>: Determina la Intensidad de la Corriente.</p>
+
+		<ul>
+			<p><u>Unidades</u>: nudos</p>
+			<p><u>Rango</u>: 0 – 100</p>
+		</ul>
+	</ul>
+
+
+	<table border=1 cellspacing=0 cellpadding=4>
+		<tr>
+			<td align=center colspan=7><font size=2 face=arial><b>	EQUIVALENCIA ENTRE VIENTO Y ESTADO DE LA MAR</b></td>
+		</tr>
+
+		<tr>
+			<td align=center colspan=4><font size=2 face=arial><b>FUERZA DEL VIENTO<br>(ESCALA BEAUFORT)</b></td>
+			<td align=center colspan=3><font size=2 face=arial><b>ESTADO DEL MAR<br>(ESCALA DOUGLAS)</b></td>
+		</tr>
+		
+		<tr>
+			<td width=20 align=center><font size=2 face=arial><b>B</b></td>
+			<td><font size=2 face=arial><b>NOMBRE</b></td>
+			<td><font size=2 face=arial><b>NUDOS</b></td>
+			<td><font size=2 face=arial><b>EFECTOS DEL VIENTO<br>EN ALTA MAR</b></td>
+			<td width=20 align=center><font size=2 face=arial><b>D</b></td>
+			<td><font size=2 face=arial><b>NOMBRE</b></td>
+			<td><font size=2 face=arial><b>ALTURA<br>OLAS (m)</b></td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>0</td>
+			<td><font size=2 face=arial>CALMA</td>
+			<td><font size=2 face=arial>1</td>
+			<td><font size=2 face=arial>Mar como un espejo.</td>
+			<td rowspan=2 align=center><font size=2 face=arial>0</td>
+			<td rowspan=2><font size=2 face=arial>CALMA O<br>LLANA</td>
+			<td rowspan=2><font size=2 face=arial>0</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>1</td>
+			<td><font size=2 face=arial>VENTOLINA</td>
+			<td><font size=2 face=arial>1 - 3</td>
+			<td><font size=2 face=arial>Rizos como escamas de pescado<br>pero sin espuma.</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>2</td>
+			<td><font size=2 face=arial>FLOJITO</td>
+			<td><font size=2 face=arial>4 - 6</td>
+			<td><font size=2 face=arial>Pequeñas olas, crestas de apariencia vítrea,<br>sin romperse.</td>
+			<td align=center><font size=2 face=arial>1</td>
+			<td><font size=2 face=arial>RIZADA</td>
+			<td><font size=2 face=arial>0 a 0,1</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>3</td>
+			<td><font size=2 face=arial>FLOJO</td>
+			<td><font size=2 face=arial>7 - 10</td>
+			<td><font size=2 face=arial>Pequeñas olas, crestas rompientes, espuma<br>de aspecto vítreo, aislados vellones de espuma.</td>
+			<td align=center><font size=2 face=arial>2</td>
+			<td><font size=2 face=arial>MAREJADILLA</td>
+			<td><font size=2 face=arial>0,1 a 0,5</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>4</td>
+			<td><font size=2 face=arial>BONANCIBLE -<br>MODERADO</td>
+			<td><font size=2 face=arial>11 - 16</td>
+			<td><font size=2 face=arial>Pequeñas olas creciendo, cabrilleo numeroso<br>y frecuente de las olas.</td>
+			<td align=center><font size=2 face=arial>3</td>
+			<td><font size=2 face=arial>MAREJADA</td>
+			<td><font size=2 face=arial>0,5 a 1,25</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>5</td>
+			<td><font size=2 face=arial>FRESQUITO</td>
+			<td><font size=2 face=arial>17 - 21</td>
+			<td><font size=2 face=arial>Olas medianas alargadas, cabrilleo<br>(con salpicaduras).</td>
+			<td align=center><font size=2 face=arial>4</td>
+			<td><font size=2 face=arial>FUERTE<br>MAREJADA</td>
+			<td><font size=2 face=arial>1,25 a 2,5</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>6</td>
+			<td><font size=2 face=arial>FRESCO</td>
+			<td><font size=2 face=arial>22 - 27</td>
+			<td><font size=2 face=arial>Se forman olas grandes, crestas de espuma<br>blanca (salpicaduras frecuentes).</td>
+			<td align=center><font size=2 face=arial>5</td>
+			<td><font size=2 face=arial>GRUESA</td>
+			<td><font size=2 face=arial>2,5 a 4</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>7</td>
+			<td><font size=2 face=arial>FRESCACHÓN</td>
+			<td><font size=2 face=arial>28 - 33</td>
+			<td><font size=2 face=arial>El mar crece; la espuma blanca que proviene<br>de las olas es arrastrada por el viento.</td>
+			<td rowspan=3 align=center><font size=2 face=arial>6</td>
+			<td rowspan=3><font size=2 face=arial>MUY GRUESA</td>
+			<td rowspan=3><font size=2 face=arial>4 a 6</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>8</td>
+			<td><font size=2 face=arial>TEMPORAL</td>
+			<td><font size=2 face=arial>34 - 40</td>
+			<td><font size=2 face=arial>Olas de altura media y mas alargadas,<br>del borde superior de sus crestas comienzan<br>a destacarse torbellinos de salpicaduras.</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>9</td>
+			<td><font size=2 face=arial>TEMPORAL<br>FUERTE</td>
+			<td><font size=2 face=arial>41 - 47</td>
+			<td><font size=2 face=arial>Grandes olas, espesas estelas de espuma<br>a lo largo del viento, las crestas de las olas<br>se rompen en rollos, las salpicaduras<br>pueden reducir la visibilidad.</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>10</td>
+			<td><font size=2 face=arial>TEMPORAL<br>DURO</td>
+			<td><font size=2 face=arial>48 - 55</td>
+			<td><font size=2 face=arial>Olas muy grandes con largas crestas en<br>penachos, la espuma se aglomera en grandes<br>bancos y es llevada por el viento en espesas<br>estelas blancas, en conjunto la superficie esta<br>blanca, la visibilidad esta reducida.</td>
+			<td align=center><font size=2 face=arial>7</td>
+			<td><font size=2 face=arial>ARBOLADA</td>
+			<td><font size=2 face=arial>6 a 9</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>11</td>
+			<td><font size=2 face=arial>TEMPORAL<br>MUY DURO</td>
+			<td><font size=2 face=arial>56 - 63</td>
+			<td><font size=2 face=arial>Olas de altura excepcional (pueden perderse<br>de vista tras ellas barcos de tonelaje pequeño<br>y medio), mar cubierta de espuma,<br>la visibilidad esta reducida.</td>
+			<td align=center><font size=2 face=arial>8</td>
+			<td><font size=2 face=arial>MONTAÑOSA</td>
+			<td><font size=2 face=arial>9 a 14</td>
+		</tr>
+
+		<tr>
+			<td align=center><font size=2 face=arial>12</td>
+			<td><font size=2 face=arial>TEMPORAL<br>HURACANADO</td>
+			<td><font size=2 face=arial>más de 64</td>
+			<td><font size=2 face=arial>Aire lleno de espuma, salpicaduras, mar<br>cubierto de espuma visibilidad muy reducida</td>
+			<td align=center><font size=2 face=arial>9</td>
+			<td><font size=2 face=arial>ENORME</td>
+			<td><font size=2 face=arial>más de 14</td>
+		</tr>
+
+	</table>
+	<br>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>

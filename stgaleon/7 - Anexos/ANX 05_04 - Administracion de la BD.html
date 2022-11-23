@@ -1,0 +1,910 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A size=4 face=arial>Administración de la BD</font></b></p>
+
+<font size=2 face=arial>
+
+<p>Para llevar a cabo la Administración de la BD Oracle del Simulador Táctico Galeón, se suministran diferentes Scripts SQL que facilitan este trabajo. Para la ejecución de éstos scripts la Herramienta de Preparación del Simulador Táctico Galeón incluye una utilidad de para la ejecución de scripts SQL contra el SGBD Oracle (ver Manual de <i>Preparación – Descripción General)</i>. Los scripts se instalan en el directorio “<i>C:\Archivos de Programa\Galeon\data.bd\Scripts</i>”.</p>
+
+<p>Las acciones más comunes de Administración de la BD del sistema son las que se describen paso a paso en las siguientes tablas. En la última columna se indican los scripts que deben ejecutarse para realizar los pasos requeridos.</p>
+
+<p><b>Creación de BD nueva sobre usuario nuevo</b>:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=40><font size=2>Paso</td>
+		<td width=320><font size=2>Acción</td>
+		<td width=250><font size=2>Script SQL</td>
+	</tr>
+
+	<tr>
+		<td><font size=2>1</td>
+		<td><font size=2>Crear nuevo usuario tipo</td>
+		<td><font size=2 face=courier>glndbCreateUserType</td>
+	</tr>
+
+	<tr>
+		<td><font size=2>2</td>
+		<td><font size=2>Crear esquema de BD</td>
+		<td><font size=2 face=courier>glndbCreateSchemaOra</td>
+	</tr>
+
+</table>
+
+<p><b>Creación de BD nueva sobre usuario existente</b>:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=40><font size=2>Paso</td>
+		<td width=320><font size=2>Acción</td>
+		<td width=250><font size=2>Script SQL</td>
+	</tr>
+
+	<tr>
+		<td><font size=2>1</td>
+		<td><font size=2>Borrar esquema de usuario tipo existente</td>
+		<td><font size=2 face=courier>glndbDeleteSchemaOra</td>
+	</tr>
+
+	<tr>
+		<td><font size=2>2</td>
+		<td><font size=2>Crear esquema de BD</td>
+		<td><font size=2 face=courier>glndbCreateSchemaOra</td>
+	</tr>
+
+</table>
+
+<p><b>Borrado de BD</b>:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=40><font size=2>Paso</td>
+		<td width=320><font size=2>Acción</td>
+		<td width=250><font size=2>Script SQL</td>
+	</tr>
+
+	<tr>
+		<td><font size=2>1</td>
+		<td><font size=2>Eliminar el usuario y todos los objetos que posea</td>
+		<td><font size=2 face=courier>glndbDropUser</td>
+	</tr>
+
+</table>
+
+<p><b>Creación de usuarios de sólo lectura, de preparación de juegos o de acceso total para una BD existente</b>:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=40><font size=2>Paso</td>
+		<td width=320><font size=2>Acción</td>
+		<td width=250><font size=2>Script SQL</td>
+	</tr>
+
+	<tr>
+		<td width=40><font size=2>1</td>
+		<td width=250><font size=2>Conceder al usuario que comparte la BD los permisos necesarios para compartir sus objetos </td>
+		<td width=250><font size=2 face=courier>glndbUserForShareGrant</td>
+	</tr>
+
+	<tr>
+		<td width=40><font size=2>2</td>
+		<td width=250><font size=2>Crear sinónimos públicos para los objetos compartidos</td>
+		<td width=250><font size=2 face=courier>glndbCreateSynonyms</td>
+	</tr>
+
+	<tr>
+		<td width=40><font size=2>3</td>
+		<td width=250><font size=2>Crear nuevo usuario</td>
+		<td width=250><font size=2 face=courier>glndbCreateUserType</td>
+	</tr>
+
+	<tr>
+		<td width=40><font size=2>4</td>
+		<td width=250><font size=2>
+			<p>Asignar al nuevo usuario los permisos necesarios para acceder a los objetos del usuario que los comparte:</p>
+			<p align=right>sólo lectura</p>
+			<p align=right>preparación de juegos</p>
+			<p align=right>acceso total</p>
+		</td>
+		<td width=250><font size=2>
+			<br><br>
+			<font size=2 face=courier>
+			<p>glndbCreateUserRead</p>
+			<p>glndbCreateUserPrep</p>
+			<p>glndbCreateUserWrite</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td width=40><font size=2>5</td>
+		<td width=250><font size=2>Eliminar los permisos al usuario que comparte los objetos (este paso es opcional)</td>
+		<td width=250><font size=2 face=courier>glndbUserForShareRevoke</td>
+	</tr>
+
+</table>
+ 
+<p><b>Creación de usuario de login</b>:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=40><font size=2>Paso</td>
+		<td width=320><font size=2>Acción</td>
+		<td width=250><font size=2>Script SQL</td>
+	</tr>
+
+	<tr>
+		<td width=40><font size=2>1</td>
+		<td width=320><font size=2>Crear usuario para login (sólo es necesario hacerlo al instalar por primera vez, para configuración los datos de conexión del sistema)</td>
+		<td width=250><font size=2 face=courier>glndbCreateUserLogin</td>
+	</tr>
+
+</table>
+
+<p><b>Actualización de esquema de BD</b>:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=40><font size=2>Paso</td>
+		<td width=320><font size=2>Acción</td>
+		<td width=250><font size=2>Script SQL</td>
+	</tr>
+
+	<tr>
+		<td width=40><font size=2>1</td>
+		<td width=320><font size=2>Actualizar el esquema (sólo para instalación de nuevas versiones del sistema)</td>
+		<td width=320><font size=2 face=courier>NN-glndbOraUpdate[d1.m1.a1][d2.m2.a2].sql</td>
+	</tr>
+
+</table>
+
+<p><b>Réplicas de BD</b>: para replicar BD deben emplearse las utilidades de Importación y Exportación incluidas en la Herramienta de Preparación (ver <i>Manual de Preparación – Descripción General</i>), siguiendo los siguientes pasos.</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=40><font size=2>Paso</td>
+		<td width=250><font size=2>Acción</td>
+	</tr>
+
+	<tr>
+		<td><font size=2>1</td>
+		<td><font size=2>Exportar la BD del usuario que se desea replicar.</td>
+	</tr>
+
+	<tr>
+		<td><font size=2>1</td>
+		<td><font size=2>Importar con el nuevo usuario la BD exportada previamente.</td>
+	</tr>
+
+</table>
+
+<p><b>Descripción de los Scripts SQL</b>:</p>
+
+<font size=2 face=courier>
+
+<p><b>glndbCreateUserType</b></p>
+-- ****************************************************************************
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- Creación de un usuario tipo para conexión a base de datos.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- EJECUTAR DESDE:
+<br>
+--
+<br>
+-- Usuario SYSTEM de Oracle.
+<br>
+-- Puede ejecutarse también desde otros usuarios con privilegios de DBA, que
+<br>
+-- tengan el privilegio a su vez de crear otros usuarios.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- SUSTITUIR:
+<br>
+--
+<br>
+-- USER_TO_CREATE:
+<br>
+-- Nombre de usuario que se quiere crear. Puede introducirse en mayúsculas
+<br>
+-- o minúsculas pero no mezclar ambas. Donde aparece entre comillas hay que
+<br>
+-- escribirlo exactamente como se introdujo la primera vez. Posteriormente,
+<br>
+-- en la ventana de login puede usarse indistintamente en mayúsculas o
+<br>
+-- minúsculas. 
+<br>
+--
+<br>
+-- PASSWORD:
+<br>
+-- Clave de acceso para el nuevo usuario. Es una cadena alfanumérica que
+<br>
+-- debe introducirse sin comillas. Tener en cuenta exactamente lo mismo que
+<br>
+-- para el nombre del usuario. Posteriormente aparecerá encriptada si se
+<br>
+-- consulta la propiedades del usuario. 
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+<p><b>glndbCreateSchemaOra</b></p> 
+-- ****************************************************************************
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- Creación del esquema de base de datos para el Simulador Táctico Galeón.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- EJECUTAR DESDE:
+<br>
+--
+<br>
+-- El usuario para el que se quiera crear el esquema de base de datos, que
+<br>
+-- será el propietario de todos los objetos incluídos en el mismo.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+<p><b>glndbDeleteSchemaOra</b></p>
+-- ****************************************************************************
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- Eliminación del esquema de base de datos para el Simulador Táctico Galeón.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- EJECUTAR DESDE:
+<br>
+--
+<br>
+-- El usuario propietario de los objetos del esquema a eliminar.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+<p><b>glndbDropUser</b></p>
+-- ****************************************************************************
+<br>
+--
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- Eliminación de un usuario.
+<br>
+--
+<br>
+-- Este script debe ejecutarse desde un usuario con privilegios suficientes
+<br>
+-- para efectuar las operaciones que se indican en él. El usuario puede ser
+<br>
+-- el usuario system de Oracle.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- Se deben sustituir las siguientes palabras:
+<br>
+--
+<br>
+-- USERNAME:
+<br>
+-- Nombre de usuario que se quiere eliminar.
+<br>
+--
+<br>
+-- USER_ASSOCIATED_ROLE:
+<br>
+-- Nombre del role asociado al usuario.
+<br>
+--
+<br>
+-- Según la política de usuarios y permisos seguida en Galeón, pueden existir
+<br>
+-- diferentes conjuntos de objetos, normalmente tablas, (que se corresponden 
+<br>
+-- con lo que podríamos denominar diferentes bases de datos) cada uno de ellos
+<br>
+-- con un usuario propietario que tiene acceso total a los mismos. Se definen
+<br>
+-- posteriormente dos o más usuarios a los que el propietario de los objetos
+<br>
+-- concede determinados permisos sobre sus objetos (consulta o modificación
+<br>
+-- y creación restringida). Estos permisos pueden ser concedidos directamente
+<br>
+-- a un usuario concreto o asignados a roles y después asignar el role a uno
+<br>
+-- o más usuarios. Usar roles es un procedimiento más general ya que los
+<br>
+-- permisos se asignan al role una vez y luego basta con asignar el role a
+<br>
+-- todos los usuarios a los que se quiera dar los mismos permisos. Normalmente
+<br>
+-- en Galeón sólo va a existir un usuario por role. El concepto de role pierde
+<br>
+-- así toda su utilidad, pero se usa esta forma de asignar permisos por ser
+<br>
+-- un procedimiento más genérico.
+<br>
+--
+<br>
+-- Como los roles se definen a nivel de motor de base de datos, puede haber
+<br>
+-- conflictos al crear roles con el mismo nombre para distintos usuarios que
+<br>
+-- van a acceder a distintos conjuntos de objetos (diferentes bases de datos).
+<br>
+-- Puesto que cada role va a estar asociado sólo a un usuario debido a la
+<br>
+-- forma de proceder en Galeón, al eliminar un usuario es conveniente eliminar
+<br>
+-- también su rol asociado para evitar posibles conflictos de nombres. Por lo
+<br>
+-- tanto es recomendable cuando se crea un role, asignarle un nombre que lo
+<br>
+-- asocie de forma inequívoca con un usuario concreto, y seguir siempre el mismo
+<br>
+-- criterio de asignación de nombres a roles para usuarios. De esta forma se
+<br>
+-- facilita la eliminación del role al eliminar el usuario. 
+<br>
+--
+<br>
+-- Tener en cuenta, si el rol está concedido a varios usuarios, que cuando se
+<br>
+-- elimina un role, Oracle lo revoca de todos los usuarios a los que se les
+<br>
+-- había concedido y se elimina el rol a nivel de motor de base de datos.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+<p><b>glndbUserForShareGrant</b></p>
+-- ****************************************************************************
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- Asignación de permisos de creación de sinónimos públicos, creación de
+<br>
+-- roles y modificación de usuarios para poder asignarles roles a un usuario
+<br>
+-- denomindo USER_SHARED. Esto es necesario para que el usuario USER_SHARED
+<br>
+-- pueda asignar permisos a otros usuarios cuando comparte sus objetos. 
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- EJECUTAR DESDE:
+<br>
+--
+<br>
+-- Usuario SYSTEM de Oracle.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- SUSTITUIR:
+<br>
+--
+<br>
+-- USER_SHARED:
+<br>
+-- Nombre del usuario al que quiere concedérsele los permisos indicados. 
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+<p><b>glndbUserForShareRevoke</b></p>
+-- ****************************************************************************
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- ELimina los permisos de creación de sinónimos públicos, creación de
+<br>
+-- roles y modificación de usuarios para poder asignarles roles a un usuario
+<br>
+-- denomindo USER_SHARED. 
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- EJECUTAR DESDE:
+<br>
+--
+<br>
+-- Usuario SYSTEM de Oracle.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- SUSTITUIR:
+<br>
+--
+<br>
+-- USER_SHARED:
+<br>
+-- Nombre del usuario al que quieren eliminársele los permisos indicados. 
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+<p><b>glndbCreateSynonyms</b></p>
+-- ****************************************************************************
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- Creación de sinónimos públicos para los objetos de un usuario llamado
+<br>
+-- USER_SHARED, que compartirá sus objetos con otros usuarios. Esto permite
+<br>
+-- el acceso a los objetos por parte de cualquier usuario que tenga permisos
+<br>
+-- sobre ellos calificándolos sólo mediante el nombre del sinónimo.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- EJECUTAR DESDE:
+<br>
+--
+<br>
+-- El usuario que va a compartir sus objetos: USER_SHARED
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- SUSTITUIR:
+<br>
+--
+<br>
+-- USER_SHARED:
+<br>
+-- Nombre del usuario que quiere compartir sus objetos. Este usuario debe 
+<br>
+-- tener el mismo esquema que se indica aquí. En caso contrario se deben
+<br>
+-- eliminar o añadir las referencias a los objetos que correspondan. Debe
+<br>
+-- tener concedido el privilegio de creación sinónimos públicos, como indica
+<br>
+-- la sentencia SQL siguiente (este privilegio se lo debe conceder el usuario
+<br>
+-- SYSTEM de Oracle previamente):
+<br>
+--
+<br>
+-- GRANT CREATE PUBLIC SYNONYM TO USER_SHARED;
+<br>
+--
+<br>
+-- Una vez finalizada la ejecución del script, el privilegio de creación
+<br>
+-- de sinónimos públicos puede revocarse mediante la sentencia indicada
+<br>
+-- abajo desde el usuario SUSTEM de Oracle:
+<br>
+--
+<br>
+-- REVOKE CREATE PUBLIC SYNONYM FROM USER_SHARED;
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+<p><b>glndbCreateUserRead</b></p>
+- ****************************************************************************
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- Asignación de permisos sólo-lectura a un usuario, denominado USER_READ,
+<br>
+-- sobre los objetos de propiedad de otro usuario, denomindo USER_SHARED. 
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- EJECUTAR DESDE:
+<br>
+--
+<br>
+-- El usuario que va a compartir los objetos: USER_SHARED
+<br>
+-- Debe ejecutarse previamente el script glnCreateSynonyms.sql
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- SUSTITUIR:
+<br>
+--
+<br>
+-- USER_SHARED:
+<br>
+-- Nombre del usuario que quiere compartir sus objetos. Este usuario debe 
+<br>
+-- tener el mismo esquema que se indica aquí. En caso contrario se deben
+<br>
+-- eliminar o añadir las referencias a los objetos que correspondan. Debe
+<br>
+-- tener concedido el privilegio de creación de roles, y asignación de
+<br>
+-- roles a otros usuarios, como indican las sentencias SQL siguientes (este
+<br>
+-- privilegio se lo debe conceder el usuario SYSTEM de Oracle previamente):
+<br>
+--
+<br>
+-- GRANT CREATE ROLE TO USER_SHARED;
+<br>
+-- GRANT ALTER USER TO USER_SHARED;
+<br>
+--
+<br>
+-- Una vez finalizada la ejecución del script, el privilegio de creación
+<br>
+-- y asignación de roles puede revocarse mediante las sentencias indicadas
+<br>
+-- abajo desde el usuario SYSTEM de Oracle
+<br>
+--
+<br>
+-- REVOKE CREATE ROLE FROM USER_SHARED;
+<br>
+-- REVOKE ALTER USER FROM USER_SHARED;
+<br>
+--
+<br>
+-- USER_READ:
+<br>
+-- Nombre del usuario al que se le quieren dar privilegios de lectura sobre
+<br>
+-- los objetos del usuario USER_SHARED
+<br>
+--
+<br>
+-- GLN_ROLE_USER_READ:
+<br>
+-- Nombre del role de solo-lectura al que se le asignan los permisos, para
+<br>
+-- después asignar el role al usuario USER_READ (Se recomienda nombrar los
+<br>
+-- roles de esta forma para asociarlo de forma inequívoca al nombre de un
+<br>
+-- usuario. Ver cabecera del script glndbDropUser.sql para más detalles).
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+<p><b>glndbCreateUserPrep</b></p>
+-- ****************************************************************************
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- Asignación de permisos de preparación de juegos y unidades a un usuario,
+<br>
+-- denominado USER_PREP, sobre los objetos de propiedad de otro usuario,
+<br>
+-- denomindo USER_SHARED. 
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- EJECUTAR DESDE:
+<br>
+--
+<br>
+-- El usuario que va a compartir los objetos: USER_SHARED
+<br>
+-- Debe ejecutarse previamente el script glnCreateSynonyms.sql
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- SUSTITUIR:
+<br>
+--
+<br>
+-- USER_SHARED:
+<br>
+-- Nombre del usuario que quiere compartir sus objetos. Este usuario debe 
+<br>
+-- tener el mismo esquema que se indica aquí. En caso contrario se deben
+<br>
+-- eliminar o añadir las referencias a los objetos que correspondan. Debe
+<br>
+-- tener concedido el privilegio de creación de roles, y asignación de
+<br>
+-- roles a otros usuarios, como indican las sentencias SQL siguientes (este
+<br>
+-- privilegio se lo debe conceder el usuario SYSTEM de Oracle previamente):
+<br>
+--
+<br>
+-- GRANT CREATE ROLE TO USER_SHARED;
+<br>
+-- GRANT ALTER USER TO USER_SHARED;
+<br>
+--
+<br>
+-- Una vez finalizada la ejecución del script, el privilegio de creación
+<br>
+-- y asignación de roles puede revocarse mediante las sentencias indicadas
+<br>
+-- abajo desde el usuario SYSTEM de Oracle
+<br>
+--
+<br>
+-- REVOKE CREATE ROLE FROM USER_SHARED;
+<br>
+-- REVOKE ALTER USER FROM USER_SHARED;
+<br>
+--
+<br>
+-- USER_PREP:
+<br>
+-- Nombre del usuario al que se le quieren dar privilegios de preparación
+<br>
+-- de juegos y unidades sobre los objetos del usuario USER_SHARED
+<br>
+--
+<br>
+-- GLN_ROLE_USER_PREP:
+<br>
+-- Nombre del role de solo-lectura al que se le asignan los permisos, para
+<br>
+-- después asignar el role al usuario USER_PREP (Se recomienda nombrar los
+<br>
+-- roles de esta forma para asociarlo de forma inequívoca al nombre de un
+<br>
+-- usuario. Ver cabecera del script glndbDropUser.sql para más detalles).
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+<p><b>glndbCreateUserWrite</b></p>
+-- ****************************************************************************
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- Asignación de permisos de preparación de juegos y unidades a un usuario,
+<br>
+-- denominado USER_WRITE, sobre los objetos de propiedad de otro usuario,
+<br>
+-- denomindo USER_SHARED. 
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- EJECUTAR DESDE:
+<br>
+--
+<br>
+-- El usuario que va a compartir los objetos: USER_SHARED
+<br>
+-- Debe ejecutarse previamente el script glnCreateSynonyms.sql
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- SUSTITUIR:
+<br>
+--
+<br>
+-- USER_SHARED:
+<br>
+-- Nombre del usuario que quiere compartir sus objetos. Este usuario debe 
+<br>
+-- tener el mismo esquema que se indica aquí. En caso contrario se deben
+<br>
+-- eliminar o añadir las referencias a los objetos que correspondan. Debe
+<br>
+-- tener concedido el privilegio de creación de roles, y asignación de
+<br>
+-- roles a otros usuarios, como indican las sentencias SQL siguientes (este
+<br>
+-- privilegio se lo debe conceder el usuario SYSTEM de Oracle previamente):
+<br>
+--
+<br>
+-- GRANT CREATE ROLE TO USER_SHARED;
+<br>
+-- GRANT ALTER USER TO USER_SHARED;
+<br>
+--
+<br>
+-- Una vez finalizada la ejecución del script, el privilegio de creación
+<br>
+-- y asignación de roles puede revocarse mediante las sentencias indicadas
+<br>
+-- abajo desde el usuario SYSTEM de Oracle
+<br>
+--
+<br>
+-- REVOKE CREATE ROLE FROM USER_SHARED;
+<br>
+-- REVOKE ALTER USER FROM USER_SHARED;
+<br>
+--
+<br>
+-- USER_WRITE:
+<br>
+-- Nombre del usuario al que se le quieren dar privilegios de acceso total
+<br>
+-- sobre los objetos del usuario USER_SHARED
+<br>
+--
+<br>
+-- GLN_ROLE_USER_WRITE:
+<br>
+-- Nombre del role de solo-lectura al que se le asignan los permisos, para
+<br>
+-- después asignar el role al usuario USER_WRITE (Se recomienda nombrar los
+<br>
+-- roles de esta forma para asociarlo de forma inequívoca al nombre de un
+<br>
+-- usuario. Ver cabecera del script glndbDropUser.sql para más detalles).
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+<p><b>glndbCreateUserLogin</b></p>
+-- ****************************************************************************
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- Creación de un usuario de login para la conexión temporal usada en la
+<br>
+-- recuperación de las bases de datos disponibles en el sistema.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- EJECUTAR DESDE:
+<br>
+--
+<br>
+-- Usuario SYS de Oracle.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+-- SUSTITUIR:
+<br>
+--
+<br>
+-- USER_LOGIN:
+<br>
+-- Nombre de usuario que se quiere crear. Puede introducirse en mayúsculas
+<br>
+-- o minúsculas pero no mezclar ambas. Donde aparece entre comillas hay que
+<br>
+-- escribirlo exactamente como se introdujo la primera vez.
+<br>
+--
+<br>
+-- PASSWORD:
+<br>
+-- Clave de acceso para el nuevo usuario. Es una cadena alfanumérica que
+<br>
+-- debe introducirse sin comillas. Tener en cuenta exactamente lo mismo que
+<br>
+-- para el nombre del usuario. Posteriormente aparecerá encriptada si se
+<br>
+-- consulta la propiedades del usuario. 
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+<p><b>NN-glndbOraUpdate[d1.m1.a1][d2.m2.a2].sql</b></p>
+-- ****************************************************************************
+<br>
+--
+<br>
+-- Simulador Táctico Galeón
+<br>
+--
+<br>
+-- Script para la actualización del esquema de bases de datos
+<br>
+-- Cambios realizados desde el 16/01/2004 hasta el dd/mm/yyyy
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+--
+<br>
+-- Crea un procedimiento almacenado usado para cambiar todas las restricciones
+<br>
+-- de tipo CHECK asociadas a columnas de tablas. Recibe como parámetros el
+<br>
+-- nombre de la tabla, de la columna a modificar y los nuevos límites para la
+<br>
+-- restricción. Este procedimiento se elimina de la base de datos al finalizar
+<br>
+-- el script.
+<br>
+--
+<br>
+-- ****************************************************************************
+<br>
+ 
+<br>
+ 
+</div>
+
+</body>
+
+</html>

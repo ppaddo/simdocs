@@ -1,0 +1,101 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Rutas</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>Las rutas están formadas por una colección ordenada de puntos (waypoints) para cada uno de los cuales se define la velocidad de paso por el mismo expresada en nudos. Estas rutas podrán ser asignadas a unidades para su ejecución de forma automática.</p>
+
+<p>La creación y edición de rutas se lleva a cabo mediante la siguiente ventana.</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosRutas.jpg"></p>
+
+<p>Esta ventana incluye los datos y botones que se describen a continuación:</p>
+
+<p><b>Nombre</b>: Nombre de la ruta.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>Cíclica</b>: Si esta casilla está marcada, durante la ejecución del ejercicio, el buque que realice esta ruta la repetirá continuamente, si no está marcada cuando termine la ruta continuará con la velocidad y dirección del último tramo de la ruta.</p>
+
+<p>Botones de manejo de la lista de puntos:</p>
+
+<ul>
+	<p><b>Editar</b>: Este botón sirve para mostrar el gráfico de la ruta en la presentación cartográfica y para modificar los datos de los puntos de la ruta.</p>
+
+	<p>Cuando se abre la ventana para crear una nueva ruta, la lista de puntos está vacía y el botón Editar está pulsado, en estas condiciones, al picar con el botón izquierdo del ratón sobre la presentación cartográfica, se añaden puntos a la lista a la vez que se van dibujando sobre la carta.</p>
+
+	<p>Cuando se abre la ventana para consultar los datos de una ruta ya creada, al pulsar el botón Editar, el gráfico de la ruta aparece en la presentación cartográfica. Mientras el botón Editar esté pulsado, se pueden seleccionar los puntos picando sobre ellos con el botón izquierdo del ratón, y cambiarlos de posición arrastrando el ratón hasta la nueva posición. Asimismo, se pueden seleccionar los puntos sobre la lista para consultar o modificar sus datos. La modificación de los datos requiere confirmación mediante el botón Actualizar.</p>
+
+	<p><i>Nota</i>: Durante la edición de objetos gráficos (zonas meteorológicas, balizas, mapas de viento y corriente, rutas…) se anulan las funciones asignadas a los botones del ratón para control de la presentación cartográfica (posicionar hook, zoom+, zoom- demora/distancia…), por tanto para ver el gráfico de la ruta hay que hacer zoom sobre la zona de la carta en la que se encuentra dicha ruta antes de pulsar el botón Editar.</p>
+
+	<p><b>Añadir</b>: Al pulsar el botón Añadir se inserta un nuevo punto entre el punto seleccionado y el siguiente. También se pueden insertar puntos seleccionando con el ratón un segmento del gráfico de la ruta y pulsando la tecla "Insertar".</p>
+
+	<p><i>Nota</i>: Sólo se pueden añadir puntos cuando se está mostrando el gráfico de la ruta, es decir, si el botón Editar está pulsado.</p>
+
+	<p><b>Eliminar</b>: Al pulsar este botón se elimina de la lista el punto seleccionado. También se pueden eliminar puntos seleccionando con el ratón un punto del gráfico de la zona y pulsando la tecla "Suprimir".</p>
+
+	<p><i>Nota</i>: Sólo se pueden eliminar puntos cuando se está mostrando el gráfico de la ruta, es decir, si el botón Editar está pulsado.</p>
+
+	<p><b>Actualizar</b>: Al pulsar este botón se actualizan los datos del punto seleccionado en la lista, con el nuevo valor de velocidad introducido.</p>
+
+</ul>
+
+<p>Botones de recursos gráficos:</p>
+
+<p align=center><img width=200 src="../Imagenes/BarraRecursosGraficos.jpg"></p>
+
+<ul>
+	<p>Estos botones sirven para definir el color, el estilo y el tipo de letra que se aplica al gráfico de la ruta.</p>
+
+	<p>El funcionamiento de los botones de la barra de recursos gráficos se describe en el apartado <i>Definición de Recursos Gráficos</i>.</p>
+
+</ul>
+
+<p>Datos de los puntos de la ruta:</p>
+
+<p>El operador puede introducir Velocidad o Tiempo (no ambos). Con la barra situada a la izquierda puede seleccionar el campo a introducir.</p>
+
+<p><b>Velocidad</b>: Velocidad máxima con la que la unidad debe pasar por el punto.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0.00 - 100000.00</p>
+</ul>
+
+<p><b>Tiempo</b>: Tiempo transcurrido desde el inicio de la ruta hasta alcanzar el punto. Con este dato el sistema calcula la velocidad a la que debe ir la unidad.</p>
+
+<ul>
+	<p><u>Unidades</u>: minutos</p>
+	<p><u>Rango</u>: 0.00 - 100000.00</p>
+</ul> 
+
+ 
+
+<p><b>Altura</b>: Altura o profundidad con la que la unidad debe pasar por el punto (sólo para unidades aéreas y submarinas).</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: -100000.00 - 100000.00</p>
+</ul>
+
+<p>Las rutas, una vez preparadas, podrán ser añadidas a los Escenarios, los cuales a su vez pueden ser incorporados en distintos Ejercicios.</p>
+
+<p>Durante la ejecución de un Ejercicio, estarán disponibles para su asignación a unidades aquellas rutas que hayan sido añadidas al Escenario del mismo.</p>
+
+<p>Las rutas se muestran gráficamente en la Presentación Cartográfica del instructor, tanto durante la preparación como durante la ejecución de ejercicios que incluyan rutas.</p>
+
+</div>
+
+</body>
+
+</html>

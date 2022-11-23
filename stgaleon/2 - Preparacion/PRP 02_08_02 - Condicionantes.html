@@ -1,0 +1,199 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Condicionantes</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvRoe/ConditioningWnd.jpg"></p>
+
+<p>Mediante esta tabla se parametrizan los Condicionantes ROE. Un condicionante se activa (cumple) si una Unidad efectúa una Acción sobre otra unidad (Blanco).</p>
+
+<p>Las Unidades que provocan que se active el condicionante son especificadas mediante filtros por Bando, Tipo y Zona en la que se encuentran:</p>
+
+<p><b>Bando</b>: Este parámetro determina el bando al que deben pertenecer las unidades para que provoquen que se active el condicionante. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>NO APLICA</li>
+	<li>CONTRARIO</li>
+	<li>PROPIO</li>
+	<li>NEUTRAL</li>
+	<li>CONTRARIO-NEUTRAL</li>
+	<li>PROPIO-NEUTRAL</li>
+</ul>
+
+<p><b>Tipo</b>: Este parámetro determina el tipo de unidad del que deben ser las unidades para que provoquen que se active el condicionante. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>NO APLICA</li>
+	<li>SUPERFICIE</li>
+	<li>SUBMARINO</li>
+	<li>AVIÓN</li>
+	<li>HELICÓPTERO</li>
+	<li>TERRESTRE</li>
+	<li>BASE</li>
+	<li>AVIÓN-HELICÓPTERO</li>
+	<li>SUPERFICIE-SUBMARINO</li>
+	<li>TERRESTRE-BASE</li>
+</ul>
+
+<p>Las Acciones que provocan que se active el condicionante son especificadas parametrizando:</p>
+
+<ul>
+	<li><b>Ubicación Geográfica</b>, para especificar si las unidades permanecer o no en una zona o ruta para que se active el condicionante.</li><br>
+
+	<li><b>Empleo de Sistemas</b>, para especificar si las unidades deben emplear algún sistema contra blancos para que se active el condicionante.</li><br>
+
+	<li><b>Condiciones Cinemáticas</b> de las unidades, con respecto a blancos, para que se active el condicionante.</li>
+
+</ul>
+
+<p>Para que se considere que se está efectuando la Acción deberán cumplirse TODAS las condiciones seleccionadas.</p>
+
+<p>Los <b>Blancos</b> contra los que se efectúa la Acción, se especifican parametrizando:</p>
+
+<ul>
+	<li><b>Filtros para Blancos</b></li>
+</ul>
+
+<p><b>Ubicación Geográfica</b>:</p>
+
+<p><b>Situación</b>: Este parámetro determina la condición sobre la Zona ROE seleccionada que deben cumplir las unidades para que provoquen que se active el condicionante. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>NO APLICA</li>
+	<li>DENTRO</li>
+	<li>FUERA</li>
+</ul>
+
+<p><b>Zona</b>: Este parámetro determina la zona geográfica sobre la que se comprueba la Situación de las unidades. Podrán ser seleccionadas de entre la Zonas ROE definidas. Mediante el botón de etiqueta “...” se abre el diálogo para definir estas zonas. Ver apartado <i>Preparación – Modelos Básicos – ROE – Zonas ROE</i>.</p>
+
+<p><b>Empleo de Sistemas</b>:</p>
+
+<p><b>Sistema</b>: Este parámetro determina el empleo de sistema que deben efectuar las unidades para que provoquen que se active el condicionante. Puede tomar los siguientes valores:</p>
+
+<table border=1 cellspacing=0 cellpadding=4>
+	<tr>
+		<td valign=top width=200><font size=2 face=arial>
+			<b>Sensores</b>
+			<ul>
+				<li>RADAR SUPERFICIE</li>
+				<li>RADAR AÉREO</li>
+				<li>RADAR DT</li><br>
+				<li>LOCKON</li>
+				<li>LOCKON AÉREO</li>
+				<li>LOCKON SUPERFICIE</li>
+				<li>LOCKON SEEKER</li><br>
+				<li>SONAR HULL</li>
+				<li>SONAR VDS</li>
+				<li>SONAR TACTAS</li>
+			</ul>
+		</td>
+
+		<td valign=top width=200><font size=2 face=arial>
+		<b>Contramedidas</b>
+		<ul>
+			<li>SEÑUELOS</li><br>
+			<li>ECM NAV</li>
+			<li>ECM EXP</li>
+			<li>ECM DT</li>
+			<li>ECM SEEKER</li><br>
+			<li>COMSM HF</li>
+			<li>COMSM VHF</li>
+			<li>COMSM UHF</li><br>
+			<li>CHAFF D</li>
+			<li>CHAFF C</li>
+			<li>CHAFF S</li>
+			<li>CHAFF R</li>
+		</ul>
+		</td>
+
+		<td valign=top width=200><font size=2 face=arial>
+		<b>Armas</b>
+		<ul>
+			<li>TORPEDO</li><br>
+			<li>MISIL SAM / AAM / UAM</li>
+			<li>MISIL SSM / ASM / USM</li><br>
+			<li>CAÑONES</li>
+		</ul>
+		</td>
+
+	</tr>
+</table>
+ 
+<p><b>Condiciones Cinemáticas</b>: </p>
+
+<p><b>Distancia <</b>: Este parámetro determina el límite de distancia de la unidad al blanco por debajo del cual se considera que está efectuando la Acción.</p>
+
+<ul>
+	<p><u>Unidades</u>: yardas</p>
+	<p><u>Rango</u>: 0 – 999999</p>
+</ul>
+
+<p><b>CPA <</b>: Este parámetro determina el límite de CPA de la unidad sobre el blanco por debajo del cual se considera que está efectuando la Acción.</p>
+
+<ul>
+	<p><u>Unidades</u>: yardas</p>
+	<p><u>Rango</u>: 0 – 999999</p>
+</ul>
+
+<p><b>Altura <</b>: Este parámetro determina el límite de altura de la unidad por debajo del cual se considera que está efectuando la Acción.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Velocidad <</b>: Este parámetro determina el límite de velocidad de la unidad por debajo del cual se considera que está efectuando la Acción.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0 – 9999,9</p>
+</ul>
+
+<p><b>Velocidad ></b>: Este parámetro determina el límite de velocidad de la unidad por encima del cual se considera que está efectuando la Acción.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0 – 9999,9</p>
+</ul>
+
+<p><b>Filtros para Blancos</b>:</p>
+
+<p><b>Bando</b>: Este parámetro determina el bando al que deben pertenecer los blancos para que provoquen que se active el condicionante. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>NO APLICA</li>
+	<li>CONTRARIO</li>
+	<li>PROPIO</li>
+	<li>NEUTRAL</li>
+	<li>CONTRARIO-NEUTRAL</li>
+	<li>PROPIO-NEUTRAL</li>
+</ul>
+
+<p><b>Tipo</b>: Este parámetro determina el tipo de unidad del que deben ser los blancos para que provoquen que se active el condicionante. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>NO APLICA</li>
+	<li>SUPERFICIE</li>
+	<li>SUBMARINO</li>
+	<li>AVIÓN</li>
+	<li>HELICÓPTERO</li>
+	<li>TERRESTRE</li>
+	<li>BASE</li>
+	<li>AVIÓN-HELICÓPTERO</li>
+	<li>SUPERFICIE-SUBMARINO</li>
+	<li>TERRESTRE-BASE</li>
+</ul>
+
+</div>
+
+</body>
+
+</html>

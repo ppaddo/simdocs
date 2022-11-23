@@ -1,0 +1,211 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Dinámica de Helicópteros</font></b></p>
+
+<font size=2 face=arial>
+
+
+<p><b>Logística / Miscelánea / Combustible</b></p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamics/HelChargeFuelWnd.jpg"></p>
+
+<p>Este panel de detalle agrupa las siguientes funciones:</p>
+
+<ul>
+	<li>Logística: Muestra la lista de unidades embarcadas y los valores del peso actual y el máximo permitido.</li><br>
+
+	<li>Misceláneos: Permite realizar las siguientes operaciones:</li><br>
+
+	<ul>
+		<li>Encender y apagar las luces de navegación.</li>
+		<li>Lanzar Bombas de Humo, y consultar la cantidad remanente en pañol.</li>
+	</ul><br>
+
+	<li>Combustible: Muestra el valor del nivel de combustible en tanto por ciento respecto del nivel máximo, incluyendo un led que indica cuando entra en reserva, el consumo horario y la autonomía de la unidad en millas y horas a la velocidad actual.</li>
+
+</ul>
+
+<p><b>Cinemática / Ley de Giro</b></p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/AirKinematicsWnd.jpg"></p>
+
+<p>En este panel se muestra la situación de la unidad propia y la base en la que se encuentra, en el caso de que estuviera en una, así como el rumbo, el ángulo de ascenso / descenso, la altura y la velocidad horizontal y la de ascenso / descenso. También se muestra el porcentaje de daño que afecta a la altura y a la velocidad. </p>
+
+<p>Este panel permite realizar las siguientes maniobras:</p>
+
+<ul>
+	<li>Cambio de rumbo mediante orden de rumbo a seguir: Introduciendo el valor deseado de rumbo, y eligiendo el rango de giro (medio, estándar o doble) y la banda, al pulsar el botón Petición el helicóptero comienza a girar, teniendo en cuenta el rango de giro introducido y las características del helicóptero (tabla de giro) hasta que alcanza el rumbo pedido. A partir de este momento, el helicóptero vuela a rumbo constante, respecto al viento, hasta que se ordene otra maniobra.</li><br>
+	
+	<li>Cambio de rumbo mediante orden de giro: Seleccionando un rango de giro (Medio, estándar o doble) y la banda, al pulsar el botón Orbitar, el helicóptero comenzará a girar, teniendo en cuenta el rango seleccionado y las características del helicóptero (tabla de giro), de forma continua hasta que se realice una petición de rumbo, en cuyo caso el helicóptero deja de orbitar cuando se alcanza el rumbo pedido.</li>
+
+	<p>Ambas peticiones de cambio de rumbo no serán atendidas si se da alguna de las siguientes condiciones:</p>
+	
+	<ul>
+		<li>La unidad está en Base</li>
+		<li>La unidad está realizando alguna maniobra incompatible con el cambio de rumbo.</li>
+		<li>El timón está destruido o la unidad ha agotado su combustible.</li>
+	</ul><br>
+
+	<li>Cambio de altura: Introduciendo el valor de altura ya el ángulo de ascenso / descenso deseados en los campos correspondientes, al pulsar el botón Petición, el helicóptero comenzará a variar su altura, de acuerdo con sus características (tabla de aceleración), hasta alcanzar la altura deseada. Para la introducción del ángulo de ascenso / descenso puede hacerse uso del botón Max., que rellena el campo con el máximo valor permitido para el modelo de helicóptero bajo control. La velocidad de ascenso / descenso se muestra en el campo correspondiente. Esta petición de cambio de altura no será atendida si se da alguna de las siguientes condiciones:</li><br>
+
+	<ul>
+		<li>La unidad está en Base</li>
+		<li>La unidad está realizando alguna maniobra incompatible con el cambio de altura.</li>
+		<li>La maquinaria está destruida o la unidad ha agotado su combustible.</li>
+	</ul><br>
+
+	<li>Cambio de velocidad: Introduciendo el valor de velocidad deseado en el campo correspondiente, al pulsar el botón Petición, el helicóptero comenzará a variar su velocidad, de acuerdo con sus características (tabla de aceleración), hasta alcanzar la velocidad respecto al viento deseada. Esta petición no se atenderá si se da alguna de las siguientes condiciones:</li><br>
+
+	<ul>
+		<li>La unidad está en Base</li>
+		<li>La unidad está realizando alguna maniobra incompatible con el cambio de velocidad.</li>
+		<li>La maquinaria está destruida o la unidad ha agotado su combustible.</li>
+	</ul>
+
+	<p>La velocidad y el ángulo de ascenso / descenso solicitados pueden ser introducidos como un tanto por ciento del máximo de la unidad mediante las barras deslizantes.</p>
+
+</ul>
+ 
+<p><b>Maniobras</b></p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/HelManoeuvresWnd.jpg"></p>
+
+<p>El panel de detalle de la opción Maniobras presenta seis solapas en las que se puede elegir una de las siguientes maniobras.</p>
+
+<p><b>Interceptación</b>: En el panel de detalle de Interceptación se permite la introducción de todos los datos necesarios para calcular la maniobra de interceptación entre una unidad origen (que puede ser la propia o la que esté en Marca en la pantalla táctica) y una unidad objetivo.</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/ManoeuvresWndNtbInterceptation.jpg"></p>
+
+<p>Al pulsar el botón Unidad Propia o P. Marca, se toma como unidad origen la unidad propia o la que esté en Marca, respectivamente. Los datos de rumbo, velocidad, demora y distancia se adquieren automáticamente.</p>
+
+<p>Al pulsar el botón Blanco, se toma como unidad objetivo la que esté en Hook en la pantalla táctica, o bien su posición en el caso de que el Hook no esté sobre ninguna unidad. Los datos de rumbo, velocidad, demora y distancia se adquieren automáticamente.</p>
+
+<p>Al pulsar el botón Calcular, se calcula la interceptación, y si tiene solución, se proporciona el tiempo que tomaría la maniobra y el rumbo que debería tomar la unidad origen. Además, en la pantalla táctica se dibuja un esquema de la maniobra, presentando el punto de interceptación calculado.</p>
+
+<p>Si la unidad propia se ha seleccionado como origen, se puede ejecutar automáticamente la maniobra de interceptación, pulsando el botón Interceptar cuando existe solución.</p>
+
+<p><b>Base</b>: Esta maniobra se utiliza para aterrizar en una base o para despegar de ella. A continuación se describe cómo se ejecuta cada una de estas maniobras.</p>
+
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/AirManoeuvresWndNtbTakeOffReturn.jpg"></p>
+
+<ul>
+	<li>Para aterrizar en una base se elige una unidad de la lista, se introducen una velocidad y altura de retorno y se pulsa el botón Retorno. La unidad modificará automáticamente su rumbo, se dirigirá a la unidad elegida, a la velocidad y altura solicitadas, y aterrizará en ella. Esta petición no será atendida si se da alguna de las siguientes condiciones:</li><br>
+
+	<ul>
+		<li>La unidad está en Base</li>
+		<li>La unidad está realizando alguna maniobra incompatible con esta.</li>
+		<li>La maquinaria o el timón está destruidos o la unidad ha agotado su combustible.</li>
+		<li>La maniobra es cinemáticamente posible, y no implica colisión.</li>
+	</ul>
+
+	<p>Si durante la maniobra se pulsa de nuevo el botón Retorno (cuya leyenda se ha sustituido por Cancelar) se cancela la maniobra, quedando la unidad con el rumbo y velocidad que tiene en ese instante.</p>
+
+	<p>Cuando la unidad completa el aterrizaje en la base, de forma automática se ejecutan las siguientes acciones:</p>
+
+	<ul>
+		<li>Se apagan todos los sensores.</li>
+		<li>Se apagan todas las comunicaciones.</li>
+		<li>Se inicia Maniobra de Reabastecimiento de la unidad.</li>
+	</ul>
+
+	<p>Las unidades que se muestran en la lista para poder seleccionarlas como base, son aquellas que tienen capacidad de portar helicópteros, y que son del mismo bando que la unidad propia. Además, una unidad puede seleccionar con el Hook cualquier unidad que detecte por sus sensores, y de la que identifique su numeral, para solicitarla como base y entrar en ella.</p>
+
+	<li>Para despegar desde una base, se introduce el rumbo, la velocidad y la altura y se pulsa el botón Despegar, que sustituye al botón Retorno cuando el helicóptero está en base. Transcurrido un tiempo predeterminado, la unidad despegará y tomará el rumbo, la velocidad y la altura solicitados. Esta petición no será atendida si se da alguna de las siguientes condiciones:</li><br>
+
+	<ul>
+		<li>La unidad no está en Base.</li>
+		<li>La maquinaria o el timón está destruidos o la unidad ha agotado su combustible.</li>
+		<li>Se ha sobrepasado el número máximo de misiones continuas</li>
+		<li>No ha transcurrido el tiempo mínimo entre misiones.</li>
+	</ul>
+
+</ul>
+
+<p><b>Formar</b>: Esta maniobra se utiliza para crear una formación con varias unidades. A continuación se describen las acciones que pueden realizarse desde esta opción.</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/ManoeuvresWndNtbFormation.jpg"></p>
+
+<ul>
+	<li>Hacerse líder de una formación. Para ello se pulsa el botón Líder y a continuación el botón Formar. El indicador Led En Formación se encenderá en color verde. Esta petición no será atendida si la unidad está en Base.</li><br>
+	
+	<li>Integrarse en una formación. Para ello se selecciona un guía en la lista superior, en la que deben aparecer todas los helicópteros del mismo bando que se encuentren a menos de 20 millas (configurable en Galeon.ini), a continuación se introduce una demora o marcación y una distancia, seleccionando en la barra de desplazamiento la opción Demora o Marcación. Al pulsar el botón Formar, la unidad tratará de incorporarse a la formación volando a la demora / marcación y distancia indicada respecto a la unidad guía. El indicador Led En Formación se encenderá en color amarillo durante el tiempo que la unidad tarde en alcanzar la demora y distancia indicadas, y pasará a color verde cuando lo haya conseguido. Esta petición no será atendida si se da alguna de las siguientes condiciones:</li><br>
+
+	<ul>
+		<li>La unidad está en Base</li>
+		<li>La unidad está realizando alguna maniobra incompatible con esta.</li>
+		<li>La maquinaria o el timón está destruidos o la unidad ha agotado su combustible.</li>
+	</ul>
+
+	<p>Pulsando de nuevo el botón Formar (cuya leyenda se ha sustituido por Cancelar), se cancela la maniobra, manteniendo la unidad el rumbo y velocidad que tiene en ese instante.</p>
+
+</ul>
+
+<p><b>Repostar / AAR</b>: Esta maniobra se utiliza para repostar combustible desde la base en la que se encuentra o desde otra unidad, para lo cual, las unidades deben disponer de la capacidad de entregar / recibir combustible, respectivamente.</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/ManoeuvresWndNtbRefueling.jpg"></p>
+
+<ul>
+	<li>Cuando la unidad está en base, en este diálogo sólo se podrá seleccionar como unidad suministradora la unidad que actúa como base. Pulsando Repostar, se inicia el reabastecimiento de combustible. Pulsando de nuevo el botón Repostar, antes de que finalice el reabastecimiento, se cancelará la maniobra.</li><br>
+	
+	<li>Cuando la unidad no está en base, para repostar mientras vuela desde otra unidad (maniobra AAR) se elige la unidad desde la que se quiere repostar en la lista y se pulsa el botón Repostar. La unidad se dirigirá hacia el avión elegido, y cuando esté a la distancia apropiada volará junto a él y realizará el reabastecimiento. Esta petición no será atendida si se da alguna de las siguientes condiciones:</li><br>
+
+	<ul>
+		<li>La unidad está en Base</li>
+		<li>La unidad está realizando alguna maniobra incompatible con esta.</li>
+		<li>La maquinaria o el timón está destruidos o la unidad ha agotado su combustible.</li>
+		<li>La maniobra no es cinemáticamente posible.</li>
+	</ul>
+
+	<p>Mientras la unidad se dirige hacia la unidad elegida para repostar, el botón Repostar permanece amarillo. Una vez que inicia el reabastecimiento, pasa a verde. Pulsando de nuevo el botón Repostar, antes de que finalice el reabastecimiento, se cancelará la maniobra y la unidad conservará el rumbo, la velocidad y altura que tiene en ese instante.</p>
+	
+</ul>
+
+<p><b>Armamento</b>: Esta opción no es una maniobra propiamente dicha, sino la capacidad de cambiar la configuración de armas de un helicóptero cuando éste se encuentra en Base o inactivo.</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/AirManoeuvresWndNtbReloadConfiguration.jpg"></p>
+
+<p>Al pulsar el botón a la derecha de la configuración deseada se inicia una cuenta atrás, transcurrida la cual se recarga el helicóptero de acuerdo a dicha configuración. La petición de recarga solo se ejecuta si la unidad está en Base o inactiva y el peso de la configuración es inferior al soportado por la unidad. La configuración cargada o cargándose se indica con el led asociado en verde o amarillo respectivamente.</p>
+
+<p>Si durante el proceso de recarga de configuración, se pulsa de nuevo el botón correspondiente a la configuración pedida, la unidad recupera inmediatamente la configuración que tenía anteriormente.</p>
+
+<p><b>Maniobras Especiales</b>: Esta opción agrupa las maniobras de vuelo estacionario en un punto dado, aterrizaje fuera de base y dragar minas. A continuación se describe cada una de estas maniobras.</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/HelManoeuvresWndNtbSpecials.jpg"></p>
+
+<ul>
+	<li>Vuelo Estacionario (Hover): Introduciendo la latitud y longitud del punto sobre el que se quiere hacer el vuelo estacionario (opción Absoluta) o bien la demora y distancia respecto a la posición actual del helicóptero (opción Relativa) y la altura a la que se quiere realizar esta maniobra, al pulsar el botón Hover se iniciará la maniobra, dirigiéndose el helicóptero hacia este punto, en dirección contra el viento, y permaneciendo en él. Esta petición no será atendida si se da alguna de las siguientes condiciones:</li><br>
+
+	<ul>
+		<li>La unidad está en Base</li>
+		<li>La unidad está realizando alguna maniobra incompatible con esta.</li>
+		<li>La velocidad máxima del helicóptero no puede vencer la velocidad del viento.</li>
+	</ul><br>
+
+	<li>Aterrizar: Al pulsar el botón Aterrizar el helicóptero realizará la maniobra de aterrizaje en tierra, que no requiere la existencia de una base. Esta petición no será atendida si el helicóptero se encuentra sobre el mar.</li><br>
+
+	<li>Neutralizar Minas: Al pulsar el botón Minas, la unidad, si está habilitada para ello, intentará iniciar la maniobra de neutralizar minas. Si cuando esta maniobra es solicitada la unidad tiene una velocidad o altura superior a los máximos de barrido de minas especificados en la base de datos, la unidad automáticamente solicitará cambios de velocidad y / o altura a los valores límite. Una vez que alcance una velocidad y altura por debajo de los límites, inicia el barrido de minas. Mientras está reduciendo la velocidad y / o altura, el led del botón se muestra amarillo encendido, mientras está neutralizando minas se muestra verde encendido, y apagado en cualquier otro caso. Esta petición no será atendida si se da alguna de las siguientes condiciones:</li><br>
+
+	<ul>
+		<li>La unidad está en Base</li>
+		<li>La unidad está realizando alguna maniobra incompatible con esta.</li>
+	</ul>
+
+	<p>Al pulsar de nuevo este botón se cancela la maniobra</p>
+
+</ul>
+
+<p>Los cambios en las condiciones cinemáticas y las maniobras que admiten las unidades cumplen la tabla de incompatibilidades especificada en <i>Modelística – Plataformas – Maniobras – Incompatibilidad de Maniobras</i>.</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,445 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Torpedo</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvWeapons/TorpedoWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Tipo de Lanzamiento</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>AEREO</li>
+	<li>ASROC</li>
+	<li>SUBROC</li>
+	<li>SUPERFICIE</li>
+	<li>SUBMARINO</li>
+
+	<p>Este parámetro determina el comportamiento del torpedo en la fase de lanzamiento como sigue:</p>
+
+	<p>AEREO: Caída libre desde la aeronave lanzadora hasta la superficie. Una vez que entra en el agua, pasa a la siguiente fase.</p>
+
+	<p>ASROC y SUBROC: Tiro parabólico desde la unidad de superficie o submarina que lo lanza hasta el punto de entrada en el agua. Una vez que entra en el agua, pasa a la siguiente fase.</p>
+
+	<p>SUPERFICIE y SUBMARINO: Se considera que el torpedo entra en el agua directamente, y pasa a la siguiente fase.</p>
+</ul>
+
+<p><b>Peso</b>: Este parámetro es tenido en cuenta para el cálculo del peso transportado por las unidades aéreas que lo instalen.</p>
+
+<ul>
+	<p><u>Unidades</u>: Kilogramos</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Mínima Altura de Disparo</b>: Este parámetro determina la mínima altura de la unidad aérea lanzadora a la que puede llevar a cabo un lanzamiento de este torpedo. Sólo podrá ser introducido si se ha seleccionado Tipo de Lanzamiento AÉREO.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Máxima Altura de Disparo</b>: Este parámetro determina la máxima altura de la unidad aérea lanzadora a la que puede llevar a cabo un lanzamiento de este torpedo. Sólo podrá ser introducido si se ha seleccionado Tipo de Lanzamiento AÉREO.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Capacidad de Giróscopo</b>: Este parámetro determina si el torpedo tiene capacidad de selección de ángulo de Giroscopio para el lanzamiento. Si se establece esta capacidad para el torpedo, se podrá abrir la ventana asociada para especificar los Datos de Giróscopo que se describe a continuación, pulsando en el botón que se encuentra junto al selector de esta capacidad. Sólo podrá ser seleccionado si se ha seleccionado Tipo de Carrera distinto de CIRCULAR.</p>
+
+<ul>
+	<p><b>Datos de Giróscopo</b>: Estos parámetros caracterizan el Giróscopo del torpedo. Se especifican los ángulos de Giróscopo con los que puede ser lanzado el torpedo. Estos ángulos podrán ser seleccionados por el operador en el momento del lanzamiento.</p>
+
+	<p align=center><img width=300 src="../IlvImages/Preparation/IlvWeapons/TorpedoWndAuxGiroscope.jpg"></p>
+
+	<p><b>Capacidad de Valores Discretos</b>: Este parámetro determina si el torpedo tiene capacidad de valores discretos para los ángulos de Giróscopo. Si se selecciona, se podrán introducir hasta doce posibles valores de ángulo de Giróscopo, y si no se selecciona se deberá introducir un intervalo de ángulos (ángulo inicial y final de dicho intervalo). Si los valores son discretos, el operador podrá seleccionar para lanzamiento del torpedo uno de los ángulos discretos introducidos, y en caso contrario, podrá seleccionar cualquier ángulo dentro del intervalo especificado.</p>
+
+	<p><b>Ángulo (introducir signo), 1 a 12</b>: Ángulos discretos de Giroscopio (hasta doce ángulos). Estos parámetros sólo podrán ser introducidos si se ha seleccionado Capacidad de Valores Discretos.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: -180 – 180</p>
+	</ul>
+
+	<p><b>Máxima apertura a babor</b>: Ángulo máximo a babor (con respecto a la orientación del lanzador de torpedos) del intervalo de ángulos de Giróscopo. Estos parámetros sólo podrán ser introducidos si NO se ha seleccionado Capacidad de Valores Discretos.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 360</p>
+	</ul>
+
+	<p><b>Máxima apertura a estribor</b>: Ángulo máximo a estribor (con respecto a la orientación del lanzador de torpedos) del intervalo de ángulos de Giróscopo. Estos parámetros sólo podrán ser introducidos si NO se ha seleccionado Capacidad de Valores Discretos.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 360</p>
+	</ul>
+</ul>
+
+<p><b>Capacidad de Floor</b>: Este parámetro determina si el torpedo tiene capacidad de selección de niveles límite de máxima profundidad para el lanzamiento. Si se establece esta capacidad para el torpedo, se podrá abrir la ventana asociada para especificar los Datos de Floor que se describe a continuación, pulsando en el botón que se encuentra junto al selector de esta capacidad.</p>
+
+<ul>
+	<p><b>Datos de Floor</b>: Estos parámetros especifican los posibles niveles de Floor con los que puede ser lanzado el torpedo. Estos niveles podrán ser seleccionados por el operador en el momento del lanzamiento. El nivel seleccionado es tenido en cuenta por el modelo de torpedo lanzado cuando se encuentra en el agua como un límite de máxima profundidad.</p>
+
+	<p align=center><img width=300 src="../IlvImages/Preparation/IlvWeapons/TorpedoWndAuxFloor.jpg"></p>
+
+	<p><b>Floor, 1 a 5</b>: Niveles de Floor (hasta cinco profundidades).</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+</ul>
+
+<p><b>SD (Search Depth)</b>: Siempre se podrá abrir la ventana asociada para especificar los datos de profundidad de búsqueda del torpedo que se describe a continuación, pulsando en el botón que se encuentra junto a esta etiqueta.</p>
+
+<ul>
+	<p><b>Datos de SD</b>: Estos parámetros especifican los posibles niveles de SD con los que puede ser lanzado el torpedo. Estos niveles podrán ser seleccionados por el operador en el momento del lanzamiento. El nivel seleccionado es tenido en cuenta por el modelo de torpedo lanzado como profundidad a la que inicia la fase de búsqueda.</p>
+
+	<p align=center><img width=300 src="../IlvImages/Preparation/IlvWeapons/TorpedoWndAuxSD.jpg"></p>
+
+	<p><b>SD, 1 a 6</b>: Niveles de SD (hasta seis profundidades).</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+</ul>
+
+<p><b>Capacidad de Ceiling</b>: Este parámetro determina si el torpedo tiene capacidad de selección de protección “por techo” para el lanzamiento.</p>
+
+<ul>
+	<p><b>Ceiling</b>: Este parámetro determina el nivel de profundidad al que se activa la protección “por techo” del torpedo, cuando se lanza con esta protección activada. Es tenido en cuenta por el modelo de torpedo lanzado cuando se encuentra en el agua, de tal forma que nunca navega por encima de este nivel de profundidad en cualquiera de sus fases.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+</ul>
+
+<p><b>Velocidad Máxima de Lanzamiento</b>: Este parámetro determina la máxima velocidad de la unidad a la que puede efectuar un lanzamiento de este torpedo.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Máxima Distancia de Lanzamiento ASROC</b>: Este parámetro determina la máxima distancia a la que se puede lanzar un torpedo con tipo de lanzamiento ASROC o SUBROC. Sólo podrá ser introducido si se ha seleccionado Tipo de Lanzamiento ASROC o SUBROC.</p>
+
+<ul>
+	<p><u>Unidades</u>: yardas</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Mínima Distancia de Lanzamiento ASROC</b>: Este parámetro determina la mínima distancia a la que se puede lanzar un torpedo con tipo de lanzamiento ASROC o SUBROC. Sólo podrá ser introducido si se ha seleccionado Tipo de Lanzamiento ASROC o SUBROC.</p>
+
+<ul>
+	<p><u>Unidades</u>: yardas</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Longitud</b>: Este parámetro es tenido en cuenta por los modelos de sensores optrónicos y radar para calcular la distancia a la que el torpedo es detectado. Sólo podrá ser introducido si se ha seleccionado Tipo de Lanzamiento ASROC o SUBROC.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0,1 – 99,9</p>
+</ul>
+
+<p><b>Envergadura</b>: Este parámetro es tenido en cuenta por los modelos de sensores optrónicos y radar para calcular la distancia a la que el torpedo es detectado. Sólo podrá ser introducido si se ha seleccionado Tipo de Lanzamiento ASROC o SUBROC.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0,1 – 99,9</p>
+</ul>
+
+<p><b>Diámetro</b>: Este parámetro es tenido en cuenta por los modelos de sensores optrónicos y radar para calcular la distancia a la que el torpedo es detectado. Sólo podrá ser introducido si se ha seleccionado Tipo de Lanzamiento ASROC o SUBROC.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0,1 – 99,9</p>
+</ul>
+
+<p><b>Factor RCS</b>: Factor que modela la variación de RCS con el "Aspecto" (dado por el ángulo alfa = rumbo del contacto - marcación del contacto) del torpedo. Sólo podrá ser introducido si se ha seleccionado Tipo de Lanzamiento ASROC o SUBROC.</p>
+
+<ul>
+	<p><u>Unidades</u>: Tanto por uno</p>
+	<p><u>Rango</u>: 0,0 – 1,0</p>
+
+	<p>Ejemplo: </p>
+
+	<p>Si Factor RCS = 0 &rArr; RCS = RCS · seno (alfa).</p>
+	<p>Si Factor RCS = 0,25 &rArr; RCS = RCS ( 0,25 + 0,75 · seno (alfa) ).</p>
+	<p>Si Factor RCS = 1 &rArr; RCS no cambia con Aspecto.</p>
+</ul>
+
+<p><b>Ángulo de Ascenso / Descenso en Agua</b>: Este parámetro determina el ángulo de descenso dentro del agua del torpedo en la fase de crucero, hasta adquirir la profundidad de búsqueda.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0 – 90</p>
+</ul>
+
+<p><b>Tiempo de Carga</b>: Este parámetro determina el tiempo necesario para cargar o descargar este torpedo, es decir, el tiempo que transcurre desde que el operador solicita carga o descarga de un torpedo de este tipo, hasta que se completa la operación y el torpedo queda listo para su lanzamiento en el tubo (si se solicitó carga) o el tubo queda vacío (si se solicitó descarga).</p>
+
+<ul>
+	<p><u>Unidades</u>: minutos</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Alcance Máximo</b>: Este parámetro determina la máxima distancia a la que se puede lanzar este torpedo. Cuando el operador solicita un lanzamiento de este torpedo contra un blanco, se comprueba que la distancia de la unidad propia al blanco es inferior a este alcance máximo.</p>
+
+<ul>
+	<p><u>Unidades</u>: yardas</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Radio DOG-BOX</b>: Este parámetro determina el radio de la DOG-BOX, o zona en la que el torpedo lanzado puede recibir interferencias durante la fase de búsqueda. Es tenido en cuenta durante esta fase del torpedo de tal forma que fuentes de ruido dentro de esta zona y fuera del cono de búsqueda del torpedo pueden interferir al sonar asociado al torpedo, de forma que no obtenga ningún contacto.</p>
+
+<ul>
+	<p><u>Unidades</u>: yardas</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Ancho de Búsqueda Horizontal</b>: Este parámetro determina el ancho horizontal del cono de búsqueda del torpedo. Es tenido en cuenta en la fase de búsqueda del torpedo de tal forma que descarta todos los contactos obtenidos por el sonar asociado que no estén dentro de este cono, teniendo en cuenta el ángulo, en horizontal y vertical, que forma la detección con el torpedo.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0 – 180</p>
+</ul>
+
+<p><b>Ancho de Búsqueda Vertical</b>: Este parámetro determina el ancho vertical del cono de búsqueda del torpedo. Es tenido en cuenta en la fase de búsqueda del torpedo de tal forma que descarta todos los contactos obtenidos por el sonar asociado que no estén dentro de este cono, teniendo en cuenta el ángulo, en horizontal y vertical, que forma la detección con el torpedo.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0 – 180</p>
+</ul>
+
+<p><b>Sonar Activo</b>: Este parámetro determina el sensor Sonar Activo asociado al torpedo. Es tenido en cuenta por el torpedo para la búsqueda de blancos. Ver apartado Sonar Activo.</p>
+
+<p><b>Sonar Pasivo</b>: Este parámetro determina el sensor Sonar Pasivo asociado al torpedo. Es tenido en cuenta por el torpedo para la búsqueda de blancos. Ver apartado Sonar Pasivo.</p>
+
+<p><b>Caacidad de Discrimpinación</b>: Este parámetro determina la probabilidad de que el torpedo sea engañado por un productor de ruido. Es tenido en cuenta para decidir si el torpedo es capaz de discernir entre el blanco correcto y el productor de ruido cuando se producen las condiciones de posible engaño.</p>
+
+<ul>
+	<p><u>Unidades</u>: %</p>
+	<p><u>Rango</u>: 0 – 100</p>
+
+	<p>Ejemplo: </p>
+
+	<p>Una vez que se producen las condiciones de posible engaño:</p>
+	<p>Si Cap. de Discriminación = 0 &rArr; Siempre es engañado.</p>
+	<p>Si Cap. de Discriminación = 50 &rArr; Es engañado aleatoriamente (@50% veces).</p>
+	<p>Si Cap. de Discriminación = 100 &rArr; No es engañado nunca.</p>
+</ul>
+
+<p><b>Probabilidad de Impacto</b>: Este parámetro es tenido en cuenta para decidir si una vez que se producen las condiciones de impacto, el torpedo efectivamente produce impacto o no.</p>
+
+<ul>
+	<p><u>Unidades</u>: %</p>
+	<p><u>Rango</u>: 0 – 100</p>
+
+	<p>Ejemplo: </p>
+
+	<p>Una vez que se producen las condiciones de impacto:</p>
+	<p>Si Prob. de Impacto = 100 &rArr; Impacta siempre.</p>
+	<p>Si Prob. de Impacto = 50 &rArr; Impacta aleatoriamente (@50% veces).</p>
+	<p>Si Prob. de Impacto = 0 &rArr; No impacta nunca.</p>
+</ul>
+
+<p><b>Poder Destructivo</b>: Este parámetro determina cuánto de destructivo es un impacto contra una unidad de este torpedo, lo cual se especifica mediante la carga explosiva del torpedo. Es tenido en cuenta para la evaluación de los daños producidos por el impacto de este torpedo en una unidad.</p>
+
+<ul>
+	<p><u>Unidades</u>: kilogramos</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Tiempo de Vida</b>: Este parámetro determina el máximo tiempo en total (pasando por las distintas fases) que permanece el torpedo en el agua desde su lanzamiento, cuando no llega a impactar con ningún blanco. Transcurrido este tiempo, se considera que el torpedo se destruye sin detonar.</p>
+
+<ul>
+	<p><u>Unidades</u>: minutos</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Máxima Profundidad</b>: Este parámetro determina la máxima profundidad a la que puede navegar el torpedo. Es tenido en cuenta por el modelo de torpedo lanzado cuando se encuentra en el agua como un límite de máxima profundidad independientemente del nivel del Floor seleccionado.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Ruido en Banda Ancha</b>: Este parámetro determina el nivel de ruido propio en banda ancha del torpedo recibido por un sonar pasivo o activo propio. Es tenido en cuenta para modelar cómo afecta el ruido del torpedo a la recepción de los sonares propios.</p>
+
+<ul>
+	<p><u>Unidades</u>: dB</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Régimen de Variación </b>Angular: Este parámetro determina la velocidad de giro horizontal o vertical del torpedo en el agua en cualquiera de sus fases de navegación.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados / segundo</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p>Velocb	idad del Torpedo en Baja: Este parámetro determina la velocidad a la que navega el torpedo en el agua en las fases de lanzamiento, crucero y búsqueda.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p><b>Velocidad del Torpedo en Alta</b>: Este parámetro determina la velocidad a la que navega el torpedo en el agua en la fase de seguimiento.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p><b>Tiempo de Activación</b>: Esta parámetro determina el tiempo de protección tras el lanzamiento. Es el que transcurre desde que el torpedo lanzado entra en el agua hasta que activa sus sensores para iniciar la fase de búsqueda.</p>
+
+<ul>
+	<p><u>Unidades</u>: segundos</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Tipo de Carrera</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>RECTILÍNEA</li>
+	<li>FILOGUIADO</li>
+	<li>CIRCULAR</li>
+	<li>SERPENTEO</li>
+	<li>COMBINADO</li>
+	<li>SEGUIDOR DE ESTELA</li>
+	<li>HATS</li>
+	<li>HELICOIDAL</li>
+
+	<p>Este parámetro determina el comportamiento del torpedo lanzado en las fases de crucero y búsqueda. A continuación se describen brevemente cada uno de los tipos de carrera:</p>
+
+	<p>RECTILÍNEA: El torpedo navega de forma rectilínea durante la fase búsqueda. Cuando adquiere blanco, pasa a la fase de seguimiento, y si pierde un blanco adquirido, entra en modo circular.</p>
+
+	<p>FILOGUIADO: Desde que el torpedo entra en el agua pasa a fase de seguimiento con rumbo de interceptación al blanco asignado. Si la filoguía se interrumpe, entra en modo circular.</p>
+
+	<p>CIRCULAR: Desde que entra en el agua, pasa a fase de búsqueda, describiendo trayectoria circular hasta que adquiere blanco, que pasa a la fase de seguimiento. Si pierde el blanco adquirido, vuelve a entrar en modo circular.</p>
+
+	<p>SERPENTEO: Desde que entra en el agua, pasa a fase de búsqueda, describiendo trayectoria serpenteo hasta que adquiere blanco, que pasa a la fase de seguimiento. Si pierde el blanco adquirido, entra en modo circular / helicoidal. Si recorre la distancia de serpenteo sin adquirir blanco, también entra en modo circular / helicoidal.</p>
+
+	<p>COMBINADO: Igual que SERPENTEO, pero en el momento de lanzamiento el operador puede anular el serpenteo, y lanzarlo con carrera circular.</p>
+
+	<p>SEGUIDOR DE ESTELA: Desde que entra en el agua, navega en forma rectilínea hasta cortar una estela, y una vez que la corta, describe un serpenteo amortiguado en la dirección de avance de la estela. Si pierde la estela, entra en modo circular.</p>
+
+	<p>HATS: Igual que COMBINADO con la diferencia de que este torpedo es de Tipo de Lanzamiento AÉREO.</p>
+
+	<p>HELICOIDAL: Desde que entra en el agua, pasa a fase de búsqueda, describiendo trayectoria helicoidal hasta que adquiere blanco, que pasa a la fase de seguimiento. Si pierde el blanco adquirido, vuelve a entrar en modo helicoidal.</p>
+
+</ul>
+
+<p><b><b>Filoguiado</b></b>:</p>
+
+<ul>
+	<p><b>Capacidad de Discriminación por Filoguía</b>: Este parámetro determina la probabilidad de que el torpedo sea engañado por un productor de ruido cuando el torpedo es guiado mediante filoguía. Sólo puede ser introducido si se ha seleccionado Tipo de Carrera FILOGUIADO.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+
+		<p>Ejemplo: </p>
+
+		<p>Igual que Capacidad de Discriminación.</p>
+	</ul>
+
+	<p><b>Longitud del Cable</b>: Este parámetro determina la longitud del cable del torpedo Filoguiado. Es tenido en cuenta por el modelo de torpedo lanzado de tal forma que si el torpedo se aleja de la unidad lanzadora a una distancia superior a esta longitud, se considera que se rompe el cable y se interrumpe la filoguía. Sólo puede ser introducido si se ha seleccionado Tipo de Carrera FILOGUIADO.</p>
+
+	<ul>
+		<p><u>Unidades</u>: yardas</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Máxima Velocidad de Guiado</b>: Este parámetro determina la máxima velocidad a la que puede navegar la unidad lanzadora para poder hacer filoguía del torpedo. Es tenido en cuenta por el modelo de torpedo lanzado de tal forma que si la unidad lanzadora supera esta velocidad, se considera que se rompe el cable y se interrumpe la filoguía. Sólo puede ser introducido si se ha seleccionado Tipo de Carrera FILOGUIADO.</p>
+
+	<ul>
+		<p><u>Unidades</u>: nudos</p>
+		<p><u>Rango</u>: 0 – 99</p>
+	</ul>
+</ul>
+
+<p><b>Circular</b>:</p>
+
+<ul>
+	<p><b>Radio de Giro</b>: Este parámetro determina el radio de giro con el que el torpedo navega cuando entra en modo circular. Sólo puede ser introducido si NO se ha seleccionado Tipo de Carrera SEGUIDOR DE ESTELA.</p>
+
+	<ul>
+		<p><u>Unidades</u>: yardas</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Sentido de Giro</b>: Puede tomar los siguientes valores:</p>
+
+	<ul>
+		<li>HORARIO</li>
+		<li>ANTIHORARIO</li>
+
+		<p>Este parámetro determina el sentido de giro con el que el torpedo navega cuando entra en modo circular. Sólo puede ser introducido si NO se ha seleccionado Tipo de Carrera SEGUIDOR DE ESTELA.</p>
+
+	</ul>
+
+	<p><b>Ángulo de Ascenso / Descenso</b>: Este parámetro determina el ángulo vertical con el que el torpedo asciende y desciende en su navegación cuando entra en modo circular. Cuando este ángulo es distinto de cero, este modo se denomina helicoidal. Sólo puede ser introducido si se ha seleccionado Tipo de Carrera SERPENTEO, COMBINADO o HATS.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 180</p>
+	</ul>
+</ul>
+
+<p><b>Serpenteo</b>:</p>
+
+<ul>
+	<p><b>Ángulo de Serpenteo</b>: Este parámetro determina el ángulo horizontal con el que el torpedo realiza el serpenteo, tal como se muestra en la figura. Sólo puede ser introducido si se ha seleccionado Tipo de Carrera SERPENTEO, COMBINADO, SEGUIDOR DE ESTELA o HATS.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 360</p>
+	</ul>
+
+	<p><b>Dirección del Primer Tramo</b>: Puede tomar los siguientes valores:</p>
+
+	<ul>
+		<li>DERECHA a IZQUIERDA</li>
+		<li>IZQUIERDA A DERECHA</li>
+
+		<p>Este parámetro determina el la dirección del primer giro con el que el torpedo inicia el serpenteo, tal como se muestra en la figura. Sólo puede ser introducido si se ha seleccionado Tipo de Carrera SERPENTEO, COMBINADO, SEGUIDOR DE ESTELA o HATS.</p>
+
+	</ul>
+
+	<p><b>Longitud de Cada Tramo</b>: Este parámetro determina la longitud de cada tramo con el que el torpedo realiza el serpenteo, tal como se muestra en la figura. Sólo puede ser introducido si se ha seleccionado Tipo de Carrera SERPENTEO, COMBINADO, SEGUIDOR DE ESTELA o HATS.</p>
+
+	<ul>
+		<p><u>Unidades</u>: yardas</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Distancia de Serpenteo</b>: Este parámetro determina la distancia máxima que puede recorrer el torpedo en modo serpenteo. Sólo puede ser introducido si se ha seleccionado Tipo de Carrera SERPENTEO, COMBINADO, SEGUIDOR DE ESTELA o HATS.</p>
+
+	<ul>
+		<p><u>Unidades</u>: yardas</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p align=center><img width=500 src="../Images/Preparacion Torpedo - Serpenteo.gif"></p>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>

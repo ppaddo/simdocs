@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Lanzador de Sonoboyas</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El modelo de Lanzador de Sonoboyas es el encargado de procesar las peticiones del operador para lanzar sonoboyas en modo automático o manual.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Para que el modelo de Lanzador de Sonoboyas realice un lanzamiento solicitado, deben cumplirse las siguientes condiciones necesarias:</p>
+
+<ul>
+	<li>Comprobar que la unidad no está en Base ni aterrizada en tierra.</li>
+	<li>Comprobar que la cantidad introducida para lanzamiento es igual o inferior al stock de Sonoboyas que quedan.</li>
+	<li>Comprobar que la altura de la Unidad está dentro de los límites de máxima y mínima altura de lanzamiento introducida en preparación.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Si se procesa un <b>lanzamiento manual</b>:</p>
+
+<ul>
+	<p>La unidad lanza la primera sonoboya, y continúa lanzando una sonoboya cada vez que la unidad recorre la distancia entre lanzamiento indicada, hasta lanzar la cantidad total de sonoboyas solicitada.</p>
+</ul>
+ 
+<p>Si se procesa un <b>lanzamiento automático</b>:</p>
+
+<ul>
+	<p>La unidad recorre automáticamente los puntos de lanzamiento que componen el plan de lanzamiento de sonoboyas activado. Cada vez que sobrevuela uno de estos puntos, lanza una sonoboya del tipo programado, hasta recorrer todos los puntos del plan.</p>
+</ul>
+
+<p>Cada vez que se lanza una sonoboya, se crea el objeto sonoboyas lanzado, y se descuenta esta cantidad del Stock de Sonoboyas de la unidad.</p>
+
+</div>
+
+</body>
+
+</html>

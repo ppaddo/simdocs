@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Planes ZigZag</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvGame/ZigZagSetWnd.jpg"></p>
+
+<p>Mediante esta tabla se especifican todos los Planes Zig‑Zag incluidos en el Ejercicio, clasificados por bando. Durante la ejecución del ejercicio, las unidades de superficie y submarinas podrán seleccionar para su ejecución automática uno de los Planes Zig‑Zag de su bando.</p>
+
+<p><b>Modelo de Zig-Zag</b>: Mediante este parámetro se determina el modelo de Zig-Zag. Los Planes Zig‑Zag se especifican mediante el siguiente diálogo, que se abre desde el botón junto a este campo:</p>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvGame/ZigZagWnd.jpg"></p>
+
+<p><b>Tipo de Trenzado</b>: Ninguno, Estrecho o Ancho.</p>
+
+<p><b>Factor Velocidad</b>: Este parámetro determina la relación entre la velocidad alta y baja del Plan Zig‑Zag. Sólo podrá ser introducido si NO se ha seleccionado Velocidad Constante.</p>
+
+<ul>
+	<u>Unidades</u>: ---</p>
+	<u>Rango</u>: 1 – 100</p>
+</ul>
+
+<p><b>Velocidad Constante</b>: Este parámetro determina si el Plan Zig‑Zag se realiza a velocidad contaste (todos los tramos a la misma velocidad) o no.</p>
+
+<p>Para insertar un nuevo tramo, el operador debe introducir los valores de Tiempo, Rumbo y Velocidad del tramo en los campos correspondientes y pulsar Insertar. Los tramos insertados se muestran en la lista. Para modificar un tramo, debe hacer doble clic sobre dicho tramo en la lista, con lo cual se muestran los valores de Tiempo, Rumbo y Velocidad del tramo en los campos correspondientes, modificar los valores y pulsar insertar. Para eliminar un tramo, se debe seleccionar el tramo en la lista y pulsar Eliminar.</p>
+
+<p>Para cada tramo del Plan Zig-Zag se introduce y / o muestra en la lista los siguientes datos:</p>
+
+<ul>
+	<p><b>Nº de Tramo</b>: Numeración automática del tramo. Este campo es no editable.</p>
+
+	<ul>
+		<u>Unidades</u>: ---</p>
+		<u>Rango</u>: 1 – 60</p>
+	</ul>
+
+	<p><b>Tiempo</b>: Instante en el que comienza a ejecutarse este tramo, respecto a la hora cero.</p>
+
+	<ul>
+		<u>Unidades</u>: minutos</p>
+		<u>Rango</u>: 0 – 999</p>
+	</ul>
+
+	<p><b>Rumbo</b>: Rumbo del tramo.</p>
+
+	<ul>
+		<u>Unidades</u>: grados</p>
+		<u>Rango</u>: 0 – 359</p>
+	</ul>
+
+	<p><b>Caída</b>: Diferencia de rumbo con respecto al rumbo base, calculada automáticamente a partir del rumbo. Este campo es no editable.</p>
+
+	<ul>
+		<u>Unidades</u>: grados</p>
+		<u>Rango</u>: 0 – 359</p>
+	</ul>
+
+	<p><b>Velocidad</b>: Velocidad del tramo. Sólo podrá ser introducido si no se ha seleccionado Velocidad Constante. Puede tomar los siguientes valores:</p>
+
+	<ul>
+		<li>ALTA</li>
+		<li>BAJA</li>
+	</ul>
+
+</ul>
+
+<p><b>Velocidad de Avance Efectiva</b>: Este parámetro es no editable y se calcula automáticamente a partir de los datos de los tramos introducidos. Representa el tanto por ciento de avance conseguido con el Plan Zig-Zag respecto a un avance en línea recta. Sólo se muestra si previamente se ha introducido el Factor Velocidad.</p>
+
+<ul>
+	<u>Unidades</u>: %</p>
+	<u>Rango</u>: 0 – 100</p>
+</ul>
+
+<p><b>Rumbo Efectivo</b>: Este parámetro es no editable y se calcula automáticamente a partir de los datos de los tramos introducidos. Representa la desviación sobre el rumbo base del Plan Zig-Zag. Sólo se muestra si previamente se ha introducido el Factor Velocidad.</p>
+
+<ul>
+	<u>Unidades</u>: grados</p>
+	<u>Rango</u>: -180 – +180</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

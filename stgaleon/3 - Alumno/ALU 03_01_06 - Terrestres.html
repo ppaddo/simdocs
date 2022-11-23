@@ -1,0 +1,130 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<div style="position:absolute; top:10px;left:30px;">
+<p><b><font color=##084B8A face=arial size=4>Dinámica de Terrestres</font></b></p>
+<font size=2 face=arial>
+
+<p><b>Cinemática</b></p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/TerrKinematicsWnd.jpg"></p>
+
+<p>En este panel se muestra la situación de la unidad propia y la base en la que se encuentra, en el caso de que estuviera en una, así como el rumbo y la velocidad. También se muestra el porcentaje de daño que afecta a la velocidad.</p>
+
+<p>Este panel permite realizar las siguientes maniobras:</p>
+
+<ul>
+	<li>Cambio de rumbo mediante orden de rumbo a seguir: Introduciendo el valor deseado de rumbo, al pulsar el botón Rumbo la unidad adquiere inmediatamente el rumbo solicitado.</li>
+
+	<p>La petición de cambio de rumbo no será atendida si se da alguna de las siguientes condiciones:</p>
+
+	<ul>
+		<li>La unidad está en Base</li>
+		<li>La unidad está realizando alguna maniobra incompatible con el cambio de rumbo.</li>
+	</ul><br>
+
+	<li>Cambio de velocidad: Introduciendo el valor de velocidad deseado en el campo correspondiente, al pulsar el botón Petición, la unidad comenzará a variar su velocidad, de acuerdo con sus características (tabla de aceleración), hasta alcanzar la velocidad deseada. Esta petición no se atenderá si se da alguna de las siguientes condiciones:</li><br>
+
+	<ul>
+		<li>La unidad está en Base</li>
+		<li>La unidad está realizando alguna maniobra incompatible con el cambio de velocidad.</li>
+		<li>La maquinaria está destruida o la unidad ha agotado su combustible.</li>
+	</ul>
+
+	<p>La velocidad solicitada puede ser introducida como un tanto por ciento del máximo de la unidad mediante las barras deslizantes.</p>
+
+</ul>
+
+<p><b>Combustible / Miscelánea</b></p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamics/TrrFuelWnd.jpg"></p>
+
+<p>Este panel de detalle agrupa las siguientes funciones:</p>
+
+<ul>
+	<li>Misceláneos: Permite realizar las siguientes operaciones:</li><br>
+
+	<ul>
+		<li>Encender y apagar las luces de navegación.</li>
+		<li>Lanzar Bombas de Humo, y consultar la cantidad remanente en pañol.</li>
+	</ul><br>
+
+	<li>Combustible: En las unidades motorizadas, muestra el valor del nivel de combustible en tanto por ciento respecto del nivel máximo, incluyendo un led que indica cuando entra en reserva, el consumo horario y la autonomía de la unidad en millas y horas a la velocidad actual.</li>
+
+</ul>
+
+<p><b>Maniobras</b></p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/TrrManoeuvresWnd.jpg"></p>
+
+<p>El panel de detalle de la opción Maniobras presenta dos solapas en la que se puede elegir la siguiente maniobra.</p>
+
+<p><b>Interceptación</b>: En el panel de detalle de Interceptación se permite la introducción de todos los datos necesarios para calcular la maniobra de interceptación entre una unidad origen (que puede ser la propia o la que esté en Marca en la pantalla táctica) y una unidad objetivo.</p>
+ 
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/ManoeuvresWndNtbInterceptation.jpg"></p>
+
+<p>Al pulsar el botón Unidad Propia o P. Marca, se toma como unidad origen la unidad propia o la que esté en Marca, respectivamente. Los datos de rumbo, velocidad, demora y distancia se adquieren automáticamente.</p>
+
+<p>Al pulsar el botón Blanco, se toma como unidad objetivo la que esté en Hook en la pantalla táctica, o bien su posición en el caso de que el Hook no esté sobre ninguna unidad. Los datos de rumbo, velocidad, demora y distancia se adquieren automáticamente.</p>
+
+<p>Al pulsar el botón Calcular, se calcula la interceptación, y si tiene solución, se proporciona el tiempo que tomaría la maniobra y el rumbo que debería tomar la unidad origen. Además, en la pantalla táctica se dibuja un esquema de la maniobra, presentando el punto de interceptación calculado.</p>
+
+<p>Si la unidad propia se ha seleccionado como origen, se puede ejecutar automáticamente la maniobra de interceptación, pulsando el botón Interceptar cuando existe solución.</p>
+
+<p><b>Base</b>: Esta maniobra se utiliza para ir a una base o para partir desde ella. A continuación se describe cómo se ejecuta cada una de estas maniobras.</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/ShipManoeuvresWndNtbArriveLeavePort.jpg"></p>
+
+<ul>
+	<li>Para ir a una base se elige una unidad base de la lista, se introduce una velocidad de retorno y se pulsa el botón Retorno. La unidad modificará automáticamente su rumbo, se dirigirá a la unidad elegida, a la velocidad solicitada, y estacionará en ella. Esta petición no será atendida si se da alguna de las siguientes condiciones:</li><br>
+
+	<ul>
+		<li>La unidad está en Base</li>
+		<li>La unidad está realizando alguna maniobra incompatible con esta.</li>
+		<li>La maquinaria o el timón está destruidos o la unidad ha agotado su combustible.</li>
+		<li>La maniobra no es cinemáticamente posible.</li>
+	</ul>
+
+	<p>En el caso de una maniobra de embarque, la unidad base debe tener las rampas abiertas y no haber alcanzado el número máximo de unidades embarcadas, y en el caso de embarque en Helicóptero no superar la carga máxima permitida.</p>
+
+	<p>Si durante la maniobra se pulsa de nuevo el botón Retorno (cuya leyenda se ha sustituido por Cancelar) se cancela la maniobra, quedando la unidad con el rumbo y velocidad que tiene en ese instante.</p>
+
+	<p>Cuando la unidad completa el atraque en la base, de forma automática se ejecutan las siguientes acciones:</p>
+
+	<ul>
+		<li>Se apagan todos los sensores.</li>
+		<li>Se apagan todas las comunicaciones.</li>
+		<li>Se inicia Maniobra de Reabastecimiento de la unidad.</li>
+	</ul>
+
+	<p>Las unidades que se muestran en la lista para poder seleccionarlas como base, son aquellas que tienen capacidad de portar unidades terrestres, y que son del mismo bando que la unidad propia. Además, una unidad puede seleccionar con el Hook cualquier unidad que detecte por sus sensores, y de la que identifique su numeral, para solicitarla como base y entrar en ella.</p>
+
+	<ul>
+		<li>Para salir desde una base, se introduce el rumbo y la velocidad y se pulsa el botón Zarpar, que sustituye al botón Retorno cuando la unidad está en base. Transcurrido un tiempo predeterminado, la unidad saldrá de la base con el rumbo y la velocidad solicitados. Esta petición no será atendida si se da alguna de las siguientes condiciones:</li><br>
+	</ul>
+
+	<ul>
+		<li>La unidad no está en Base</li>
+		<li>La maquinaria o el timón está destruidos o la unidad ha agotado su combustible.</li>
+	</ul>
+
+	<p>En el caso de una operación de desembarco, la unidad base debe tener las rampas abiertas.</p>
+
+	<p>Los cambios en las condiciones cinemáticas y las maniobras que admiten las unidades cumplen la tabla de incompatibilidades especificada en Modelística – Plataformas – Maniobras – Incompatibilidad de Maniobras.</p>
+
+</ul>
+
+<p><b>Repostar</b>: Esta maniobra se utiliza para repostar combustible desde la base en la que se encuentra..</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_dynamicsAux/ManoeuvresWndNtbRefueling.jpg"></p>
+
+<ul>
+	<li>En este diálogo sólo se podrá seleccionar como unidad suministradora la unidad que actúa como base. Pulsando Repostar, se inicia el reabastecimiento de combustible. Pulsando de nuevo el botón Repostar, antes de que finalice el reabastecimiento, se cancelará la maniobra.</li><br>
+</ul>
+ 
+
+</div>
+</body>
+</html>

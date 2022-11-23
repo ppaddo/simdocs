@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>COMESM</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_cmmunications/ComsmWnd.jpg"></p>
+
+<p>Desde este panel de detalle del COMSM pueden realizarse las siguientes acciones:</p>
+
+<ul>
+	<li>Encender / Apagar el equipo: Pulsando el botón ON/OFF. El equipo COMSM siempre se encuentra encendido inicialmente, pudiendo ser apagado por el operador. En las unidades submarinas solo se puede encender el ESM si están en superficie o tienen el mástil correspondiente izado. En general, para todas las unidades, deben estar fuera de la base.</li><br>
+	
+	<li>Consultar / Modificar Frecuencias Mínima y Máxima de trabajo: los indicadores de frecuencia muestran las frecuencias mínima y máxima de trabajo del COMSM, en Megahercios. Pueden ser modificadas mediante las barras de desplazamiento (Frec.1 – Frec.2) y pulsando Petición.</li><br>
+	
+	<li>Filtrar las detecciones: Utilizando la barra de desplazamiento (Enemigos – Todos), se puede filtrar la lista de detecciones de manera que se listen solo las enemigas o todas. Tanto en la lista de detecciones, como en la presentación táctica aparecerán únicamente aquellas detecciones que cumplan la condición del filtro.</li><br>
+	
+	<li>Consultar Detecciones: En la lista de detecciones aparecerán las detecciones según el filtro seleccionado, hasta un máximo de 20 detecciones, ordenados de más a menos recientes. Los datos que aparecen en la lista para cada detección son:</li><br>
+
+	<ul>
+		<li>TN: Track Number de la detección.</li><br>
+		
+		<li>Frecuencia: Frecuencia de la detección, en Megahercios. Este dato tiene error que depende de la configuración del equipo (ver <i>Manual de Preparación – Contramedidas – COMSM</i>).</li><br>
+		
+		<li>Hora: Instante en que se adquirió la detección.</li><br>
+		
+		<li>Hora Pérdida: Instante en el que se perdió la detección.</li><br>
+		
+		<li>Distancia: Distancia a la detección, en millas, con un error máximo del 40% en caso de emisiones U/VHF y de un 10% en el caso de emisiones HF. Los tantos por ciento de error son configurables en Galeon.ini. Por configuración (en Galeon.ini) se puede eliminar este dato de la lista.</li><br>
+		
+		<li>Demora: Demora de la detección, en grados. Este dato de demora tiene error que depende de la configuración del equipo (ver <i>Preparación – Contramedidas – COMSM</i>).</li><br>
+		
+		<li>Tipo: Tipo de la emisión. Puede ser Fonía, Fonía Cifrada, Link o Mensajería.</li><br>
+		
+	</ul>
+	
+	<li>Monitorizar / Decepcionar una frecuencia: Seleccionando una detección y pulsando el botón Frec.►, se selecciona la frecuencia dicha detección para su escucha y/o transmisión. Debajo de este botón se mostrará la frecuencia seleccionada y a la derecha se incluyen los controles necesarios para escuchar o transmitir, similares a los de la ventana de fonía (ver Manual de Alumno – Comunicaciones – Fonía). Al actuar sobre ellos, escuchará o transmitirá en aquellas redes cuya frecuencia de trabajo coincida con la frecuencia seleccionada. El operador podrá, por tanto, monitorizar (si sólo escucha) o decepcionar (si además transmite) estas redes. También es posible decepcionar, pulsando el botón Reproducir, en este caso se transmite por la frecuencia seleccionada el fichero .wav que se haya establecido en el fichero de configuración (Galeon.ini).</li>
+
+	<p>Nota: Las redes de fonía que estén seleccionadas para escucha (ver <i>Control de Unidades – Comunicaciones – Fonía</i>) no podrán ser seleccionadas para su monitorización.</p>
+	
+	<li>Perturbar una detección: Mediante esta acción, el operador puede perturbar una frecuencia, correspondiente a la detección seleccionada. Esto implica que se aplicará un nivel de ruido (similar al sonido de campanas), a las recepciones y transmisiones en la redes de fonía que trabajen en esta frecuencia, de todas las unidades que estén en alcance. Se podrán perturbar simultáneamente, como máximo, tantas redes como se haya especificado para el equipo COMSM.</li><br>
+		
+</ul> 
+
+</div>
+
+</body>
+
+</html>

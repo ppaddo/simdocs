@@ -1,0 +1,106 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Planes de Frecuencias</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvCommunications/FrqPlanWnd.jpg"></p>
+
+<p>Los planes de frecuencia disponibles se especifican mediante una Lista de Redes de Comunicaciones y los datos de la red SACOMAR. Cada una de las redes de la lista se define mediante un identificador de la Red, un modelo de comunicaciones y se especifica también si es cifrada o no.</p>
+
+<p>En esta ventana se muestra también la lista de redes que compone el plan de frecuencias.</p>
+
+<p>Descripción de los parámetros que definen la Red:</p>
+
+<p><b>Tipo</b>: Este parámetro determina el tipo de red de comunicaciones que se está definiendo y puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>Fonía</li>
+	<li>Mensajería</li>
+	<li>Link 11</li>
+	<li>Link 16</li>
+</ul>
+
+<p><b>Comunicaciones</b>: Este parámetro determina el equipo de comunicaciones asociado a la red de comunicaciones que se está definiendo. Sólo se podrán seleccionar BD de comunicaciones cuya banda sea compatible con el tipo de red seleccionado, según la siguiente tabla:</p>
+
+<table border=1 cellspacing=0 cellpadding=4>
+	<tr>
+		<td width=80><font size=2 face=arial><b>Tipo de Red</b></td>
+		<td width=200><font size=2 face=arial><b>Banda</b></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Fonía</td>
+		<td><font size=2 face=arial>HF, UHF, VHF, SATCOM, UWT</td>
+	</tr>
+	
+	<tr>
+		<td><font size=2 face=arial>Mensajería</td>
+		<td><font size=2 face=arial>HF, UHF, VHF, SATCOM</td>
+	</tr>
+	
+	<tr>
+		<td><font size=2 face=arial>Link-11</td>
+		<td><font size=2 face=arial>HF, UHF, VHF, SATCOM</td>
+	</tr>
+	
+	<tr>
+		<td><font size=2 face=arial>Link-16</td>
+		<td><font size=2 face=arial>UHF</td>
+	</tr>
+	
+</table>
+
+<p><b>Cifrada</b>: Este parámetro determina si la red que se está definiendo es cifrada o no.</p>
+
+<p>En la lista de redes de comunicaciones se muestra la siguiente información (columnas):</p>
+
+<ul>
+	<p><b>Tipo</b>: Tipo de Red.</p>
+
+	<p><b>Nº</b>: Identificador de la Red.</p>
+
+	<p><b>Comunicaciones</b>: Nombre de la BD de Comunicaciones.</p>
+
+	<p><b>Cifrada</b>: Indica si es cifrada o no.</p>
+
+</ul>
+
+<p>Para agregar una nueva red a esta lista, se debe definir la red especificando los campos Tipo, Comunicaciones, y Cifrada, y pulsar el botón Insertar. La nueva red será incluida en la lista de redes.</p>
+
+<p>Para eliminar una red de la lista, se debe seleccionar dicha red en la lista correspondiente y pulsar el botón Eliminar.</p>
+
+<p>El botón Modif. Cifr. permite intercambiar el estado de la red seleccionada entre cifrado y no cifrado.</p>
+
+<p><b>Datos de la Red SACOMAR:</b></p>
+
+<ul>
+	<p><b>Comunicaciones</b>: Este parámetro determina el equipo de comunicaciones asociado a la red SACOMAR. Sólo se podrán seleccionar BD de comunicaciones de tipo Mensajería incluidas en el Plan de Frecuencias cuya banda sea SATCOM o HF.</p>
+
+	<p><b>Periodicidad</b>: Este parámetro determina la periodicidad con la que esta red procesa los mensajes.</p> 
+
+	<ul>
+		<p><u>Unidades</u>: minutos</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Nº Mensajes</b>: Este parámetro determina la cantidad de mensajes que se envía en cada periodo.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 999</p>
+	</ul>
+</ul>
+
+</div>
+
+</body>
+
+</html>

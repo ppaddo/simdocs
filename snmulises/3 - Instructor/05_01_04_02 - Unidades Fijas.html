@@ -1,0 +1,195 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Unidades Fijas</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>Las unidades fijas se crean con todos los datos necesarios, ya que no llevan plataforma asociada como las móviles. Para completar su definición se añaden los equipos necesarios como se describe en el apartado Preparación de Ejercicios.</p>
+
+<p>La creación y edición de costeras se realiza mediante la ventana Costeras. En esta ventana se especifican los datos de posición e identificación de las unidades, y los distintos servicios Télex y Telefónico de los que disponen.</p>
+
+<p>Seleccionando la solapa General se puede definir el icono, la posición, las capacidades y los códigos de identificación de la estación costera.</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosCosteraGeneral.jpg"></p>
+
+<p><b>Nombre</b>: Nombre de la costera.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>Icono</b>: En esta zona se puede elegir el icono que va a representar a la unidad en la cartografía. Pulsando en los botones de avance y retroceso anexos al icono se muestra el icono siguiente y el anterior.</p>
+
+<p><b>Posición por defecto</b>: Posición correspondiente a la estación costera. Puede ser introducida rellenando los campos Latitud y Longitud o situando el hook en la posición deseada y pulsando el botón Hook.</p>
+
+<ul>
+	<p><b>Latitud</b>: Latitud correspondiente a la posición de la unidad fija.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados y minutos con formato ggºmm.mmm’N/S</p>
+		<p><u>Rango</u>: 00º00.000’N a 89º59.999’N y 00º00.000’S a 89º59.999’S</p>
+	</ul>
+
+	<p><b>Longitud</b>: Longitud correspondiente a la posición de la unidad fija.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados y minutos con formato gggºmm.mmm’E/W</p>
+		<p><u>Rango</u>: 000º00.000’E a 179º59.999’E y 00º00.000’W a 179º59.999’W</p>
+	</ul>
+
+</ul>
+
+<p><b>EPIRB 406</b>: Capacidad de recepción de las señales emitidas por las EPIRB 406.</p>
+
+<p><b>EPIRB INMARSAT</b>: Capacidad de recepción de las señales emitidas por las EPIRB Inmarsat.</p>
+
+<p><b>Cap. Tx Navtex</b>: Capacidad de transmisión de mensajes Navtex.</p>
+
+<p><b>Cap. Tx EGC</b>: Capacidad de transmisión de mensajes EGC.</p>
+
+<p><b>Código Navtex</b>: Código Navtex de la estación (una letra). Se introducirá si se ha seleccionado la capacidad de transmisión de mensajes Navtex.</p>
+
+<p><b>MMSI</b>: Identificador del servicio móvil marítimo (Maritime Mobile Service Identity).</p>
+
+<ul>
+	<p><u>Formato</u>: 9 dígitos (ver el sistema de numeración de MSSI que se describe al final del apartado Unidades Móviles).</p>
+</ul>
+
+<p><b>Call Sign</b>: Distintivo de llamada de la unidad.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>País</b>: País al que pertenece la unidad.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p>Seleccionando las solapas Servicios Télex y Servicios Telefónicos se puede seleccionar la capacidad de la estación costera para ofrecer los siguientes servicios:</p>
+
+<table align=center>
+	<tr>
+		<td width=200><font size=2 face=arial><b>Servicios Télex:</b></td>
+		<td width=200><font size=2 face=arial><b>Servicios Telefónicos:</b></td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=arial>
+			Automatic Call<br>
+			National Info Service<br>
+			Maritime Enquiries<br>
+			Maritime Assistance<br>
+			Short Code Selection<br>
+			International Operator<br>
+			Radio-telegram Service<br>
+			Medical Advices<br>
+			Meteorological Report<br>
+			Automatic Telex Test<br>
+			International Info<br>
+			Store & Forward<br>
+			Technical Assistance<br>
+			Nav Hazard Warning<br>
+			National Operator<br>
+			Medical Assistance<br>
+			Ship Position Report	
+		</td>
+
+		<td valign=top><font size=2 face=arial>
+			Automatic Call<br>
+			National Operator<br>
+			Maritime Enquiries<br>
+			Medical Assistance<br>
+			Nav Hazard International Operator<br>
+			International Info Service<br>
+			Medical Advices<br>
+			Maritime Assistance<br>
+			Ship Position Report<br>
+			Warning International Info<br>
+			Short Code Selection<br>
+			Technical Assistance<br>
+			Meteorological Report<br>
+			Specialised Lines			
+		</td>
+
+	</tr>
+
+</table>
+
+<p align=center><img width=600 src="../Imagenes/DatosCosteraTelex.jpg"></p>
+
+<p align=center><img width=600 src="../Imagenes/DatosCosteraTelefono.jpg"></p>
+
+<p>La creación y edición de otras unidades fijas, que no correspondan a estaciones costeras, se realiza mediante la siguiente ventana.</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosOtrasFijas.jpg"></p>
+
+<p>En esta ventana se definen los siguientes datos:</p>
+
+<p><b>Nombre</b>: Nombre de la unidad.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>Tipo</b>: Tipo de estación fija. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>VTS</li>
+	<li>Remota VTS</li>
+	<li>Petrolífera</li>
+	<li>Otra</li>
+</ul>
+
+<p><b>MMSI</b>: Identificador del servicio móvil marítimo (Maritime Mobile Service Identity).</p>
+
+<ul>
+	<p><u>Formato</u>: 9 dígitos (ver el sistema de numeración de MSSI que se describe al final del apartado Unidades Móviles).</p>
+</ul>
+
+<p><b>Call Sign</b>: Distintivo de llamada de la unidad.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>País</b>: País al que pertenece la unidad.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>Posición por defecto</b>: Posición correspondiente a la estación costera. Puede ser introducida rellenando los campos Latitud y Longitud o situando el hook en la posición deseada y pulsando el botón Hook.</p>
+
+<ul>
+	<p><b>Latitud</b>: Latitud correspondiente a la posición de la unidad fija.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados y minutos con formato ggºmm.mmm’N/S</p>
+		<p><u>Rango</u>: 00º00.000’N a 89º59.999’N y 00º00.000’S a 89º59.999’S</p>
+	</ul>
+
+	<p><b>Longitud</b>: Longitud correspondiente a la posición de la unidad fija.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados y minutos con formato gggºmm.mmm’E/W</p>
+		<p><u>Rango</u>: 000º00.000’E a 179º59.999’E y 00º00.000’W a 179º59.999’W</p>
+	</ul>
+
+</ul>
+
+<p><b>Icono</b>: En esta zona se puede elegir el icono que va a representar a la unidad en la cartografía. Pulsando en los botones de avance y retroceso anexos al icono se muestra el icono siguiente y el anterior.</p>
+
+</div>
+
+</body>
+
+</html>

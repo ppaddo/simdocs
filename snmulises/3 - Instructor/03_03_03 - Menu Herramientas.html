@@ -1,0 +1,187 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Menú Herramientas</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>El menú Herramientas consta de las siguientes opciones:</p>
+
+<li><b>Selección de Carta</b>: Al seleccionar esta opción, se abre la ventana Selección de carta, donde el operador puede seleccionar directamente la carta que quiere presentar, eligiéndola de las cartas disponibles para el Ejercicio.</li>
+
+<p align=center><img width=200 src="../Imagenes/Seleccion de carta.jpg"></p>
+
+<li><b>Dibujos Locales</b>: Al seleccionar esta opción se abre la ventana de creación / edición de dibujos locales. Esta ventana se describe en el apartado Dibujos Locales.</li><br>
+
+<li><b>Anillos de Distancia</b>: Al seleccionar esta opción se abre la ventana de opciones de presentación de anillos de distancia.</li><br>
+
+<p align=center><img width=300 src="../Imagenes/Anillos de distancia.jpg"></p>
+
+<p>Mediante esta ventana el operador podrá realizar las siguientes acciones:</p>
+
+<ul>
+	<li><b>Configurar</b> los anillos de distancia: Para configurar los anillos, se introduce en la ventana el Radio entre anillos (de 0.01 a 100.00 millas) y la Cantidad de anillos (entre 1 y 10, ambos incluidos). Los límites son configurables en el fichero de configuración.</li><br>
+
+	<li><b>Modo geográfico</b>: Mientras esta opción esté seleccionada, los anillos de distancia se calculan geográficamente por lo que su representación gráfica no es exactamente un círculo sino una elipse aproximada por una polilínea que une los puntos situados a la distancia geográfica configurada y separados un grado. Si esta opción no está seleccionada, la representación gráfica de cada anillo de distancia sí será un círculo exacto, con un radio igual a la distancia gráfica, midiendo desde le centro hacia el norte, al punto situado a la distancia geográfica configurada.</li><br>
+
+	<li><b>Mover anillos</b>: Mientras esta opción esté seleccionada, cada vez que se hace clic con el botón izquierdo del ratón sobre un punto de la presentación cartográfica, los anillos de distancia toman como centro dicho punto. En el caso de que exista una unidad en este punto, se muestra un aviso al operador permitiéndole elegir si quiere enganchar los anillos a la unidad o no.</li><br>
+
+	<li><b>Filtrar</b>: Mientras esta opción esté seleccionada, los anillos de distancia no se presentan.</li>
+
+</ul>
+
+<li><b>Línea de Medición</b>: Mientras esta opción esté seleccionada, cada vez que se hace clic con el botón izquierdo del ratón y se arrastra el cursor entre dos posiciones de la presentación cartográfica, se dibuja una línea uniendo dichos puntos con una etiqueta indicando la demora y distancia del segundo punto respecto al primero. Esta línea puede engancharse a unidades en cualquiera de sus extremos.</li>
+
+<p>El comportamiento de la línea es diferente según qué extremo tenga enganchado a una unidad:</p>
+
+<ul>
+	<li>Si ningún extremo está enganchado a unidades, la línea no se mueve.</li><br>
+
+	<li>Si sólo el extremo inicial está enganchado a una unidad, la línea mantiene su distancia y demora, pero moviendo su origen con la unidad, es decir, su extremo final no está anclado a la posición geográfica inicial.</li><br>
+
+	<li>Si sólo el extremo final está enganchado a una unidad, el origen se ancla a la posición geográfica inicial y el extremo final se mueve con la unidad, por tanto, la distancia y demora de la línea va cambiando.</li><br>
+
+	<li>Si ambos extremos están enganchados a unidades, la distancia y demora de la línea va cambiando con el movimiento de las unidades.</li>
+
+</ul>
+
+<p>Estas líneas desaparecen automáticamente una vez pasado su tiempo de vida (configurable en el fichero de configuración), aunque alguno de sus extremos esté enganchado a una unidad.</p>
+
+<li><b>Historia</b>: Mediante esta opción se puede seleccionar la presentación de la trayectoria (historia) de la unidad en Hook.</li><br>
+
+<ul>
+	<li><b>Activada</b>: Al seleccionar esta opción, si hay unidad en Hook, se abre la siguiente ventana de configuración de los puntos de historia. Si no hay unidad en Hook, se mostrará un mensaje de error al operador.</li>
+	
+	<p align=center><img width=200 src="../Imagenes/Historia.jpg"></p>
+
+	<p>Mediante esta ventana el operador podrá configurar los puntos de historia, introduciendo el tipo de representación gráfica (Puntos o Línea), el Número Máximo de puntos o tramos con la que se representa la historia (entre 1 y 100), y el intervalo de Tiempo (entre 1 y 300 segundos) considerado entre puntos o tramos.</p>
+
+	<li><b>Desactivada</b>: Al seleccionar esta opción, se desactiva la presentación de los puntos de historia de la unidad en Hook. Si no hay unidad en Hook, se mostrará un mensaje de error al operador.</li>
+	
+</ul>
+
+<li><b>Cálculos</b>: Desde esta opción se pueden solicitar los siguientes cálculos:</li>
+
+<ul>
+	<li><b>Punto Máxima Aproximación</b>: Al seleccionar esta opción, cuando el Hook está enganchado a una unidad y la Marca a otra, se calcula y representa gráficamente el Punto de Máxima Aproximación entre la unidad en Hook y la unidad en Marca.</li>
+
+	<p align=center><img width=300 src="../Imagenes/Grafico CPA.jpg"></p>
+
+	<p>Si no existe unidad en Hook o no existe unidad en Marca se presentará un aviso de error al operador.</p>
+
+	<li><b>Posición Futura</b>: Al seleccionar esta opción, cuando el Hook está enganchado a una unidad, se presenta la siguiente ventana que permite introducir el tiempo en segundos para el que se desea conocer la posición futura de la unidad. Una vez pulsado el botón Aceptar se calcula y representa gráficamente la Posición Futura de la unidad en Hook.</li>
+
+	<p align=center><img align=left height=200 hspace=20 src="../Imagenes/Posicion futura.jpg"></p>
+	<p align=center><img align=center height=200 hspace=20 src="../Imagenes/Grafico Posicion futura.jpg"></p>
+
+	<p>Si no existe unidad en Hook se presentará un aviso de error al operador.</p>
+
+	<li><b>Interceptación</b>: Al seleccionar esta opción cuando el Hook está enganchado a una unidad y la Marca a otra, se calcula y representa gráficamente la Interceptación de la unidad en Marca a la unidad en Hook.</li>
+
+	<p align=center><img width=300 src="../Imagenes/Grafico Interceptacion.jpg"></p>
+
+	<p>Si no existe unidad en Hook o no existe unidad en Marca se presentará un aviso de error al operador.</p>
+
+</ul>
+
+<li><b>Administración de la Cartografía</b>: Cuando se selecciona esta opción se presenta la ventana de Administración de la Cartografía.</li>
+
+<p>Nota: La opción Administración de la Cartografía sólo aparece cuando se usa cartografía C-Map.</p>
+
+<p>Esta ventana tiene varias pestañas a través de las cuales el operador puede acceder a distintas opciones de configuración de la cartografía C-Map.</p>
+
+<p><b>Presentación</b></p>
+
+<p align=center><img width=600 src="../Imagenes/AdministracionCartografia.jpg"></p>
+
+<p>La pestaña presentación tiene las siguientes opciones:</p>
+
+<li><b>Categorías de Presentación</b> - Se pueden seleccionar tres categorías:</li>
+
+<ul>
+	<p><b>Base</b>: Al seleccionar esta categoría, se aplica el filtro ECDIS "Base" a la presentación de la carta. Con este filtro, se muestra el nivel mínimo de información necesario para la navegación a cualquier hora, en cualquier zona geográfica y en cualquier circunstancia, sin que sea suficiente para una navegación segura.</p>
+
+	<p>La información de la carta se reduce a los siguientes elementos:</p>
+
+	<ul>
+		<li>Línea de costa (pleamar)</li>
+		<li>Veril de seguridad.</li>
+		<li>Indicación de peligros.</li>
+		<li>Sistemas de organización del tráfico marítimo.</li>
+	</ul>
+
+	<p><b>Estándar</b>: Al seleccionar esta categoría, se aplica el filtro ECDIS "Standard" a la presentación de la carta. Con este filtro, se muestra toda la información que se requiere normalmente para navegar.</p>
+
+	<p>En este caso, la carta muestra la información Base y además los siguientes elementos:</p>
+
+	<ul>
+		<li>Línea de costa (pleamar)</li>
+		<li>Ayudas a la navegación, fijas y flotantes.</li>
+		<li>Límites de pasos, canales, etc.</li>
+		<li>Puntos notables tanto visibles como radar.</li>
+		<li>Zonas prohibidas y restringidas.</li>
+		<li>Límites de la escala de cartas.</li>
+		<li>Indicación de advertencias.</li>
+	</ul>
+
+	<p><b>Todo</b>: Al seleccionar esta categoría, no se aplica ningún filtro a la presentación de la carta y por tanto se muestran todos los objetos geográficos. En la carta se muestran, además de los anteriores, los siguientes elementos:</p>
+
+	<ul>
+		<li>Sondas.</li>
+		<li>Tuberías submarinas.</li>
+		<li>Derrotas de transbordadores.</li>
+		<li>Detalles de todos los peligros.</li>
+		<li>Detalles de ayudas la navegación.</li>
+		<li>Contenido de advertencias.</li>
+		<li>Nombres de lugares.</li>
+	</ul>
+
+</ul>
+
+<li><b>Modo de Presentación</b> – Permite elegir la apariencia de la carta.</li><br>
+
+<li><b>Texto</b> – Permite seleccionar el texto que se muestra en la carta. </li><br>
+
+<li><b>Elementos de Presentación</b> – Permite seleccionar información adicional para mostrarla en la carta. </li><br>
+
+<li><b>Opciones de Presentación</b> - El operador puede seleccionar dos tipos diferentes de presentación de las cartas y de los símbolos de los objetos gráficos. </li>
+
+<ul>
+	<p><b>S52</b> - Se basa en el modelo de presentación S52.</p>
+
+	<p><b>C-Map</b> - Se aproxima al modelo de presentación estándar internacional "Chart 1".</p>
+</ul>
+
+<li><b>Opciones de Simbología</b> - Estas opciones sólo se aplican si el modo de presentación es C-Map.</li>
+
+<ul>
+	<p><b>Simplificada</b> - Cuando se selecciona esta opción, los símbolos aparecen simplificados (IMO Draft Performance Standards).</p>
+
+	<p><b>Tradicional</b> - Cuando se selecciona esta opción, se muestra la simbología estándar (International Chart 1).</p>
+</ul>
+
+<p><b>Bases de Datos</b></p>
+
+<p align=center><img width=600 src="../Imagenes/AdministracionCartografiaBD.jpg"></p>
+
+<p>La pestaña Bases de Datos muestra una ventana en la que se puede elegir la base de datos usada para la presentación de las cartas.</p>
+
+<p><b>Administración</b></p>
+
+<p align=center><img width=600 src="../Imagenes/AdministracionCartografiaADM.jpg"></p>
+
+<p>La pestaña Administración muestra un botón desde el que se abre la ventana de gestión de la base de datos de C-Map.</p>
+
+<p align=center><img width=600 src="../Imagenes/AdministracionCMAP.jpg"></p>
+
+</div>
+
+</body>
+
+</html>

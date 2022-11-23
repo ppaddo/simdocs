@@ -1,0 +1,110 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Salir-Retornar a Base</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>Esta maniobra permite a una unidad salir de o retornar a otra unidad que actúa como base.</p>
+
+<p>Las unidades que actúan como base para una unidad depende del tipo de dicha unidad. Pueden ser unidades de tipo base, de superficie o helicópteros con capacidad de portar el tipo de unidad correspondiente. Ver Manual de Preparación apartado Plataformas.</p>
+
+<p>La maniobra de salir-retornar a base se lleva a cabo por petición del operador.</p>
+
+<p>Según el tipo de unidad, esta maniobra equivale a las siguientes:</p>
+
+<ul>
+	<li>Unidades de Superficie y Submarinas: Salir de Puerto – Entrada en Puerto</li>
+	<li>Unidades Aéreas (Aviones y Helicópteros): Despegar – Aterrizar</li>
+	<li>Unidades Terrestres: Embarcar – Desembarcar</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo, se realizan las siguientes comprobaciones de condiciones necesarias para realizar la maniobra solicitada:</p>
+<ul>
+	<li>Comprobar que la unidad está fuera de Base.</li>
+	<li>Comprobar compatibilidad de la maniobra.</li>
+	<li>Comprobar que la unidad no tenga dañada su cinemática.</li>
+	<li>Comprobar que Combustible o Batería es mayor que cero.</li>
+</ul>
+
+<p><b>Si es Salir de Base</b>:</p>
+
+<ul>
+	<li>Comprobar que rumbo, velocidad y altura solicitados son válidos para la unidad.</li>
+	<li>Un avión sin capacidad de ascenso vertical no podrá despegar con velocidad cero.</li>
+	<li>Para despegue de unidades aéreas, comprobar que no se ha superado el límite de misiones continua y el tiempo de espera del mismo ha pasado.</li>
+	<li>Para despegue de unidades aéreas desde unidades de superficie, comprobar que la unidad de superficie se encuentra encarada al viento.</li>
+	<li>Para desembarque de unidades terrestres desde unidades de superficies, comprobar que la base está preparada fondeada con rampas abiertas.</li>
+	<li>Para desembarque de unidades terrestres desde unidades aéreas (aviones y helicópteros), comprobar que la unidad que actúa como base vuela con una altura inferior a la máxima de embarque de unidades terrestres (configurable en Galeon.ini) y con velocidad menor de 4 nudos (configurable en Galeon.ini) en cuyo caso se considera que la unidad está en vuelo estacionario.</li>
+</ul>
+
+<p><b>Si es Retornar a Base</b>:</p>
+
+<ul>
+	<li>Comprobar que la unidad solicitada como base existe y está activa.</li>
+	<li>Comprobar que la unidad solicitada como base es compatible para este tipo de unidad y está en condiciones de permitir la entrada de la unidad (límite de unidades que puede transportar).</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>En todos lo casos se realizan las siguientes comprobaciones y si es aceptada la petición, la unidad realiza la maniobra correspondiente.</p>
+
+<p><b>Si es Salir de Base</b>:</p>
+
+<p>Para aviones y helicópteros, decrementar el tiempo pendiente de despegue con el tiempo transcurrido. Una vez transcurrido este tiempo o inmediatamente para el resto de unidades, entonces:</p>
+ 
+<ul>
+	<li>Sacar a la unidad de base.</li>
+	<li>Decrementar el número de unidades en la Base.</li>
+	<li>Eliminar dicha unidad de la lista de unidades en la Base.</li>
+	<li>Actualizar la cinemática de la unidad con los valores que solicitó el operador. Si se trata de avión o helicóptero, el ascenso se iniciará a una altura de 25 pies (valor configurable en Galeon.ini, que debe ser mayor que cero, o de lo contrario se produciría colisión de la unidad nada mas despegar).</li>
+</ul>
+
+<p><b>Si es Retornar a Base</b>:</p>
+
+<p>Inicialmente la unidad realiza una maniobra de interceptación a la base solicitada (ver Maniobras - Interceptación) adoptando los valores cinemáticos (velocidad y altura) que solicitó el operador.</p>
+
+<p>Se considera que la base es alcanzada cuando la distancia de separación de la unidad a la misma es menor o igual que la máxima distancia para entrar en base (configurable en Galeon.ini). Una vez que se alcanza la posición de la base se comprueba si la base se encuentra en condiciones de aceptar la unidad, para lo cual debe cumplir:</p>
+
+<ul>
+ 	<li>La base no está totalmente ocupada.</li>
+ 	<li>Para aterrizaje de unidades aéreas en unidades de superficie, comprobar que la unidad de superficie se encuentra encarada al viento.</li>
+ 	<li>Para embarque de unidades terrestres en unidades de superficie, comprobar si la base está preparada fondeada con rampas abiertas.</li>
+ 	<li>Para embarque de unidades terrestres en aéreas (aviones y helicópteros), comprobar que no se supera el peso máximo admitido por la base y que la base se encuentra con una altura inferior a la máxima de embarque de unidades terrestres (configurable en Galeon.ini).</li>
+ </ul> 
+
+<p>Si se encuentra en condiciones de aceptar otra unidad, entonces:</p>
+
+<ul>
+	<li>Si la unidad es submarino sumergido a una profundidad mayor que la máxima de entrada en base (configurable en Galeon.ini), solicita dicha profundidad.</li>
+	<li>Si la unidad es aérea (avión o helicóptero) volando con altura superior a la máxima de entrada en base (configurable en Galeon.ini), solicita dicha altura y rumbo tal que encare al viento.</li>
+	<li>Una vez que se alcanza la profundidad (para submarinos) o la altura de entrada en base (para aéreas), o directamente si la unidad es de superficie entonces:</li>
+	<ul>
+		<li>Finaliza la maniobra y la unidad entra en base.</li>
+		<li>Apagar todos los sensores y comunicaciones.</li>
+		<li>Desactivar el modo automático de todas las armas.</li>
+		<li>Se añade la unidad a la lista de unidades en la Base.</li>
+		<li>Se inicia Maniobra de Reabastecimiento de la unidad.</li>
+		<li>Si la unidad es submarina, inicia Recarga de Baterías.</li>
+		<li>Si la unidad es submarina, pone su profundidad a cero.</li>
+		<li>Si la unidad es aérea, pone su altura a cero.</li>
+	</ul>
+</ul>
+
+<p>Si NO se encuentra en condiciones de aceptar otra unidad, entonces finaliza la maniobra La unidad continúa manteniendo su cinemática.</p>
+
+</div>
+
+</body>
+
+</html>

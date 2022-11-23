@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Cambio de Altura</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>La maniobra de cambio de altura se lleva a cabo por petición del operador.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo, se realizan las siguientes comprobaciones de condiciones necesarias para realizar el cambio de altura:</p>
+
+<ul>
+	<li>Comprobar que está fuera de Base.</li>
+	<li>Comprobar compatibilidad de la maniobra.</li>
+	<li>Comprobar que la unidad no tenga dañada su cinemática.</li>
+	<li>Comprobar que Combustible es mayor que cero.</li>
+	<li>Comprobar que el valor de altura pedido no supera los límites permitidos para la unidad.</li>
+	<li>Comprobar si es necesario que el ángulo de ascenso / descenso solicitado está dentro de los límites.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>Cálculo de la nueva altura de la unidad según la siguiente fórmula:</p>
+
+<ul><font size=2 face=courier>
+	<p>vel_asc_desc = min( vel*sin(ang_asc_desc), max_vel_asc_desc )</p>
+	<p>ALT = ALTant + vel_asc_desc * INCtmp * DIR</p>
+</font></ul>
+
+<p>Donde:</p>
+
+<ul>
+<table>
+	<tr>
+		<td valign=top><font size=2 face=courier>ALTant:</td>
+		<td><font size=2 face=arial>Valor de la altura anterior</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>vel_asc_desc:</td>
+		<td><font size=2 face=arial>Velocidad de ascenso / descenso para esa unidad</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>INCtmp:</td>
+		<td><font size=2 face=arial>Incremento de tiempo entre cálculo actual y el anterior</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>DIR:</td>
+		<td><font size=2 face=arial>Ascenso (+1) o descenso (-1)</td>
+	</tr>
+
+</table>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Se realizan las comprobaciones para aceptar el valor de altura y ángulo de ascenso / descenso solicitado y si es aceptada la petición, se modifica la altura de la unidad periódicamente según el cálculo anterior hasta alcanzar el valor solicitado.</p>
+
+<p>Comprobar que el nuevo valor calculado no supere (ascenso) o sea inferior (descenso) que el valor pedido por el operador, en cuyo caso se adquiere el valor solicitado y finaliza la maniobra.</p>
+
+</div>
+
+</body>
+
+</html>

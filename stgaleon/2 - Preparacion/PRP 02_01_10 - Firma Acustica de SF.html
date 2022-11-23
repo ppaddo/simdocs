@@ -1,0 +1,145 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Firma Acústica de unidades de Superficies</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvDynamics/SfAcousticSigWnd.jpg"></p>
+
+<p>Los parámetros de Firma Acústica de unidades de superficie caracterizan el nivel de señal emitido por plataformas de superficie en banda ancha y en banda estrecha. La firma acústica asociada a cada plataforma junto con las condiciones ambientales (batitermia) y las características de un sonar determinan el exceso de señal recibido por el sonar, y por tanto, la detectabilidad de esta plataforma por dicho sonar.</p>
+
+<p>Descripción de los parámetros:</p>
+
+<p>Los siguientes parámetros modelan como afecta el ruido de la plataforma a la recepción de los sonares de la unidad propia.</p>
+
+<p><b>Ruido Propio (SN) para Sonar Activo</b>: Nivel de ruido propio en banda ancha de la plataforma recibido por un sonar activo propio, cuando la velocidad de la plataforma es inferior o igual a la velocidad óptima de operación de dicho sonar.</p>
+
+<ul>
+	<p><u>Unidades</u>: dB</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p><b>Ruido Propio (SN) para Sonar Pasivo</b>: Nivel de ruido propio en banda ancha y en banda estrecha de la plataforma recibido por un sonar pasivo propio, cuando la velocidad de la plataforma es inferior o igual a la velocidad óptima de operación de dicho sonar.</p>
+
+<ul>
+	<p><u>Unidades</u>: dB</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p><b>Coeficiente de Ruido Propio</b>: Este parámetro modela una corrección del ruido propio en banda ancha y en banda estrecha recibido por un sonar activo o pasivo propio, debida a la velocidad de la plataforma cuando dicha velocidad es superior a la velocidad óptima de operación del dicho sonar.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 9,9</p>
+
+	<p>Ejemplo:</p>
+
+	<p>Si Coeficiente SN &rArr; SN = SN.</p>
+	<p>Si Coeficiente SN = 0,25 &rArr; SN = SN + 0,25 · V / Voptima.</p>
+	<p>Si Coeficiente SN = 1 &rArr; SN = SN + V / Voptima.</p>
+</ul>
+
+<p><b>Velocidad de Cavitación: Cuando la plataforma navega a una velocidad superior o igual a esta, se considera un incremento del ruido (configurable en Galeon.ini) propio emitido por la plataforma en banda ancha y en banda estrecha.</b>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0 – 99,9</p>
+</ul>
+
+<p>Los siguientes parámetros modelan el nivel de ruido generado por la plataforma cuando actúa como fuente de ruido y son usados para calcular el exceso de señal recibido por los sonares de otras unidades. Se distinguen los parámetros que caracterizan el ruido en Banda Ancha y en Banda Estrecha.</p>
+
+<p><b>Parámetros de Banda Ancha</b>: Los siguientes parámetros caracterizan el nivel de ruido propio en banda ancha emitido por la plataforma.</p>
+
+<p><b>Frecuencia</b>: Este parámetro es tenido en cuenta por el modelo de sonar pasivo para calcular el nivel de ruido radiado por la plataforma (SL) cuando actúa como fuente de ruido.</p>
+
+<ul>
+	<p><u>Unidades</u>: kHz</p>
+	<p><u>Rango</u>: 0 – 9999,99</p>
+</ul>
+
+<p><b>Fuerza del Blanco (TS) a Través</b>: Este parámetro es tenido en cuenta por el modelo de sonar activo para calcular la fuerza del contacto (TS) de la plataforma. Coincide con la fuerza del contacto cuando la plataforma se encuentra de través con respecto a la unidad que monta el sonar.</p>
+
+<ul>
+	<p><u>Unidades</u>: dB</p>
+	<p><u>Rango</u>: 0 – 99,9</p>
+</ul>
+
+<p><b>Fuerza del Blanco (TS) a Proa/Popa</b>: Este parámetro es tenido en cuenta por el modelo de sonar activo para calcular la fuerza del contacto (TS) de la plataforma. Coincide con la fuerza del contacto cuando la plataforma se encuentra a proa / popa con respecto a la unidad que monta el sonar.</p>
+
+<ul>
+	<p><u>Unidades</u>: dB</p>
+	<p><u>Rango</u>: 0 – 99,9</p>
+</ul>
+
+<p><b>Parámetros de Banda Estrecha</b>: Los siguientes parámetros caracterizan el nivel de ruido propio en banda estrecha emitido por la plataforma.</p>
+
+<p><b>Frecuencias</b>: Son cuatro frecuencias a las cuales se considera que la plataforma emite un pico de ruido, de nivel especificado en campo Nivel de Ruido (SL) asociado. El modelo de sonar pasivo comprueba si alguna de estas frecuencias está dentro de su margen de trabajo para considerar si detecta a la plataforma.</p>
+
+<ul>
+	<p><u>Unidades</u>: Hz</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p>Para cada una de estas frecuencias se especifica:</p>
+
+<p><b>Nivel de Ruido (SL)</b>: Nivel de ruido emitido por la plataforma en la frecuencia asociada.</p>
+
+<ul>
+	<p><u>Unidades</u>: dB</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p>Los siguientes parámetros modelan el efecto sobre el nivel de ruido propio (SN) emitido por la plataforma, en las tres posibles Condiciones de Silencio de la unidad:</p>
+
+<ul>
+	<li>Silencio Máximo</li>
+	<li>Silencio de Combate</li>
+	<li>Silencio de Vigilancia</li>
+</ul>
+
+<p><b>Reducción de Ruido</b>: Reducción del nivel de ruido propio emitido por la plataforma cuando la unidad ha establecido la condición de silencio asociada.</p>
+
+<ul>
+	<p><u>Unidades</u>: dB</p>
+	<p><u>Rango</u>: 0 – 99,9</p>
+</ul>
+ 
+<p><b>Tiempo Límite</b>: Tiempo máximo que puede permanecer la unidad con esta condición de silencio establecida.</p>
+
+<ul>
+	<p><u>Unidades</u>: horas</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+ 
+<p><b>Tiempo Espera</b>: Tiempo que tarda la unidad en establecer esta condición de silencio. Estos se consideran acumulativos, es decir, para entrar en Silencio Combate la unidad requiere el tiempo especificado para Silencio Vigilancia más el especificado para Silencio Combate.</p>
+
+<ul>
+	<p><u>Unidades</u>: horas</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p>Los siguientes parámetros modelan los efectos hidrofónicos (hasta cinco) producidos por la plataforma.</p>
+
+<p><b>Efecto</b>: Nombre descriptivo del efecto hidrofónico. Este campo está limitado a 30 caracteres alfanuméricos.</p>
+
+<p><b>Señal</b>: Umbral de señal con el que se detecta a la unidad, por encima del cual el efecto hidrofónico es obtenido por la unidad detectora.</p>
+
+<ul>
+	<p><u>Unidades</u>: dB</p>
+	<p><u>Rango</u>: -99,9 – 99,9</p>
+</ul>
+
+<p><b>Característico</b>: Determina si el efecto es característico o no de la plataforma. Cuando una unidad obtiene todos los efectos hidrofónicos característicos de una plataforma, se produce automáticamente su identificación.</p>
+
+</div>
+
+</body>
+
+</html>

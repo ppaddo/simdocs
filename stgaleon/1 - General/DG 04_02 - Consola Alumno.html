@@ -1,0 +1,156 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<font size=2 face=arial>
+
+<a id="alumno"></a>
+<p><b><font color=##084B8A face=arial size=4>Consola de Alumno</font></b></p>
+
+<p><b>La Consola de Alumno le proporciona la información del entorno obtenida de los sistemas de detección de su buque, y controles para gobernar la unidad. El Alumno podrá analizar esta información y dar las órdenes adecuadas para el cumplimiento de su misión.</b></p>
+
+<p>Las Consolas de Alumnos están compuestas por una Pantalla Táctica (monitor superior), y una Pantalla de Control (monitor inferior). Sobre la Pantalla Táctica se presenta de forma continua la Situación Táctica, sobre una cartografía digital y con simbología NTDS o STANAG-4420. En la Pantalla de Control se presentan de forma permanente Paneles Resumen del estado de la unidad y de todos sus equipos. Actuando sobre la pantalla táctil, el operador puede acceder de forma directa a los Paneles de Detalle de cada uno de los equipos de la unidad y actuar sobre los mismos. </p>
+
+<p>En el siguiente esquema se identifican las diferentes áreas que componen el interface de operador de las dos pantallas de la Consola de Alumno:</p>
+
+<p align=center><img width=600 src="../Images/Esquema Consola.jpg"></p>
+
+<p>En la siguiente captura de las dos pantallas de la Consola de Alumno se pueden observar las diferentes áreas identificadas en el esquema.</p>
+
+<p align=center><img width=600 src="../Images/Ejemplo Consola.jpg"></p>
+
+<p><b>Pantalla Táctica</b></p>
+
+<p>La Pantalla Táctica, situada en el monitor superior, incluye la Presentación Táctica y el Área de Información Táctica.</p>
+
+<p align=center><img width=600 src="../Images/Ejemplo Pantalla Táctica.jpg"></p>
+
+<p><b>Presentación Táctica:</b></p>
+
+<p>Consiste en la presentación gráfica de la Situación Táctica que observa la unidad. Esta presentación se realiza mediante una cartografía digital sobre la que se muestran, con simbología NTDS o STANAG-4420 (ver <i>Anexos – Simbología</i>), los contactos obtenidos por el conjunto de sensores de la unidad y/o recibidos mediante sus comunicaciones.</p>
+
+<p>El origen de los datos digitales de la presentación gráfica del escenario táctico puede ser S-57, VPF y se muestran siguiendo las recomendaciones para los sistemas ECDIS (Electronic Chart Display and Information System) en cuanto a la presentación de objetos. Sobre la carta se muestran también los objetos gráficos Rutas, Áreas y Puntos de distintos tipos que hayan sido incorporados al escenario durante la Preparación.</p>
+
+<p>Para facilitar una visión sinóptica de la situación táctica, los contactos son mostrados con vector velocidad y etiqueta descriptiva.</p>
+
+<p>Mediante la barra de menú de la Pantalla Táctica, el Alumno puede acceder a diversa funcionalidad asociada a la Presentación Táctica, por ejemplo:</p>
+
+<ul style="padding-left: 1cm;">
+<li>Imprimir Presentación Táctica</li>
+<li>Ver Presentación Táctica a pantalla completa</li>
+<li>Seleccionar movimiento absoluto o relativo</li>
+<li>Ver etiqueta extendida de las trazas</li>
+<li>Seleccionar simbología STANAG 4420 o NTDS y tamaño de símbolos</li>
+<li>Seleccionar modo de uso del cursor (Hook, Zoom, ...)</li>
+<li>Acceder a la herramienta de dibujos libres</li>
+<li>Presentar anillos distancia, líneas de marcación o líneas de medición o cortinas</li>
+<li>Presentar puntos de historia</li>
+<li>Presentar sectores de armas, sensores o interferidos</li>
+<li>Presentar cálculos de CPA, Posición Futura o Interceptación</li>
+<li>Acceder a la edición de trazas</li>
+<li>Establecer filtros de presentación</li>
+</ul>
+
+<p><b>Área de Información Táctica: </b></p>
+
+<p>En esta área fundamentalmente se presenta de forma permanente la siguiente información: </p>
+
+<p>Carta de Referencia:</p>
+
+<p><img width=200 src="../Images/Carta de Referencia.jpg" align="left">Este área mostrará una visión simplificada del escenario con la que el usuario podrá situar geográficamente bien una vista de la Región de Juego dentro de una carta del mundo o bien una vista de la región visualizada según el centrado y zoom dentro de la carta presentada, según la opción elegida.<br clear="left"></p>
+
+<p>Información táctica:</p>
+
+<p><img width=200 src="../IlvImages/Console/GlnGraphic/GlnGraphicMenu.jpg" align="left"></p>
+
+<p>Escala seleccionada en la Presentación Táctica</p>
+<br>
+<p>Botones para establecer el Cursor en Modo Hook o Modo Zoom.</p>
+<p>Latitud y Longitud de la Unidad Propia.</p>
+<p><b>Datos de Hook:</b></p>
+<p>Posición del Hook.</p>
+<p>Demora / Distancia del Hook a la Unidad Propia.</p>
+<p>Área de Datos del contacto / unidad en Hook:</p>
+<p>Se muestra de forma abreviada:</p>
+<p>Categoría / Identidad / Ampliación Identidad</p>
+<p>Tipo / Numeral / Clase</p>
+<p>Datos cinemáticos</p>
+<p>Otra información de los contacto</p>
+<p>según tipo de sensores que lo detectan</p>
+<p><b>Datos de Marca:</b></p>
+<p>Posición de la Marca.</p>
+<p>Demora / Distancia de la Marca a la Unidad Propia.</p>
+<p>Demora / Distancia de la Marca al Hook.</p>
+<p>Demora / Distancia del TACAN</p>
+<p><b>Datos Ambientales:</b></p>
+<p>Visibilidad.</p>
+<p>Altura de las Nubes.</p>
+<p>Dirección del Viento.</p>
+<p>Estado de la Mar / Intensidad del Viento.</p>
+<p>Profundidad.</p>
+<p>Profundidad de Capa.</p>
+<br>
+
+<p><b>Pantalla de Control</b></p>
+
+<p>En la Pantalla de Control, situada en el monitor inferior, se presentan de forma permanente <b>Indicadores Generales</b> y <b>Paneles Resumen</b> del estado de la unidad y de todos sus equipos. Actuando sobre la pantalla táctil, el operador puede acceder de forma directa a los <b>Paneles de Detalle</b> de cada uno de los equipos y actuar sobre los mismos.</p>
+
+<p>En la parte inferior de la pantalla de Control del Instructor se muestra la Barra de Acceso Rápido, que da acceso una lista de mensajes de eventos del sistema y al envío de mensajes de texto a otras consolas.</p>
+
+<p align=center><img width=600 src="../Images/Ejemplo Pantalla Control.jpg"></p>
+
+<p><b>Indicadores Generales:</b></p>
+
+<p align=center ><img width=600 src="../IlvImages/Console/console_wnd_controlModels/ControlWnd.jpg"></p>
+
+<p>En esta área se muestra al alumno información general del Ejercicio y de la Unidad, consistente en:</p>
+
+<ul style="padding-left: 1cm;">
+	<li>Estado del ejercicio, indicado por led (Rojo: detenido, verde: ejecutándose)</li>
+	<li>Nombre del ejercicio</li>
+	<li>Velocidad de ejecución del ejercicio, con dos dígitos enteros y un decimal.</li>
+	<li>Número de la consola.</li>
+	<li>Numeral y nombre de la unidad bajo control.</li>
+	<li>Bando al que pertenece la unidad, indicado por su color (Rojo, Azul o Blanco).</li>
+	<li>Porcentaje de daño infringido a la unidad (0 a 100%)</li>
+	<li>Grupo fecha hora del ejercicio.</li>
+</ul>
+
+<p><b>Paneles Resumen: </b></p>
+
+<p align=center><img width=180 src="../IlvImages/Console/console_wnd_sensors/SlSurfaceSensorPanelWnd.jpg"></p>
+
+<p>En los Paneles Resumen de la unidad se le muestra al Alumno la información básica de cada uno de los equipos de los que dispone.</p>
+
+<p>En general, la información mínima que se le muestra es el nombre del equipo, su estado, la munición remanente para el caso de las armas, y las opciones de configuración más relevantes de cada equipo. </p>
+
+<p>Toda esta información, se muestra mediante conjuntos de LED con distintos significados dependientes del color con el que lucen. Por ejemplo, los LEDs de estado tienen el siguiente significado en general: </p>
+
+<p style="padding-left: 2cm;"><img width=18 src="../Images/Led%20verde%20encendido.jpg" align="left"> ON</span></p>
+<p style="padding-left: 2cm;"><img width=18 src="../Images/Led%20verde%20apagado.jpg" align="left"> OFF / STAND BY ON</p>
+<p style="padding-left: 2cm;"><img width=18 src="../Images/Led%20amarillo.jpg" align="left"> STAND BY OFF</p>
+<p style="padding-left: 2cm;"><img width=18 src="../Images/Led%20rojo.jpg" align="left"> DAÑADO</p>
+<p style="padding-left: 2cm;"><img width=18 src="../Images/Led%20vacío.jpg" align="left"> Equipo no presente</p>
+
+<p>Pulsando sobre cualquier zona de los paneles resumen se accede a los paneles de detalle correspondientes.</p>
+
+<p><b>Paneles de Detalle:</b></p>
+
+<p>Mediante los Paneles de Detalles el Alumno puede acceder a toda la información de cada uno de los equipos así como todos los controles necesarios para llevar a cabo todas las acciones asociadas a las mismas: encendido, apagado, configuración, disparos, etc..</p>
+
+<p>Normalmente se accede a un Panel de Detalle Principal para cada uno de los equipos, y a través de éste se abren otros subpaneles para llevar a cabo acciones como Disparos, Lanzamientos, etc..</p>
+
+<p>A modo de ejemplo podemos ver el Panel de Detalle de Lanzamiento de Chaff:</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_weaponsAux/ChaffLaunchingWnd.jpg"></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Edicion de Cartas</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=750 src="../Images/Edicion de Cartas/Edicion de Cartas.jpg"></p>
+
+<p>Mediante este diálogo, el operador puede generar y mantener las cartas disponibles para el sistema. Estas cartas podrán ser dibujadas manualmente partiendo de una carta en blanco o bien podrán ser importadas de ficheros de datos cartográficos con formato S57 o VPF. Tanto unas como otras podrán ser posteriormente modificadas.</p>
+
+<p>Una vez generada o modificada una carta, para que pueda ser incluida en un Escenario de un Ejercicio, ésta debe ser guardada en un fichero el cual debe ubicarse en el directorio configurado para almacenamiento de cartas disponibles para el sistema, o en un subdirectorio dentro del mismo (configurable en Galeon.ini).</p>
+
+<p>Este diálogo consta de un Menú, una barra de Iconos, y el área de presentación de la carta. En la parte inferior se muestra también la Latitud, Longitud del punto de la carta sobre el que se encuentra el cursor en cada momento. Además, en el campo “altura” muestra el valor de la distancia existente entre el borde superior y el inferior de la zona mostrada.</p>
+
+<p>A continuación se describen las distintas acciones que pueden llevarse a cabo desde el Menú y desde la Barra de Iconos:</p>
+
+<p>Menú <b>Archivo</b>:</p>
+
+<ul>
+	<p><b>Carta vacía</b>: Genera una carta en blanco para su edición.</p>
+
+	<p><b>Abrir</b>: Abre una carta desde fichero para su presentación y edición.</p>
+
+	<p><b>Salvar</b>: Guarda en fichero la carta en edición.</p>
+
+	<p><b>Salvar como ...</b> : Guarda la carta en edición, especificando directorio y nombre del fichero.</p>
+
+	<p><b>Imprimir</b>: Imprime la carta en edición.</p>
+
+	<p><b>Salir</b>: Cerrar este diálogo.</p>
+
+</ul>
+
+<p>Menú <b>Editar</b>:</p>
+
+<ul>
+	<p><b>Editar carta</b>: Seleccionando esta opción del menú se presenta el siguiente diálogo:</p>
+
+	<p align=center><img width=500 src="../Images/Edicion de Cartas/Edicion Objetos Carta.jpg"></p>
+
+	<p>Mediante este diálogo el operador podrá modificar los objetos que componen la carta, o bien seleccionar de la lista de tipos de objetos cartográficos el tipo de objeto que desea dibujar.</p>
+
+	<p>Si pulsa el botón superior izquierdo, podrá seleccionar los distintos objetos cartográficos de la carta para moverlos o deformarlos. Teniendo un objeto seleccionado, se puede pulsar la tecla “Supr” del teclado para borrar el objeto.</p>
+
+	<p>Si pulsa el botón superior derecho, podrá seleccionar los distintos objetos cartográficos del tipo polipunto (es decir, aquellos formados por un conjunto de puntos) de la carta para editar sus puntos de forma individual. Teniendo un objeto seleccionado, se pueden realizar las siguientes operaciones:</p>
+
+	<ul>
+		<li>Picar en un punto y arrastrarlo a una nueva posición.</li>
+		<li>Picar en un punto, y pulsar la tecla “Supr” del teclado para borrar el punto.</li>
+		<li>Picar en un segmento (línea entre dos puntos), y pulsar la tecla “Insert” del teclado para insertar un nuevo punto entre los dos puntos del segmento, concretamente en la posición ocupada por el cursor en ese momento.</li>
+		<li>Pulsar la tecla “Borrar” del teclado, para borrar el objeto completo.</li>
+	</ul>
+
+	<p>Si selecciona un tipo de objeto cartográfico de la lista y pulsa Aplicar, podrá dibujar sobre la carta el tipo de objeto seleccionado.</p>
+
+	<p><b>Recortar carta</b>: Seleccionando esta opción del menú, el operador podrá recortar la carta en edición. Para ello deberá pulsar con el botón izquierdo del ratón sobre la carta y arrastrar el ratón manteniéndolo pulsado, con lo que se presentará un rectángulo sobre la carta. Este rectángulo pude ser seleccionado y modificado, moviendo sus lados. Una vez que el rectángulo coincide con el área de carta que nos interesa, se debe hacer doble pulsación con el botón izquierdo del ratón dentro del área.</p>
+
+	<p><b>Recursos gráficos</b>: Seleccionando esta opción del menú se presenta el siguiente diálogo:</p>
+
+	<p align=center><img width=350 src="../Images/Edicion de Cartas/Recursos Graficos.jpg"></p>
+
+	<p>Mediante este diálogo el operador podrá modificar los recursos gráficos de los objetos cartográficos de la carta en edición. Para ello, deberá seleccionar el objeto que desea modificar, seleccionar en este diálogo el aspecto deseado (color de primer plano, color de fondo, fuente, patrón, estilo de línea y anchura de línea) y pulsar Aplicar.</p>
+
+	<p><b>Información</b>: Seleccionando esta opción del menú se presenta el siguiente diálogo:</p>
+
+	<p align=center><img width=300 src="../Images/Edicion de Cartas/Informacion Objeto.jpg"></p>
+
+	<p>Mediante este diálogo el operador podrá consultar la información característica de los objetos cartográficos de la carta en edición. Para ello, deberá seleccionar el objeto del que desea obtener esta información. Para ello, debe seleccionar el modo de selección de objetos para información en la opción de menú “Interactor de información”. Entonces podrá seleccionar un objeto, y seleccionar la opción “Información” que presentará los datos del objeto en la ventana.</p>
+
+	<p>La datos del objeto que se muestran son: código del tipo de objeto (OBJL). con descripción del objeto entre paréntesis, modo de presentación del objeto (DMODE), que puede ser Base, Standard u Other, y códigos de los atributos, con descripción del atributo entre paréntesis y valor del mismo.</p>
+
+	<p>Para obtener información de otro objeto, primero se debe cerrar la ventana de información antes de poder seleccionar el objeto deseado.</p>
+
+	<p><b>Interactor de información</b>: Permite seleccionar objetos en la carta. El objeto seleccionado se puede borrar pulsando la tecla “Supr.” del teclado. Si se selecciona la opción “Información” con un objeto seleccionado, presenta un diálogo con los datos del objetos.</p>
+
+	<p><b>Seleccionar polígonos</b>. Cuando el interactor de información está activo, esta opción permite seleccionar todos los objetos de tipo polígono presentes en la carta.</p>
+
+	<p><b>Seleccionar polilíneas</b>. Cuando el interactor de información está activo, esta opción permite seleccionar todos los objetos de tipo polilínea presentes en la carta.</p>
+
+</ul>
+
+<p>Menú <b>Filtros</b>:</p>
+
+<ul>
+	<p><b>Categoría del display</b>: Mediante esta opción del menú el operador podrá seleccionar entre tres categorías de filtros de presentación los objetos cartográficos de la carta en edición. Estas tres categorías son las definidas para los sistemas ECDIS (Electronic Chart Display and Information System):</p>
+
+	<ul>
+		<li><b>Base</b>: conjunto mínimo de objetos de la carta que deben ser siempre visibles.</li><br>
+
+		<li><b>Standard</b>: Conjunto de objetos de la carta recomendado durante la operación normal en un sistema de presentación de cartas electrónicas.</li><br>
+
+		<li><b>Other</b>: Presenta todos los objetos que componen la carta.</li>
+
+	</ul>
+
+	<p><b>Meridianos / Paralelos</b>. Presenta una rejilla de meridianos y paralelos encima de la carta. Las líneas de meridianos y paralelos que se muestran se adaptan al nivel de escala con el que se ve la carta en cada momento.</p>
+
+</ul>
+
+<p>Menú <b>Importar</b>:</p>
+
+<ul>
+	<p><b>Fichero S57</b>. Permite la conversión de un fichero de carta en el formato S57 al formato de carta usado por el sistema. Presenta un diálogo para realizar la conversión de ficheros en formato S57. Este diálogo se describe al final de este apartado.</p>
+
+	<p><b>Fichero VPF</b>. Permite la conversión de un fichero de carta en el formato S57 al formato de carta usado por el sistema. Presenta un diálogo para realizar la conversión de ficheros en formato VPF. Este diálogo se describe al final de este apartado.</p>
+
+</ul>
+
+<p><b>Barra de Iconos</b>:</p>
+
+<p align=center><img width=600 src="../Images/Edicion de Cartas/Iconos Funcionalidad.gif"></p>
+
+<p>Las cuatro primera acciones (<b>Carta vacía</b>, <b>Abrir</b>, <b>Salvar</b> e <b>Imprimir</b>) coinciden con las ya descritas del menú Archivo.</p>
+
+<ul>
+	<p><b>Mapa completo</b>: Pulsando este botón se ajusta la escala de presentación de tal manera que la carta se presenta de forma completa en pantalla.</p>
+
+	<p><b>Ampliación</b>: Pulsando este botón se realiza un Zoom Más x 2, es decir se reduce la escala de presentación de la carta a la mitad de la actual.</p>
+
+	<p><b>Reducción</b>: Pulsando este botón se realiza un Zoom Menos x 2, es decir se amplia la escala de presentación de la carta al doble de la actual.</p>
+
+	<p><b>Selección área</b>: Seleccionando esta opción del menú, el operador podrá realizar un zoom sobre un área de interés de la carta. Para ello deberá pulsar con el botón izquierdo del ratón sobre la carta y arrastrar el ratón manteniéndolo pulsado, con lo que se presentará un rectángulo sobre la carta. Al soltar el botón izquierdo del ratón se ajustará automáticamente la escala y centrado de la carta para mostrar el área seleccionada.</p>
+
+	<p><b>Centrar</b>: Seleccionando esta opción del menú, el operador podrá selecciona el punto de centrado en la presentación de la carta. Para ello simplemente deberá pulsar con el botón izquierdo del ratón el punto de la carta donde desea centrar la presentación</p>
+
+	<p><b>Demora y distancia</b>: Seleccionando esta opción del menú, el operador podrá realizar mediciones de marcación y distancia sobre la carta. Para ello, deberá pulsar con el botón izquierdo del ratón sobre la carta y arrastrar el ratón manteniéndolo pulsado, con lo que se presentará una línea sobre la carta cuya Demora y Distancia es mostrada constantemente en el siguiente recuadro, que aparece sobre la carta.</p>
+
+	<p align=center><img width=200 src="../Images/Edicion de Cartas/Demora Distancia.jpg"></p>
+
+</ul>
+
+<p>Diálogos <b>Importar S57</b> e <b>Importar VPF</b>:</p>
+
+<p>A continuación se describen las distintas acciones que pueden llevarse a cabo desde el menú de este diálogo:</p>
+
+<p>Menú <b>Archivo</b>:</p>
+
+	<p><b>Abrir</b>: Presenta un diálogo de selección de fichero para seleccionar un fichero en formato S57. Un vez seleccionado un fichero S57, se presenta el siguiente diálogo:</p>
+
+	<p align=center><img width=200 src="../Images/Edicion de Cartas/Cargar carta referencia.png"></p>
+
+	<p>La pregunta se refiere a si se desea usar una carta de referencia (en el formato propio del sistema) para convertir la carta seleccionada. De la carta de referencia se extraen los datos de proyección usados para aplicarlos a la nueva conversión. Si se contesta que sí, se presentará el diálogo para seleccionar la carta de referencia. Si se contesta que no, se presenta el siguiente diálogo:</p>
+
+	<p align=center><img width=250 src="../Images/Edicion de Cartas/Tipo Proyeccion.png"></p>
+
+	<p>En este diálogo se debe seleccionar el tipo de proyección usado en la conversión del carta. Tras esto, el proceso de conversión se ejecutará, presentando en la ventana la imagen de la carta.</p>
+
+	<p><b>Guardar como</b>: Presenta un diálogo de selección de ficheros para salvar en disco la carta.</p>
+
+<p>Menú <b>Ver</b>:</p>
+
+	<p><b>Información</b>: Presenta un diálogo con información acerca del objeto seleccionado en la carta.</p>
+
+	<p><b>Ocultar textos</b>: Permite mostrar u ocultar los textos (nombres de accidentes geográficos, ciudades, etc.) que se incluyen en algunas cartas.</p>
+
+	<p><b>Modo de visualización</b>: Presenta un diálogo para seleccionar la categoría de presentación de los objetos cartográficos de la carta. Estas tres categorías son las definidas para los sistemas ECDIS (Electronic Chart Display and Information System)</p>
+
+	<ul>
+		<li><b>Base</b>: conjunto mínimo de objetos de la carta que deben ser siempre visibles.</li><br>
+
+		<li><b>Standard</b>: Conjunto de objetos de la carta recomendado durante la operación normal en un sistema de presentación de cartas electrónicas.</li><br>
+
+		<li><b>Other</b>: Presenta todos los objetos que componen la carta.</li>
+
+	</ul>
+
+	<p align=center><img width=250 src="../Images/Edicion de Cartas/Modo visualizacion.png"></p>
+
+	<p><b>Seleccionar objetos</b>: Activa el modo de selección de los objetos de la carta.</p>
+
+	<p><b>Filtrar categorías de objeto</b>: Presenta un diálogo con el que se pueden mostrar u ocultar determinados tipos de objetos dentro de la carta.</p>
+
+	<p align=center><img width=350 src="../Images/Edicion de Cartas/Filtrar categorias objs.png"></p>
+
+</div>
+
+</body>
+
+</html>

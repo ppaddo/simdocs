@@ -1,0 +1,177 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Unidades Móviles</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>Las unidades móviles se crean únicamente con sus datos de identificación (Nombre, MMSI, Call Sign y País) ya que el resto de los datos relativos a las dimensiones y datos cinemáticos del buque se incluyen en los modelos de plataforma. Una vez creada la unidad hay que añadirle una plataforma ya que no se pueden incluir unidades móviles sin plataforma en un ejercicio.</p>
+
+<p>Para completar la definición de las unidades se añaden los equipos necesarios como se describe en el apartado <i>Preparación de Ejercicios</i>.</p>
+
+<p>La creación y edición de <b>buques</b> se realiza mediante la siguiente ventana.</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosBuques.jpg"></p>
+
+<p>En esta ventana se definen los siguientes datos:</p>
+
+<p><b>Nombre</b>: Nombre del buque.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>MMSI</b>: Identificador del servicio móvil marítimo (Maritime Mobile Service Identity).</p>
+
+<ul>
+	<p><u>Formato</u>: 9 dígitos (ver el sistema de numeración de MSSI que se describe al final de este apartado).</p>
+</ul>
+
+<p><b>Call Sign</b>: Distintivo de llamada de la unidad.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>País</b>: País al que pertenece la unidad.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>ID Modelo Visual</b>: Imagen 3D que representa a la unidad cuando se dispone de sistema visual.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres numéricos.</p>
+</ul>
+
+<p><i>Nota</i>: Si el simulador tiene sistema visual, para visualizar correctamente el objeto, el identificador que se introduzca en este campo debe existir en la carpeta correspondiente del PC del visual.</p>
+
+<p>El botón <b>Recalcular</b> sirve actualizar datos relacionados con el modelo visual asociado (luces y mástiles).</p>
+
+<p>La creación y edición de unidades móviles <b>aéreas</b> se realiza mediante la siguiente ventana.</p>
+
+<p align=center><img width=600 src="../Imagenes/DatosAereas.jpg"></p>
+
+<p>En esta ventana se definen los siguientes datos:</p>
+
+<p><b>Nombre</b>: Nombre de la unidad.</p>
+
+<ul>
+	<li><u>Formato</u>: caracteres alfanuméricos.</li>
+</ul>
+
+<p><b>MMSI</b>: Identificador del servicio móvil marítimo (Maritime Mobile Service Identity).</p>
+
+<ul>
+	<li><u>Formato</u>: 9 dígitos (ver el sistema de numeración de MSSI que se describe al final de este apartado).</li>
+</ul>
+
+<p><b>Call Sign</b>: Distintivo de llamada de la unidad.</p>
+
+<ul>
+	<li><u>Formato</u>: caracteres alfanuméricos.</li>
+</ul>
+
+<p><b>País</b>: País al que pertenece la unidad.</p>
+
+<ul>
+	<li><u>Formato</u>: caracteres alfanuméricos.</li>
+</ul>
+
+<p><b>ID Modelo Visual</b>: Imagen 3D que representa a la unidad cuando se dispone de sistema visual.</p>
+
+<ul>
+	<li><u>Formato</u>: caracteres numéricos.</li>
+</ul>
+
+<p><b>Nota</b>: Si el simulador tiene sistema visual, para visualizar correctamente el objeto, el identificador que se introduzca en este campo debe existir en la carpeta correspondiente del PC del visual.</p>
+
+<b>Sistema de numeración de MSSI:</b>
+
+<p>El sistema de numeración de MMSI consiste en 9 dígitos, de los cuales, el primero (o los dos primeros) identifica si el ID pertenece a una nave individual, a una estación costera o a un grupo de naves. El primer digito del MMSI tiene el siguiente significado:</p>
+
+<table>
+	<tr>
+		<td width=120><font size=2 face=arial><b>Primer dígito(s)</b></td>
+		<td width=100><font size=2 face=arial><b>Significado</b></td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>"0"</td>
+		<td><font size=2 face=arial>Utilizado para grupos de naves.</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>"00"</td>
+		<td><font size=2 face=arial>Utilizado para estaciones costeras.</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>"1"</td>
+		<td><font size=2 face=arial>Reservado para terminales INMARSAT "A".</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>"2"-"7"</td>
+		<td><font size=2 face=arial>Utilizados para naves individuales.</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>"8"</td>
+		<td><font size=2 face=arial>Reservado para grupos de estaciones vecinas.</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>"9"</td>
+		<td><font size=2 face=arial>Reservado para grupos de una nación.</td>
+	</tr>
+
+</table>
+
+<p>Los MMSI tienen un valor numérico de 3 cifras asignado a cada país (MID) que se sitúan después del primer digito(s), por ejemplo:</p>
+
+<table>
+	<tr>
+		<td width=100><font size=2 face=arial><b>Esquema</b></td>
+		<td width=100><font size=2 face=arial><b>Ejemplo</b></td>
+		<td width=100><font size=2 face=arial><b>Significado</b></td>
+	</tr>
+	
+	<tr>
+		<td><font size=2 face=arial>MIDnnnnnn</td>
+		<td><font size=2 face=arial>366777490</td>
+		<td><font size=2 face=arial>Nave individual</td>
+	</tr>
+	
+	<tr>
+		<td><font size=2 face=arial>1MIDnnnnn</td>
+		<td><font size=2 face=arial>136677749</td>
+		<td><font size=2 face=arial>Nave individual, INMARSAT A</td>
+	</tr>
+	
+	<tr>
+		<td><font size=2 face=arial>0MIDnnnnn</td>
+		<td><font size=2 face=arial>036699999</td>
+		<td><font size=2 face=arial>Grupo de naves</td>
+	</tr>
+	
+	<tr>
+		<td><font size=2 face=arial>00MIDnnnn</td>
+		<td><font size=2 face=arial>003669999</td>
+		<td><font size=2 face=arial>Estaciones costeras</td>
+	</tr>
+	
+</table>
+
+</div>
+
+</body>
+
+</html>

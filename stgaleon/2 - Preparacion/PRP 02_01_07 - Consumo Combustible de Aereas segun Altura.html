@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Consumo de Combustible de Aéreas según Altura</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvDynamics/AirFuelCsmHeightWnd.jpg"></p>
+
+<p>Los modelos de Consumo de Combustible de unidades Aéreas según Altura se parametrizan mediante una tabla en la que se introducen los valores de Consumo de Combustible para los siguientes rangos de velocidad de la unidad, expresados en fracciones de la velocidad máxima de la unidad:</p>
+
+<ul>
+	<p>0 – 3/8, 3/8 – 5/8, 5/8 – 7/8, 7/8 – 1</p>
+</ul>
+ 
+<p>Se consideran distintos consumos en función de la altura de vuelo de la unidad.</p>
+
+<p>Los valores de consumo que aplica el modelo son distintos en función de la altura de vuelo de la unidad, considerándose los siguientes niveles:</p>
+
+<ul>
+	<p>Nivel 1: de 0 a 500 pies</p>
+	<p>Nivel 2: de 500 a 2000 pies</p>
+	<p>Nivel 3: de 2000 a 10000 pies</p>
+	<p>Nivel 4: de 10000 a 25000 pies</p>
+	<p>Nivel 5: de 25000 a 100000 pies</p>
+</ul>
+
+<p>Los límites de estos niveles son configurables en Galeon.ini.</p>
+
+<p>Los consumos introducidos en esta tabla se ven afectados por la carga de la unidad (ver Consumo de Combustible de unidades Aéreas según Carga).</p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Consumo</b>: Cantidad de combustible consumido por la unidad cada hora, según el rango de altura de vuelo de la unidad y el rango de velocidad en cada momento.</p>
+
+<ul>
+	<p><u>Unidades</u>: libras / hora</p>
+	<p><u>Rango</u>: 0 - 99999</p>
+
+	<p>Ejemplo:</p>
+
+	<p>Si Consumo = 0 &rArr; no consume combustible.</p>
+	<p>Si Consumo = 99999 &rArr; consumo máximo.</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

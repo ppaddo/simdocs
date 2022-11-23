@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Aceleración y Giro de Superficies y Submarinos</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvDynamics/SfSbAccelTurnWnd.jpg"></p>
+
+<p>Los modelos de Aceleración y Giro de Superficies y Submarinos se parametrizan mediante una tabla en la que se introducen los valores de Aceleración, Desaceleración y Velocidad de Giro para los siguientes rangos de velocidad de la unidad, expresados en fracciones de la velocidad máxima de la unidad:</p>
+
+<ul>
+	<p>0 – 3/8, 3/8 – 5/8, 5/8 – 7/8, 7/8 – 1</p>
+</ul>
+
+<p>Los valores de Velocidad de Giro que aplica el modelo son distintos en función de la caña aplicada por la unidad. Se consideran los siguientes valores discretos de caña:</p>
+
+<ul>
+	<p>5º, 10º, 15º, 20º, 25º, 30º</p>
+</ul>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Aceleración</b>: Tiempo que tarda la unidad en aplicar cada incremento de velocidad, según la tabla. La suma de los tiempos de una fila completa, coincide con el tiempo que tardaría la unidad en pasar de velocidad cero a su máxima velocidad.</p>
+
+<ul>
+	<p><u>Unidades</u>: segundos</p>
+	<p><u>Rango</u>: 0 - 9999.9</p>
+
+	<p>Ejemplo:</p>
+
+	<p>Si Aceleración = 0 &rArr; aceleración infinita.</p>
+	<p>Si Aceleración = 9999.9 &rArr; mínima aceleración.</p>
+</ul>
+
+<p><b>Desaceleración</b>: Tiempo que tarda la unidad en aplicar cada decremento de velocidad, según la tabla. La suma de los tiempos de una fila completa, coincide con el tiempo que tardaría la unidad en pasar de su máxima velocidad a velocidad cero.</p>
+
+<ul>
+	<p><u>Unidades</u>: segundos</p>
+	<p><u>Rango</u>: 0 - 9999.9</p>
+
+	<p>Ejemplo:</p>
+
+	<p>Si Desaceleración = 0 &rArr; desaceleración infinita.</p>
+	<p>Si Desaceleración = 9999.9 &rArr; mínima desaceleración.</p>
+</ul>
+
+<p><b>Velocidad de Giro</b>: Grados por segundo que gira la unidad al cambiar de rumbo, según la caña aplicada por la unidad y para la velocidad máxima del rango de la columna correspondiente.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados / segundo</p>
+	<p><u>Rango</u>: >0 - 359.9</p>
+
+	<p>Ejemplo:</p>
+
+	<p>Si Velocidad Giro = 0 &rArr; no cambia de rumbo.</p>
+	<p>Si Velocidad Giro = 359.9 &rArr; máxima velocidad de giro.</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

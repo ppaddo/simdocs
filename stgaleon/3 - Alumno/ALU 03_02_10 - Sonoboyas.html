@@ -1,0 +1,156 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Sonoboyas</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_sensors/SonobuoyWnd.jpg"></p>
+
+<p>En el panel de detalle de las sonoboyas se puede elegir entre las opciones Lanzamiento, Procesador y Detecciones, pulsando en las solapas correspondientes.</p>
+
+<p><b>Lanzamiento</b></p>
+
+<p>En el panel de detalle de Lanzamientos se muestra, en la parte inferior, la lista de sonoboyas disponibles y la cantidad de cada una en el pañol.</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_sensorsAux/SonobuoyLaunchingWnd.jpg"></p>
+
+<p>Desde este panel pueden realizarse las siguientes acciones:</p>
+
+<ul>
+	<li>Lanzamiento manual de sonoboyas: Seleccionando un tipo de sonoboyas y una profundidad, utilizando las barras de desplazamiento correspondientes (excepto en sonoboyas ANM, VLAD o BT), e introduciendo la cantidad de sonoboyas y la distancia deseada entre lanzamientos consecutivos, al pulsar el botón Lanzar, se inicia el lanzamiento de sonoboyas. Durante el lanzamiento se muestra sobre el botón Lanzar el número de la próxima salva a lanzar y la distancia por recorrer hasta el siguiente lanzamiento. Si durante el lanzamiento se pulsa de nuevo el botón Lanzar (cuya leyenda cambia a Cancelar) se cancelará la acción y se interrumpirá el lanzamiento de sonoboyas.</li>
+
+	<p>Mediante el botón Interceptar se abre directamente la ventana de Maniobra de Interceptación. Se trata de un acceso directo a esta maniobra para facilitar ir a los puntos en los que se quiere realizar lanzamiento Manual.</p>
+
+	<li>Lanzamiento automático de sonoboyas por Flypoints: Al pulsar el botón Flypoints se abre el panel de lanzamiento automático de sonoboyas por Flypoints, que se describe a continuación. Si ya está establecido el plan de lanzamientos, al pulsar el botón Activar, la unidad recorre los Flypoints (realizando interceptación a cada punto) lanzando en cada uno de ellos la sonoboya que se haya programado.</li>
+
+
+	<p>Desde este panel se seleccionan los puntos (latitud y longitud) en los que se desea lanzar sonoboyas. Estos puntos pueden seleccionarse posicionando el hook en ellos y pulsando el botón Hook. A cada punto se asocia el tipo de sonoboya y la profundidad de lanzamiento que estén seleccionados utilizando las barras de desplazamiento correspondientes. Al pulsar el botón Lanzar, queda registrada la secuencia de lanzamientos.</p>
+
+	<p>Mediante el botón Ir A el operador puede saltar directamente a un Flypoint, saltando los anteriores y continuando después la secuencia de lanzamiento automático por los puntos que se saltó.</p>
+
+</ul>
+
+<p>El lanzamiento de sonoboyas solo puede realizarse si la altura de unidad se encuentra dentro del margen admitido por el lanzador (configurado en preparación).</p>
+
+<p><b>Procesador</b></p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_sensors/SonobuoyWndNtbProcessor.jpg"></p>
+
+<p>En el panel de detalle del Procesador se pueden realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Encender / Apagar el Procesador, pulsando el botón ON/OFF.</li><br>
+	
+	<li>Consultar la capacidad de procesamiento disponible, en cuanto al número de sonoboyas adicionales que sería capaz de procesar, distinguiendo entre activas y pasivas y entre direccionales y omnidireccionales. La lista de sonoboyas incluye a todas las sonoboyas de la fuerza propia que estén en alcance del procesador, ordenadas por propietario de la sonoboya y por alcance. Si existen más sonoboyas que capacidad de proceso, se dejan de procesar las más lejanas.</li><br>
+	
+	<li>Consultar los siguientes datos para cada sonoboya:</li><br>
+
+	<ul>
+		<li>N.: Número de traza asignado a la sonoboya.</li><br>
+		
+		<li>Tipo: El tipo de sonoboya de que se trata.</li><br>
+		
+		<li>Transmitir: Indica si la transmisión está activada (ON) o no (OFF) en el caso de sonoboyas activas.</li><br>
+		
+		<li>Profundidad: Indica la profundidad a la que se encuentra la sonoboya.</li><br>
+		
+		<li>Modo: Indica si es direccional u omnidireccional.</li><br>
+		
+		<li>Estado: Indica si están encendidas (ON) o apagadas (OFF).</li><br>
+		
+		<li>Procesando: Indica si el procesador las está procesando o no.</li><br>
+		
+	</ul>
+
+	<li>Realizar las siguientes acciones para cada sonoboya:</li><br>
+
+	<ul>
+		<li>Tipo – AN / BT: En el caso de una sonoboya tipo BATHY, que esté siendo procesada, permite visualizar la traza batitérmica y el diagrama de intensidad batitérmica para la zona en la que se encuentra la sonoboya (Ver el capítulo correspondiente al sonar activo o pasivo para una descripción detallada de estos diagramas). En el caso de una sonoboya ANM que esté siendo procesada muestra un diagrama de ruido ambiente (ver a continuación). En el caso de una sonoboya pasiva que esté siendo procesada, al pulsar este botón, cambia el Modo a ANM, y una vez que esté siendo procesada en este modo, si se vuelve a pulsar el botón, se muestra también el diagrama de ruido ambiente.</li><br>
+
+		<li>Transmitir – ON / OFF: Permite activar o desactivar la transmisión en el caso de sonoboyas activas.</li><br>
+
+		<li>Profundidad – Desplegar: Despliega la sonoboya al siguiente nivel de profundidad. Si la sonoboya había alcanzado su máxima profundidad, se hunde la sonoboya, eliminándose del ejercicio. Esta capacidad no está disponible en sonoboyas tipo VLAD, BT, ANM o Pasivas (Omni o Dir).</li><br>
+
+		<li>Modo – Cambiar: Cambia el modo entre direccional y omnidireccional. Esta opción sólo está disponible para sonoboyas tipo Dir.</li><br>
+
+		<li>Estado – ON / OFF: Permite encender y apagar las sonoboyas activas.</li>
+
+		<p align=center><img width=600 src="../IlvImages/Console/console_wnd_sensorsAux/EnvironmentNoiseWnd.jpg"></p>
+
+		<p>El diagrama de ruido ambiente muestra el nivel de ruido que existe en la zona donde se encuentra la sonoboya en decibelios por frecuencia entre 0 y 2000 Hercios, tanto de forma gráfica como alfanumérica.</p>
+
+	</ul>
+	
+</ul>
+
+<p><b>Detecciones</b></p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_sensors/SonobuoyWndNtbDetection.jpg"></p>
+
+<p>El panel de detalle de detecciones muestra las listas de detecciones pasivas y activas, un máximo de 99 y 50 respectivamente, ordenadas de más a menos recientes, incluyendo los siguientes datos:</p>
+ 
+<ul>
+	<li>Detecciones Pasivas:</li><br>
+
+	<ul>
+		<li>TN: Número de traza asignada a la detección en la presentación táctica.</li><br>
+		
+		<li>H.Adq.: Hora, minuto y segundo de la adquisición de la detección.</li><br>
+		
+		<li>H.Pérd.: Hora, minuto y segundo de la pérdida de la detección.</li><br>
+		
+		<li>Dem.: Demora en grados de la detección. Este dato tiene un cierto error que depende de la configuración del equipo (Preparación).</li><br>
+		
+		<li>Ale/Acer: Indica si la detección se aleja o acerca a la unidad propia. Este dato se presenta con un minuto de retraso tras la adquisición del contacto, si el sonar es telémetro y la detección es de banda ancha. En caso contrario, este dato se presentará a los seis minutos.</li><br>
+		
+		<li>Clasificación: En el caso de haberse realizado una identificación, indica la clasificación de la detección. Este dato sólo está disponible si el sonar es TACTAS, no es Interceptador y si la detección es de banda estrecha. La clasificación se presenta con un retraso de cinco minutos tras la adquisición del contacto. En este campo, también se indica si la detección se ha identificado como un Torpedo, mostrando la palabra “TORPEDO” en vez de la clasificación. Para se produzca esta identificación, es necesario que el torpedo se encuentre a menos de 10.000 yardas, excepto en sector popel. Cuando se produce una detección de este tipo, se acompaña con una alarma visual (led en el panel general y en este diálogo, sobre la lista de detecciones) y acústica.</li><br>
+		
+		<li>Clase: En el caso de haberse realizado una identificación, indica la clase de la detección. Este dato sólo está disponible si el sonar es TACTAS, no es Interceptador y si la detección es de banda estrecha. La clase se presenta con un retraso de seis minutos tras la adquisición del contacto.</li><br>
+		
+	</ul>
+
+	<li>Detecciones Activas:</li>
+
+	<ul>
+		<p>Nota: Todos los tiempos de retraso que se indican para la presentación de los datos que se describen a continuación son configurables en Galeón.ini.</p>
+
+		<li>TN: Número de traza asignada a la detección en la presentación táctica.</li><br>
+
+		<li>H.Adq.: Hora, minuto y segundo de la adquisición de la detección.</li><br>
+
+		<li>H.Pérd.: Hora, minuto y segundo de la pérdida de la detección.</li><br>
+
+		<li>Dem.: Demora del contacto en grados. Este dato tiene un cierto error que depende de la configuración del equipo (Preparación).</li><br>
+
+		<li>Dist.: Indica la distancia en yardas de la detección. Este dato solo está disponible si el sonar activo no está en modo Listen y tiene un cierto error que depende de la configuración del equipo (Preparación).</li><br>
+
+		<li>Rb.: Indica el rumbo de la detección. Este dato solo está disponible si el sonar activo no está en modo Listen y tiene un error de +/-10º. La estimación de rumbo se presenta con un retraso de 1,5 minutos respecto a la primera detección del contacto.</li><br>
+
+		<li>Vel.: Indica la velocidad de la detección. Este dato solo está disponible si el sonar activo no está en modo Listen y tiene un error de +/-10%. La estimación de velocidad se presenta con un retraso de 1,5 minutos tras la adquisición de la detección.</li><br>
+
+		<li>Clasificación: En el caso de haberse realizado una identificación, indica si la detección es submarino o no (si es submarino muestra SUBM y si no es submarino muestra NO SUBM). Este dato solo está disponible en equipos con capacidad de barrido lateral que no estén en modo Listen. Este dato se presenta con un retraso de un minuto tras la adquisición de la detección. En este campo, también se indica si la detección se ha identificado como un Torpedo, mostrando la palabra “TORPEDO” en vez de la clasificación. Para se produzca esta identificación, es necesario que el torpedo se encuentre a menos de 10.000 yardas, excepto en sector popel. Cuando se produce una detección de este tipo, se acompaña con una alarma visual (led en el panel general y en este diálogo, sobre la lista de detecciones) y acústica.</li>
+
+	</ul>
+
+</ul>
+
+<p>Si el equipo está dañado, no se podrá realizar ninguna operación sobre él.</p>
+
+<p>Las detecciones pasivas direccionales aparecen en la pantalla táctica como líneas de demora con origen en la posición de la sonoboya.</p>
+
+<p>Las detecciones pasivas omnidireccionales se muestran en la pantalla táctica con un círculo parpadeante centrado en la sonoboya y cuyo radio es la distancia a la detección (*).</p>
+
+<p>(*) Presentación de detecciones pasivas omnidireccionales no disponible en todas las versiones del simulador.</p>
+
+</div>
+
+</body>
+
+</html>

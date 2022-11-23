@@ -1,0 +1,334 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Descripción General de la Herramienta de Preparación</font></b></p>
+
+<font size=2 face=arial>
+
+<p><b>La Herramienta de Preparación permite definir detalladamente todos los equipos y unidades que pueden participar en los distintos ejercicios, y establecer las características generales de los propios ejercicios.</b></p>
+
+<p>Los modelos que incluye el Simulador Táctico Galeón admiten parámetros de configuración, de modo que ajustando correctamente dichos parámetros, se consigue simular una amplia gama de equipos y unidades dentro de distintos ejercicios, y con distintos escenarios. Todas estas distintas configuraciones de equipos, unidades, escenarios y su incorporación en distintos ejercicios son almacenadas en una Base de Datos. Combinando los distintos elementos disponibles en la Base de Datos, se pueden simular un número ilimitado de situaciones tácticas de interés.</p>
+
+<p>Para la gestión de la información introducida en esta Base de Datos, el Simulador dispone de la Herramienta de Preparación, que es una aplicación específica de fácil uso con ventanas especializadas para los diferentes equipos, y que ofrece al usuario distintas ayudas para facilitar tanto la parametrización de los modelos básicos (armas, sensores, comunicaciones, escenarios...) como la preparación completa de los ejercicios.</p>
+
+<p align=center><img width=800 src="../Images/Ejemplo Preparacion.jpg"></p>
+
+<p>La Herramienta de Preparación se compone de una ventana principal que dispone de un menú principal a través del cual accedemos a las distintas ventanas específicas para la preparación de cada uno de los modelos básicos, unidades o ejercicios. Todas estas ventanas se despliegan sobre el área de trabajo de la ventana principal, de forma que pueden ser abiertas varias simultáneamente. La preparación de escenario se realiza sobre ventanas independientes que incorporan una presentación cartográfica.</p>
+
+<p>Al lanzar la Herramienta de Preparación el usuario deberá seleccionar el servidor de BD (Informix, Oracle o ODBC) con el que va a trabajar, y la BD concreta. Para acceder a la BD deberá introducir también usuario y clave adecuada.</p>
+
+<p align=center><img width=300 src="../IlvImages/LoginDBwnd.jpg"></p>
+
+<p>El menú principal de la Herramienta de Preparación tiene la siguiente estructura de submenús:</p>
+
+<table align=center border=5 cellspacing=3 cellpadding=5 style='border:none'>
+
+<tr>
+	<td width=220 rowspan=9 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p>Preparación</p>
+	<p>modelos</p>
+	<p>básicos</p>
+	</td>
+	<td width=160 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p>Dinámica</p>
+	</td>
+	<td width=360 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p>Aceleración y Giro de Superficies y Submarinos</p>
+	<p>Consumo de Combustible de Superficies y Submarinos</p>
+	<p>Consumo de Batería de Submarinos</p>
+	<p>Recarga de Batería de Submarinos</p>
+	<p>Aceleración y Giro de Terrestres</p>
+	<p>Aceleración y Giro de Aéreas</p>
+	<p>Consumo de Combustible de Aéreas según Altura</p>
+	<p>Consumo de Combustible de Aéreas según Carga</p>
+	<p>Reducción de Aceleración de Aéreas según Carga</p>
+	<p>Firma Acústica de Superficie</p>
+	<p>Firma Acústica de Submarinos</p>
+	<p>Hélices</p>
+	<p>Cota según Largada</p>
+	<p>Mástiles de Submarinos</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p>Plataformas</p>
+	</td>
+	<td width=260 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p>Superficies</p>
+	<p>Submarinos</p>
+	<p>Aviones</p>
+	<p>Helicópteros</p>
+	<p>Bases</p>
+	<p>Terrestres</p>
+	</td>
+</tr>
+ 
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p>Sensores</p>
+	</td>
+	<td width=260 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p>Infrarrojo</p>
+	<p>Radares</p>
+	<p>ESM</p>
+	<p>IFF</p>
+	<p>NVG</p>
+	<p>Sonares Activo</p>
+	<p>Sonares Pasivo</p>
+	<p>Sonoboyas</p>
+	<p>Procesador de Sonoboyas</p>
+	<p>MAD</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p>Armas</p>
+	</td>
+	<td width=130 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p>Seeker</p>
+	<p>Misiles</p>
+	<p>Torpedos</p>
+	<p>Cargas de Profundidad</p>
+	<p>Municiones</p>
+	<p>Artillería</p>
+	<p>Bombas</p>
+	<p>Minas</p>
+	<p>Configuraciones de Armas aéreas</p>	
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p>Contramedidas</p>
+	</td>
+	<td width=130 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p>ECM</p>
+	<p>Cartuchos Chaff</p>
+	<p>Morteros Chaff</p>
+	<p>Productor de Ruido</p>
+	<p>Señuelos</p>
+	<p>COMSM</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial><b>
+ 	<p>Comunicaciones</p>
+ 	</td>
+	<td width=130 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p>Equipos de Comunicaciones</p>
+	<p>Planes de Frecuencia</p>
+	<p>Satélite</p>
+	<p>Boyas de Comunicaciones</p>
+	<p>Planes EMCON</p>
+	</td>
+</tr>
+ 
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p>Ambientales</p>
+ 	</td>
+	<td width=260 colspan=2 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p>Condiciones Ambientales</p>
+	<p>(Acústica, Electromagnetismo, Meteorología)</p>
+	<p>Batitermia</p>
+	<p>Tabla Horaria</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial><b>
+ 	<p>Programación de Acciones</p>
+ 	</td>
+	<td width=260 colspan=2 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p>Programación de Acciones</p>
+	<p>Acciones</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#CCCCCC'><b>
+	<font color=#084B8A size=2 face=arial>
+ 	<p>ROE</p>
+ 	</td>
+	<td width=260 colspan=2 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p>Condicionantes</p>
+	<p>Autorizaciones</p>
+	<p>Perfil ROE</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+ 	<p>Preparación de Unidadess</p>
+ 	</td>
+	<td colspan=2 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+ 	<p>Superficie</p>
+ 	<p>Submarino</p>
+ 	<p>Aviones</p>
+ 	<p>Helicópteros</p>
+ 	<p>Base</p>
+ 	<p>Terrestres</p>
+ 	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+ 	<p>Preparación de Escenarios</p>
+ 	</td>
+	<td colspan=2 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+ 	<p>Edición de Cartas</p>
+ 	<p>Edición de Escenarios</p>
+ 	</td>
+</tr>
+
+<tr>
+	<td colspan=3 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+ 	<p>Preparación de Ejercicios</p>
+ 	</td>
+</tr>
+
+<tr>
+	<td colspan=3 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+ 	<p>Preparación de BD de Mensajería</p>
+ 	</td>
+</tr>
+
+<tr>
+	<td colspan=3 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+ 	<p>Preparación de BD de Bibliografía</p>
+ 	</td>
+</tr>
+
+</table>
+
+<p>La preparación de los Escenarios se realiza mediante un diálogo gráfico donde se presenta la cartografa digital.</p>
+
+<p align=center><img width=800 src="../Images/Ejemplo Preparacion Modelo Basico.jpg"></p>
+
+<ul><li>Lista de modelos disponibles:</li></ul>
+
+<ul>A la izquierda de la ventana se muestra una lista de todas las parametrizaciones de los modelos que hayan sido ya dados de alta en la Base de Datos. Seleccionando un elemento de esta lista, se nos muestra a la derecha los valores de los parámetros correspondientes. Seleccionando la última línea en blanco de esta lista, se inicia la creación de un nuevo registro. Si estando en edición un registro cualquiera, se selecciona otro modelo en la lista, se valida el registro en edición.</ul>
+
+<ul><li>Datos del modelo seleccionado:</li></ul>
+
+<ul>En esta área se muestran todos los valores de los parámetros del modelo. Sobre ésta área el usuario podrá modificar las distintas parametrizaciones dadas de alta en la Base de Datos o introducir una nueva parametrización.</ul>
+
+<ul><li>Barra de navegación:</li></ul>
+
+<p align=center><img width=600 src="../Images/Preparacion - Barra de Navegacion.jpg"></p>
+
+<p>En la parte inferior de la ventana se encuentra una barra de navegación que nos va a permitir gestionar los registros introducidos para el modelo seleccionado. Las acciones que incorpora esta barra son las siguientes:</p>
+
+<ul><li>Ir a Primer Registro</li></ul>
+<ul><li>Registro Anterior</li></ul>
+<ul><li>Registro Siguiente</li></ul>
+<ul><li>Ir a Último Registro</li></ul>
+<ul><li>Nuevo registro</li></ul>
+<ul><li>Eliminar registro</li></ul>
+<ul><li>Validar registro</li></ul>
+<ul><li>Cancelar cambios realizados</li></ul>
+<ul><li>Refrescar datos de registro</li></ul>
+<ul><li>Copiar registro</li></ul>
+<ul><li>Imprimir registro</li></ul>
+<ul><li>Mostrar Ayuda</li></ul>
+
+<p>Cuando se modifican los datos del registro seleccionado en la lista e modelos, se puede validar los cambios introducidos, pulsando el botón Validar de la Barra de Navegación o cancelar los cambios, pulsando el botón Cancelar. Si estando el registro modificado se intenta cerrar la ventana o se intenta seleccionar otro registro en la lista de modelos se preguntará si desea validar los cambios o cancelarlos.</p>
+
+<p>Todas las ventanas específicas para la preparación de cada uno de los modelos básicos, unidades o ejercicios tienen dos campos, que se describen aquí, y no se repite esta descripción en cada una de las ventanas:</p>
+
+<p><b>Nombre</b>: Este parámetro determina el nombre del modelo parametrizado, el cual es tenido en cuenta como un identificador único del modelo. Debe ser introducido obligatoriamente. Este campo está limitado a 30 caracteres alfanuméricos.</p>
+
+<p><b>Clasificación</b>: Este parámetro determina el nivel de clasificación de los datos del modelo. Puede tomar los siguientes valores:</p>
+
+<ul><li>SIN CLASIFICAR</li></ul>
+<ul><li>CONFIDENCIAL</li></ul>
+<ul><li>NATO SECRETO</li></ul>
+<ul><li>RESERVADO</li></ul>
+
+<ul>Además de establecer una clasificación de la información introducida en la BD, este parámetro es tenido en cuenta por los modelos de ESM y COMSM para determinar si muestran información de los equipos detectados.</ul>
+
+<p>Otras características comunes a todas las ventanas específicas para la preparación de cada uno de los modelos básicos, unidades o ejercicios son:</p>
+
+<ul><li>Junto a cada submodelo seleccionable se encuentra un botón (con etiqueta “...”) mediante el cual el operador podrá desplegar la ventana de parametrización de dicho modelo. Sobre esta ventana, se podrán consultar todos los modelos disponibles, y seleccionar el deseado haciendo doble pulsación sobre su nombre en la lista.</li></ul>
+
+<ul><li>El rango válido para todos los campos numéricos de estas ventanas puede consultarse posicionando el cursor sobre el nombre del campo, mediante ayuda tipo “tooltip”. Con respecto a los campos de tipo flotante (que admiten parte decimal), el tooltip indica el rango, es decir, el valor mínimo y máximo para el campo, y da una recomendación de la precisión aconsejada (número de cifras decimales) por consideraciones de utilización posterior en ejecución y presentación en consola, pero no implica en ningún momento que los valores tengan una máscara de entrada con la precisión indicada el tooltip.</li></ul>
+
+<p>Además de estos submenús, el menú principal cuenta también con los siguientes submenús:</p>
+
+<ul><li>Menú <b>Ventana</b> a través del cual se accede a distintas acciones sobre las ventanas abiertas (Cerrar, Cerrar todas, Siguiente, Anterior y Cascada).</li></ul>
+
+<ul><li>Menú <b>Utilidades</b> a través del cual accedemos a la selección de idioma de la herramienta, y a las siguientes utilidades para mantenimiento de la Base de Datos:</li></ul>
+
+<p><b>Utilidades de Exportación / Importación</b>. Abren los siguientes diálogos:</p>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvMain/ExportWnd.jpg"></p>
+
+<p>Los datos de la Exportación que deben introducirse son:</p>
+
+<ul><li>Base de Datos: nombre de la BD (usuario) que se desea Exportar.</li></ul>
+
+<ul><li>Ruta y Fichero de Exportación: ruta completa y nombre del fichero que deseamos Exportar. Se generará también un fichero de log de la exportación, con el mismo nombre que el fichero importado.</li></ul>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvMain/ImportWnd.jpg"></p>
+
+<p>Los datos de la Importación que deben introducirse son:</p>
+
+<ul><li>Base de Datos de Origen: nombre de la BD (usuario) de la que se realizó la exportación que ahora deseamos importar.</li></ul>
+
+<ul><li>Base de Datos de Destino: nombre de BD (usuario) sobre el que deseamos realizar la importación.</li></ul>
+
+<ul><li>Ruta y Fichero de Importación: ruta completa y nombre del fichero que deseamos importar. Se generará también un fichero de log de la importación, con el mismo nombre que el fichero importado.</li></ul>
+
+<p>Para poder realizar una Exportación o Importación de una Base de Datos, la conexión debe realizarse con un usuario con permisos DBA (DataBase Administrator). El nombre del Servicio de conexión con el SGBD puede ser configurado en Galeon.rc, de forma que no es necesario insertarlo.</p>
+
+<p><b>Utilidad de Ejecución de Scripts</b>. Abre el siguiente diálogo:</p>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvMain/SqlScriptWnd.jpg"></p>
+
+<ul>Mediante esta utilidad se pueden ejecutar contra el SGBD los distintos scripts suministrados con el sistema para realizar labores de administración de la BD Oracle del Simulador Táctico Galeón. Los scripts y su uso se describen en el apartado Anexos – Administración del Sistema – Administración de la BD.</ul>
+
+<p><b>Menú Ayuda</b> a través del cual se accede a los Temas de Ayuda online del sistema y a la ventana de "Acerca de …".</p>
+
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvMain/AboutWnd.jpg"></p>
+
+<p>Por último, en la parte inferior de la ventana principal se muestra información del estado de la conexión de la aplicación con la Base de Datos.</p>
+
+</div>
+
+</body>
+
+</html>

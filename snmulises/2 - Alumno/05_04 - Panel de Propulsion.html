@@ -1,0 +1,242 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Panel de Propulsión</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>En este panel están las palancas de control de revoluciones y de paso de hélice del buque.</p>
+
+<p>Para que las demandas de régimen solicitadas a través de estas palancas, sean aceptadas, debe existir algún motor arrancado y embragado en el eje correspondiente.</p>
+
+<p align=center><img width=300 src="../Imagenes/SNPModuloControlPropulsion.jpg"></p>
+
+<p>El funcionamiento de estas palancas varía dependiendo del tipo de propulsión del buque que se controle. El simulador contempla varias posibles configuraciones para la propulsión del buque (ver apartado “Preparación de la Base de Datos / Preparación de Modelos Básicos / Plataformas/ Plataformas 3 GDL” del Manual de Instructor):</p>
+
+<ul>
+	<li>Un solo eje con paso de hélice fijo</li>
+	<li>Un solo eje con paso de hélice variable</li>
+	<li>Dos ejes con paso de hélice fijo</li>
+	<li>Dos ejes con paso de hélice variable</li>
+</ul>
+
+<p>Además, en el caso de propulsión con un solo eje, es posible controlar el paso de hélice (PH) y las revoluciones (RPM) con una sola palanca o usar una palanca para controlar las RPM y la otra para el PH. El uso de una o dos palancas se establece en el fichero de configuración (ulises.ini) y solo afecta a buques con un solo eje.</p>
+
+<p>A continuación se describe el funcionamiento de las palancas en cada caso:</p> 
+
+<p><b>Un solo eje con paso de hélice fijo</b></p>
+
+<p>En este caso la palanca de la derecha controla las revoluciones y la dirección del buque avante/atrás, de manera que al desplazar la palanca hacia adelante la dirección es avante y al desplazarla hacia atrás la dirección es atrás, siendo la posición central de la palanca la posición de parada.</p> 
+
+<p>La palanca de la izquierda no tiene ningún efecto.</p>
+
+<p>Para el funcionamiento correcto de la palanca, la tabla de propulsión que se aplica al modelo matemático del buque debe rellenarse correctamente (ver el apartado <i>Preparación de la Base de Datos/…/Plataformas 3 GDL</i> del Manual de Instructor), tal como se indica a continuación:</p>
+
+<ul>
+	<li>Los valores de RPM deben ser positivos avante y negativos atrás y ordenados de menor a mayor desde la posición Avante 1 hasta Avante 5 y desde Atrás 1 hasta Atrás 5.</li><br>
+	
+	<li>Los valores de PH de la tabla son ignorados, se considera 100%, por tanto no es necesario introducirlos.</li>
+</ul>
+
+<p>Ejemplo:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td align=center width=40><font size=2 face=arial></td>
+		<td align=center width=60><font size=2 face=arial><b>Avante 5</b></td>
+		<td align=center width=60><font size=2 face=arial><b>Avante 4</b></td>
+		<td align=center width=60><font size=2 face=arial><b>Avante 3</b></td>
+		<td align=center width=60><font size=2 face=arial><b>Avante 2</b></td>
+		<td align=center width=60><font size=2 face=arial><b>Avante 1</b></td>
+		<td align=center width=60><font size=2 face=arial><b>Parada</b></td>
+		<td align=center width=60><font size=2 face=arial><b>Atrás 1</b></td>
+		<td align=center width=60><font size=2 face=arial><b>Atrás 2</b></td>
+		<td align=center width=60><font size=2 face=arial><b>Atrás 3</b></td>
+		<td align=center width=60><font size=2 face=arial><b>Atrás 4</b></td>
+		<td align=center width=60><font size=2 face=arial><b>Atrás 5</b></td>
+	</tr>
+
+	<tr>
+		<td align=left width=40><font size=2 face=arial><b>RPM</b></td>
+		<td align=center width=60><font size=2 face=arial>400</td>
+		<td align=center width=60><font size=2 face=arial>310</td>
+		<td align=center width=60><font size=2 face=arial>220</td>
+		<td align=center width=60><font size=2 face=arial>140</td>
+		<td align=center width=60><font size=2 face=arial>70</td>
+		<td align=center width=60><font size=2 face=arial>0</td>
+		<td align=center width=60><font size=2 face=arial>-60</td>
+		<td align=center width=60><font size=2 face=arial>-120</td>
+		<td align=center width=60><font size=2 face=arial>-180</td>
+		<td align=center width=60><font size=2 face=arial>-225</td>
+		<td align=center width=60><font size=2 face=arial>-250</td>
+	</tr>
+
+	<tr>
+		<td align=left width=40><font size=2 face=arial><b>PH</b></td>
+		<td align=center width=60><font size=2 face=arial>100</td>
+		<td align=center width=60><font size=2 face=arial>100</td>
+		<td align=center width=60><font size=2 face=arial>100</td>
+		<td align=center width=60><font size=2 face=arial>100</td>
+		<td align=center width=60><font size=2 face=arial>100</td>
+		<td align=center width=60><font size=2 face=arial>-</td>
+		<td align=center width=60><font size=2 face=arial>100</td>
+		<td align=center width=60><font size=2 face=arial>100</td>
+		<td align=center width=60><font size=2 face=arial>100</td>
+		<td align=center width=60><font size=2 face=arial>100</td>
+		<td align=center width=60><font size=2 face=arial>100</td>
+	</tr>
+</table>
+
+<p><b>Un solo eje con paso de hélice variable</b></p>
+
+<p>Hay que tener en cuenta la configuración de las palancas establecida en Ulises.ini.</p>
+
+<ul>
+
+	<p><b>Control conjunto de RPM y PH (una palanca).</b></p>
+
+	<p>En este caso la palanca de la derecha controla las revoluciones, el paso de hélice y la dirección del buque avante/atrás, de manera que al desplazar la palanca hacia adelante la dirección es avante y al desplazarla hacia atrás la dirección es atrás, siendo la posición central de la palanca la posición de parada.</p>
+
+	<p>La palanca de la izquierda no tiene ningún efecto.</p>
+
+	<p>Para el funcionamiento correcto de la palanca, la tabla de propulsión que se aplica al modelo matemático del buque debe rellenarse correctamente (ver el apartado “Preparación de la Base de Datos/…/Plataformas 3 GDL” del Manual de Instructor), tal como se indica a continuación:</p>
+
+	<ul>
+		<li>Los valores de RPM deben ser positivos avante y atrás y ordenados de menor a mayor desde la posición 1 hasta la 5, en ambas direcciones.</li><br>
+		
+		<li>Los valores de PH de la tabla ser positivos avante y negativos atrás y ordenados de menor a mayor desde la posición Avante 1 hasta Avante 5 y desde Atrás 1 hasta Atrás 5.</li>
+	</ul>
+
+	<p>Ejemplo:</p>
+
+	<table border=1 cellspacing=0 cellpadding=5>
+		<tr>
+			<td align=center width=40><font size=2 face=arial></td>
+			<td align=center width=60><font size=2 face=arial><b>Avante 5</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Avante 4</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Avante 3</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Avante 2</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Avante 1</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Parada</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Atrás 1</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Atrás 2</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Atrás 3</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Atrás 4</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Atrás 5</b></td>
+		</tr>
+
+		<tr>
+			<td align=left width=40><font size=2 face=arial><b>RPM</b></td>
+			<td align=center width=60><font size=2 face=arial>400</td>
+			<td align=center width=60><font size=2 face=arial>310</td>
+			<td align=center width=60><font size=2 face=arial>220</td>
+			<td align=center width=60><font size=2 face=arial>140</td>
+			<td align=center width=60><font size=2 face=arial>70</td>
+			<td align=center width=60><font size=2 face=arial>0</td>
+			<td align=center width=60><font size=2 face=arial>-60</td>
+			<td align=center width=60><font size=2 face=arial>-120</td>
+			<td align=center width=60><font size=2 face=arial>-180</td>
+			<td align=center width=60><font size=2 face=arial>-225</td>
+			<td align=center width=60><font size=2 face=arial>-250</td>
+		</tr>
+
+		<tr>
+			<td align=left width=40><font size=2 face=arial><b>PH</b></td>
+			<td align=center width=60><font size=2 face=arial>100</td>
+			<td align=center width=60><font size=2 face=arial>80</td>
+			<td align=center width=60><font size=2 face=arial>60</td>
+			<td align=center width=60><font size=2 face=arial>40</td>
+			<td align=center width=60><font size=2 face=arial>20</td>
+			<td align=center width=60><font size=2 face=arial>-</td>
+			<td align=center width=60><font size=2 face=arial>-10</td>
+			<td align=center width=60><font size=2 face=arial>-30</td>
+			<td align=center width=60><font size=2 face=arial>-45</td>
+			<td align=center width=60><font size=2 face=arial>-60</td>
+			<td align=center width=60><font size=2 face=arial>-75</td>
+		</tr>
+	</table>
+
+	<p><b>Control independiente de RPM y PH (dos palancas).</b></p>
+
+	<p>En este caso la palanca de la derecha controla las revoluciones del buque y la palanca de la izquierda controla el paso de hélice.</p>
+
+	<p>La palanca de control de revoluciones se utiliza para seleccionar las revoluciones del buque mediante el desplazamiento y posicionamiento de la palanca entre la posición Mínima y Máxima del recorrido de la misma y la palanca de paso de hélice permite seleccionar el paso de hélice así como la dirección avante/atrás.</p>
+
+	<p>Para el funcionamiento correcto de las palancas, la tabla de propulsión que se aplica al modelo matemático del buque debe rellenarse correctamente (ver el apartado “Preparación de la Base de Datos/…/Plataformas 3 GDL” del Manual de Instructor), tal como se indica a continuación:</p>
+
+	<ul>
+		<li>Los valores de RPM deben ser positivos avante y atrás y ordenados de menor a mayor desde la posición Avante 1 hasta la posición Atrás 5.</li><br>
+
+		<li>Los valores de PH de la tabla ser positivos avante y negativos atrás y ordenados de menor a mayor desde la posición Avante 1 hasta Avante 5 y desde Atrás 1 hasta Atrás 5.</li>
+	</ul>
+
+	<p>Ejemplo:</p>
+
+	<table border=1 cellspacing=0 cellpadding=5>
+		<tr>
+			<td align=center width=40><font size=2 face=arial></td>
+			<td align=center width=60><font size=2 face=arial><b>Avante 5</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Avante 4</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Avante 3</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Avante 2</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Avante 1</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Parada</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Atrás 1</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Atrás 2</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Atrás 3</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Atrás 4</b></td>
+			<td align=center width=60><font size=2 face=arial><b>Atrás 5</b></td>
+		</tr>
+
+		<tr>
+			<td align=left width=40><font size=2 face=arial><b>RPM</b></td>
+			<td align=center width=60><font size=2 face=arial>10</td>
+			<td align=center width=60><font size=2 face=arial>150</td>
+			<td align=center width=60><font size=2 face=arial>250</td>
+			<td align=center width=60><font size=2 face=arial>370</td>
+			<td align=center width=60><font size=2 face=arial>410</td>
+			<td align=center width=60><font size=2 face=arial>490</td>
+			<td align=center width=60><font size=2 face=arial>550</td>
+			<td align=center width=60><font size=2 face=arial>600</td>
+			<td align=center width=60><font size=2 face=arial>640</td>
+			<td align=center width=60><font size=2 face=arial>680</td>
+			<td align=center width=60><font size=2 face=arial>710</td>
+		</tr>
+
+		<tr>
+			<td align=left width=40><font size=2 face=arial><b>PH</b></td>
+			<td align=center width=60><font size=2 face=arial>100</td>
+			<td align=center width=60><font size=2 face=arial>80</td>
+			<td align=center width=60><font size=2 face=arial>60</td>
+			<td align=center width=60><font size=2 face=arial>40</td>
+			<td align=center width=60><font size=2 face=arial>20</td>
+			<td align=center width=60><font size=2 face=arial>-</td>
+			<td align=center width=60><font size=2 face=arial>-20</td>
+			<td align=center width=60><font size=2 face=arial>-40</td>
+			<td align=center width=60><font size=2 face=arial>-60</td>
+			<td align=center width=60><font size=2 face=arial>-80</td>
+			<td align=center width=60><font size=2 face=arial>-100</td>
+		</tr>
+	</table>
+
+</ul>
+
+<p><b>Dos ejes con paso de hélice fijo</b></p>
+
+<p>En este caso cada palanca controla un eje de la misma forma que se describe para el caso de un solo eje con paso de hélice fijo.</p>
+
+<p><b>Dos ejes con paso de hélice variable</b></p>
+
+<p>En este caso cada palanca controla un eje de la misma forma que se describe para el caso de un solo eje con paso de hélice variable con control conjunto de RPM y PH.</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,267 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Estructura de los Informes</font></b></p>
+
+<font size=2 face=arial>
+
+<p>Los informes de Acciones y Reacciones se clasifican en los siguientes tipos:</p>
+
+<ul>
+	<li>Informes de Lanzamiento de Misiles</li>
+	<li>Informes de Lanzamientos de Torpedos</li>
+	<li>Informes de Reacción Anti-misil</li>
+	<li>Informes de Reacción Anti-torpedo</li>
+	<li>Informes de Reacción Ante Contacto Sónar</li>
+</ul>
+
+<p>A continuación se describe la estructura de cada uno de estos informes</p>
+
+<p><b>Informes de Acción Lanzamiento de Misil</b></p>
+
+<p>Este informe se genera seleccionando un lanzamiento de la lista de lanzamientos de misiles del ejercicio. Debe contener los siguientes datos relativos a dicho lanzamiento:</p>
+
+<p>Datos Generales del Lanzamiento:</p>
+
+<ul>
+	<li>Hora de lanzamiento.</li>
+	<li>Unidad lanzadora.</li>
+	<li>Misil lanzado.</li>
+	<li>Lista de seekers separados por comas.</li>
+	<li>Blanco.</li>
+</ul>
+
+<p>Datos del Comienzo de búsqueda:</p>
+
+<ul>
+	<li>Hora de comienzo de búsqueda.</li>
+</ul>
+
+<p>Datos de la Fase de seguimiento:</p>
+
+<ul>
+	<li>Hora de comienzo de ataque.</li>
+	<li>Unidades detectadas en el momento del inicio del seguimiento.</li>
+	<li>Chaffs detectados en el momento del inicio del seguimiento (puede que el misil no los haya identificado como tales).</li>
+	<li>Unidad en lock-on (si procede).</li>
+</ul>
+
+<p>Datos del Impacto:</p>
+
+<ul>
+	<li>Hora de impacto.</li>
+	<li>Unidad con la que se impacta.</li>
+</ul>
+
+<p><b>Informes de Acción Lanzamiento de Torpedo</b></p>
+
+<p>Este informe se genera seleccionando un lanzamiento de la lista de lanzamientos de misiles del ejercicio. Debe contener los siguientes datos relativos a dicho lanzamiento:</p>
+
+<p>Datos Generales del Lanzamiento:</p>
+
+<ul>
+	<li>Hora de lanzamiento.</li>
+	<li>Unidad lanzadora.</li>
+	<li>Torpedo lanzado.</li>
+	<li>Lista de sonares separados por comas.</li>
+	<li>Blanco.</li>
+</ul>
+
+<p>Datos del Comienzo de búsqueda:</p>
+
+<ul>
+	<li>Hora de comienzo de búsqueda.</li>
+</ul>
+
+<p>Datos de la Fase de seguimiento:</p>
+
+<ul>
+	<li>Hora de comienzo de ataque.</li>
+	<li>Unidades detectadas en el momento del inicio del seguimiento.</li>
+	<li>Burbujas detectadas en el momento del inicio del seguimiento (puede que el misil no los haya identificado como tales).</li>
+	<li>Foxers detectados en el momento de inicio del seguimiento.</li>
+</ul>
+
+<p>Impacto:</p> 
+
+<ul>
+	<li>Hora de impacto.</li>
+	<li>Unidad con la que se impacta.</li>
+</ul>
+
+
+<p><b>Informes de Reacción Anti Misil</b></p> 
+
+<p>Este informe se genera seleccionando un lanzamiento de la lista de lanzamientos de misiles del ejercicio y una unidad. Debe contener los siguientes datos relativos a dicho lanzamiento y a la reacción de la unidad ante él:</p>
+
+<p>Datos Generales del Lanzamiento:</p>
+
+<ul>
+	<li>Hora de lanzamiento.</li>
+	<li>Unidad lanzadora.</li>
+	<li>Misil lanzado.</li>
+	<li>Lista de seekers,</li>
+	<li>Blanco.</li>
+</ul>
+
+<p>Datos de Alertas del filtro ASMD de cañones en la Unidad:</p>
+
+<ul>
+	<li>Hora de inicio de la alarma.</li>
+	<li>Parámetros del filtro ASMD (velocidad, CPA, altura,...).</li>
+	<li>Datos del blanco: (velocidad, rumbo, altura,...).</li>
+	<li>Hora de fin de la alerta.</li>
+	<li>Datos del misil al fin de la alerta: (velocidad, rumbo, altura,...).</li>
+</ul>
+
+<p>Datos de Alertas del filtro ASMD para chaffs en la Unidad:</p> 
+
+<ul>
+	<li>Hora de inicio de la alerta.</li>
+	<li>Parámetros del filtro ASMD (velocidad, CPA, altura,...).</li>
+	<li>Datos del blanco: (velocidad, rumbo, altura,...).</li>
+	<li>Hora de fin de la alerta.</li>
+	<li>Datos del misil al fin de la alerta: (velocidad, rumbo, altura,...).</li>
+</ul>
+
+<p>Datos de respuesta con fuego sobre el misil:</p>
+
+<ul>
+	<li>Hora de inicio de disparo con cañón.</li>
+	<li>Hora de fin de disparo con cañón.</li>
+	<li>Hora de lanzamiento de misil de reacción.</li>
+	<li>Tipo de misil lanzado como reacción.</li>
+	<li>Hora de impacto sobre el misil.</li>
+</ul>
+
+<p>Datos de misil derribado por fuego enemigo:</p> 
+
+<ul>
+	<li>Hora de destrucción del misil.</li>
+</ul>
+
+<p>Datos de la Fase de búsqueda:</p>
+
+<ul>
+	<li>Hora de inicio de búsqueda.</li>
+</ul>
+
+<p>Datos de la Fase de seguimiento:</p>
+
+<ul>
+	<li>Hora de adquisición de blanco.</li>
+	<li>Hora de perdida de blanco. (Se pasa a Fase de búsqueda).</li>
+</ul>
+
+<p>Datos del Impacto:</p>
+
+<ul>
+	<li>Hora de impacto.</li>
+	<li>Unidad impactada.</li>
+</ul>
+
+<p><b>Informes de Reacción Anti Torpedo</b></p>
+
+<p>Este informe se genera seleccionando un lanzamiento de la lista de lanzamientos de misiles del ejercicio y una unidad. Debe contener los siguientes datos relativos a dicho lanzamiento y a la reacción de la unidad ante él:</p>
+
+<p>Datos Generales del Lanzamiento:</p>
+
+<ul>
+	<li>Hora de lanzamiento.</li>
+	<li>Unidad lanzadora.</li>
+	<li>Torpedo lanzado.</li>
+	<li>Lista de sonares que monta el torpedo.</li>
+	<li>Blanco.</li>
+</ul>
+
+<p>Datos de Foxer en la Unidad:</p>
+
+<ul>
+	<li>Hora en el que se detecta que se despliega el foxer.</li>
+	<li>Hora en el que el foxer está totalmente desplegado.</li>
+	<li>Parámetros de funcionamiento del foxer (Ciclo, filtros activados).</li>
+	<li>Parámetros del torpedo (distancia al foxer, rumbo, orientación,...).</li>
+	<li>Hora a la que se desactiva el foxer. (puede pertenecer a un ciclo en OFF).</li>
+</ul>
+
+<p>Datos de Burbujas en la Unidad:</p>
+
+<ul>
+	<li>Hora de lanzamiento de la burbuja.</li>
+	<li>Tipo de burbuja lanzada./li>
+	<li>Datos de la unidad reportada.</li>
+	<li>Datos meteorológicos (corriente).</li>
+</ul>
+
+<p>Datos de la Fase de búsqueda:</p>
+
+<ul>
+	<li>Hora de inicio de búsqueda.</li>
+</ul>
+
+<p>Datos de la Fase de seguimiento:</p>
+
+<ul>
+	<li>Hora de adquisición de blanco.</li>
+	<li>Hora de perdida de blanco. (Se pasa a Fase de búsqueda).</li>
+	<li>Hora de cambio de blanco. (Si se cambia de blanco sin pasar a búsqueda).</li>
+</ul>
+
+<p>Datos de Impacto:</p>
+
+<ul>
+	<li>Hora de impacto.</li>
+	<li>Unidad impactada.</li>
+</ul>
+
+<p><b>Informes de Reacción Ante Contacto Sonar</b></p>
+
+<p>Este informe se genera seleccionando una posible contacto sonar, es decir, un falso eco o un submarino y una unidad de entre las participantes en el ejercicio. El sistema presentará al instructor una lista con los instantes en que existió detección de dicho contacto en la unidad. Seleccionando uno de esos instantes se generará el informe correspondiente, que debe contener los siguientes datos relativos a dicho contacto y a la reacción de la unidad ante él:</p>
+
+<p>Datos Generales del Contacto:</p>
+
+<ul>
+	<li>Hora de contacto.</li>
+	<li>Unidad que ha realizado el contacto.</li>
+	<li>Sonar con el que se realiza el contacto.</li>
+	<li>Blanco detectado.</li>
+</ul>
+
+<p>Datos del Foxer:</p>
+
+<ul>
+	<li>Hora en el que se detecta que se despliega el foxer.</li>
+	<li>Hora en el que el foxer está totalmente desplegado.</li>
+	<li>Parámetros de funcionamiento del foxer (Ciclo, filtros activados).</li>
+	<li>Parámetros de funcionamiento sonar.</li>
+	<li>Parámetros del blanco (velocidad, distancia, demora, rumbo,...).</li>
+	<li>Hora a la que se desactiva el foxer (puede pertenecer a un ciclo en OFF).</li>
+</ul>
+
+<p>Datos de Burbujas:</p>
+
+<ul>
+	<li>Hora de lanzamiento de la burbuja.</li>
+	<li>Tipo de burbuja lanzada.</li>
+	<li>Parámetros del blanco (velocidad, distancia, demora, rumbo,...).</li>
+	<li>Datos meteorológicos (corriente).</li>
+</ul>
+
+<p>Datos de Pérdida de contacto:</p>
+
+<ul>
+	<li>Hora de Pérdida.</li>
+</ul>
+
+</div>
+
+</body>
+
+</html>
+

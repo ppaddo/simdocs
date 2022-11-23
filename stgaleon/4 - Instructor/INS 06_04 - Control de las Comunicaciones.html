@@ -1,0 +1,75 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Control de Comunicaciones</font></b></p>
+
+<font size=2 face=arial>
+
+
+<p>En el diálogo de Control de Comunicaciones, se presentan distintas subventanas, en las que el Instructor puede llevar a cabo acciones para control de las redes de fonía, mensajería y Link11:</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/CommunicationsWnd.jpg"></p>
+
+<p><b>Control de Fonía:</b></p>
+
+<p>Mediante la subventana de control de Fonía el Instructor puede aplicar un nivel de ruido en las Redes de Fonía del Ejercicio y acceder al diálogo de Fonía específico del Instructor:</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/CommunicationWndNtbPhonia.jpg"></p>
+
+<p>Para aplicar un nivel de ruido en una red, deberá seleccionar la red, introducir el Nivel de Ruido deseado y pulsar el botón Petición. El nivel de ruido se introduce como un valor desde 0 (ninguno) hasta 10 (máximo), y determina el volumen del ruido blanco que se aplicará a la red. La lista de Redes de Fonía puede ser filtrada por bando.</p>
+
+<p>Pulsando el botón <b>Fonía</b> se abre el diálogo de Fonía del Instructor:</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/InstructorPhoneWnd.jpg"></p>
+
+<p>Este diálogo permite al instructor emplear tres redes de fonía simultáneamente, de la misma forma que un alumno (ver apartado <i>Manual de Alumno – Control de unidades – Comunicaciones – Fonía</i>). Además, le permite el empleo del interfono del simulador.</p>
+
+<p><b>Interfono del simulador:</b></p>
+
+<p>El Instructor podrá emplear una red de interfono del simulador para comunicar con los alumnos u otros instructores. Puede ejecutar las siguientes acciones:</p>
+
+<ul>
+	<li>Seleccionar la consola de alumno o instructor con la que desea comunicar.</li>
+	<li>Seleccionar para hablar el interfono del simulador.</li>
+</ul>
+
+<p>El significado de los leds se describe en el apartado <i>Manual de Alumno – Control de unidades – Comunicaciones – Fonía</i>.</p>
+
+<p><b>Control de Mensajería:</b></p>
+
+<p>Mediante la subventana de control de Mensajería el Instructor puede consultar todos los mensajes procesados durante el Ejercicio:</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/CommunicationWndNtbMail.jpg"></p>
+
+<p>La lista de mensajes puede ser filtrada por bando, y por el estado de los mismos. Pulsando el botón Ver, el instructor puede consultar el contenido completo del mensaje:</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_cmmunicationsAux/InstMailsEditionWnd.jpg"></p>
+
+<p><b>Control de Link 11:</b></p>
+
+<p>Mediante la subventana de control de Link 11 el Instructor puede consultar las redes de Link 11:</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_controlModels/CommunicationWndNtbLink11Nets.jpg"></p>
+
+<p>Este diálogo muestra a la izquierda todas las redes de Link 11 formadas en el Ejercicio. Las redes mostradas pueden ser filtradas por bando. La información de estas redes se muestra en árbol, indicando en el nivel raíz la unidad responsable de la red. En el primer nivel se indican las unidades que podrían formar parte de la red y están dentro del alcance del responsable, independientemente de que estén o no en la red. Y en segundo nivel se incluyen todas las unidades que podrían formar parte de la red y que estén dentro del alcance de algunas de las unidades del primer nivel, pero no dentro del alcance de la unidad responsable, independientemente de que estén o no en la red.</p>
+
+<p>El estado con respecto a la red de todas las unidades incluidas en el árbol se indica mediante leds:</p>
+
+<li>Led gris: La unidad podría pertenecer a la red, pero pertenece a otra red (estará en otro árbol).</li>
+<li>Led verde apagado: La unidad pertenece a la red pero no transmite (modo silencio).</li>
+<li>Led verde encendido: La unidad pertenece a la red en modo activo.</li>
+<li>Led amarillo: la unidad podría pertenecer a la red pero está interferida por otra unidad.</li>
+
+<p>Cuando se selecciona una unidad de un árbol (una red) se muestra en la parte derecha de este diálogo la unidad seleccionada, indicando su Numeral, Nombre, Número de PU y Número de PU del responsable de la red a la que pertenece. Además se muestra la lista de unidades que podrían producirle interferencia, es decir, que tienen misma frecuencia y están en alcance, indicando su Numeral, Nombre, Número de PU y Número de PU del responsable de la red a la que pertenece.</p>
+
+</div>
+
+</body>
+
+</html>

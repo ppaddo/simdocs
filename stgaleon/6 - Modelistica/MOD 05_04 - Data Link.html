@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Data Link</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El modelo de Data Link simula la transmisión unidireccional de detecciones desde una aeronave a una unidad de superficie. El Data Link puede tener capacidad de tipo VDL (Video Data Link) o puede tener capacidad para ser configurado en Misión ASUW y / o Misión ASW.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Se realizan las siguientes comprobaciones de condiciones necesarias para que dos unidades puedan establecer comunicación por Data Link:</p>
+
+<ul>
+	<li>Las unidades deben estar en alcance (según el cálculo a continuación), y no debe existir ocultación entre ambas.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>Si el Data Link es tipo VDL, el Alcance Máximo de las comunicaciones es de 30 Millas (configurable en Galeon.ini) y si no es tipo VDL, el alcance es:</p>
+
+<ul><font size=2 face=courier>
+	<p>ALCANCE máximo = Alcance_equipo</p>
+</font></ul>
+
+<p>El valor de Alcance_equipo será:</p>
+
+<ul>
+	<p><font size=2 face=courier>Alcance Equipo UHF = Alcance Horizonte Radar * FactorUHF</font>.</p>
+	<p><font size=2 face=courier>FactorUHF</font> configurables en <b>Galeon.ini</b>.</p>
+	<p><font size=2 face=courier>Alcance Horizonte Radar</font> calculado como se indica en <i>Modelos - Sensores – Radar</i>.</p>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+ 
+<p>El modelo de Data Link simula la transmisión unidireccional de detecciones entre dos unidades (no se pueden formar redes), una de superficie y una aeronave. Por las características del equipo de Data Link, la unidad que transmite las trazas es siempre la aeronave (Helicóptero o Avión), y las que las recibe, una unidad de superficie. Para que exista comunicación entre la aeronave y la unidad de superficie deben ser del mismo bando y deben estar sintonizados en el mismo canal.</p>
+
+<p>El Data Link puede ser de tipo VDL (Video Data Link) o no. Si no es tipo VDL, puede tener capacidad para ser configurado en misión ASUW y/o ASW, en cuyo caso podrá emplearse en modo Misión ASUW (enlace orientado al envío automático de contactos Radar de la aeronave) y / o Misión ASW (enlace orientado al envío automático de contactos Sonar de la aeronave). Aunque la aeronave tenga capacidad para las dos misiones, sólo puede ejecutar una a la vez, aunque puede cambiar de misión dinámicamente.</p>
+
+<p>Los de misión ASUW están orientados a detecciones RADAR y los de misión ASW a detecciones SONAR. El tipo de misión determina los tipos de sensores de los cuales se envían sus detecciones. La transmisión de las detecciones se realiza de forma automática, excepto si el Data Link es de tipo VDL, en cuyo caso el operador debe seleccionar para transmitir sólo una de todas sus detecciones radar.</p>
+
+<p>Cuando se cambia dinámicamente de misión, desaparecen en la unidad receptora todos los contactos de los tipos de sensor que no se transmiten en esa misión, y se mantiene la numeración de los demás.</p>
+
+<p>Los contactos enviados serán los de “video bruto”, y no la clasificación que la aeronave haya hecho de ellos. Las dos unidades que establecen el enlace conocerán todos sus datos sin error.</p>
+
+<p>Cuando una aeronave tiene conexión por data Link con una unidad de superficie, transmite sus detecciones a la unidad superficie. Los contactos enviados según el tipo y misión del Data Link serán los siguientes:</p>
+
+<ul>
+	<li>Para Misión ASUW los contactos a transmitir de forma automática de la aeronave a la unidad de superficie son los obtenidos por los siguientes sensores:</li>
+	<p></p>
+	<ul>
+		<li>RADAR</li>
+		<li>VISUAL</li>
+		<li>ESM</li>
+	</ul>
+</ul>
+
+<ul>
+	<li>Para Misión ASW los contactos a transmitir de forma automática de la aeronave a la unidad de superficie son los obtenidos por los siguientes sensores:</li>
+	<p></p>
+	<ul>
+		<li>VISUAL</li>
+		<li>MAD</li>
+		<li>ESM</li>
+		<li>Sonar Activo / Pasivo</li>
+		<li>Sonoboyas Activas / Pasivas</li>
+	</ul>
+</ul>
+
+<ul>
+	<li>Para Tipo VDL se transmite un contacto radar seleccionado por el operador.</li>
+</ul>
+
+<p><i>Nota</i>: Tanto en Misión ASUW como ASW, la unidad de superficie no puede hacer contramedidas con su ECM contra las detecciones ESM recibidas de la aeronave por el Data Link. En Misión ASW, la unidad de superficie puede controlar el procesador de sonoboyas de la aeronave.</p>
+
+</div>
+
+</body>
+
+</html>

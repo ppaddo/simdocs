@@ -1,0 +1,78 @@
+w<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>AIS</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El modelo simula que una unidad dispone de contacto AIS de todas aquellas unidades que se encuentren dentro de alcance radio y que dispongan de equipo AIS que esté transmitiendo (equipo encendido en modo activo o genérico y con antena VHF disponible) en claro (encriptación no activada).</p>
+
+<p>Si una unidad está transmitiendo AIS con encriptación activada, otra unidad sólo dispondrá de contacto de la misma si es del mismo bando.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo, se realizan las siguientes comprobaciones de condiciones necesarias para la recepción de contactos AIS:</p>
+
+<ul>
+	<li>Comprobar que NO existe ocultación visual entre unidad y contacto.</li>
+	<li>Para unidades submarinas sumergidas, comprobar que el mástil correspondiente está izado.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>El alcance radio para la recepción de contactos AIS es el siguiente:</p>
+
+<ul><font size=2 face=courier>
+	<p>Alcance máximo = Alcance_equipo * Factor_prop_comunicaciones</p>
+	<p>Alcance Equipo = Alcance Horizonte Radar * FactorVHF.</p>
+</font></ul>
+
+<ul>
+	<p><font size=2 face=courier>FactorVHF</font> configurables en Galeon.ini. <br>
+	<font size=2 face=courier>Alcance Horizonte Radar</font> calculado como se indica en <i>Modelos - Sensores – Radar</i>.</p>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>El equipo AIS de una unidad, obtiene contacto AIS de todas aquellas unidades que se encuentren dentro de alcance radio y que dispongan de equipo AIS que esté transmitiendo, es decir que tenga encendido el equipo en modo activo o genérico y con antena VHF disponible, y sin encriptar la transmisión.</p>
+
+<p>Igualmente, los mensajes de texto libre transmitidos por una unidad, serán recibidos por aquellas unidades que cumplan las condiciones establecidas en el párrafo anterior.</p>
+
+<p>Si una unidad está transmitiendo AIS con encriptación activada, otra unidad sólo dispondrá de contacto de la misma si es del mismo bando.</p>
+
+<p>Si una unidad está transmitiendo en modo pasivo, recibe la información del resto de unidades, pero no transmite información propia.</p>
+
+<p>De cada contacto AIS se obtiene la siguiente información:</p>
+
+<ul>
+	<li>Nombre</li>
+	<li>MMSI</li>
+	<li>Número OMI (IMO number)</li>
+	<li>Distintivo de Llamada (Callsign)</li>
+	<li>Tipo / Carga</li>
+	<li>Bandera</li>
+	<li>Estado (Navigational Status)</li>
+	<li>Destino</li>
+	<li>Eslora y Manga</li>
+	<li>Calado</li>
+</ul>
+
+<p>La información obtenida debe coincidir con la que se introdujo para cada unidad en la preparación, a no ser que el alumno que controle las unidades correspondientes modifique los datos transmitidos por el AIS y aplique engaño. En este caso, el contacto aparecerá con la información introducida por el alumno.</p>
+
+<p>Las detecciones obtenidas por AIS no tienen datos de identificación de traza. Se representan con el siguiente símbolo:</p>
+
+<p align=center><img width=150 src="../Images/SimboloAIS.jpg"></p>
+ 
+</div>
+
+</body>
+
+</html>

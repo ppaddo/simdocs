@@ -1,0 +1,139 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Satélite</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvSensors/SatelliteWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Punto Inicial</b>: Este parámetro determina el punto inicial de la trayectoria del satélite. El movimiento del satélite se modela considerando que inicialmente se encuentra en este punto, que se mueve siguiendo una trayectoria según la Dirección y Velocidad especificada, y que una vez transcurrido el tiempo especificado en Repetición del Ciclo vuelve a este Punto Inicial.</p>
+
+<ul>
+	<p><b>Latitud</b>: Latitud del punto inicial.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados y minutos con dos decimales, con el formato: 999º99.99'N/S</p>
+		<p><u>Rango</u>: 000º00.00'N – 089º59.99'N, 000º00.00'S – 089º59.99'S</p>
+	</ul>
+
+	<p><b>Longitud</b>: Longitud del punto inicial.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados y minutos con dos decimales, con el formato: 999º99.99'N/S</p>
+		<p><u>Rango</u>: 000º00.00'E – 179º59.99'E, 000º00.00'W – 179º59.99'W</p>
+	</ul>
+
+</ul>
+
+<p><b>Trayectoria</b>:</p>
+
+<ul>
+	<p><b>Dirección</b>: Este parámetro determina la dirección de la trayectoria que sigue el satélite.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 - 360</p>
+	</ul>
+
+	<p><b>Velocidad</b>: Este parámetro determina la velocidad de la trayectoria que sigue el satélite.</p>
+
+	<ul>
+		<p><u>Unidades</u>: nudos</p>
+		<p><u>Rango</u>: 0 - 999</p>
+	</ul>
+
+</ul>
+
+<p><b>Repetición del Ciclo</b>: Este parámetro determina el tiempo que tarda el satélite el repetir su ciclo de movimiento. Una vez transcurrido este tiempo, se considera que el satélite vuelve a su posición inicial.</p>
+
+<ul>
+	<p><u>Unidades</u>: minutos</p>
+	<p><u>Rango</u>: 0 - 9999</p>
+</ul>
+
+<p><b>Radio de Cobertura</b>: Este parámetro determina el radio del área de cobertura del satélite. La detección de móviles por el satélite se realizará sobre aquellos móviles que están dentro de la circunferencia formada por la posición del satélite según su trayectoria, y este radio de cobertura.</p>
+
+<ul>
+	<p><u>Unidades</u>: Millas</p>
+	<p><u>Rango</u>: 0 - 999</p>
+</ul>
+
+<p><b>Retardo en la Información</b>: Este parámetro determina el retardo con el que la información del satélite es recibida por los equipos receptores satélite. Es tenido en cuenta como la periodicidad con la que el modelo de satélite es evaluado.</p>
+
+<ul>
+	<p><u>Unidades</u>: minutos</p>
+	<p><u>Rango</u>: 0 - 999</p>
+</ul>
+
+<p><b>Infrarrojo</b>: Este parámetro determina si el satélite tiene capacidad de detección de móviles por Infrarrojo. Si es así, el satélite detectará aquellos móviles dentro del área de cobertura cuyo tamaño infrarrojo sea mayor o igual que el tamaño infrarrojo mínimo de detección especificado en el siguiente campo.</p>
+
+<ul>
+	<p><b>Tamaño ></b>: Tamaño infrarrojo mínimo de detección del satélite. Sólo podrá ser introducido si el satélite tiene capacidad Infrarrojo.</p>
+
+	<ul>
+		<p><u>Unidades</u>: m2</p>
+		<p><u>Rango</u>: 0 - 99999</p>
+	</ul>
+</ul>
+
+<p><b>Foto</b>: Este parámetro determina si el satélite tiene capacidad de detección de móviles por Visual. Si es así, el satélite detectará aquellos móviles dentro del área de cobertura cuyo tamaño visual sea mayor o igual que el tamaño visual mínimo de detección especificado en el siguiente campo.</p>
+
+<ul>
+	<p><b>Tamaño ></b>: Tamaño visual mínimo de detección del satélite. Sólo podrá ser introducido si el satélite tiene capacidad Foto.</p>
+
+	<ul>
+		<p><u>Unidades</u>: m2</p>
+		<p><u>Rango</u>: 0 - 99999</p>
+	</ul>
+</ul>
+
+<p><b>ESM</b>: Este parámetro determina si el satélite tiene capacidad de detección de móviles por ESM. Si es así, el satélite detectará aquellos móviles dentro del área de cobertura cuyos radares y / o ECM estén en funcionamiento a una frecuencia que se encuentre dentro de los límites establecidos por frecuencia mínima y frecuencia máxima especificadas en los siguientes campos (incluyendo los valores extremos del intervalo).</p>
+
+<ul>
+	<p><b>Frecuencia Mínima</b>: Frecuencia mínima de detección de satélite por ESM. Sólo podrá ser introducido si el satélite tiene capacidad ESM.</p>
+
+	<ul>
+		<p><u>Unidades</u>: MHz</p>
+		<p><u>Rango</u>: 0 - 99999</p>
+	</ul>
+
+	<p><b>Frecuencia Máxima</b>: Frecuencia máxima de detección de satélite por ESM. Sólo podrá ser introducido si el satélite tiene capacidad ESM.</p>
+
+	<ul>
+		<p><u>Unidades</u>: MHz</p>
+		<p><u>Rango</u>: 0 - 99999</p>
+	</ul>
+</ul>
+
+<p><b>Radar</b>: Este parámetro determina si el satélite tiene capacidad de detección de móviles por Radar. Si es así, el satélite detectará aquellos móviles dentro del área de cobertura cuyo tamaño RCS sea mayor o igual que el tamaño RCS mínimo de detección especificado en el siguiente campo.</p>
+
+<ul>
+	<p><b>Tamaño RCS</b>: Tamaño RCS mínimo de detección del satélite. Sólo podrá ser introducido si el satélite tiene capacidad Radar.</p>
+
+	<ul>
+		<p><u>Unidades</u>: m2</p>
+		<p><u>Rango</u>: 0 - 99999</p>
+	</ul>
+
+	<p><b>Frecuencia</b>: Este parámetro determina la frecuencia de operación del modelo radar asociado al satélite. Es tenido en cuenta en el cálculo del tamaño RCS de los móviles. Sólo podrá ser introducido si el satélite tiene capacidad Radar.</p>
+
+	<ul>
+		<p><u>Unidades</u>: MHz</p>
+		<p><u>Rango</u>: 0 - 99999</p>
+	</ul>
+</ul>
+
+</div>
+
+</body>
+
+</html>

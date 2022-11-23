@@ -1,0 +1,153 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Plataformas Bases</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvPlatforms/BasePlatformWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Fotografías</b>: Pulsando este botón se accede a la ventana de Fotografías desde la que se pueden incluir varias fotografías de una plataforma, asociadas a distintos niveles de reconocimiento. Durante la ejecución del ejercicio, cuando se sitúe el Hook en una detección, dependiendo del nivel de reconocimiento de la misma se mostrará una de estas fotografías.</p>
+
+<p>Para las plataformas bases se consideran 4 niveles de reconocimiento por lo que se podrán incluir hasta 4 fotografías.</p>
+
+<p align=center><img width=400 src="../Images/Fotografias.jpg"></p>
+
+<p>En esta ventana pulsando en los botones Nivel 1 (2,3 ó 4) se accede al navegador desde el que se puede buscar y cargar una imagen.</p>
+
+<p>Los botones Nivel 5 y Nivel 6 no están accesibles para las plataformas aéreas.</p>
+
+<p>Pulsando el botón Aceptar se cierra la ventana y se guardan en memoria todas las imágenes cargadas hasta que finalmente se acepten o rechacen los datos de la plataforma en edición.</p>
+
+<p><b>Tipo de Plataforma</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>PORT</li>
+	<li>AIRPORT</li>
+	<li>NAVAL</li>
+	<li>AERIAL</li>
+	<li>FIX</li>
+
+	<p>Este parámetro determina la clasificación de los contactos correspondientes a esta plataforma obtenidos por los sensores de otras unidades.</p>
+
+</ul>
+
+
+<p><b>Tamaño RCS</b>: Este parámetro es tenido en cuenta el modelo de radar para calcular la distancia a la que esta plataforma es detectada.</p>
+
+<ul>
+	<p><u>Unidades</u>: m2</p>
+	<p><u>Rango</u>: 1 – 9999</p>
+</ul>
+
+<p><b>Superficie</b>: Este parámetro es tenido en cuenta el modelo de visual para calcular la distancia a la que esta plataforma es detectada.</p>
+
+<ul>
+	<p><u>Unidades</u>: m2</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Factor IR</b>: Factor que modela la variación de Tamaño IR de la plataforma con el "Aspecto" (dado por el ángulo alfa = rumbo del contacto - marcación del contacto).</p>
+
+<ul>
+	<p><u>Unidades</u>: Tanto por uno</p>
+	<p><u>Rango</u>: 0,0 – 1,0</p>
+
+	<p>Ejemplo: </p>
+
+	<p>Si Factor IR = 0 &rArr; Tamaño IR = Tamaño IR · seno (alfa).</p>
+	<p>Si Factor IR = 0,25 &rArr; Tamaño IR = Tamaño IR ( 0,25 + 0,75 · seno (alfa) ).</p>
+	<p>Si Factor IR = 1 &rArr; Tamaño IR no cambia con Aspecto.</p>
+</ul>
+
+<p><b>Altura Sensores</b>: Altura de instalación de los sensores en la plataforma. Este parámetro influye en los modelos de sensores, tanto para determinar el alcance de los sensores propios como para determinar el alcance al que es detectada esta plataforma por sensores de otras unidades.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 1 – 9999</p>
+</ul>
+
+<p><b>Capacidad de Unidades Terrestres</b>: Determina si la plataforma tiene capacidad de actuar como base para unidades terrestres.</p>
+
+<p><b>Número de Unidades Terrestres</b>: Cantidad de unidades terrestres que pueden estar en esta base simultáneamente. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Unidades Terrestres.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Régimen de Suministro</b>: Régimen con el que esta plataforma suministra combustible a las unidades terrestres que se encuentren en esta base. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Unidades Terrestres.</p>
+
+<ul>
+	<p><u>Unidades</u>: Litros / hora</p>
+	<p><u>Rango</u>: 0 – 999999,9</p>
+</ul>
+
+<p><b>Capacidad de Atraque de Buques</b>: Determina si la plataforma tiene capacidad de actuar como base para unidades de superficie y submarinas.</p>
+
+<p><b>Número de Buques</b>: Cantidad de unidades de superficie o submarinas que pueden estar en esta base simultáneamente. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Atraque de Buques.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Calado de la Base</b>: Calado máximo de las unidades de superficie o submarinas que pueden estar en esta base. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Atraque de Buques.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Régimen de Suministro</b>: Régimen con el que esta plataforma suministra combustible a las unidades de superficie o submarinas que se encuentren en esta base. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Atraque de Buques.</p>
+
+<ul>
+	<p><u>Unidades</u>: Litros / hora</p>
+	<p><u>Rango</u>: 0 – 999999,9</p>
+</ul>
+
+<p><b>Capacidad de Aterrizaje Aviones</b>: Determina si la plataforma tiene capacidad de actuar como base para aviones.</p>
+
+<p><b>Número de Aviones</b>: Cantidad de aviones que pueden estar en esta base simultáneamente. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Aterrizaje Aviones.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Régimen de Suministro</b>: Régimen con el que esta plataforma suministra combustible a las unidades aviones que se encuentren en esta base. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Aterrizaje Aviones.</p>
+
+<ul>
+	<p><u>Unidades</u>: Libras / minuto</p>
+	<p><u>Rango</u>: 0 – 999999,9</p>
+</ul>
+
+<p><b>Capacidad de Aterrizaje Helicópteros</b>: Determina si la plataforma tiene capacidad de actuar como base para helicópteros.</p>
+
+<p><b>Número de Helicópteros</b>: Cantidad de helicópteros que pueden estar en esta base simultáneamente. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Aterrizaje Helicópteros.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Régimen de Suministro</b>: Régimen con el que esta plataforma suministra combustible a las unidades helicópteros que se encuentren en esta base. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Aterrizaje Helicópteros.</p>
+
+<ul>
+	<p><u>Unidades</u>: Libras / minuto</p>
+	<p><u>Rango</u>: 0 – 999999,9</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

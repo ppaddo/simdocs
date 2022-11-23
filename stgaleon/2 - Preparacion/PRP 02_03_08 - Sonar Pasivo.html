@@ -1,0 +1,144 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Sonar Pasivo</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvSensors/PassiveSonarWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Tipo de Sonar</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>Sonar de Casco (HULL)</li>
+	<li>TAS</li>
+	<li>Sonar Calable</li>
+	<li>Sonar de Sonoboyas</li>
+
+	<p>Este parámetro determina si el sonar pasivo puede ser desplegado (TAS y Calable) o si puede estar montado en sonoboyas.</p>
+
+</ul>
+
+<p><b>Longitud del cable</b>: Este parámetro determina la máxima longitud del cable del sonar pasivo tipo TAS, Calable o de sonoboya y por tanto condiciona la máxima profundidad a la que puede ser desplegado. Este parámetro sólo puede ser introducido si se ha seleccionado tipo de sonar TAS, Calable o de sonoboya.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Régimen despliegue/recogida</b>: Este parámetro determina la velocidad con el que el cable del sonar pasivo tipo TAS, Calable o de sonoboya es desplegado o recogido. Este parámetro sólo puede ser introducido si se ha seleccionado tipo de sonar TAS, Calable o de sonoboya.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies / segundo</p>
+	<p><u>Rango</u>: 0 – 100</p>
+</ul>
+
+<p><b>Cota según largada</b>: Esta tabla modela la cota a la que se sumerge el sonar pasivo tipo TAS cuando se encuentra desplegado, según la longitud de cable desplegado (largada) y velocidad respecto al fondo de la unidad propia. Ver apartado Cota según Largada. Este parámetro sólo puede ser introducido si se ha seleccionado tipo de sonar TAS.</p>
+
+<p><b>Mínima Frecuencia y Máxima Frecuencia</b>: Determinan el margen de frecuencias en el que opera el sonar pasivo. El modelo de sonar pasivo comprueba si alguno de los picos de frecuencia en banda estrecha del contacto (ver Firmas Acústicas) está dentro de este margen de frecuencias para calcular el exceso de señal en banda estrecha que recibe el sonar de este contacto. En banda ancha, el modelo de sonar evaluará la frecuencia media de este rango. El valor de exceso de señal en banda ancha o en banda estrecha si se ha calculado, junto con el factor batítérmico determinarán la probabilidad de obtener detección sonar del contacto.</p>
+
+<ul>
+	<p><u>Unidades</u>: Hz</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Diferencial de Reconocimiento (RD)</b>: Este parámetro modela el umbral de detección del sonar pasivo. Es tenido en cuenta en el cálculo del exceso de señal que recibe el sonar de un posible contacto.</p>
+
+<ul>
+	<p><u>Unidades</u>: dB</p>
+	<p><u>Rango</u>: -999 – 999</p>
+</ul>
+
+<p><b>Distancia Máxima de Detección</b>: Este parámetro determina un límite máximo para la distancia de detección, de forma que el sonar pasivo sólo puede obtener detecciones a distancias menores o iguales que ésta.</p>
+
+<ul>
+	<p><u>Unidades</u>: yardas</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Índice de Directividad (DI)</b>: Este parámetro modela la directividad del sonar pasivo. Es tenido en cuenta en el cálculo del exceso de señal que recibe el sonar de un posible contacto.</p>
+
+<ul>
+	<p><u>Unidades</u>: dB</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Velocidad Máxima del Sonar</b>: Este parámetro determina la velocidad máxima de la plataforma para la cual el sonar pasivo puede obtener detecciones. Se considera que cuando la plataforma tiene una velocidad superior a ésta, el nivel de ruido propio recibido por el sonar pasivo impide que obtenga detecciones. Si el sonar pasivo es tipo sonoboya, no se podrá introducir este parámetro.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0 – 100</p>
+</ul>
+
+<p><b>Velocidad Óptima del Sonar</b>: Este parámetro representa la velocidad de la plataforma a la cual el sonar pasivo recibe el menor nivel de ruido propio posible. Es tenido en cuenta en el cálculo del ruido propio en banda ancha y estrecha recibido por el sonar pasivo en función de la velocidad sobre le agua de la plataforma. Si el sonar pasivo es tipo sonoboya, no se podrá introducir este parámetro.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0 – 100</p>
+</ul>
+
+<p><b>Distancia de Detección de Torpedos</b>: Este parámetro determina un límite máximo para la distancia de detección de torpedos, de forma que el sonar pasivo sólo puede detectar torpedos en el agua a distancias menores o iguales que ésta.</p>
+
+<ul>
+	<p><u>Unidades</u>: yardas</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Sensibilidad</b>: Este parámetro es tenido en cuenta por el modelo de Sonar Pasivo para calcular el número de falsos ecos aleatorios que se producen. Cuanto mayor es la sensibilidad del equipo, mayor es el número de falsos ecos que se producen.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 1</p>
+</ul>
+
+<p><b>Máximo Error en Demora</b>: Estos parámetros modelan el error con el que el modelo de Sonar Pasivo obtiene la demora de las detecciones, dependiendo de si el contacto se encuentra por proa, por la eslora (través) o por popa. Dicho error se calcula para cada detección como un valor aleatorio entre –error y error, siendo “error” el valor asignado al parámetro correspondiente a su demora.</p>
+
+<ul>
+	<p><b>Proa</b>: Error con el que el modelo de Sonar Pasivo obtiene la demora de las detecciones cuando la marcación del contacto se encuentra entre 315º y 45º.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 99,99</p>
+	</ul>
+
+	<p><b>Través</b>: Error con el que el modelo de Sonar Pasivo obtiene la demora de las detecciones cuando la marcación del contacto se encuentra entre 45º y135º o entre 225º y 315º.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 99,99</p>
+	</ul>
+
+	<p><b>Popa</b>: Error con el que el modelo de Sonar Pasivo obtiene la demora de las detecciones cuando la marcación del contacto se encuentra entre 135º y 225º.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 – 99,99</p>
+	</ul>
+</ul>
+
+<p><b>Interceptador Sonar</b>: Este parámetro determina si el sonar pasivo tiene capacidad de interceptador. Cuando un sonar pasivo tiene esta capacidad, podrá detectar tanto unidades como a otros sonares activos que se encuentren encendidos y transmitiendo.</p>
+
+<p><b>Evaluación en banda estrecha</b>: Este parámetro determina si el sonar pasivo tiene capacidad de evaluar en banda estrecha.</p>
+
+<p><b>Telémetro sonar</b>: Este parámetro determina si el sonar pasivo tiene capacidad de calcular la distancia de las detecciones obtenidas en menor tiempo y normalmente con menor error (según el siguiente parámetro).</p>
+
+<p><b>Error máximo en distancia</b>: Este parámetro modela el error con el que el modelo de Sonar Pasivo obtiene la distancia de las detecciones cuando tiene la capacidad de telémetro. Dicho error se calcula para cada detección como un valor aleatorio entre –error y error, siendo “error” el valor asignado a este parámetro. Este parámetro sólo puede ser introducido si se ha seleccionado Telémetro sonar.</p>
+
+<ul>
+	<p><u>Unidades</u>: yardas</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,444 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Daños</font></b></p>
+
+<font size=2 face=arial>
+
+<p>Cuando un arma impacta en una unidad, el sistema evalúa los daños que dicha arma produce en la unidad y en sus equipos (sensores, armas etc). en función de la carga (kilos de explosivos) del arma, y del desplazamiento (toneladas) de la unidad.</p>
+
+<p>Las unidades se consideran con una vida inicial de 100, y a medida que sufren impactos el valor de la vida va disminuyendo, quedando totalmente destruidas cuando el valor de la vida es cero.</p>
+
+<br>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td style='background:#D8D8D8'><font size=2 face=arial><b>Tipo de Fórmula</b></td>
+		<td style='background:#D8D8D8'><font size=2 face=arial><b>Algoritmo de Daño</b></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Fórmula general</b></td>
+		<td><font size=2 face=courier>15,5 * RAIZ(kgs_explosivo) - 2,4 * RAIZ(toneladas)</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Para armas ASW<br>(torpedos, cargas y minas)</b></td>
+		<td><font size=2 face=courier>kgs_explosivo</font><font size=2 face=arial> es multiplicado por un factor de 1,5</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Unidades no estancas</b></td>
+		<td><font size=2 face=arial>toneladas es multiplicado por un factor de 1/3</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial><b>Unidades Aéreas</b></td>
+		<td><font size=2 face=arial>Se destruyen totalmente</td>
+	</tr>
+
+</table>
+
+<br>
+
+<p>De las fórmulas anteriores, el Daño tendrá siempre un valor mínimo de 0,8*Raiz (kgs_explosivo), y un valor máximo de 100. El resultado de la fórmula es siempre redondeado hacia abajo a valor entero.</p>
+
+<p>La siguiente tabla muestra según valores de Carga de explosivo del arma y del desplazamiento de la unidad (en toneladas) cuantas armas tienen que impactar para destruir la unidad completamente.</p>
+
+<br>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td align=center width=100 style='background:#D8D8D8'><font size=2 face=arial><b>Tm / Carga</b></td>
+		<td align=center width=40 style='background:#D8D8D8'><font size=2 face=arial><b>33</b></td>
+		<td align=center width=40 style='background:#D8D8D8'><font size=2 face=arial><b>100</b></td>
+		<td align=center width=40 style='background:#D8D8D8'><font size=2 face=arial><b>150</b></td>
+		<td align=center width=40 style='background:#D8D8D8'><font size=2 face=arial><b>200</b></td>
+		<td align=center width=40 style='background:#D8D8D8'><font size=2 face=arial><b>250</b></td>
+		<td align=center width=40 style='background:#D8D8D8'><font size=2 face=arial><b>300</b></td>
+		<td align=center width=40 style='background:#D8D8D8'><font size=2 face=arial><b>400</b></td>
+		<td align=center width=40 style='background:#D8D8D8'><font size=2 face=arial><b>500</b></td>
+		<td align=center width=40 style='background:#D8D8D8'><font size=2 face=arial><b>600</b></td>
+		<td align=center width=40 style='background:#D8D8D8'><font size=2 face=arial><b>800</b></td>
+		<td align=center width=40 style='background:#D8D8D8'><font size=2 face=arial><b>1000</b></td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>500</b></td>
+		<td align=center><font size=2 face=arial>3</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>1000</b></td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>2000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>3</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>3000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>5</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>4000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>3</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>5000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>5</td>
+		<td align=center><font size=2 face=arial>3</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>6000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>3</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>7000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>3</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>8000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>4</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>9000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>3</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>10000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>4</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>12000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>3</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>14000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>4</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>16000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>7</td>
+		<td align=center><font size=2 face=arial>3</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>18000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>7</td>
+		<td align=center><font size=2 face=arial>5</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>20000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>7</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>3</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>22000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>7</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>5</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>25000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>7</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>30000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>7</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>5</td>
+		<td align=center><font size=2 face=arial>2</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>35000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>7</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>5</td>
+		<td align=center><font size=2 face=arial>3</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>40000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>7</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>5</td>
+		<td align=center><font size=2 face=arial>4</td>
+	</tr>
+
+	<tr>
+		<td align=center style='background:#D8D8D8'><font size=2 face=arial><b>45000</b></td>
+		<td align=center><font size=2 face=arial>22</td>
+		<td align=center><font size=2 face=arial>13</td>
+		<td align=center><font size=2 face=arial>11</td>
+		<td align=center><font size=2 face=arial>9</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>8</td>
+		<td align=center><font size=2 face=arial>7</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>6</td>
+		<td align=center><font size=2 face=arial>5</td>
+		<td align=center><font size=2 face=arial>4</td>
+	</tr>
+
+</table>
+
+<br>
+
+<p>En función del daño calculado, el daño que se le aplica a una unidad es de varios tipos:</p>
+
+<p><b>Daño de Vida</b>: Se aplicará siempre a la vida de la unidad el tanto por ciento de daño calculado con el algoritmo anterior. Este daño es acumulativo. Cuando este daño alcanza el 100% se considera que la unidad está muerta o destruida. Una unidad destruida deja de participar en el juego. No obstante, el instructor puede volver a introducirla en el juego reparándola, es decir, asignándole un daño de vida menor del 100%.</p>
+
+<p><b>Daños de Maquinaria:</b></p>
+
+<ul>
+	<li><b>Daño de Velocidad</b>: Se aplica de forma acumulativa un daño igual al calculado. Su efecto es que reduce el máximo de velocidad que puede adquirir la unidad en el tanto por ciento de daño aplicado.</li>
+</ul>
+ 
+<ul>
+	<li><b>Daño de Altitud / Profundidad</b>: Se aplica de forma acumulativa un daño igual al calculado. Su efecto es que reduce el máximo de altura / profundidad que puede adquirir la unidad en el tanto por ciento de daño aplicado.</li>
+</ul>
+
+<ul>
+	<li><b>Daño de Timón</b>: Se aplica de forma acumulativa un daño igual al calculado. Su efecto es que reduce el máximo de ángulo de giro que puede adquirir la unidad en el tanto por ciento de daño aplicado.</li>
+</ul>
+
+<p><b>Equipos Destruidos</b>: Los daños a equipos instalados en la unidad son siempre totales, por lo que el equipo pasará a estar no operativo cuando es dañado. Según el daño calculado, se destruirán aleatoriamente y porcentualmente tantas armas, sensores y comunicaciones como daño calculado según el algoritmo anterior, de los que no están dañados. Los modelos correspondientes a los equipos destruidos de una unidad dejan de ser evaluados.</p>
+
+<p>Casos especiales:</p>
+
+<ul>
+	<li>Las unidades aéreas (aviones o helicópteros) y terrestres, así como los misiles, son destruidos completamente cuando son impactados por cualquier arma.</li>
+</ul>
+
+<ul>
+	<li>Para unidades que transporten otras unidades, un porcentaje de las unidades transportadas igual al daño aplicado a la unidad que las transporta, serán dañadas de forma aleatoria. Esto es aplicable a las unidades con capacidad de portar y las que actúan como bases de otros tipos de unidades.</li>
+</ul>
+
+<ul>
+	<li>Cuando una unidad de superficie o submarina colisiona, se le asignan todos los daños de maquinaria al 100%. Cuando una unidad aérea (aviones o helicópteros) colisiona son destruidas completamente.</li>
+</ul>
+
+</div>
+
+</body>
+
+</html>

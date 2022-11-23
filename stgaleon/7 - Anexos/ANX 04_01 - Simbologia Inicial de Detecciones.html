@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Simbología Inicial de Detecciones</font></b></p>
+
+<font size=2 face=arial>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td width=120><font size=2 face=arial><b>Tipo de Detección</b></td>
+		<td width=220><font size=2 face=arial><b>Símbolo</b></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Radar<br>(ver <i>Nota</i>)</td>
+		<td>
+			<p><font size=2 face=arial>Si 0 < RCS < 10:</p>
+			<p align=center><img width=40 src="initDetSymbols/det_RAD_lit.png"></p>
+			<p><font size=2 face=arial>SI 10 < RCS < 1000:</p>
+			<p align=center><img width=40 src="initDetSymbols/det_RAD_med.png"></p>
+			<p><font size=2 face=arial>Si 1000 < RCS:</p>
+			<p align=center><img width=40 src="initDetSymbols/det_RAD_big.png"></p>
+		</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Visual</td>
+		<td align=center><img width=50 src="initDetSymbols/det_VIS.png"></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Sonar</td>
+		<td align=center><img width=50 src="initDetSymbols/det_SON.png"></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>MAD</td>
+		<td align=center><img width=50 src="initDetSymbols/det_MAD.png"></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Infrarrojo</td>
+		<td align=center><img width=50 src="initDetSymbols/det_IR.png"></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>IFF (Modo 2)</td>
+		<td align=center><img width=50 src="initDetSymbols/det_IFF.png"></td>
+	</tr>
+
+</table>
+
+<p><i>Nota</i>: Se usan tres símbolos distintos, uno pequeño, uno mediano y otro grande para los contactos radar, en función de su RCS. Los valores del RCS para considerar a un contacto como pequeño, mediano o grande se especifican en Galeon.ini. El color de estos símbolos también es configurable en el Galeon.ini.</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Control de Corredera</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>El módulo de Control de Corredera incluye los elementos necesarios para controlar el módulo de Corredera del Panel de Indicadores, el cual simula una Corredera Doppler dotada de sensores transversales a proa y popa del buque así como de sensor de velocidad longitudinal, con posibilidad de indicar la velocidad con respecto al agua o al fondo y en diversas unidades de medida.</p>
+
+<p align=center><img width=200 src="../Imagenes/ModuloControlCorredera.jpg"></p>
+
+<p>Contiene los siguientes elementos:</p>
+
+<ul>
+	<li>Pulsador e Indicador de selección de <b>Referencia Agua</b>: cuando se pulsa, la velocidad se muestra con respecto al agua (modo longitudinal). El pulsador permanece encendido hasta que se cambie el modo de presentación.</li><br>
+
+	<li>Pulsador e Indicador de selección de <b>Referencia Fondo</b>: cuando se pulsa, la velocidad se muestra con respecto al fondo (modo doppler). El pulsador permanece encendido hasta que se cambie el modo de presentación.</li><br>
+
+	<p>El pulsador de selección de referencia al fondo sólo funciona cuando el buque controlado se encuentra en aguas poco profundas. La profundidad máxima para que el sistema considere que las aguas son poco profundas es configurable y se define en el fichero del configuración del sistema.</p>
+	
+	<p>Los dos pulsadores anteriores (Agua y Fondo) son excluyentes entre sí.</p>
+
+	<li>Pulsador e Indicador de presentación de la <b>Velocidad en Nudos</b>: cuando se pulsa, la velocidad se muestra en nudos. El pulsador permanece encendido hasta que se cambie la unidad de presentación de la velocidad.</li><br>
+
+	<li>Pulsador e Indicador de presentación de la <b>Velocidad en M/S</b>: cuando se pulsa, la velocidad se muestra en metros por segundo. El pulsador permanece encendido hasta que se cambie la unidad de presentación de la velocidad.</li><br>
+
+	<li>Pulsador e Indicador de presentación de la <b>Velocidad en Ft/S</b>: cuando se pulsa, la velocidad se muestra en pies por segundo. El pulsador permanece encendido hasta que se cambie la unidad de presentación de la velocidad.</li><br>
+
+	<p>Los tres pulsadores anteriores (Nudos, M/S y Ft/S ) son excluyentes entre sí.</p>
+
+	<li>Pulsador de <b>Reset</b> de Totalizador de corredera: cuando se pulsa, se realiza la puesta a cero del totalizador de la corredera longitudinal o doppler, en función del modo seleccionado.</li><br>
+
+	<li>Indicador de <b>Avería</b> y Pulsador de <b>Aceptación</b>: cuando el instructor introduce una avería en la corredera, este indicador se enciende de forma intermitente. Cuando el operador lo presiona (reconociendo la avería), el indicador se ilumina de forma fija, y finalmente se apaga cuando el instructor elimina la condición de avería.</li><br>
+
+</ul>
+
+<p>Si la unidad controlada no dispone de corredera, este panel estará completamente apagado.</p>
+
+</div>
+
+</body>
+
+</html>

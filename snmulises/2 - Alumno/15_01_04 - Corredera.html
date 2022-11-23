@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Corredera</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>El módulo de Corredera simula una Corredera Doppler dotada de sensores transversales a proa y popa del buque así como de sensor de velocidad longitudinal, con posibilidad de indicar la velocidad con respecto al agua o al fondo y en diversas unidades de medida.</p>
+
+<p>Este módulo puede ser real (hardware) o simulado (software).</p>
+
+<p><i>Versión Hardware:</i></p>
+
+<p align=center><img width=300 src="../Imagenes/ModuloCorredera.jpg"></p>
+
+<p><i>Versión Software:</i></p>
+
+<p align=center><img width=300 src="../Imagenes/ModuloCorrederaSoft.jpg"></p>
+
+<p>En ambas versiones contiene los siguientes elementos:</p>
+
+<ul>
+	<li>Indicador de <b>Velocidad Transversal de Proa</b>: indicador digital de dos cifras en el que se muestra la velocidad transversal de proa.</li><br>
+	
+	<li>Indicador de <b>Proa a Babor / Estribor</b>: se trata de dos LED rojos situados a izquierda y derecha del indicador de velocidad transversal de proa, que se encienden cuando el movimiento es hacia babor o estribor respectivamente.</li><br>
+	
+	<li>Indicador de <b>Velocidad Longitudinal</b>: indicador digital de dos cifras en el que se muestra la velocidad longitudinal.</li><br>
+
+	<li>Indicador de <b>Avante / Atrás</b>: se trata de dos LED rojos situados a arriba y abajo del indicador de velocidad longitudinal, que se encienden cuando el movimiento es hacia avante o atrás respectivamente.</li><br>
+	
+	<li>Indicador de <b>Velocidad Transversal de Popa</b>: indicador digital de dos cifras en el que se muestra la velocidad transversal de popa.</li><br>
+	
+	<li>Indicador de <b>Popa a Babor / Estribor</b>: se trata de dos LED rojos situados a izquierda y derecha del indicador de velocidad transversal de popa, que se encienden cuando el movimiento es hacia babor o estribor respectivamente.</li><br>
+	
+	<li>Indicador de <b>Totalizador</b>: indicador digital de cuatro cifras en el que se muestra la distancia recorrida (en millas) obtenida de la corredera longitudinal o doppler, en función del modo seleccionado.</li><br>
+
+	<li>Pulsador de <b>Reset de Totalizador</b> de corredera: cuando es pulsado realiza la puesta a cero del totalizador de corredera longitudinal o doppler, en función del modo seleccionado.</li><br>
+
+	<li>Pulsador e Indicador de selección de <b>Referencia Agua</b>: cuando se pulsa, la velocidad se muestra con respecto al agua (modo longitudinal). El pulsador permanece encendido hasta que se cambie el modo de presentación.</li><br>
+	
+	<li>Pulsador e Indicador de selección de <b>Referencia Fondo</b>: cuando se pulsa, la velocidad se muestra con respecto al fondo (modo doppler). El pulsador permanece encendido hasta que se cambie el modo de presentación.</li>
+	
+	<p>El pulsador de selección de referencia al fondo sólo funciona cuando el buque controlado se encuentra en aguas poco profundas. La profundidad máxima para que el sistema considere que las aguas son poco profundas es configurable y se define en el fichero del configuración del sistema.</p>
+
+	<p>Los dos pulsadores anteriores (Agua y Fondo) son excluyentes entre sí.</p>
+
+	<li>Pulsador e Indicador de presentación de la <b>Velocidad en Nudos</b>: cuando se pulsa, la velocidad se muestra en nudos. El pulsador permanece encendido hasta que se cambie la unidad de presentación de la velocidad.</li><br>
+	
+	<li>Pulsador e Indicador de presentación de la <b>Velocidad en M/S</b>: cuando se pulsa, la velocidad se muestra en metros por segundo. El pulsador permanece encendido hasta que se cambie la unidad de presentación de la velocidad.</li><br>
+
+	<li>Pulsador e Indicador de presentación de la <b>Velocidad en Ft/S</b>: cuando se pulsa, la velocidad se muestra en pies por segundo. El pulsador permanece encendido hasta que se cambie la unidad de presentación de la velocidad.</li>
+
+	<p>Los tres pulsadores anteriores (Nudos, M/S y Ft/S ) son excluyentes entre sí.</p>
+
+	<li>Indicador de <b>Avería</b>: cuando el instructor introduce una avería en la corredera, este indicador se enciende de forma intermitente. Cuando el operador reconoce la avería, el indicador se ilumina de forma fija, y finalmente se apaga cuando el instructor elimina la condición de avería.</li>
+	
+</ul>
+
+<p>En la versión hardware los indicadores Reset de Totalizador, Agua, Fondo, Nudos, M/S y Ft/S actúan solo como indicadores y no pulsadores, es decir, no se pueden cambiar en este panel sino que se controlan desde un módulo de control asociado (ver apartado <i>Consola de Gobierno - Control de Corredera</i>).</p>
+
+<p>Si la unidad controlada no dispone de corredera, este panel estará completamente apagado.</p>
+ 
+</div>
+
+</body>
+
+</html>

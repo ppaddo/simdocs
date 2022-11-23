@@ -1,0 +1,127 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Torpedos</font></b></p>
+
+<font size=2 face=arial>
+
+<p>El panel de detalle general de torpedos presenta algunas diferencias dependiendo de que la unidad sea de superficie, submarina o aérea. A continuación se muestra cada uno de ellos.</p>
+
+<p><b>Torpedos en Unidades de Superficie</b></p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_weapons/TorpedoWnd.jpg"></p>
+
+<p>En este panel de detalle de Torpedos se muestra una lista de todos los tubos instalados en la unidad (nótese que los tubos pares corresponden a la banda de babor y los impares a estribor), del tipo de torpedo que carga cada tubo, en el caso de que no esté vacío y el número de torpedos disponibles en el pañol de cada tipo. También se muestra una lista de los torpedos ASROC disponibles y la cantidad de cada uno de ellos.</p>
+
+<p>Los indicadores tipo led que aparecen entre cada tubo y el botón Alistar indican el estado en el que está el tubo. Los tres leds miniatura que están al otro lado del tubo indican el tipo de torpedo de los tres disponibles con el que está cargado el tubo (gris descargado, amarillo cargando o descargando, verde cargado). El led junto a los tipos de torpedos ASROC muestra el estado del sistema de lanzamiento asociado.</p>
+
+<p>Desde este panel pueden ejecutarse las siguientes acciones:</p>
+
+<ul>
+	<li>Cargar un torpedo en un tubo: Cuando un tubo está vacío, puede cargarse un torpedo en él eligiendo el tipo de torpedo del pañol, utilizando la barra de desplazamiento correspondiente y pulsando el botón Cargar / Descargar que presenta el número del tubo. En el interior del tubo se mostrará el tiempo que resta para que finalice el proceso de carga.</li><br>
+	
+	<li>Descargar un torpedo de un tubo. Cuando un tubo contiene un torpedo, puede descargarse y guardarse en el pañol, pulsando el botón Cargar / Descargar que presenta el número del tubo.</li><br>
+	
+	<li>Lanzar un torpedo: Pulsando en el botón Alistar se abre el panel de lanzamiento de torpedos del tubo correspondiente. Este panel varía en función de que el torpedo sea normal o ASROC.</li>
+		
+</ul>
+
+<p><b>Torpedos en Unidades Submarinas</b></p>
+ 
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_weapons/SubmarineTorpedoesWnd.jpg"></p>
+
+<p>Este panel es similar al de unidades de superficie, salvo en que los tubos se montan a proa o a popa en lugar de en las bandas, en que dispone de dos pañoles independientes a proa y a popa y en que no existen torpedos ASROC.</p>
+
+<p><b>Torpedos en Unidades Aéreas</b></p> 
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_weapons/AirsTorpedoesWnd.jpg"></p>
+
+<p>En este panel de detalle de torpedos para unidades aéreas solamente se muestra la lista de tipos de torpedos disponibles, su estado y la cantidad de cada uno de ellos.</p>
+
+<p>Desde cualquiera de estos paneles, al pulsar el botón Alistar se abrirá el panel de Lanzamiento de Torpedo, que será diferente dependiendo de que el torpedo seleccionado sea normal o ASROC, y que tendrá algunas opciones deshabilitadas en el caso de lanzamiento desde submarinos o unidades aéreas.</p>
+
+<p><b>Lanzamiento de Torpedo</b></p>
+ 
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_weaponsAux/TorpedoAsuwFireWnd.jpg"></p>
+
+<p>En este panel de lanzamiento de torpedos se muestra (derecha) el nombre del torpedo y la situación y el número del tubo. Mientras esté abierto este panel, se indicará gráficamente en la Pantalla Táctica la dirección de lanzamiento del torpedo, mediante una línea que tiene origen en la unidad propia y ángulo igual a la suma del ángulo del tubo más el ángulo de giróscopo seleccionado.</p>
+
+<p>Desde este panel se pueden realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Designar un blanco para lanzamiento: Al pulsar el botón Blanco se designará al contacto en hook como blanco para el lanzamiento. En los campos Rumbo, Velocidad y Distancia aparecerán los datos del blanco seleccionado. En el caso de que no haya ningún contacto asociado al Hook, al pulsar este botón no se ejecutará acción alguna.</li><br>
+
+	<li>Designar una demora fija para lanzamiento: Al pulsar el botón Demora se designará una demora para el lanzamiento.</li>
+
+	<p>Nota: Para lanzamientos automáticos desde unidades aéreas, el operador deberá introducir también la distancia de anticipación al blanco en el lanzamiento, es decir, la carrera que debe efectuar el torpedo antes de impactar con el blanco.</p>
+
+	<li>Consultar recomendaciones de disparo: Si el tipo de carrera del torpedo es RECTILÍNEA, SERPENTEO, COMBINADO o HATS, en los campos TLA y Rumbo Recomendado aparecen las recomendaciones de ángulo de adelanto (TLA) y de rumbo a navegar recomendado para realizar el lanzamiento. También puede introducirse manualmente un TLA y se puede dar orden a la unidad propia para que siga la recomendación de rumbo. Esta orden se ejecuta de forma que la unidad cambia su rumbo al recomendado en el instante en que se pulsa el botón Seguir Indicadores, sin tener en cuenta los cambios al rumbo recomendado que puedan ocurrir una vez pulsado dicho botón.</li><br>
+	
+	<li>Seleccionar el tipo de carrera: Si el tipo de carrera del torpedo seleccionado es HATS o COMBINADO, se podrá elegir lanzarlo con ese tipo de carrera o con carrera circular. El tipo de carrera cambiará cada vez que se pulse el botón cuya etiqueta muestra el tipo de carrera al que cambiará (Circular en la figura). Si el torpedo tiene capacidad para realizar carreras helicoidales, y tiene un ángulo de ascenso / descenso definido en preparación, optará por este tipo de carrera al seleccionar circular.</li><br>
+	
+	<li>Seleccionar el ángulo de giróscopo del torpedo: Utilizando la barra de desplazamiento correspondiente se puede modificar el ángulo de giróscopo entre los valores máximo y mínimo del torpedo. El valor seleccionado se muestra también de forma numérica. Esta opción sólo se encuentra habilitada si el tipo de carrera seleccionada para el lanzamiento no es Circular.</li><br>
+	
+	<li>Seleccionar la profundidad de búsqueda, utilizando la barra de desplazamiento correspondiente, donde se seleccionan los diferentes valores de SD definidos para el torpedo (preparación).</li><br>
+	
+	<li>Seleccionar la profundidad inferior (Floor), utilizando la barra de desplazamiento correspondiente, donde se seleccionan los diferentes valores de Floor definidos para el torpedo (preparación).</li><br>
+	
+	<li>Realizar el lanzamiento: Pulsando el botón Fuego se produce el lanzamiento del torpedo con los parámetros que se hayan seleccionado. Esta acción no está disponible durante el proceso de filoguía de otro torpedo.</li><br>
+	
+	<li>Si el lanzamiento es desde unidad aérea, se podrá además activar el lanzamiento en modo automático del torpedo. Para activar un lanzamiento en modo automático, previamente el operador debe tener designado un blanco o una demora y distancia fijos para lanzamiento. Una vez realizada una de las dos acciones anteriores, al pulsar Activar, la unidad lanzadora realiza una interceptación a punto fijo o blanco y una maniobra de Cambio de Altura a una nueva altura que permita el lanzamiento. Una vez que la unidad alcance una posición adecuada para el lanzamiento, se efectuará automáticamente un lanzamiento del torpedo.</li>
+	
+</ul>
+
+<p><b>Lanzamiento de ASROC</b></p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_weaponsAux/AsrocFireWnd.jpg"></p>
+
+<p>Desde este panel de lanzamiento de torpedos ASROC se pueden realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Designar un blanco para lanzamiento: Al pulsar el botón Blanco se designará al contacto en hook como blanco para el lanzamiento, es decir, como punto de entrada del torpedo al agua. En los campos Latitud y Longitud aparecerá la posición del blanco seleccionado. En el caso de que no haya ningún contacto asociado al Hook, al pulsar este botón no se ejecutará acción alguna.</li><br>
+	
+	<li>Designar una posición para lanzamiento: Al pulsar el botón Posición se designará una posición fija o relativa para el lanzamiento (punto de entrada en el agua del torpedo) determinada por la demora, distancia a la unidad propia. Esta posición se toma del Hook al pulsar el botón, o pueden introducirse manualmente. Si es tomada del Hook, el disparo será a posición fija, y en este caso si la unidad propia está en movimiento, los valores de demora y distancia de la posición fija seleccionada se actualizan automáticamente en los campos correspondientes. Si se introducen manualmente, la demora y distancia permanecerá fija, por lo que el disparo será a una posición relativa.</li><br>
+	
+	<li>Seleccionar la profundidad de búsqueda, utilizando la barra de desplazamiento correspondiente, donde se seleccionan los diferentes valores de SD definidos para el torpedo (preparación).</li><br>
+	
+	<li>Seleccionar la profundidad inferior (Floor), utilizando la barra de desplazamiento correspondiente, donde se seleccionan los diferentes valores de Floor definidos para el torpedo (preparación).</li><br>
+	
+	<li>Seleccionar un tipo de torpedo del pañol para su lanzamiento, utilizando la barra de desplazamiento. Junto al tipo de torpedo se muestra la cantidad en pañol y la cantidad de torpedos listos para lanzamiento de cada tipo de torpedos ASROC.</li><br>
+	
+	<li>Realizar el lanzamiento, pulsando el botón Fuego. El sistema comprueba que el blanco o la posición fija de lanzamiento esté a una distancia comprendida entre las distancias mínima y máxima de lanzamiento que están especificada para el torpedo (Preparación), no permitiendo el lanzamiento si no se cumple esta condición.</li>
+
+	<p>Los torpedos ASROC siempre tienen carrera circular.</p>
+	
+</ul>
+
+<p><b>Filoguía de Torpedos</b></p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_weaponsAux/TorpedoWireGuideWnd.jpg"></p>
+
+<p>Una vez que se ha lanzado un torpedo filoguiado, desde la ventana de detalle de Torpedos podrá abrirse este panel para realizar la filoguía del torpedo lanzado. Desde este panel de filoguía de torpedos se pueden realizar las siguientes acciones:</p>
+
+<ul>
+	<li>Activar filoguía Automática: seleccionando el Blanco y activando Homming On.</li><br>
+	
+	<li>Realizar filoguía Manual, desactivando Homming On. Los valores para la filoguía manual (rumbo, profundidad y velocidad del torpedo) pueden ser seleccionados por el operador, introduciendo los valores deseados y pulsando Actualizar. El rumbo del torpedo se puede modificar también gráficamente sobre el PPI o con los cursores y pulsando Actualizar.</li><br>
+	
+	<li>Seleccionar activación de sonar pasivo o activo del torpedo. Una vez que esté encendido el sonar del torpedo, se muestran sus detecciones. Se podrán consultar los datos de estas detecciones sonar pulsando Datos, con lo que se mostrara el diálogo de detalle de la detección (ver <i>Manual de Alumno – Sensores – Sonar</i>)</li><br>
+
+	<li>Cortar la guía del torpedo seguirá en búsqueda sin control del operador.</li><br>
+
+	<li>Poner a OFF el torpedo, con lo cual se cortará la guía y el torpedo se irá al fondo del mar sin explotar.</li>
+	
+</ul>
+<br>
+
+</div>
+
+</body>
+
+</html>

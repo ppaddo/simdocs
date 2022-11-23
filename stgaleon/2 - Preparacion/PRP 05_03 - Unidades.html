@@ -1,0 +1,141 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Unidades</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvGame/UnitSetWnd.jpg"></p>
+
+<p>Mediante esta tabla se especifican todas las Unidades incluidas en el Ejercicio. Para cada una de estas unidades se indica el bando al que pertenece, sus datos iniciales, sus capacidades y las consolas que se le asignan.</p>
+
+<p><b>Rojo / Azul / Blanco</b>: Bando al que pertenece la Unidad.</p>
+
+<p><b>Tipo de Unidad</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>SUPERFICIE</li>
+	<li>SUBMARINO</li>
+	<li>AVIÓN</li>
+	<li>HELICÓPTERO</li>
+	<li>BASE</li>
+	<li>TERRESTRE</li>
+</ul>
+
+<p><b>Unidad</b>: Nombre de la Unidad incluida en el Ejercicio. Al desplegar este campo se le mostrará al operador la lista completa de unidades del tipo seleccionado disponibles en la BD de forma que pueda seleccionar un aún no incluida, para añadirla al Ejercicio.</p>
+
+<p><b>Nivel de Autorización</b>: Este parámetro determina el nivel de acceso a datos clasificados para esta unidad en el Ejercicio. Afecta a los modelos de ESM, ECM y COMSM de la unidad, de modo que sólo mostrarán datos de aquellos equipos detectados cuya clasificación sea inferior al Nivel de Autorización asignado. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>SIN CLASIFICAR</li>
+	<li>CONFIDENCIAL</li>
+	<li>NATO SECRETO</li>
+	<li>RESERVADO</li>
+</ul>
+
+<p><b>Datos iniciales</b>:</p>
+
+<ul>
+	<p><b>En Base</b>: Este parámetro determina si la unidad se encuentra inicialmente en Base. Si es así, se deberá especificar la Base seleccionándola de entre las unidades tipo Base incluidas en el Ejercicio, o bien de aquellas unidades cuya plataforma tenga capacidad de portar una unidad del tipo de la que estamos incluyendo en el Ejercicio.</p>
+
+	<p><b>Posición</b>: Este parámetro determina la posición inicial de la unidad. Sólo podrá ser introducido si la unidad no está inicialmente en Base. Pulsando en el botón Hook, a la derecha de estos campos, se obtiene la posición del Hook en el Escenario. Cuando esta unidad es movida sobre el Escenario, estos campos se actualizan automáticamente con la nueva posición.</p>
+
+	<ul>
+		<p><b>Latitud</b>: Latitud de la posición del falso eco.</p>
+
+		<ul>
+			<p><u>Unidades</u>: grados y minutos con dos decimales, con formato: 999º99.99'N/S</p>
+			<p><u>Rango</u>: 000º00.00'N – 089º59.99'N, 000º00.00'S – 089º59.99'S</p>
+		</ul>
+
+		<p><b>Longitud</b>: Latitud de la posición del falso eco.</p>
+
+		<ul>
+			<p><u>Unidades</u>: grados y minutos con dos decimales, con formato: 999º99.99'N/S</p>
+			<p><u>Rango</u>: 000º00.00'E – 179º59.99'E, 000º00.00'W – 179º59.99'W</p>
+		</ul>
+	</ul>
+
+	<p><b>Velocidad</b>: Este parámetro determina la velocidad inicial de la unidad. Sólo podrá ser introducido si la unidad no está inicialmente en Base.</p>
+
+	<ul>
+		<p><u>Unidades</u>: nudos</p>
+		<p><u>Rango</u>: 0 - 9999</p>
+	</ul>
+
+	<p><b>Rumbo</b>: Este parámetro determina el rumbo inicial de la unidad. Sólo podrá ser introducido si la unidad no está inicialmente en Base.</p>
+
+	<ul>
+		<p><u>Unidades</u>: grados</p>
+		<p><u>Rango</u>: 0 - 359</p>
+	</ul>
+
+	<p><b>Altura / Profundidad</b>: Este parámetro determina la altura inicial de la unidad.</p>
+
+	<p>Para aviones, helicópteros y submarinos que no estén inicialmente en base, este parámetro es introducido por el operador.</p>
+
+	<p>Para unidades terrestres y bases que no estén inicialmente en base, este parámetro es siempre la altura proporcionada por la cartografía a partir de la posición de la unidad, y por tanto no es editable. Pulsando en el botón Hook, a la derecha de los campos de Posición, se obtiene la altura del Hook en el Escenario. Cuando esta unidad es movida sobre el Escenario, este campo se actualiza automáticamente con la nueva altura.</p>
+
+	<p>Para las unidades de superficie que no estén inicialmente en base, este parámetro es siempre 0 (nivel del mar), y por tanto no es editable.</p>
+
+	<p>Cuando se valida el registro se comprueba que el valor de altura / profundidad es adecuado según el tipo de unidad, para que no se produzca inicialmente colisión de la unidad.</p>
+
+	<ul>
+		<p><u>Unidades</u>: pies</p>
+		<p><u>Rango</u>: 0 - 99999</p>
+	</ul>
+
+	<p><b>Combustible</b>: Este parámetro determina la cantidad de combustible inicial de la unidad, como un tanto por ciento sobre la capacidad de combustible de la plataforma. Si la unidad es de tipo aérea el tanto por ciento de combustible inicial introducido se aplica a la capacidad total de la plataforma más la Configuración de Armas Aéreas por defecto (primera asignada de las cinco posibles) de la unidad (ver Preparación de Unidades). En este caso, la cantidad de combustible inicial, obtenida con el tanto por ciento introducido, mas el peso de las armas de la Configuración de Armas Aéreas por defecto, no podrá superar la Carga Máxima Soportada de la de la unidad (ver Plataformas - Aviones / Helicópteros).</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 - 100</p>
+	</ul>
+
+	<p><b>Batería</b>: Este parámetro determina la cantidad de batería inicial de la unidad. Sólo podrá ser introducido si la unidad es tipo Submarino.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 - 100</p>
+	</ul>
+
+	<p><b>Acciones Programadas</b>: Programación de Acciones asignada a la unidad. Ver apartado Modelos Básicos - Programación de Acciones - Programación.</p>
+
+	<p><b>Destino</b>: Campo alfanumérico que describe el lugar de destino de la unidad. Sólo es aplicable a unidades de superficie y submarinas.</p>
+
+	<p><b>Tipo/Carga</b>: Campo alfanumérico que describe el tipo de carga que trasporta la unidad. Sólo es aplicable a unidades de superficie y submarinas.</p>
+
+</ul>
+
+<p><b>Capacidades</b>:</p>
+
+<ul>
+	<p><b>FO</b>: Determina si la unidad tiene capacidad de enviar Force Order durante el Ejercicio.</p>
+
+	<p><b>OTC</b>: Determina si la unidad actúa como OTC en el Ejercicio. Se introduce a efectos de identificarla como OTC pero no influye en los modelos.</p>
+
+	<p><b>Activa</b>: Determina si la unidad está Activa desde el inicio del Ejercicio. En caso contrario la unidad no será simulada hasta que el instructor la active en durante el Ejercicio.</p>
+
+	<p><b>Cartografía Electrónica</b>: Determina si la unidad dispone de sistema de presentación de Cartografía Electrónica Digital, en cuyo caso, en la Presentación Táctica de las Consolas de Alumno asignadas a dicha unidad se presentarán las cartas electrónicas incluidas en el Escenario del Ejercicio (ver Manual de Preparación – Preparación de Escenarios – Edición de Escenarios y Manual de Alumno – Consola Táctica – Pantalla Táctica). En caso contrario, en la Presentación Táctica de estas Consolas de Alumnos, se limitará la visión cartográfica a la línea de costa dentro del alcance de los sensores Radar de los que disponga la unidad.</p>
+</ul>
+
+<p><b>Consolas</b>:</p>
+
+<ul>
+	<p><b>Unidad Principal / Ambientación</b>: Este parámetro determina si la unidad es Principal o unidad de Ambientación.</p>
+
+	<p><b>Consolas 1 - 12</b>: Consolas asignadas a la unidad.</p>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>

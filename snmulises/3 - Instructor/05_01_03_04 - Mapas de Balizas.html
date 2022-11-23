@@ -1,0 +1,210 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Balizas</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>Los mapas de balizas están formados por una colección de puntos para cada uno de los cuales se definen las características de la baliza.</p>
+
+<p>Los mapas de balizas, una vez preparados, podrán ser añadidos a los Escenarios, los cuales a su vez pueden ser incorporados en distintos Ejercicios.</p>
+
+<p>Las balizas se muestran gráficamente en la Presentación Cartográfica del instructor, tanto durante la preparación como durante la ejecución de ejercicios que incluyan mapas de balizas. Asimismo también aparecen en el visual.</p>
+
+<table align=center>
+	<tr>
+		<td width=300><font size=2 face=arial><b>Iconos de las balizas en Cartografía</b></td>
+		<td width=300><font size=2 face=arial><b>Imagen de las balizas en el visual</b></td>
+	</tr>
+
+	<tr>
+		<td><img width=200 src="../Imagenes/Mapa Balizas - Cartografia.jpg"></td>
+		<td><img width=200 src="../Imagenes/Mapa Balizas - Visual.jpg"></td>
+	</tr>
+
+</table>
+
+<p>La creación y edición de estas balizas se realiza mediante la ventana Mapas de balizas. Esta ventana tiene seis solapas: General, Cardinales, Especiales, Laterales, Otras y Luz. La primera de ellas (General) permite definir las características generales de la boya, las cuatro siguientes (Cardinales, Especiales, Laterales y Otras) permiten definir el tipo de baliza de entre los definidos por el Sistema de Balizamiento Marítimo de la IALA y la última (Luz) permite definir la luz asociada a una boya o bien una luz independiente, correspondiente a un faro o una luz fija. Todas las solapas muestran a la izquierda la lista de balizas incluidas en el Mapa de Balizas en edición.</p>
+
+<p align=center><img width=600 src="../Imagenes/Mapa Balizas - General.jpg"></p>
+
+<p>A continuación se describen los datos y botones que incluye esta ventana.</p>
+
+<p><b>Nombre</b>: Nombre del mapa.</p>
+
+<ul>
+	<p><b>Formato</b>: caracteres alfanuméricos.</p>
+</ul>
+
+<p>Botones de manejo de la lista de balizas</p>
+
+<ul>
+	<p><b>Añadir</b>: Al pulsar este botón, se añade una baliza a la lista con los datos introducidos en las distintas solapas. El icono de la baliza se muestra en la presentación cartográfica.</p>
+
+	<p><b>Editar: Al pulsar este botón se pueden seleccionar las balizas picando sobre ellas con el botón izquierdo del ratón </b>en el área de presentación cartográfica, y cambiarlos de posición arrastrando el ratón hasta la nueva posición. Asimismo, se pueden seleccionar las balizas sobre la lista para consultar o modificar sus datos, en este caso, el botón Editar se pulsa automáticamente y el icono gráfico se marca. La modificación de los datos requiere confirmación mediante el botón Actualizar.</p>
+
+	<p><i>Nota</i>: Durante la edición de objetos gráficos (zonas meteorológicas, balizas, mapas de viento y corriente, rutas…) se anulan las funciones asignadas a los botones del ratón para control de la presentación cartográfica (posicionar hook, zoom+, zoom- demora/distancia…), por tanto para ver las balizas hay que hacer zoom sobre la zona de la carta en la que se encuentran dichas balizas antes de pulsar el botón Editar.</p>
+
+	<p><b>Actualizar</b>: Al pulsar este botón se actualizan los datos de la baliza seleccionada, con los nuevos datos introducidos en las distintas solapas.</p>
+
+	<p><b>Eliminar</b>: Al pulsar este botón se elimina de la lista la baliza seleccionada. También se pueden eliminar balizas picando sobre ellas con el botón izquierdo del ratón en el área de presentación cartográfica y pulsando la tecla "Suprimir".</p>
+
+</ul>
+
+<p>Datos y botones de la solapa <b>General</b>:</p>
+
+<p><b>Nombre</b>: Nombre de la baliza.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>Tipo</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>Boya</li>
+	<li>Luz</li>
+	<li>Baliza</li>
+	<li>Radiobaliza</li>
+</ul>
+
+<p><b>Frecuencia</b>: Frecuencia de emisión de radiobaliza.</p>
+
+<ul>
+	<p><u>Unidades</u>: hercios</p>
+	<p><u>Rango</u>: 0.0 - 1000000.0</p>
+</ul>
+
+<p><b>Latitud</b>: Latitud a la que se sitúa la baliza.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados y minutos con formato ggºmm.mmm’N/S</p>
+	<p><u>Rango</u>: 00º00.000’N a 89º59.999’N y 00º00.000’S a 89º59.999’S</p>
+</ul>
+
+<p><b>Longitud</b>: Longitud a la que se sitúa la baliza.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados y minutos con formato gggºmm.mmm’E/W</p>
+	<p><u>Rango</u>: 000º00.000’E a 179º59.999’E y 00º00.000’W a 179º59.999’W</p>
+</ul>
+
+<p><b>Hook</b>: Al pulsar este botón los campos Latitud y Longitud se rellenan automáticamente con la posición del Hook.</p>
+
+<p><b>Tamaño</b>: Factor de escala que se aplica al tamaño original del modelo visual de la baliza.</p>
+
+<ul>
+	<p><u>Unidades</u>: adimensional</p>
+	<p><u>Rango</u>: 1 - 100</p>
+</ul>
+
+<p>Datos y botones de las solapas <b>Cardinales</b>, <b>Especiales</b>, <b>Laterales</b>, <b>Otras</b>:</p>
+
+<p>En estas solapas se muestran los iconos de las boyas definidos por la IALA. Sólo se puede seleccionar un icono de entre los mostrados en las cuatro solapas, marcando la casilla correspondiente.</p>
+
+<p>Estas cuatro solapas no están disponibles si se selecciona el tipo "Luz" en la solapa General.</p>
+
+<p>Marcas <b>Cardinales</b>:</p>
+
+<p align=center><img width=600 src="../Imagenes/Mapa Balizas - Cardinales.jpg"></p>
+
+<p>Marcas <b>Especiales</b>:</p>
+
+<p align=center><img width=600 src="../Imagenes/Mapa Balizas - Especiales.jpg"></p>
+
+<p>Marcas <b>Laterales</b>:</p>
+
+<p align=center><img width=600 src="../Imagenes/Mapa Balizas - Laterales.jpg"></p>
+
+<p>Marcas de <b>Aguas navegables y Peligro aislado</b>:</p>
+
+<p align=center><img width=600 src="../Imagenes/Mapa Balizas - Otras.jpg"></p>
+
+<p>Datos y botones de la solapa <b>Luz</b>:</p>
+
+<p>En esta solapa se editan los datos característicos de una luz, ya sea la luz asociada a una baliza (si se ha seleccionado tipo de baliza boya o radiobaliza en la pestaña General) o una luz independiente, correspondiente, por ejemplo, a un faro (si se ha seleccionado como tipo de baliza Luz).</p>
+
+<p><b>Color</b>: Color de la luz. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>Rojo</li>
+	<li>Verde</li>
+	<li>Blanco</li>
+	<li>Amarillo</li>
+	<li>Azul</li>
+</ul>
+
+<p><b>Altura</b>: Altura sobre el nivel del mar a la que se encuentra la luz.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0 - 1000.0</p>
+</ul>
+
+<p><b>Tamaño</b>: Tamaño del punto de luz.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0 - 100.0</p>
+</ul>
+
+<p><b>Visibilidad</b>: Visibilidad (distancia) de la luz.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0.0 - 10000000.0</p>
+</ul>
+
+<p><b>Sector</b>: Sector en el que la luz es visible, expresado como dos ángulos respecto al norte. La luz será visible cuando sea observada desde un ángulo respecto al norte mayor que el primero y menor que el segundo.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0.0 - 360.0</p>
+</ul>
+
+<p><b>Tiempo luz – Tiempo oc.</b>: Tiempos de encendido y oscuridad de la luz. Se podrán añadir varios pares de tiempo encendido – apagado, de forma que se especifica la secuencia cíclica de encendido y apagado de la luz.</p>
+
+<ul>
+	<p><u>Unidades</u>: segundos</p>
+	<p><u>Rango</u>: 0.0 - 1000.0</p>
+</ul>
+
+<P>Por ejemplo:</P>
+
+<table>
+	<tr>
+		<td><font size=2 face=arial>Tiempo luz</td>
+		<td><font size=2 face=arial>Tiempo oc.</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>2</td>
+		<td><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>1</td>
+		<td><font size=2 face=arial>1</td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>1</td>
+		<td><font size=2 face=arial>3</td>
+	</tr>
+
+</table>
+
+<p>Mediante estos datos se especificaría la siguiente secuencia que se repetirá cíclicamente: dos segundos encendida, un segundo apagada, un segundo encendida, un segundo apagada, un segundo encendida, tres segundos apagada.
+</p>
+
+</div>
+
+</body>
+
+</html>

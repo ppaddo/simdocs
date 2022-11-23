@@ -1,0 +1,112 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>AIS</font></b></p>
+
+<font size=2 face=arial>
+
+<p>El panel de detalle del AIS dispone de tres solapas Parámetros, Datos y Mensajes.</p>
+
+<p>La solapa Parámetros muestra el siguiente panel:</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_sensors/AirOtherSensorsWnd.jpg"></p>
+
+<p>Desde este panel pueden ejecutarse las siguientes acciones:</p>
+
+<ul>
+	<li>Encender / Apagar el equipo. pulsando el botón ON/OFF. En las unidades submarinas sólo se puede encender el equipo si están en superficie o tienen un mástil izado, con antena para la banda correspondiente.</li><br>
+
+	<li>Seleccionar el Modo de Funcionamiento del equipo, pulsando los botones Activo, Genérico o Pasivo:</li><br>
+
+	<ul>
+		<li>Activo: En este modo, el buque se incorpora a la red AIS efectuando los ciclos de pregunta y respuesta normales. Recibe la información del resto de buques y transmite la propia, ya sea modificada con propósitos tácticos (si el Engaño está activado), o real. Se podrá activar también la encriptación de la transmisión o no.</li><br>
+		
+		<li>Genérico: En éste modo sólo se transmite el MMSI y el nombre. En el caso de unidades de superficie o submarinas, estos dos datos son los introducidos por el operador para el engaño, en el resto de las unidades se envían los datos reales.</li><br>
+		
+		<li>Pasivo: El buque se incorpora a la red AIS sin ofrecer los datos propios, manteniéndose en postura encubierta. Recibe la información del resto de unidades, pero no transmite información propia.</li><br>
+		
+	</ul>
+
+	<li>Activar la Encriptación de las Transmisiones, pulsando el botón Cripto.</li>
+
+	<p>Este botón sólo está disponible para las unidades que tengan los siguientes códigos Stanag :</p>
+
+	<table border=1 cellspacing=0 cellpadding=3>
+		<tr>
+			<td width=120 width=80><font size=2 face=arial>1.1.1.1</td>
+			<td width=120 width=80><font size=2 face=arial>Combatant</td>
+		</tr>
+
+		<tr>
+			<td width=120 width=80><font size=2 face=arial>1.1.2.1</b></td>
+			<td width=120 width=80><font size=2 face=arial>Submarine</td>
+		</tr>
+
+		<tr>
+			<td width=120 width=80><font size=2 face=arial>1.1.3.1</td>
+			<td width=120 width=80><font size=2 face=arial>Air Military</td>
+		</tr>
+
+		<tr>
+			<td width=120 width=80><font size=2 face=arial>1.1.4</td>
+			<td width=120 width=80><font size=2 face=arial>Land</td>
+		</tr>
+
+	</table>
+
+	<p>Las transmisiones encriptadas sólo se reciben en las unidades del mismo bando con los citados códigos Stanag.</p>
+
+	<p>Las unidades de ambientación no pueden transmitir ni recibir información encriptada.</p>
+
+	<li>Activar el Engaño, pulsando el botón Engañar.</li>
+
+	<p>En la parte inferior del panel se muestra la lista de contactos AIS recibidos. Seleccionando uno de ellos y haciendo doble clic o pulsando el botón de Datos situado junto a dicha lista, se muestra un panel con la siguiente información::</p>
+
+	<ul>
+		<li>­Hora de actualización, para todos los contactos</li>
+		<li>­Posición, para todos los contactos</li>
+		<li>­Rumbo, para todos los contactos</li>
+		<li>­Velocidad, para todos los contactos</li>
+		<li>­Altitud, para contactos de aviones y helicópteros</li>
+		<li>­ISMM (MMSI), para todos los contactos</li>
+		<li>­Número OMI (IMO number), para unidades de superficie y submarinas</li>
+		<li>­Distintivo de Llamada (Callsign), para todos los contactos</li>
+		<li>­Nombre, para todos los contactos</li>
+		<li>­Tipo / Carga, para unidades de superficie y submarinas</li>
+		<li>­Bandera, para todos los contactos</li>
+		<li>­Eslora y Manga, para contactos de superficie y submarinas</li>
+		<li>­Calado, para contactos de superficie y submarinas</li>
+		<li>­Estado (Navigational Status), para contactos de superficie y submarinas</li>
+		<li>­Destino, para contactos de superficie y submarinas</li>
+		<li>­ETA, para contactos de superficie y submarinas</li>
+	</ul>
+
+	<p align=center><img width=600 src="../IlvImages/Console/console_wnd_sensors/AISContactData.jpg"></p>
+
+</ul>
+
+<P>La solapa Datos, sólo está activa para unidades de superficie y submarinas, y muestra el siguiente panel:</P>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_sensors/AISDataPanel.jpg"></p>
+
+<p>Este panel muestra, en la columna de la izquierda, los datos reales de la unidad. Estos datos no son modificables, excepto el campo ETA en el que el operador puede introducir el tiempo estimado de llegada.</p>
+
+<p>La columna de la derecha contiene los datos que se envían cuando se activa el engaño. Estos datos si son modificables, el operador puede introducir valores en cada uno de los campos y pulsar el botón Petición para que sean aceptados por el sistema.</p>
+
+<p>La solapa Mensajes muestra un panel a través del cual el operador puede enviar mensajes de texto libre y consultar los recibidos de otras unidades.</p>
+
+<p align=center><img width=600 src="../IlvImages/Console/console_wnd_sensors/AISMessagePanel.jpg"></p>
+
+<p>Si el equipo está dañado, no se podrá realizar ninguna operación sobre él.</p>
+
+</div>
+
+</body>
+
+</html>

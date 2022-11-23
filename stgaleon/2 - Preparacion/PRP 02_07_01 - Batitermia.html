@@ -1,0 +1,180 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Batitermia</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvEnvironment/BathithermWnd.jpg"></p>
+
+<p>Mediante la tabla de Batitermia, se especifican los parámetros necesarios para generar el mapa batitérmico que simula el comportamiento de las ondas sonoras en el agua transmitidas desde una fuente de emisión. El mapa batitérmico es tenido en cuenta por los modelos de sonar activo y pasivo para determinar si un posible contacto en superficie o sumergido es detectado. El modelo de propagación de ondas acústicas empleado para el cálculo del mapa batitérmico se basa en la expresión de Wilson para la velocidad de las ondas sonoras y la Ley de Snell.</p>
+
+<p>Los parámetros necesarios son los siguientes:</p>
+
+<p><b>Categoría del Fondo</b>: Este parámetro determina el coeficiente de reflexión para los rayos acústicos que inciden en el fondo marino.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 1 – 9</p>
+
+	<p>Ejemplo:</p>
+	<p>Si Categoría del Fondo = 1 &rArr; BAJA reflexión de rayos acústicos (@10%).</p>
+	<p>Si Categoría del Fondo = 9 &rArr; ALTA reflexión de rayos acústicos (@90%).</p>
+</ul>
+
+<p><b>Salinidad</b>: Este parámetro determina la salinidad media del agua del mar.</p>
+
+<ul>
+	<p><u>Unidades</u>: partes / 1000</p>
+	<p><u>Rango</u>: 25 – 40</p>
+</ul>
+
+<p><b>Temperatura en Superficie</b>: Este parámetro determina la temperatura en la superficie del agua.</p>
+
+<ul>
+	<p><u>Unidades</u>: ºC</p>
+	<p><u>Rango</u>: -30.0 – 30.0</p>
+</ul>
+
+<p><b>Profundidad del Fondo del Mar</b>: Este parámetro determina la profundidad del fondo marino.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Profundidad de Capa</b>: Este parámetro determina la profundidad de capa, la cual es mostrada sobre la representación gráfica de la Traza Batitérmica.</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Traza Batitérmica</b>: Mediante los siguientes parámetros se determina la traza batitérmica como curva de temperatura según profundidad. Esta curva se modela mediante doce pares de puntos (Temperatura, Profundidad) correspondientes a doce capas de temperatura significativas. Las doce capas deben representar los máximos, mínimos y puntos de inflexión de dicha curva hasta el fondo marino.</p>
+
+<ul>
+	<p><b>Profundidad – Capa 1 a 12</b>:</p>
+
+	<ul>
+		<p><u>Unidades</u>: metros</p>
+		<p><u>Rango</u>: 0 – 9999</p>
+	</ul>
+
+	<p><b>Temperatura – Capa 1 a 12</b>:</p>
+
+	<ul>
+		<p><u>Unidades</u>: ºC</p>
+		<p><u>Rango</u>: -30.0 – 30.0</p>
+	</ul>
+</ul>
+
+<p><b>Representaciones Gráficas</b>: Las siguientes representaciones gráficas ilustran el mapa batitérmico obtenido a partir de los parámetros introducidos. De este modo el operador puede comprobar que el comportamiento del modelo batitérmico se ajusta a lo esperado, sin necesidad de probarlo en ejecución, de modo que pueda validar así los parámetros introducidos.</p>
+
+<p>Los gráficos se actualizan pulsando el botón Redibujar o el botón Validar de la Barra de Navegación</p>
+
+<p><b>Trazas</b>: Esta gráfica representa la Traza Batitérmica introducida como curva de Temperatura del Agua frente a Profundidad y la curva correspondiente obtenida a partir de la expresión de Wilson de Velocidad de Propagación de Onda Acústica frente a Profundidad.</p>
+
+<p align=center><img width=600 src="../Images/Preparacion Batitermia - Curvas.jpg"></p>
+
+<p><b>Intensidad</b>: Esta gráfica representa el mapa batitérmico obtenido a partir de la Traza Batitérmica y el resto de parámetros introducidos, aplicando la ley de Snell. Este mapa se ilustra mediante una matriz batitérmica en la que cada cuadrícula representa mediante su intensidad de color la probabilidad de detección sonar a la profundidad y distancia correspondiente.</p>
+
+<p>Esta matriz batitérmica es distinta dependiendo de la profundidad del sonar. Cada vez que se modifiquen los parámetros y / o traza batitérmica y se desea consultar el resultado se debe introducir la profundidad del sonar deseada (que debe ser menor que la profundidad del fondo del mar introducida), pulsar Calcular y a continuación pulsar Dibujar Distancia o Dibujar Rejilla.</p>
+
+<p>Mediante Dibujar Distancia se obtiene una representación a distancia constante por cuadrícula, y mediante Dibujar Rejilla se obtiene una representación cuya escala se reduce con la distancia por lo que la representación es de mayor detalle a menor distancia:</p>
+
+<p>Dibujar Rejilla:</p>
+
+<table border=1 cellspacing=0 cellpadding=4>
+	<tr>
+		<td align=center width=200 colspan="2"><font size=2 face=arial><b>Escala Horizontal</b></td>
+		<td align=center width=200 colspan="2"><font size=2 face=arial><b>Escala Vertical</b></td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>Cuadrículas</td>
+		<td align=center><font size=2 face=arial>Millas por<br>cuadrícula</td>
+		<td align=center><font size=2 face=arial>Cuadrículas</td>
+		<td align=center><font size=2 face=arial>Pies por<br>cuadrícula</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>1 a 16</td>
+		<td align=center><font size=2 face=arial>0,5</td>
+		<td align=center><font size=2 face=arial>1 a 10</td>
+		<td align=center><font size=2 face=arial>25</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>17 a 64</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>11 a 17</td>
+		<td align=center><font size=2 face=arial>50</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>65 a 100</td>
+		<td align=center><font size=2 face=arial>2</td>
+		<td align=center><font size=2 face=arial>18 a 21</td>
+		<td align=center><font size=2 face=arial>100</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>-</td>
+		<td align=center><font size=2 face=arial>-</td>
+		<td align=center><font size=2 face=arial>22 a 25</td>
+		<td align=center><font size=2 face=arial>200</td>
+	</tr>
+
+	<tr>
+		<td align=center colspan="2"><font size=2 face=arial>Fondo de Escala:<br>100 Millas</td>
+		<td align=center colspan="2"><font size=2 face=arial>Fondo de Escala:<br>1800 Pies</td>
+	</tr>
+
+</table>
+
+<p>Dibujar Distancia:</p>
+
+<table border=1 cellspacing=0 cellpadding=4>
+	<tr>
+		<td align=center width=200 colspan="2"><font size=2 face=arial><b>Escala Horizontal</b></td>
+		<td align=center width=200 colspan="2"><font size=2 face=arial><b>Escala Vertical</b></td>
+	</tr>
+	
+	<tr>
+		<td align=center><font size=2 face=arial>Cuadrículas</td>
+		<td align=center><font size=2 face=arial>Millas por<br>cuadrícula</td>
+		<td align=center><font size=2 face=arial>Cuadrículas</td>
+		<td align=center><font size=2 face=arial>Pies por<br>cuadrícula</td>
+	</tr>
+
+	<tr>
+		<td align=center><font size=2 face=arial>1 a 100</td>
+		<td align=center><font size=2 face=arial>1</td>
+		<td align=center><font size=2 face=arial>1 a 25</td>
+		<td align=center><font size=2 face=arial>64</td>
+	</tr>
+
+	<tr>
+		<td align=center colspan="2"><font size=2 face=arial>Fondo de Escala:<br>100 Millas</td>
+		<td align=center colspan="2"><font size=2 face=arial>Fondo de Escala:<br>1600 Pies</td>
+	</tr>
+
+</table>
+
+<p align=center><img width=600 src="../Images/Preparacion Batitermia - Intensidad.jpg"></p>
+
+<p><b>Líneas</b>: Esta gráfica representa mediante rayos la propagación de la onda acústica. Igual que la gráfica anterior, esta representación se actualiza al pulsar Calcular.</p>
+
+<p align=center><img width=600 src="../Images/Preparacion Batitermia - Lineas.jpg"></p>
+
+</div>
+
+</body>
+
+</html>

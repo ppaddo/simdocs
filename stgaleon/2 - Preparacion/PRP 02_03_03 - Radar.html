@@ -1,0 +1,237 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Radar</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvSensors/RadarWnd.jpg"></p>
+<p align=center><img width=400 src="../IlvImages/Preparation/IlvSensors/RadarWndNtbLobes.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Nº de SPOT</b>: Este parámetro identifica de forma única a cada radar. Es tenido en cuenta por el modelo de ESM de modo que la detección por ESM de un radar puede suponer la obtención del número de SPOT del radar detectado. A través del modelo de ESM, este parámetro del radar también afecta al lanzamiento de misiles tipo ARM, y al lanzamiento automático de Chaff con filtro ASMD.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: Hasta cinco caracteres alfanuméricos.</p>
+</ul>
+
+<p><b>Tipo de Radar</b>: Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>Radar de Navegación</li>
+	<li>Radar de Exploración Superficie</li>
+	<li>Radar de Exploración Aérea</li>
+	<li>Dirección de Tiro</li>
+	<li>Radar de Aéreo Interceptación</li>
+	<li>Radar de Aeronave</li>
+	<li>Seeker</li>
+	<li>Radar Multifunción</li>
+</ul>
+
+<p>Este parámetro determina si el radar puede ser empleado como seeker de misil o como dirección de tiro. El resto de tipos de radar son informativos.</p>
+
+<p><b>Frecuencia</b>: Este parámetro influye en el cálculo del RCS de una plataforma para este radar. También es tenido en cuenta por el modelo de ESM para determinar si detecta emisión de este radar.</p>
+
+<ul>
+	<p><u>Unidades</u>: MHz</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Agilidad</b>: Determina si el radar tiene capacidad de trabajar en un margen de frecuencias. Si tiene esta capacidad, cuando el radar se active se seleccionará una frecuencia de funcionamiento como un valor aleatorio en un rango de valores [frecuencia-margen, frecuencia+margen]. Es tenido en cuenta por el modelo de ESM para evaluar si puede obtener frecuencia de una emisión radar detectada.</p>
+
+<p><b>Margen</b>: Este parámetro determina el margen de frecuencia en el que puede trabajar el radar. Este parámetro sólo puede ser introducido si se ha seleccionado Agilidad.</p>
+
+<ul>
+	<p><u>Unidades</u>: MHz</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p><b>Notación en Frecuencia (Agilidad)</b>: Se detalla el tipo de agilidad, con cuatro posibles valores, no excluyentes entre sí: Jump, Step, Sweep y Complex. El valor por defecto será Jump y es obligatorio seleccionar al menos una de las opciones.</p>
+
+<p><b>PRF</b>: Pulse Repetition Frequency. Este parámetro es tenido en cuenta por el modelo de radar en el cálculo del alcance máximo del radar. Al introducir el valor en microsegundos el sistema automáticamente rellena el intervalo de repetición (PRI), en Hercios.</p>
+
+<ul>
+	<p><u>Unidades</u>: microsegundos</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Notación en PRF (Agilidad)</b>: Determina si el radar trabaja con PRF Agil o no. Es tenido en cuenta por el modelo de ESM para evaluar si puede obtener PRF de una emisión radar detectada. El tipo de agilidad puede tomar seis posibles valores, no excluyentes entre sí: Stagger, Codificado, Switch, Jitter, Slide y Compleja. El valor por defecto será Jitter y es obligatorio seleccionar al menos una de las opciones.</p>
+
+<p><b>PW</b>: Pulse Width. Este parámetro es tenido en cuenta por el modelo de radar para determinar la distancia de discriminación de contactos por línea de costa.</p>
+
+<ul>
+	<p><u>Unidades</u>: ms</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Modulación Intrapulso</b>: Determina si el radar trabaja con Modulación Intrapulso o no. Es tenido en cuenta por el modelo de ESM para evaluar si puede obtener PW de una emisión radar detectada. El tipo de modulación puede tomar dos posibles valores, excluyentes entre sí: Chirp y Barker. El valor por defecto será Chirp y es obligatorio seleccionar al menos una de las dos opciones.</p>
+
+<p><b>Notación en PW (Agilidad)</b>: Determina si el radar trabaja con Ancho de Pulso Agil o no.
+
+<p><b>ARP</b>: Antenna Rotation Period. Este parámetro es tenido en cuenta por el modelo de radar para calcular el tiempo que tarda en dar un barrido completo. Al introducir el valor en rpm el sistema automáticamente rellena el intervalo de rotación, en segundos.</p>
+
+<ul>
+	<p><u>Unidades</u>: rpm</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Iluminador</b>: Determina si el radar puede hacer iluminación sobre contactos.</p>
+
+<p><b>Lock-On</b>: Determina si el radar puede hacer Lock-On sobre contactos.</p>
+
+<p><b>Tipos de Barrido de Antena</b>: Admite seis opciones posibles, todas ellas excluyentes: Circular, Sectorial, Conic, Raster, Compleja y Helicoidal. El valor por defecto es Circular, y no es obligatorio seleccionar una de las opciones si el radar tiene capacidad Lock-on o Iluminador.</p>
+
+<p><b>Capacidad TWS</b>: Track-While-Scan. Determina si el radar tiene capacidad de hacer TWS.</p>
+
+<p><b>Nº blancos aéreos</b>: Número máximo de contactos aéreos sobre los que el radar puede hacer TWS simultáneamente. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad TWS.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Nº blancos superficie</b>: Número máximo de contactos superficie sobre los que el radar puede hacer TWS simultáneamente. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad TWS.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Capacidad MTI</b>: Moving Target Indicator. Determina si el radar tiene capacidad de activar MTI.</p>
+
+<p><b>Velocidad</b>: Velocidad máxima de contactos considerada por el radar cuando tiene activado el MTI, de forma que los contactos con velocidad menor o igual que ésta son filtrados. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad MTI.</p>
+
+<ul>
+	<p><u>Unidades</u>: Nudos</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Determinador de Altura</b>: Determina si el radar tiene capacidad de obtener la altura de los contactos detectados cuando está haciendo exploración.</p>
+
+<p><b>Capacidad ISAR</b>: Inverse Synthetic Aperture Radar. Determina si el radar tiene capacidad de ISAR, en cuyo caso el modelo de radar determina tipo y clase de las unidades de superficie detectadas.</p>
+
+<p><b>Distancia Autoprotección</b>: Distancia por debajo de la cual los contactos detectados por el radar no se ven afectados aunque el radar esté siendo interferido por ECM mediante técnicas de engaño o perturbación.</p>
+
+<ul>
+	<p><u>Unidades</u>: Millas</p>
+	<p><u>Rango</u>: 0 – 9,99</p>
+</ul>
+
+<p><b>Detectabilidad por ESM</b>: Este parámetro es tenido en cuenta por el modelo de ESM para calcular el alcance de detección de emisiones radar. Factor que modela la relación entre el alcance del radar y el alcance del ESM para este radar.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 1,99</p>
+
+	<p>Ejemplo: </p>
+
+	<p>Si Detectabilidad por ESM = 0 &rArr; Radar no detectable por ESM.</p>
+	<p>Si Detectabilidad por ESM = 1 &rArr; Alcance ESM = Alcance Radar.</p>
+	<p>Si Detectabilidad por ESM @ 2 &rArr; Alcance ESM @ 2 * Alcance Radar.</p>
+</ul>
+
+<p><b>Factor Engaño</b>: Este parámetro es tenido en cuenta por el modelo de Radar para calcular el alcance. Factor que modela la reducción del alcance del radar cuando está siendo perturbado.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 0,99</p>
+
+	<p>Ejemplo: </p>
+
+	<p>Si Factor Engaño = 0 &rArr; La interferencia no tiene efecto.</p>
+	<p>Si Factor Engaño @ 1 &rArr; El radar no detecta.</p>
+</ul>
+
+<p><b>Sensibilidad</b>: Este parámetro es tenido en cuenta por el modelo de Radar para calcular el número de falsos ecos aleatorios que se producen. Cuanto mayor es la sensibilidad del equipo, mayor es el número de falsos ecos que se producen.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 1</p>
+</ul>
+
+<p><b>Exploración</b>:</p>
+
+<ul>
+	<p><b>Tabla de Susceptibilidad por ECM</b>: Tabla de susceptibilidad aplicable cuando el radar está en exploración. Ver apartado Susceptibilidad por ECM.</p>
+
+	<p><b>TTF (0-15)</b>: Este parámetro modela el índice de peligrosidad asignado a este radar cuando está en exploración, y es tenido en cuenta por los modelos de ESM y ECM, y por los filtros ASMD para cañones y chaff.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 15 ( 15 &rArr; Máxima peligrosidad )</p>
+	</ul>
+</ul>
+
+<p><b>Lock-On</b>:</p>
+
+<ul>
+
+<p><b>Rango Lock-On</b>: Alcance máximo al que el radar puede hacer Lock-On sobre un contacto. Este parámetro sólo puede ser introducido si se ha seleccionado Lock-On.</p>
+
+<ul>
+	<p><u>Unidades</u>: Millas</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+
+<p><b>Tabla de Susceptibilidad por ECM</b>: Tabla de susceptibilidad aplicable cuando el radar está haciendo lock-on. Ver apartado Susceptibilidad por ECM.</p>
+
+<p><b>TTF (0-15)</b>: Este parámetro modela el índice de peligrosidad asignado a este radar cuando está haciendo lock-on, y es tenido en cuenta por los modelos de ESM y ECM, y por los filtros ASMD para cañones y chaff.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 15 ( 15 &rArr; Máxima peligrosidad)</p>
+	</ul>
+</ul>
+
+<p><b>Botón Ver Spot Modes</b>: Pulsando este botón se mostrará la lista de Spot Modes derivados del número de Spot del radar. Los Spot Modes se generan calculando las diferentes combinaciones de notaciones posibles para el radar y se les asignará un número consecutivo siguiendo el siguiente formato: Nº Spot Radar.NN, donde NN tomará los valores 01 a 99 (Si el número de Spot Modes posibles excede de este número, solo se usarán los 99 primeros)
+
+<ul>
+	<p>Ejemplo: </p>
+	<p align=center><img width=600 src="../IlvImages/Preparation/IlvSensors/RadarWndSpotModes.jpg"></p>
+</ul>
+
+<p><b>Lóbulos</b>:</p>
+
+<p>Para cada radar se pueden definir hasta tres lóbulos, que podrán ser seleccionados por el operador. Los lóbulos definen el alcance del radar en función de la altura para un contacto de RCS = 1, y se caracterizan por cinco puntos (pares altura - alcance). A cada lóbulo se le asigna también una identificación.</p>
+
+<p>El gráfico es una ayuda que representa la forma del lóbulo introducido y se actualiza pulsando el botón Redibujar o el botón Validar de la Barra de Navegación.</p>
+
+<p>Los lóbulos son tenidos en cuenta por el modelo de radar para calcular el alcance al que detecta a una unidad teniendo en cuenta su RCS, altura y distancia a la que se encuentra:</p>
+
+<p><b>Identificación</b>: Tira de caracteres que identifica al lóbulo.</p>
+
+<p>Cinco puntos por lóbulo definidos por:</p>
+
+<p><b>Altura</b>:</p>
+
+<ul>
+	<p><u>Unidades</u>: metros</p>
+	<p><u>Rango</u>: -99999 – 99999</p>
+</ul>
+
+<p><b>Alcance</b>:</p>
+
+<ul>
+	<p><u>Unidades</u>: Millas</p>
+	<p><u>Rango</u>: 0 – 99999,9</p>
+</ul>
+
+<ul>
+	<p>Ejemplo: </p>
+	<p align=center><img width=400 src="../Images/Preparacion Radar - Lobulos.gif"></p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

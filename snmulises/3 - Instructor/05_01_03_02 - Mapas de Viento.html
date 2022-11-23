@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Vientos</font></b></p>
+
+<font color="black" size=2 face=arial>
+
+<p>Los mapas de viento están formados por una colección de vectores de viento para cada uno de los cuales se define intensidad y dirección. Estos vectores se tienen en cuenta para calcular el viento resultante en la posición de las unidades, que será la media ponderada en función de la distancia a los vectores más próximos.</p>
+
+<p>La creación y edición de estos mapas se realiza mediante la siguiente ventana.</p>
+
+<p align=center><img width=600 src="../Imagenes/Mapa Vientos.jpg"></p>
+
+<p>Esta ventana incluye los datos y botones que se describen a continuación:</p>
+
+<p><b>Nombre</b>: Nombre del mapa.</p>
+
+<ul>
+	<p><u>Formato</u>: caracteres alfanuméricos.</p>
+</ul>
+
+<p>Botones de manejo de la lista de vectores</p>
+
+<ul>
+	<p><b>Añadir</b>: Cuando este botón está pulsado, el operador puede definir cada uno de los vectores que componen el mapa de viento picando con el botón izquierdo del ratón sobre la presentación cartográfica. Por cada clic del ratón se añade un vector a la lista en la posición del cursor con los datos de intensidad y dirección introducidos en los campos Intensidad y Dirección situados a la derecha de la lista. Cada vector creado se representa gráficamente sobre la cartografía.</p>
+
+	<p><b>Editar</b>: Cuando este botón está pulsado el operador puede seleccionar los vectores picando sobre ellos con el botón izquierdo del ratón en el área de presentación cartográfica, y cambiarlos de posición arrastrando el ratón hasta la nueva posición. Asimismo, se pueden seleccionar los vectores sobre la lista para consultar o modificar sus datos, en este caso, el botón Editar se pulsa automáticamente y el gráfico del vector seleccionado se marca. La modificación de los datos requiere confirmación mediante el botón Actualizar.</p>
+
+	<p><i>Nota</i>: Durante la edición de objetos gráficos (zonas meteorológicas, balizas, mapas de viento y corriente, rutas…) se anulan las funciones asignadas a los botones del ratón para control de la presentación cartográfica (posicionar hook, zoom+, zoom- demora/distancia…), por tanto para ver los vectores hay que hacer zoom sobre la zona de la carta en la que se encuentran dichos vectores antes de pulsar el botón Editar.</p>
+
+	<p><b>Actualizar</b>: Al pulsar este botón se actualizan los datos del vector seleccionado, con los nuevos datos introducidos.</p>
+
+	<p><b>Eliminar</b>: Al pulsar este botón se elimina de la lista el vector seleccionado. También se pueden eliminar vectores picando sobre ellos con el botón izquierdo del ratón en el área de presentación cartográfica y pulsando la tecla "Suprimir".</p>
+	 
+</ul>
+
+<p>Botones de recursos gráficos</p>
+
+<p align=center><img width=200 src="../Imagenes/BarraRecursosGraficos.jpg"></p>
+
+<ul>
+	<p>Estos botones sirven para definir el color, el estilo y el tipo de letra que se aplica a la representación gráfica de los vectores.</p>
+
+	<p>El funcionamiento de los botones de la barra de recursos gráficos se describe en el apartado <i>Definición de Recursos Gráficos</i>.</p>
+
+</ul>
+
+<p>Datos para la definición de cada vector:</p>
+
+<p><b>Intensidad</b>: Intensidad del vector de viento.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0.0 – 10000.0</p>
+</ul>
+
+<p><b>Dirección</b>: Dirección del vector de viento.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0.0 – 360.0</p>
+</ul>
+
+<p>Los mapas de viento, una vez preparados, podrán ser añadidos a los Escenarios, los cuales a su vez pueden ser incorporados en distintos Ejercicios.</p>
+
+<p>Los mapas de viento se muestran gráficamente en la Presentación Cartográfica del instructor, tanto durante la preparación como durante la ejecución de ejercicios que incluyan mapas de viento.</p>
+
+</div>
+
+</body>
+
+</html>

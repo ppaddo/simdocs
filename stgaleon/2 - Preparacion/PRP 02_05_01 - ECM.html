@@ -1,0 +1,182 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>ECM</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvContrameasures/EcmWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>POD ECM</b>: Este parámetro determina si el equipo ECM puede formar parte de un conjunto recargable de armas aéreas. Ver apartado Configuración de Armas Aéreas.</p>
+
+<p><b>Peso</b>: Este parámetro es tenido en cuenta para el cálculo del peso transportado por las unidades aéreas que lo instalen.</p>
+
+<ul>
+	<p><u>Unidades</u>: kilogramos</p>
+	<p><u>Rango</u>: 0 – 9999</p>
+</ul>
+
+<p><b>Frecuencia Mínima</b>: Este parámetro determina el límite inferior del rango de frecuencias en el que el modelo de ECM puede aplicar técnicas de perturbación o engaño. El modelo de ECM no puede perturbar ni engañar a radares que operen por debajo de esta frecuencia.</p>
+
+<ul>
+	<p><u>Unidades</u>: MHz</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Frecuencia Máxima</b>: Este parámetro determina el límite superior del rango de frecuencias en el que el modelo de ECM puede aplicar técnicas de perturbación o engaño. El modelo de ECM no puede perturbar ni engañar a radares que operen por encima de esta frecuencia.</p>
+
+<ul>
+	<p><u>Unidades</u>: MHz</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Alcance Mínimo</b>: Este parámetro determina la distancia mínima a la que el modelo de ECM puede aplicar técnicas de perturbación o engaño.</p>
+
+<ul>
+	<p><u>Unidades</u>: millas</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p><b>Alcance Máximo</b>: Este parámetro determina la distancia máxima a la que el modelo de ECM puede aplicar técnicas de perturbación o engaño.</p>
+
+<ul>
+	<p><u>Unidades</u>: millas</p>
+	<p><u>Rango</u>: 0 – 999,9</p>
+</ul>
+
+<p><b>Angulo de Irradiación</b>: Este parámetro determina el sector centrado en la dirección en la que se aplica una técnica de perturbación o engaño en el que dicha técnica puede tener efecto.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0 – 99,9</p>
+</ul>
+
+<p>Los siguientes parámetros parametrizan la eficacia de este ECM aplicando las distintas técnicas de perturbación o engaño contra un radar. Por cada una de estas técnicas, excepto para las de engaño por RGPO y HDC, se especifica una eficacia del ECM aplicando esta técnica contra un radar. Para el caso de engaño por RGPO o HDC, se especifican unas distancias características de esta técnicas.</p>
+
+<p>El efecto de la aplicación de una de las técnicas contra un Radar además de depender de la eficacia del equipo ECM aplicando esta técnica, depende también de la susceptibilidad del Radar ante la técnica que se le aplica (ver apartados Radar y Susceptibilidad por ECM). Esto se modela mediante un Factor Eficacia de la perturbación o engaño, el cual se calcula como producto de la eficacia del ECM por la susceptibilidad del Radar para la técnica aplicada.</p>
+
+<p align=center><img width=300 src="../Images/Preparacion ECM - Eficacia.gif"></p>
+
+<p>Para el caso de engaño por RGPO o HDC, la Susceptibilidad por ECM del Radar ante estas técnicas actúan como probabilidad de que el radar sea engañado, y el efecto del engaño es modelado teniendo en cuenta las distancias características que se especifican para el ECM (ver campos RGPO y HDC más adelante).</p>
+
+<p>Ejemplo:</p>
+
+<p>Si Factor Eficacia = 0 &rArr; La técnica nunca afecta al radar.</p>
+<p>Si Factor Eficacia = 1 &rArr; La técnica afecta mucho al radar.</p>
+
+<p><b>Perturbación</b>:</p>
+
+<ul>
+	<p><b>Capacidad de CW</b>: Este parámetro determina si el ECM tiene capacidad de aplicar esta técnica de perturbación.</p>
+
+	<p><b>CW</b>: Eficacia del ECM ante esta técnica de perturbación. Este parámetro sólo podrá ser introducido si se ha seleccionado Capacidad de CW.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Capacidad de HDT</b>: Este parámetro determina si el ECM tiene capacidad de aplicar esta técnica de perturbación.</p>
+
+	<p><b>HDT</b>: Eficacia del ECM ante esta técnica de perturbación. Este parámetro sólo podrá ser introducido si se ha seleccionado Capacidad de HDT.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Capacidad de NCP</b>: Este parámetro determina si el ECM tiene capacidad de aplicar esta técnica de perturbación.</p>
+
+	<p><b>NCP</b>: Eficacia del ECM ante esta técnica de perturbación. Este parámetro sólo podrá ser introducido si se ha seleccionado Capacidad de NCP.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Capacidad de CW / Vobulación</b>: Este parámetro determina si el ECM tiene capacidad de aplicar esta técnica de perturbación.</p>
+
+	<p><b>CW / Vobulación</b>: Eficacia del ECM ante esta técnica de perturbación. Este parámetro sólo podrá ser introducido si se ha seleccionado Capacidad de CW / Vobulación.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Técnicas Simultáneas por Cuadrante</b>: Este parámetro determina el número máximo de técnicas de perturbación que puede aplicar el equipo ECM por cuadrante simultáneamente.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 10</p>
+	</ul>
+</ul>
+
+<p><b>Engaño</b>:</p>
+
+<ul>
+	<p><b>Capacidad de RGPO</b>: Este parámetro determina si el ECM tiene capacidad de aplicar esta técnica de engaño.</p>
+
+	<p><b>RGPO</b>: Este parámetro determina el desplazamiento en distancia producido sobre los contactos del radar engañado. Este parámetro sólo podrá ser introducido si se ha seleccionado Capacidad de RGPO.</p>
+
+	<ul>
+		<p><u>Unidades</u>: yardas</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Capacidad de HDC</b>: Este parámetro determina si el ECM tiene capacidad de aplicar esta técnica de engaño.</p>
+
+	<p><b>HDC</b>: Este parámetro se usa para definir el radio de un círculo alrededor de cada contacto real del radar. Cuando se aplica la técnica de engaño HDC, en la mitad del círculo más alejada del equipo de ECM que está engañando al radar se observan ocho falsos ecos Este parámetro sólo podrá ser introducido si se ha seleccionado Capacidad de HDC.</p>
+
+	<ul>
+		<p><u>Unidades</u>: yardas</p>
+		<p><u>Rango</u>: 0 – 99999</p>
+	</ul>
+
+	<p><b>Capacidad de RGPO / AGPO</b>: Este parámetro determina si el ECM tiene capacidad de aplicar esta técnica de engaño.</p>
+
+	<p><b>RGPO / AGPO</b>: Eficacia del ECM ante esta técnica de engaño. Este parámetro sólo podrá ser introducido si se ha seleccionado Capacidad de RGPO / AGPO.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Capacidad de RGPO / Count Down</b>: Este parámetro determina si el ECM tiene capacidad de aplicar esta técnica de engaño.</p>
+
+	<p><b>RGPO / Count Down</b>: Eficacia del ECM ante esta técnica de engaño. Este parámetro sólo podrá ser introducido si se ha seleccionado Capacidad de RGPO / Count Down.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Capacidad de RGPO / Vobulación</b>: Este parámetro determina si el ECM tiene capacidad de aplicar esta técnica de engaño.</p>
+
+	<p><b>RGPO / Vobulación</b>: Eficacia del ECM ante esta técnica de engaño. Este parámetro sólo podrá ser introducido si se ha seleccionado Capacidad de RGPO / Vobulación.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Técnicas Simultáneas por Cuadrante</b>: Este parámetro determina el número máximo de técnicas de engaño que puede aplicar el equipo ECM por cuadrante simultáneamente.</p>
+
+	<ul>
+		<p><u>Unidades</u>: ---</p>
+		<p><u>Rango</u>: 0 – 10</p>
+	</ul>
+</ul>
+
+</div>
+
+</body>
+
+</html>

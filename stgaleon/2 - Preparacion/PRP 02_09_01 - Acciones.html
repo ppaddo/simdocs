@@ -1,0 +1,181 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Acciones</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvGame/ActionWnd.jpg"></p>
+
+<p>Mediante esta tabla se parametrizan las Acciones que pueden ser incluidas dentro de una Programación de Acciones, la cual puede ser asignada a unidades.</p>
+
+<p>La naturaleza de la Acción se especifica parametrizando:</p>
+
+<ul>
+	<li><b>Ubicación Geográfica</b>, para especificar si la unidad debe dirigirse o no a una zona o ruta.</li><br>
+
+	<li><b>Empleo de Sistemas</b>, para especificar si la unidad debe emplear algún sistema contra blancos.</li><br>
+
+	<li><b>Condiciones Cinemáticas</b> de la unidad, con respecto a blancos.</li>
+
+</ul>
+
+<p>Los <b>Blancos</b> contra los que se efectúa la Acción, se especifican parametrizando:</p>
+
+<ul>
+	<li><b>Filtros para Blancos</b>, o</li><br>
+
+	<li><b>Posición Geográfica</b>.</li>
+
+</ul>
+
+<p><b>Ubicación Geográfica</b>:</p>
+
+<p><b>Situación</b>: Este parámetro determina si la unidad debe dirigirse o salir de una determinada zona o una ruta. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>NO APLICA</li>
+	<li>DENTRO</li>
+	<li>FUERA</li>
+</ul>
+
+<p><b>Tipo de Zona</b>: Este parámetro determina el tipo zona geográfica o ruta a la que la unidad debe dirigirse o salir de ella, según lo indicado en el parámetro anterior. Puede tomar los siguientes valores:</p> 
+
+<ul>
+	<li>PIM</li>
+	<li>ROE</li>
+	<li>ZIG-ZAG</li>
+</ul>
+
+<p><b>Zona</b>: Este parámetro determina la zona geográfica o ruta a la que la unidad debe dirigirse o salir de ella, según lo indicado en el parámetro Situación. Podrán ser seleccionadas de entre las Zonas ROE, PIM y Zig-zag, según parámetro anterior, disponibles en la Base de Datos.</p>
+
+<p><b>Empleo de Sistemas</b>:</p>
+
+<p><b>Sistema</b>: Estos parámetros determinan el empleo de sistemas que debe realizar la unidad. Mediante ON / OFF, se indica para cada sistema seleccionado, si debe activar o desactivar el empleo de dicho sistema. Puede tomar los siguientes valores:</p>
+
+<table border=1 cellspacing=0 cellpadding=4>
+	<tr>
+		<td valign=top width=200><font size=2 face=arial>
+			<b>Sensores</b>
+			<ul>
+				<li>RADAR SUP</li>
+				<li>RADAR AÉREO</li>
+				<li>RADAR DT</li><br>
+				<li>LOCKON AÉREO</li>
+				<li>LOCKON SUP</li>
+				<li>LOCKON DT</li><br>
+				<li>SONAR HULL</li>
+				<li>SONAR VDS</li>
+				<li>SONAR TACTAS</li>
+			</ul>
+		</td>
+
+		<td valign=top width=200><font size=2 face=arial>
+		<b>Contramedidas</b>
+		<ul>
+			<li>SEÑUELOS</li><br>
+			<li>PERTURBACIÓN ECM AUTO.</li>
+			<li>ENGAÑO ECM AUTO.</li>
+			<li>CHAFF AUTO.</li>
+		</ul>
+		</td>
+
+		<td valign=top width=200><font size=2 face=arial>
+		<b>Armas</b>
+		<ul>
+			<li>TORPEDO</li><br>
+			<li>MISIL SAM / AAM / UAM</li>
+			<li>MISIL SSM / ASM / USM</li><br>
+			<li>CAÑONES</li><br>
+			<li>BOMBAS</li><br>
+			<li>CARGAS PROFUNDIDAD</li>
+		</ul>
+		</td>
+
+	</tr>
+</table>
+
+<p><b>Condiciones Cinemáticas</b>:</p>
+
+<p><b>Distancia < / ></b>: Este parámetro determina el límite de distancia de la unidad al blanco por debajo / encima de la cual se debe situar la unidad.</p>
+
+<ul>
+	<p><u>Unidades</u>: yardas</p>
+	<p><u>Rango</u>: 0 – 999999</p>
+</ul>
+
+<p><b>Altura < / ></b>: Este parámetro determina el límite de altura de la unidad por debajo / encima del cual se debe situar la unidad.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Velocidad < / ></b>: Este parámetro determina el límite de velocidad de la unidad por debajo / encima del cual debe permanecer la unidad.</p>
+
+<ul>
+	<p><u>Unidades</u>: nudos</p>
+	<p><u>Rango</u>: 0 – 9999,9</p>
+</ul>
+
+<p><b>Filtros para Blancos</b>:</p>
+
+<p>Estos datos sólo pueden ser introducidos si no se activa el campo Posición del Blanco.</p>
+
+<p><b>Bando</b>: Este parámetro determina el bando al que deben pertenecer los blancos para que se efectúe la Acción. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>NO APLICA</li>
+	<li>CONTRARIO</li>
+	<li>PROPIO</li>
+	<li>NEUTRAL</li>
+	<li>CONTRARIO-NEUTRAL</li>
+	<li>PROPIO-NEUTRAL</li>
+</ul>
+
+<p><b>Tipo</b>: Este parámetro determina el tipo de unidad del que deben ser los blancos para que se efectúe la Acción. Puede tomar los siguientes valores:</p>
+
+<ul>
+	<li>NO APLICA</li>
+	<li>SUPERFICIE</li>
+	<li>SUBMARINO</li>
+	<li>AVIÓN</li>
+	<li>HELICÓPTERO</li>
+	<li>TERRESTRE</li>
+	<li>BASE</li>
+	<li>AVIÓN-HELICÓPTERO</li>
+	<li>SUPERFICIE-SUBMARINO</li>
+	<li>TERRESTRE-BASE</li>
+</ul> 
+
+<p><b>Posición de Blanco</b>:</p>
+
+<p>Este parámetro determina que los filtros para blancos quedan inactivos y que la acción se va a realizar contra una posición, y no sobre una unidad.</p>
+
+<p><b>Posición</b>: Este parámetro determina la posición geográfica absoluta que se empleará como referencia para la acción. Sólo podrá ser introducida si se ha seleccionado Posición de Blanco.</p>
+
+<p><b>Latitud</b>: Latitud de la posición del falso eco.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados y minutos con dos decimales, con formato: 999º99.99'N/S</p>
+	<p><u>Rango</u>: 000º00.00'N – 089º59.99'N, 000º00.00'S – 089º59.99'S</p>
+</ul>
+
+<p><b>Longitud</b>: Latitud de la posición del falso eco.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados y minutos con dos decimales, con formato: 999º99.99'N/S</p>
+	<p><u>Rango</u>: 000º00.00'E – 179º59.99'E, 000º00.00'W – 179º59.99'W</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

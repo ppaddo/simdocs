@@ -1,0 +1,134 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>ESM</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvSensors/EsmWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Frecuencia Mínima</b>: Este parámetro determina el límite inferior del rango de frecuencias en el que el modelo de ESM evalúa emisiones y perturbaciones para determinar si son detectadas. El modelo de ESM no detecta emisiones de Radar, TACAN o IFF ni interferencias por debajo de esta frecuencia.</p>
+
+<ul>
+	<p><u>Unidades</u>: MHz</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Frecuencia Máxima</b>: Este parámetro determina el límite superior del rango de frecuencias en el que el modelo de ESM evalúa emisiones y perturbaciones para determinar si son detectadas. El modelo de ESM no detecta emisiones de Radar, TACAN o IFF ni interferencias por encima de esta frecuencia.</p>
+
+<ul>
+	<p><u>Unidades</u>: MHz</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Capacidad de Proceso</b>: Este parámetro determina la máxima capacidad de proceso del equipo ESM. Es tenido en cuenta junto con la densidad electromagnética de la zona meteorológica en la que se encuentre para determinar la cantidad máxima de emisiones que puede procesar.</p>
+
+<ul>
+	<p><u>Unidades</u>: pps</p>
+	<p><u>Rango</u>: 0 – 9999999</p>
+</ul>
+
+<p><b>Factor de Ventaja</b>: Este parámetro es tenido en cuenta por el modelo de ESM para calcular su alcance. El alcance al que el modelo de ESM puede detectar una emisión de un sensor (Radar, TACAN o IFF) es el alcance de dicho sensor multiplicado por este factor.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 0 – 1,999</p>
+
+	<p>Ejemplo: </p>
+
+	<p>Si Factor de Ventaja = 0 &rArr; No detecta emisiones del sensor.</p>
+	<p>Si Factor de Ventaja @ 1 &rArr; Alcance ESM @ Alcance del sensor.</p>
+	<p>Si Factor de Ventaja @ 2 &rArr; Alcance ESM es doble del alcance del sensor.</p>
+</ul>
+
+<p><b>Error en Demora</b>: Este parámetro modela el error con el que el modelo de ESM obtiene la demora de las emisiones detectadas. Dicho error se calcula para cada detección como un valor aleatorio entre –error y error, siendo “error” el valor asignado a este parámetro.</p>
+
+<ul>
+	<p><u>Unidades</u>: grados</p>
+	<p><u>Rango</u>: 0 – 90</p>
+</ul>
+
+<p><b>Margen a Aplicar en Librerías</b>: Este parámetro es el margen con el que se comparan los valores de Frecuencia, PRF, ARP y PW de las detecciones obtenidas por el modelo de ESM con los de Librería (sensores Radar de la BD), obteniendo así una lista de sensores con un valor de FIT de 1 a 4.</p>
+
+<ul>
+	<p><u>Unidades</u>: %</p>
+	<p><u>Rango</u>: 0 – 99</p>
+</ul>
+
+<p><b>Errores en Detección (%)</b>:</p>
+
+<ul>
+	<p><b>Errores en Detección (%) Frecuencia</b>: Este parámetro modela el error máximo con el que el modelo de ESM obtiene la frecuencia de las emisiones detectadas.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Capacidad de Complejo para Frecuencia</b>: Determina si el ESM tiene capacidad de obtener tanto el dato de frecuencia como la propia capacidad compleja del radar (Frecuencia Ágil) si el radar está haciendo uso de esta capacidad.</p>
+
+	<p><b>Capacidad de Detección PRF</b>: Determina si el ESM tiene capacidad de obtener el PRF de las emisiones detectadas.</p>
+
+	<p><b>Errores en Detección (%) PRF</b>: Este parámetro modela el error máximo con el que el modelo de ESM obtiene el PRF de las emisiones detectadas. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Detección de PRF.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Capacidad de Complejo para PRF</b>: Determina si el ESM tiene capacidad de obtener tanto el dato de PRF como la propia capacidad compleja del radar (PRF compleja) si el radar está haciendo uso de esta capacidad. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Detección de PRF.</p>
+
+	<p><b>Errores en Detección (%) PW</b>: Este parámetro modela el error máximo con el que el modelo de ESM obtiene el PW de las emisiones detectadas.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Capacidad de Complejo para PW</b>: Determina si el ESM tiene capacidad de obtener tanto el dato de PW como la propia capacidad compleja del radar (Modulación Intrapulso) si el radar está haciendo uso de esta capacidad.</p>
+
+	<p><b>Capacidad de Detección ARP</b>: Determina si el ESM tiene capacidad de obtener el ARP de las emisiones detectadas.</p>
+
+	<p><b>Errores en Detección (%) ARP</b>: Este parámetro modela el error máximo con el que el modelo de ESM obtiene el ARP de las emisiones detectadas. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Detección de ARP.</p>
+
+	<ul>
+		<p><u>Unidades</u>: %</p>
+		<p><u>Rango</u>: 0 – 100</p>
+	</ul>
+
+	<p><b>Capacidad de Complejo para ARP</b>: Determina si el ESM tiene capacidad de obtener tanto el dato de ARP como la propia capacidad compleja del radar (tipo de ARP) si el radar está haciendo uso de esta capacidad. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Detección de ARP.</p>
+</ul>
+
+<p><b>Capacidad Identificación</b>: Determina si le ESM tiene capacidad de elaborar librería de emisiones para identificar las detecciones.</p>
+
+<p><b>Capacidad TMA</b>: Determina si el ESM además de obtener la demora de las emisiones detectadas, tiene capacidad de estimar los valores de rumbo, velocidad y distancia de la fuente de emisión, de forma instantánea y normalmente con menor error (según el valor de Error introducido para TMA).</p>
+
+<p><b>Error (%)</b>: Este parámetro modela el error máximo con el que el modelo de ESM obtiene inicialmente los valores de rumbo, velocidad, demora y distancia de las emisiones detectadas. Este error va decreciendo con el tiempo mientras el ESM mantenga la detección. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad TMA.</p>
+
+<ul>
+	<p><u>Unidades</u>: %</p>
+	<p><u>Rango</u>: 0 – 100</p>
+</ul>
+
+<p><b>Capacidad de Estimación Distancia</b>: Determina si el ESM tiene capacidad de estimar la distancia de las emisiones detectadas.</p>
+
+<p><b>Error (%)</b>: Este parámetro modela el error máximo con el que el modelo de ESM obtiene inicialmente la distancia de las emisiones detectadas. Este error va decreciendo con el tiempo mientras el ESM mantenga la detección. Este parámetro sólo puede ser introducido si se ha seleccionado Capacidad de Estimación Distancia.</p>
+
+<ul>
+	<p><u>Unidades</u>: %</p>
+	<p><u>Rango</u>: 0 – 100</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

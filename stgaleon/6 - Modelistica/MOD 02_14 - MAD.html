@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>MAD</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El MAD es un sensor antisubmarino que consiste en un detector de anomalías magnéticas, que puede ser transportado por aviones o remolcado desde helicópteros.</p>
+
+<p>El modelo de MAD es el encargado de determinar si una unidad obtiene detección de otra mediante sensor MAD. Este modelo se basa en el cálculo de los alcances para los cuales una unidad obtiene detección de otra mediante este sensor.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo de MAD, se realizan las siguientes comprobaciones de condiciones necesarias para la detección por MAD:</p>
+
+<ul>
+	<li>Comprobar que NO existe ocultación visual entre unidad y contacto.</li>
+	<li>Comprobar que el contacto tiene desplazamiento en toneladas mayor que un límite, por defecto cero, definido en <b>Galeon.ini</b>.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>El Alcance Ideal de detección MAD se calcula de la siguiente forma.</p>
+
+<ul><font size=2 face=courier>
+	<p>Alcance = Alcance_básico * (1 + factor_tonelaje * ((desplazamiento/1500) – 1))</p>
+</font></ul>
+
+<ul>
+	<p><font size=2 face=courier>Alcance_básico</font> = valor en BD de alcance para unidades de 1.500 Tm<br>
+	<font size=2 face=courier>desplazamiento</font> en toneladas</p>
+</ul>
+
+<ul><font size=2 face=courier>
+	<p>Alcance = Alcance * (1 - Rumbo_contacto/120.0) * (1 - Dif_rumbo * Cte_detec_mad / 90.0)</p>
+</font></ul>
+
+<ul>
+	<p><font size=2 face=courier>Rumbo_contacto</font>: se considera de 0º a 90º (rumbo del contacto en el primer cuadrante)<br>
+	<font size=2 face=courier>Dif_rumbo</font>: diferencia de rumbos entre detector y detectado (en el primer cuadrante)<br>
+	<font size=2 face=courier>Cte_detec_mad = 0,2 </font>(configurable en <b>Galeon.ini</b>)</p>
+</ul>
+
+<p>El Alcance se calcula modificando el Alcance Ideal por el nivel de operatividad (NRO) de la unidad:</p>
+
+<ul><font size=2 face=courier>
+	<p>Alcance = Alcance * Operatividad</p>
+</font></ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Si el contacto se encuentra a menor o igual distancia que el Alcance calculado, será detectado por MAD. Para calcular la distancia se debe tener en cuenta las tres dimensiones y el Diferencial de Altura a la que va el MAD suspendido.</p>
+
+<p>Para los contactos detectados el MAD obtiene su posición sin error, y siempre es identificado como MAD CONTACT (ver <i>Anexos – Simbología – STANAG 4420</i>). Cuando se obtiene un contacto MAD, en las Consolas de Alumno de la unidad se presenta una alarma sonora y visual.</p>
+
+<p>Si la altura de la aeronave es inferior al Diferencial de Altura introducido en Base de Datos y el MAD está encendido, el MAD pasará a estado dañado.</p>
+
+</div>
+
+</body>
+
+</html>

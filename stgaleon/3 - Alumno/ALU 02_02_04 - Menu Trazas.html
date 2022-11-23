@@ -1,0 +1,169 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Menú Trazas</font></b></p>
+
+<font size=2 face=arial>
+
+<p>Las opciones del menú Trazas son:</p>
+
+<ul>
+	<li><b>Crear / Modificar / Borrar</b>: Mediante estas opciones del menú Trazas, el alumno y el instructor pueden acceder a distinta funcionalidad en función del elemento seleccionado con el Hook. En la siguiente tabla se resume la funcionalidad a la que accede en cada caso:</li><br>
+
+	<table border=1 cellspacing=0 cellpadding=5>
+		<tr>
+			<td style='background:#D8D8D8' width=80><font size=2 face=arial><b>Tipo de<br>Consola</b></td>
+			<td style='background:#D8D8D8' align=center width=80><font size=2 face=arial><b>Selección<br>Hook</b></td>
+			<td style='background:#D8D8D8' align=center width=150><font size=2 face=arial><b>Crear</b></td>
+			<td style='background:#D8D8D8' align=center width=150><font size=2 face=arial><b>Modificar</b></td>
+			<td style='background:#D8D8D8' align=center width=150><font size=2 face=arial><b>Borrar</b></td>
+		</tr>
+
+		<tr>
+			<td style='background:#D8D8D8' rowspan=5><font size=2 face=arial><b>Alumno</b></td>
+			<td><font size=2 face=arial>Unidad<br>Propia</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Creación / Modificación<br>de Contactos</td>
+			<td><font size=2 face=arial>No permitido</td>
+			<td><font size=2 face=arial>No permitido</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>Contacto<br>Adquirido</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Creación / Modificación<br>de Contactos</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Creación / Modificación<br>de Contactos</td>
+			<td><font size=2 face=arial>No permitido</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>Marcación<br>Adquirida</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Creación / Modificación<br>de Contactos</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Modificar Track Number</td>
+			<td><font size=2 face=arial>No permitido</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>Contacto<br>Manual</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Creación / Modificación<br>de Contactos</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Creación / Modificación<br>de Contactos</td>
+			<td><font size=2 face=arial>Se elimina el<br>Contacto Manual</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>Nada</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Creación / Modificación<br>de Contactos</td>
+			<td><font size=2 face=arial>No permitido</td>
+			<td><font size=2 face=arial>No permitido</td>
+		</tr>
+
+		<tr>
+			<td style='background:#D8D8D8' rowspan=3><font size=2 face=arial><b>Instructor</b></td>
+			<td><font size=2 face=arial>Unidad</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Creación / Modificación<br>de Contactos</td>
+			<td><font size=2 face=arial>Datos Generales de<br>la Unidad</td>
+			<td><font size=2 face=arial>No permitido</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>Contacto<br>Manual</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Creación / Modificación<br>de Contactos</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Creación / Modificación<br>de Contactos</td>
+			<td><font size=2 face=arial>Se elimina el<br>Contacto Manual</td>
+		</tr>
+
+		<tr>
+			<td><font size=2 face=arial>Nada</td>
+			<td style='background:#D1EBF7'><font size=2 face=arial>Creación / Modificación<br>de Contactos</td>
+			<td><font size=2 face=arial>No permitido</td>
+			<td><font size=2 face=arial>No permitido</td>
+		</tr>
+
+	</table>
+	
+	<p>Las acciones referenciadas en la columna “Modificar” se ejecutan también si estando el cursor en modo Hook el operador (alumno o instructor) hace doble clic sobre el elemento correspondiente listado en la columna “Selección Hook”.</p>
+
+	<p>El diálogo de Datos Generales de la Unidad se describe en el apartado Manual de Instructor – Control de Ejercicios – Datos Generales de Unidades.</p>
+
+	<p>Mediante el diálogo de Creación / Edición de Contactos Manuales, el Alumno puede crear / modificar Contactos Manuales locales a la unidad controlada o modificar contactos adquiridos. Mediante este diálogo, el Instructor (cuando no controla una unidad) puede crear / modificar trazas manuales visibles sólo para todos los instructores.</p>
+
+	<p>A continuación se describe el diálogo de Creación / Edición de Contactos:</p>
+
+	<p align=center><img width=300 src="../IlvImages/Console/GlnGraphic/GlnTrackManagement.jpg"></p>
+
+	<ul>
+		<li><b>Identidad</b>: Mediante este desplegable se selecciona la Identidad de del contacto manual o adquirido.</li><br>
+
+		<li><b>Símbolo</b>: En esta área se puede seleccionar la Categoría del contacto manual o adquirido de entre los más frecuentes, utilizando la simbología (NTDS o STANAG 4420) que se haya seleccionado en la opción correspondiente del menú Ver - Simbología. En el caso de que la categoría buscada no aparezca en esta lista, deberá seleccionarse la opción Más trazas... que abre otra ventana donde aparece la jerarquía completa de símbolos:</li><br>
+
+		<p align=center><img width=300 src="../IlvImages/Console/GlnGraphic/GlnPixmapSelectionWindow.jpg"></p>
+
+		<li><b>Latitud / Longitud</b>: Posición de la traza. Si es creación de contacto manual, por defecto, al abrir esta ventana se rellenan estos campos con la posición del Hook, y si es modificación se rellenan con los valores actuales de la traza modificada. Estos campos son no editables cuando se está modificando un contacto adquirido.</li><br>
+
+		<li><b>Identificación (TN)</b>: Número de Traza. Si se trata de un alumno, al abrir esta ventana para creación se muestra en este campo el texto "auto". Si este texto no se modifica, el sistema asignará automáticamente al contacto creado un track number válido, teniendo en cuenta los contactos que ya tiene la unidad. Si es se trata de un instructor que no esté controlando a una unidad, este campo aparece vacío y en él puede introducir un identificador que debe ser único. Al abrir esta ventana para modificación, en este campo se muestra el identificador actual de la traza manual.</li><br>
+
+		<li><b>Rumbo</b>: Rumbo de la traza en grados. Al abrir esta ventana para modificación se rellena con el valor actual de rumbo de la traza modificada. Esta campo no es editable si está modificando un contacto adquirido.</li><br>
+
+		<li><b>Velocidad</b>: Velocidad de la traza en nudos. Al abrir esta ventana para modificación se rellena con el valor actual de velocidad de la traza modificada. Esta campo no es editable si está modificando un contacto adquirido.</li>
+	
+	</ul>
+	
+	<p>Los siguientes campos, incluidos dentro del área de datos denominada Datum, se muestran sólo cuando el símbolo elegido es un Datum.</p>
+
+	<ul>
+		<li><b>Velocidad Estimada</b>: Valor de la velocidad estimada para el Datum en nudos.</li><br>
+
+		<li><b>Error</b>: Error del Datum en Millas</li><br>
+
+		<li><b>Día</b>: Día y Hora del Datum.</li><br>
+
+	</ul>
+
+	<p>La representación gráfica del Datum incorpora un círculo de radio inicial (a la Hora del Datum) igual al Error del Datum, y que a partir de dicho instante crece a una velocidad igual a la Velocidad Estimada del Datum.</p>
+
+	<ul>
+		<li><b>Comentario</b>: Texto adicional de uso libre. El texto aquí introducido se mostrará en la última línea de la etiqueta de la traza mientras la opción de etiqueta extendida esté seleccionada.</li>
+	</ul>
+
+	<p>Los botones REPOS (reposicionar) y POSCOR (corrección de posición) se emplean para realizar ploteos de contactos manuales, de forma que actualizando su posición, se genere automáticamente un contacto con una ley de movimiento (rumbo y velocidad), según estas actualizaciones. Estos botones sólo podrán ser pulsados si se está editando un contacto manual.</p>
+
+	<ul>
+		<li><b>REPOS</b>: Cuando se pulsa este botón, el contacto manual seleccionado con el Hook se sitúa en la posición de la marca, manteniendo el rumbo y la velocidad.</li><br>
+
+		<li><b>POSCOR</b>: Cuando se pulsa este botón, el contacto manual seleccionado en Hook se mueve a la posición de la marca, y se le asigna un rumbo igual al determinado por la dirección Hook‑Marca, y una velocidad igual a la necesaria para ir en línea recta desde la posición del Hook hasta la Marca, en el tiempo transcurrido desde la última actualización del contacto manual. Si además, cuando se solicita POSCOR la Marca está enganchada a otro contacto manual, este contacto se elimina. Cuando se realiza esta acción, deja una marca en la posición anterior del contacto. Además, si el POSCOR se hace sobre un DATUM, se cambia su categoría pasando a ser SUBMARINO de identidad PENDING.</li>
+	</ul>
+
+	<p>Con esta funcionalidad, el operador podrá plotear contactos submarinos mediante el siguiente procedimiento:</p>
+
+	<ol>
+		<li>Cuando intercepten demoras de varias sonoboyas, o a detectar por MAD, crear un contacto manual en la posición de posible contacto submarino.</li><br>
+		
+		<li>Transcurrido un tiempo, volver a crear un contacto manual sobre la intersección de las demoras de sonoboyas o sobre una nueva detección por MAD.</li><br>
+		
+		<li>Seleccionar con el Hook el primer contacto creado y con la marca el segundo. Abrir el diálogo de edición de contactos, y pulsar POSCOR. Tras esta operación tendremos un único contacto manual con la ley de movimiento observado.</li><br>
+		
+	</ol>
+
+	<li><b>Restaurar Track Number</b>: Esta acción sólo puede realizarse sobre contactos adquiridos (no manuales) o marcaciones adquiridas. Si se selecciona esta opción con uno de estos elementos en Hook al que se le haya modificado el Track Number manualmente, entonces su número de traza retorna al valor inicialmente asignado por el sistema de forma automática.</li><br>
+
+	<li><b>Restaurar Categoría</b>: Esta acción sólo puede realizarse sobre contactos adquiridos (no manuales). Si se selecciona esta opción con un contacto adquirido en Hook al que se le haya modificado manualmente la Categoría y / o Identidad, entonces su categoría e identidad retornan al valor determinado por los sensores de la unidad.</li><br>
+
+	<li><b>Enviar por Link 11</b>: Esta acción activa el envío por Link 11 de la marcación seleccionada con el Hook. Sólo puede realizarse sobre marcaciones adquiridas.</li><br>
+
+	<li><b>Detecciones compiladas</b>: Al seleccionar esta opción se abre una ventana donde aparece una lista de todas las detecciones compiladas obtenidas por todos los sensores de la unidad propia (tote de tracks).</li><br>
+
+	<p align=center><img width=600 src="../IlvImages/Console/GlnGraphic/GlnToteDeTracks.jpg"></p>
+
+	<p>Las detecciones listadas en este diálogo pueden ser filtradas por categoría, identidad y / o sensor. Si se selecciona en la lista una detección, en la Presentación Táctica se enganchará el hook a dicha detección. Si se hace doble clic sobre una detección de la lista, en la Presentación Táctica el hook se engancha a dicha detección y la vista se centra en la posición del hook (o lo que es lo mismo, de la detección).</p>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>

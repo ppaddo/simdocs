@@ -1,0 +1,106 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Lanzador de Chaff</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El Lanzador de Chaff es el encargado de simular el lanzamiento de cartuchos chaff desde las unidades, teniendo en cuenta los datos característicos del lanzador y de los cartuchos chaff seleccionados para lanzamiento, y las condiciones del lanzamiento solicitado:</p>
+
+<ul>
+	<p>Tipo de unidad lanzadora (superficie, submarina o aérea).</p>
+	<p>Modo de lanzamiento: Manual, Semiautomático y Automático.</p>
+	<p>Filtro ASMD para modos Semiautomático y Automático.</p>
+	<p>Chaff y Morteros seleccionados para lanzar y secuencia de lanzamiento.</p>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Se realizan siempre las siguientes comprobaciones de condiciones necesarias para efectuar un lanzamiento de chaff:</p>
+
+<ul>
+	<li>Comprobar que la Unidad no esta en base.</li>
+	<li>Si la unidad es submarina, comprobar que la Unidad no esta sumergida.</li>
+	<li>Comprobar que hay suficientes chaff disponibles para efectuar el lanzamiento.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Si se cumplen las comprobaciones, entonces se crea un chaff de acuerdo con el modelo de cartucho chaff lanzado (ver <i>Modelística – Contramedidas – Cartuchos Chaff</i>), y se decrementa el numero de cartucho chaff disponibles de la unidad.</p>
+
+<p>Para describir con mayor detalle la funcionalidad de lanzamiento de chaff hay que distinguir entre lanzamientos de chaff de superficie (desde unidades de superficie y submarinas) y lanzamiento de chaff aéreos (desde unidades aviones o helicópteros):</p>
+
+<p><b>Lanzamiento de Chaff de Superficie:</b></p>
+
+<p>El lanzamiento de chaff de superficie crea un chaff a una altura y posición determinada por la orientación del mortero, la distancia de proyección y altura de despliegue del chaff.</p> 
+
+<p>El lanzamiento de chaff de superficie puede ser en modo automático, semiautomático o manual:</p>
+ 
+<ul>
+	<p><b>Lanzamiento en Modo Automático:</b></p>
+	
+	<p>Los lanzamientos en modo automático y semiautomático están basados en el concepto de secuenciador. El Secuenciador es una simplificación de la realidad, para evitar tener que efectuar una acción repetitiva, como por ejemplo pulsar cuatro veces fuego para lanzar los cuatro chaff D de un despliegue estandarizado, o pulsar cinco veces fuego para lanzar las cinco submuniciones de una bengala IR.</p>
+	
+	<p>Las submuniciones que figuran como disparo inicial saldrán sin intervalo entre ellos y se situarán a la misma distancia del buque. A partir de aquí se lanzarán el resto de disparos (1 submunición en cada disparo) espaciados el intervalo hasta completar el numero indicado en “Numero de Disparos”. En cada disparo se alternará la distancia de proyección entre la nominal y 0,8 la nominal (para simular los tubos de diferente inclinación), excepto si el cartucho tiene submuniciones, en este caso la alternancia se producirá al cumplirse un numero de disparos igual al número de submuniciones que contiene el cartucho.</p>
+	
+	<p>Para no considerar los proyectiles lanzados por la propia unidad en los filtros ASMD, se comprueba si la amenaza se está acercando o alejando de la unidad. Para ello se examinará la dirección de avance de esa posible amenaza, es decir, una unidad sólo se tiene en cuenta como amenaza para el filtro ASMD si la demora del blanco menos su rumbo es inferior en valor absoluto a 90º.</p>
+	
+	<p>El lanzamiento en modo automático se inicia cuando una traza cumple el filtro ASMD para chaff de tipo D, S, RF o IR. Se realizarán lanzamientos mientras persista la situación de alarma dada por el filtro ASMD, con un intervalo de tiempo igual al máximo entre la duración del chaff (persistencia del cartucho) y el tiempo de caída (calculado teniendo en cuenta la altura de despliegue del cartucho y su velocidad de caída). La secuencia del lanzamiento es la siguiente, según el tipo de chaff para el que se cumple el filtro ASMD:</p>
+
+	<ul>
+		<p><b>Chaff D</b>: Se disparará con la secuencia ordenada en la Preparación de Morteros de Chaff. Se refrescará al transcurrir un tiempo igual al Tiempo de Vida – Tiempo de Despliegue. Si en esta secuencia se ha realizado una selección previa de morteros, el lanzamiento se realizará según esta selección, pero si no, se seguirá el criterio siguiente para seleccionarlos:</p>
+
+		<ul>
+			<li>Viento en el hemisferio proel. Morteros con orientación 90º o menor</li>
+			<li>Viento hemisferio popel. Todos los morteros.</li>
+		</ul>
+
+		<p><b>Chaff S / IR</b>: Se solicitará automáticamente un cambio de rumbo con caña máxima, al más próximo que permita poner el viento al menos 60º por el hemisferio proel. Si se ha realizado una selección previa de morteros, el lanzamiento se realizará según esta selección, pero si no, se seleccionará el mortero de proa barlovento. Al estar dentro de los 10º del rumbo recomendado, disparará con la secuencia ordenada en la Preparación de Morteros de Chaff El mensaje aparecerá en la zona de mensajes, junto con otro que indique con que mortero se está haciendo fuego. Previo a efectuar el lanzamiento, se comprobará que la diferencia entre el rumbo recomendado y el rumbo del barco sean inferior a 10 grados.</p>
+
+		<p><b>Chaff RF</b>: Este tipo de chaff puede comportarse como un Chaff S o como un Chaff D.</p>
+
+		<p></p>
+
+		<p></p>
+
+		<p></p>
+
+	</ul>
+
+	<p>En el caso en el que se cumpla el filtro ASMD para más de un tipo de chaff, los lanzamientos se efectúan con la siguiente prioridad:</p>
+
+	<p>1º - Chaff S, 2º - Chaff IR y 3º Chaff D.</p>
+
+	<p>En el caso de que se lancen Chaff RF, la prioridad sería:</p>
+
+	<p>1º - Chaff RF (actuando como S), 2º - Chaff IR y 3º Chaff RF (actuando como D).</p>
+
+	<p><b>Lanzamiento en Modo Semiautomático:</b></p>
+
+	<p>Es idéntico al automático, pero se necesita la aprobación previa del operador. Cuando se producen las condiciones del lanzamiento se presenta un aviso al operador para que lo confirme.</p>
+
+	<p><b>Lanzamiento en Modo Manual:</b></p>
+
+	<p>El operador deberá seleccionar el tipo de chaff a lanzar. Una vez efectuado se seleccionarán los morteros preseleccionados en el secuenciador. Si el operador elige otra selección de morteros, se anulará la preselección. Si no hubiese morteros preseleccionados, se le presentará al operador una recomendación de mortero de acuerdo con los criterios de selección automática.</p>
+
+	<p>Una vez seleccionados los morteros, se disparará la secuencia que figure en el secuenciador, sin necesidad de más orden, desde todos los morteros seleccionados.</p>
+	
+</ul>
+ 
+<p><b>Lanzamiento de Chaff Aéreos:</b></p>
+
+<p>El lanzamiento de chaff aéreo es siempre manual y se limita a crear un chaff a la altura de la unidad lanzadora.</p>
+
+</div>
+
+</body>
+
+</html>

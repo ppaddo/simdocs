@@ -1,0 +1,89 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Fonía</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>El modelo de comunicación de fonía es el que gestiona las posibles peticiones concurrentes de uso de la radio para una misma red, comprobando que dicha red queda libre para otorgar el permiso al operador y establecer las condiciones de recepción para todos los que puedan escuchar la transmisión.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Se realizan las siguientes comprobaciones de condiciones necesarias para que varias unidades puedan establecer comunicación en una misma red de fonía:</p>
+
+<ul>
+	<li>Todas ellas deben tener seleccionada la misma red y con la misma frecuencia.</li>
+	<li>Para que una unidad pueda escuchar lo que se transmite en la red, debe estar en alcance (según el cálculo a continuación) de la unidad que transmite, y no debe existir ocultación entre transmisor y receptor.</li>
+	<li>Para que una unidad pueda escuchar lo que se transmite en la red, debe estar operando en el mismo estado de cifrado / no cifrado que el transmisor.</li>
+	<li>Para que las unidades submarinas sumergidas puedan escuchar o transmitir, deben tener un mástil o boya de comunicaciones con antena para la banda correspondiente izado.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>El Alcance Máximo de la comunicación será:</p>
+
+<ul><font size=2 face=courier>
+	<p>ALCANCE máximo = Alcance_equipo * Factor_prop_comunicaciones</p>
+</font></ul>
+
+<p>Donde:</p>
+
+<p>En función de la banda de comunicación usada, el valor de <font size=2 face=courier>Alcance_equipo</font> será:</p>
+
+<ul>
+	<li><font size=2 face=courier>Alcance Equipo HF = Alcance Equipo SATCOM = Infinito</font>.</li>
+	<li><font size=2 face=courier>Alcance Equipo UHF = Alcance Horizonte Radar * FactorUHF</font>.</li>
+	<li><font size=2 face=courier>Alcance Equipo VHF = Alcance Horizonte Radar * FactorVHF</font>.</li>
+</ul>
+
+<ul>
+	<p><font size=2 face=courier>FactorUHF</font> y <font size=2 face=courier>FactorVHF</font> configurables en <b>Galeon.ini</b>.</p>
+
+	<p><font size=2 face=courier>Alcance Horizonte Radar</font> calculado como se indica en <i>Modelos - Sensores – Radar</i>.</p>
+</ul>
+
+<p>Si la banda de comunicaciones del equipo es UWT, para determinar si se establece comunicación por fonía entre dos unidades, se calcula el exceso de señal en banda ancha de la siguiente forma (este cálculo es análogo al realizado para el Sonar Pasivo (ver <i>Modelística - Sonar Pasivo</i>):</p>
+
+<ul><font size=2 face=courier>
+	<p>SE = FOM – TL</p>
+	<p>FOM = SL – RD – NL + DI</p>
+	<p>TL = 10 * log10(distancia) + 30 + alpha * distancia + RB – ZC</p>
+</font></ul>
+
+<p>El exceso de señal calculado determina la obtención o no de la escucha de la siguiente forma:</p> 
+
+<ul>
+	<li>Si <font size=2 face=courier>SE > 0</font>, SI se obtiene la detección (escucha) del emisor.</li>
+	
+	<li>Si <font size=2 face=courier>SE <= 0</font>, NO se obtiene detección (escucha) del emisor (la señal se degrada hasta perderse).</li>
+</ul>
+
+<p>De esta forma, mediante el parámetro ZC, la recepción o no del emisor UWT depende de la batitermia de la zona en la que se lleve a acabo la comunicación. Los siguientes parámetros (a excepción de la frecuencia) son configurables en Galeon.ini (valores típicos comunes a todos los equipos UWT):</p>
+
+<ul>
+	<li>Frecuencia de emisión (se tomará frecuencia del equipo de comunicaciones)</li>
+	<li>Nivel de señal del emisor (SL)</li>
+	<li>Umbral de detección del equipo receptor (RD)</li>
+	<li>Directividad del equipo receptor (DI)</li>
+	<li>Velocidad óptima y máxima de operación (para el cálculo del ruido propio)</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p> 
+
+<p>Cada consola recibe las transmisiones de fonía realizadas en las redes que tenga seleccionada para escucha, si se cumplen las comprobaciones anteriores, y si está dentro del alcance (si la banda es HF, VHF p UHF) o si el exceso de señal es positivo (si la banda es UWT).</p>
+
+<p>En cada red se transmite la fonía de aquella consola que tenga seleccionada dicha red para transmisión, y que tenga pulsado el PTT. Mientras un operador mantenga pulsado el PTT, las pulsaciones de PTT de otros operadores son ignoradas (simulando que mientras la red está ocupada, se inhibe el PTT por detección de portadora).</p>
+
+</div>
+
+</body>
+
+</html>

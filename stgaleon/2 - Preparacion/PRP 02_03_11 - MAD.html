@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>MAD</font></b></p>
+
+<font size=2 face=arial>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvSensors/MadWnd.jpg"></p>
+
+<p>Descripción de los parámetros:</p>
+
+<p><b>Diferencial de Altura (aeronave-MAD)</b>: Este parámetro determina la altura por debajo de la aeronave a la que va suspendido el MAD. Esta altura es tenida en cuenta para determinar si una unidad se encuentra o no dentro del alcance del MAD. Si la altura de la aeronave con el MAD encendido es inferior a este diferencial de altura, el MAD resultará dañado.</p>
+
+<ul>
+	<p><u>Unidades</u>: pies</p>
+	<p><u>Rango</u>: 0 – 999</p>
+</ul>
+
+<p><b>Alcance a Tonelaje Estándar</b>: Este parámetro representa el alcance del MAD para contactos de desplazamiento igual a 1500 toneladas. Se trata de un alcance básico a partir del cual se calcula el alcance del MAD para cualquier contacto, teniendo en cuenta su desplazamiento.</p>
+
+<ul>
+	<p><u>Unidades</u>: yardas</p>
+	<p><u>Rango</u>: 0 – 99999</p>
+</ul>
+
+<p><b>Factor Tonelaje</b>: Este parámetro es tenido en cuenta por el modelo de MAD para calcular el alcance. Factor que modela la dependencia del alcance del MAD con el desplazamiento del contacto.</p>
+
+<ul>
+	<p><u>Unidades</u>: ---</p>
+	<p><u>Rango</u>: 1,00 – 2,00</p>
+
+	<p>Ejemplo: </p>
+
+	<p>Para un desplazamiento del contacto doble a 1500 toneladas:</p>
+
+	<p>Si Factor Tonelaje = 1 &rArr; Alcance MAD = 2 * Alcance a Tonelaje Estándar.</p>
+	<p>Si Factor Tonelaje = 1,5 &rArr; Alcance MAD = 2,5 * Alcance a Tonelaje Estándar.</p>
+	<p>Si Factor Tonelaje = 2 &rArr; Alcance MAD = 3 * Alcance a Tonelaje Estándar.</p>
+
+	<p>Para un desplazamiento del contacto cuádruple a 1500 toneladas:</p>
+
+	<p>Si Factor Tonelaje = 1 &rArr; Alcance MAD = 4 * Alcance a Tonelaje Estándar.</p>
+	<p>Si Factor Tonelaje = 1,5 &rArr; Alcance MAD = 5,5 * Alcance a Tonelaje Estándar.</p>
+	<p>Si Factor Tonelaje = 2 &rArr; Alcance MAD = 7 * Alcance a Tonelaje Estándar.</p>
+</ul>
+
+</div>
+
+</body>
+
+</html>

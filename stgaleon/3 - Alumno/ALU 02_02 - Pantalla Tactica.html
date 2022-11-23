@@ -1,0 +1,189 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Pantalla Táctica</font></b></p>
+
+<font size=2 face=arial>
+
+<p>La Pantalla Táctica, situada en el monitor superior, incluye la Presentación Táctica y el Área de Información Táctica.</p>
+
+<p align=center><img width=800 src="../Images/Ejemplo Pantalla Táctica.jpg"></p>
+
+<p><b>Presentación Táctica:</b></p>
+
+<p>Consiste en la presentación gráfica de la Situación Táctica que observa la unidad. Esta presentación se realiza mediante una cartografía digital sobre la que se muestran, con simbología NTDS, STANAG-4420 o Simbología Inicial de Detecciones, los contactos (trazas y demoras) obtenidos por el conjunto de sensores de la unidad y recibidos mediante sus comunicaciones si la consola es de alumno, o las unidades (trazas) si la consola es de instructor. La descripción de la simbología empleada se encuentra en los apartados <i>Preparación – Ejercicios, Modelística – Sensores y Anexos – Simbología</i>.</p>
+
+<p>La cartografía digital sólo es mostrada si la unidad tiene capacidad de Cartografía Electrónica, en cuyo caso, se presentarán las cartas electrónicas incluidas en el Escenario del Ejercicio (ver <i>Manual de Preparación – Preparación de Escenarios – Edición de Escenarios</i> y <i>Manual de Preparación – Preparación de Ejercicios – Unidades</i>). En caso contrario, la visión cartográfica se limitará a la línea de costa dentro del alcance de los sensores Radar de los que disponga la unidad.</p>
+
+<p>El origen de los datos cartográficos digitales de la presentación gráfica del escenario táctico puede ser S‑57 o VPF y se muestran siguiendo las recomendaciones para los sistemas ECDIS (Electronic Chart Display and Information System) en cuanto a la presentación de objetos. Sobre la carta se muestran también los objetos gráficos Rutas, Áreas y Puntos de distintos tipos que hayan sido incorporados al escenario durante la Preparación.</p>
+
+<p>Para facilitar una visión sinóptica de la situación táctica, las trazas (que representan los contactos que detecta la unidad de un alumno o todas las unidades y entidades perecederas del Ejercicio para el instructor) son mostrados con vector velocidad y etiqueta descriptiva.</p>
+
+<p>El vector velocidad se compone partiendo del centro del icono del móvil y con una orientación coincidente con el rumbo del móvil. Su longitud es descriptiva de la velocidad del mismo, es decir, variará el tamaño según su valor con una dependencia logarítmica.</p>
+
+<p>Las etiquetas pueden ser mostradas en modo Normal, en cuyo caso incluyen únicamente el identificador de la traza (nombre de la unidad si la consola es de instructor o track number del contacto si la consola es de alumno), o Extendida, en cuyo caso incluyen el identificador de la traza (nombre de la unidad si la consola es de instructor o track number del contacto si la consola es de alumno), su rumbo, velocidad y, si la consola es de alumno, las iniciales de los sensores o equipos de comunicaciones con los que se obtiene el contacto (M: Manual, V: Visual, I: Infrarrojo, P: Periscopio, R: Radar, ESM: ESM, ECM: ECM, MAD: MAD, IFF: IFF, T: TACAN, SA: Sonar Activo, SP: Sonar Pasivo, SP: Procesador de Sonoboyas, CMSM: COMSM, L11: Link 11, L16: Link 16, DL: Data Link, S: Satélite, ?: si los sensores propios y el Link 11 proporcionan datos de clasificación o identificación distintos).</p>
+
+<p>Para facilitar al operador la localización rápida de una traza sobre la pantalla táctica, al pulsar la secuencia de teclas CTRL F se muestra la siguiente ventana:</p>
+
+<p align=center><img width=200 src="../IlvImages/QuickFind.jpg"></p>
+
+<p>El operador puede introducir un número de traza, y pulsar la tecla Enter, de esta manera, el hook se sitúa sobre la traza y la presentación táctica se centra en el hook. Si se pulsa la tecla ESC, la ventana se cierra sin modificar el centro de la pantalla.</p>
+
+<p>Por otro lado, las detecciones pasivas acústicas, electrónicas y de comunicaciones son mostradas en la Presentación Táctica mediante demoras. Las demoras se representan mediante una línea desde el punto de origen de la detección hasta el límite de la Presentación Táctica. Las demoras tienen distinto color e incorporan un símbolo distinto según el tipo de detección que se muestra cercano al límite de la presentación para facilitar su visión. También incluyen una etiqueta junto al símbolo en la que se muestra el Track Number de la detección. En la siguiente tabla se resumen los símbolos y colores empleados:</p>
+
+<table border=1 cellspacing=0 cellpadding=5>
+	<tr>
+		<td><font size=2 face=arial><b>Tipo Detección</b></td>
+		<td><font size=2 face=arial><b>Sensor</b></td>
+		<td><font size=2 face=arial><b>Símbolo</b></td>
+		<td><font size=2 face=arial><b>Color</b></td>
+	</tr>
+
+	<tr>
+		<td><font size=2 face=arial>Electrónica</td>
+		<td><font size=2 face=arial>ESM</td>
+		<td><font size=2 face=arial>E</td>
+		<td><font size=2 face=arial>Azul</td>
+	</tr>
+	
+	<tr>
+		<td><font size=2 face=arial>Acústica</td>
+		<td><font size=2 face=arial>Sonar Pasivo, Sonar Activo, Sonoboya</td>
+		<td><font size=2 face=arial>A</td>
+		<td><font size=2 face=arial>Rojo</td>
+	</tr>
+	
+	<tr>
+		<td><font size=2 face=arial>Comunicaciones</td>
+		<td><font size=2 face=arial>COMSM</td>
+		<td><font size=2 face=arial>E</td>
+		<td><font size=2 face=arial>Verde</td>
+	</tr>
+	
+	<tr>
+		<td><font size=2 face=arial>Detecciones en pérdida</td>
+		<td><font size=2 face=arial>Cualquiera</td>
+		<td><font size=2 face=arial>Según sensor</td>
+		<td><font size=2 face=arial>Gris</td>
+	</tr>
+
+</table>
+
+<p>En la siguiente captura de la Pantalla Táctica se ilustran la representación de las trazas y demoras:</p>
+
+<p align=center><img width=800 src="../Images/Trazas y Demoras.jpg"></p>
+
+<p>Mediante la barra de menú de la Pantalla Táctica, el Alumno puede acceder a la siguiente funcionalidad asociada a la Presentación Táctica:</p>
+
+<ul>
+	<b>Archvo</b> &rarr; <br>
+	<ul>
+		<li>Imprimir</li>
+		<li>Salir</li>
+	</ul>
+
+	<b>Ver</b> &rarr; <br>
+	<ul>
+		<li>Pantalla Completa</li>
+		<li>Paralelos y Meridianos</li>
+		<li>Escala</li>
+		<li>Movimiento &rarr;</li>
+		<ul>
+			<li>Absoluto</li>
+			<li>Relativo</li>
+		</ul>
+		<li>Etiquetas</li>
+		<li>Simbología &rarr;</li> 
+		<ul>
+			<li>STANAG pequeño</li>
+			<li>STANAG grande</li>
+			<li>NTDS pequeño</li>
+			<li>NTDS grande</li>
+		</ul>
+		<li>Banderas nacionales</li>
+		<li>Administración de la cartografía</li>
+	</ul>
+
+	<b>Cursor</b> &rarr; <br>
+	<ul>
+		<li>Modo Hook</li>
+		<li>Modo Zoom</li>
+		<li>Secuencia Trazas</li>
+		<li>Hook Automático</li>
+		<li>Marca Automática</li>
+	</ul>
+
+	<b>Herramientas</b> &rarr; <br>
+	<ul>
+		<li>Dibujos Libres</li>
+		<li>Anillos de Distancia</li>
+		<li>Líneas de Marcación</li>
+		<li>Línea de Medición</li>
+		<li>Cortinas</li>
+		<li>Marca Esclava</li>
+		<li>Historia</li>
+		<li>Sectores &rarr;</li>
+		<ul>
+			<li>Armas</li>
+			<li>Sensores</li>
+			<li>Modo Automático</li>
+		</ul>
+		<li>Zonas del Ejercicio &rarr;</li>
+		<ul>
+			<li>Mostrar Todas</li>
+			<li>Mostrar zonas de esfuerzo pesquero</li>
+			<li>Mostrar zonas de tráfico mercante</li>
+			<li>Mostrar zonas de interferencia</li>
+			<li>Mostrar zonas minadas</li>
+			<li>Mostrar zonas meteorológicas</li>
+			<li>Mostrar zonas PIM</li>
+			<li>Mostrar aerovías</li>
+			<li>Mostrar zonas ROE</li>
+			<li>Mostrar zonas Zigzag</li>
+			<li>Modo Automático</li>
+		</ul>
+		<li>Cálculos &rarr;</li>
+		<ul>
+			<li>CPA</li>
+			<li>Interceptación</li>
+			<li>Posición Futura</li>
+			<li>Acercamiento / Alejamiento</li>
+		</ul>
+		<li>Idioma</li>
+	</ul>
+
+	<b>Trazas</b> &rarr; <br>
+	<ul>
+		<li>Crear</li>
+		<li>Modificar</li>
+		<li>Borrar</li>
+		<li>Restaurar TN</li>
+		<li>Restaurar Categoría</li>
+		<li>Enviar por Link 11</li>
+		<li>Detecciones compiladas</li>
+	</ul>
+
+	<b>Filtros</b> &rarr; <br>
+	<ul>
+		<li>Tipos de Trazas</li>
+	</ul>
+
+	<b>Ayuda</b> &rarr; <br>
+	<ul>
+		<li>Contenido</li>
+		<li>Acerca de ...</li>	
+	</ul>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>

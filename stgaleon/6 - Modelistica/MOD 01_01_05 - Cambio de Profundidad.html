@@ -1,0 +1,89 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Cambio de Profundidad</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>La maniobra de cambio de profundidad se lleva a cabo por petición del operador. El operador puede solicitar un cambio de profundidad empleando alerones indicando el nuevo valor de profundidad deseado o realizar un cambio de profundidad mediante el empleo de burbuja.</p>
+
+<p>Como casos particulares de esta maniobra el operador o puede solicitar la profundidad máxima con lo que la unidad irá al fondo, la profundidad de cota periscópica o profundidad cero con lo que la unidad irá a superficie.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo, se realizan las siguientes comprobaciones de condiciones necesarias para realizar el cambio de profundidad:</p>
+
+<ul>
+	<li>Comprobar que la unidad está fuera de Base.</li>
+	<li>Comprobar compatibilidad de la maniobra.</li>
+	<li>Comprobar que la unidad no tenga dañada su cinemática.</li>
+	<li>Comprobar que Batería es mayor que cero.</li>
+	<li>Comprobar que el valor de profundidad pedido no supera los límites permitidos para la unidad.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>Cálculo de la nueva profundidad de la unidad según la siguiente fórmula (si NO es mediante empleo de burbujas):</p>
+
+<ul><font size=2 face=courier>
+	<p>PROF = PROFant + reg_asc_desc * INCtmp * DIR</p>
+</font></ul>
+
+<p>Donde:</p>
+
+<ul>
+<table>
+	<tr>
+		<td valign=top><font size=2 face=courier>PROFant:</td>
+		<td><font size=2 face=arial>Valor de la profundidad anterior</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>reg_asc_desc:</td>
+		<td><font size=2 face=arial>Régimen de ascenso / descenso de la unidad</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>INCtmp:</td>
+		<td><font size=2 face=arial>Incremento de tiempo entre cálculo actual y el anterior</td>
+	</tr>
+
+	<tr>
+		<td valign=top><font size=2 face=courier>DIR:</td>
+		<td><font size=2 face=arial>Ascenso (+1) o descenso (-1)</td>
+	</tr>
+
+</table>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Si el cambio de profundidad NO es mediante el empleo de burbujas, sino mediante el empleo de alerones, se realizan las comprobaciones para aceptar el valor de profundidad y ángulo de ascenso / descenso solicitado y si es aceptada la petición, se modifica la profundidad de la unidad periódicamente según el cálculo anterior hasta alcanzar el valor solicitado.</p>
+
+<p>Comprobar que el nuevo valor calculado no supere (ascenso) o sea inferior (descenso) que el valor pedido por el operador, en cuyo caso se adquiere el valor solicitado y finaliza la maniobra.</p>
+
+<p>Si el cambio de profundidad es mediante el empleo de burbuja:</p>
+
+<ul>
+	<li>El operador podrá solicitar la creación de la burbuja en proa o en popa. La burbuja que creará será de un tamaño (configurable en Galeon.ini) tal que producirá una inclinación de 45º hacia arriba o abajo según se cree a proa o popa. La burbuja tardará en crearse un tiempo (configurable en Galeon.ini) desde que es solicitada.</li>
+
+	<li>Durante este tiempo, el tamaño de la burbuja va aumentando y el submarino va cambiando su inclinación de forma linealmente proporcional al tiempo transcurrido, de forma que al final de este tiempo el tamaño de la burbuja es el total y su inclinación es de 45º.</li>
+	
+	<li>El submarino cambiará de profundidad según su velocidad y la inclinación que tiene en cada momento. Cuando el operador cancela esta maniobra o una vez que alcanza los 45º, el submarino suelta la burbuja la cual será detectable por sonares activos.</li>
+</ul>
+
+<p>Esta forma de cambiar la profundidad tiene la ventaja sobre el empleo de alerones de que puede alcanzar una inclinación mayor (45º) por lo que el cambio de profundidad es más rápido.</p>
+
+</div>
+
+</body>
+
+</html>

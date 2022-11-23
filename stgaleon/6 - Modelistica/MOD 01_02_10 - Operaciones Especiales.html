@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>Operaciones Especiales</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>Las unidades de tipo submarino con capacidad de efectuar operaciones especiales pueden situarse en maniobra de operaciones especiales por petición del operador. Esta maniobra no implica una acción específica del submarino pero mientras la esté efectuando el submarino no podrá realizar otras maniobras, por lo que limita temporalmente su operatividad.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo, se realizan las siguientes comprobaciones de condiciones necesarias para realizar la maniobra de operaciones especiales:</p>
+ 
+<ul>
+	<li>Comprobar que la unidad está fuera de Base.</li>
+	<li>Comprobar compatibilidad de la maniobra.</li>
+	<li>Comprobar que la unidad es submarina y tiene capacidad de operaciones especiales.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Se realizan las comprobaciones y si es aceptada la petición, la unidad realiza la maniobra según el siguiente algoritmo.</p>
+
+<p>Si el submarino no se encuentra en operaciones especiales, y el operador solicita su inicio, el submarino comienza a disminuir su velocidad hasta la permitida para la maniobra (si es que navegaba a velocidad superior a dicha velocidad) siguiendo su tabla de desaceleración. Una vez alcanzada esta velocidad se activa esta maniobra.</p>
+
+<p>Si el submarino se encuentra en operaciones especiales, comprobar si ha transcurrido el tiempo requerido para efectuar la maniobra de operaciones especiales, y si es así, finalizar la maniobra.</p>
+
+<p>Si el submarino se encuentra en operaciones especiales, y el operador solicita su finalización, desactivar la maniobra.</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<font size=2 face=arial>
+
+<a id="preparacion"></a>
+<p><b><font color=##084B8A face=arial size=4>Herramienta de Preparación</font></b></p>
+
+<p>En la Preparación de Modelos Básicos se introducen en la Base de Datos los parámetros que describen todos los aspectos relevantes de cada una de las unidades que pueden participar en un ejercicio. También se incluye en esta actividad la introducción de los datos relativos a modelos ambientales y a los escenarios donde se van a desarrollar los ejercicios, as como los formatos de los mensajes y bibliografía consultable por los alumnos. La estructura general de las tablas que constituyen esta base de datos se muestra en el siguiente esquema:</p>
+
+<table align=center border=5 cellspacing=3 cellpadding=5 style='border:none'>
+
+<tr>
+	<td width=220 rowspan=7 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Preparación de BD de</p>
+	<p align=center>modelos de unidades</p>
+	<p align=center>y ambientales</p>
+	</td>
+	<td width=160 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Dinámica</p>
+	</td>
+	<td width=260 colspan=2 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Aceleración y giro</p>
+	<p align=center>Consumos combustible y batería</p>
+	<p align=center>Firmas Acústicas</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Plataformas</p>
+	</td>
+	<td width=130 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Superficies</p>
+	<p align=center>Submarinos</p>
+	<p align=center>Aviones</p>
+	</td>
+	<td width=130 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Helicópteros</p>
+	<p align=center>Bases</p>
+	<p align=center>Terrestres</p>
+	</td>
+</tr>
+ 
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Sensores</p>
+	</td>
+	<td width=130 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Infrarrojo</p>
+	<p align=center>Radares</p>
+	<p align=center>ESM</p>
+	<p align=center>IFF</p>
+	<p align=center>NVG</p>
+	</td>
+	<td width=130 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Sonares</p>
+	<p align=center>Sonoboyas</p>
+	<p align=center>MAD</p>
+	<p align=center>Satélite</p>	
+	</td>
+</tr>
+ 
+<tr>
+	<td style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Armas</p>
+	</td>
+	<td width=130 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Seeker</p>
+	<p align=center>Misiles</p>
+	<p align=center>Torpedos</p>
+	<p align=center>Cargas</p>
+	</td>
+	<td width=130 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Munición</p>
+	<p align=center>Cañones</p>
+	<p align=center>Bombas</p>
+	<p align=center>Conf. Armas aéreas</p>	
+	</td>
+</tr>
+ 
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Comunicaciones</p>
+	</td>
+	<td width=130 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Link-11</p>
+	<p align=center>Link-16</p>
+	<p align=center>Data Link</p>
+	</td>
+	<td width=130 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Mensajería</p>
+	<p align=center>Fonía</p>
+	<p align=center>Planes de Frecuencia</p>
+	</td>
+</tr>
+ 
+<tr>
+	<td style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Contramedidas</p>
+	</td>
+	<td width=130 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Chaff</p>
+	<p align=center>Productor de Ruido</p>
+	<p align=center>Señuelos</p>
+	</td>
+	<td width=130 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>ECM</p>
+	<p align=center>COMSM</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Ambientales</p>
+	</td>
+	<td width=260 colspan=2 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Condiciones Ambientales</p>
+	<p align=center>Batitermia</p>
+	<p align=center>Tabla Horaria</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center></p>
+	</td>
+	<td style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Programación de Acciones</p>
+	</td>
+	<td width=260 colspan=2 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Programación de Acciones</p>
+	<p align=center>Acciones</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center></p>
+	</td>
+	<td style='border:none;background:#F2F2F2'><b>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>ROE</p>
+	</td>
+	<td width=260 colspan=2 style='border:none;background:#F2F2F2'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center>Condicionantes</p>
+	<p align=center>Autorizaciones</p>
+	<p align=center>Perfil ROE</p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Preparación de BD de Escenarios</p>
+	</td>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Edición de Escenarios</p>
+	</td>
+	<td width=260 colspan=2 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center></p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Preparación de BD de Mensajería</p>
+	</td>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center></p>
+	</td>
+	<td width=260 colspan=2 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center></p>
+	</td>
+</tr>
+
+<tr>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial><b>
+	<p align=center>Preparación de BD de Bibliografía</p>
+	</td>
+	<td style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center></p>
+	</td>
+	<td width=260 colspan=2 style='border:none;background:#CCCCCC'>
+	<font color=#084B8A size=2 face=arial>
+	<p align=center></p>
+	</td>
+</tr>
+
+</table>
+
+<p>Normalmente, la Preparación de Modelos Básicos representa una carga de trabajo alta hasta que se dispone de suficientes datos para la simulación de los equipos y unidades de interés. Una vez hecho esto, esta actividad se realizar esporádicamente y siempre de forma incremental, a medida que surja la necesidad de incluir nuevos equipos, nuevas unidades o modificar unidades existentes. Con el paso del tiempo se dispondrá de una valiosa Base de Datos que permitir preparar una infinidad de situaciones tácticas para su simulación.</p>
+
+<p>La preparación de cada uno de los Modelos Básicos se realiza a través de un diálogo especializado para cada tipo, con el que se puede navegar por los registros ya disponibles en la Base de Datos, y que comprueba la validez de los nuevos datos introducidos:</p>
+
+<p align=center><img width=600 src="../Images/Ejemplo Preparacion Modelo Basico.jpg"></p>
+
+<p>La preparación de los Escenarios se realiza mediante un diálogo gráfico donde se presenta la cartografa digital.</p>
+
+<p align=center><img width=600 src="../Images/Ejemplo Preparacion Escenario.jpg"></p>
+
+<p><b>Preparación de Ejercicios:</b></p>
+
+<p>La Preparación de Ejercicios consiste básicamente en elegir de la base de datos las unidades que van a participar en el ejercicio, asignarlas a las distintas fuerzas y situarlas dentro de un escenario geográfico, con unas condiciones meteorológicas y ambientales determinadas. En esta fase tambin se configura la distribución de las consolas de alumno, asignando a cada una de ellas la unidad o unidades que pueden controlar.</p>
+
+<p>Los ejercicios preparados se almacenan igualmente en la Base de Datos para su posterior ejecución.</p>
+
+<p align=center><img width=600 src="../IlvImages/Preparation/IlvGame/GameSetWnd.jpg"></p>
+
+</div>
+
+</body>
+
+</html>

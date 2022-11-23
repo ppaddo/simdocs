@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div style="position:absolute; top:10px;left:30px;">
+
+<p><b><font color=##084B8A face=arial size=4>IFF</font></b></p>
+
+<font size=2 face=arial>
+
+<p><font color=##084B8A face=arial size=2><b>Descripción:</b></font></p>
+
+<p>Los IFF (Identification Friend or Foe) son sistemas utilizados para la identificación de blancos mediante técnicas CAI (Cooperative Aircraft Identification). Esto significa que se tiene que establecer un canal de datos entre el sistema interrogador y el sistema interrogado, para que este último proporcione su identificación.</p>
+
+<p>El modelo de IFF es el encargado de determinar si una unidad obtiene detección e identifica a otra mediante sensor IFF. La identificación consiste en obtener su numeral, clase, tipo, categoría e identidad y sus características cinemáticas (posición, altura, rumbo y velocidad). Este modelo se basa en el cálculo de los alcances para los cuales una unidad obtiene detección por IFF y / o identifica a otra.</p>
+
+<p><font color=##084B8A face=arial size=2><b>Comprobaciones:</b></font></p>
+
+<p>Previamente a la evaluación del modelo de IFF, se realizan las siguientes comprobaciones de condiciones necesarias para la detección por IFF:</p>
+
+<ul>
+	<li>Comprobar que NO existe ocultación visual entre unidad y contacto.</li>
+	<li>Comprobar que la altura de las olas de la zona meteorológica del contacto NO es mayor que la altura de sensores del contacto.</li>
+	<li>Para unidades submarinas sumergidas, comprobar que mástil correspondiente está izado.</li>
+	<li>Comprobar que si el IFF es interrogador, tiene radar asociado y que éste no está dañado.</li>
+	<li>Comprobar que el ciclo de interrogación solicitado es 0 o un valor superior al pulso de interrogación.</li>
+	<li>Si tiene radar asociado, el contacto debe estar dentro del cono de detección máximo del radar asociado.</li>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Cálculos:</b></font></p>
+
+<p>El Alcance de detección del IFF es un valor definido por el menor valor de los obtenidos según los siguientes algoritmos:</p>
+
+<ul>
+	<p><font size=2 face=courier>ALCANCE= Alcance_Horizonte_Visual</font> (ver apartado Visual)
+	<font size=2 face=courier>ALCANCE =</font> máximo alcance del equipo de IFF asignado en BD.
+	</p>
+</ul>
+
+<p>El Alcance se ve afectado del nivel de operatividad (NRO) de la unidad:</p>
+
+<ul>
+	<p><font size=2 face=courier>ALCANCE = ALCANCE * Operatividad</font></p>
+</ul>
+
+<p><font color=##084B8A face=arial size=2><b>Evaluación:</b></font></p>
+
+<p>Cada vez que se cumpla el Ciclo de Interrogación especificado debe llevarse a cabo un Pulso de Interrogación. Si el Ciclo de Interrogación definido es 0, el IFF realizará un Pulso de Interrogación completo y luego se apagará el interrogador.</p>
+
+<p>La duración de este Pulso de Interrogación vendrá especificado por un valor constante (configurable en Galeon.ini), por defecto 3 segundos. De esta forma, el IFF interroga al comienzo del Ciclo de Interrogación y mantiene el valor de la interrogación durante el tiempo que dure ese Pulso de Interrogación, el resto del tiempo de interrogación, el IFF se mantendrá en STANDBY_ON, simulando que el pulso ha desaparecido, por lo que no podrá ser detectado.</p>
+
+<p>Cada vez que se llegue al final de un ciclo, se realizará siempre la evaluación simulando continuidad temporal, ya que aunque se evalúe en un momento en el que el pulso ha desaparecido, se debe tener en cuenta que el pulso si se ha producido.</p>
+
+<p>Si el contacto se encuentra a menor o igual distancia que el Alcance calculado, y además el contacto tiene equipo de IFF compatible con el de la unidad y tiene activo alguno de los modos del Responder, será detectado por IFF.</p> 
+
+<p>El IFF muestra distinta información de las detecciones obtenidas dependiendo del modo de operación de Interrogador y Responder:</p>
+
+<ul>
+	<li>Interrogador y Responder en modo 1: código introducido por el operador en el responder del contacto (dos dígitos en octal: 00 ‑77).</li>
+
+	<li>Interrogador y Responder en modo 2: código SIF de la unidad (introducido en base de datos, ver Preparación de Unidades).</li>
+
+	<li>Interrogador y Responder en modo 3: clave OPTASK de la misión introducida en el responder del contacto (cuatro dígitos en octal: 0000 ‑ 7777).</li>
+
+	<li>Interrogador y Responder en modo 4: se identificará la unidad como amiga y se mostrará “SI”.</li>
+
+	<li>Interrogador en modo 4 y Responder no está en modo 4, no se identificará la unidad como amiga y se mostrará “NO”.</li>
+
+	<li>Si ni el Interrogador ni el Responder están en modo 4, no se identificará la unidad como amiga y no se muestra nada.</li>
+
+	<li>Si está el Interrogador y el Responder están en modo C se representará la altura del contacto en cientos de pies con cuatro dígitos y de forma independiente a la altura obtenida por otros sensores.</li>
+
+</ul>
+
+<p>En los modos 1, 2, 3 y 4, una vez que se ha interrogado a una unidad y se ha obtenido la información correspondiente a cada modo, dicha información se mantendrá mientras se siga detectando a la unidad como información añadida a la traza, aunque se deje de interrogar. En el modo "C", que proporciona información de altura, se actualizará mientras se pregunte, y se dejará de presentar si se deja de interrogar.</p>
+
+<p>El IFF sólo será detectado por los equipos de ESM durante el tiempo que permanezca con el Interrogador encendido.</p>
+
+<p>Si la unidad que tiene el IFF es neutral, se encenderá automáticamente al inicio del Ejercicio, y activando todos los modos de Responder para los que tenga capacidad.</p>
+
+</div>
+
+</body>
+
+</html>
